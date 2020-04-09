@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  deploy_to_firebase_hosting2:
+  deploy_to_firebase_hosting:
 
     runs-on: ubuntu-latest
 
@@ -26,6 +26,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: deploy --project zksync-js-docs --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

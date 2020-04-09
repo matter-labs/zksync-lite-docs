@@ -27,5 +27,4 @@ doc/
 node_modules
 dist
 
-/.firebaserc
 /.firebase
