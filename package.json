@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "yarn docs:build && firebase deploy"
+  },
+  "devDependencies": {
+    "vuepress": "^1.4.0"
+  }
+}

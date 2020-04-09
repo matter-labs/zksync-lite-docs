@@ -1,0 +1,31 @@
+name: deploy_to_firebase_hosting
+
+on: 
+  push:
+    branches:
+      - master
+
+
+jobs:
+  deploy_to_firebase_hosting2:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Install deps
+        run: yarn
+
+      - name: Build docs
+        run: yarn docs:build
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
