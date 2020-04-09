@@ -3,6 +3,9 @@ module.exports = {
     description: 'Scaling and privacy engine for Ethereum',
     repo: 'matter-labs/zksync',
     dest: 'dist',
+    markdown: {
+        toc: { includeLevel: [2, 3] }
+    },
     themeConfig: {
         logo: '/LogotypeLight.svg',
         lastUpdated: true,
@@ -13,14 +16,18 @@ module.exports = {
                 link: 'https://gitter.im/zksync/community'
             }
         ],
+        //displayAllHeaders: true,
         sidebar: [         
                 {
-                    title: 'Overview',  // required
+                    title: 'Overview & FAQ',  // required
                     path: '/overview/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,    // optional, defaults to 1
+                    displayAllHeaders: true,
                     children: [
-                      '/overview/what-is'
+                      '/overview/intro',
+                      '/overview/security',
+                      '/overview/functionality'
                     ]
                 },
                 {
@@ -36,7 +43,7 @@ module.exports = {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 3,    // optional, defaults to 1
+                    sidebarDepth: 2,    // optional, defaults to 1
                     children: [
                       '/dev/getting-started',
                       '/dev/tutorial',

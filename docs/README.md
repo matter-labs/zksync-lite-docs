@@ -4,7 +4,7 @@ heroImage: /LogoHero.svg
 heroText:
 tagline: Scaling and privacy engine for Ethereum
 actionText: Get Started →
-actionLink: overview/what-is
+actionLink: overview/
 features:
 - title: Scaling trustlessly.
   details: Lacking a tech breakthrough, previous scaling solutions led to increased centralization and shaky trust assumptions.
