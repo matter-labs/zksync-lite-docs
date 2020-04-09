@@ -7,6 +7,12 @@ module.exports = {
         logo: '/LogotypeLight.svg',
         lastUpdated: true,
         repo: 'matter-labs/zksync',
+        nav: [
+            {
+                text: 'Gitter',
+                link: 'https://gitter.im/zksync/community'
+            }
+        ],
         sidebar: [         
                 {
                     title: 'Overview',  // required
