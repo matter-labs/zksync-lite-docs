@@ -1,10 +1,10 @@
 ---
 home: true
-heroImage: /LogotypeLight.svg
-heroText: zkSync
-tagline: O(n) transactions in O(1) time
+heroImage: /LogoHero.svg
+heroText:
+tagline: Scaling and privacy engine for Ethereum
 actionText: Get Started →
-actionLink: overview
+actionLink: overview/what-is
 features:
 - title: Scaling trustlessly.
   details: Lacking a tech breakthrough, previous scaling solutions led to increased centralization and shaky trust assumptions.
@@ -12,5 +12,5 @@ features:
   details: Bitcoin is Twitter for your bank account. Millions will only be onboarded when their privacy is guaranteed.
 - title: Meeting UX expectations.
   details: In the age of convenience, users are pampered. They want everything, now. Embrace it or lose them.
-footer: Apache and MIT Licensed
+footer: Made with ❤️ by Matter Labs
 ---
