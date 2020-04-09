@@ -2,15 +2,15 @@
 home: true
 heroImage: /LogoHero.svg
 heroText:
-tagline: Scalable, secure, non-custodial ETH and ERC20 token transfers
+tagline: Scalable ETH & ERC20 token transfers
 actionText: Read documentation →
 actionLink: overview/
 features:
-- title: Scaling trustlessly.
-  details: Lacking a tech breakthrough, previous scaling solutions led to increased centralization and shaky trust assumptions.
-- title: Preserving privacy.
-  details: Bitcoin is Twitter for your bank account. Millions will only be onboarded when their privacy is guaranteed.
-- title: Meeting UX expectations.
-  details: In the age of convenience, users are pampered. They want everything, now. Embrace it or lose them.
+- title: Scalable.
+  details: Transaction costs in a fraction of cent. Up to 3500 TPS.
+- title: Simple.
+  details: Clean and intuitive UI that works with most Ethereum wallets.
+- title: Secure.
+  details: Security guarantees on par with Layer-1 thanks to zkRollup technology.
 footer: Made with ❤️ by Matter Labs
 ---
