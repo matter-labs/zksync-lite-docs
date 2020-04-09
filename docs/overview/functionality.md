@@ -7,14 +7,10 @@
 - Cheap, scalable, secure, non-custodial ETH and ERC20 token transfers (for now)
 - Later: smart contracts (link to question)
 
-## Who can I send tokens to?
+also explain:
 
-Anybody with an Ethereum account -- see the list of supported wallets below. They will be able to immediately send funds inside zkSync or just withdraw tokens to mainnet.
-
-## Supported wallets
-
-- check out the list in the use guide (link)
-- you can build your own wallet using zksync.js -- check out developer guide (link)
+- users can use zkSync UI (link to section)
+- alternatively, you can build your own wallet using zksync.js -- check out developer guide (link)
 
 ## The end-user experience
 
@@ -47,6 +43,8 @@ For transfers:
 - 3500 TPS once RedShift is integrated (ETA: summer 2020; independent of Berlin hardfork)
 
 Operator's server infrastructure has been benchmarked to run 7000 TPS.
+
+TODO: update with actual numbers once benches complete.
 
 ## What if network is congested?
 

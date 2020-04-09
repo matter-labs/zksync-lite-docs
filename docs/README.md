@@ -3,7 +3,7 @@ home: true
 heroImage: /LogoHero.svg
 heroText:
 tagline: Scalable, secure, non-custodial ETH and ERC20 token transfers
-actionText: Get Started →
+actionText: Read documentation →
 actionLink: overview/
 features:
 - title: Scaling trustlessly.

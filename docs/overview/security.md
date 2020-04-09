@@ -18,7 +18,7 @@ Security claims of zksync:
 
 - PLONK
 - Rescue
-- link to Eli's
+- link to Eli's slide
 
 ## Is a trusted setup required?
 
@@ -27,7 +27,7 @@ Security claims of zksync:
 
 ## How are private keys managed?
 
-- now: by zkSync client
+- now: zkSync client generates the keys from a signature
 - explain 2FA
 - in the future: directly by the wallets
 

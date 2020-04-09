@@ -47,7 +47,7 @@ Highlights:
 
 - Matter Labs: more about our community contributions and scientific work
 - EF grant
-- Investors
+- Investors: https://www.coindesk.com/startup-bringing-zero-knowledge-proofs-to-ethereum-raises-2-million (logos from ML website)
 - Contact
 - How to follow
 
