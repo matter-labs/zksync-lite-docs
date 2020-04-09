@@ -11,6 +11,6 @@ features:
 - title: Simple.
   details: Clean and intuitive UI that works with most Ethereum wallets.
 - title: Secure.
-  details: Security guarantees on par with Layer-1 thanks to zkRollup technology.
+  details: Security guarantees on par with Layer-1 — thanks to zkRollup technology.
 footer: Made with ❤️ by Matter Labs
 ---
