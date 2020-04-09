@@ -35,7 +35,7 @@ module.exports = {
                 },                
                 {
                     title: 'Developer guide',  // required
-                    path: '/dev/', // optional, which should be a absolute path.
+                    path: '/dev/getting-started', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
