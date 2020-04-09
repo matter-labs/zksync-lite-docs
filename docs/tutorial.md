@@ -18,15 +18,46 @@ yarn add ethers # For interactions with ETH network, ethers is peer dependency o
 Add imports.
 
 ```typescript
-import * as zksync from "zksync";
 import {ethers} from "ethers";
+import * as zksync from "zksync";
 ```
 
 Alternatively.
 
 ```javascript
-const zksync = require("zksync");
 const ethers = require("ethers");
+const zksync = require("zksync");
+```
+
+## Wasm
+
+We use [Wasm](https://en.wikipedia.org/wiki/WebAssembly) for the cryptography-related calculations.
+For the `node.js` environment the instructions from the previous chapter remain intact,
+but if `zksync.js` is going to be used in the browser, several additional steps are required:
+
+1. Consult your bundler documentation about using wasm.
+2. Make sure that your server correctly serves wasm files.
+
+> Example of how we configure our basic web client.
+
+```js
+const zksync_promise = import('zksync');
+
+// In the async function that does initialization in your project call:
+
+const zksync = await zksync_promise;
+```
+
+> Example of the nginx.conf entry adding support for the Wasm content type
+
+```
+location ~ ^/client {
+    include /etc/nginx/mime.types;
+    types {
+        application/wasm                      wasm;
+    }
+    //..
+}
 ```
 
 ## Connecting to the Sync network

@@ -145,4 +145,3 @@ const receiptAfterCommit = await deposit.awaitReceipt();
 // this function will return when deposit is verified with ZK proof.
 const receiptAfterVerify = await deposit.awaitVerifyReceipt();
 ```
-
