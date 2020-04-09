@@ -2,7 +2,7 @@
 home: true
 heroImage: /LogoHero.svg
 heroText:
-tagline: Scaling and privacy engine for Ethereum
+tagline: Scalable, secure, non-custodial ETH and ERC20 token transfers
 actionText: Get Started →
 actionLink: overview/
 features:

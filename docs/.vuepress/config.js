@@ -1,6 +1,6 @@
 module.exports = {
     title: 'zkSync', // adding title gives us a header with search box
-    description: 'Scaling and privacy engine for Ethereum',
+    description: 'Scalability engine for Ethereum',
     repo: 'matter-labs/zksync',
     dest: 'dist',
     markdown: {
@@ -22,22 +22,16 @@ module.exports = {
                     title: 'Overview & FAQ',  // required
                     path: '/overview/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 1,    // optional, defaults to 1
-                    displayAllHeaders: true,
+                    sidebarDepth: 1,     // optional, defaults to 1
                     children: [
                       '/overview/intro',
-                      '/overview/security',
-                      '/overview/functionality'
+                      '/overview/functionality',
+                      '/overview/security'
                     ]
                 },
                 {
-                    title: 'User guide',  // required
-                    path: '/user/', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 1,    // optional, defaults to 1
-                    children: [
-                      '/user/getting-started'
-                    ]
+                    title: 'User guide',
+                    path: '/user/'
                 },                
                 {
                     title: 'Developer guide',  // required
