@@ -4,6 +4,6 @@ Welcome to zkSync docs!
 
 ## FAQ by topics
 
-- [Introduction](intro)
-- [Security](security)
-- [Functionality](functionality)
+- [Introduction](intro.html)
+- [Security](security.html)
+- [Functionality](functionality.html)
