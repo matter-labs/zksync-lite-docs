@@ -5,6 +5,7 @@
     "docs:deploy": "yarn docs:build && firebase deploy"
   },
   "devDependencies": {
-    "vuepress": "^1.4.0"
+    "vuepress": "^1.4.0",
+    "vuepress-plugin-canonical": "^1.0.0"
   }
 }
