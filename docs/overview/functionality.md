@@ -4,15 +4,17 @@
 
 ## What can zkSync be used for?
 
-- Cheap, scalable, secure, non-custodial ETH and ERC20 token transfers (for now)
+- Affordable, scalable, secure, non-custodial ETH and ERC20 token transfers (for now)
 - Later: smart contracts (link to question)
 
 also explain:
 
 - users can use zkSync UI (link to section)
-- alternatively, you can build your own wallet using zksync.js -- check out developer guide (link)
+- alternatively, as a project developer you can build your own wallet using zksync.js -- check out developer guide (link)
 
 ## The end-user experience
+
+Try it out! https://rinkeby.zksync.io/
 
 - Address
 - Gasless transactions
@@ -28,13 +30,22 @@ For transfers:
 
 - Native Ether (ETH)
 - Plus 30 popular tokens added at launch: list
-- Any other token can be added in coordination with Matter Labs -- talk to us
+- Any other token can be added in coordination with Matter Labs -- talk to us (eventually it will be permissionless, but in the beginning we want to curate the list)
 
 ## Transaction fees
 
 - Users pay in the same token as being transferred.
-- we are going to operate at break-even cost, later move to marketplace by permissionless operators
-- explain how
+- we are going to operate at break-even cost, later move to marketplace by permissionless validators
+- explain how the price the formed:
+    - variable:
+        - ETH onchain (gas) part: ~0.3k gas for every transfer (to compare: basic ETH transfer is 21k gas, average ERC20 transfer is 60k-80k gas)
+        - Technical note: `full_cost = (block_proof_cost + gas_per_tx * N_tx) / N_tx`; 
+            - block_proof_cost ~ 300k gas
+            - N_tx in block ~1000 - 15000
+            - as operators, we will charge as though blocks are full
+    - fixes (driven by physical costs):
+        - ZKP generation part: ~{placeholder, add when benches complete}
+        - storage part: ~1/1000 - 1/100 of the ETH storage cost (and, in contrast to ETH, it won't go up with increase gas costs)
 
 ## Max throughput
 
@@ -42,27 +53,32 @@ For transfers:
 - 1000 TPS after Berlin hardfork (BLS12-381 support is already scheduled for inclusion)
 - 3500 TPS once RedShift is integrated (ETA: summer 2020; independent of Berlin hardfork)
 
-Operator's server infrastructure has been benchmarked to run 7000 TPS.
+Bottleneck: ETH gas only; ZKPs are well parallelizable and can thus scale indefinitely. Of course, operator's server infrastructure too -- in fact, it has been benchmarked to run >7000 TPS.
 
-TODO: update with actual numbers once benches complete.
+(TODO: update with actual numbers once benches complete.)
 
 ## What if network is congested?
 
+- bring explaes of Cryptokitties, Black Thursday
 - We will pay much higher fees to include the blocks, so we're safe against congestion
+- We have this functionalitu in our servers
 
 ## How quickly is my tx confirmed?
 
-- Instant promise for now (to be backed by security bond)
+- Instant promise in the UI for now (to be backed by security bond)
 - Finality on ETH mainnet after the ZKP is generated and mined on ethereum (~10-15 min)
-- explain block filling timeout
+- explain block filling timeout (timeout of 15 min)
+- in the future we will add instant confirmations with guarantee (check out zkSync intro)
 
 ## Are transactions private?
 
-- Not now, later. Privacy is important to us! But we want to make it properly without creating false sense of security.
+- Not now, later. Privacy is important to us! But we want to make it properly without creating false sense of security. network anonymity, etc.
+- example: https://twitter.com/ivanbogatyy/status/1196441051814223880?lang=en (ppl thought that MW was hiding tx graph, but it wasn't...)
 
 ## Are smart contracts supported?
 
 - Not now, later
+- Working on zinc: https://github.com/matter-labs/zinc
+    - docs: https://zinc.matterlabs.dev/
 - Explain mental model: same as Ethereum
-- Explain interoperability
 - Talk to us!

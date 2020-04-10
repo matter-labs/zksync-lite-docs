@@ -1,5 +1,7 @@
 # User guide
 
+(to discuss after you have tried rinkeby.zksync.io yourself)
+
 ## Getting started with zkSync UI 
 
 - zksync.io (rinkeby.zksync.io for testnet)
@@ -11,7 +13,7 @@
 - metamask (+ledger etc.)
 - wallet connect: list...
 - fortmatic, ports, etc.
-- we support both keypair- and smart-contract-based account
+- we support both keypair- and smart-contract-based account (e.g. Argent)
 
 ## What is my zkSync address?
 
