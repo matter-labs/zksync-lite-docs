@@ -3,7 +3,7 @@
 ## Tokens and common types
 
 ```typescript
-// Symbol like "ETH" or "FAU" or token contract address(zero address is implied for "ETH").
+// Symbol like "ETH" or "FAU" or a token contract address(zero address is implied for "ETH").
 export type TokenLike = TokenSymbol | TokenAddress;
 // Token symbol (e.g. "ETH", "FAU", etc.)
 export type TokenSymbol = string;
@@ -26,10 +26,10 @@ export interface ContractAddress {
     govContract: string;
 }
 
-// 0x-prefixed, hex encoded, ethereum account address
+// 0x-prefixed, hex encoded, Ethereum account address
 export type Address = string;
 
-// Committed nonce is going to be resolved to last nonce known to the zkSync network
+// Committed nonce is going to resolve to the last nonce known on the zkSync network
 export type Nonce = number | "committed";
 ```
 
@@ -38,7 +38,7 @@ export type Nonce = number | "committed";
 ```typescript
 import { utils } from "ethers";
 
-// 0x-prefixed, hex encoded, ethereum account address
+// 0x-prefixed, hex encoded, Ethereum account address
 export type Address = string;
 // sync:-prefixed, hex encoded, hash of the account public key
 export type PubKeyHash = string;
@@ -48,7 +48,7 @@ export interface AccountState {
     // Ethereum address of the account
     address: Address;
     id?: number;
-    // Committed state is the last state known to the zkSync network, can be ahead of verified state
+    // Committed state is the last state known to the zkSync network, can be ahead of the verified state
     committed: {
         balances: {
             // Token are indexed by their symbol (e.g. "ETH")
@@ -58,7 +58,7 @@ export interface AccountState {
         // Public key hash of the signer keys associated with account
         pubKeyHash: PubKeyHash;
     };
-    // Verified state is proved with ZKP on the Ethereum network.
+    // Verified state is proved by ZKP on the Ethereum network.
     verified: {
         balances: {
             // Token are indexed by their symbol (e.g. "ETH")
