@@ -1,15 +1,14 @@
 # Providers
 
-JSON-RPC protocol is used to communicate with Sync network nodes.
-`Provider` is used to abstract details of the communication and provides useful API for interaction with Sync network.
+JSON-RPC protocol is used to communicate with the zkSync network nodes.
+`Provider` is used to generalize details of the communication and provides a useful API for interacting with the zkSync network.
 
-We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it supports subscriptions.
-`HTTPTransport` and `WSTransport` classes are used to implement details of communication, but usually, you don't need to deal with these objects directly.
+We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it supports subscriptions. `HTTPTransport` and `WSTransport` classes are used to implement details of communication but usually are unnecessary.
 
 
-## Sync provider
+## zkSync provider
 
-### Get default provider for network
+### Get default provider for the network
 
 ```typescript
 import * as zksync from "zksync";
@@ -24,14 +23,14 @@ await syncWSProvider.disconnect();
 
 ```
 
-Used to connect to the common endpoint for the given network over WebSocket transport.   
+This provider allows to connect to the common endpoint of the given network over WebSocket transport. 
 
-Supported networks are: "testnet", "localhost".
+"Testnet" and "localhost" are the default supported networks. 
 
-### Create WebSocket provider
+### Create a WebSocket provider
 
-> Creating provider over WebSocket transport.
-> This call will create WS connection that should be closed.
+> Creating a provider over WebSocket transport.
+> This call will create a WS connection that should be closed.
 
 ```typescript
 import * as zksync from "zksync";
@@ -48,9 +47,9 @@ await syncWSProvider.disconnect();
 
 ```
 
-### Create HTTP provider
+### Create an HTTP provider
 
-> Creating provider over HTTP transport. 
+> Creating a provider over HTTP transport. 
 
 ```typescript
 import * as zksync from "zksync";
@@ -74,7 +73,7 @@ async submitTx(tx: any): Promise<string>;
 
 | Name | Description | 
 | -- | -- |
-| tx | Signed Sync transaction (see types, for detailed description) |
+| tx | Signed zkSync transaction (see Types for detailed description) |
 | returns | `0x`-prefixed hex-encoded hash of the transaction |
 
 > Example
@@ -114,7 +113,7 @@ async getContractAddress(): Promise<ContractAddress>;
 
 | Name | Description | 
 | -- | -- |
-| returns | Addresses of the Sync network smart contracts (see types, for detailed description) |
+| returns | Addresses of zkSync smart contracts (see Types for detailed description) |
 
 > Example
 
@@ -147,7 +146,7 @@ async getTokens(): Promise<Tokens>;
 
 | Name | Description | 
 | -- | -- |
-| returns | All supported tokens (see types, for detailed description) |
+| returns | All supported tokens (see Types for detailed description) |
 
 > Example
 
@@ -178,7 +177,7 @@ const contractAddresses = await syncWSProvider.getTokens();
 
 
 
-### Get account state by address
+### Get an account state by address
 
 > Signature
 
@@ -190,8 +189,8 @@ async getState(address: Address): Promise<AccountState>;
 
 | Name | Description | 
 | -- | -- |
-| address | `0x`-prefixed hex-encoded address of the Sync account. |
-| returns | Detailed state of the Sync account, including balances, nonce. (see types, for detailed description) |
+| address | `0x`-prefixed hex-encoded address of the zkSync account. |
+| returns | Detailed state of the zkSync account, including balances, nonce. (see Types for detailed description) |
 
 > Returns
 
@@ -229,8 +228,8 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 
 | Name | Description | 
 | -- | -- |
-| txHash | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction. |
-| returns | Receipt of this transaction (see types, for detailed description) |
+| txHash | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction. |
+| returns | Receipt of this transaction (see Types for detailed description) |
 
 > Returns
 
@@ -267,7 +266,7 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 ### Wait for transaction receipt
 
 Similar to [Get transaction receipt](#get-transaction-receipt) but
-this method will return when a given transaction is committed or verified in the Sync network.
+this method will return when a given transaction is committed or verified in the zkSync network.
 
 
 > Signature
@@ -283,9 +282,9 @@ async notifyTransaction(
 
 | Name | Description | 
 | -- | -- |
-| txHash | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction. |
+| txHash | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction. |
 | action | "COMMIT" or "VERIFY" |
-| returns | Receipt of this transaction (see types, for detailed description) |
+| returns | Receipt of this transaction (see Types for detailed description) |
 
 > Example 
 
@@ -314,7 +313,7 @@ async getPriorityOpStatus(
 
 | Name | Description | 
 | -- | -- |
-| serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
+| serialId | Numerical id of the priority operation can be found in logs of the Ethereum transaction that created this operation (e.g. deposit) |
 | returns | Receipt of this priority operation (see types, for detailed description) |
 
 > Returns
@@ -333,7 +332,7 @@ async getPriorityOpStatus(
 ### Wait for priority operation receipt
 
 Similar to [Get priority operation receipt](#get-priority-operation-receipt) but
-this method will return when given priority operation is committed or verified in the Sync network.
+this method will return when a given priority operation is committed or verified in the zkSync network.
 
 > Signature
 
@@ -348,9 +347,9 @@ async notifyPriorityOp(
 
 | Name | Description | 
 | -- | -- |
-| serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
+| serialId | Numerical id of the priority operation can be found in logs of the Ethereum transaction that created this operation (e.g. deposit) |
 | action | "COMMIT" or "VERIFY" |
-| returns | Receipt of this priority operation (see types, for detailed description) |
+| returns | Receipt of this priority operation (see Types for detailed description) |
 
 > Example 
 
@@ -367,7 +366,7 @@ const receipt = await syncWSProvider.notifyPriorityOp(
 
 ### Current token set.
 
-Provider stores list of the available tokens with methods for working with them. (see [working with tokens](#working-with-tokens))
+Provider stores a list of the available tokens with methods to work with them. (see [working with tokens](#working-with-tokens))
 
 > Signature
 
@@ -377,7 +376,7 @@ public tokenSet: TokenSet;
 
 ### Get transaction fee from the server.
 
-Performs a query to the server, obtaining an acceptable transaction fee for transactions.
+Performs a query to the server; obtains an acceptable transaction fee for transactions.
 
 > Signature
 
@@ -401,7 +400,7 @@ async getTransactionFee(
 
 ## ETH Proxy
 
-`ETHProxy` class is used to simplify some communication with Ethereum network.
+`ETHProxy` class is used to simplify some communication with the Ethereum network.
 
 
 ### Create ETH Proxy
@@ -419,8 +418,8 @@ constructor(
 
 | Name | Description | 
 | -- | -- |
-| ethersProvider | `ethers.js` provider connected to ethereum node|
-| contractAddress | Addresses of the Sync network contracts |
+| ethersProvider | `ethers.js` provider connected to the Ethereum node|
+| contractAddress | Addresses of zkSync smart contracts |
 
 > Example
 
@@ -440,7 +439,7 @@ const ethProxy = new zksync.ETHProxy(
 
 ### Resolve token id
 
-To sign Sync transaction users have to know the unique numerical id of the given token.
+To sign a zkSync transaction, users have to know the unique numerical id of the given token.
 It can be retrieved from the zkSync network governance contract.
 
 
@@ -455,7 +454,7 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 | Name | Description | 
 | -- | -- |
 | token | Ethereum token address (ERC20 contract address) |
-| returns | Numerical identifier of the given token inside Sync network. |
+| returns | Numerical identifier of the given token inside the zkSync network. |
 
 > Example
 
@@ -478,7 +477,7 @@ const erc20Id = await ethProxy.resolveTokenId("0xFab46E002BbF0b4509813474841E071
 
 ### Estimate deposit fee
 
-Estimates fee required for submitting deposit transactions. Fee for deposit always is always paid in `ETH` token.
+Estimates a fee required for submitting deposit transactions. The deposit fee is always paid in `ETH` token.
 
 > Signature
 
@@ -498,7 +497,7 @@ async estimateDepositFeeInETHToken(token: TokenLike, gasPrice?: utils.BigNumber)
 
 ### Estimate emergency withdraw fee
 
-Estimates fee required for submitting emergency withdraw transaction. Fee for emergency withdraw is always paid in `ETH` token.
+Estimates a fee required for submitting emergency withdraw transaction. The emergency withdrawal fee is always paid in `ETH` token.
 
 > Signature
 
@@ -511,20 +510,20 @@ async estimateEmergencyWithdrawFeeInETHToken(gasPrice?: utils.BigNumber): Promis
 | Name | Description | 
 | -- | -- |
 | gasPrice | Gas price that will be used for transaction. |
-| returns | Fee that has to be paid for emergency withdraw |
+| returns | Fee that has to be paid for emergency withdrawal |
 
 # Providers
 
-JSON-RPC protocol is used to communicate with Sync network nodes.
-`Provider` is used to abstract details of the communication and provides useful API for interaction with Sync network.
+JSON-RPC protocol is used to communicate with the zkSync network nodes.
+`Provider` is used to extract details of the communication and provides useful API for interaction with the zkSync network.
 
 We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it supports subscriptions.
 `HTTPTransport` and `WSTransport` classes are used to implement details of communication, but usually, you don't need to deal with these objects directly.
 
 
-## Sync provider
+## zkSync provider
 
-### Get default provider for network
+### Get a default provider for the network
 
 ```typescript
 import * as zksync from "zksync";
