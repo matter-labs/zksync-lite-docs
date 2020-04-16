@@ -6,8 +6,8 @@ heroText: null
 tagline: Scalable ETH & ERC20 token transfers
 actionText2: Read documentation
 actionLink2: overview/
-actionText: Open wallet
-actionLink: https://zksync.io/
+actionText: Demo wallet
+actionLink: https://rinkeby.zksync.io/
 features:
 - title: Scalable.
   details: Transaction costs in a fraction of cent. Up to 3500 TPS.
