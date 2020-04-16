@@ -25,6 +25,10 @@ high-level tech description
 - explain where the money is stored
 - links to videos (or embed)
 
+## Compare to 
+
+https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/zk-rollups/
+
 ## zkSync vs. Sidechains
 
 - explain sidechain

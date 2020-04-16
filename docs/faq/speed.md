@@ -16,7 +16,9 @@ Bottleneck: ETH gas only; ZKPs are well parallelizable and can thus scale indefi
 - We will pay much higher fees to include the blocks, so we're safe against congestion
 - We have this functionalitu in our servers
 
-## How quickly is my tx confirmed?
+## Transaction finality
+
+## Instant confirmations
 
 - Instant promise in the UI for now (to be backed by security bond)
 - Finality on ETH mainnet after the ZKP is generated and mined on ethereum (~10-15 min)
