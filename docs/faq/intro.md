@@ -1,8 +1,8 @@
-# Introduction
+# In a nutshell
 
 [[toc]]
 
-## zkSync in a nutshell
+## What is zkSync?
 
 (for general audience)
 
@@ -15,7 +15,7 @@ Highlights:
 - Scalable: up to 3500 TPS, immune to network congestions
 - Cheap: a fraction of cent per tx even in peak times
 
-## How exactly does it work?
+### How exactly does it work?
 
 (for general audience)
 
@@ -25,31 +25,18 @@ high-level tech description
 - explain where the money is stored
 - links to videos (or embed)
 
-## Compared to other solutions
-
-- [...Sidechains](#zksync-vs-sidechains)
-- [...Plasma](#zksync-vs-plasma)
-- [...Payment channels (Lightning)](#zksync-vs-payment-channels)
-- [...Optimistic Rollup](#zksync-vs-optimistic-rollup)
-
-(in all comparisons highlight benefitd zkSync)
-
-(all comparisons short)
-
-(Take all ideas from the lightpaper)
-
-### zkSync vs. Sidechains
+## zkSync vs. Sidechains
 
 - explain sidechain
 - explain trust assumptions
 
-### zkSync vs. Plasma
+## zkSync vs. Plasma
 
 - explain data availability
 
 link to https://haseebq.com/the-life-and-death-of-plasma/ (borrow ideas)
 
-### zkSync vs. Payment Channels
+## zkSync vs. Payment Channels
 
 - briefly explains lightning/payment channels
 - explain capital efficiency
@@ -57,6 +44,6 @@ link to https://haseebq.com/the-life-and-death-of-plasma/ (borrow ideas)
 - liveness required: 
 - explain security problems (payment channels require operators to keep keys online, can be hacked and all funds stolen)
 
-### zkSync vs. Optimistic Rollup
+## zkSync vs. Optimistic Rollup
 
 - link to https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075
