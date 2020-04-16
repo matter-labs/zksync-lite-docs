@@ -1,15 +1,18 @@
 ---
 home: true
 heroImage: /LogoHero.svg
-heroText:
+heroAlt: zkSync
+heroText: null
 tagline: Scalable ETH & ERC20 token transfers
-actionText: Read documentation →
-actionLink: overview/
+actionText2: Read documentation
+actionLink2: overview/
+actionText: Open wallet
+actionLink: https://zksync.io/
 features:
 - title: Scalable.
   details: Transaction costs in a fraction of cent. Up to 3500 TPS.
 - title: Simple.
-  details: Clean and intuitive UI that works with most Ethereum wallets.
+  details: Clean and intuitive API + UI that works with most Ethereum wallets.
 - title: Secure.
   details: Security gurantees on par with mainnet thanks to zkRollup technology.
 footer: Made with ❤️ by Matter Labs
