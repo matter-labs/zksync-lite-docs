@@ -18,14 +18,6 @@ The most valuable piece on this website.
 - Security audits by [ABDK Consulting](https://www.abdk.consulting/) are underway.
 - The platform will be launched on mainnet as soon as the audits are finished (ETA: end of April 2020).
 
-## Who is behind zkSync?
-
-- Matter Labs: https://matter-labs.io/
-- more about our community contributions and scientific work: links to github: https://github.com/matter-labs
-- EF grant: https://medium.com/matter-labs/grant-from-the-ethereum-foundation-for-matter-labs-64338f3dd938
-- Investors: https://www.coindesk.com/startup-bringing-zero-knowledge-proofs-to-ethereum-raises-2-million (logos from ML website)
-- How to follow: twitter (from web site), medium...
-
 ## Question unanswered?
 
 Talk to us: email at **questions@zksync.io** or chat in [Gitter](https://gitter.im/zksync/community) / [Twitter](https://twitter.com/the_matter_labs) (DMs are open).
