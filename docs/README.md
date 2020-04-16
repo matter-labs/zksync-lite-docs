@@ -9,10 +9,10 @@ actionText: Open demo wallet
 actionLink: https://rinkeby.zksync.io/
 features:
 - title: Scalable.
-  details: Up to 3500 TPS. Transaction costs in a fraction of cent.
+  details: Up to 3500 TPS. ETH and ERC20 token transfers for a fraction of a cent.
 - title: Simple.
   details: Clean and intuitive API. UI that works with most Ethereum wallets.
 - title: Secure.
-  details: Every transaction is verified by a smart contract on the mainnet.
+  details: Every single transaction is verified by a smart contract on the mainnet.
 footer: Made with ❤️ by Matter Labs
 ---
