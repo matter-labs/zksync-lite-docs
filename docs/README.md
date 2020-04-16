@@ -5,8 +5,8 @@ heroAlt: zkSync
 tagline: Scalability engine for Ethereum driven by zkRollup
 actionText2: Read documentation
 actionLink2: overview/
-actionText: Open demo wallet
-actionLink: https://rinkeby.zksync.io/
+actionText: Open demo
+actionLink: https://demo.zksync.dev/explorer/
 features:
 - title: Scalable.
   details: Up to 3500 TPS. ETH and ERC20 token transfers for a fraction of a cent.
