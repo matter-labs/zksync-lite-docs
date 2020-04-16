@@ -33,16 +33,16 @@ module.exports = {
         sidebar: [         
                 {
                     title: 'Overview & FAQ',  // required
-                    path: '/overview/', // optional, which should be a absolute path.
+                    path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                      '/overview/why',
-                      '/overview/intro',
-                      '/overview/functionality',
-                      '/overview/speed',
-                      '/overview/security',
-                      '/overview/decentralization'
+                      '/faq/why',
+                      '/faq/intro',
+                      '/faq/functionality',
+                      '/faq/speed',
+                      '/faq/security',
+                      '/faq/decentralization'
                     ]
                 },
                 // {

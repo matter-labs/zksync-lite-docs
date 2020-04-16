@@ -8,7 +8,7 @@ In these docs you will find information about the zkSync's functionality, Zero-K
 
 ## If all you got is 3 minutes
 
-Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/overview/why/)
+Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/faq/why/)
 
 The most valuable piece on this website.
 

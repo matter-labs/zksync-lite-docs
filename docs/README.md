@@ -4,7 +4,7 @@ heroImage: /LogoHero.svg
 heroAlt: zkSync
 tagline: Scalability engine for Ethereum driven by zkRollup
 actionText2: Read documentation
-actionLink2: overview/
+actionLink2: faq/
 actionText: Open demo
 actionLink: https://demo.zksync.dev/explorer/
 features:
