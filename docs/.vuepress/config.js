@@ -23,7 +23,11 @@ module.exports = {
             {
                 text: 'Gitter',
                 link: 'https://gitter.im/zksync/community'
-            }
+            },
+            {
+                text: 'Twitter',
+                link: 'https://twitter.com/the_matter_labs'
+            }            
         ],
         //displayAllHeaders: true,
         sidebar: [         
@@ -33,15 +37,27 @@ module.exports = {
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
+                      '/overview/why',
                       '/overview/intro',
                       '/overview/functionality',
-                      '/overview/security'
+                      '/overview/speed',
+                      '/overview/security',
+                      '/overview/decentralization'
                     ]
                 },
-                {
-                    title: 'User guide',
-                    path: '/user/'
-                },                
+                // {
+                //     title: 'Technology',
+                //     path: '/tech/',
+                //     children: [
+                //         '/tech/zkp',
+                //         '/tech/zkrollup',
+                //         '/tech/plonk',
+                //         '/tech/redshift'
+                //       ]
+                // },                 // {
+                //     title: 'User guide',
+                //     path: '/user/'
+                // },                
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
