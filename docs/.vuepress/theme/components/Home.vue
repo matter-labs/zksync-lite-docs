@@ -4,18 +4,11 @@
     aria-labelledby="main-title"
   >
     <header class="hero">
-      <img
+      <h1><img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
         :alt="data.heroAlt || 'hero'"
-      >
-
-      <h1
-        v-if="data.heroText !== null"
-        id="main-title"
-      >
-        {{ data.heroText || $title || 'Hello' }}
-      </h1>
+      ></h1>
 
       <p
         v-if="data.tagline !== null"
@@ -52,11 +45,8 @@
 
     <Content class="theme-default-content custom" />
 
-    <div
-      v-if="data.footer"
-      class="footer"
-    >
-      {{ data.footer }}
+    <div class="footer">
+      Made with ❤️ by <a href="https://twitter.com/the_matter_labs">Matter Labs</a>
     </div>
   </main>
 </template>
