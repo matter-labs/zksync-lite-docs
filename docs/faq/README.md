@@ -6,17 +6,12 @@ Today, you can use **zkSync** for secure, user-friendly **ETH and ERC20 token tr
 
 In these docs you will find information about the zkSync's functionality, Zero-Knowledge Proofs, zkRollup, differences to other approaches (e.g. Optimistic Rollup), and how to use [zkSync API](/dev/).
 
-## If all you got is 3 minutes
-
-Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/faq/why/)
-
-The most valuable piece on this website.
-
 ## Project status
 
 - [Testnet is live on Rinkeby](https://demo.zksync.dev/explorer/) — give it a try, the UI is very simple.
 - Security audits by [ABDK Consulting](https://www.abdk.consulting/) are underway.
-- The platform will be launched on mainnet as soon as the audits are finished (ETA: end of April 2020).
+- Token transfers on mainnet will be launched as soon as the audits are finished (ETA: end of April 2020).
+- [Zinc](https://github.com/matter-labs/zinc) is under active development.
 
 ## Question unanswered?
 

@@ -32,12 +32,12 @@ module.exports = {
         //displayAllHeaders: true,
         sidebar: [         
                 {
-                    title: 'Overview & FAQ',  // required
+                    title: 'FAQ',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                      ['/faq/why', 'Why should I care?'],
+                      //['/faq/why', 'Why should I care?'],
                       '/faq/intro',
                       '/faq/functionality',
                       '/faq/speed',
