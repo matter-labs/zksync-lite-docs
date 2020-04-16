@@ -1,4 +1,4 @@
-# In a nutshell
+# zkSync in a nutshell
 
 [[toc]]
 
@@ -15,7 +15,7 @@ Highlights:
 - Scalable: up to 3500 TPS, immune to network congestions
 - Cheap: a fraction of cent per tx even in peak times
 
-### How exactly does it work?
+## How does it work?
 
 (for general audience)
 

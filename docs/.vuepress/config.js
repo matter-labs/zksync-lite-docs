@@ -37,7 +37,7 @@ module.exports = {
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                      '/faq/why',
+                      ['/faq/why', 'Why should I care?'],
                       '/faq/intro',
                       '/faq/functionality',
                       '/faq/speed',

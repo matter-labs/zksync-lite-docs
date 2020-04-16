@@ -1,4 +1,4 @@
-# Why should I care?
+# Why should I care about scalability with Zero-knowledge proofs?
 
 The success of your project is contingent on growth. 
 
