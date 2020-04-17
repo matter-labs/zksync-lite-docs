@@ -4,11 +4,11 @@
 
 ## What is zkSync?
 
-zkSync is a trustless scaling solution for Ethereum with cryptographic guarantees to preserve the same level of security while significantly increasing the transaction throughput.
+**zkSync** is a trustless scaling solution for Ethereum with cryptographic guarantees to preserve the same level of security while significantly increasing the transaction throughput.
 
 Today, you can use it for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligable cost per transaction (see the [Speed](/faq/speed/) section).
 
-In the near future, zkSync will add [Smart contracts](/faq/sc) and [Privacy](/faq/privacy).
+In the near future, **zkSync** will add [Smart contracts](/faq/sc) and [Privacy](/faq/privacy).
 
 ## How does it work?
 
@@ -46,10 +46,10 @@ Users can use **zkSync** to transfer ether (ETH) and ERC20 tokens.
 In **zkSync** the cost of every transaction has two components:
 
 - **Off-chain part (storage + prover costs)**: the cost of the state storage and the SNARK (zero-knowledge proof) generation. This part depends on the use of hardware resources and is therefore invariable. Our benchmarks give estimates of ~0.001 USD per transfer.
-- **On-chain part (gas costs)**: for every zkSync block, the validator must pay Ethereum gas to verify the SNARK (~400k gas, amortized across all transactions in the block), plus additionally ~0.4k gas per transaction to publish the state ∆. The on-chain part is variable because it depends on the current gas price in the Ethereum network. However, this part is orders of magnitude cheaper than the cost of normal ETH/ERC20 transfers.
+- **On-chain part (gas costs)**: for every **zkSync** block, the validator must pay Ethereum gas to verify the SNARK (~400k gas, amortized across all transactions in the block), plus additionally ~0.4k gas per transaction to publish the state ∆. The on-chain part is variable because it depends on the current gas price in the Ethereum network. However, this part is orders of magnitude cheaper than the cost of normal ETH/ERC20 transfers.
 
 As of today (Apr 17, 2020) the full transfer price is estimated to be ~0.004 USD.
 
 ## How do users pay tx fees?
 
-Transfers in zkSync work as "gasless metatransactions": users pay transaction fees in the tokens being transferred. Thus, for example, if you want to transfer DAI stablecoin, there is no need for you to own ETH or any other tokens. Just pay your fees in a fraction of DAI.
+Transfers in **zkSync** work as "gasless metatransactions": users pay transaction fees in the tokens being transferred. Thus, for example, if you want to transfer DAI stablecoin, there is no need for you to own ETH or any other tokens. Just pay your fees in a fraction of DAI.

@@ -2,7 +2,7 @@
 
 Right now, **zkSync** can be used only for secure token transfers.
 
-However, smart contracts are a cardinal part of the zkSync roadmap. Since summer 2019 we made a great progress on [Zinc](https://github.com/matter-labs/zinc), a developer-friendly programming framework to create zero-knowledge proof circuits. It will be soon possible to write smart contracts for **zkSync** in Zinc following very similar conventions you are used to with programming Ethereum in Solidity.
+However, smart contracts are a cardinal part of the **zkSync** roadmap. Since summer 2019 we made a great progress on [Zinc](https://github.com/matter-labs/zinc), a developer-friendly programming framework to create zero-knowledge proof circuits. It will be soon possible to write smart contracts for **zkSync** in Zinc following very similar conventions you are used to with programming Ethereum in Solidity.
 
 Zinc lang follows safe-by-default Rust philosophy and is based on simplified (but very expressive) Rust syntax. It can be learned in just one day by developers proficient in languages like Rust, C++ or Solidity.
 
