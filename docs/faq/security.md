@@ -31,6 +31,8 @@ Security claims of zksync:
 - explain 2FA
 - in the future: directly by the wallets
 
+## Risks
+
 ## Security audit
 
 - All code is open source: ...

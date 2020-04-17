@@ -8,14 +8,14 @@ Technologically, decentralization is not a binary option but rather a continuum 
 2. Collective custody (trust in honest majority): sidechains
 3. Non-custodial via fraud proofs (trust in honest minority): optimistic rollups
 4. Non-custodial, centrally operated (trustless): Argent
-5. Multi-operator (trustless, weak censorship-resistance)<sup>\*</sup>: Cosmos
-6. Peer-to-peer (trustless, strong censorship-resistance)<sup>\*</sup>: Ethereum, Bitcoin
-
-_<sup>\*</sup>Sidenote: for L1 networks, trustlessness is only guaranteed by the ability (and to the extent of that ability) of honest minority users to fork away from the network taken over by dishonest majority. For L2 protocols, this can be achieved already at level 4 of this scala, because users can ultimately rely on L1 to circumvent exit censorship._
+5. Multi-operator (trustless<sup>\*</sup>, weak censorship-resistance): Cosmos
+6. Peer-to-peer (trustless<sup>\*</sup>, strong censorship-resistance): Ethereum, Bitcoin
 
 Right now, zkSync is at level 4 of this scale. It is fully non-custodial with zero trust assumptions: the zkSync operator has no power to do anything with user's assets without explicit authorization. Users can always withdraw all of their funds to Ethereum without any cooperation from operator (even if the latter is completely shut down and unresponsive).
 
 However, the daily operation of the zkSync network at the moment depends on the health of the computational service provider who generates zero-knowledge proofs for the blocks.
+
+<span class="footnote"><sup>*</sup> For L1 networks, trustlessness is only guaranteed by the ability (and to the extent of that ability) of honest minority users to fork away from the network taken over by dishonest majority. For L2 protocols, this is not necessary, because users can ultimately rely on L1 to circumvent exit censorship.</span>
 
 ## Who operates zkSync now?
 
