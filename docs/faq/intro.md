@@ -4,7 +4,7 @@
 
 ## What is zkSync?
 
-zkSync is a trustless scaling solution for Ethereum.
+zkSync is a trustless scaling solution for Ethereum with cryptographic guarantees to preserve the same level of security while significantly increasing the transaction throughput.
 
 Today, you can use it for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligable cost per transaction (see the [Speed](/faq/speed/) section).
 
