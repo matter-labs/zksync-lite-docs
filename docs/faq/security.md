@@ -2,14 +2,12 @@
 
 [[toc]]
 
-## How secure is zkSync?
+## Whatsecurity gurantees?
 
 Security claims of zksync:
 
 - Operators can not spend your tokens: ZKPs checks in Ethereum
 - Money can always be retrieved without cooperation from operators
-
-## How is funds retrievability guaranteed?
 
 - Anti-censorship: priority queue.
 - If not served within a timeout: emergency exit directly on Ethereum. All code is available.
@@ -18,22 +16,23 @@ Security claims of zksync:
 
 - PLONK
 - Rescue
+- RedShift
 - link to Eli's slide
 
-## Is a trusted setup required?
+## What about trusted setup?
 
-- Reusing Ignition for PLONK
+- Reusing Ignition for PLONK (link)
 - No trusted setup for RedShift in the future
 
-## How are private keys managed?
+## What are potential risks?
 
-- now: zkSync client generates the keys from a signature
-- explain 2FA
-- in the future: directly by the wallets
+- bug in SC
+- bug in ciruit
+- bug in trusted setup
+- cryptography compromised
+- wallet hacked
 
-## Risks
-
-## Security audit
+## Is there a security audit?
 
 - All code is open source: ...
 - Audited by ABDK Consulting (link), for both smart contract and circuits
