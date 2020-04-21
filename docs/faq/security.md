@@ -21,7 +21,7 @@ Security claims of zksync:
 
 ## What about trusted setup?
 
-- Reusing Ignition for PLONK (link)
+- Reusing Ignition for PLONK (link): https://www.aztecprotocol.com/ignition/
 - No trusted setup for RedShift in the future
 
 ## What are potential risks?
