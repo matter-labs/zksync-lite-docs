@@ -2,7 +2,7 @@
 home: true
 heroImage: /LogoHero.svg
 heroAlt: zkSync
-tagline: Scalability engine for Ethereum driven by zkRollup
+tagline: Scalability engine for Ethereum built on zkRollup
 actionText2: Read documentation
 actionLink2: faq/
 actionText: Open demo
