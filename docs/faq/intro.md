@@ -4,7 +4,7 @@
 
 ## What is zkSync?
 
-**zkSync** is a trustless scaling solution for Ethereum. It uses zero-knowledge proof cryptography to secure its operation. This allows **zkSync** protocol to keep the assets as safe as in the underlying L1 mainnet. At the same time, the transaction throughput is significantly increased.
+**zkSync** is a trustless scaling solution for Ethereum. It uses zero-knowledge proof cryptography to secure its operation. This allows **zkSync** protocol to keep the assets as safe as in the underlying L1 mainnet. At the same time, transaction throughput is significantly increased.
 
 Today, you can use it for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligible cost per transaction (see the [Speed](/faq/speed/) section).
 
@@ -54,4 +54,4 @@ As of today (Apr 17, 2020) the full transfer price is estimated to be ~0.004 USD
 
 ## How do users pay tx fees?
 
-Transfers in **zkSync** work as "gasless metatransactions": users pay transaction fees in the tokens being transferred. Thus, for example, if you want to transfer DAI stablecoin, there is no need for you to own ETH or any other tokens. Just pay your fees in a fraction of DAI.
+Transfers in **zkSync** work as "gasless meta-transactions": users pay transaction fees in the tokens being transferred. Thus, for example, if you want to transfer DAI stable-coin, there is no need for you to own ETH or any other tokens. Just pay your fees in a fraction of DAI.
