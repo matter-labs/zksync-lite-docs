@@ -1,6 +1,6 @@
-# Tutorial
+# Getting started
 
-Here we show how to
+In this tutorial we will demonstrate how to:
 
 1. Connect to the zkSync network.
 2. Create a private key in the zkSync. 

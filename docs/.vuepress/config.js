@@ -39,35 +39,21 @@ module.exports = {
                     children: [
                       //['/faq/why', 'Why should I care?'],
                       '/faq/intro',
-                      //'/faq/functionality',
                       '/faq/speed',
                       '/faq/security',
                       '/faq/decentralization',
                       '/faq/sc',
                       '/faq/privacy'
                     ]
-                },
-                // {
-                //     title: 'Technology',
-                //     path: '/tech/',
-                //     children: [
-                //         '/tech/zkp',
-                //         '/tech/zkrollup',
-                //         '/tech/plonk',
-                //         '/tech/redshift'
-                //       ]
-                // },                 // {
-                //     title: 'User guide',
-                //     path: '/user/'
-                // },                
+                },             
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/dev/getting-started',
                       '/dev/tutorial',
+                      '/dev/basic',
                       '/dev/providers',
                       '/dev/accounts',
                       '/dev/utils',
