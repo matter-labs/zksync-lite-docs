@@ -10,7 +10,7 @@ module.exports = {
         [
             'vuepress-plugin-canonical',
             {
-                baseURL: 'https://docs.zksync.io', // base url for your canonical link, optional, default: ''
+                baseURL: 'https://zksync.io', // base url for your canonical link, optional, default: ''
                 stripExtension: false // strip '.html' , optional, default: false
             }
         ]
