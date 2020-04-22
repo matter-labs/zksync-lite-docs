@@ -2,7 +2,11 @@
 
 [[toc]]
 
-## How secure is zkSync?
+## How is zkSync secured?
+
+::: warning
+**zkSync v1.0** is in alpha. Blockchains and zero-knowledge proofs are still experimental technologies with rapidly evolving attack vectors. zkSync relies on cutting-edge cryptography that has never been used in production before. While Matter Labs is rigorously following scientific and engineering best practices with regard to security, we can not provide 100% fault-free guarantee. Use zkSync at your own risk and do not put more money into it than you can afford to lose.
+:::
 
 [zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md) document explicitly lists the protocol's cryptographic assumptions and security properties.
 
@@ -75,18 +79,6 @@ Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x
 The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. Full ceremony transcript with the list of indviduals and organizations who claimed their contribution [is available here](https://www.aztecprotocol.com/ignition/). You can use [this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed participants.
 
 zkSync version 2.0 will run on [RedShift](https://eprint.iacr.org/2019/1400), a transparent proof system developed by Matter Labs, which does not require any trusted setup.
-
-## What risks are involved?
-
-No software can be guaranteed to be 100% error-free. Blockchain is stil an experimental technology with rapidly evolving attack vectors. While Matter Labs is undertaking maximum possible efforts to protect your funds (including security audit and following established security practices), it is our duty to inform the users of zkSync of the potential risks of using any new crypto technology:
-
-- There can be a bug in the smart contracts.
-- There can be a bug in zero-knowledge circuits.
-- Trusted setup could be compromised.
-- New theoretical and breaches in the cryptography applied can be discovered.
-- Finally, your wallet can be hacked.
-
-We encourage you take your security seriously, but also account for potential failures. Use zkSync at your own risk and do not put more money into it than you can afford to lose.
 
 ## Is there a security audit?
 
