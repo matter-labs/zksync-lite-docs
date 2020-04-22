@@ -32,7 +32,7 @@ If a new **zkSync** block is produced and submitted to the mainchain, it cannot 
 
 A portion of the slashed funds will be used to compensate the tx recipient. The rest will be burned.
 
-## What if Ethereum is congested?
+## What if mainnet gets congested?
 
 Periodically, extrordinary events lead to very high levels of congestion on the Ethereum network (notable examples are [Cryptokitties crisis](https://media.consensys.net/the-inside-story-of-the-cryptokitties-congestion-crisis-499b35d119cc) or the [Shanghai DOS attack](https://blog.ethereum.org/2016/09/22/ethereum-network-currently-undergoing-dos-attack/)). During such peak load times, gas prices skyrocket and it might become prohibitatively expensive to move crypto assets, rendering some services unoperational or preventing arbitrage opportunities.
 
