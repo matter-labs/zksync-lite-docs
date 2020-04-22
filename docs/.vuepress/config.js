@@ -1,6 +1,6 @@
 module.exports = {
     title: 'zkSync docs', // adding title gives us a header with search box
-    description: 'Documentation for zkSync: simple, fast and secure token transfers',
+    description: 'zkSync: simple, fast and secure token transfers',
     repo: 'matter-labs/zksync',
     dest: 'dist',
     markdown: {
