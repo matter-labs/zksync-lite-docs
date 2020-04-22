@@ -59,7 +59,7 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 
 The version 1.0 of zkSync protocol is using the PLONK proof system which requires a universal trusted setup.
 
-Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x04a23ba68e4469061cd461e8b847e820d4ced948?timestamp=1587551054947) in the global Ignition trusted setup ceremony for PLONK coordinated by AZTEC protocol:
+Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x04a23ba68e4469061cd461e8b847e820d4ced948?timestamp=1587551054947) in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve, coordinated by AZTEC protocol:
 
 <table>
 <tr>
@@ -72,13 +72,13 @@ Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x
 </tr>
 </table>
 
- The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. You can review the [full ceremony transcript here](https://www.aztecprotocol.com/ignition/) with the list of indviduals and organizations who claimed their contribution.
+The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. Full ceremony transcript with the list of indviduals and organizations who claimed their contribution [is availble here](https://www.aztecprotocol.com/ignition/). You can use [this script](https://github.com/matter-labs/ignition-verification) to verify contributions of the listed participants.
 
 zkSync version 2.0 will run on [RedShift](https://eprint.iacr.org/2019/1400), a transparent proof system developed by Matter Labs, which does not require any trusted setup.
 
 ## What potential risks are involved?
 
-No software is bugfree. Blockchain is stil an experimental technology with rapdily evolving attack vectors. While Matter Labs is undertaking maximum possible efforts to protect your funds (including security audit and following established security practices), it is our duty to inform the users of zkSync of the potential risks of using any new crypto technology:
+No software can be guaranteed to be 100% error-free. Blockchain is stil an experimental technology with rapdily evolving attack vectors. While Matter Labs is undertaking maximum possible efforts to protect your funds (including security audit and following established security practices), it is our duty to inform the users of zkSync of the potential risks of using any new crypto technology:
 
 - There can be a bug in the smart contracts.
 - There can be a bug in zero-knowledge ciruits.
