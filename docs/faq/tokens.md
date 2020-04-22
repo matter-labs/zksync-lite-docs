@@ -2,11 +2,11 @@
 
 [[toc]]
 
-## What tokens are supported?
+## Supported tokens
 
 **zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially, new tokens need to be manually whitelisted by the operator. In the future adding new tokens will be permissionless.
 
-## How high are the tx fees?
+## Fee costs
 
 In **zkSync** the cost of every transaction has two components:
 
@@ -15,6 +15,6 @@ In **zkSync** the cost of every transaction has two components:
 
 As of today (Apr 17, 2020) the full transfer price is estimated to be ~0.004 USD.
 
-## How do users pay tx fees?
+## How fees are payed
 
 Transfers in **zkSync** work as "gasless meta-transactions": users pay transaction fees in the tokens being transferred. Thus, for example, if you want to transfer DAI stable-coin, there is no need for you to own ETH or any other tokens. Just pay your fees in a fraction of DAI.

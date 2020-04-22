@@ -1,8 +1,8 @@
-# Overview
+# Introduction
 
 [[toc]]
 
-## What is zkSync?
+## Overview
 
 **zkSync** is a trustless scaling solution for Ethereum. It uses zero-knowledge proof cryptography to secure its operation. This allows **zkSync** protocol to keep the assets as safe as in the underlying L1 mainnet. At the same time, transaction throughput is significantly increased.
 
@@ -10,7 +10,7 @@ Today, you can use it for secure, user-friendly **ETH and ERC20 token transfers*
 
 Soon, **zkSync** will support [Smart contracts](/faq/sc) and [Privacy](/faq/privacy).
 
-## How does it work?
+## How it works: zkRollup
 
 The architecture employed by **zkSync** is called **zkRollup**. 
 

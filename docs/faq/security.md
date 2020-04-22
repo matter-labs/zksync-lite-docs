@@ -2,7 +2,7 @@
 
 [[toc]]
 
-## How is zkSync secured?
+## Security overview
 
 ::: warning
 **zkSync v1.0** is in alpha. Blockchains and zero-knowledge proofs are still experimental technologies with rapidly evolving attack vectors. zkSync relies on cutting-edge cryptography that has never been used in production before. While Matter Labs is rigorously following scientific and engineering best practices with regard to security, we can not provide 100% fault-free guarantee. Use zkSync at your own risk and do not put more money into it than you can afford to lose.
@@ -39,7 +39,7 @@ The version 1.0 of zkSync protocol comes with a contract upgrade mechanism in or
 
 In the future, the opt-out mechanism will be replaced by a strict opt-in into the new version.
 
-## What cryptography is being used?
+## Cryptography used
 
 Although zkSync is built on some of the most cutting-edge cryptography (such as PLONK and RedShift), we were very conservative with respect to security choices made in the protocol. Every component relies exclusively on well established cryptographic assumptions widely considered secure in the academic and professional security community.
 
@@ -59,7 +59,7 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
 3. [Elliptic curve DLP](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
 
-## What about the trusted setup?
+## Trusted setup
 
 The version 1.0 of zkSync protocol is using the PLONK proof system which requires a universal trusted setup.
 
@@ -80,6 +80,6 @@ The ceremony ran from October 2019 until December 2019, with 176 participants fr
 
 zkSync version 2.0 will run on [RedShift](https://eprint.iacr.org/2019/1400), a transparent proof system developed by Matter Labs, which does not require any trusted setup.
 
-## Is there a security audit?
+## Security audit
 
 The audit by [ABDK Consulting](https://www.abdk.consulting/) for zkSync v1.0 is underway, the results will be published here. The audit scope includes the protocol design, applied cryptography, smart contracts and zero-knowledge circuits.
