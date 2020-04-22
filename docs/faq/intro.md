@@ -4,13 +4,15 @@
 
 ## What is zkSync?
 
-**zkSync** is a trustless scaling solution for Ethereum with cryptographic guarantees to preserve the same level of security while significantly increasing the transaction throughput.
+**zkSync** is a trustless scaling solution for Ethereum. It uses zero-knowledge proof cryptography to secure its operation. This allows **zkSync** protocol to keep the assets as safe as in the underlying L1 mainnet. At the same time, the transaction throughput is significantly increased.
 
 Today, you can use it for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligable cost per transaction (see the [Speed](/faq/speed/) section).
 
-In the near future, **zkSync** will add [Smart contracts](/faq/sc) and [Privacy](/faq/privacy).
+In the near future, **zkSync** will support [Smart contracts](/faq/sc) and [Privacy](/faq/privacy).
 
 ## How does it work?
+
+The architecture employed by **zkSync** is called **zkRollup**. 
 
 All funds are held by a smart contract on the mainchain, while computation and storage are performed off-chain. In a nutshell it works as follows:
 
@@ -19,7 +21,7 @@ All funds are held by a smart contract on the mainchain, while computation and s
 3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is also published over the mainchain network as cheap `calldata`. This enables anyone to reconstruct the state at every moment.
 4. The proof and the state ∆ is verified by the smart contract, thus verifying both the validity of all the transactions included in the block and block data availability. 
 
-This architecture is called **zkRollup**. The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is much cheaper than storing it in EVM. Hence a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
+The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is much cheaper than storing it in EVM. Hence a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
 
 zkRollup architecture provides the following guarantees:
 

@@ -2,9 +2,7 @@
 
 At the moment, all transactions in **zkSync** are transparent: just like in Ethereum, anybody can see sender, recepient and all details of the transaction.
 
-However, privacy is extremely important. Most people won’t feel comfortable moving large parts of their fortune into a publicly exposed glass box. Inhabitants of dangerous places — Venezuela, for instance — are unlikely to pay a local merchant in crypto if the recipient can immediately learn how much money they have. People creating or consuming obscene content, such as pornography, will be unlikely to use crypto as an alternative to Paypal if these payments can potentially be linked to their real-world identities.
-
-Thus, privacy is an absolute prerequisite for mass adoption and an important part of **zkSync** roadmap.
+However, we take the privacy cause very seriously. Most people won’t feel comfortable moving large parts of their fortune into a publicly exposed glass box. Inhabitants of dangerous places are unlikely to pay a local merchant in crypto if the recipient can immediately learn how much money they have. Privacy is an absolute prerequisite for mass adoption and an important part of **zkSync** roadmap.
 
 Implementing privacy comes with two big challenges:
 
