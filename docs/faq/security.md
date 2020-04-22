@@ -76,7 +76,7 @@ The ceremony ran from October 2019 until December 2019, with 176 participants fr
 
 zkSync version 2.0 will run on [RedShift](https://eprint.iacr.org/2019/1400), a transparent proof system developed by Matter Labs, which does not require any trusted setup.
 
-## What potential risks are involved?
+## What risks are involved?
 
 No software can be guaranteed to be 100% error-free. Blockchain is stil an experimental technology with rapdily evolving attack vectors. While Matter Labs is undertaking maximum possible efforts to protect your funds (including security audit and following established security practices), it is our duty to inform the users of zkSync of the potential risks of using any new crypto technology:
 
