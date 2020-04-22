@@ -93,7 +93,7 @@ if (! await syncWallet.isSigningKeySet()) {
 
     const changePubkey = await syncWallet.setSigningKey();
 
-    // Wait untill transaction is committed
+    // Wait until the tx is committed
     await changePubkey.awaitReceipt();
 }
 ```
