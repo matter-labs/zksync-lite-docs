@@ -25,7 +25,7 @@ See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-
 
 In the ultimate emergency case of operator being shut down or becoming unresponsive, the emergency exit mechanism ensures that users will keep control of their assets. It works as follows.
 
-1. If users transactions are being for any reason ignored by the operator, she can submit an exit request into the **priority queue**.
+1. If user's transactions are being for any reason ignored by the operator, an exit request can be submitted directly on mainnet into the **priority queue**.
 2. Operators are obliged to process priority queue requests within a short time window (~1 week).
 3. In case the operators fail to process the requests, the system enters **exodus mode** and every user can immediately exit all of their assets by making a direct transaction on the Ethereum mainnet.
 
