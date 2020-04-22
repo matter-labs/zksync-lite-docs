@@ -30,7 +30,12 @@ module.exports = {
             }            
         ],
         //displayAllHeaders: true,
-        sidebar: [         
+        sidebar: {
+            '/legal/': [
+                '/legal/terms',
+                '/legal/privacy'
+            ],
+            '/': [         
                 {
                     title: 'FAQ',  // required
                     path: '/faq/', // optional, which should be a absolute path.
@@ -62,6 +67,7 @@ module.exports = {
                     ]
                 },
             ]
+        }
     },
     head: [
         [ 'script', { src: "/__/firebase/7.13.2/firebase-app.js",       defer: true }, ''],
