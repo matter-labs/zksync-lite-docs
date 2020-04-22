@@ -4,8 +4,8 @@ zkSync is a scaling and privacy engine for Ethereum. Its current functionality s
 
 ## Resources
 
-- [ZK Sync demo](https://demo.zksync.dev/explorer/)
-- [ZK Sync JS SDK github page](https://github.com/matter-labs/zksync/tree/master/js/zksync.js)
+- [zkSync demo](https://demo.zksync.dev/explorer/)
+- [zkSync JS SDK github page](https://github.com/matter-labs/zksync/tree/master/js/zksync.js)
 
 ## Table of contents
 
