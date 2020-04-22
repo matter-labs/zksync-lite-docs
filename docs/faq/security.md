@@ -74,6 +74,11 @@ Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x
     <td>Transcript hash</td>
     <td>0x1f6647d91a9e667173640b67b654cabc81ceee98d6100f259788afb34a3fc529</td>
 </tr>
+<tr>
+    <td>Signature</td>
+    <td>0x3f4ff7b9a6668c23c9ba45d73d1d9d0902b881191d97b307969b63f52296f2326d437ea04dd67a2ebe57a691025d7d31bb0dae88e8023a0d9b15ad599c3eb9351b</td>
+</tr>
+
 </table>
 
 The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. Full ceremony transcript with the list of indviduals and organizations who claimed their contribution [is available here](https://www.aztecprotocol.com/ignition/). You can use [this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed participants.
