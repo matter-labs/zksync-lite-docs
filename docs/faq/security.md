@@ -59,7 +59,7 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 
 The version 1.0 of zkSync protocol is using the PLONK proof system which requires a universal trusted setup.
 
-Matter Labs participated in the global Ignition trusted setup ceremony for PLONK coordinated by the AZTEC protocol. The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. You can review the [full ceremony transcript here](https://www.aztecprotocol.com/ignition/) with the list of indviduals and organizations who claimed their contribution.
+Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x04a23ba68e4469061cd461e8b847e820d4ced948?timestamp=1587551054947) in the global Ignition trusted setup ceremony for PLONK coordinated by the AZTEC protocol (address: 0x04a23ba68e4469061cd461e8b847e820d4ced948, transcript hash: 0x1f6647d91a9e667173640b67b654cabc81ceee98d6100f259788afb34a3fc529). The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. You can review the [full ceremony transcript here](https://www.aztecprotocol.com/ignition/) with the list of indviduals and organizations who claimed their contribution.
 
 zkSync version 2.0 will run on [RedShift](https://eprint.iacr.org/2019/1400), a transparent proof system developed by Matter Labs, which does not require any trusted setup.
 
@@ -77,6 +77,4 @@ We encourage you take your security seriously, but also account for potential fa
 
 ## Is there a security audit?
 
-zkSync version 1.0 has been audited by ABDK Consulting. The audit analyzed the protocol design, applied cryptography, smart contracts and zero-knowledge circuits. The results can be found here: 
-
-TODO: insert link.
+The audit by [ABDK Consulting](https://www.abdk.consulting/) for zkSync v1.0 is underway, the results will be published here. The audit scope includes the protocol design, applied cryptography, smart contracts and zero-knowledge circuits.
