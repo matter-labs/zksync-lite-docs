@@ -122,7 +122,7 @@ const committedETHBalance = verifiedBalances["ETH"];
 
 ## Making a transfer in zkSync
 
-Now, let's create a second wallet and transfer some funds into it.
+Now, let's create a second wallet and transfer some funds into it. Note that we can send assets to any fresh Ethereum account, without preliminary registration!
 
 ```typescript
 const ethWallet2 = ethers.Wallet.fromMnemonic( MNEMONIC2 ).connect(ethersProvider);
