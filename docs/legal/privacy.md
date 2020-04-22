@@ -4,7 +4,7 @@ This is the privacy policy (“Privacy Policy”) for any application or web ser
 
 ## Introduction
 
-zkSync and its affiliates are committed to protecting and respecting your privacy. In addition, we recognize that persons who use zkSync value their privacy. This Privacy Policy together with our Terms of Service governs our collection, processing and use of your Personal Information. By accessing the App, you are consenting to the information collection and use practices described in this Privacy Policy.
+zkSync and its affiliates are committed to protecting and respecting your privacy. In addition, we recognize that persons who use zkSync value their privacy. This Privacy Policy together with our [Terms of Service](/legal/terms) governs our collection, processing and use of your Personal Information. By accessing the App, you are consenting to the information collection and use practices described in this Privacy Policy.
 
 This Privacy Policy applies to the operations of zkSync in the European Economic Area (EEA). It gives you rights by operation of the EU GDPR. If you live outside the EEA, zkSync will undertake best efforts to give you a similar degree of control over your privacy.
 
@@ -53,11 +53,11 @@ Personal Information and other related data may be exported outside of the juris
 
 ## Consent
 
-Consent is required for the collection of Personal Information and the subsequent use of disclosure of Personal Information. The form of consent may vary depending upon the circumstances and the type of Personal information obtained. Your agreement with zkSync’s End-User Licence Agreement (hereafter “EULA”, “Terms of Use” or “Terms of Service”) constitutes your consent to the collection and use of Personal Information as described in this Privacy Policy. zkSync reserves the right to use and disclose Personal Information without your knowledge or consent as permitted by applicable law.
+Consent is required for the collection of Personal Information and the subsequent use of disclosure of Personal Information. The form of consent may vary depending upon the circumstances and the type of Personal information obtained. Your agreement with zkSync’s [Terms of Service](/legal/terms) constitutes your consent to the collection and use of Personal Information as described in this Privacy Policy. zkSync reserves the right to use and disclose Personal Information without your knowledge or consent as permitted by applicable law.
 
 ## Disclosure of Personal Information
 
-We use the Personal Information for the purposes indicated at the time you provide us with such information, and/or otherwise for the purposes set out in this Privacy Policy and/or as otherwise permitted by law. We may make available the Personal Information that you provide to us to our affiliates, agents, representatives, service providers and contractors for these purposes. We also reserve the right to disclose Personal information that zkSync believe, in good faith, is appropriate or necessary to enforce our Terms of Use, take precautions against liability or harm, to investigate and respond to third-party claims or allegations, to respond to a court order or official requests, to protect security or integrity of zkSync and to protect the rights, property or safety of zkSync, our uses or others.
+We use the Personal Information for the purposes indicated at the time you provide us with such information, and/or otherwise for the purposes set out in this Privacy Policy and/or as otherwise permitted by law. We may make available the Personal Information that you provide to us to our affiliates, agents, representatives, service providers and contractors for these purposes. We also reserve the right to disclose Personal information that zkSync believe, in good faith, is appropriate or necessary to enforce our [Terms of Service](/legal/terms), take precautions against liability or harm, to investigate and respond to third-party claims or allegations, to respond to a court order or official requests, to protect security or integrity of zkSync and to protect the rights, property or safety of zkSync, our uses or others.
 
 We may share Users' Personal Information with any financial dispute resolution scheme to which the Company subscribes, and other law enforcement bodies, regulatory agencies, courts, arbitration bodies and dispute resolution schemes, both in Switzerland and internationally, as may be required by law.
 

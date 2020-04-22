@@ -3,7 +3,7 @@
 Terms Of Service
 Last Updated: April 22, 2020
 
-Stichting ZK Sync, the foundation registered in Amsterdam, Netherlands, under RSIN: 861038204 ("zkSync", “we,” “our,” or “us”) provides its services through its website located at under zksync.io, zkscan.io and their subdomains. Before using our Services, please read the Terms of Service (the “Terms” or the “Agreement”) carefully, along with any other policies or notices on zkSync website, and our [Privacy Policy](/legal/privacy-policy). Together, these materials contain terms, rules, and guidelines related to your use of zkSync.
+Stichting ZK Sync, the foundation registered in Amsterdam, Netherlands, under RSIN: 861038204 ("zkSync", “we,” “our,” or “us”) provides its services through its website located at under zksync.io, zkscan.io and their subdomains. Before using our Services, please read the Terms of Service (the “Terms” or the “Agreement”) carefully, along with any other policies or notices on zkSync website, and our [Privacy Policy](/legal/privacy). Together, these materials contain terms, rules, and guidelines related to your use of zkSync.
 
 ## OVERVIEW
 
@@ -11,7 +11,7 @@ We know that Terms can be long and confusing, so we will do our best to keep thi
 
 ## HOW YOU ACCEPT THIS POLICY
 
-By creating or importing a locally hosted wallet (a “Wallet”), or visiting our website, you acknowledge that you have read, understood, and agreed to these Terms, as well as the accompanying [Privacy Policy](/legal/privacy-policy) We reserve the right to change these Terms at any time. Any such changes with respect to your use of zkSync will take effect immediately when posted on our website. Your continued use of zkSync following any such change will signify your acceptance to be bound by the then current Terms. Please check the effective date above to determine if there have been any changes since you have last reviewed these Terms. If you do not agree to this Agreement or any modifications to this Agreement, you should not use zkSync. Failure or delay by zkSync in enforcing or partially enforcing any provision of these Terms shall not be construed as a waiver of any rights.
+By creating or importing a locally hosted wallet (a “Wallet”), or visiting our website, you acknowledge that you have read, understood, and agreed to these Terms, as well as the accompanying [Privacy Policy](/legal/privacy) We reserve the right to change these Terms at any time. Any such changes with respect to your use of zkSync will take effect immediately when posted on our website. Your continued use of zkSync following any such change will signify your acceptance to be bound by the then current Terms. Please check the effective date above to determine if there have been any changes since you have last reviewed these Terms. If you do not agree to this Agreement or any modifications to this Agreement, you should not use zkSync. Failure or delay by zkSync in enforcing or partially enforcing any provision of these Terms shall not be construed as a waiver of any rights.
 
 ## ELIGIBILITY
 
