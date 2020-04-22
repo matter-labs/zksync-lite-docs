@@ -15,14 +15,14 @@ yarn add zksync
 yarn add ethers # For interactions with ETH network, ethers is peer dependency of zksync.
 ```
 
-Add imports.
+Adding imports:
 
 ```typescript
 import {ethers} from "ethers";
 import * as zksync from "zksync";
 ```
 
-Alternatively.
+Alternatively, use legacy-style:
 
 ```javascript
 const ethers = require("ethers");
@@ -62,7 +62,7 @@ location ~ ^/client {
 
 ## Connecting to the Sync network
 
-To interact with Sync network users have to know the endpoint of the operator node.
+To interact with Sync network users need to know the endpoint of the operator node.
 
 ```typescript
 const syncProvider = await zksync.getDefaultProvider("testnet");
@@ -82,8 +82,6 @@ We use `ethers` library to interact with Ethereum.
 
 Addresses of the Sync network contracts should be known in advance, 
 for convenience now we can get these addresses from Sync network operator using `syncProvider`. 
-
-
 
 ```typescript
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
@@ -128,7 +126,6 @@ const deposit = await syncWallet.depositToSyncFromEthereum({
 ```
 
 After transaction is submitted to the Ethereum we can track its progress using returned object.
-
 
 ```typescript
 // If we want to wait until deposit is processed by the SyncNetwork.
@@ -200,7 +197,6 @@ To transfer funds from one Sync account to another we can use the `syncTransfer`
 We are going to transfer `0.999 ETH` to another account and pay `0.001 ETH` as a fee to the operator. 
 (zkSync balance of the sender is going to be decreased by `0.999 + 0.001 ETH`).
 
-
 ```typescript
 // significant digits in the transfer transaction is limited, that is why we use utils to check/strip significant digits. 
 const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther("0.999")); 
@@ -227,7 +223,6 @@ To withdraw funds from Sync account to ethereum account we can use the `withdraw
 We are going to withdraw `0.998 ETH` from the second sync account to the second ethereum wallet and pay `0.001 ETH` as a fee. 
 (zkSync balance is going to be decreased by `0.998 + 0.001 ETH` ).
 
-
 ```typescript
 // significant digits for fee in the withdraw transaction is limited, that is why we use utils to check/strip significant digits. 
 const fee = zksync.utils.closestPackableTransactionFee(ethers.utils.parseEther("0.001")); 
@@ -242,7 +237,6 @@ const withdraw= await syncWallet2.withdrawTo({
 
 Funds will be withdrawn to the target wallet after ZKP for sync block with this operation is produced and verified.
 We can wait until ZKP verification is completed using a returned transaction. 
-
 
 ```typescript
 await withdraw.awaitVerifyReceipt();
