@@ -39,7 +39,7 @@ Here are some links to explore the topic of zkRollups:
 
 ## What tokens are supported?
 
-Users can use **zkSync** to transfer ether (ETH) and ERC20 tokens.
+**zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially new tokens need to be manually whitelisted by the operator. In the future adding new tokens will be permissionless.
 
 ## How high are the tx fees?
 
