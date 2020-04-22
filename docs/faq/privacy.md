@@ -9,4 +9,4 @@ Implementing privacy comes with two big challenges:
 - It must be on by default as an integral protocol feature. To quote Vitalik Buterin: “If your privacy model has a medium anonymity set, it really has a small anonymity set. If your privacy model has a small anonymity set, it has an anonymity set of 1. Only global anonymity sets are truly robustly secure.”
 - To enable privacy by default, private transaction costs must be very low, despite significant added computational overhead.
 
-This is why we decided to focus our efforts on the scalability of **zkSync** first. Once the prover technology is far enough to add privacy without much cost overhead and scalability penalty, it will be added to the platform.
+This is why we decided to focus our efforts on the scalability of **zkSync** first. Once the prover technology is good enough to add privacy without much cost and scalability overhead, it will be added to the platform.
