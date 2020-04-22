@@ -12,7 +12,7 @@ In this tutorial we will demonstrate how to:
 
 ```bash
 yarn add zksync
-yarn add ethers # For interactions with ETH network, ethers is peer dependency of zksync.
+yarn add ethers # ethers is a peer dependency of zksync
 ```
 
 Adding imports:
