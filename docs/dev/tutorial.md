@@ -83,7 +83,7 @@ const depositReceipt = await deposit.awaitVerifyReceipt();
 
 ## Unlocking zkSync account
 
-To control assets in zkSync network, an account must register a separate public key once ([more details here](#changing-account-public-key)).
+To control assets in zkSync network, an account must register a separate public key once.
 
 ```typescript
 if (! await syncWallet.isSigningKeySet()) {
