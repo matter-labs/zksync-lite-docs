@@ -48,6 +48,20 @@ export interface AccountState {
     // Ethereum address of the account
     address: Address;
     id?: number;
+    // Data about deposits that already are on the Ethereum blockchain, but
+    // not yet processed by the zkSync network.
+    depositing: {
+        balances: {
+            // Token are indexed by their symbol (e.g. "ETH")
+            [token: string]: {
+                // Sum of pending deposits for the token.
+                amount: utils.BigNumberish,
+                // Value denoting the block number when the funds are expected
+                // to be received by zkSync network.
+                expectedAcceptBlock: number,
+            };
+        };
+    };
     // Committed state is the last state known to the zkSync network, can be ahead of verified state
     committed: {
         balances: {
@@ -70,6 +84,17 @@ export interface AccountState {
     };
 }
 ```
+
+"Depositing" balances are balances for which deposit operation has already appeared on the Ethereum blockchain,
+but which still do not have enough confirmations to be processed by the `zkSync` network.
+
+For depositing balances, two fields are available: `amount` (sum of ongoing deposit operations for token), and
+`expectedAcceptBlock` - the number of block, when all the deposit operations for this token are expected to be
+processed by `zkSync` network.
+
+Note that `depositing` balance data is anticipated, since block with deposit operation can be reverted on
+Ethereum blockchain. This information should be used for informing user about ongoing operations only, and not
+taken as a guarantee of the execution. 
 
 ## Transactions
 

@@ -205,6 +205,14 @@ async getState(address: Address): Promise<AccountState>;
         },
         "nonce": 1,
     },
+    "depositing": {
+        "balances": {
+            "FAU": {
+                "amount": "9000000000000000",
+                "expectedAcceptBlock": 438929
+            }
+        }
+    },
     "verified": {
         "balances": {
             "ETH": "1000000000000000000", // 1 Ether in Wei 
@@ -216,6 +224,28 @@ async getState(address: Address): Promise<AccountState>;
 }
 ```
 
+For details on the `depositing` section, see the description of `AccountState` type on the `types` page.
+
+### Get amount of confirmations required for priority operations
+
+> Signature
+```typescript
+async getConfirmationsForEthOpAmount(): Promise<number>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| returns | Amount of confirmations required for priority operations to be processed by zkSync network |
+
+> Example
+
+```typescript
+import * as zksync from "zksync";
+const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const required_confirmations_amount = await syncWSProvider.getConfirmationsForEthOpAmount();
+```
 
 ### Get transaction receipt
 
