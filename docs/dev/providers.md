@@ -239,11 +239,13 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 | -- | -- |
 | returns | Amount of confirmations required for priority operations to be processed by zkSync network |
 
-> Example 
+> Example
+
 ```typescript
 import * as zksync from "zksync";
 const syncWSProvider = await zksync.getDefaultProvider("testnet")
-const receipt = await syncWSProvider.getConfirmationsForEthOpAmount();
+const required_confirmations_amount = await syncWSProvider.getConfirmationsForEthOpAmount();
+```
 
 ### Get transaction receipt
 
