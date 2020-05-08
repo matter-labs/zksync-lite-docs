@@ -506,6 +506,43 @@ const ethId = await ethProxy.resolveTokenId("0x000000000000000000000000000000000
 const erc20Id = await ethProxy.resolveTokenId("0xFab46E002BbF0b4509813474841E0716E6730136");
 ```
 
+### Estimate deposit fee
+
+Estimates fee required for submitting deposit transactions. Fee for deposit always is always paid in `ETH` token.
+
+> Signature
+
+```typescript
+async estimateDepositFeeInETHToken(token: TokenLike, gasPrice?: utils.BigNumber): Promise<utils.BigNumber>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| token | Ethereum token identifier (symbol or address) |
+| gasPrice | Gas price that will be used for transaction. |
+| returns | Fee that has to be paid for deposit |
+
+
+
+### Estimate emergency withdraw fee
+
+Estimates fee required for submitting emergency withdraw transaction. Fee for emergency withdraw is always paid in `ETH` token.
+
+> Signature
+
+```typescript
+async estimateEmergencyWithdrawFeeInETHToken(gasPrice?: utils.BigNumber): Promise<utils.BigNumber>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| gasPrice | Gas price that will be used for transaction. |
+| returns | Fee that has to be paid for emergency withdraw |
+
 # Providers
 
 JSON-RPC protocol is used to communicate with Sync network nodes.

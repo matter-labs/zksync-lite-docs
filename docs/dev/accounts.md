@@ -25,8 +25,6 @@ static async fromEthSigner(
     ethWallet: ethers.Signer,
     provider: Provider,
     signer?: Signer
-    accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
 ): Promise<Wallet>;
 ```
 
@@ -37,8 +35,6 @@ static async fromEthSigner(
 | ethWallet | `ethers.Signer` that corresponds to keys that own this account|
 | provider | Sync provider that is used for submitting a transaction to the Sync network. |
 | signer (optional) | Sync signer that will be used for transaction signing. If undefined `Signer` will be derived from ethereum signature of specific message.|
-| accountId (optional) | zkSync account id of the account. If undefined it will be queried from the server.|
-| ethSignatureType (optional) | Type of signature that is produced by `ethWallet`. If undefined we will guess it using signature output.|
 | returns | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`) 
 
 > Example
@@ -61,9 +57,7 @@ const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
 ```typescript
 static async fromEthSignerNoKeys(
     ethWallet: ethers.Signer,
-    provider: Provider,
-    accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    provider: Provider
 ): Promise<Wallet>;
 ```
 
@@ -75,8 +69,6 @@ This way wallet won't contain any valid zkSync keys to perform transactions, but
 | -- | -- |
 | ethWallet | `ethers.Signer` that corresponds to keys that own this account|
 | provider | Sync provider that is used for submitting a transaction to the Sync network. |
-| accountId (optional) | zkSync account id of the account. If undefined it will be queried from the server.|
-| ethSignatureType (optional) | Type of signature that is produced by `ethWallet`. If undefined we will guess it using signature output.|
 | returns | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`) 
 
 > Example
@@ -212,12 +204,24 @@ async isERC20DepositsApproved(token: TokenLike): Promise<boolean>;
 ### Deposit token to Sync
 
 Moves funds from the ethereum account to the Sync account.
+Fees are paid by ethereum account in ETH currency. The fee should be >=  base fee, calculated on the contract based on the current gas price. 
 
-To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever using 
+Formula for base fee calculation:
+
+| Token | Formula |
+| -- | -- |
+| ETH token | `2 * 179000 * GAS_PRICE` |
+| ERC20 token | `2 * 214000 * GAS_PRICE` |
+
+See [utils for estimating fee](#estimate-deposit-fee).
+
+For ETH token deposit `amount` of the ETH will be deposited to the zkSync network and on top of that, some fee will be spent according to the formula above.
+In other words, user will spend (`amount` + `fee` + `gasFee for deposit transaction`) on the Ethereum network and receive (`amount`) on the zkSync account.
+
+For the ERC20 token transfer fees are paid in the ETH token. To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever using 
 [unlocking ERC20 token](#unlocking-erc20-deposits), or the user can approve the exact amount (required for a deposit) upon each deposit, but this is not recommended.
 
-Once the operation is committed to the Ethereum network, we have to wait for some number of confirmations 
-(see [provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before accepting it in the zkSync network. 
+Once the deposit transaction is committed to the Ethereum network, we have to wait for 30 confirmations before accepting it in the zkSync network. 
 After the transaction is committed to the zkSync network, funds are already usable by the recipient, meaning that there is no need to wait for verification before proceeding
 unless additional confirmation is required for your application.
 To wait for the transaction commitment on the zkSync network, use `awaitReceipt`(see [utils](#awaiting-for-operation-completion)).
@@ -231,6 +235,7 @@ async depositToSyncFromEthereum(deposit: {
     depositTo: Address;
     token: TokenLike;
     amount: utils.BigNumberish;
+    maxFeeInETHToken?: utils.BigNumberish;
     ethTxOptions?: ethers.providers.TransactionRequest;
     approveDepositAmountForERC20?: boolean;
 }): Promise<ETHOperation>;
@@ -243,6 +248,7 @@ async depositToSyncFromEthereum(deposit: {
 | deposit.depositTo | Sync account address of the receiver |
 | deposit.token | token to be transferred (symbol or address of the supported token) |
 | deposit.amount | amount of token to be transferred |
+| deposit.maxFeeInETHToken | amount of `ETH` to be paid by Ethereum wallet as a fee for this transaction. <br>If undefined, 10x of the base fee will be assumed with current `GAS_PRICE` in the formula so that the user can change the gas price of the signed tx later. The user will pay a fee calculated using the formula above with his tx mined gas price and an additional sent fee will be refunded. |
 | deposit.ethTxOptions | arguments for the deposit Ethereum transaction. Used to specify e.g. a gas price or nonce. |
 | deposit.approveDepositAmountForERC20(optional) | If set, the user will be asked to approve the ERC20 token spending to our account (not required if [token was unlocked](#unlocking-erc20-deposits))
 | returns | Handle for this transaction. | 
@@ -261,6 +267,7 @@ const depositPriorityOperation = await syncWallet.depositToSyncFromEthereum({
     depositTo: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
     token: "ETH",
     amount: ethers.utils.formatEther("1.0"),
+    maxFeeInETHToken: ethers.utils.formatEther("0.1")
 });
 
 
@@ -406,6 +413,7 @@ async syncTransfer(transfer: {
     amount: utils.BigNumberish;
     fee: utils.BigNumberish;
     nonce?: Nonce;
+    ethSignatureType?: "EthereumSignature" | "EIP1271Signature";
 }): Promise<Transaction>;
 ```
 
@@ -418,6 +426,7 @@ async syncTransfer(transfer: {
 | transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](#closest-packable-amount) |
 | transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | transfer.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| transfer.ethSignatureType | Type of the signature used by the Ethereum wallet to sign messages. "EthereumSignature" by default |
 | returns | Handle of the submitted transaction | 
 
 > Example
@@ -465,6 +474,7 @@ async withdrawFromSyncToEthereum(withdraw: {
     amount: utils.BigNumberish;
     fee: utils.BigNumberish;
     nonce?: Nonce;
+    ethSignatureType?: "EthereumSignature" | "EIP1271Signature";
 }): Promise<Transaction>;
 ```
 
@@ -477,6 +487,7 @@ async withdrawFromSyncToEthereum(withdraw: {
 | withdraw.amount | amount of token to be transferred |
 | withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | withdraw.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| withdraw.ethSignatureType | Type of the signature used by the Ethereum wallet to sign messages. "EthereumSignature" by default |
 | returns | Handle of the submitted transaction | 
 
 
@@ -508,9 +519,13 @@ withdraw request using special Ethereum transaction, this withdraw request can't
 
 Moves the full amount of the given token from the Sync account to the Ethereum account.
 
-Once the operation is committed to the Ethereum network, we have to wait for some number of confirmations 
-(see [provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before accepting it in the zkSync network. 
-Operation will be processed within the zkSync network as soon as the required amount of confirmations is reached.
+Fees are paid by the Ethereum account in the ETH currency. The fee should be greater or equal to the base fee, calculated on the contract based on the current gas price. 
+The formula for base fee calculation: ```2 * 170000 * GAS_PRICE```
+
+Once the deposit transaction is committed to the Ethereum network, we have to wait for 30 confirmations before accepting it in the zkSync network. Deposit will be processed within the zkSync network as soon as the required amount of confirmations is reached.
+After the transaction is committed to the Ethereum network, we wait for 30 confirmations before accepting it in the zkSync network then we try to process it as soon as possible.
+
+See [utils for estimating fee](#estimate-emergency-withdraw-fee).
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful
 to use `awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
@@ -522,6 +537,7 @@ to use `awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) bef
 ```typescript
 async emergencyWithdraw(withdraw: {
     token: TokenLike;
+    maxFeeInETHToken?: utils.BigNumberish;
     accountId?: number;
     ethTxOptions?: ethers.providers.TransactionRequest;
 }): Promise<ETHOperation>;
@@ -532,6 +548,7 @@ async emergencyWithdraw(withdraw: {
 | Name | Description | 
 | -- | -- |
 | withdraw.token | token to be withdrawn (symbol or address of the supported token) |
+| withdraw.maxFeeInETHToken | amount of `ETH` to be paid by Ethereum wallet as a fee for this transaction. <br>If undefined, 10x of the base fee will be assumed with current `GAS_PRICE` in the formula so that the user can change the gas price of the signed tx later. The user will pay a fee calculated using the formula above with his tx mined gas price and an additional sent fee will be refunded. |
 | withdraw.accountId | Numerical id of the given account. If undefined it is going to be resolved from the zkSync provider. |
 | withdraw.ethTxOptions | arguments for emergency withdraw Ethereum transaction. It is used to specify a gas price or nonce. |
 | returns | Handle for this transaction. | 
@@ -548,6 +565,7 @@ const syncWallet = ..; // Setup zksync wallet.
 
 const emergencyWithdrawPriorityOp = await syncWallet.emergencyWithdraw({
     token: "ETH",
+    maxFeeInETHToken: ethers.utils.parseEther("0.3")
 });
 
 
@@ -585,12 +603,7 @@ static fromSeed(seed: Buffer): Signer;
 > Signature
 
 ```typescript
-static async fromETHSignature(
-    ethSigner: ethers.Signer
-): Promise<{
-    signer: Signer;
-    ethSignatureType: "EthereumSignature" | "EIP1271Signature";
-}> {
+static async fromETHSignature(ethSigner: ethers.Signer): Promise<Signer>;
 ```
 
 #### Inputs and outputs
@@ -598,7 +611,7 @@ static async fromETHSignature(
 | Name | Description | 
 | -- | -- |
 | ethSigner | Ethereum signer that is going to be used for signature generation. |
-| returns | `Signer` derived from this seed and method that signer used to sign message. | 
+| returns | `Signer` derived from this seed | 
 
 ### Get public key hash
 
@@ -622,7 +635,6 @@ Signs transfer transaction, the result can be submitted to the Sync network.
 
 ```typescript
 signSyncTransfer(transfer: {
-    accountId: number;
     from: Address;
     to: Address;
     tokenId: number;
@@ -636,7 +648,6 @@ signSyncTransfer(transfer: {
 
 | Name | Description | 
 | -- | -- |
-| transfer.accountId | Account id of the sender | 
 | transfer.from | Address of the sender | 
 | transfer.to | Address of the recipient | 
 | transfer.tokenId | Numerical token id  | 
@@ -653,7 +664,6 @@ Signs withdraw transaction, the result can be submitted to the Sync network.
 
 ```typescript
 signSyncWithdraw(withdraw: {
-    accountId: number;
     from: Address;
     ethAddress: string;
     tokenId: number;
@@ -667,7 +677,6 @@ signSyncWithdraw(withdraw: {
 
 | Name | Description | 
 | -- | -- |
-| withdraw.accountId | Account id of the sender | 
 | withdraw.from | Account address of the sender | 
 | withdraw.ethAddress | Ethereum address of the recipient | 
 | withdraw.tokenId | Numerical token id |
