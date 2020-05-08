@@ -55,15 +55,13 @@ const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
 
 ## Depositing assets from Ethereum into zkSync
 
-We are going to deposit `1.0 ETH` to our account, and we are going to pay at most `0.1 ETH` in fees (depends on the gas price). 
-zkSync account will receive `1.0 ETH`.
+We are going to deposit `1.0 ETH` to our zkSync account.
 
 ```typescript
 const deposit = await syncWallet.depositToSyncFromEthereum({
     depositTo: syncWallet.address(),
     token: "ETH",
     amount: ethers.utils.parseEther("1.0"),
-    maxFeeInETHCurrency: ethers.utils.parseEther("0.1")
 });
 ```
 
