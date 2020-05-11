@@ -10,7 +10,7 @@
 
 Today, you can use it for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligible cost per transaction (see the [Speed](/faq/speed/) section).
 
-N-of-N multisig is possible with [muSig Schnorr signature scheme](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html).
+zkSync is cold-wallet friendly. Multisig is also possible with [muSig Schnorr signature scheme](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html).
 
 Soon, **zkSync** will support [Smart contracts](/faq/sc) and [Privacy](/faq/privacy).
 
