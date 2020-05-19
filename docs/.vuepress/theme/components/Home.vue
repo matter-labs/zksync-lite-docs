@@ -15,14 +15,14 @@
         class="description"
       >
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
-        Tune in to <a href="https://twitter.com/the_matter_labs">@the_matter_labs  </a>
+        Tune in to <a href='https://twitter.com/the_matter_labs'>@the_matter_labs</a>
       </p>
 
       <p class="action">
-        <NavLink
+        <!-- <NavLink
           class="action-button"
           :item="actionLink"
-        />
+        /> -->
         <NavLink
           class="secondary-button"
           :item="actionLink2"
@@ -65,12 +65,12 @@ export default {
       return this.$page.frontmatter
     },
 
-    // actionLink () {
-    //   return {
-    //     link: this.data.actionLink,
-    //     text: this.data.actionText
-    //   }
-    // },
+    actionLink () {
+      return {
+        link: this.data.actionLink,
+        text: this.data.actionText
+      }
+    },
 
     actionLink2 () {
       return {
