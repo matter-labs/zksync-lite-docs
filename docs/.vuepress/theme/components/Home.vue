@@ -19,10 +19,10 @@
       </p>
 
       <p class="action">
-        <!-- <NavLink
+        <NavLink
           class="action-button"
           :item="actionLink"
-        /> -->
+        />
         <NavLink
           class="secondary-button"
           :item="actionLink2"

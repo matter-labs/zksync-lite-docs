@@ -5,8 +5,8 @@ heroAlt: zkSync
 tagline: The countdown is on.
 actionText2: Read documentation
 actionLink2: faq/
-actionText: Open demo
-actionLink: https://demo.zksync.dev/explorer/
+actionText: Testnet
+actionLink: https://testnet.zksync.io
 features:
 - title: Scalable.
   details: Up to 3500 TPS. ETH and ERC20 token transfers for a fraction of a cent.
