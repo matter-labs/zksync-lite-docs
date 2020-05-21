@@ -5,7 +5,7 @@ heroAlt: zkSync
 tagline: The countdown is on.
 actionText2: Read documentation
 actionLink2: faq/
-actionText: Testnet
+actionText: Try it on testnet
 actionLink: https://testnet.zksync.io
 features:
 - title: Scalable.
