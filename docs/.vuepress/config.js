@@ -62,6 +62,7 @@ module.exports = {
                       '/dev/basic',
                       '/dev/providers',
                       '/dev/accounts',
+                      '/dev/rest',
                       '/dev/utils',
                       '/dev/types'
                     ]

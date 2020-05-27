@@ -13,5 +13,6 @@ zkSync is a scaling and privacy engine for Ethereum. Its current functionality s
 - [Basic concepts](basics.html)
 - [Providers](providers.html)
 - [Accounts](accounts.html)
+- [REST API](rest.html)
 - [Utils](utils.html)
 - [Types](types.html)
