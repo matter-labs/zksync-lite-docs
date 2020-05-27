@@ -41,7 +41,7 @@ public resolveTokenSymbol(tokenLike: TokenLike): TokenSymbol;
 
 ### Resolve token decimals
 
-Get token decimals (e.g. Ether has 18 decimals, meaning `1.0` ETH is `10 ** 18` wei).
+Get token decimals (e.g. Ether has 18 decimals, meaning `1.0` ETH is `1e18` wei).
 
 > Signature
 
@@ -51,7 +51,7 @@ public resolveTokenDecimals(tokenLike: TokenLike): number;
 
 ### Format amount for token
 
-Format `BigNumberish` amount to a human-readable string.
+Format `BigNumberish` amount to a human-readable string with respect to decimals value for given token.
 
 > Signature
 
@@ -68,7 +68,7 @@ provider.tokenSet.formatToken('USDC', '1000000000'); // "1000.0"
 
 ### Parse amount for token
 
-Parse a human-readable string to a `BigNumber`.
+Parse a human-readable string to a `BigNumber` with respect to decimals value for given token.
 
 > Signature
 
@@ -139,13 +139,13 @@ export function closestPackableTransactionFee(
 
 ### Check if formatted amount is packable for token
 
-All fees paid in transfers and withdraws should be packable to 5-byte long floating-point representation.
-This function is used to check if this formatted amount can be used as a transfer amount.
+All amounts paid in transfers should be packable to 5-byte long floating-point representation.
+`isTokenTransferAmountPackable` function allows to check if formatted amount can be used as a transfer amount.
 
 > Signature
 
 ```typescript
-public isTokenTransactionAmountPackable(
+public isTokenTransferAmountPackable(
     tokenLike: TokenLike,
     amount: string
 ): boolean;
@@ -154,7 +154,8 @@ public isTokenTransactionAmountPackable(
 ### Check if formatted fee is packable for token
 
 All fees paid in transfers and withdraws should be packable to 2-byte long floating-point representation.
-This function is used to check if this formatted amount can be used as a fee.
+`isTokenTransactionFeePackable` function is used to check if formatted amount can be used as a fee.
+
 
 > Signature
 
