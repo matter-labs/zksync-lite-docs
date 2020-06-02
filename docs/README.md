@@ -2,17 +2,17 @@
 home: true
 heroImage: /LogoHero.svg
 heroAlt: zkSync
-tagline: The countdown is on!
-actionText2: Read documentation
+tagline: User-centric zkRollup for value transfers
+actionText2: Read docs
 actionLink2: faq/
-actionText: Try it on testnet
+actionText: Try it
 actionLink: https://testnet.zksync.io
 features:
 - title: Scalable.
-  details: Up to 3500 TPS. ETH and ERC20 token transfers for a fraction of a cent.
-- title: Simple.
-  details: Clean and intuitive API. UI that works with most Ethereum wallets.
-- title: Secure.
-  details: Every single transaction is verified by a smart contract on the mainnet.
+  details: Up to 3500 TPS. ETH and ERC20 token transfers for pennies.
+- title: Usable.
+  details: Withdrawals to mainnet in under 5 min. Works with any Ethereum wallet.
+- title: Trustless.
+  details: As secure as the mainnet without the need of watch-towers.
 footer: Made with ❤️ by Matter Labs
 ---
