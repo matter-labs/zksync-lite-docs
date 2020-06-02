@@ -1,8 +1,8 @@
 # Contact
 
-## Updates
+## Follow the updates
 
-Follow us on [twitter](https://twitter.com/the_matter_labs).
+Tune in to out [twitter](https://twitter.com/the_matter_labs).
 
 ## Developers
 
