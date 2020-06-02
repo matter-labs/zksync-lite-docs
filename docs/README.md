@@ -3,7 +3,7 @@ home: true
 heroImage: /LogoHero.svg
 heroAlt: zkSync
 tagline: User-centric zkRollup for DeFi
-actionText2: Read docs
+actionText2: FAQ & docs
 actionLink2: faq/
 actionText: Try it
 actionLink: https://testnet.zksync.io
