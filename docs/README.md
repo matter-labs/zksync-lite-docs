@@ -13,6 +13,6 @@ features:
 - title: Usable.
   details: Withdrawals to mainnet in under 5 min. Works with any Ethereum wallet.
 - title: Trustless.
-  details: As secure as mainnet. No need for watch-towers or other trusted parties.
+  details: As secure as mainnet — without fraud-proofs, monitoring or watch-towers.
 footer: Made with ❤️ by Matter Labs
 ---
