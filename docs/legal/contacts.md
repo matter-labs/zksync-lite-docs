@@ -1,12 +1,8 @@
 # Contact
 
-## Follow the updates
-
-Subscribe to updates on our [twitter](https://twitter.com/the_matter_labs).
-
 ## Developers
 
-Please join the discussion in [zkSync gitter channel](https://gitter.im/zksync/community).
+Join the discussion in [zkSync gitter channel](https://gitter.im/zksync/community).
 
 ## Career opportunities
 
@@ -14,4 +10,9 @@ Matter Labs is always hiring talented software engineers and cryptographers. Ple
 
 ## Partnerships, integrations and press
 
-Please reach out directly to hello@matter-labs.io
+Please reach out directly to **hello@matter-labs.io**
+
+## Follow the updates
+
+- [Twitter](https://twitter.com/the_matter_labs)
+- [Medium](https://medium.com/matter-labs)
