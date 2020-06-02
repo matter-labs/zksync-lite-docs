@@ -244,7 +244,7 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 ```typescript
 import * as zksync from "zksync";
 const syncWSProvider = await zksync.getDefaultProvider("testnet")
-const required_confirmations_amount = await syncWSProvider.getConfirmationsForEthOpAmount();
+const requiredConfirmationsAmount = await syncWSProvider.getConfirmationsForEthOpAmount();
 ```
 
 ### Get transaction receipt
@@ -408,15 +408,16 @@ public tokenSet: TokenSet;
 ### Get transaction fee from the server.
 
 Performs a query to the server, obtaining an acceptable transaction fee for transactions.
+The returned value contains all the price components used for the fee calculation, and the fee itself (`totalFee` field).
 
 > Signature
 
 ```typescript
 async getTransactionFee(
     txType: "Withdraw" | "Transfer",
-    amount: utils.BigNumberish,
+    address: Address,
     tokenLike: TokenLike
-): Promise<utils.BigNumber>;
+): Promise<Fee>;
 ```
 
 #### Inputs and outputs
@@ -424,9 +425,39 @@ async getTransactionFee(
 | Name | Description | 
 | -- | -- |
 | txType | Type of the transaction. |
-| amount | Amount of tokens in the transaction. |
+| address | Address of the transaction recipients' wallet. |
 | tokenLike | Token used in the transaction. |
-| returns | Fee for the transaction is already [packable](#amount-packing) and ready to be used in the transaction. |
+| returns | Object containing the [packable](#amount-packing) fee amount along with the price components used for calculation. |
+
+
+### Get token price.
+
+Performs a query to the server, obtaining a token price in USD. Data is fetched by server using third-party API (e.g. coinmarketcap).
+
+> Signature
+
+```typescript
+async getTokenPrice(
+    tokenLike: TokenLike
+): Promise<number> ;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| tokenLike | Type of token. |
+| returns | Currently observed price of the token (USD per token). |
+
+> Example
+
+```typescript
+import * as zksync from "zksync";
+const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const ethPrice = await syncWSProvider.getTokenPrice("ETH");
+
+console.log(`Current Ethereum price is ${ethPrice} USD`);
+```
 
 
 ## ETH Proxy
