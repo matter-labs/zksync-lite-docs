@@ -12,7 +12,7 @@
 
 Today, you can use **zkSync** for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligible cost per transaction. In the near future will become a platform where you can scale your Ethereum smart contracts and dapps with [Zinc](https://medium.com/matter-labs/zinc-update-v0-1-5-open-source-video-from-zksummit-d079dcfd1b15) programming framework.
 
-In these docs you will find information about the zkSync's functionality, Zero-Knowledge Proofs, zkRollup, differences to other approaches (e.g. Optimistic Rollup), and how to use [zkSync API](/dev/).
+In these docs you will find information about the zkSync's functionality, Zero-Knowledge Proofs, zkRollup, differences to other approaches, as well as the [zkSync API developer guide](/dev/).
 
 ## Project status
 
