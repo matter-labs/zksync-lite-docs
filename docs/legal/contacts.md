@@ -2,7 +2,7 @@
 
 ## Follow the updates
 
-Tune in to out [twitter](https://twitter.com/the_matter_labs).
+Subscribe to updates on our [twitter](https://twitter.com/the_matter_labs).
 
 ## Developers
 
