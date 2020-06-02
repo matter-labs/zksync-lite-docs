@@ -1,6 +1,6 @@
 # Developer guide
 
-zkSync is a scaling and privacy engine for Ethereum. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the Ethereum network. This document is a description of javascript SDK that can be used to interact with zkSync.
+zkSync is a zkRollup for value transfers. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the Ethereum network. This document is a description of javascript SDK that can be used to interact with zkSync.
 
 ## Resources
 
