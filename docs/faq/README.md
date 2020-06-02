@@ -14,7 +14,7 @@ It must be added that zkRollup is built on cutting-edge cryptography and thus ca
 
 **Usability** is in almost every aspect as good or better than that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. And withdrawals to the mainnet are completed in under 10 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
 
-Although the time to hard finality is increased to ~5 min compared to L1, transactions in zkSync are instantly confirmed with partial (economic) finality. This makes the system a lot more convenient for users.
+Although the time to hard finality is increased to ~5 min compared to L1, transactions in zkSync are instantly confirmed with partial (economic) finality. This makes the platform a lot more convenient in practice.
 
 ## Project status
 
