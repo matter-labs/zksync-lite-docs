@@ -4,7 +4,7 @@
 
 **zkRollup** is a trustless blockchain scaling technology driven by the power of [Zero-Knowledge Proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs). A few properties make it unique:
 
-1. **Security guarantees** are strictly as strong as if the funds were placed directly on the mainnet. Not only is the operator completely trustless (unlike systems with data notaries, such as [validium](https://twitter.com/the_matter_labs/status/1267460624210186241)), there is also no need for fraud-proofs, active monitoring by the user, watch-towers, exit games, or any other shacky game-theoretical constructions with potentially fatal long-tail risks.
+1. **Security guarantees** are strictly as strong as if the funds were placed directly on the mainnet. Not only is the operator completely trustless (unlike systems with data notaries, such as [validium](https://twitter.com/the_matter_labs/status/1267460624210186241)), there is also no need for fraud-proofs, active monitoring by the user, watch-towers, exit games, or any other shacky game-theoretic constructions with potentially fatal long-tail risks.
 
 2. **Usability** is in every aspect as good or better as that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Transactions are instantly confirmed with partial (economic) finality. And the coolest thing: withdrawals to the mainnet can be completed in under 5 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
 
