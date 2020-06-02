@@ -2,7 +2,7 @@
 
 **zkSync** is a user-centric zkRollup for value transfers, created by [Matter Labs](https://matter-labs.io). We introduced the [vision for zkSync](https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58) in December 2019.
 
-**zkRollup** is a trustless blockchain scaling technology driven by the power of Zero-Knowledge Proofs. A few key properties make it unique:
+**zkRollup** is a trustless blockchain scaling technology driven by the power of Zero-Knowledge Proofs. A few properties make it unique:
 
 1. **Security guarantees** are strictly as strong as if the funds were placed directly on the mainnet. Not only is the operator completely trustless, there is also no need for fraud-proofs, active monitoring by the user, watch-towers, data-notaries, or any other shacky game-theoretical constructions. 
 
