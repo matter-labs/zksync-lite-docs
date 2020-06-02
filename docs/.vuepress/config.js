@@ -21,8 +21,8 @@ module.exports = {
         repo: 'matter-labs/zksync',
         nav: [
             {
-                text: 'Gitter',
-                link: 'https://gitter.im/zksync/community'
+                text: 'Contacts',
+                link: '/legal/contacts'
             },
             {
                 text: 'Twitter',
