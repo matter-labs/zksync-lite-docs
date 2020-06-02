@@ -4,7 +4,7 @@
 
 **zkRollup** is a trustless blockchain scaling technology driven by the power of succinct zero-knowledge proofs. A few key properties make it unique:
 
-1. **Security guarantees** are strictly as good as if the funds were placed directly on the mainnet. Not only is the operator completely trustless, there is also no need for fraud-proofs, active monitoring by the user, watch-towers, data-notaries or other shacky game-theoretical constructions. 
+1. **Security guarantees** are strictly as good as if the funds were placed directly on the mainnet. Not only is the operator completely trustless, there is also no need for fraud-proofs, active monitoring by the user, watch-towers, data-notaries, or any other shacky game-theoretical constructions. 
 
 2. **Usability** is in every aspect same or better as on the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share Ethereum account addresses). Transactions are instantly confirmed. Withdrawals can be completed in under 5 minutes (unlike Plasma or optimistic rollup, where exits take a staggering 1 week).
 
