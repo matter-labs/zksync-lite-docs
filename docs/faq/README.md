@@ -6,7 +6,7 @@
 
 1. **Security guarantees** are strictly as strong as if the funds were placed directly on the mainnet. Not only is the operator completely trustless, there is also no need for fraud-proofs, active monitoring by the user, watch-towers, data-notaries, or any other shacky game-theoretical constructions. 
 
-2. **Usability** is in every aspect as good or better as that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Transactions are instantly confirmed with partial (economic) finality. Finally, withdrawals to the mainnet can be completed in under 5 minutes (unlike Plasma or optimistic rollup, where user must deal with a staggering delay of 1 week).
+2. **Usability** is in every aspect as good or better as that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Transactions are instantly confirmed with partial (economic) finality. And the coolest thing: withdrawals to the mainnet can be completed in under 5 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
 
 ## Functionality
 
