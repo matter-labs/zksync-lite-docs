@@ -12,7 +12,7 @@ Today, you can use zkSync for **ETH and ERC20 token transfers** at high volumes 
 
 It must be added that zkRollup is built on cutting-edge cryptography and thus can not be called 100% risk-free. At the same time, the security of the cryptographic primitives used in zkSync has been subject to rigorous review by the academic and professional cryptographer community. You cam learn more about it in the [corresponding section](/faq/security) of this FAQ.
 
-**Usability** is in almost every aspect as good or better than that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Finally, withdrawals to the mainnet can be completed in under 5 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
+**Usability** is in almost every aspect as good or better than that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. And withdrawals to the mainnet are completed in under 10 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
 
 Although the time to hard finality is increased to ~5 min compared to L1, transactions in zkSync are instantly confirmed with partial (economic) finality. This makes the system a lot more convenient for users.
 
