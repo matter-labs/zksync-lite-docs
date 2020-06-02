@@ -10,7 +10,7 @@
 
 ## Functionality
 
-Today, you can use zkSync** for **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS on Ethereum 1.0) and a negligible cost per transaction. In the near future zkSync will turn into a full-fledged DeFi platform, where you can scale your smart contracts using [Zinc](https://github.com/matter-labs/zinc) programming framework.
+Today, you can use zkSync for **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS on Ethereum 1.0) and a negligible cost per transaction. In the near future zkSync will turn into a full-fledged DeFi platform, where you can scale your smart contracts using [Zinc](https://github.com/matter-labs/zinc) programming framework.
 
 In these docs you will find information about the zkSync's functionality, Zero-Knowledge Proofs, zkRollup, differences to other approaches, as well as the [zkSync API developer guide](/dev/).
 
