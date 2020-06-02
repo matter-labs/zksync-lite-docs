@@ -2,23 +2,23 @@
 
 **zkSync** is a user-centric zkRollup for value transfers created by [Matter Labs](https://matter-labs.io). We introduced the [vision for zkSync](https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58) in December 2019.
 
-**zkRollup** is a trustless blockchain scaling technology driven by the power of succinct zero-knowledge proofs. A few key properties make it unique:
+**zkRollup** is a trustless blockchain scaling technology driven by the power of Zero-Knowledge Proofs. A few key properties make it unique:
 
-1. **Security guarantees** are strictly as good as if the funds were placed directly on the mainnet. Not only is the operator completely trustless, there is also no need for fraud-proofs, active monitoring by the user, watch-towers, data-notaries, or any other shacky game-theoretical constructions. 
+1. **Security guarantees** are strictly as strong as if the funds were placed directly on the mainnet. Not only is the operator completely trustless, there is also no need for fraud-proofs, active monitoring by the user, watch-towers, data-notaries, or any other shacky game-theoretical constructions. 
 
-2. **Usability** is in every aspect same or better as on the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share Ethereum account addresses). Transactions are instantly confirmed. Withdrawals can be completed in under 5 minutes (unlike Plasma or optimistic rollup, where exits take a staggering 1 week).
+2. **Usability** is in every aspect as good or better as that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Transactions are instantly confirmed with partial (economic) finality. Finally, withdrawals to the mainnet can be completed in under 5 minutes (unlike Plasma or optimistic rollup, where user must deal with a staggering delay of 1 week).
 
 ## Functionality
 
-Today, you can use **zkSync** for secure, user-friendly **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligible cost per transaction. In the near future will become a platform where you can scale your Ethereum smart contracts and dapps with [Zinc](https://medium.com/matter-labs/zinc-update-v0-1-5-open-source-video-from-zksummit-d079dcfd1b15) programming framework.
+Today, you can use zkSync** for **ETH and ERC20 token transfers** at high volumes (up to 3500 TPS) and a negligible cost per transaction. In the near future zkSync will turn into a full-fledged DeFi platform, where you can scale your smart contracts using [Zinc](https://github.com/matter-labs/zinc) programming framework.
 
 In these docs you will find information about the zkSync's functionality, Zero-Knowledge Proofs, zkRollup, differences to other approaches, as well as the [zkSync API developer guide](/dev/).
 
 ## Project status
 
-- [Testnet is live on Rinkeby](https://demo.zksync.dev/explorer/) — give it a try, the UI is very simple.
-- Security audits by [ABDK Consulting](https://www.abdk.consulting/) are underway.
-- Token transfers on mainnet will be launched as soon as the audits are finished (ETA: end of April 2020).
+- [Testnet is live on Rinkeby](https://testnet.zksync.io) — give it a try, the UI is simple and intuitive.
+- Security audit by [ABDK Consulting](https://www.abdk.consulting/) is underway.
+- Token transfers on mainnet will be launched as soon as the audits are finished.
 - [Zinc](https://github.com/matter-labs/zinc) smart contract framework is under active development.
 
 ## Question unanswered?
