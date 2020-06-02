@@ -6,13 +6,13 @@ Today, you can use zkSync for **ETH and ERC20 token transfers** at high volumes 
 
 ## zkRollup in a nutshell
 
-**zkRollup** is a trustless blockchain scaling technology driven by the power of [Zero-Knowledge Proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs). A few properties make it unique:
+**zkRollup** is a trustless blockchain scaling technology driven by the power of succinct [zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs). A few properties make it unique.
 
-1. **Security guarantees** are practically as strong as if the funds were placed directly on the mainnet. In contrast to solutions with off-chain data (such as [validium](https://twitter.com/the_matter_labs/status/1267460624210186241)), zkRollup operators are completely trustless; the protocol makes it impossible for them to either steal or freeze user's assets. What's important, this is achieved by pure cryptography, without any game-theoretic constructions. zkRollup eliminates the need for fraud-proofs, active monitoring by the user or watch-towers, exit games, and other complex interactive mechanisms with significant operational risks.
+**Security guarantees** are practically as strong as if the funds were placed directly on the mainnet. In contrast to solutions with off-chain data (such as [validium](https://twitter.com/the_matter_labs/status/1267460624210186241)), zkRollup operators are completely trustless; the protocol makes it impossible for them to either steal or freeze user's assets. What's important, this is achieved by pure cryptography, without any game-theoretic constructions. zkRollup eliminates the need for fraud-proofs, active monitoring by the user or watch-towers, exit games, and other complex interactive mechanisms with significant operational risks.
 
 It must be added that zkRollup is built on cutting-edge cryptography and thus can not be called 100% risk-free. At the same time, the security of the cryptographic primitives used in zkSync has been subject to rigorous review by the academic and professional cryptographer community. You cam learn more about it in the [corresponding section](/faq/security) of this FAQ.
 
-2. **Usability** is in almost every aspect as good or better than that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Finally, withdrawals to the mainnet can be completed in under 5 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
+**Usability** is in almost every aspect as good or better than that of the mainnet. zkRollup supports convenient account model like Ethereum (accounts in zkSync even share addresses with the user's Ethereum accounts). Transaction fees can be paid in any token. Finally, withdrawals to the mainnet can be completed in under 5 minutes! This is in stark contrast to Plasma and optimistic rollups, where users must deal with a staggering exit delay of ~1 week.
 
 Although the time to hard finality is increased to ~5 min compared to L1, transactions in zkSync are instantly confirmed with partial (economic) finality. This makes the system a lot more convenient for users.
 
