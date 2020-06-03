@@ -47,7 +47,7 @@
     <Content class="theme-default-content custom" />
 
     <div class="footer">
-      Made with ❤️ by <a href="https://twitter.com/the_matter_labs">Matter Labs</a>
+      Made with ❤️ by <a href="https://matter-labs.io">Matter Labs</a>
     </div>
   </main>
 </template>

@@ -21,12 +21,12 @@ module.exports = {
         repo: 'matter-labs/zksync',
         nav: [
             {
-                text: 'Contact us',
-                link: '/legal/contacts'
+                text: 'Docs',
+                link: '/faq/'
             },
             {
-                text: 'Twitter',
-                link: 'https://twitter.com/the_matter_labs'
+                text: 'Contact us',
+                link: '/legal/contacts'
             }            
         ],
         //displayAllHeaders: true,
