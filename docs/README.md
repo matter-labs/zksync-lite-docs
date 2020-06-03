@@ -2,7 +2,7 @@
 home: true
 heroImage: /LogoHero.svg
 heroAlt: zkSync
-tagline: User-centric zkRollup for DeFi
+tagline: User-centric zkRollup platform for DeFi
 actionText2: FAQ & docs
 actionLink2: faq/
 actionText: Try it
