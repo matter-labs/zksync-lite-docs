@@ -36,4 +36,5 @@ The rise of DeFi opens many more interesting use cases that can lead to exponent
 | Security mechanism          	| Fraud-proofs            	| Fraud-proofs           	| ZKP cryptography   	| ZKP cryptography  	|
 | Withdrawals to L1            	| 1 week                  	| 1 week                 	| 5 min               	| 5 min             	|
 | Operator can steal funds?     | No (if caught)          	| No (if caught)          	| No                  	| No                	|
-| Operator can freeze funds?	| No (triggers mass exit)	| No                     	| Yes                 	| No                	|
+| Operator can freeze funds?	| No                    	| No                     	| Yes                 	| No                	|
+| Privacy                      	| No                    	| No                     	| Yes                 	| Yes                	|
