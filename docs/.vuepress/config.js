@@ -21,7 +21,7 @@ module.exports = {
         repo: 'matter-labs/zksync',
         nav: [
             {
-                text: 'Contacts',
+                text: 'Contact us',
                 link: '/legal/contacts'
             },
             {
