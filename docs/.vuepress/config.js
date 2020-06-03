@@ -44,8 +44,8 @@ module.exports = {
                     children: [
                       //['/faq/why', 'Why should I care?'],
                       '/faq/intro',
+                      '/faq/tech',
                       '/faq/tokens',
-                      '/faq/speed',
                       '/faq/security',
                       '/faq/decentralization',
                       '/faq/sc',
