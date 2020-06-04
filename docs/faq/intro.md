@@ -38,9 +38,9 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 | Throughput                 	| ∞                     	| 300 TPS <sup>1</sup>    	| 9k+ TPS           	| 3k TPS <sup>2</sup>  	|
 | Security mechanism          	| Fraud-proofs            	| Fraud-proofs           	| Cryptography   	    | Cryptography  	    |
 | Withdrawals to L1            	| 1 week                  	| 1 week                 	| 5 min               	| 5 min             	|
+| Privacy                      	| No                    	| No                     	| Possible            	| Possible           	|
 | Operator can steal funds      | No <sup>3</sup>       	| No <sup>3</sup>          	| No                  	| No                	|
 | Operator can freeze funds 	| No                    	| No                     	| Yes                 	| No                	|
-| Privacy                      	| No                    	| No                     	| Yes                 	| Yes                	|
 
 <sup>1</sup> 300 TPS to remain compatible with EVM, otherwise up to 1000 TPS.
 
