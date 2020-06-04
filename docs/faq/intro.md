@@ -28,8 +28,8 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - Cold-wallet friendly account control.
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html) support.
 - Permissionless [smart contracts](/faq/sc) (coming soon).
-- [Privacy](/faq/privacy) (coming soon).
-- Censorship- & frontrunning-resistance (coming soon).
+- [Privacy](/faq/privacy) (coming in v2).
+- Censorship- & frontrunning-resistance (coming in v2).
 
 ## zkSync in comparison
 
