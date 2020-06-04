@@ -48,4 +48,4 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 <sup>3</sup> Only if the attack was successfully detected and fraud-proof reached L1 in time.
 
-<sup>4</sup> If the validum contract is upgradeable with a time-lock. The exploit: freeze > upgrade > seize.
+<sup>4</sup> If the validium contract is upgradeable with a time-lock. The exploit: freeze > upgrade > seize.
