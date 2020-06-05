@@ -4,7 +4,7 @@ heroImage: /LogoHero.svg
 heroAlt: zkSync
 tagline: User-centric zkRollup platform for DeFi
 actionText2: FAQ & docs
-actionLink2: faq/
+actionLink2: faq/intro.html
 actionText: Try it
 actionLink: https://testnet.zksync.io
 features:
