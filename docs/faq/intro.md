@@ -8,8 +8,6 @@
 
 Gas fees for token transfers on Ethereum [exceed $2M per month](https://ethgasstation.info/). With zkSync these costs can be reduced to a small fraction.
 
-Reddit recently introduced [Ethereum-based community points](https://www.coindesk.com/reddit-rolls-out-community-points-on-ethereum-to-incentivize-positive-behavior). Enabling them for 330 million Reddit's monthly active users would hit the L1 way harder than Cryptokitty crisis did. zkSync can perfectly handle such load.
-
 UX-first crypto wallets like [Agrent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a banking alternative to entire societies. zkSync makes their mission accomplishable.
 
 The rise of DeFi opens many more interesting use cases. zkSync is here to unlock VISA-scale for your project.
