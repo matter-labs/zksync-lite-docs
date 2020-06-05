@@ -16,7 +16,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 ## Highlights
 
-- Up to 3000 TPS.
+- Up to 2000 TPS.
 - Security through pure cryptography: no game-theoretic assumptions, no fraud-proofs, no liveness requirement, no watch-towers.
 - Same security guarantees as if the funds were kept directly in native L1 accounts.
 - Smooth UX: instant tx confirmations, exits to L1 in under 5 min.

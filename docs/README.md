@@ -9,7 +9,7 @@ actionText: Try it
 actionLink: https://testnet.zksync.io
 features:
 - title: Scalable.
-  details: Up to 3500 TPS. ETH and ERC20 token transfers for pennies.
+  details: Up to 2000 TPS. ETH and ERC20 token transfers for pennies.
 - title: Usable.
   details: Withdrawals to mainnet in under 5 min. Works with any Ethereum wallet.
 - title: Trustless.

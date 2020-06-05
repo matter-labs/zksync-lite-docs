@@ -33,7 +33,7 @@ Here are some links to explore the topic of zkRollups:
 
 **zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual transaction throughput has an upper bound of 300 TPS due to the inherent limits of BN256 elliptic curve. Unfortunately, Ethereum supports efficient arithmetic operations only for this elliptic curve at the moment. Yet, this number by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient for a while.
 
-We are working on fully integrating the [RedShift](https://eprint.iacr.org/2019/1400) support into the zkSync prover (expected completion in Q3 2020). Once RedShift is fully operational, the only bottleneck for **zkSync** scalability will be Ethereum's block size capacity which **zkSync** uses to publish its state ∆ updates. Current benchmarks of the gas consumption in **zkSync** push the upper bound to over 3500 TPS with RedShift.
+We are working on fully integrating the [RedShift](https://eprint.iacr.org/2019/1400) support into the zkSync prover (expected completion in Q3 2020). Once RedShift is fully operational, the only bottleneck for **zkSync** scalability will be Ethereum's block size capacity which **zkSync** uses to publish its state ∆ updates. Current benchmarks of the gas consumption in **zkSync** push the upper bound to over 2000 TPS.
 
 ## Transaction finality
 
