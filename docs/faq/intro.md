@@ -17,7 +17,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - Up to 2000 TPS.
 - Security through pure cryptography: no game-theoretic assumptions, no fraud-proofs, no liveness requirement, no watch-towers.
 - Same security guarantees as if the funds were kept directly in native L1 accounts.
-- Smooth UX: instant tx confirmations, exits to L1 in under 5 min.
+- Smooth UX: instant tx confirmations, exits to L1 in under 10 min.
 - Easy integration: API as simple as Ethereum's web3.js
 
 ## zkSync features
@@ -34,9 +34,11 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 |                                | Plasma                  	| Optimistic rollups     	| Validium (StarkEx) 	| zkSync            	|
 |----------------------------    |------------------------	|-----------------------    |--------------------	|-------------------	|
 | Requires watch-towers          | Yes                   	| Yes                      	| No               	    | No              	    |
-| Withdrawals to L1              | 1 week                  	| 1 week                 	| 5 min               	| 5 min             	|
+| Withdrawals to L1              | 1 week                  	| 1 week                 	| 10 min               	| 10 min             	|
 | Privacy                        | No                    	| No                     	| Yes               	| Yes                  	|
-| Operator can freeze funds      | No                    	| No                     	| Yes                 	| No                	|
-| Operator can seize funds       | No <sup>\*</sup>       	| No <sup>\*</sup>         	| Yes                 	| No                	|
+| Operator can freeze funds      | No                   	| No                     	| Yes                 	| No                	|
+| Operator can confiscate funds  | Yes <sup>\*</sup>     	| Yes <sup>\*</sup>        	| Yes <sup>\*\*</sup>   | No                	|
+| Funds can be stolen            | Yes <sup>\*</sup>       	| Yes <sup>\*</sup>     	| Yes                 	| No                	|
 
-<sup>\*</sup> Only if the attack was successfully detected and fraud-proof reached L1 in time.
+<sup>\*</sup> Yes, because fraud-proofs can fail for various reasons, e.g. hacks or bribing attacks.
+<sup>\*\*</sup> Depends on the implementation of the upgrade mechanism, but usually yes.
