@@ -41,4 +41,5 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 | Funds can be stolen            | Yes <sup>\*</sup>       	| Yes <sup>\*</sup>     	| Yes                 	| No                	|
 
 <sup>\*</sup> Yes, because fraud-proofs can fail for various reasons, e.g. hacks or bribing attacks.
+
 <sup>\*\*</sup> Depends on the implementation of the upgrade mechanism, but usually yes.
