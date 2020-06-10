@@ -31,7 +31,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 ## zkSync in comparison
 
-|                                | Plasma                  	| Optimistic rollups     	| Validium (StarkEx) 	| zkSync            	|
+|                                | Plasma                  	| Optimistic rollups     	| Validium           	| zkSync            	|
 |----------------------------    |------------------------	|-----------------------    |--------------------	|-------------------	|
 | Requires watch-towers          | Yes                   	| Yes                      	| No               	    | No              	    |
 | Withdrawals to L1              | 1 week                  	| 1 week                 	| 10 min               	| 10 min             	|
