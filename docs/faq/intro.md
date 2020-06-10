@@ -27,19 +27,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html) support.
 - Permissionless [smart contracts](/faq/sc) (coming soon).
 - [Privacy](/faq/privacy) (coming in v2).
-- Censorship- & frontrunning-resistance (coming in v2).
 
 ## zkSync in comparison
 
-|                                | Plasma                  	| Optimistic rollups     	| Validium           	| zkSync            	|
-|----------------------------    |------------------------	|-----------------------    |--------------------	|-------------------	|
-| Requires watch-towers          | Yes                   	| Yes                      	| No               	    | No              	    |
-| Withdrawals to L1              | 1 week                  	| 1 week                 	| 10 min               	| 10 min             	|
-| Privacy                        | No                    	| No                     	| Yes               	| Yes                  	|
-| Operator can freeze funds      | No                   	| No                     	| Yes                 	| No                	|
-| Operator can confiscate funds  | Yes <sup>\*</sup>     	| Yes <sup>\*</sup>        	| Yes <sup>\*\*</sup>   | No                	|
-| Funds can be stolen            | Yes <sup>\*</sup>       	| Yes <sup>\*</sup>     	| Yes                 	| No                	|
-
-<sup>\*</sup> Yes, because fraud-proofs can fail for various reasons, e.g. hacks or bribing attacks.
-
-<sup>\*\*</sup> Depends on the implementation of the upgrade mechanism, but usually yes.
+<iframe width="100%" height="850px" frameBorder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQfpVcOEMWfdrhsK1jRYaPIeeYqaFzanFkMkg6pYjR17KCG4R4X54sGpmTFrNjxwoOap8SiHwq4GCmK/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
