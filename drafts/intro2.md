@@ -12,7 +12,7 @@ Highlights:
 
 - Non-custodial: you are in control at all times
 - Trustless (nobody can steal money)
-- Scalable: up to 3500 TPS, immune to network congestions
+- Scalable: up to 2000 TPS, immune to network congestions
 - Cheap: a fraction of cent per tx even in peak times
 
 ## How does it work?

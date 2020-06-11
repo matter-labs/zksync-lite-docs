@@ -15,6 +15,7 @@
         class="description"
       >
         {{ data.tagline || $description || 'Welcome to your VuePress site' }}
+        <!-- Tune in to <a href='https://twitter.com/the_matter_labs'>@the_matter_labs</a> -->
       </p>
 
       <p class="action">
@@ -46,7 +47,7 @@
     <Content class="theme-default-content custom" />
 
     <div class="footer">
-      Made with ❤️ by <a href="https://twitter.com/the_matter_labs">Matter Labs</a>
+      Made with ❤️ by <a href="https://matter-labs.io">Matter Labs</a>
     </div>
   </main>
 </template>

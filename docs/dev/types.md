@@ -33,6 +33,27 @@ export type Address = string;
 export type Nonce = number | "committed";
 ```
 
+## Fees
+
+```typescript
+export interface Fee {
+    // Operation type (amount of chunks in operation differs and impacts the total fee).
+    feeType: "Withdraw" | "Transfer" | "TransferToNew",
+    // Amount of gas used by transaction
+    gasTxAmount: utils.BigNumber,
+    // Gas price (in wei)
+    gasPriceWei: utils.BigNumber,
+    // Ethereum gas part of fee (in wei)
+    gasFee: utils.BigNumber,
+    // Zero-knowledge proof part of fee (in wei)
+    zkpFee: utils.BigNumber,
+    // Total fee amount (in wei)
+    // This value represents the summarized fee components, and it should be used as a fee
+    // for the actual operation.
+    totalFee: utils.BigNumber,
+}
+```
+
 ## Account state
 
 ```typescript

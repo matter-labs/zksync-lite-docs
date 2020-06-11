@@ -17,16 +17,16 @@ module.exports = {
     ],
     themeConfig: {
         logo: '/LogotypeLight.svg',
-        lastUpdated: true,
+        lastUpdated: false,
         repo: 'matter-labs/zksync',
         nav: [
             {
-                text: 'Gitter',
-                link: 'https://gitter.im/zksync/community'
+                text: 'Docs',
+                link: '/faq/'
             },
             {
-                text: 'Twitter',
-                link: 'https://twitter.com/the_matter_labs'
+                text: 'Contact us',
+                link: '/legal/contacts'
             }            
         ],
         //displayAllHeaders: true,
@@ -44,8 +44,8 @@ module.exports = {
                     children: [
                       //['/faq/why', 'Why should I care?'],
                       '/faq/intro',
+                      '/faq/tech',
                       '/faq/tokens',
-                      '/faq/speed',
                       '/faq/security',
                       '/faq/decentralization',
                       '/faq/sc',
@@ -62,6 +62,7 @@ module.exports = {
                       '/dev/basic',
                       '/dev/providers',
                       '/dev/accounts',
+                      '/dev/rest',
                       '/dev/utils',
                       '/dev/types'
                     ]

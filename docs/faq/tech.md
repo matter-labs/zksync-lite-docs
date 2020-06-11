@@ -1,10 +1,39 @@
-# Speed
+# Technology
+
+## zkRollup architecture
+
+The architecture employed by **zkSync** is called **zkRollup**. 
+
+All funds are held by a smart contract on the mainchain, while computation and storage are performed off-chain. In a nutshell, it works as follows:
+
+1. Users sign transactions and submit them to validators. 
+2. Validators roll up thousands of transactions together in a single block and submit a cryptographic commitment (the root hash) of the new state to the smart contract on mainnet along with a cryptographic proof (a SNARK) that this new state is indeed the result of the application of some correct transactions to the old state.
+3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is also published over the mainchain network as cheap `calldata`. This enables anyone to reconstruct the state at every moment.
+4. The proof and the state ∆ is verified by the smart contract, thus verifying both the validity of all the transactions included in the block and block data availability. 
+
+The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is much cheaper than storing it in EVM. Hence a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
+
+zkRollup architecture provides the following guarantees:
+
+- Validators can never corrupt the state or steal funds (unlike Sidechains).
+- Users can always retrieve the funds from the zkRollup even if validator(s) stop cooperating because the data is available (unlike Plasma).
+- Neither users nor a single trusted third party needs to be online to monitor zkRollup blocks in order to prevent fraud (unlike fraud-proof systems, such as payment channels or Optimistic Rollups).
+
+In other words, zkRollup strictly inherits the security guarantees of the underlying L1.
+
+Here are some links to explore the topic of zkRollups:
+
+- [Original idea proposal by Vitalik Buterin](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
+- [Matte Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
+- [Awesome Zero-Knowledge Proofs materials](https://github.com/matter-labs/awesome-zero-knowledge-proofs)
+- [zkRollup vs. Optimistic Rollup deep dive](https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075)
+- [Validity proofs (zkRollup) vs. fraud proofs](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a)
 
 ## Maximum throughput
 
 **zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual transaction throughput has an upper bound of 300 TPS due to the inherent limits of BN256 elliptic curve. Unfortunately, Ethereum supports efficient arithmetic operations only for this elliptic curve at the moment. Yet, this number by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient for a while.
 
-We are working on fully integrating the [RedShift](https://eprint.iacr.org/2019/1400) support into the zkSync prover (expected completion in Q3 2020). Once RedShift is fully operational, the only bottleneck for **zkSync** scalability will be Ethereum's block size capacity which **zkSync** uses to publish its state ∆ updates. Current benchmarks of the gas consumption in **zkSync** push the upper bound to over 3500 TPS with RedShift.
+We are working on fully integrating the [RedShift](https://eprint.iacr.org/2019/1400) support into the zkSync prover (expected completion in Q3 2020). Once RedShift is fully operational, the only bottleneck for **zkSync** scalability will be Ethereum's block size capacity which **zkSync** uses to publish its state ∆ updates. Current benchmarks of the gas consumption in **zkSync** push the upper bound to over 2000 TPS.
 
 ## Transaction finality
 
@@ -30,7 +59,7 @@ If a new **zkSync** block is produced and submitted to the mainchain, it cannot 
 
 A portion of the slashed funds will be used to compensate the tx recipient. The rest will be burned.
 
-## What if mainnet gets congested?
+## Congested mainnet
 
 Periodically, extraordinary events lead to very high levels of congestion on the Ethereum network (notable examples are [Cryptokitties crisis](https://media.consensys.net/the-inside-story-of-the-cryptokitties-congestion-crisis-499b35d119cc) or the [Shanghai DOS attack](https://blog.ethereum.org/2016/09/22/ethereum-network-currently-undergoing-dos-attack/)). During such peak load times, gas prices skyrocket and it might become prohibitively expensive to move crypto assets, rendering some services inoperational or preventing arbitrage opportunities.
 
