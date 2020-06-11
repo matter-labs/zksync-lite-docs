@@ -25,7 +25,7 @@ const zksync = await import('zksync');
 To interact with Sync network users need to know the endpoint of the operator node.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider("testnet");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 ```
 
 Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with Ethereum. 
