@@ -21,7 +21,7 @@ Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/faq/intro#how-does-it-work). This means, every single user transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus, no operator can ever move the system into an incorrect state or take users money.
+zkSync is built on [zkRollup architecture](/faq/tech.html#zkrollup-architecture). This means, every single user transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus, no operator can ever move the system into an incorrect state or take users money.
 
 See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a) for a further overview of the benefits of the validity proofs.
 
