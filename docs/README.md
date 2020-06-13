@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /LogoHero.svg
-heroAlt: "zkSync: a UX-centric zkRollup"
+heroAlt: "zkSync: a UX-centric zkRollup protocol"
 tagline: The new standard for scalable crypto payments
 actionText2: FAQ & docs
 actionLink2: faq/intro.html

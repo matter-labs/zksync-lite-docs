@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'zkSync: a UX-centric zkRollup', // adding title gives us a header with search box
+    title: 'zkSync: a UX-centric zkRollup protocol', // adding title gives us a header with search box
     description: 'The new standard for scalable crypto payments',
     repo: 'matter-labs/zksync',
     dest: 'dist',
