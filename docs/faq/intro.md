@@ -11,6 +11,7 @@ zkSync is a protocol designed with obsession over user and developer experience.
 - ETH and ERC20 token transfers with instant confirmations and 10 min finality on L1.
 - Mainnet-level security with zero reliance on 3rd parties.
 - Zero-cost account creation.
+- Ultra-low fees (~ $0.001 per tx).
 - Payments to existing Ethereum addresses (including smart-contracts).
 - Fees conveniently payable in token being transferred.
 - Withdrawals to mainnet in under 15 min.
