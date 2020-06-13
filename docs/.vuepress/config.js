@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'zkSync', // adding title gives us a header with search box
+    title: 'zkSync: scalable payments on Ethereum', // adding title gives us a header with search box
     description: 'zkSync: simple, fast and secure token transfers',
     repo: 'matter-labs/zksync',
     dest: 'dist',

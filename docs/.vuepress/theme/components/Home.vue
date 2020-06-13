@@ -23,10 +23,10 @@
           class="action-button"
           :item="actionLink"
         />
-        <NavLink
+        <!-- <NavLink
           class="secondary-button"
           :item="actionLink2"
-        />
+        /> -->
       </p>
     </header>
 
