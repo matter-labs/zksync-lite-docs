@@ -2,7 +2,9 @@
 
 ## Introduction
 
-**zkSync** is a protocol for scalable crypto payments built using zkRollup technology. It employs the latest zero-knowledge proof (ZKP) cryptography to secure user's funds.
+**zkSync** is a protocol for scalable crypto payments built on zkRollup technology. It uses zero-knowledge proofs and on-chain data availability to keep user's funds as safe as though they never left the mainnet.
+
+zkSync is a protocol designed with obsession over user and developer experience. The best way to get an impression about it is to play around with [the demo](https://testnet.zksync.io) — try now, it will only take 2 minutes!
 
 ## Problems zkSync solves
 
@@ -10,19 +12,12 @@ Gas fees for token transfers on Ethereum [exceed $2M per month](https://ethgasst
 
 UX-first crypto wallets like [Agrent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a banking alternative to entire societies. zkSync makes their mission accomplishable.
 
-The rise of DeFi opens many more interesting use cases. zkSync is here to unlock VISA-scale for your project.
-
-## Highlights
-
-- Up to 2000 TPS.
-- Security through pure cryptography: no game-theoretic assumptions, no fraud-proofs, no liveness requirement, no watch-towers.
-- Same security guarantees as if the funds were kept directly in native L1 accounts.
-- Smooth UX: instant tx confirmations, exits to L1 in under 10 min.
-- Easy integration: API as simple as Ethereum's web3.js
+The rise of DeFi opens many more interesting use cases. zkSync is here to unlock Paypal-scale for your project.
 
 ## zkSync features
 
 - ETH and ERC20 token transfers.
+- Withdrawals to mainnet in under 10 min.
 - Cold-wallet friendly account control.
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html) support.
 - Permissionless [smart contracts](/faq/sc) (coming soon).
