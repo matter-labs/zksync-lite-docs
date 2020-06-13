@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**zkSync** is a a user-centric zkRollup platform for DeFi. In other words, it's a L2 protocol that employs the latest zero-knowledge proof (ZKP) cryptography to secure its operations.
+**zkSync** is a protocol for scalable crypto payments built using zkRollup technology. It employs the latest zero-knowledge proof (ZKP) cryptography to secure user's funds.
 
 ## Problems zkSync solves
 
