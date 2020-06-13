@@ -5,7 +5,7 @@ heroAlt: "zkSync: a UX-centric zkRollup protocol"
 tagline: The new standard for scalable crypto payments
 actionText2: FAQ & docs
 actionLink2: faq/intro.html
-actionText: Try demo now
+actionText: Try it now
 actionLink: https://testnet.zksync.io
 features:
 - title: UX first.

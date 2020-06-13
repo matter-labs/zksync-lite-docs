@@ -4,7 +4,7 @@
 
 **zkSync** is a protocol for scalable crypto payments built on zkRollup technology. It uses zero-knowledge proofs and on-chain data availability to keep user's funds as safe as though they never left the mainnet.
 
-zkSync is a protocol designed with obsession over user and developer experience. The best way to get an impression about it is to play around with [the demo](https://testnet.zksync.io) — try now, it will only take 2 minutes!
+zkSync is a protocol designed with obsession over user and developer experience. The best way to get an impression about it is to [try it out](https://testnet.zksync.io) yourself — it will only take 2 minutes!
 
 ## Problems zkSync solves
 
