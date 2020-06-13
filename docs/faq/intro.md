@@ -25,7 +25,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 ## zkSync in comparison
 
-zkRollup stands out remarkably in security and usability among existing L2 scaling solutions. Check out the [L2 comparison guide](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955) for more information.
+zkSync stands out remarkably in security and usability among existing L2 scaling solutions. Check out the [L2 comparison guide](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955) for more information.
 
 ![L2 comparison](https://miro.medium.com/max/1400/1*Q1IOxqm-nkr6JWz6kJpt5w.png)
 
