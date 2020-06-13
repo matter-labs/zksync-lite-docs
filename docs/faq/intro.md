@@ -12,7 +12,7 @@ zkSync is a protocol designed with obsession over user and developer experience.
 - Mainnet-level security with zero reliance on 3rd parties.
 - Zero-cost account creation.
 - Payments to existing Ethereum addresses (including smart-contracts).
-- Fees payable in token being transferred.
+- Fees conveniantly payable in token being transferred.
 - Withdrawals to mainnet in under 10 min.
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html) support.
 - [Privacy](/faq/privacy) (coming soon).
