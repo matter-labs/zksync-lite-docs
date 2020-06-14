@@ -177,7 +177,7 @@ export default {
 
   .features {
     border-top: 1px solid $borderColor;
-    padding: 1.2rem 0;
+    padding: 1.2rem 0 2rem;
     margin-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
