@@ -7,16 +7,11 @@
       <h1><img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
-        :alt="data.heroAlt || 'hero'"
+        :alt="zkSync"
       ></h1>
 
-      <p
-        v-if="data.tagline !== null"
-        class="description"
-      >
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
-        <!-- Tune in to <a href='https://twitter.com/the_matter_labs'>@the_matter_labs</a> -->
-      </p>
+      <p class="subtitle">The new standard for scalable crypto payments</p>
+      <p class="description">zkSync is a fully trustless, secure, user-centric protocol for scaling payments and smart contracts on Ethereum</p>
 
       <p class="action">
         <NavLink
@@ -94,14 +89,19 @@ export default {
       max-width: 100%
       max-height 280px
       display block
-      margin 3rem auto 1.5rem
-    h1
-      font-size 3rem
+      margin 1rem auto 1.5rem
+    h2
+      font-size 2rem
+      color lighten($textColor, 20%)
     h1, .description, action
       margin 1.8rem auto
+    .subtitle
+      font-size 2.2rem
+      line-height 1.3
+      color lighten($textColor, 5%)      
     .description
       max-width 35rem
-      font-size 1.6rem
+      font-size 1.4rem
       line-height 1.3
       color lighten($textColor, 40%)
     .action-button
