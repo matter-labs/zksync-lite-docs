@@ -59,9 +59,11 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
 3. [Elliptic curve DLP](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
 
-## Trusted setup
+## Universal CRS setup
 
-The version 1.0 of zkSync protocol is using the PLONK proof system which requires a universal trusted setup.
+The version 1.0 of zkSync protocol is using the PLONK proof system which requires a "trusted setup" of a Common Reference String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions, because larger number of prominent and respected members of the community have incentive to participate in it, and more scrutiny can be expected around the trusted setup ceremony.
+
+Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies (which are very difficult from the logistical and security perspectives).
 
 Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x04a23ba68e4469061cd461e8b847e820d4ced948?timestamp=1587551054947) in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve, coordinated by AZTEC protocol:
 
@@ -83,7 +85,9 @@ Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x
 
 The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. Full ceremony transcript with the list of indviduals and organizations who claimed their contribution [is available here](https://www.aztecprotocol.com/ignition/). You can use [this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed participants.
 
-zkSync version 2.0 will run on [RedShift](https://eprint.iacr.org/2019/1400), a transparent proof system developed by Matter Labs, which does not require any trusted setup.
+Despite relying on a universal trusted setup, we argue that zkSync can be called a fully trustless protocol. The reason for this is that there are no systems without some form of a trusted setup. Most users do not personally verify and compile the source code of their wallets, full nodes, mining software, and certainly do not verify the circuits of the hardware all these things run upon. In our opinion, the ease of concealed collusion of developers and experts in these systems is much higher than in a trusted setup with hundreds of well-known participants. At the same time, the ongoing operation of zkSync requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
+
+Nonetheless, we encourage you to check the list of the contributors of the Ignition ceremony and make your own opinion on whether there is at least one trustworthy person or organisation among them. And in the future, we strive to eliminate trust assumptions altogether by embracing a transparent zero-knowledge proof system such as [RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
 
 ## Security audit
 
