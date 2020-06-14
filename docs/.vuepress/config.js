@@ -25,7 +25,7 @@ module.exports = {
                 link: '/faq/intro.html'
             },
             {
-                text: 'Contact us',
+                text: 'Contact',
                 link: '/legal/contacts'
             }            
         ],
