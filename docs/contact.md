@@ -11,7 +11,7 @@ Join the discussion in [zkSync gitter channel](https://gitter.im/zksync/communit
 
 ## Partnerships, integrations and press
 
-Please reach out directly via **hello@matter-labs.io** or [dm in Telegram](https://t.me/herrmit).
+Please reach out directly via **hello@matter-labs.io**, dm in [Twitter](https://twitter.com/the_matter_labs) or [Telegram](https://t.me/herrmit).
 
 ## Follow the news
 
