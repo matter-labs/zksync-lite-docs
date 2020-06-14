@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 text: 'Contact',
-                link: '/legal/contacts'
+                link: '/contact.html'
             }            
         ],
         //displayAllHeaders: true,

@@ -1,4 +1,8 @@
-# Contact
+---
+sidebar: false
+---
+
+# Contacts
 
 ## Developers
 
