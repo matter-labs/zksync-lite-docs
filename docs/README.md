@@ -11,7 +11,7 @@ features:
 - title: UX first.
   details: A protocol designed with obsession over user and developer experience.
 - title: Ready for mass adoption.
-  details: Enabling Paypal-scale throughput for your dapp or wallet today.
+  details: zkSync enables Paypal-scale throughput for your dapp or wallet today.
 - title: Secure like mainnet.
   details: Built on zkRollup with universal setup — the apex L2 scaling solution.
 footer: Made with ❤️ by Matter Labs
