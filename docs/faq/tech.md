@@ -31,9 +31,7 @@ Here are some links to explore the topic of zkRollups:
 
 ## Maximum throughput
 
-**zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual transaction throughput has an upper bound of 300 TPS due to the inherent limits of BN256 elliptic curve. Unfortunately, Ethereum supports efficient arithmetic operations only for this elliptic curve at the moment. Yet, this number by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient for a while.
-
-We are working on fully integrating the [RedShift](https://eprint.iacr.org/2019/1400) support into the zkSync prover (expected completion in Q3 2020). Once RedShift is fully operational, the only bottleneck for **zkSync** scalability will be Ethereum's block size capacity which **zkSync** uses to publish its state ∆ updates. Current benchmarks of the gas consumption in **zkSync** push the upper bound to over 2000 TPS.
+**zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual transaction throughput has an upper bound of 300 TPS due to the current limitations of the PLONK CRS. Yet, this number by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified and benchmarked it. Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the already audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart contracts. We will provide more details later in a separate post.
 
 ## Transaction finality
 
