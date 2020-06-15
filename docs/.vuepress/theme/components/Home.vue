@@ -63,6 +63,7 @@
        </div>
       </form>
 
+      <br>
       <p>Made with ❤️ by <a href="https://matter-labs.io">Matter Labs</a></p>
     </div>
   </main>
@@ -110,7 +111,7 @@ export default {
 
     img {
       max-width: 100%;
-      max-height: 280px;
+      max-height: 160px;
       display: block;
       margin: 1rem auto 1.5rem;
     }
@@ -205,7 +206,7 @@ export default {
   }
 
   .footer {
-    padding: 2.5rem;
+    padding: 2.5rem 2.5rem 0 2.5rem;
     border-top: 1px solid $borderColor;
     text-align: center;
     color: lighten($textColor, 25%);
