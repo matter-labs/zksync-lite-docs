@@ -6,10 +6,9 @@ sidebar: false
 
 ## Developers
 
-Join the discussion in [zkSync gitter channel](https://gitter.im/zksync/community).
+Join the public discussion in the [zkSync gitter community](https://gitter.im/zksync/community).
 
-
-## Partnerships, integrations and press
+## Partnerships, questions, integrations and press
 
 Please reach out directly via **hello@matter-labs.io**, dm in [Twitter](https://twitter.com/the_matter_labs) or [Telegram](https://t.me/herrmit).
 
