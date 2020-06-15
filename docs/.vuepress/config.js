@@ -1,6 +1,6 @@
 module.exports = {
     title: 'zkSync: a UX-centric zkRollup protocol', // adding title gives us a header with search box
-    description: 'The new standard for scalable crypto payments',
+    description: 'zkSync is a fully trustless, secure, user-centric protocol for scaling payments and smart contracts on Ethereum.',
     repo: 'matter-labs/zksync',
     dest: 'dist',
     markdown: {
