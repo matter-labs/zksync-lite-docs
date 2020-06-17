@@ -35,9 +35,9 @@ In the ultimate emergency case of all operators being shut down or becoming unre
 
 ### Upgrade mechanism
 
-The version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations. However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync contract and all users get 2 week notice period to exit in case they don't like the changes.
+The version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations. However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync contract and all users get 4 week notice period to exit in case they don't like the changes.
 
-In the future, the opt-out mechanism will be replaced by a strict opt-in into the new version.
+WARNING: the beta will be deployed with 1 day notice period, which will soon be bumped up to 1 week, then to 2 weeks, and finally to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
 
 ## Cryptography used
 
