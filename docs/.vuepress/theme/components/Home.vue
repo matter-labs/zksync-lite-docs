@@ -21,6 +21,7 @@
 
     <div v-if="data.features && data.features.length" class="features">
       <div v-for="(feature, index) in data.features" :key="index" class="feature">
+        <img :src=feature.pic class="feature-illustration" />
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
@@ -62,8 +63,6 @@
           </div>     
        </div>
       </form>
-
-      <br>
       <p>Made with ❤️ by <a href="https://matter-labs.io">Matter Labs</a></p>
     </div>
   </main>
@@ -111,7 +110,7 @@ export default {
 
     img {
       max-width: 100%;
-      max-height: 160px;
+      max-height: 140px;
       display: block;
       margin: 1rem auto 1.5rem;
     }
@@ -178,7 +177,7 @@ export default {
 
   .features {
     border-top: 1px solid $borderColor;
-    padding: 1.2rem 0 2rem;
+    padding: 1.2rem 0 0.5rem;
     margin-top: 2.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -192,21 +191,28 @@ export default {
     flex-basis: 30%;
     max-width: 30%;
 
+    .feature-illustration {
+      display:block;
+      margin:auto;
+    }
+
     h2 {
       font-size: 1.4rem;
       font-weight: 500;
       border-bottom: none;
       padding-bottom: 0;
       color: lighten($textColor, 10%);
+      text-align: center;
     }
 
     p {
+      text-align: center;
       color: lighten($textColor, 25%);
     }
   }
 
   .footer {
-    padding: 2.5rem 2.5rem 0 2.5rem;
+    padding: 1.5rem 2.5rem 0 2.5rem;
     border-top: 1px solid $borderColor;
     text-align: center;
     color: lighten($textColor, 25%);
