@@ -1,5 +1,9 @@
 # Overview
 
+**[zkSync v1 is Live on Mainnet!](https://medium.com/matter-labs/zksync-is-live-bringing-trustless-scalable-payments-to-ethereum-9c634b3e6823)**
+
+You can also try our [testnet on Rinkeby](https://testnet.zksync.io).
+
 ## Introduction
 
 **zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by zkRollup technology. It uses zero-knowledge proofs and on-chain data availability to keep user's funds as safe as though they never left the mainnet.
