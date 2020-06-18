@@ -20,8 +20,8 @@ While security is our paramount priority, user and developer experience are cent
 - Fees conveniently payable in token being transferred.
 - Withdrawals to mainnet in under 15 min.
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html) support.
-- [Privacy](/faq/privacy) (coming soon).
-- Permissionless [smart contracts](/faq/sc) (coming soon).
+- [Privacy](/faq/privacy.html) (coming soon).
+- Permissionless [smart contracts](/faq/sc.html) (coming soon).
 
 ## Problems zkSync solves
 
