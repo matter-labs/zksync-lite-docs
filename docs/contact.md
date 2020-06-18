@@ -6,7 +6,7 @@ sidebar: false
 
 ## Community & support
 
-Welcome to zkSync [Discord server](https://discord.com/channels/722409280497516566/722409281130987522).
+Welcome to zkSync [Discord server](https://discord.gg/YHFhs9).
 
 ## Developers
 
