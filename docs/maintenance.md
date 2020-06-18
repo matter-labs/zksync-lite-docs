@@ -15,13 +15,13 @@ sidebar: false
 <br>
 <br>
 
-# Welcome to zkSync — a service for trustless and scalable payments on Ethereum
+# Welcome to zkSync — a zkRollup for trustless and scalable payments on Ethereum
 
 <br>
 <br>
 <br>
 
-Welcome to zkSync website is currently undergoing planned maintenance. We'll be back up in a bit!
+zkSync website is currently undergoing planned maintenance. We'll be back up in a bit!
 
 You can track the current maintenance status on [our twitter page](https://twitter.com/zksync).
 
