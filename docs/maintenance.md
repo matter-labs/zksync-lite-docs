@@ -15,12 +15,14 @@ sidebar: false
 <br>
 <br>
 
-# Sorry, we're under maintenance!
+# Welcome to zkSync — a service for trustless and scalable payments on Ethereum
 
 <br>
 <br>
 <br>
 
-zkSync website is currently undergoing planned maintenance. We'll be back up in a bit!
+Welcome to zkSync website is currently undergoing planned maintenance. We'll be back up in a bit!
 
-To not get bored in the meanwhile, check out the [FAQ](/faq/intro.html) or follow us on [Twitter](https://twitter.com/the_matter_labs).
+You can track the current maintenance status on [our twitter page](https://twitter.com/zksync).
+
+To not get bored in the meanwhile, check out the [FAQ](/faq/intro.html).
