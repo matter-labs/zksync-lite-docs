@@ -6,7 +6,7 @@ sidebar: false
 
 ## Community & support
 
-Welcome to zkSync [Discord server](https://discord.gg/YHFhs9).
+Welcome to zkSync [Discord](https://discord.gg/px2aR7w).
 
 ## Developers
 
