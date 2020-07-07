@@ -4,13 +4,10 @@ sidebar: false
 
 # Contacts
 
-## Community & support
+## Community, developers & support
 
 Welcome to zkSync [Discord](https://discord.gg/px2aR7w).
 
-## Developers
-
-Join the public discussion in the [zkSync gitter community](https://gitter.im/zksync/community).
 
 ## Partnerships, questions, integrations and press
 
