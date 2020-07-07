@@ -24,7 +24,7 @@ jobs:
         run: yarn docs:build
 
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: matter-labs/firebase-action@master
         with:
           args: deploy --project zksync-js-docs --only hosting
         env:
