@@ -56,7 +56,7 @@ await syncWSProvider.disconnect();
 import * as zksync from "zksync";
 
 const syncHTTPProvider = await zksync.Provider.newHttpProvider(
-    "https://testnet.zksync.dev/jsrpc"
+    "https://rinkeby-api.zksync.io/jsrpc"
 );
 ```
 

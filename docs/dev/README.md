@@ -4,7 +4,7 @@ zkSync is a zkRollup for DeFi. Its current functionality scope includes low gas 
 
 ## Resources
 
-- [zkSync demo](https://demo.zksync.dev/explorer/)
+- [zkSync testnet](https://testnet.zksync.io)
 - [zkSync JS SDK github page](https://github.com/matter-labs/zksync/tree/master/js/zksync.js)
 
 ## Table of contents

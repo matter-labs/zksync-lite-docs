@@ -8,13 +8,13 @@ This section contains the description of endpoints provided by the zkSync server
 
 The REST API of zkSync server is available at "${ZKSYNC_SERVER_ADDRESS}/api/v0.1". In the examples
 below we will use the `rinkeby` zkSync testnet API, thus URLs will
-look start `https://rinkeby-api.zksync.dev/api/v0.1/`.
+look start `https://rinkeby-api.zksync.io/api/v0.1/`.
 
 All available API addresses for zkSync:
 
-- `https://rinkeby-api.zksync.dev/` - API for Rinkeby testnet server
-- `https://ropsten-api.zksync.dev/` - API for Ropsten testnet server
-- `https://mainnet-api.zksync.dev/` - API for Mainnet server (not available yet)
+- `https://rinkeby-api.zksync.io/` - API for Rinkeby testnet server
+- `https://ropsten-api.zksync.io/` - API for Ropsten testnet server
+- `https://api.zksync.io/` - API for Mainnet server
 
 To interact with REST API from javascript one may use any of available packages providing the
 interface to perform HTTP requests. One of the simplest ways will be to use `Axios`, and in
@@ -23,7 +23,7 @@ that case the interaction will look as follows:
 ```js
 import Axios from 'axios';
 
-const url = 'https://rinkeby-api.zksync.dev/api/v0.1/status';
+const url = 'https://rinkeby-api.zksync.io/api/v0.1/status';
 
 const { data } = await Axios.get(url)
     .catch(e => {
@@ -107,7 +107,7 @@ values to base the client logic on will be taken from the initial query results.
 ### Examples
 
 ```
-https://rinkeby-api.zksync.dev/api/v0.1/account/{..}/history/newer_than?tx_id=1,1&limit=20
+https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?tx_id=1,1&limit=20
 ```
 
 Load at most 20 transactions newer than the first transaction of the first block.
@@ -115,7 +115,7 @@ Load at most 20 transactions newer than the first transaction of the first block
 ---
 
 ```
-https://rinkeby-api.zksync.dev/api/v0.1/account/{..}/history/older_than
+https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/older_than
 ```
 
 Load the last 100 executed transactions (`limit` and `tx_id` are not provided, thus default values are used).
@@ -123,7 +123,7 @@ Load the last 100 executed transactions (`limit` and `tx_id` are not provided, t
 ---
 
 ```
-https://rinkeby-api.zksync.dev/api/v0.1/account/{..}/history/newer_than?limit=10
+https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?limit=10
 ```
 
 Load at most 10 unconfirmed transactions (we're requesting the transactions that are newer than the last committed tx).

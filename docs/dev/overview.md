@@ -12,6 +12,6 @@ This architecture provides the following guarantees:
 
 In other words, ZK Rollup strictly inherits the security guarantees of the underlying L1.
 
-  - <a href='https://demo.zksync.dev/'>zkSync demo</a>
+  - <a href='https://testnet.zksync.io'>zkSync testnet</a>
   - <a href='https://github.com/matter-labs/zksync'>zkSync v0.1 (alpha) github page</a>
   - <a href='https://github.com/matter-labs/zksync/tree/master/js/zksync.js'>zkSync JS SDK (alpha) github page</a>
