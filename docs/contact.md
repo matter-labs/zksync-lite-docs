@@ -11,7 +11,7 @@ Welcome to zkSync [Discord](https://discord.gg/px2aR7w).
 
 ## Partnerships, questions, integrations and press
 
-Please reach out directly via **hello@matter-labs.io**, dm in [Twitter](https://twitter.com/the_matter_labs) or [Telegram](https://t.me/herrmit).
+Please reach out directly via **hello@matter-labs.io** or dm in [Twitter](https://twitter.com/the_matter_labs).
 
 ## Follow the news
 
