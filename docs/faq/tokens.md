@@ -2,8 +2,6 @@
 
 [[toc]]
 
-## Fee costs
-
 ## Supported tokens
 
 **zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially, new tokens need to be manually whitelisted by the operator. In the future, adding new tokens will be fully permissionless.
@@ -16,7 +14,7 @@ We can immediately list tokens with the price tracked at coinmarketcap.
 
 Tokens without a liquid price tracker will be listed as soon as we implement an option to pay fees in a different token (see below).
 
-## Fees
+## Fee costs
 
 In **zkSync** the cost of every transaction has two components:
 
