@@ -16,6 +16,8 @@ We can immediately list tokens with the price tracked at coinmarketcap.
 
 Tokens without a liquid price tracker will be listed as soon as we implement an option to pay fees in a different token (see below).
 
+## Fees
+
 In **zkSync** the cost of every transaction has two components:
 
 - **Off-chain part (storage + prover costs)**: the cost of the state storage and the SNARK (zero-knowledge proof) generation. This part depends on the use of hardware resources and is therefore invariable. Our benchmarks give estimates of ~0.001 USD per transfer.
