@@ -6,6 +6,9 @@
 
 **zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially, new tokens need to be manually whitelisted by the operator. In the future, adding new tokens will be fully permissionless.
 
+The full list of currently supported tokens is available under this link (as JSON):
+https://api.zksync.io/api/v0.1/tokens
+
 ## Listing a token
 
 To submit a token listing support, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScZmS5LJLbHwrc1JFaipOgwu0A31i8BJyxRUMA2dWg-7c5G6Q/viewform?usp=sf_link).
