@@ -10,9 +10,12 @@
 
 To submit a token listing support, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScZmS5LJLbHwrc1JFaipOgwu0A31i8BJyxRUMA2dWg-7c5G6Q/viewform?usp=sf_link).
 
-We can immediately list tokens with the price tracked at coinmarketcap.
+We can immediately list tokens that satisfy the following conditions:
 
-Tokens without a liquid price tracker will be listed as soon as we implement an option to pay fees in a different token (see below).
+- price tracked at https://coinmarketcap.com
+- daily trading volume exceeds $1M over the period of the past 3 months.
+
+Tokens without sufficient liquidity or CMC price tracker will be listed as soon as we implement an option to pay fees in a different token (see below).
 
 ## Fee costs
 
