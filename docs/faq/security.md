@@ -91,4 +91,4 @@ Nonetheless, we encourage you to check the list of the contributors of the Ignit
 
 ## Security audit
 
-The audit by [ABDK Consulting](https://www.abdk.consulting/) for zkSync v1.0 is underway, the results will be published here. The audit scope includes the protocol design, applied cryptography, smart contracts and zero-knowledge circuits.
+The audit by [ABDK Consulting](https://www.abdk.consulting/) for zkSync v1.0 protocol is complete, the results are [available here](https://zksync.io/zksync-1.0-audit.pdf). The audit scope includes the protocol design, applied cryptography, smart contracts and zero-knowledge circuits.
