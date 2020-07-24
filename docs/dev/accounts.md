@@ -26,7 +26,7 @@ static async fromEthSigner(
     provider: Provider,
     signer?: Signer
     accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    ethSignatureType?: 'EthereumSignature' | 'EIP1271Signature'
 ): Promise<Wallet>;
 ```
 
@@ -44,8 +44,8 @@ static async fromEthSigner(
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
 const syncProvider = await zksync.getDefaultProvider('testnet');
@@ -63,7 +63,7 @@ static async fromEthSignerNoKeys(
     ethWallet: ethers.Signer,
     provider: Provider,
     accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    ethSignatureType?: 'EthereumSignature' | 'EIP1271Signature'
 ): Promise<Wallet>;
 ```
 
@@ -82,8 +82,8 @@ This way wallet won't contain any valid zkSync keys to perform transactions, but
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
 const syncProvider = await zksync.getDefaultProvider('testnet');
@@ -127,7 +127,7 @@ async getAccountId(): Promise<number | undefined>;
 ```typescript
 async getBalance(
     token: TokenLike,
-    type: "committed" | "verified" = "committed"
+    type: 'committed' | 'verified' = 'committed'
 ): Promise<ethers.utils.BigNumber>;
 ```
 
@@ -136,7 +136,7 @@ async getBalance(
 | Name | Description | 
 | -- | -- |
 | token | token of interest, symbol or address of the supported token |
-| type | "committed" or "verified" |
+| type | 'committed' or 'verified' |
 | returns | Balance of this token | 
 
 > Example
@@ -145,10 +145,10 @@ async getBalance(
 const wallet = ..;// setup wallet
 
 // Get committed Ethereum balance.
-const ethCommittedBalance = await getBalance("ETH");
+const ethCommittedBalance = await getBalance('ETH');
 
 // Get verified ERC20 token balance.
-const erc20VerifiedBalance = await getBalance("0xFab46E002BbF0b4509813474841E0716E6730136", "verified"); 
+const erc20VerifiedBalance = await getBalance('0xFab46E002BbF0b4509813474841E0716E6730136', 'verified'); 
 ```
 
 ### Get token balance on Ethereum
@@ -171,13 +171,13 @@ async getEthereumBalance(token: TokenLike): Promise<utils.BigNumber>;
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
 // Setup zksync.Wallet with ethers signer/wallet that is connected to ethers provider
 const wallet = ..; 
 
-const ethOnChainBalance = await wallet.getEthereumBalance("ETH");
+const ethOnChainBalance = await wallet.getEthereumBalance('ETH');
 ```
 
 ### Unlocking ERC20 deposits
@@ -252,15 +252,15 @@ async depositToSyncFromEthereum(deposit: {
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
 const syncWallet = ..; // Setup zksync wallet from ethers.Signer.
 
 const depositPriorityOperation = await syncWallet.depositToSyncFromEthereum({
-    depositTo: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    token: "ETH",
-    amount: ethers.utils.formatEther("1.0"),
+    depositTo: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e',
+    token: 'ETH',
+    amount: ethers.utils.formatEther('1.0'),
 });
 
 
@@ -289,7 +289,7 @@ Check the [account id](#get-account-state) to see if account is present in the z
 
 ```typescript
 async setSigningKey(
-    nonce: Nonce = "committed",
+    nonce: Nonce = 'committed',
     onchainAuth = false
 ): Promise<Transaction>;
 ```
@@ -298,14 +298,14 @@ async setSigningKey(
 
 | Name | Description | 
 | -- | -- |
-| nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| nonce | Nonce that is going to be used for this transaction. ('committed' is used for the last known nonce for this account) |
 | onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
 | returns | Handle of the submitted transaction | 
 
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from 'ethers';
 
 const wallet = ..;// setup zksync wallet
 
@@ -326,7 +326,7 @@ wallets that don't support message signing.
 
 ```typescript
 async onchainAuthSigningKey(
-    nonce: Nonce = "committed",
+    nonce: Nonce = 'committed',
     ethTxOptions?: ethers.providers.TransactionRequest
 ): Promise<ContractTransaction>;
 ```
@@ -335,14 +335,14 @@ async onchainAuthSigningKey(
 
 | Name | Description | 
 | -- | -- |
-| nonce | Nonce that is going to be used for `setSigningKey` transaction. ("committed" is used for the last known nonce for this account) |
+| nonce | Nonce that is going to be used for `setSigningKey` transaction. ('committed' is used for the last known nonce for this account) |
 | ethTxOptions | arguments for the onchain authentication Ethereum transaction. Used to specify e.g. a gas price or nonce. |
 | returns | Handle of the submitted transaction | 
 
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from 'ethers';
 
 const wallet = ..;// setup zksync wallet
 
@@ -351,7 +351,7 @@ if (! await wallet.isSigningKeySet()) {
     // Wait till transaction is committed on ethereum.
     await onchainAuthTransaction.wait();
 
-    const changePubkey= await wallet.setSigningKey("committed", true);
+    const changePubkey= await wallet.setSigningKey('committed', true);
 
     // Wait till transaction is committed
     const receipt = await changePubkey.awaitReceipt();
@@ -416,21 +416,21 @@ async syncTransfer(transfer: {
 | transfer.token | token to be transferred (symbol or address of the token) |
 | transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](#closest-packable-amount) |
 | transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
-| transfer.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| transfer.nonce | Nonce that is going to be used for this transaction. ('committed' is used for the last known nonce for this account) |
 | returns | Handle of the submitted transaction | 
 
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from 'ethers';
 
 const wallet = ..;// setup zksync wallet
 
 const transferTransaction = await wallet.syncTransfer({
-    to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
-    amount: ethers.utils.parseEther("1.0"), 
-    fee: ethers.utils.parseEther("0.001") 
+    to: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e',
+    token: '0xFab46E002BbF0b4509813474841E0716E6730136', // FAU ERC20 token address
+    amount: ethers.utils.parseEther('1.0'), 
+    fee: ethers.utils.parseEther('0.001') 
 });
 
 // Wait till transaction is committed
@@ -470,10 +470,10 @@ async withdrawFromSyncToEthereum(withdraw: {
 | Name | Description | 
 | -- | -- |
 | withdraw.ethAddress | ethereum address of the recipient |
-| withdraw.token | token to be transferred ("ETH" or address of the ERC20 token) |
+| withdraw.token | token to be transferred ('ETH' or address of the ERC20 token) |
 | withdraw.amount | amount of token to be transferred |
 | withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
-| withdraw.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| withdraw.nonce | Nonce that is going to be used for this transaction. ('committed' is used for the last known nonce for this account) |
 | returns | Handle of the submitted transaction | 
 
 
@@ -481,15 +481,15 @@ async withdrawFromSyncToEthereum(withdraw: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from 'ethers';
 
 const wallet = ..;// setup zksync wallet
 
 const withdrawTransaction = await wallet.withdrawFromSyncToEthereum({
-    ethAddress: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
-    token: "FAU",
-    amount: ethers.utils.parseEther("1.0"), 
-    fee: ethers.utils.parseEther("0.001") 
+    ethAddress: '0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c',
+    token: 'FAU',
+    amount: ethers.utils.parseEther('1.0'), 
+    fee: ethers.utils.parseEther('0.001') 
 });
 
 // Wait wait till transaction is verified
@@ -538,13 +538,13 @@ async emergencyWithdraw(withdraw: {
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
 const syncWallet = ..; // Setup zksync wallet.
 
 const emergencyWithdrawPriorityOp = await syncWallet.emergencyWithdraw({
-    token: "ETH",
+    token: 'ETH',
 });
 
 
@@ -586,7 +586,7 @@ static async fromETHSignature(
     ethSigner: ethers.Signer
 ): Promise<{
     signer: Signer;
-    ethSignatureType: "EthereumSignature" | "EIP1271Signature";
+    ethSignatureType: 'EthereumSignature' | 'EIP1271Signature';
 }> {
 ```
 

@@ -4,8 +4,8 @@
 
 Tokens are identified with 
 
-1. symbol (e.g. "ETH", "DAI") 
-2. address ("0x0000000000000000000000000000000000000000" for "ETH" or "0xFab46E002BbF0b4509813474841E0716E6730136" for ERC20).
+1. symbol (e.g. 'ETH', 'DAI') 
+2. address ('0x0000000000000000000000000000000000000000' for 'ETH' or '0xFab46E002BbF0b4509813474841E0716E6730136' for ERC20).
 
 To simplify conversions `TokenSet` class can be used, token set can be obtained from [zkSync provider](#current-token-set).
 
@@ -62,8 +62,8 @@ public formatToken(tokenLike: TokenLike, amount: BigNumberish): string;
 > Example
 
 ```typescript
-provider.tokenSet.formatToken('ETH', '1000000000'); // "0.000000001"
-provider.tokenSet.formatToken('USDC', '1000000000'); // "1000.0"
+provider.tokenSet.formatToken('ETH', '1000000000'); // '0.000000001'
+provider.tokenSet.formatToken('USDC', '1000000000'); // '1000.0'
 ```
 
 ### Parse amount for token
@@ -188,7 +188,7 @@ implies await for commit.
 > Awaiting for transaction.
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 const wallet = ..; // create zkSync Wallet
 
 // see transfer example for details
@@ -204,7 +204,7 @@ const receiptAfterVerify = await transfer.awaitVerifyReceipt();
 > Awaiting for priority operation
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
 // see deposit example for details
 const deposit = zksync.depositFromETH({..}); 

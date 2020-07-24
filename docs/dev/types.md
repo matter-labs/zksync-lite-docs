@@ -3,16 +3,16 @@
 ## Tokens and common types
 
 ```typescript
-// Symbol like "ETH" or "FAU" or token contract address(zero address is implied for "ETH").
+// Symbol like 'ETH' or 'FAU' or token contract address(zero address is implied for 'ETH').
 export type TokenLike = TokenSymbol | TokenAddress;
-// Token symbol (e.g. "ETH", "FAU", etc.)
+// Token symbol (e.g. 'ETH', 'FAU', etc.)
 export type TokenSymbol = string;
-// Token address (e.g. 0xde..ad for ERC20, or 0x00.00 for "ETH")
+// Token address (e.g. 0xde..ad for ERC20, or 0x00.00 for 'ETH')
 export type TokenAddress = string;
 
 // List of all available tokens
 export interface Tokens {
-    // Tokens are indexed by their symbol (e.g. "ETH")
+    // Tokens are indexed by their symbol (e.g. 'ETH')
     [token: string]: {
         address: string;
         id: number;
@@ -30,7 +30,7 @@ export interface ContractAddress {
 export type Address = string;
 
 // Committed nonce is going to be resolved to last nonce known to the zkSync network
-export type Nonce = number | "committed";
+export type Nonce = number | 'committed';
 ```
 
 ## Fees
@@ -38,7 +38,7 @@ export type Nonce = number | "committed";
 ```typescript
 export interface Fee {
     // Operation type (amount of chunks in operation differs and impacts the total fee).
-    feeType: "Withdraw" | "Transfer" | "TransferToNew",
+    feeType: 'Withdraw' | 'Transfer' | 'TransferToNew',
     // Amount of gas used by transaction
     gasTxAmount: utils.BigNumber,
     // Gas price (in wei)
@@ -57,7 +57,7 @@ export interface Fee {
 ## Account state
 
 ```typescript
-import { utils } from "ethers";
+import { utils } from 'ethers';
 
 // 0x-prefixed, hex encoded, ethereum account address
 export type Address = string;
@@ -73,7 +73,7 @@ export interface AccountState {
     // not yet processed by the zkSync network.
     depositing: {
         balances: {
-            // Token are indexed by their symbol (e.g. "ETH")
+            // Token are indexed by their symbol (e.g. 'ETH')
             [token: string]: {
                 // Sum of pending deposits for the token.
                 amount: utils.BigNumberish,
@@ -86,7 +86,7 @@ export interface AccountState {
     // Committed state is the last state known to the zkSync network, can be ahead of verified state
     committed: {
         balances: {
-            // Token are indexed by their symbol (e.g. "ETH")
+            // Token are indexed by their symbol (e.g. 'ETH')
             [token: string]: utils.BigNumberish;
         };
         nonce: number;
@@ -96,7 +96,7 @@ export interface AccountState {
     // Verified state is proved with ZKP on the Ethereum network.
     verified: {
         balances: {
-            // Token are indexed by their symbol (e.g. "ETH")
+            // Token are indexed by their symbol (e.g. 'ETH')
             [token: string]: utils.BigNumberish;
         };
         nonce: number;
@@ -106,7 +106,7 @@ export interface AccountState {
 }
 ```
 
-"Depositing" balances are balances for which deposit operation has already appeared on the Ethereum blockchain,
+'Depositing' balances are balances for which deposit operation has already appeared on the Ethereum blockchain,
 but which still do not have enough confirmations to be processed by the `zkSync` network.
 
 For depositing balances, two fields are available: `amount` (sum of ongoing deposit operations for token), and
@@ -120,7 +120,7 @@ taken as a guarantee of the execution.
 ## Transactions
 
 ```typescript
-import { utils } from "ethers";
+import { utils } from 'ethers';
 
 export interface Signature {
     pubKey: string;
@@ -128,7 +128,7 @@ export interface Signature {
 }
 
 export interface Transfer {
-    type: "Transfer";
+    type: 'Transfer';
     from: Address;
     to: Address;
     token: number;
@@ -139,7 +139,7 @@ export interface Transfer {
 }
 
 export interface Withdraw {
-    type: "Withdraw";
+    type: 'Withdraw';
     from: Address;
     to: Address;
     token: number;
@@ -150,7 +150,7 @@ export interface Withdraw {
 }
 
 export interface CloseAccount {
-    type: "Close";
+    type: 'Close';
     account: Address;
     nonce: number;
     signature: Signature;

@@ -18,7 +18,7 @@ yarn add ethers # ethers is a peer dependency of zksync
 
  Async is needed to lazy-load cryptographic wasm libraries.
  
-```js
+```typescript
 const zksync = await import('zksync');
 ```
 
@@ -27,7 +27,7 @@ const zksync = await import('zksync');
 To interact with Sync network users need to know the endpoint of the operator node.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 ```
 
 Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with Ethereum. 
@@ -62,12 +62,12 @@ We are going to deposit `1.0 ETH` to our zkSync account.
 ```typescript
 const deposit = await syncWallet.depositToSyncFromEthereum({
     depositTo: syncWallet.address(),
-    token: "ETH",
-    amount: ethers.utils.parseEther("1.0"),
+    token: 'ETH',
+    amount: ethers.utils.parseEther('1.0'),
 });
 ```
 
-"ETH" stands for native Ether. To transfer supported ERC20 token use ERC20 address or ERC20 symbol instead of "ETH".
+'ETH' stands for native Ether. To transfer supported ERC20 token use ERC20 address or ERC20 symbol instead of 'ETH'.
 
 After the tx is submitted to the Ethereum node, we can track its status using the returned object:
 
@@ -88,7 +88,7 @@ To control assets in zkSync network, an account must register a separate public 
 ```typescript
 if (! await syncWallet.isSigningKeySet()) {
     if (await syncWallet.getAccountId() == undefined) {
-        throw new Error("Unknwon account");
+        throw new Error('Unknwon account');
     } 
 
     const changePubkey = await syncWallet.setSigningKey();
@@ -102,10 +102,10 @@ if (! await syncWallet.isSigningKeySet()) {
 
 ```typescript
 // Committed state is not final yet
-const committedETHBalance = await syncWallet.getBalance("ETH");
+const committedETHBalance = await syncWallet.getBalance('ETH');
 
 // Verified state is final
-const verifiedETHBalance = await syncWallet.getBalance("ETH", "verified");
+const verifiedETHBalance = await syncWallet.getBalance('ETH', 'verified');
 ```
 
 To list all tokens of this account at once, use `getAccountState`:
@@ -114,10 +114,10 @@ To list all tokens of this account at once, use `getAccountState`:
 const state = await syncWallet.getAccountState();
 
 const committedBalances = state.committed.balances;
-const committedETHBalance = committedBalances["ETH"];
+const committedETHBalance = committedBalances['ETH'];
 
 const verifiedBalances = state.verified.balances;
-const committedETHBalance = verifiedBalances["ETH"];
+const committedETHBalance = verifiedBalances['ETH'];
 ```
 
 ## Making a transfer in zkSync
@@ -125,7 +125,7 @@ const committedETHBalance = verifiedBalances["ETH"];
 Now, let's create a second wallet and transfer some funds into it. Note that we can send assets to any fresh Ethereum account, without preliminary registration!
 
 ```typescript
-const ethWallet2 = ethers.Wallet.fromMnemonic( MNEMONIC2 ).connect(ethersProvider);
+const ethWallet2 = ethers.Wallet.fromMnemonic(MNEMONIC2).connect(ethersProvider);
 const syncWallet2 = await zksync.SyncWallet.fromEthSigner(ethWallet2, syncProvider);
 ```
 
@@ -133,13 +133,13 @@ We are going to transfer `0.999 ETH` to another account and pay `0.001 ETH` as a
 
 ```typescript
 const amount = zksync.utils.closestPackableTransactionAmount(
-    ethers.utils.parseEther("0.999")); 
+    ethers.utils.parseEther('0.999')); 
 const fee = zksync.utils.closestPackableTransactionFee(
-    ethers.utils.parseEther("0.001")); 
+    ethers.utils.parseEther('0.001')); 
 
 const transfer= await syncWallet.syncTransfer({
     to: syncWallet2.address(),
-    token: "ETH",
+    token: 'ETH',
     amount,
     fee,
 });
@@ -155,12 +155,12 @@ const transferReceipt = await transfer.awaitReceipt();
 
 ```typescript
 const fee = zksync.utils.closestPackableTransactionFee(
-    ethers.utils.parseEther("0.001")); 
+    ethers.utils.parseEther('0.001')); 
 
-const withdraw= await syncWallet2.withdrawTo({
+const withdraw = await syncWallet2.withdrawTo({
     ethAddress: ethWallet2.address,
-    token: "ETH",
-    amount: ethers.utils.parseEther("0.998"),
+    token: 'ETH',
+    amount: ethers.utils.parseEther('0.998'),
     fee,
 });
 ```

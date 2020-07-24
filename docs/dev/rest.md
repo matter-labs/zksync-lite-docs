@@ -6,7 +6,7 @@ This section contains the description of endpoints provided by the zkSync server
 
 ## Introduction
 
-The REST API of zkSync server is available at "${ZKSYNC_SERVER_ADDRESS}/api/v0.1". In the examples
+The REST API of zkSync server is available at '${ZKSYNC_SERVER_ADDRESS}/api/v0.1'. In the examples
 below we will use the `rinkeby` zkSync testnet API, thus URLs will
 look start `https://rinkeby-api.zksync.io/api/v0.1/`.
 
@@ -20,7 +20,7 @@ To interact with REST API from javascript one may use any of available packages 
 interface to perform HTTP requests. One of the simplest ways will be to use `Axios`, and in
 that case the interaction will look as follows:
 
-```js
+```typescript
 import Axios from 'axios';
 
 const url = 'https://rinkeby-api.zksync.io/api/v0.1/status';
@@ -46,18 +46,18 @@ Available endpoints are:
 All the endpoints return the list of transactions that satisfy the criteria, each transaction has the following
 JSON schema:
 
-```js
+```typescript
 {
-    "tx_id": string, // Unique identifier of a transaction, designated to be used in relative tx history queries.
-    "hash": string, // Hash of a transaction.
-    "eth_block"?: number, // Number of Ethereum block in which priority operation was added. `null` for transactions.
-    "pq_id"?: number, // Identifier of a priority operation. `null` for transactions.
-    "tx": object, // Transaction / Priority operation contents. Structure depends on the type of operation.
-    "success"?: string, // Flag for successful transaction execution. `null` for priority operations.
-    "fail_reason"?: string, // Reason of the transaction failure. May be `null`.
-    "commited": boolean, // Flag for inclusion of transaction into some block.
-    "verified": boolean, // Flag of having the block with transaction verified.
-    "created_at": string, // Timestamp of the transaction execution.
+    'tx_id': string, // Unique identifier of a transaction, designated to be used in relative tx history queries.
+    'hash': string, // Hash of a transaction.
+    'eth_block'?: number, // Number of Ethereum block in which priority operation was added. `null` for transactions.
+    'pq_id'?: number, // Identifier of a priority operation. `null` for transactions.
+    'tx': object, // Transaction / Priority operation contents. Structure depends on the type of operation.
+    'success'?: string, // Flag for successful transaction execution. `null` for priority operations.
+    'fail_reason'?: string, // Reason of the transaction failure. May be `null`.
+    'commited': boolean, // Flag for inclusion of transaction into some block.
+    'verified': boolean, // Flag of having the block with transaction verified.
+    'created_at': string, // Timestamp of the transaction execution.
 }
 ```
 
@@ -89,7 +89,7 @@ Description of the parameters:
 
 | Parameter | Description | Default value |
 | -- | -- | -- |
-| address | Address of account to load history for. Must be encoded as hexadecimal string with a "0x" prefix. | N/A |
+| address | Address of account to load history for. Must be encoded as hexadecimal string with a '0x' prefix. | N/A |
 | tx_id | Identifier of the transaction to load the history from. | The first transaction of the next block to be committed. |
 | limit | Maximum amount of transactions to include to response. Must not be greater than 100. | 100 |
 
