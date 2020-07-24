@@ -16,7 +16,7 @@ yarn add ethers # ethers is a peer dependency of zksync
 
 ## Adding imports
 
- Async is need to lazy-load cryptographic wasm libraries.
+ Async is needed to lazy-load cryptographic wasm libraries.
  
 ```js
 const zksync = await import('zksync');

@@ -24,14 +24,14 @@ In other words, zkRollup strictly inherits the security guarantees of the underl
 Here are some links to explore the topic of zkRollups:
 
 - [Original idea proposal by Vitalik Buterin](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
-- [Matte Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
+- [Matter Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
 - [Awesome Zero-Knowledge Proofs materials](https://github.com/matter-labs/awesome-zero-knowledge-proofs)
 - [zkRollup vs. Optimistic Rollup deep dive](https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075)
 - [Validity proofs (zkRollup) vs. fraud proofs](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a)
 
 ## Maximum throughput
 
-**zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual transaction throughput has an upper bound of 300 TPS due to the current limitations of the PLONK CRS. Yet, this number by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified and benchmarked it. Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the already audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart contracts. We will provide more details later in a separate post.
+**zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual transaction throughput has an upper bound of 300 TPS due to the current limitations of the PLONK CRS. Yet, this number by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified, and benchmarked it. Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the already audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart contracts. We will provide more details later in a separate post.
 
 ## Transaction finality
 

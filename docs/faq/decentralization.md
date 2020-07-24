@@ -2,7 +2,7 @@
 
 ## How decentralized is zkSync?
 
-Technologically, decentralization is not a binary option but rather a continuum of design choices. The following rough scale can be used to asses a level of decentralization of a crypto project with regard to the ownership of assets:
+Technologically, decentralization is not a binary option but rather a continuum of design choices. The following rough scale can be used to assess a level of decentralization of a crypto project with regard to the ownership of assets:
 
 1. Centralized custody (fully trusted): Coinbase
 2. Collective custody (trust in the honest majority): sidechains
@@ -19,7 +19,7 @@ However, the daily operation of the **zkSync** network at the moment depends on 
 
 ## Who operates zkSync now?
 
-Currently, the computational service provider for the **zkSync** network is "Stichtig ZK Sync", a non-profit Dutch foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service will operated at break-even cost until the transition to full decentralization.
+Currently, the computational service provider for the **zkSync** network is "Stichting ZK Sync", a non-profit Dutch foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service will operated at break-even cost until the transition to full decentralization.
 
 ## Decentralizaton roadmap
 

@@ -53,7 +53,7 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 |[Rescue](https://eprint.iacr.org/2019/426.pdf)|Hash function|1, 2|
 |[muSig](https://eprint.iacr.org/2018/068)|Signature scheme|1, 2, 3|
 
-### Cryptographic asssumptions
+### Cryptographic assumptions
 
 1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision_resistance)
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
