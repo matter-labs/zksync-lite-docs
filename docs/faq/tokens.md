@@ -6,8 +6,8 @@
 
 **zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially, new tokens need to be manually whitelisted by the operator. In the future, adding new tokens will be fully permissionless.
 
-The full list of currently supported tokens is available under this link (as JSON):
-https://api.zksync.io/api/v0.1/tokens
+The full list of currently supported tokens is available under [this link](https://api.zksync.io/api/v0.1/tokens) (as JSON):
+
 
 DISCLAIMER: We will list any tokens fulfilling the criteria below on the first-come, first-serve basis. Listing of a token on **zkSync** does not represent an endorsement for this token by the Matter Labs team, Stichting ZK Sync or any other entity. We do not have competence and authority to analyze the token business model and smart contract security guarantees of a particular token. Please use any token on your own risk and judgement.
 
@@ -17,7 +17,7 @@ To submit a token listing support, please fill out [this form](https://docs.goog
 
 We can immediately list tokens that satisfy the following conditions:
 
-- price tracked at https://coinmarketcap.com
+- price tracked at [CoinMarketCap](https://coinmarketcap.com)
 - daily trading volume exceeds $1M over the period of the past 3 months.
 
 Tokens without sufficient liquidity or CMC price tracker will be listed as soon as we implement an option to pay fees in a different token (see below).
