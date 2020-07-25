@@ -130,8 +130,8 @@ const contractAddresses = await syncWSProvider.getContractAddress();
 
 ```json
 {
-    'mainContract': '0xab..cd',
-    'govContract': '0xef..12'
+    "mainContract": "0xab..cd",
+    "govContract": "0xef..12"
 }
 ```
 
@@ -163,15 +163,15 @@ const contractAddresses = await syncWSProvider.getTokens();
 
 ```json
 {
-  'ERC20-1': {
-    'address': '0xbeeb9f55d523918f9cd2979a454610f673c2885e',
-    'id': 1,
-    'symbol': null
+  "ERC20-1": {
+    "address": "0xbeeb9f55d523918f9cd2979a454610f673c2885e",
+    "id": 1,
+    "symbol": null
   },
-  'ETH': {
-    'address': '0000000000000000000000000000000000000000',
-    'id': 0,
-    'symbol': 'ETH'
+  "ETH": {
+    "address": "0000000000000000000000000000000000000000",
+    "id": 0,
+    "symbol": "ETH"
   }
 }
 ```
@@ -197,29 +197,29 @@ async getState(address: Address): Promise<AccountState>;
 
 ```json
 {
-    'address': '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e',
-    'id': 1, // optional
-    'committed': {
-        'balances': {
-            'ETH': '1000000000000000000', // 1 Ether in Wei 
+    "address": "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
+    "id": 1, // optional
+    "committed": {
+        "balances": {
+            "ETH": "1000000000000000000", // 1 Ether in Wei 
         },
-        'nonce': 1,
+        "nonce": 1,
     },
-    'depositing': {
-        'balances': {
-            'FAU': {
-                'amount': '9000000000000000',
-                'expectedAcceptBlock': 438929
+    "depositing": {
+        "balances": {
+            "FAU": {
+                "amount": "9000000000000000",
+                "expectedAcceptBlock": 438929
             }
         }
     },
-    'verified': {
-        'balances': {
-            'ETH': '1000000000000000000', // 1 Ether in Wei 
+    "verified": {
+        "balances": {
+            "ETH": "1000000000000000000", // 1 Ether in Wei 
             // ERC20 token
-            'FAU': '1000000000000000000' 
+            "FAU": "1000000000000000000" 
         },
-        'nonce': 0,
+        "nonce": 0,
     }
 }
 ```
@@ -267,29 +267,29 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 ```json
 // Not executed yet
 {
-    'executed': false
+    "executed": false
 }
 
 // Success
 {
-    'executed': true,
-    'success': true,
-    'block': {
-      'blockNumber': 658,
-      'committed': true,
-      'verified': true
+    "executed": true,
+    "success": true,
+    "block": {
+      "blockNumber": 658,
+      "committed": true,
+      "verified": true
     }
 }
 
 // Failure
 {
-    'executed': true,
-    'success': true,
-    'failReason': 'Nonce mismatch',
-    'block': {
-      'blockNumber': 658,
-      'committed': true,
-      'verified': true
+    "executed": true,
+    "success": true,
+    "failReason": "Nonce mismatch",
+    "block": {
+      "blockNumber": 658,
+      "committed": true,
+      "verified": true
     }
 }
 ```
@@ -351,11 +351,11 @@ async getPriorityOpStatus(
 
 ```json
 {
-    'executed': true,
-    'block': {
-      'blockNumber': 658,
-      'committed': true,
-      'verified': true
+    "executed": true,
+    "block": {
+      "blockNumber": 658,
+      "committed": true,
+      "verified": true
     }
 }
 ```
