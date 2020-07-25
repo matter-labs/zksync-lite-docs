@@ -5,23 +5,23 @@
 ## Security overview
 
 ::: warning
-**zkSync v1.0** is in alpha. Blockchains and zero-knowledge proofs are still experimental technologies with rapidly evolving attack vectors. zkSync relies on cutting-edge cryptography that has never been used in production before. While Matter Labs is rigorously following scientific and engineering best practices with regard to security, we can not provide 100% fault-free guarantee. Use zkSync at your own risk and do not put more money into it than you can afford to lose.
+**zkSync v1.0** is in alpha. Blockchains and zero-knowledge proofs are still experimental technologies with rapidly evolving attack vectors. **zkSync** relies on cutting-edge cryptography that has never been used in production before. While Matter Labs is rigorously following scientific and engineering best practices with regard to security, we can not provide 100% fault-free guarantee. Use **zkSync** at your own risk and do not put more money into it than you can afford to lose.
 :::
 
 [zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md) document explicitly lists the protocol's cryptographic assumptions and security properties.
 
-In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions, funds placed into zkSync will have the same security guarantees as if they are held in an Ethereum account without any additional requirements on the user part. In particular:
+In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions, funds placed into **zkSync** will have the same security guarantees as if they are held in an Ethereum account without any additional requirements on the user part. In particular:
 
 - Users do not need to monitor the network.
 - Private keys can be held in cold storage.
-- Operators can not steal funds or corrupt the zkSync state in any way.
-- Users can eventually withdraw their assets onto the mainnet, regardless of cooperation from zkSync operators.
+- Operators can not steal funds or corrupt the **zkSync** state in any way.
+- Users can eventually withdraw their assets onto the mainnet, regardless of cooperation from **zkSync** operators.
 
 Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/faq/tech.html#zkrollup-architecture). This means, every single user transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus, no operator can ever move the system into an incorrect state or take users money.
+**zkSync** is built on [zkRollup architecture](/faq/tech.html#zkrollup-architecture). This means, every single user transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus, no operator can ever move the system into an incorrect state or take users money.
 
 See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a) for a further overview of the benefits of the validity proofs.
 
@@ -35,13 +35,15 @@ In the ultimate emergency case of all operators being shut down or becoming unre
 
 ### Upgrade mechanism
 
-The version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations. However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync contract and all users get 4 week notice period to exit in case they don't like the changes.
+The version 1.0 of **zkSync** protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations. However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the **zkSync** contract and all users get 4 week notice period to exit in case they don't like the changes.
 
-WARNING: the beta will be deployed with 1 day notice period, which will soon be bumped up to 1 week, then to 2 weeks, and finally to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
+::: warning
+the beta will be deployed with 1 day notice period, which will soon be bumped up to 1 week, then to 2 weeks, and finally to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
+:::
 
 ## Cryptography used
 
-Although zkSync is built on some of the most cutting-edge cryptography (such as PLONK and RedShift), we were very conservative with respect to security choices made in the protocol. Every component relies exclusively on well established cryptographic assumptions widely considered secure in the academic and professional security community.
+Although **zkSync** is built on some of the most cutting-edge cryptography (such as PLONK and RedShift), we were very conservative with respect to security choices made in the protocol. Every component relies exclusively on well established cryptographic assumptions widely considered secure in the academic and professional security community.
 
 ### Primitives
 
@@ -61,7 +63,7 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 
 ## Universal CRS setup
 
-The version 1.0 of zkSync protocol is using the PLONK proof system which requires a "trusted setup" of a Common Reference String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions, because larger number of prominent and respected members of the community have incentive to participate in it, and more scrutiny can be expected around the trusted setup ceremony.
+The version 1.0 of **zkSync** protocol is using the PLONK proof system which requires a "trusted setup" of a Common Reference String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions, because larger number of prominent and respected members of the community have incentive to participate in it, and more scrutiny can be expected around the trusted setup ceremony.
 
 Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies (which are very difficult from the logistical and security perspectives).
 
@@ -85,10 +87,10 @@ Matter Labs [participated](https://www.aztecprotocol.com/ignition/participant/0x
 
 The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to compute a secure database of encrypted points, including [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the crypto community. Full ceremony transcript with the list of indviduals and organizations who claimed their contribution [is available here](https://www.aztecprotocol.com/ignition/). You can use [this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed participants.
 
-Despite relying on a universal trusted setup, we argue that zkSync can be called a fully trustless protocol. The reason for this is that there are no systems without some form of a trusted setup. Most users do not personally verify and compile the source code of their wallets, full nodes, mining software, and certainly do not verify the circuits of the hardware all these things run upon. In our opinion, the ease of concealed collusion of developers and experts in these systems is much higher than in a trusted setup with hundreds of well-known participants. At the same time, the ongoing operation of zkSync requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
+Despite relying on a universal trusted setup, we argue that **zkSync** can be called a fully trustless protocol. The reason for this is that there are no systems without some form of a trusted setup. Most users do not personally verify and compile the source code of their wallets, full nodes, mining software, and certainly do not verify the circuits of the hardware all these things run upon. In our opinion, the ease of concealed collusion of developers and experts in these systems is much higher than in a trusted setup with hundreds of well-known participants. At the same time, the ongoing operation of **zkSync** requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
 
 Nonetheless, we encourage you to check the list of the contributors of the Ignition ceremony and make your own opinion on whether there is at least one trustworthy person or organisation among them. And in the future, we strive to eliminate trust assumptions altogether by embracing a transparent zero-knowledge proof system such as [RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
 
 ## Security audit
 
-The audit by [ABDK Consulting](https://www.abdk.consulting/) for zkSync v1.0 protocol is complete, the results are [available here](https://zksync.io/zksync-1.0-audit.pdf). The audit scope includes the protocol design, applied cryptography, smart contracts and zero-knowledge circuits.
+The audit by [ABDK Consulting](https://www.abdk.consulting/) for **zkSync** v1.0 protocol is complete, the results are [available here](https://zksync.io/zksync-1.0-audit.pdf). The audit scope includes the protocol design, applied cryptography, smart contracts and zero-knowledge circuits.
