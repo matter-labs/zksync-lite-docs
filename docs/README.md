@@ -5,7 +5,7 @@ heroAlt: "zkSync: secure, scalable crypto payments"
 tagline: The new standard for crypto payments
 actionText2: FAQ & docs
 actionLink2: faq/intro.html
-actionText: Try zkSync on Mainnet!
+actionText: Open wallet
 actionLink: https://wallet.zksync.io
 features:
 - title: User experience first
