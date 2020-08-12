@@ -1,14 +1,19 @@
 # Overview
 
-**[zkSync v1 is Live on Mainnet!](https://medium.com/matter-labs/zksync-is-live-bringing-trustless-scalable-payments-to-ethereum-9c634b3e6823)**
-
-You can also try our [testnet on Rinkeby](https://testnet.zksync.io).
-
 ## Introduction
 
 **zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by zkRollup technology. It uses zero-knowledge proofs and on-chain data availability to keep user's funds as safe as though they never left the mainnet.
 
 While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively seek out improvements that eliminate friction and complexity in order to make zkSync the most enjoyable platform on Ethereum, for both end-users and builders. The best way to get an impression about it is to [try out zkSync](https://testnet.zksync.io) yourself — it should only take 2 minutes.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/el-9YYGN1nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Project status
+
+- [zkSync v1 is Live on Mainnet](https://medium.com/matter-labs/zksync-is-live-bringing-trustless-scalable-payments-to-ethereum-9c634b3e6823).
+- Security audit by [ABDK Consulting](https://www.abdk.consulting/) is [complete](/zksync-1.0-audit.pdf).
+- Testnet is available on [Rinkeby](https://rinkeby.zksync.io) and [Ropsten](https://ropsten.zksync.io).
+- [Zinc](https://github.com/matter-labs/zinc) smart contract framework is under active development.
 
 ## zkSync features
 
