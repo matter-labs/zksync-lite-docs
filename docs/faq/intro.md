@@ -38,7 +38,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 ## zkSync in comparison
 
-zkSync stands out remarkably in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that doesn't require any operational activity to keep the funds safe. Users can go offline for a year, then come back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
+zkSync [stands out remarkably](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955) in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that doesn't require any operational activity to keep the funds safe. Users can go offline for a year, then come back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
 
 ![L2 comparison](/chart3.png)
 
