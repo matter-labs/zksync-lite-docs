@@ -4,10 +4,6 @@
 
 ## Security overview
 
-::: warning
-**zkSync v1.0** is in alpha. Blockchains and zero-knowledge proofs are still experimental technologies with rapidly evolving attack vectors. zkSync relies on cutting-edge cryptography that has never been used in production before. While Matter Labs is rigorously following scientific and engineering best practices with regard to security, we can not provide 100% fault-free guarantee. Use zkSync at your own risk and do not put more money into it than you can afford to lose.
-:::
-
 [zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md) document explicitly lists the protocol's cryptographic assumptions and security properties.
 
 In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions, funds placed into zkSync will have the same security guarantees as if they are held in an Ethereum account without any additional requirements on the user part. In particular:
