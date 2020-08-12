@@ -17,6 +17,11 @@
           :item="actionLink2"
         />-->
       </p>
+      <p>
+        <RouterLink
+        to="/faq"
+        class="action-link">Learn more</RouterLink>
+      </p>
     </header>
 
     <div v-if="data.features && data.features.length" class="features">
@@ -135,6 +140,16 @@ export default {
       font-size: 1.4rem;
       line-height: 1.3;
       color: lighten($textColor, 40%);
+    }
+
+    .action-link {
+      display: inline-block;
+      width: 18rem;
+      font-size: 1.2rem;
+      transition: background-color 0.1s ease;
+      &:hover {
+        color: lighten($ml1, 15%);
+      }
     }
 
     .action-button {
