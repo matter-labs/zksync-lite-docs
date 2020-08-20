@@ -5,6 +5,8 @@
 `Wallet` object is used to interact with the zkSync network. The wallet has an ethereum address associated with it and user that owns this ethereum account owns a corresponding zkSync account. 
 By ownership of ethereum account we mean ability to send ethereum transactions and optionally ability to sign messages. 
 
+Wallet has nonce associated with it and it is used to prevent transaction replay. Only transaction with the nonce that is equal to the current nonce of the wallet can be executed. 
+
 To create transactions in the zkSync network wallet must have zkSync key pair associated with it. zkSync keys are handled by 
 [Signer](#signer) object and can be created using different methods, the most convenient way is to create these keys by deriving them from ethereum signature 
 of the specific message, this method is used by default if user does not provide `Signer` created using some other method.
@@ -13,6 +15,9 @@ For zkSync keys to be valid user should register them once in the zkSync network
 ethereum wallets that do not support message signing [additional ethereum transaction](#authorize-new-public-key-using-ethereum-transaction) is required.
 zkSync keys can be changed at any time.
 
+Transactions such as [Transfer](#transfer-in-the-zksync) and [Withdraw](#withdraw-token-from-the-zksync) are additionally signed using ethereum account of the wallet, this 
+signature is used for additional security in case zkSync keys of the wallet are compromised. User is asked to sign readable representation of the transaction and signature check is performed 
+when transaction is submitted to the zkSync. 
 
 
 ### Creating wallet from ETH signer
@@ -317,6 +322,27 @@ if (! await wallet.isSigningKeySet()) {
 }
 ```
 
+### Sign change account public key transaction
+
+Signs [change public key](#changing-account-public-key) transaction without sending it to the zkSync network. 
+
+> Signature
+
+```typescript
+async signSetSigningKey(
+    nonce: number, 
+    onchainAuth = false
+): Promise<SignedTransaction>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| nonce | Nonce that is going to be used for this transaction. |
+| onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
+| returns | Signed transaction | 
+
 ### Authorize new public key using ethereum transaction
 
 This method is used to authorize [public key change](#changing-account-public-key) using ethereum transaction for 
@@ -437,8 +463,36 @@ const transferTransaction = await wallet.syncTransfer({
 const transactionReceipt = await transferTransaction.awaitReceipt();
 ```
 
+### Sign transfer in the zkSync transaction
 
-### Withdraw token from Sync
+Signs [transfer](#transfer-in-the-zksync) transaction without sending it to the zkSync network. 
+It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
+
+> Signature
+
+```typescript
+async signSyncTransfer(transfer: {
+    to: Address;
+    token: TokenLike;
+    amount: BigNumberish;
+    fee: BigNumberish;
+    nonce: number;
+}): Promise<SignedTransaction>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| transfer.to | Sync address of the recipient of funds |
+| transfer.token | token to be transferred (symbol or address of the token) |
+| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](#closest-packable-amount) |
+| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| transfer.nonce | Nonce that is going to be used for this transaction. |
+| returns | Signed transaction. | 
+
+
+### Withdraw token from the zkSync
 
 Moves funds from the Sync account to ethereum address.
 Sender account should have correct public key set before sending this transaction. (see [change pub key](#changing-account-public-key))
@@ -496,6 +550,33 @@ const withdrawTransaction = await wallet.withdrawFromSyncToEthereum({
 const transactionReceipt = await withdrawTransaction.awaitVerifyReceipt();
 ```
 
+### Sign withdraw token from the zkSync transaction
+
+Signs [withdraw](#withdraw-token-from-the-zksync) transaction without sending it to the zkSync network. 
+It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
+
+> Signature
+
+```typescript
+async signWithdrawFromSyncToEthereum(withdraw: {
+    ethAddress: string;
+    token: TokenLike;
+    amount: BigNumberish;
+    fee: BigNumberish;
+    nonce: number;
+}): Promise<SignedTransaction>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| withdraw.ethAddress | ethereum address of the recipient |
+| withdraw.token | token to be transferred ("ETH" or address of the ERC20 token) |
+| withdraw.amount | amount of token to be transferred |
+| withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| withdraw.nonce | Nonce that is going to be used for this transaction. |
+| returns | Signed transaction | 
 
 
 ### Emergency withdraw from Sync
