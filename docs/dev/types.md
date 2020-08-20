@@ -89,6 +89,7 @@ export interface AccountState {
             // Token are indexed by their symbol (e.g. "ETH")
             [token: string]: utils.BigNumberish;
         };
+        // Nonce is equal to that of the next valid transaction.
         nonce: number;
         // Public key hash of the signer keys associated with account
         pubKeyHash: PubKeyHash;
@@ -99,6 +100,7 @@ export interface AccountState {
             // Token are indexed by their symbol (e.g. "ETH")
             [token: string]: utils.BigNumberish;
         };
+        // Nonce is equal to that of the next valid transaction.
         nonce: number;
         // Public key hash of the signer keys associated with account
         pubKeyHash: PubKeyHash;

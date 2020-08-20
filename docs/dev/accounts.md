@@ -5,6 +5,8 @@
 `Wallet` object is used to interact with the zkSync network. The wallet has an ethereum address associated with it and user that owns this ethereum account owns a corresponding zkSync account. 
 By ownership of ethereum account we mean ability to send ethereum transactions and optionally ability to sign messages. 
 
+Wallet has nonce associated with it and it is used to prevent transaction replay. Only transaction with the nonce that is equal to the current nonce of the wallet can be executed. 
+
 To create transactions in the zkSync network wallet must have zkSync key pair associated with it. zkSync keys are handled by 
 [Signer](#signer) object and can be created using different methods, the most convenient way is to create these keys by deriving them from ethereum signature 
 of the specific message, this method is used by default if user does not provide `Signer` created using some other method.
