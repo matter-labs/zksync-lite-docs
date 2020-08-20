@@ -127,6 +127,11 @@ export interface Signature {
     signature: string;
 }
 
+export interface TxEthSignature {
+    type: "EthereumSignature" | "EIP1271Signature";
+    signature: string;
+}
+
 export interface Transfer {
     type: "Transfer";
     from: Address;
@@ -154,6 +159,11 @@ export interface CloseAccount {
     account: Address;
     nonce: number;
     signature: Signature;
+}
+
+export interface SignedTransaction {
+    tx: Transfer | Withdraw | ChangePubKey | CloseAccount;
+    ethereumSignature?: TxEthSignature;
 }
 
 export interface BlockInfo {

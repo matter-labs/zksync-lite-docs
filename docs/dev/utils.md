@@ -192,7 +192,7 @@ import * as zksync from "zksync";
 const wallet = ..; // create zkSync Wallet
 
 // see transfer example for details
-const transfer = wallet.syncTransfer({..}); 
+const transfer = await wallet.syncTransfer({..}); 
 
 // this function will return when deposit is committed to the zkSync chain
 const receiptAfterCommit = await transfer.awaitReceipt();
@@ -207,7 +207,7 @@ const receiptAfterVerify = await transfer.awaitVerifyReceipt();
 import * as zksync from "zksync";
 
 // see deposit example for details
-const deposit = zksync.depositFromETH({..}); 
+const deposit = await zksync.depositFromETH({..}); 
 
 // this function will return when deposit request is accepted to the Ethereum.
 const txMinedCommit = await deposit.awaitEthereumTxCommit();
@@ -217,4 +217,24 @@ const receiptAfterCommit = await deposit.awaitReceipt();
 
 // this function will return when deposit is verified with ZK proof.
 const receiptAfterVerify = await deposit.awaitVerifyReceipt();
+```
+
+> Sending and awaiting for the previously signed transaction.
+
+```typescript
+import * as zksync from "zksync";
+const provider = ..; // create zkSync Provider
+const wallet = ..; // create zkSync Wallet
+
+// sign transfer transaction
+const signedTransfer = await wallet.signSyncTransfer({..}); 
+
+// submit transaction to zkSync
+const transfer =  await zksync.wallet.submitSignedTransaction(signedTransfer, provider);
+
+// this function will return when deposit is committed to the zkSync chain
+const receiptAfterCommit = await transfer.awaitReceipt();
+
+// this function will return when deposit is verified with ZK proof.
+const receiptAfterVerify = await transfer.awaitVerifyReceipt();
 ```
