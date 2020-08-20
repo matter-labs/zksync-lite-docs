@@ -15,6 +15,9 @@ For zkSync keys to be valid user should register them once in the zkSync network
 ethereum wallets that do not support message signing [additional ethereum transaction](#authorize-new-public-key-using-ethereum-transaction) is required.
 zkSync keys can be changed at any time.
 
+Transactions such as [Transfer](#transfer-in-the-zksync) and [Withdraw](#withdraw-token-from-the-zksync) are additionally signed using ethereum account of the wallet, this 
+signature is used for additional security in case zkSync keys of the wallet are compromised. User is asked to sign readable representation of the transaction and signature check is performed 
+when transaction is submitted to the zkSync. 
 
 
 ### Creating wallet from ETH signer
