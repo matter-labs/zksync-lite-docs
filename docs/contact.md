@@ -8,8 +8,8 @@ sidebar: false
 
 All technical/developer discussions will only take place in gitter:
 
-- [zksync](https://gitter.im/matter-labs/zksync)
-- [zinc](https://gitter.im/matter-labs/zinc)
+- [zksync](https://gitter.im/matter-labs/zksync) (general integration questions)
+- [zinc](https://gitter.im/matter-labs/zinc) (smart contracts)
 
 ## Community & user support
 
