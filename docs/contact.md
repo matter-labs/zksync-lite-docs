@@ -4,10 +4,16 @@ sidebar: false
 
 # Contacts
 
-## Community, developers & support
+## Developers
 
-Welcome to zkSync [Discord](https://discord.gg/px2aR7w).
+All technical/developer discussions will only take place in gitter:
 
+- [zksync](https://gitter.im/matter-labs/zksync)
+- [zinc](https://gitter.im/matter-labs/zinc)
+
+## Community & user support
+
+Welcome to our zkSync [Discord](https://discord.gg/px2aR7w).
 
 ## Partnerships, questions, integrations and press
 
