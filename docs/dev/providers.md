@@ -66,7 +66,7 @@ const syncHTTPProvider = await zksync.Provider.newHttpProvider(
 > Signature
 
 ```typescript
-async submitTx(tx: any): Promise<string>;
+async submitTx(tx: any, signature?: TxEthSignature): Promise<string>;
 ```
 
 
@@ -75,6 +75,7 @@ async submitTx(tx: any): Promise<string>;
 | Name | Description | 
 | -- | -- |
 | tx | Signed Sync transaction (see types, for detailed description) |
+| signature | Signature of the readable representation of the transaction signed by ethereum wallet |
 | returns | `0x`-prefixed hex-encoded hash of the transaction |
 
 > Example
@@ -84,6 +85,7 @@ import * as zksync from "zksync";
 
 const syncWSProvider = await zksync.getDefaultProvider("testnet")
 const signedTransferTx = {
+    accountId: 13, // id of the sender account in the zkSync
     type: "Transfer",
     from: "0x..address1",
     to: "0x..address2",
@@ -97,8 +99,16 @@ const signedTransferTx = {
     }
 };
 
+// const readableTxInfo =
+//     `Transfer 1.0 ETH\n` +
+//     `To: 0x..address2\n` +
+//     `Nonce: 0\n` +
+//     `Fee: 0.01 ETH\n` +
+//     `Account Id: 13`;
+const ethSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature of the readableTxInfo
 
-const transactionHash = await syncWSProvider.submitTx(signedTransferTx);
+
+const transactionHash = await syncWSProvider.submitTx(signedTransferTx, ethSignature);
 // 0x..hash (32 bytes)
 ```
 

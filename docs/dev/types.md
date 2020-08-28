@@ -89,6 +89,7 @@ export interface AccountState {
             // Token are indexed by their symbol (e.g. "ETH")
             [token: string]: utils.BigNumberish;
         };
+        // Nonce is equal to that of the next valid transaction.
         nonce: number;
         // Public key hash of the signer keys associated with account
         pubKeyHash: PubKeyHash;
@@ -99,6 +100,7 @@ export interface AccountState {
             // Token are indexed by their symbol (e.g. "ETH")
             [token: string]: utils.BigNumberish;
         };
+        // Nonce is equal to that of the next valid transaction.
         nonce: number;
         // Public key hash of the signer keys associated with account
         pubKeyHash: PubKeyHash;
@@ -124,6 +126,11 @@ import { utils } from "ethers";
 
 export interface Signature {
     pubKey: string;
+    signature: string;
+}
+
+export interface TxEthSignature {
+    type: "EthereumSignature" | "EIP1271Signature";
     signature: string;
 }
 
@@ -154,6 +161,11 @@ export interface CloseAccount {
     account: Address;
     nonce: number;
     signature: Signature;
+}
+
+export interface SignedTransaction {
+    tx: Transfer | Withdraw | ChangePubKey | CloseAccount;
+    ethereumSignature?: TxEthSignature;
 }
 
 export interface BlockInfo {
