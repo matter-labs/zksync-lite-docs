@@ -66,7 +66,7 @@ const syncHTTPProvider = await zksync.Provider.newHttpProvider(
 > Signature
 
 ```typescript
-async submitTx(tx: any, signature?: TxEthSignature): Promise<string>;
+async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): Promise<string>;
 ```
 
 
@@ -76,6 +76,7 @@ async submitTx(tx: any, signature?: TxEthSignature): Promise<string>;
 | -- | -- |
 | tx | Signed Sync transaction (see types, for detailed description) |
 | signature | Signature of the readable representation of the transaction signed by ethereum wallet |
+| fastProcessing | For withdrawals only: request faster processing of transaction |
 | returns | `0x`-prefixed hex-encoded hash of the transaction |
 
 > Example
@@ -424,7 +425,7 @@ The returned value contains all the price components used for the fee calculatio
 
 ```typescript
 async getTransactionFee(
-    txType: "Withdraw" | "Transfer",
+    txType: "Withdraw" | "Transfer" | "FastWithdraw",
     address: Address,
     tokenLike: TokenLike
 ): Promise<Fee>;

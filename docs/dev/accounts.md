@@ -516,6 +516,7 @@ async withdrawFromSyncToEthereum(withdraw: {
     amount: utils.BigNumberish;
     fee: utils.BigNumberish;
     nonce?: Nonce;
+    fastProcessing?: boolean;
 }): Promise<Transaction>;
 ```
 
@@ -528,6 +529,7 @@ async withdrawFromSyncToEthereum(withdraw: {
 | withdraw.amount | amount of token to be transferred |
 | withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | withdraw.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| withdraw.fastProcessing | Request faster processing of transaction. Note that this requires a higher fee (if fee was requested manually, request has to be of "FastWithdraw" type) |
 | returns | Handle of the submitted transaction | 
 
 

@@ -127,3 +127,27 @@ https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?limit=10
 ```
 
 Load at most 10 unconfirmed transactions (we're requesting the transactions that are newer than the last committed tx).
+
+## Withdrawal processing timings
+
+Endpoint address is `/withdrawal_processing_time`
+
+zkSync server provides information about estimated time of processing a withdrawal.
+
+Withdrawal can be either normal or fast (with higher fee). Sending a fast withdrawal decreases a block generation time limit,
+meaning that block will be generated sooner even if its capacity has not been filled.
+
+Endpoint response is encoded as follows:
+
+```js
+{
+    "normal": number, // Estimated time to generate a block with a withdrawal with a normal fee (in seconds).
+    "fast": number, // // Estimated time to generate a block with a fast withdrawal with a higher fee (in seconds).
+}
+```
+
+### Examples
+
+```
+https://rinkeby-api.zksync.io/api/v0.1/withdrawal_processing_time
+```
