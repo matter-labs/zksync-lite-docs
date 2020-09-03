@@ -421,6 +421,8 @@ public tokenSet: TokenSet;
 Performs a query to the server, obtaining an acceptable transaction fee for transactions.
 The returned value contains all the price components used for the fee calculation, and the fee itself (`totalFee` field).
 
+**Note:** If fee is requested for a `ForcedExit` operation, corresponding `txType` will be `Withdraw`.
+
 > Signature
 
 ```typescript

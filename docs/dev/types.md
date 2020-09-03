@@ -156,6 +156,25 @@ export interface Withdraw {
     signature: Signature;
 }
 
+export interface ForcedExit {
+    type: "ForcedExit";
+    initiatorAccountId: number;
+    target: Address;
+    token: number;
+    fee: BigNumberish;
+    nonce: number;
+    signature: Signature;
+}
+
+export interface ChangePubKey {
+    type: "ChangePubKey";
+    accountId: number;
+    account: Address;
+    newPkHash: PubKeyHash;
+    nonce: number;
+    ethSignature: string;
+}
+
 export interface CloseAccount {
     type: "Close";
     account: Address;
@@ -164,7 +183,7 @@ export interface CloseAccount {
 }
 
 export interface SignedTransaction {
-    tx: Transfer | Withdraw | ChangePubKey | CloseAccount;
+    tx: Transfer | Withdraw | ChangePubKey | CloseAccount | ForcedExit;
     ethereumSignature?: TxEthSignature;
 }
 
