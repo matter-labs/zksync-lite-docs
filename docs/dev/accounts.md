@@ -290,21 +290,28 @@ The account should be present in the zkSync network in order to set a signing ke
 This function will throw an error if the account is not present in the zkSync network. 
 Check the [account id](#get-account-state) to see if account is present in the zkSync state tree.
 
+The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the forced exit.
+To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
+
 > Signature
 
 ```typescript
-async setSigningKey(
-    nonce: Nonce = "committed",
-    onchainAuth = false
-): Promise<Transaction>;
+async setSigningKey(changePubKey: {
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    onchainAuth?: boolean;
+}): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
 
 | Name | Description | 
 | -- | -- |
-| nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
-| onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
+| changePubKey.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
+| changePubKey.feeToken | token to pay fee in ("ETH" or address of the ERC20 token) |
+| changePubKey.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| changePubKey.onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
 | returns | Handle of the submitted transaction | 
 
 > Example
@@ -315,7 +322,10 @@ import {ethers} from "ethers";
 const wallet = ..;// setup zksync wallet
 
 if (! await wallet.isSigningKeySet()) {
-    const changePubkey= await wallet.setSigningKey();
+    const changePubkey= await wallet.setSigningKey({
+        feeToken: "FAU",
+        fee: ethers.utils.parseEther("0.001")
+    });
 
     // Wait till transaction is committed
     const receipt = await changePubkey.awaitReceipt();
@@ -325,22 +335,27 @@ if (! await wallet.isSigningKeySet()) {
 ### Sign change account public key transaction
 
 Signs [change public key](#changing-account-public-key) transaction without sending it to the zkSync network. 
+It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
 
 > Signature
 
 ```typescript
-async signSetSigningKey(
-    nonce: number, 
-    onchainAuth = false
-): Promise<SignedTransaction>;
+async signSetSigningKey(changePubKey: {
+    feeToken: TokenLike;
+    fee: BigNumberish;
+    nonce: number;
+    onchainAuth: boolean;
+}): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
 
 | Name | Description | 
 | -- | -- |
-| nonce | Nonce that is going to be used for this transaction. |
-| onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
+| changePubKey.nonce | Nonce that is going to be used for this transaction. |
+| changePubKey.feeToken | token to pay fee in ("ETH" or address of the ERC20 token) |
+| changePubKey.fee | amount of token to be paid as a fee for this transaction.|
+| changePubKey.onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
 | returns | Signed transaction | 
 
 ### Authorize new public key using ethereum transaction
@@ -645,7 +660,7 @@ It is important to consider transaction fee in advance because transaction can b
 > Signature
 
 ```typescript
-async signWithdrawFromSyncToEthereum((forcedExit: {
+async signSyncForcedExit((forcedExit: {
     target: Address;
     token: TokenLike;
     fee: BigNumberish;
@@ -865,4 +880,34 @@ signSyncForcedExit(forcedExit: {
 | forcedExit.fee | Fee to pay for withdrawing, paid in token |
 | forcedExit.nonce | Transaction nonce |
 | returns | Signed Sync forced exit transaction |
+
+### Sign Sync ChangePubKey
+
+Signs ChangePubKey transaction, the result can be submitted to the Sync network.
+
+> Signature
+
+```typescript
+signSyncChangePubKey(changePubKey: {
+    accountId: number;
+    account: Address;
+    newPkHash: PubKeyHash;
+    feeTokenId: number;
+    fee: BigNumberish;
+    nonce: number;
+}): ForcedExit;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| changePubKey.accountId | Account id of the sender |
+| changePubKey.account | zkSync address of the account | 
+| changePubKey.newPkHash | Public key hash to be set for an account | 
+| changePubKey.feeTokenId | Numerical token id |
+| changePubKey.fee | Fee to pay for operation, paid in token |
+| changePubKey.nonce | Transaction nonce |
+| returns | Signed Sync forced exit transaction |
+
 
