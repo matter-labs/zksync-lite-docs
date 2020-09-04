@@ -38,7 +38,7 @@ export type Nonce = number | "committed";
 ```typescript
 export interface Fee {
     // Operation type (amount of chunks in operation differs and impacts the total fee).
-    feeType: "Withdraw" | "Transfer" | "TransferToNew",
+    feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee,
     // Amount of gas used by transaction
     gasTxAmount: utils.BigNumber,
     // Gas price (in wei)
@@ -51,6 +51,19 @@ export interface Fee {
     // This value represents the summarized fee components, and it should be used as a fee
     // for the actual operation.
     totalFee: utils.BigNumber,
+}
+```
+
+`ChangePubKeyFee` interface is defined as follows:
+
+```typescript
+export interface ChangePubKeyFee {
+    "ChangePubKey": {
+        // Denotes how authorization of operation is performed:
+        // 'true' if it's done by sending an Ethereum transaction,
+        // 'false' if it's done by providing an Ethereum signature in zkSync transaction.
+        onchainPubkeyAuth: boolean;
+    };
 }
 ```
 

@@ -427,11 +427,13 @@ The returned value contains all the price components used for the fee calculatio
 
 ```typescript
 async getTransactionFee(
-    txType: "Withdraw" | "Transfer" | "FastWithdraw" | "ChangePubKey",
+    txType: "Withdraw" | "Transfer" | "FastWithdraw" | ChangePubKeyFee,
     address: Address,
     tokenLike: TokenLike
 ): Promise<Fee>;
 ```
+
+Interface of `ChangePubKeyFee` fee type is described in the [fees](#fees) section.
 
 #### Inputs and outputs
 
