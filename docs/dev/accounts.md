@@ -98,7 +98,7 @@ const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvid
 ```
 ### Get account state
 
-Same as [Get account state from provider](#get-account-state-by-address) but gets state of this account.
+Same as [Get account state from provider](providers.md#get-account-state-by-address) but gets state of this account.
 
 > Signature
 
@@ -411,10 +411,10 @@ Before sending this transaction, the user will be asked to sign a specific messa
 
 After the transaction is committed, funds are already usable by the recipient, so there is no need to wait for verification before proceeding
 unless additional confirmation is required for your application.
-To wait for transaction commit use `awaitReceipt`(see [utils](#awaiting-for-operation-completion)).
+To wait for transaction commit use `awaitReceipt`(see [utils](utils.md#awaiting-for-operation-completion)).
 
 The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the transfer.
-To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
+To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
 
 
 <aside class = notice>
@@ -440,8 +440,8 @@ async syncTransfer(transfer: {
 | -- | -- |
 | transfer.to | Sync address of the recipient of funds |
 | transfer.token | token to be transferred (symbol or address of the token) |
-| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](#closest-packable-amount) |
-| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](utils.md#closest-packable-amount) |
+| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | transfer.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
 | returns | Handle of the submitted transaction | 
 
@@ -486,8 +486,8 @@ async signSyncTransfer(transfer: {
 | -- | -- |
 | transfer.to | Sync address of the recipient of funds |
 | transfer.token | token to be transferred (symbol or address of the token) |
-| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](#closest-packable-amount) |
-| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](utils.md#closest-packable-amount) |
+| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | transfer.nonce | Nonce that is going to be used for this transaction. |
 | returns | Signed transaction. | 
 
@@ -500,11 +500,11 @@ Sender account should have correct public key set before sending this transactio
 Before sending this transaction, the user will be asked to sign a specific message with transaction details using their Ethereum account (because of the security reasons).
 
 The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the withdraw.
-To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
+To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
 
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful
-to use `awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
+to use `awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
 
 
 > Signature
@@ -526,7 +526,7 @@ async withdrawFromSyncToEthereum(withdraw: {
 | withdraw.ethAddress | ethereum address of the recipient |
 | withdraw.token | token to be transferred ("ETH" or address of the ERC20 token) |
 | withdraw.amount | amount of token to be transferred |
-| withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | withdraw.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
 | returns | Handle of the submitted transaction | 
 
@@ -574,7 +574,7 @@ async signWithdrawFromSyncToEthereum(withdraw: {
 | withdraw.ethAddress | ethereum address of the recipient |
 | withdraw.token | token to be transferred ("ETH" or address of the ERC20 token) |
 | withdraw.amount | amount of token to be transferred |
-| withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| withdraw.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
 | withdraw.nonce | Nonce that is going to be used for this transaction. |
 | returns | Signed transaction | 
 
@@ -591,7 +591,7 @@ Once the operation is committed to the Ethereum network, we have to wait for a c
 Operation will be processed within the zkSync network as soon as the required amount of confirmations is reached.
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful
-to use `awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
+to use `awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
 
 
 
