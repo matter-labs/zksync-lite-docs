@@ -16,3 +16,4 @@ zkSync is a zkRollup for DeFi. Its current functionality scope includes low gas 
 - [REST API](rest.html)
 - [Utils](utils.html)
 - [Types](types.html)
+- [Smart contracts addresses](contracts.html)
