@@ -14,6 +14,8 @@ yarn add zksync
 yarn add ethers # ethers is a peer dependency of zksync
 ```
 
+See [Appendix A](browser-bundled.md) for how to add library to web project directly from [https://unpkg.com](https://unpkg.com) CDN.
+
 ## Adding imports
 
  Async is need to lazy-load cryptographic wasm libraries.

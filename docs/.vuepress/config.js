@@ -65,7 +65,8 @@ module.exports = {
                       '/dev/rest',
                       '/dev/utils',
                       '/dev/types',
-                      '/dev/contracts'
+                      '/dev/contracts',
+                      '/dev/browser-bundled',
                     ]
                 },
             ]
