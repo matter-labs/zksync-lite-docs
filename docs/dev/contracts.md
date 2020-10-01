@@ -16,8 +16,8 @@
 
 ## Ropsten
 
-* zkSync [0x014aAf4CEdE78c43d2D19f6c22418f9C02cdf8b0](https://ropsten.etherscan.io/address/0x014aAf4CEdE78c43d2D19f6c22418f9C02cdf8b0)
-* Verifier [0x67aF90049e679fd5cfa851f66F7FC1994Cf33263](https://ropsten.etherscan.io/address/0x67aF90049e679fd5cfa851f66F7FC1994Cf33263)
-* Governance [0x43bd42A8073f0D69e5ECF0c3aAfb1ade8064Ad81](https://ropsten.etherscan.io/address/0x43bd42A8073f0D69e5ECF0c3aAfb1ade8064Ad81)
-* Upgrade Gatekeeper [0xD541251fd5022858d34ed1ea30811f5611971387](https://ropsten.etherscan.io/address/0xD541251fd5022858d34ed1ea30811f5611971387)
+* zkSync [0x17dE8874259c59cd9f7E6ec86b6813Bda661A57c](https://ropsten.etherscan.io/address/0x17dE8874259c59cd9f7E6ec86b6813Bda661A57c)
+* Verifier [0x8d8Bf0B885b23E0A2e3aa9064a41B46CeBd97974](https://ropsten.etherscan.io/address/0x8d8Bf0B885b23E0A2e3aa9064a41B46CeBd97974)
+* Governance [0x0C5C6cD4E2436B1b308A0C11942705418F41F730](https://ropsten.etherscan.io/address/0x0C5C6cD4E2436B1b308A0C11942705418F41F730)
+* Upgrade Gatekeeper [0xfe17992f9D07D6ebb805a6154eBf34b8444a20A6](https://ropsten.etherscan.io/address/0xfe17992f9D07D6ebb805a6154eBf34b8444a20A6)
 
