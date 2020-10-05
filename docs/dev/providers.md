@@ -66,7 +66,7 @@ const syncHTTPProvider = await zksync.Provider.newHttpProvider(
 > Signature
 
 ```typescript
-async submitTx(tx: any, signature?: TxEthSignature): Promise<string>;
+async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): Promise<string>;
 ```
 
 
@@ -76,6 +76,7 @@ async submitTx(tx: any, signature?: TxEthSignature): Promise<string>;
 | -- | -- |
 | tx | Signed Sync transaction (see types, for detailed description) |
 | signature | Signature of the readable representation of the transaction signed by ethereum wallet |
+| fastProcessing | For withdrawals only: request faster processing of transaction |
 | returns | `0x`-prefixed hex-encoded hash of the transaction |
 
 > Example
@@ -420,15 +421,19 @@ public tokenSet: TokenSet;
 Performs a query to the server, obtaining an acceptable transaction fee for transactions.
 The returned value contains all the price components used for the fee calculation, and the fee itself (`totalFee` field).
 
+**Note:** If fee is requested for a `ForcedExit` operation, corresponding `txType` will be `Withdraw`.
+
 > Signature
 
 ```typescript
 async getTransactionFee(
-    txType: "Withdraw" | "Transfer",
+    txType: "Withdraw" | "Transfer" | "FastWithdraw" | ChangePubKeyFee,
     address: Address,
     tokenLike: TokenLike
 ): Promise<Fee>;
 ```
+
+Interface of `ChangePubKeyFee` fee type is described in the [fees](#fees) section.
 
 #### Inputs and outputs
 

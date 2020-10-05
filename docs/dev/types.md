@@ -38,7 +38,7 @@ export type Nonce = number | "committed";
 ```typescript
 export interface Fee {
     // Operation type (amount of chunks in operation differs and impacts the total fee).
-    feeType: "Withdraw" | "Transfer" | "TransferToNew",
+    feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee,
     // Amount of gas used by transaction
     gasTxAmount: utils.BigNumber,
     // Gas price (in wei)
@@ -51,6 +51,19 @@ export interface Fee {
     // This value represents the summarized fee components, and it should be used as a fee
     // for the actual operation.
     totalFee: utils.BigNumber,
+}
+```
+
+`ChangePubKeyFee` interface is defined as follows:
+
+```typescript
+export interface ChangePubKeyFee {
+    "ChangePubKey": {
+        // Denotes how authorization of operation is performed:
+        // 'true' if it's done by sending an Ethereum transaction,
+        // 'false' if it's done by providing an Ethereum signature in zkSync transaction.
+        onchainPubkeyAuth: boolean;
+    };
 }
 ```
 
@@ -156,6 +169,28 @@ export interface Withdraw {
     signature: Signature;
 }
 
+export interface ForcedExit {
+    type: "ForcedExit";
+    initiatorAccountId: number;
+    target: Address;
+    token: number;
+    fee: BigNumberish;
+    nonce: number;
+    signature: Signature;
+}
+
+export interface ChangePubKey {
+    type: "ChangePubKey";
+    accountId: number;
+    account: Address;
+    newPkHash: PubKeyHash;
+    feeToken: number;
+    fee: BigNumberish;
+    nonce: number;
+    signature: Signature;
+    ethSignature: string;
+}
+
 export interface CloseAccount {
     type: "Close";
     account: Address;
@@ -164,7 +199,7 @@ export interface CloseAccount {
 }
 
 export interface SignedTransaction {
-    tx: Transfer | Withdraw | ChangePubKey | CloseAccount;
+    tx: Transfer | Withdraw | ChangePubKey | CloseAccount | ForcedExit;
     ethereumSignature?: TxEthSignature;
 }
 
