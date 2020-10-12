@@ -408,7 +408,7 @@ const receipt = await syncWSProvider.notifyPriorityOp(
 
 ### Current token set.
 
-Provider stores list of the available tokens with methods for working with them. (see [working with tokens](#working-with-tokens))
+Provider stores list of the available tokens with methods for working with them. (see [working with tokens](utils.md#working-with-tokens))
 
 > Signature
 
@@ -433,7 +433,7 @@ async getTransactionFee(
 ): Promise<Fee>;
 ```
 
-Interface of `ChangePubKeyFee` fee type is described in the [fees](#fees) section.
+Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees) section.
 
 #### Inputs and outputs
 
@@ -442,7 +442,7 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](#fees) sectio
 | txType | Type of the transaction. |
 | address | Address of the transaction recipients' wallet. |
 | tokenLike | Token used in the transaction. |
-| returns | Object containing the [packable](#amount-packing) fee amount along with the price components used for calculation. |
+| returns | Object containing the [packable](utils.md#amount-packing) fee amount along with the price components used for calculation. |
 
 
 ### Get token price.
