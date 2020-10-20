@@ -506,6 +506,58 @@ async signSyncTransfer(transfer: {
 | transfer.nonce | Nonce that is going to be used for this transaction. |
 | returns | Signed transaction. | 
 
+### Batched Transfers in the zkSync
+
+Sends several transfers in a batch. For information about transaction batches, see the [Providers section](providers.md#submit-transactions-batch).
+
+Note that unlike in `syncTransfer`, the fee is a required field for each transaction, as in batch wallet cannot assume anything about the fee for each individual transaction.
+
+If it is required to send a batch that include transactions other than transfers, consider using Provider's `submitTxsBatch` method instead.
+
+> Signature
+
+```typescript
+async syncMultiTransfer(
+    transfers: {
+        to: Address;
+        token: TokenLike;
+        amount: BigNumberish;
+        fee: BigNumberish;
+        nonce?: Nonce;
+    }[]
+): Promise<Transaction[]>;
+```
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| transfers | An array of transfer transactions. For details on an individual transaction, see [Transfer in the zkSync](#transfer-in-the-zksync)|
+| returns | Array of handle for each submitted transaction | 
+
+> Example
+
+```typescript
+import {ethers} from "ethers";
+
+const wallet = ..;// setup zksync wallet
+
+const transferA = {
+    to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
+    token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
+    amount: ethers.utils.parseEther("1.0"), 
+    fee: ethers.utils.parseEther("0.001") 
+};
+
+const transferB = {
+    to: "0xaabbf7a3ab29f0ff424d738a83f9b0588bc9241e",
+    token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
+    amount: ethers.utils.parseEther("5.0"), 
+    fee: ethers.utils.parseEther("0.001") 
+}
+
+const transferTransactions = await wallet.syncMultiTransfer([transferA, transferB]);
+```
 
 ### Withdraw token from the zkSync
 
