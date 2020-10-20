@@ -60,7 +60,6 @@ const syncHTTPProvider = await zksync.Provider.newHttpProvider(
 );
 ```
 
-
 ### Submit transaction
 
 > Signature
@@ -112,6 +111,77 @@ const ethSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature of the readabl
 const transactionHash = await syncWSProvider.submitTx(signedTransferTx, ethSignature);
 // 0x..hash (32 bytes)
 ```
+
+### Submit transactions batch
+
+Transactions batch is a set of transactions that should succeed all together. If one of the batch transactions fails,
+all the transactions in this batch will be considered failed.
+
+For transaction batch, fee doesn't have to be set in each individual transaction, the only requirement is that sum of fees set in transactions
+must be equal or greater than the sum of fees for transactions, if they would have been sent individually.
+
+That is, using transaction batches it is possible to pay the fee for transaction using the token other than used for transfer. In order to do so,
+one can create a batch of two transactions:
+
+- Transfer to the recipient in token `FOO` with fee set to 0.
+- Transfer to the own account in token `ETH` with amount set to 0, and fee set enough to cover two transfers.
+
+Server will check that sum of fees (0 in first transaction and 2x expected fee in the second one) is enough to cover processing of two transfers, and
+will execute batch.
+
+**Note on security:** In the current form, transaction batches is a server-side abstraction. Successfull execution is checked pre-circuit,
+and information about batch is not passed into circuit. Thus, if this feature is being used to pay fees in a different token, it is recommended to
+set the fee payment transaction last (so that server even in theory will be unable to execute the last transaction, but ignore other ones).
+In the future, the batches will be enforced in circuit in order to increase overall security of this feature.
+
+> Signature
+
+```typescript
+async submitTxsBatch(transactions: { tx: any; signature?: TxEthSignature }[]): Promise<string[]>;
+```
+
+
+#### Inputs and outputs
+
+| Name | Description | 
+| -- | -- |
+| transactions | An array of transactions / signature pairs. For details on individual transactions, see [Submit transaction](#submit-transaction) |
+| returns | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
+
+> Example
+
+```typescript
+import * as zksync from "zksync";
+
+const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const firstTransferTx = {
+    accountId: 13, // id of the sender account in the zkSync
+    type: "Transfer",
+    from: "0x..address1",
+    to: "0x..address2",
+    token: 0, // id of the ETH token
+    amount: "1000000000000000000", // 1 Ether in Wei
+    fee: "10000000000000000", // 0.01 Ether in Wei
+    nonce: 0,
+    signature: {
+        pubKey: "dead..", // hex encoded packed public key of signer (32 bytes)
+        signature: "beef.." // hex encoded signature of the tx (64 bytes)
+    }
+};
+const firstTransferEthSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature for the first message
+
+const secondTransferTx = {
+    type: "Transfer",
+    // ...other fields omitted
+};
+const secondTransferEthSignature = "0xaaaddd...ff"; // Ethereum ECDSA signature for the second message
+
+const batch = [ { tx: firstTransferTx, signature: firstTransferEthSignature }, { tx: secondTransferTx, signature: secondTransferEthSignature } ];
+
+const transactionHashes = await syncWSProvider.submitTxsBatch(batch);
+// List of transaction hashes
+```
+
 
 ### Get contract addresses
 
