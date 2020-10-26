@@ -518,7 +518,7 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 Performs a query to the server, obtaining an acceptable fee for a batch transaction (multi-transfer).
 
-**Note:** For details about the type and amount of token for batch transaction fees, see [transaction batch docs](https://zksync.io/dev/providers.html#submit-transactions-batch).
+**Note:** For details about the type and amount of token for batch transaction fees, see [transaction batch docs](#submit-transactions-batch).
 
 > Signature
 
