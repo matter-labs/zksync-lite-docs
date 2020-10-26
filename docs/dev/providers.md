@@ -514,6 +514,30 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 | tokenLike | Token used in the transaction. |
 | returns | Object containing the [packable](utils.md#amount-packing) fee amount along with the price components used for calculation. |
 
+### Get transaction batch fee from the server.
+
+Performs a query to the server, obtaining an acceptable fee for a batch transaction (multi-transfer).
+
+**Note:** For details about the type and amount of token for batch transaction fees, see [transaction batch docs](#submit-transactions-batch).
+
+> Signature
+
+```typescript
+async getTransactionsBatchFee(
+    txTypes: ("Transfer" | "Withdraw" | "FastWithdraw")[],
+    addresses: Address[],
+    tokenLike: TokenLike
+): Promise<BigNumber>;
+```
+
+#### Inputs and outputs
+
+| Name | Description |
+| -- | -- |
+| txTypes | Array of types of transactions in the batch |
+| addresses | Addresses of the corresponding recipients' wallets |
+| tokenLike | Token used to pay fees for the batch |
+| returns | Fee amount sufficient for the batch |
 
 ### Get token price.
 
