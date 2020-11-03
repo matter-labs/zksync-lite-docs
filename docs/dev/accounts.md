@@ -428,7 +428,7 @@ After the transaction is committed, funds are already usable by the recipient, s
 unless additional confirmation is required for your application.
 To wait for transaction commit use `awaitReceipt`(see [utils](utils.md#awaiting-for-operation-completion)).
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the transfer.
+The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the transfer. Unless you know that you are doing, you should not set fee manually, since by default zkSync uses the smallest acceptable amount.
 To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
 
 
