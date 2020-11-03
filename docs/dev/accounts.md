@@ -444,7 +444,7 @@ async syncTransfer(transfer: {
     to: Address;
     token: TokenLike;
     amount: utils.BigNumberish;
-    fee: utils.BigNumberish;
+    fee?: utils.BigNumberish;
     nonce?: Nonce;
 }): Promise<Transaction>;
 ```
@@ -470,8 +470,7 @@ const wallet = ..;// setup zksync wallet
 const transferTransaction = await wallet.syncTransfer({
     to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
     token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
-    amount: ethers.utils.parseEther("1.0"), 
-    fee: ethers.utils.parseEther("0.001") 
+    amount: ethers.utils.parseEther("1.0")
 });
 
 // Wait till transaction is committed
