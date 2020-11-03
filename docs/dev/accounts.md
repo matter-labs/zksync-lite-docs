@@ -456,7 +456,7 @@ async syncTransfer(transfer: {
 | transfer.to | Sync address of the recipient of funds |
 | transfer.token | token to be transferred (symbol or address of the token) |
 | transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](utils.md#closest-packable-amount) |
-| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount.|
+| transfer.fee | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee).|
 | transfer.nonce | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account) |
 | returns | Handle of the submitted transaction | 
 
