@@ -3,8 +3,8 @@
 It is possible to use `zksync.js` in a browser directly.
 
 - `ethers@5.0` dependency is required for `zksync.js` to work.
-- async call of the `zksync.crypto.loadZkSyncCrypto` function is required
-  to load and compile `zksync-crypto` WASM library prior to using any _zkSync_ functions.
+- async call of the `zksync.crypto.loadZkSyncCrypto` function is required to load and compile `zksync-crypto` WASM
+  library prior to using any _zkSync_ functions.
 
 > Example with zksync@0.6.3 fetched from [https://unpkg.com](https://unpkg.com) CDN
 

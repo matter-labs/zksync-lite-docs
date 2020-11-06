@@ -20,6 +20,7 @@
       "parser": "markdown",
       "singleQuote": true,
       "trailingComma": "none",
-      "bracketSpacing": true
+      "bracketSpacing": true,
+      "proseWrap": "always"
   }
 }

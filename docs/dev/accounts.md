@@ -10,9 +10,9 @@ Wallet has nonce associated with it and it is used to prevent transaction replay
 is equal to the current nonce of the wallet can be executed.
 
 To create transactions in the zkSync network wallet must have zkSync key pair associated with it. zkSync keys are
-handled by [Signer] object and can be created using different methods, the most convenient way is to create
-these keys by deriving them from ethereum signature of the specific message, this method is used by default if user does
-not provide `Signer` created using some other method.
+handled by [Signer] object and can be created using different methods, the most convenient way is to create these keys
+by deriving them from ethereum signature of the specific message, this method is used by default if user does not
+provide `Signer` created using some other method.
 
 For zkSync keys to be valid user should register them once in the zkSync network using [set signing key transaction].
 For ethereum wallets that do not support message signing [additional ethereum transaction] is required. zkSync keys can
@@ -170,7 +170,8 @@ const erc20VerifiedBalance = await getBalance("0xFab46E002BbF0b4509813474841E071
 
 ### Get token balance on Ethereum
 
-Method similar to [`syncWallet.getBalance`](#get-token-balance-on-zk-sync), used to query balance in the Ethereum network.
+Method similar to [`syncWallet.getBalance`](#get-token-balance-on-zk-sync), used to query balance in the Ethereum
+network.
 
 > Signature
 
@@ -199,8 +200,8 @@ const ethOnChainBalance = await wallet.getEthereumBalance("ETH");
 
 ### Unlocking ERC20 deposits
 
-For convenience, it is possible to approve the maximum possible amount of ERC20 token deposits for the zkSync contract so that
-user would not need to approve each deposit.
+For convenience, it is possible to approve the maximum possible amount of ERC20 token deposits for the zkSync contract
+so that user would not need to approve each deposit.
 
 > Signature
 
@@ -230,14 +231,16 @@ async isERC20DepositsApproved(token: TokenLike): Promise<boolean>;
 
 Moves funds from the ethereum account to the Sync account.
 
-To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever using
-[unlocking ERC20 token](#unlocking-erc20-deposits), or the user can approve the exact amount (required for a deposit) upon each deposit, but this is not recommended.
+To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever
+using [unlocking ERC20 token](#unlocking-erc20-deposits), or the user can approve the exact amount (required for a
+deposit) upon each deposit, but this is not recommended.
 
-Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations
-(see [provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before accepting it in the zkSync network.
-After the transaction is committed to the zkSync network, funds are already usable by the recipient, meaning that there is no need to wait for verification before proceeding
-unless additional confirmation is required for your application.
-To wait for the transaction commitment on the zkSync network, use `awaitReceipt`(see [utils](#awaiting-for-operation-completion)).
+Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations (see
+[provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before
+accepting it in the zkSync network. After the transaction is committed to the zkSync network, funds are already usable
+by the recipient, meaning that there is no need to wait for verification before proceeding unless additional
+confirmation is required for your application. To wait for the transaction commitment on the zkSync network, use
+`awaitReceipt`(see [utils](#awaiting-for-operation-completion)).
 
 > Signature
 
@@ -283,24 +286,25 @@ const priorityOpReceipt = await depositPriorityOperation.awaitReceipt();
 
 ### Changing account public key
 
-In order to send zkSync transactions (transfer and withdraw) user has to associate zksync key pair with account. Every zkSync account has address which is
-ethereum address of the owner.
+In order to send zkSync transactions (transfer and withdraw) user has to associate zksync key pair with account. Every
+zkSync account has address which is ethereum address of the owner.
 
 There are two ways to authorize zksync key pair.
 
-1. Using ethereum signature of specific message.
-   This way is prefered but can only be used if your ethereum wallet can sign messages.
+1. Using ethereum signature of specific message. This way is prefered but can only be used if your ethereum wallet can
+   sign messages.
 2. Using ethereum transaction to zkSync smart-contract.
 
 <aside class = notice>
 The account should be present in the zkSync network in order to set a signing key for it.
 </aside>
 
-This function will throw an error if the account is not present in the zkSync network.
-Check the [account id](#get-account-state) to see if account is present in the zkSync state tree.
+This function will throw an error if the account is not present in the zkSync network. Check the
+[account id](#get-account-state) to see if account is present in the zkSync state tree.
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the forced exit.
-To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
+forced exit. To get how to obtain an acceptable fee amount, see
+[Get transaction fee from the server](#get-transaction-fee-from-the-server).
 
 > Signature
 
@@ -343,8 +347,8 @@ if (! await wallet.isSigningKeySet()) {
 
 ### Sign change account public key transaction
 
-Signs [change public key](#changing-account-public-key) transaction without sending it to the zkSync network.
-It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [change public key](#changing-account-public-key) transaction without sending it to the zkSync network. It is
+important to consider transaction fee in advance because transaction can become invalid if token price changes.
 
 > Signature
 
@@ -410,8 +414,8 @@ if (! await wallet.isSigningKeySet()) {
 
 ### Check if current public key is set
 
-Checks if current signer that is associated with wallet is able to sign transactions.
-See [change pub key](#changing-account-public-key) on how to change current public key.
+Checks if current signer that is associated with wallet is able to sign transactions. See
+[change pub key](#changing-account-public-key) on how to change current public key.
 
 > Signature
 
@@ -427,17 +431,19 @@ async isSigningKeySet(): Promise<boolean>;
 
 ### Transfer in the zkSync
 
-Moves funds between accounts inside the zkSync network.
-Sender account should have correct public key set before sending this transaction. (see [change pub key](#changing-account-public-key))
+Moves funds between accounts inside the zkSync network. Sender account should have correct public key set before sending
+this transaction. (see [change pub key](#changing-account-public-key))
 
-Before sending this transaction, the user will be asked to sign a specific message with transaction details using their Ethereum account (because of the security reasons).
+Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
+Ethereum account (because of the security reasons).
 
-After the transaction is committed, funds are already usable by the recipient, so there is no need to wait for verification before proceeding
-unless additional confirmation is required for your application.
-To wait for transaction commit use `awaitReceipt`(see [utils](utils.md#awaiting-for-operation-completion)).
+After the transaction is committed, funds are already usable by the recipient, so there is no need to wait for
+verification before proceeding unless additional confirmation is required for your application. To wait for transaction
+commit use `awaitReceipt`(see [utils](utils.md#awaiting-for-operation-completion)).
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the transfer.
-To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
+transfer. To get how to obtain an acceptable fee amount, see
+[Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
 
 <aside class = notice>
 The transfer amount and fee should have a limited number of significant digits according to spec.
@@ -487,8 +493,8 @@ const transactionReceipt = await transferTransaction.awaitReceipt();
 
 ### Sign transfer in the zkSync transaction
 
-Signs [transfer](#transfer-in-the-zksync) transaction without sending it to the zkSync network.
-It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [transfer](#transfer-in-the-zksync) transaction without sending it to the zkSync network. It is important to
+consider transaction fee in advance because transaction can become invalid if token price changes.
 
 > Signature
 
@@ -515,11 +521,14 @@ async signSyncTransfer(transfer: {
 
 ### Batched Transfers in the zkSync
 
-Sends several transfers in a batch. For information about transaction batches, see the [Providers section](providers.md#submit-transactions-batch).
+Sends several transfers in a batch. For information about transaction batches, see the
+[Providers section](providers.md#submit-transactions-batch).
 
-Note that unlike in `syncTransfer`, the fee is a required field for each transaction, as in batch wallet cannot assume anything about the fee for each individual transaction.
+Note that unlike in `syncTransfer`, the fee is a required field for each transaction, as in batch wallet cannot assume
+anything about the fee for each individual transaction.
 
-If it is required to send a batch that include transactions other than transfers, consider using Provider's `submitTxsBatch` method instead.
+If it is required to send a batch that include transactions other than transfers, consider using Provider's
+`submitTxsBatch` method instead.
 
 > Signature
 
@@ -568,16 +577,18 @@ const transferTransactions = await wallet.syncMultiTransfer([transferA, transfer
 
 ### Withdraw token from the zkSync
 
-Moves funds from the Sync account to ethereum address.
-Sender account should have correct public key set before sending this transaction. (see [change pub key](#changing-account-public-key))
+Moves funds from the Sync account to ethereum address. Sender account should have correct public key set before sending
+this transaction. (see [change pub key](#changing-account-public-key))
 
-Before sending this transaction, the user will be asked to sign a specific message with transaction details using their Ethereum account (because of the security reasons).
+Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
+Ethereum account (because of the security reasons).
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the withdraw.
-To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
+withdraw. To get how to obtain an acceptable fee amount, see
+[Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
 
-The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful
-to use `awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
+The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
+`awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
 
 > Signature
 
@@ -624,8 +635,8 @@ const transactionReceipt = await withdrawTransaction.awaitVerifyReceipt();
 
 ### Sign withdraw token from the zkSync transaction
 
-Signs [withdraw](#withdraw-token-from-the-zksync) transaction without sending it to the zkSync network.
-It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [withdraw](#withdraw-token-from-the-zksync) transaction without sending it to the zkSync network. It is important
+to consider transaction fee in advance because transaction can become invalid if token price changes.
 
 > Signature
 
@@ -652,18 +663,20 @@ async signWithdrawFromSyncToEthereum(withdraw: {
 
 ### Initiate a forced exit for an account
 
-Initialize a forced withdraw of funds for an unowned account. Target account must not have a signing key set and must exist more than 24 hours.
-After execution of the transaction, funds will be transferred from the target zkSync wallet to the corresponding Ethereum wallet.
-Transaction initiator pays fee for this transaction. All the balance of requested token will be transferred.
+Initialize a forced withdraw of funds for an unowned account. Target account must not have a signing key set and must
+exist more than 24 hours. After execution of the transaction, funds will be transferred from the target zkSync wallet to
+the corresponding Ethereum wallet. Transaction initiator pays fee for this transaction. All the balance of requested
+token will be transferred.
 
-Sender account should have correct public key set before sending this transaction. (see [change pub key](#changing-account-public-key))
+Sender account should have correct public key set before sending this transaction. (see
+[change pub key](#changing-account-public-key))
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the forced exit.
-**Note:** fee is paid by the transaction initiator, not by the target account.
-To get how to obtain an acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
+forced exit. **Note:** fee is paid by the transaction initiator, not by the target account. To get how to obtain an
+acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
 
-The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful
-to use `awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
+The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
+`awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
 
 > Signature
 
@@ -705,8 +718,8 @@ const transactionReceipt = await forcedExitTransaction.awaitVerifyReceipt();
 
 ### Sign a forced exit for an account transaction
 
-Signs [forced exit](#initiate-a-forced-exit-for-an-account) transaction without sending it to the zkSync network.
-It is important to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [forced exit](#initiate-a-forced-exit-for-an-account) transaction without sending it to the zkSync network. It is
+important to consider transaction fee in advance because transaction can become invalid if token price changes.
 
 > Signature
 
@@ -731,17 +744,18 @@ async signSyncForcedExit((forcedExit: {
 
 ### Emergency withdraw from Sync
 
-If ordinary withdraw from Sync account is ignored by network operators user could create an emergency
-withdraw request using special Ethereum transaction, this withdraw request can't be ignored.
+If ordinary withdraw from Sync account is ignored by network operators user could create an emergency withdraw request
+using special Ethereum transaction, this withdraw request can't be ignored.
 
 Moves the full amount of the given token from the Sync account to the Ethereum account.
 
-Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations
-(see [provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before accepting it in the zkSync network.
-Operation will be processed within the zkSync network as soon as the required amount of confirmations is reached.
+Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations (see
+[provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before
+accepting it in the zkSync network. Operation will be processed within the zkSync network as soon as the required amount
+of confirmations is reached.
 
-The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful
-to use `awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
+The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
+`awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
 
 > Signature
 

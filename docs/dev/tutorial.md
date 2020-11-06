@@ -14,7 +14,8 @@ yarn add zksync
 yarn add ethers # ethers is a peer dependency of zksync
 ```
 
-See [Appendix A](browser-bundled.md) for how to add library to web project directly from [https://unpkg.com](https://unpkg.com) CDN.
+See [Appendix A](browser-bundled.md) for how to add library to web project directly from
+[https://unpkg.com](https://unpkg.com) CDN.
 
 ## Adding imports
 
@@ -32,7 +33,8 @@ To interact with Sync network users need to know the endpoint of the operator no
 const syncProvider = await zksync.getDefaultProvider('rinkeby');
 ```
 
-Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with Ethereum.
+Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with
+Ethereum.
 
 ```typescript
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
@@ -40,7 +42,8 @@ const ethersProvider = new ethers.getDefaultProvider('rinkeby');
 
 ## Creating a Wallet
 
-To control your account in zkSync, use the `zksync.Wallet` object. It can sign transactions with keys stored in `zksync.Signer` and send transaction to zkSync network using `zksync.Provider`.
+To control your account in zkSync, use the `zksync.Wallet` object. It can sign transactions with keys stored in
+`zksync.Signer` and send transaction to zkSync network using `zksync.Provider`.
 
 `zksync.Wallet` is a wrapper around 2 objects:
 
@@ -124,14 +127,18 @@ const committedETHBalance = verifiedBalances['ETH'];
 
 ## Making a transfer in zkSync
 
-Now, let's create a second wallet and transfer some funds into it. Note that we can send assets to any fresh Ethereum account, without preliminary registration!
+Now, let's create a second wallet and transfer some funds into it. Note that we can send assets to any fresh Ethereum
+account, without preliminary registration!
 
 ```typescript
 const ethWallet2 = ethers.Wallet.fromMnemonic(MNEMONIC2).connect(ethersProvider);
 const syncWallet2 = await zksync.SyncWallet.fromEthSigner(ethWallet2, syncProvider);
 ```
 
-We are going to transfer `0.999 ETH` to another account and pay `0.001 ETH` as a fee to the operator (zkSync account balance of the sender is going to be decreased by `0.999 + 0.001 ETH`). The use of `closestPackableTransactionAmount()` and `closestPackableTransactionFee()` is necessary because the precision of transfer in zkSync is limited (see docs below).
+We are going to transfer `0.999 ETH` to another account and pay `0.001 ETH` as a fee to the operator (zkSync account
+balance of the sender is going to be decreased by `0.999 + 0.001 ETH`). The use of `closestPackableTransactionAmount()`
+and `closestPackableTransactionFee()` is necessary because the precision of transfer in zkSync is limited (see docs
+below).
 
 ```typescript
 const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther('0.999'));
@@ -164,7 +171,8 @@ const withdraw = await syncWallet2.withdrawTo({
 });
 ```
 
-Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is generated and verified by the mainnet contract.
+Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
+generated and verified by the mainnet contract.
 
 We can wait until ZKP verification is complete:
 

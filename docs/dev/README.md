@@ -1,6 +1,7 @@
 # Developer guide
 
-zkSync is a zkRollup for DeFi. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the Ethereum network. This document is a description of javascript SDK that can be used to interact with zkSync.
+zkSync is a zkRollup for DeFi. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the
+Ethereum network. This document is a description of javascript SDK that can be used to interact with zkSync.
 
 ## Resources
 

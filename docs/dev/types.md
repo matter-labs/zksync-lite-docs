@@ -120,16 +120,16 @@ export interface AccountState {
 }
 ```
 
-"Depositing" balances are balances for which deposit operation has already appeared on the Ethereum blockchain,
-but which still do not have enough confirmations to be processed by the `zkSync` network.
+"Depositing" balances are balances for which deposit operation has already appeared on the Ethereum blockchain, but
+which still do not have enough confirmations to be processed by the `zkSync` network.
 
 For depositing balances, two fields are available: `amount` (sum of ongoing deposit operations for token), and
-`expectedAcceptBlock` - the number of block, when all the deposit operations for this token are expected to be
-processed by `zkSync` network.
+`expectedAcceptBlock` - the number of block, when all the deposit operations for this token are expected to be processed
+by `zkSync` network.
 
-Note that `depositing` balance data is anticipated, since block with deposit operation can be reverted on
-Ethereum blockchain. This information should be used for informing user about ongoing operations only, and not
-taken as a guarantee of the execution.
+Note that `depositing` balance data is anticipated, since block with deposit operation can be reverted on Ethereum
+blockchain. This information should be used for informing user about ongoing operations only, and not taken as a
+guarantee of the execution.
 
 ## Transactions
 

@@ -5,9 +5,11 @@
 Tokens are identified with
 
 1. symbol (e.g. "ETH", "DAI")
-2. address ("0x0000000000000000000000000000000000000000" for "ETH" or "0xFab46E002BbF0b4509813474841E0716E6730136" for ERC20).
+2. address ("0x0000000000000000000000000000000000000000" for "ETH" or "0xFab46E002BbF0b4509813474841E0716E6730136" for
+   ERC20).
 
-To simplify conversions `TokenSet` class can be used, token set can be obtained from [zkSync provider](#current-token-set).
+To simplify conversions `TokenSet` class can be used, token set can be obtained from
+[zkSync provider](#current-token-set).
 
 ### Resolve token ID
 
@@ -87,8 +89,8 @@ provider.tokenSet.parseToken('USDC', '1000.0'); // '1000000000'
 
 ### Check if amount is packable
 
-Transfers amount should be packable to 5-byte long floating-point representation.
-This function is used to check if this amount can be used as a transfer amount.
+Transfers amount should be packable to 5-byte long floating-point representation. This function is used to check if this
+amount can be used as a transfer amount.
 
 > Signature
 
@@ -98,8 +100,8 @@ export function isTransactionAmountPackable(amount: utils.BigNumberish): boolean
 
 ### Closest packable amount
 
-Transfers amount should be packable to 5-byte long floating-point representation.
-This function returns the closest packable amount by setting the least significant digits to zero.
+Transfers amount should be packable to 5-byte long floating-point representation. This function returns the closest
+packable amount by setting the least significant digits to zero.
 
 > Signature
 
@@ -109,8 +111,8 @@ export function closestPackableTransactionAmount(amount: ethers.utils.BigNumberi
 
 ### Check if fee is packable
 
-All fees paid in transfers and withdraws should be packable to 2-byte long floating-point representation.
-This function is used to check if this amount can be used as a fee.
+All fees paid in transfers and withdraws should be packable to 2-byte long floating-point representation. This function
+is used to check if this amount can be used as a fee.
 
 > Signature
 
@@ -120,8 +122,8 @@ export function isTransactionFeePackable(amount: utils.BigNumberish): boolean;
 
 ### Closest packable fee
 
-All fees paid in transfers and withdraws should be packable to 2-byte long floating-point representation.
-This function returns the closest packable amount by setting the least significant digits to zero.
+All fees paid in transfers and withdraws should be packable to 2-byte long floating-point representation. This function
+returns the closest packable amount by setting the least significant digits to zero.
 
 > Signature
 
@@ -159,8 +161,8 @@ public isTokenTransactionFeePackable(
 
 ## Awaiting for operation completion
 
-It is often useful to be able to wait until the transaction is committed or verified.
-It is possible to do that using objects returned from methods that submit transactions.
+It is often useful to be able to wait until the transaction is committed or verified. It is possible to do that using
+objects returned from methods that submit transactions.
 
 It is possible to wait until the transactions like Transfer is either:
 
@@ -173,8 +175,8 @@ It is possible to wait until the operations like Deposit is either:
 1. Committed (with `awaitReceipt`) when the state is updated in the zkSync network
 1. Verified (with `awaitVerifyReceipt`) when the state is finalized on the Ethereum
 
-Commit comes first, but there is no need to wait for commit if you are interested in the verify since await for verifying
-implies await for commit.
+Commit comes first, but there is no need to wait for commit if you are interested in the verify since await for
+verifying implies await for commit.
 
 > Awaiting for transaction.
 

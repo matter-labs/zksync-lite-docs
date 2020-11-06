@@ -1,10 +1,11 @@
 # Providers
 
-JSON-RPC protocol is used to communicate with Sync network nodes.
-`Provider` is used to abstract details of the communication and provides useful API for interaction with Sync network.
+JSON-RPC protocol is used to communicate with Sync network nodes. `Provider` is used to abstract details of the
+communication and provides useful API for interaction with Sync network.
 
-We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it supports subscriptions.
-`HTTPTransport` and `WSTransport` classes are used to implement details of communication, but usually, you don't need to deal with these objects directly.
+We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it
+supports subscriptions. `HTTPTransport` and `WSTransport` classes are used to implement details of communication, but
+usually, you don't need to deal with these objects directly.
 
 ## Sync provider
 
@@ -27,8 +28,7 @@ Supported networks are: "testnet", "localhost".
 
 ### Create WebSocket provider
 
-> Creating provider over WebSocket transport.
-> This call will create WS connection that should be closed.
+> Creating provider over WebSocket transport. This call will create WS connection that should be closed.
 
 ```typescript
 import * as zksync from 'zksync';
@@ -106,22 +106,24 @@ const transactionHash = await syncWSProvider.submitTx(signedTransferTx, ethSigna
 Transactions batch is a set of transactions that should succeed all together. If one of the batch transactions fails,
 all the transactions in this batch will be considered failed.
 
-For transaction batch, fee doesn't have to be set in each individual transaction, the only requirement is that sum of fees set in transactions
-must be equal or greater than the sum of fees for transactions, if they would have been sent individually.
+For transaction batch, fee doesn't have to be set in each individual transaction, the only requirement is that sum of
+fees set in transactions must be equal or greater than the sum of fees for transactions, if they would have been sent
+individually.
 
-That is, using transaction batches it is possible to pay the fee for transaction using the token other than used for transfer. In order to do so,
-one can create a batch of two transactions:
+That is, using transaction batches it is possible to pay the fee for transaction using the token other than used for
+transfer. In order to do so, one can create a batch of two transactions:
 
 - Transfer to the recipient in token `FOO` with fee set to 0.
 - Transfer to the own account in token `ETH` with amount set to 0, and fee set enough to cover two transfers.
 
-Server will check that sum of fees (0 in first transaction and 2x expected fee in the second one) is enough to cover processing of two transfers, and
-will execute batch.
+Server will check that sum of fees (0 in first transaction and 2x expected fee in the second one) is enough to cover
+processing of two transfers, and will execute batch.
 
-**Note on security:** In the current form, transaction batches is a server-side abstraction. Successfull execution is checked pre-circuit,
-and information about batch is not passed into circuit. Thus, if this feature is being used to pay fees in a different token, it is recommended to
-set the fee payment transaction last (so that server even in theory will be unable to execute the last transaction, but ignore other ones).
-In the future, the batches will be enforced in circuit in order to increase overall security of this feature.
+**Note on security:** In the current form, transaction batches is a server-side abstraction. Successfull execution is
+checked pre-circuit, and information about batch is not passed into circuit. Thus, if this feature is being used to pay
+fees in a different token, it is recommended to set the fee payment transaction last (so that server even in theory will
+be unable to execute the last transaction, but ignore other ones). In the future, the batches will be enforced in
+circuit in order to increase overall security of this feature.
 
 > Signature
 
@@ -366,8 +368,8 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 
 ### Wait for transaction receipt
 
-Similar to [Get transaction receipt](#get-transaction-receipt) but
-this method will return when a given transaction is committed or verified in the Sync network.
+Similar to [Get transaction receipt](#get-transaction-receipt) but this method will return when a given transaction is
+committed or verified in the Sync network.
 
 > Signature
 
@@ -431,8 +433,8 @@ async getPriorityOpStatus(
 
 ### Wait for priority operation receipt
 
-Similar to [Get priority operation receipt](#get-priority-operation-receipt) but
-this method will return when given priority operation is committed or verified in the Sync network.
+Similar to [Get priority operation receipt](#get-priority-operation-receipt) but this method will return when given
+priority operation is committed or verified in the Sync network.
 
 > Signature
 
@@ -466,7 +468,8 @@ const receipt = await syncWSProvider.notifyPriorityOp(
 
 ### Current token set
 
-Provider stores list of the available tokens with methods for working with them. (see [working with tokens](utils.md#working-with-tokens))
+Provider stores list of the available tokens with methods for working with them. (see
+[working with tokens](utils.md#working-with-tokens))
 
 > Signature
 
@@ -476,8 +479,8 @@ public tokenSet: TokenSet;
 
 ### Get transaction fee from the server
 
-Performs a query to the server, obtaining an acceptable transaction fee for transactions.
-The returned value contains all the price components used for the fee calculation, and the fee itself (`totalFee` field).
+Performs a query to the server, obtaining an acceptable transaction fee for transactions. The returned value contains
+all the price components used for the fee calculation, and the fee itself (`totalFee` field).
 
 **Note:** If fee is requested for a `ForcedExit` operation, corresponding `txType` will be `Withdraw`.
 
@@ -506,7 +509,8 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 Performs a query to the server, obtaining an acceptable fee for a batch transaction (multi-transfer).
 
-**Note:** For details about the type and amount of token for batch transaction fees, see [transaction batch docs](#submit-transactions-batch).
+**Note:** For details about the type and amount of token for batch transaction fees, see
+[transaction batch docs](#submit-transactions-batch).
 
 > Signature
 
@@ -529,7 +533,8 @@ async getTransactionsBatchFee(
 
 ### Get token price
 
-Performs a query to the server, obtaining a token price in USD. Data is fetched by server using third-party API (e.g. coinmarketcap).
+Performs a query to the server, obtaining a token price in USD. Data is fetched by server using third-party API (e.g.
+coinmarketcap).
 
 > Signature
 
@@ -592,8 +597,8 @@ const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddres
 
 ### Resolve token id
 
-To sign Sync transaction users have to know the unique numerical id of the given token.
-It can be retrieved from the zkSync network governance contract.
+To sign Sync transaction users have to know the unique numerical id of the given token. It can be retrieved from the
+zkSync network governance contract.
 
 > Signature
 
@@ -626,8 +631,9 @@ const erc20Id = await ethProxy.resolveTokenId('0xFab46E002BbF0b4509813474841E071
 
 # Providers
 
-JSON-RPC protocol is used to communicate with Sync network nodes.
-`Provider` is used to abstract details of the communication and provides useful API for interaction with Sync network.
+JSON-RPC protocol is used to communicate with Sync network nodes. `Provider` is used to abstract details of the
+communication and provides useful API for interaction with Sync network.
 
-We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it supports subscriptions.
-`HTTPTransport` and `WSTransport` classes are used to implement details of communication, but usually, you don't need to deal with these objects directly.
+We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it
+supports subscriptions. `HTTPTransport` and `WSTransport` classes are used to implement details of communication, but
+usually, you don't need to deal with these objects directly.
