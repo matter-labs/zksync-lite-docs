@@ -628,12 +628,3 @@ const ethId = await ethProxy.resolveTokenId('0x000000000000000000000000000000000
 // ERC20 token if it is supported, >= 1
 const erc20Id = await ethProxy.resolveTokenId('0xFab46E002BbF0b4509813474841E0716E6730136');
 ```
-
-# Providers
-
-JSON-RPC protocol is used to communicate with Sync network nodes. `Provider` is used to abstract details of the
-communication and provides useful API for interaction with Sync network.
-
-We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it
-supports subscriptions. `HTTPTransport` and `WSTransport` classes are used to implement details of communication, but
-usually, you don't need to deal with these objects directly.
