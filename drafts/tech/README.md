@@ -8,7 +8,7 @@
 
 ## RedShift
 
-## What risks are involved?
+## What risks are involved
 
 No software can be guaranteed to be 100% error-free. Blockchain is still an experimental technology with rapidly evolving attack vectors. While Matter Labs is undertaking maximum possible efforts to protect your funds (including security audit and following established security practices), it is our duty to inform the users of zkSync of the potential risks of using any new crypto technology:
 

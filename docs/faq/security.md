@@ -42,7 +42,7 @@ Although zkSync is built on some of the most cutting-edge cryptography (such as 
 ### Primitives
 
 |Primitive|Application|Cryptographic assumption|
-|-|-|-| 
+|-|-|-|
 |[PLONK](https://eprint.iacr.org/2019/953)|Proof system (v1)|1, 3|
 |[RedShift](https://eprint.iacr.org/2019/1400)|Proof system (v2)|1|
 |[SHA256](https://en.wikipedia.org/wiki/SHA-2)|Hash function|1|

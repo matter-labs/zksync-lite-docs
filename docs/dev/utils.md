@@ -2,9 +2,9 @@
 
 ## Working with tokens
 
-Tokens are identified with 
+Tokens are identified with
 
-1. symbol (e.g. "ETH", "DAI") 
+1. symbol (e.g. "ETH", "DAI")
 2. address ("0x0000000000000000000000000000000000000000" for "ETH" or "0xFab46E002BbF0b4509813474841E0716E6730136" for ERC20).
 
 To simplify conversions `TokenSet` class can be used, token set can be obtained from [zkSync provider](#current-token-set).
@@ -85,7 +85,6 @@ provider.tokenSet.parseToken('USDC', '1000.0'); // '1000000000'
 
 ## Amount packing
 
-
 ### Check if amount is packable
 
 Transfers amount should be packable to 5-byte long floating-point representation.
@@ -98,7 +97,6 @@ export function isTransactionAmountPackable(
     amount: utils.BigNumberish
 ): boolean;
 ```
-
 
 ### Closest packable amount
 
@@ -156,7 +154,6 @@ public isTokenTransferAmountPackable(
 All fees paid in transfers and withdraws should be packable to 2-byte long floating-point representation.
 `isTokenTransactionFeePackable` function is used to check if formatted amount can be used as a fee.
 
-
 > Signature
 
 ```typescript
@@ -192,7 +189,7 @@ import * as zksync from "zksync";
 const wallet = ..; // create zkSync Wallet
 
 // see transfer example for details
-const transfer = await wallet.syncTransfer({..}); 
+const transfer = await wallet.syncTransfer({..});
 
 // this function will return when deposit is committed to the zkSync chain
 const receiptAfterCommit = await transfer.awaitReceipt();
@@ -207,7 +204,7 @@ const receiptAfterVerify = await transfer.awaitVerifyReceipt();
 import * as zksync from "zksync";
 
 // see deposit example for details
-const deposit = await zksync.depositFromETH({..}); 
+const deposit = await zksync.depositFromETH({..});
 
 // this function will return when deposit request is accepted to the Ethereum.
 const txMinedCommit = await deposit.awaitEthereumTxCommit();
@@ -227,7 +224,7 @@ const provider = ..; // create zkSync Provider
 const wallet = ..; // create zkSync Wallet
 
 // sign transfer transaction
-const signedTransfer = await wallet.signSyncTransfer({..}); 
+const signedTransfer = await wallet.signSyncTransfer({..});
 
 // submit transaction to zkSync
 const transfer =  await zksync.wallet.submitSignedTransaction(signedTransfer, provider);

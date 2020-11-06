@@ -2,7 +2,7 @@
 
 [[toc]]
 
-## What is zkSync?
+## What is zkSync
 
 (for general audience)
 
@@ -15,19 +15,20 @@ Highlights:
 - Scalable: up to 3,000 TPS, immune to network congestions
 - Cheap: a fraction of cent per tx even in peak times
 
-## How does it work?
+## How does it work
 
 (for general audience)
 
 high-level tech description
+
 - explain Rollup
 - explain zkRollup
 - explain where the money is stored
 - links to videos (or embed)
 
-## Compare to 
+## Compare to
 
-https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/zk-rollups/
+<https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/zk-rollups/>
 
 ## zkSync vs. Sidechains
 
@@ -38,16 +39,16 @@ https://docs.ethhub.io/ethereum-roadmap/layer-2-scaling/zk-rollups/
 
 - explain data availability
 
-link to https://haseebq.com/the-life-and-death-of-plasma/ (borrow ideas)
+link to <https://haseebq.com/the-life-and-death-of-plasma/> (borrow ideas)
 
 ## zkSync vs. Payment Channels
 
 - briefly explains lightning/payment channels
 - explain capital efficiency
 - explain max capacity and channel reopenings on chain
-- liveness required: 
+- liveness required:
 - explain security problems (payment channels require operators to keep keys online, can be hacked and all funds stolen)
 
 ## zkSync vs. Optimistic Rollup
 
-- link to https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075
+- link to <https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075>

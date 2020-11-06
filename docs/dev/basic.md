@@ -13,7 +13,7 @@ Priority operations are initiated directly on the Ethereum mainnet. For example,
 
 ### Transactions
 
-Transactions must be submitted via zkSync operator using the API. 
+Transactions must be submitted via zkSync operator using the API.
 
 Transactions are identified by the hash of their serialized representation.
 

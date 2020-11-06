@@ -6,7 +6,6 @@ JSON-RPC protocol is used to communicate with Sync network nodes.
 We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it supports subscriptions.
 `HTTPTransport` and `WSTransport` classes are used to implement details of communication, but usually, you don't need to deal with these objects directly.
 
-
 ## Sync provider
 
 ### Get default provider for network
@@ -24,7 +23,7 @@ await syncWSProvider.disconnect();
 
 ```
 
-Used to connect to the common endpoint for the given network over WebSocket transport.   
+Used to connect to the common endpoint for the given network over WebSocket transport.
 
 Supported networks are: "testnet", "localhost".
 
@@ -50,7 +49,7 @@ await syncWSProvider.disconnect();
 
 ### Create HTTP provider
 
-> Creating provider over HTTP transport. 
+> Creating provider over HTTP transport.
 
 ```typescript
 import * as zksync from "zksync";
@@ -68,10 +67,9 @@ const syncHTTPProvider = await zksync.Provider.newHttpProvider(
 async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): Promise<string>;
 ```
 
-
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | tx | Signed Sync transaction (see types, for detailed description) |
 | signature | Signature of the readable representation of the transaction signed by ethereum wallet |
@@ -140,10 +138,9 @@ In the future, the batches will be enforced in circuit in order to increase over
 async submitTxsBatch(transactions: { tx: any; signature?: TxEthSignature }[]): Promise<string[]>;
 ```
 
-
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | transactions | An array of transactions / signature pairs. For details on individual transactions, see [Submit transaction](#submit-transaction) |
 | returns | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
@@ -182,7 +179,6 @@ const transactionHashes = await syncWSProvider.submitTxsBatch(batch);
 // List of transaction hashes
 ```
 
-
 ### Get contract addresses
 
 > Signature
@@ -193,7 +189,7 @@ async getContractAddress(): Promise<ContractAddress>;
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | returns | Addresses of the Sync network smart contracts (see types, for detailed description) |
 
@@ -226,7 +222,7 @@ async getTokens(): Promise<Tokens>;
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | returns | All supported tokens (see types, for detailed description) |
 
@@ -257,8 +253,6 @@ const contractAddresses = await syncWSProvider.getTokens();
 }
 ```
 
-
-
 ### Get account state by address
 
 > Signature
@@ -269,7 +263,7 @@ async getState(address: Address): Promise<AccountState>;
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | address | `0x`-prefixed hex-encoded address of the Sync account. |
 | returns | Detailed state of the Sync account, including balances, nonce. (see types, for detailed description) |
@@ -282,7 +276,7 @@ async getState(address: Address): Promise<AccountState>;
     "id": 1, // optional
     "committed": {
         "balances": {
-            "ETH": "1000000000000000000", // 1 Ether in Wei 
+            "ETH": "1000000000000000000", // 1 Ether in Wei
         },
         "nonce": 1,
     },
@@ -296,9 +290,9 @@ async getState(address: Address): Promise<AccountState>;
     },
     "verified": {
         "balances": {
-            "ETH": "1000000000000000000", // 1 Ether in Wei 
+            "ETH": "1000000000000000000", // 1 Ether in Wei
             // ERC20 token
-            "FAU": "1000000000000000000" 
+            "FAU": "1000000000000000000"
         },
         "nonce": 0,
     }
@@ -310,13 +304,14 @@ For details on the `depositing` section, see the description of `AccountState` t
 ### Get amount of confirmations required for priority operations
 
 > Signature
+
 ```typescript
 async getConfirmationsForEthOpAmount(): Promise<number>;
 ```
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | returns | Amount of confirmations required for priority operations to be processed by zkSync network |
 
@@ -338,7 +333,7 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | txHash | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction. |
 | returns | Receipt of this transaction (see types, for detailed description) |
@@ -380,25 +375,24 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 Similar to [Get transaction receipt](#get-transaction-receipt) but
 this method will return when a given transaction is committed or verified in the Sync network.
 
-
 > Signature
 
 ```typescript
 async notifyTransaction(
-    hash: string, 
+    hash: string,
     action: "COMMIT" | "VERIFY"
 ): Promise<TransactionReceipt> ;
 ```
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | txHash | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction. |
 | action | "COMMIT" or "VERIFY" |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
-> Example 
+> Example
 
 ```typescript
 import * as zksync from "zksync";
@@ -423,7 +417,7 @@ async getPriorityOpStatus(
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
 | returns | Receipt of this priority operation (see types, for detailed description) |
@@ -450,20 +444,20 @@ this method will return when given priority operation is committed or verified i
 
 ```typescript
 async notifyPriorityOp(
-    serialId: number, 
+    serialId: number,
     action: "COMMIT" | "VERIFY"
 ): Promise<PriorityOperationReceipt>;
 ```
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
 | action | "COMMIT" or "VERIFY" |
 | returns | Receipt of this priority operation (see types, for detailed description) |
 
-> Example 
+> Example
 
 ```typescript
 import * as zksync from "zksync";
@@ -476,7 +470,7 @@ const receipt = await syncWSProvider.notifyPriorityOp(
 );
 ```
 
-### Current token set.
+### Current token set
 
 Provider stores list of the available tokens with methods for working with them. (see [working with tokens](utils.md#working-with-tokens))
 
@@ -486,7 +480,7 @@ Provider stores list of the available tokens with methods for working with them.
 public tokenSet: TokenSet;
 ```
 
-### Get transaction fee from the server.
+### Get transaction fee from the server
 
 Performs a query to the server, obtaining an acceptable transaction fee for transactions.
 The returned value contains all the price components used for the fee calculation, and the fee itself (`totalFee` field).
@@ -507,14 +501,14 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | txType | Type of the transaction. |
 | address | Address of the transaction recipients' wallet. |
 | tokenLike | Token used in the transaction. |
 | returns | Object containing the [packable](utils.md#amount-packing) fee amount along with the price components used for calculation. |
 
-### Get transaction batch fee from the server.
+### Get transaction batch fee from the server
 
 Performs a query to the server, obtaining an acceptable fee for a batch transaction (multi-transfer).
 
@@ -539,7 +533,7 @@ async getTransactionsBatchFee(
 | tokenLike | Token used to pay fees for the batch |
 | returns | Fee amount sufficient for the batch |
 
-### Get token price.
+### Get token price
 
 Performs a query to the server, obtaining a token price in USD. Data is fetched by server using third-party API (e.g. coinmarketcap).
 
@@ -553,7 +547,7 @@ async getTokenPrice(
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | tokenLike | Type of token. |
 | returns | Currently observed price of the token (USD per token). |
@@ -568,11 +562,9 @@ const ethPrice = await syncWSProvider.getTokenPrice("ETH");
 console.log(`Current Ethereum price is ${ethPrice} USD`);
 ```
 
-
 ## ETH Proxy
 
 `ETHProxy` class is used to simplify some communication with Ethereum network.
-
 
 ### Create ETH Proxy
 
@@ -587,7 +579,7 @@ constructor(
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | ethersProvider | `ethers.js` provider connected to ethereum node|
 | contractAddress | Addresses of the Sync network contracts |
@@ -603,7 +595,7 @@ const ethersProvider = new ethers.getDefaultProvider('rinkeby');
 const syncWSProvider = await zksync.SyncProvider.getDefaultProvider("testnet")
 
 const ethProxy = new zksync.ETHProxy(
-    ethersProvider, 
+    ethersProvider,
     syncProvider.contractAddress
 );
 ```
@@ -613,7 +605,6 @@ const ethProxy = new zksync.ETHProxy(
 To sign Sync transaction users have to know the unique numerical id of the given token.
 It can be retrieved from the zkSync network governance contract.
 
-
 > Signature
 
 ```typescript
@@ -622,7 +613,7 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 
 #### Inputs and outputs
 
-| Name | Description | 
+| Name | Description |
 | -- | -- |
 | token | Ethereum token address (ERC20 contract address) |
 | returns | Numerical identifier of the given token inside Sync network. |
@@ -636,7 +627,7 @@ import {ethers} from "ethers";
 const ethersProvider = new ethers.getDefaultProvider("rinkeby");
 const syncProvider = await zksync.getDefaultProvider("testnet");
 const ethProxy = new zksync.ETHProxy(
-    ethersProvider, 
+    ethersProvider,
     syncProvider.contractAddress
 );
 

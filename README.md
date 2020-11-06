@@ -9,4 +9,4 @@ yarn docs:dev
 
 ## Deployment
 
-`master` branch is automatically deployed to https://console.firebase.google.com/u/0/project/zksync-js-docs
+`master` branch is automatically deployed to <https://console.firebase.google.com/u/0/project/zksync-js-docs>

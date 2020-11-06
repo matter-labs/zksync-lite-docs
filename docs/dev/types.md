@@ -130,7 +130,7 @@ processed by `zkSync` network.
 
 Note that `depositing` balance data is anticipated, since block with deposit operation can be reverted on
 Ethereum blockchain. This information should be used for informing user about ongoing operations only, and not
-taken as a guarantee of the execution. 
+taken as a guarantee of the execution.
 
 ## Transactions
 

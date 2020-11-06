@@ -19,7 +19,7 @@ See [Appendix A](browser-bundled.md) for how to add library to web project direc
 ## Adding imports
 
  Async is need to lazy-load cryptographic wasm libraries.
- 
+
 ```js
 const zksync = await import('zksync');
 ```
@@ -32,7 +32,7 @@ To interact with Sync network users need to know the endpoint of the operator no
 const syncProvider = await zksync.getDefaultProvider("rinkeby");
 ```
 
-Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with Ethereum. 
+Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with Ethereum.
 
 ```typescript
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
@@ -91,7 +91,7 @@ To control assets in zkSync network, an account must register a separate public 
 if (! await syncWallet.isSigningKeySet()) {
     if (await syncWallet.getAccountId() == undefined) {
         throw new Error("Unknwon account");
-    } 
+    }
 
     const changePubkey = await syncWallet.setSigningKey();
 
@@ -135,9 +135,9 @@ We are going to transfer `0.999 ETH` to another account and pay `0.001 ETH` as a
 
 ```typescript
 const amount = zksync.utils.closestPackableTransactionAmount(
-    ethers.utils.parseEther("0.999")); 
+    ethers.utils.parseEther("0.999"));
 const fee = zksync.utils.closestPackableTransactionFee(
-    ethers.utils.parseEther("0.001")); 
+    ethers.utils.parseEther("0.001"));
 
 const transfer= await syncWallet.syncTransfer({
     to: syncWallet2.address(),
@@ -157,7 +157,7 @@ const transferReceipt = await transfer.awaitReceipt();
 
 ```typescript
 const fee = zksync.utils.closestPackableTransactionFee(
-    ethers.utils.parseEther("0.001")); 
+    ethers.utils.parseEther("0.001"));
 
 const withdraw= await syncWallet2.withdrawTo({
     ethAddress: ethWallet2.address,

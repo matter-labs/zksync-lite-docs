@@ -20,4 +20,3 @@
 * Verifier [0x8d8Bf0B885b23E0A2e3aa9064a41B46CeBd97974](https://ropsten.etherscan.io/address/0x8d8Bf0B885b23E0A2e3aa9064a41B46CeBd97974)
 * Governance [0x0C5C6cD4E2436B1b308A0C11942705418F41F730](https://ropsten.etherscan.io/address/0x0C5C6cD4E2436B1b308A0C11942705418F41F730)
 * Upgrade Gatekeeper [0xfe17992f9D07D6ebb805a6154eBf34b8444a20A6](https://ropsten.etherscan.io/address/0xfe17992f9D07D6ebb805a6154eBf34b8444a20A6)
-

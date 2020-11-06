@@ -31,7 +31,6 @@ const { data } = await Axios.get(url)
     });
 ```
 
-
 ## Account History
 
 zkSync server provides several methods to obtain the transactions history for an account.
@@ -72,8 +71,8 @@ between loaded items: we've loaded 10 transactions, then we want to load the nex
 one more transaction got executed, and now query with the `offset` 10 will return one of the already seen
 transactions.
 
-Thus, for pagination it is recommended to use `/account/{address}/history/older_than` and 
-`/account/{address}/history/newer_than` endpoints. 
+Thus, for pagination it is recommended to use `/account/{address}/history/older_than` and
+`/account/{address}/history/newer_than` endpoints.
 
 `/account/{address}/history/{offset}/{limit}` exists mostly for compatibility issues, and thus will not
 be described in details.

@@ -2,14 +2,14 @@
 
 ## zkRollup architecture
 
-The architecture employed by **zkSync** is called **zkRollup**. 
+The architecture employed by **zkSync** is called **zkRollup**.
 
 All funds are held by a smart contract on the mainchain, while computation and storage are performed off-chain. In a nutshell, it works as follows:
 
-1. Users sign transactions and submit them to validators. 
+1. Users sign transactions and submit them to validators.
 2. Validators roll up thousands of transactions together in a single block and submit a cryptographic commitment (the root hash) of the new state to the smart contract on mainnet along with a cryptographic proof (a SNARK) that this new state is indeed the result of the application of some correct transactions to the old state.
 3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is also published over the mainchain network as cheap `calldata`. This enables anyone to reconstruct the state at every moment.
-4. The proof and the state ∆ is verified by the smart contract, thus verifying both the validity of all the transactions included in the block and block data availability. 
+4. The proof and the state ∆ is verified by the smart contract, thus verifying both the validity of all the transactions included in the block and block data availability.
 
 The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is much cheaper than storing it in EVM. Hence a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
 

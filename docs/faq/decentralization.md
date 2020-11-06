@@ -1,6 +1,6 @@
-#  Decentralization
+# Decentralization
 
-## How decentralized is zkSync?
+## How decentralized is zkSync
 
 Technologically, decentralization is not a binary option but rather a continuum of design choices. The following rough scale can be used to asses a level of decentralization of a crypto project with regard to the ownership of assets:
 
@@ -17,7 +17,7 @@ However, the daily operation of the **zkSync** network at the moment depends on 
 
 <span class="footnote"><sup>*</sup> For L1 networks, trustlessness is only guaranteed by the ability (and to the extent of that ability) of honest minority users to fork away from the network taken over by dishonest majority. For L2 protocols, this is not necessary, because users can ultimately rely on L1 to circumvent exit censorship.</span>
 
-## Who operates zkSync now?
+## Who operates zkSync now
 
 Currently, the computational service provider for the **zkSync** network is "Stichtig ZK Sync", a non-profit Dutch foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service will operated at break-even cost until the transition to full decentralization.
 
