@@ -93,9 +93,7 @@ This function is used to check if this amount can be used as a transfer amount.
 > Signature
 
 ```typescript
-export function isTransactionAmountPackable(
-    amount: utils.BigNumberish
-): boolean;
+export function isTransactionAmountPackable(amount: utils.BigNumberish): boolean;
 ```
 
 ### Closest packable amount
@@ -106,9 +104,7 @@ This function returns the closest packable amount by setting the least significa
 > Signature
 
 ```typescript
-export function closestPackableTransactionAmount(
-    amount: ethers.utils.BigNumberish
-): ethers.utils.BigNumber;
+export function closestPackableTransactionAmount(amount: ethers.utils.BigNumberish): ethers.utils.BigNumber;
 ```
 
 ### Check if fee is packable
@@ -130,9 +126,7 @@ This function returns the closest packable amount by setting the least significa
 > Signature
 
 ```typescript
-export function closestPackableTransactionFee(
-    fee: ethers.utils.BigNumberish
-): ethers.utils.BigNumber;
+export function closestPackableTransactionFee(fee: ethers.utils.BigNumberish): ethers.utils.BigNumber;
 ```
 
 ### Check if formatted amount is packable for token

@@ -6,6 +6,10 @@ module.exports = {
     markdown: {
         toc: { includeLevel: [2, 3] }
     },
+    extendMarkdown: md => {
+        // Add support of footnotes (like [^1]) in markdown
+        md.use(require('markdown-it-footnote'))
+    },
     plugins: [
         [
             'vuepress-plugin-canonical',

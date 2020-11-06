@@ -5,10 +5,21 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn docs:build && firebase deploy"
+    "docs:deploy": "yarn docs:build && firebase deploy",
+    "fmt": "prettier --write \"docs/**/*.md\""
   },
   "devDependencies": {
     "vuepress": "^1.4.0",
-    "vuepress-plugin-canonical": "^1.0.0"
+    "vuepress-plugin-canonical": "^1.0.0",
+    "markdown-it-footnote": "3.0.2",
+    "prettier": "2.1.2"
+  },
+  "prettier": {
+      "tabWidth": 2,
+      "printWidth": 120,
+      "parser": "markdown",
+      "singleQuote": true,
+      "trailingComma": "none",
+      "bracketSpacing": true
   }
 }

@@ -2,11 +2,11 @@
 
 This section contains the description of endpoints provided by the zkSync server via REST API.
 
-*Note:* This section is incomplete, thus description of some endpoints may be missing.
+_Note:_ This section is incomplete, thus description of some endpoints may be missing.
 
 ## Introduction
 
-The REST API of zkSync server is available at "${ZKSYNC_SERVER_ADDRESS}/api/v0.1". In the examples
+The REST API of zkSync server is available at "\${ZKSYNC_SERVER_ADDRESS}/api/v0.1". In the examples
 below we will use the `rinkeby` zkSync testnet API, thus URLs will
 look start `https://rinkeby-api.zksync.io/api/v0.1/`.
 
@@ -25,10 +25,9 @@ import Axios from 'axios';
 
 const url = 'https://rinkeby-api.zksync.io/api/v0.1/status';
 
-const { data } = await Axios.get(url)
-    .catch(e => {
-        throw new Error(`Request to ${e.config.url} failed with status code ${e.response.status}`);
-    });
+const { data } = await Axios.get(url).catch((e) => {
+  throw new Error(`Request to ${e.config.url} failed with status code ${e.response.status}`);
+});
 ```
 
 ## Account History
@@ -86,11 +85,11 @@ Also, there are two additional parameters: `tx_id` and `limit`, which are passed
 
 Description of the parameters:
 
-| Parameter | Description | Default value |
-| -- | -- | -- |
-| address | Address of account to load history for. Must be encoded as hexadecimal string with a "0x" prefix. | N/A |
-| tx_id | Identifier of the transaction to load the history from. | The first transaction of the next block to be committed. |
-| limit | Maximum amount of transactions to include to response. Must not be greater than 100. | 100 |
+| Parameter | Description                                                                                       | Default value                                            |
+| --------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| address   | Address of account to load history for. Must be encoded as hexadecimal string with a "0x" prefix. | N/A                                                      |
+| tx_id     | Identifier of the transaction to load the history from.                                           | The first transaction of the next block to be committed. |
+| limit     | Maximum amount of transactions to include to response. Must not be greater than 100.              | 100                                                      |
 
 `older_than` endpoint loads transactions that are older than the transaction with given `tx_id`. This endpoint
 may be used to implement "scrolling down" the history.

@@ -20,7 +20,7 @@ While security is our paramount priority, user and developer experience are cent
 - ETH and ERC20 token transfers with instant confirmations and 10 min finality on L1.
 - Mainnet-level security with zero reliance on 3rd parties.
 - Zero-cost account creation.
-- Ultra-low transaction fees (~ $0.001 per transfer).
+- Ultra-low transaction fees (~ \$0.001 per transfer).
 - Payments to existing Ethereum addresses (including smart-contracts).
 - Fees conveniently payable in token being transferred.
 - Withdrawals to mainnet in under 15 min.
@@ -30,7 +30,7 @@ While security is our paramount priority, user and developer experience are cent
 
 ## Problems zkSync solves
 
-Gas fees for token transfers on Ethereum [exceed $2M per month](https://ethgasstation.info/). With zkSync these costs can be reduced to a small fraction.
+Gas fees for token transfers on Ethereum [exceed \$2M per month](https://ethgasstation.info/). With zkSync these costs can be reduced to a small fraction.
 
 UX-first crypto wallets like [Argent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a banking alternative to entire societies. zkSync makes their mission accomplishable.
 

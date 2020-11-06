@@ -41,7 +41,7 @@ In contrast, fraud-based scaling solutions (e.g. optimistic rollup) require at l
 
 It should be added that Matter Labs and other companies in the ZKP space are constantly working on improving the prover efficiency, which will result in lower finality times (potentially down to under 1 min).
 
-<span class="footnote"><sup>*</sup> Subjective finality time can be shorter for optimistic rollup users who validate every tx themselves, but this would defeat the purpose of optimistic rollup as a scaling solution.</span>
+<span class="footnote"><sup>\*</sup> Subjective finality time can be shorter for optimistic rollup users who validate every tx themselves, but this would defeat the purpose of optimistic rollup as a scaling solution.</span>
 
 ## Instant confirmations
 

@@ -11,16 +11,14 @@ We support HTTP and WebSocket transport protocol for JSON-RPC communications. We
 ### Get default provider for network
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
 
 // ..
 
 // Later to close connection.
 await syncWSProvider.disconnect();
-
 ```
 
 Used to connect to the common endpoint for the given network over WebSocket transport.
@@ -33,18 +31,14 @@ Supported networks are: "testnet", "localhost".
 > This call will create WS connection that should be closed.
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-
-const syncWSProvider = await zksync.Provider.newWebsocketProvider(
-    "wss://testnet.matter-labs.io/jsrpc-ws"
-);
+const syncWSProvider = await zksync.Provider.newWebsocketProvider('wss://testnet.matter-labs.io/jsrpc-ws');
 
 // ..
 
 // Later to close connection.
 await syncWSProvider.disconnect();
-
 ```
 
 ### Create HTTP provider
@@ -52,11 +46,9 @@ await syncWSProvider.disconnect();
 > Creating provider over HTTP transport.
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncHTTPProvider = await zksync.Provider.newHttpProvider(
-    "https://rinkeby-api.zksync.io/jsrpc"
-);
+const syncHTTPProvider = await zksync.Provider.newHttpProvider('https://rinkeby-api.zksync.io/jsrpc');
 ```
 
 ### Submit transaction
@@ -69,32 +61,32 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| tx | Signed Sync transaction (see types, for detailed description) |
-| signature | Signature of the readable representation of the transaction signed by ethereum wallet |
-| fastProcessing | For withdrawals only: request faster processing of transaction |
-| returns | `0x`-prefixed hex-encoded hash of the transaction |
+| Name           | Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| tx             | Signed Sync transaction (see types, for detailed description)                         |
+| signature      | Signature of the readable representation of the transaction signed by ethereum wallet |
+| fastProcessing | For withdrawals only: request faster processing of transaction                        |
+| returns        | `0x`-prefixed hex-encoded hash of the transaction                                     |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
 const signedTransferTx = {
-    accountId: 13, // id of the sender account in the zkSync
-    type: "Transfer",
-    from: "0x..address1",
-    to: "0x..address2",
-    token: 0, // id of the ETH token
-    amount: "1000000000000000000", // 1 Ether in Wei
-    fee: "10000000000000000", // 0.01 Ether in Wei
-    nonce: 0,
-    signature: {
-        pubKey: "dead..", // hex encoded packed public key of signer (32 bytes)
-        signature: "beef.." // hex encoded signature of the tx (64 bytes)
-    }
+  accountId: 13, // id of the sender account in the zkSync
+  type: 'Transfer',
+  from: '0x..address1',
+  to: '0x..address2',
+  token: 0, // id of the ETH token
+  amount: '1000000000000000000', // 1 Ether in Wei
+  fee: '10000000000000000', // 0.01 Ether in Wei
+  nonce: 0,
+  signature: {
+    pubKey: 'dead..', // hex encoded packed public key of signer (32 bytes)
+    signature: 'beef..' // hex encoded signature of the tx (64 bytes)
+  }
 };
 
 // const readableTxInfo =
@@ -103,8 +95,7 @@ const signedTransferTx = {
 //     `Nonce: 0\n` +
 //     `Fee: 0.01 ETH\n` +
 //     `Account Id: 13`;
-const ethSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature of the readableTxInfo
-
+const ethSignature = '0xdddaaa...1c'; // Ethereum ECDSA signature of the readableTxInfo
 
 const transactionHash = await syncWSProvider.submitTx(signedTransferTx, ethSignature);
 // 0x..hash (32 bytes)
@@ -140,40 +131,43 @@ async submitTxsBatch(transactions: { tx: any; signature?: TxEthSignature }[]): P
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
+| Name         | Description                                                                                                                       |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | transactions | An array of transactions / signature pairs. For details on individual transactions, see [Submit transaction](#submit-transaction) |
-| returns | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
+| returns      | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch                                                    |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
 const firstTransferTx = {
-    accountId: 13, // id of the sender account in the zkSync
-    type: "Transfer",
-    from: "0x..address1",
-    to: "0x..address2",
-    token: 0, // id of the ETH token
-    amount: "1000000000000000000", // 1 Ether in Wei
-    fee: "10000000000000000", // 0.01 Ether in Wei
-    nonce: 0,
-    signature: {
-        pubKey: "dead..", // hex encoded packed public key of signer (32 bytes)
-        signature: "beef.." // hex encoded signature of the tx (64 bytes)
-    }
+  accountId: 13, // id of the sender account in the zkSync
+  type: 'Transfer',
+  from: '0x..address1',
+  to: '0x..address2',
+  token: 0, // id of the ETH token
+  amount: '1000000000000000000', // 1 Ether in Wei
+  fee: '10000000000000000', // 0.01 Ether in Wei
+  nonce: 0,
+  signature: {
+    pubKey: 'dead..', // hex encoded packed public key of signer (32 bytes)
+    signature: 'beef..' // hex encoded signature of the tx (64 bytes)
+  }
 };
-const firstTransferEthSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature for the first message
+const firstTransferEthSignature = '0xdddaaa...1c'; // Ethereum ECDSA signature for the first message
 
 const secondTransferTx = {
-    type: "Transfer",
-    // ...other fields omitted
+  type: 'Transfer'
+  // ...other fields omitted
 };
-const secondTransferEthSignature = "0xaaaddd...ff"; // Ethereum ECDSA signature for the second message
+const secondTransferEthSignature = '0xaaaddd...ff'; // Ethereum ECDSA signature for the second message
 
-const batch = [ { tx: firstTransferTx, signature: firstTransferEthSignature }, { tx: secondTransferTx, signature: secondTransferEthSignature } ];
+const batch = [
+  { tx: firstTransferTx, signature: firstTransferEthSignature },
+  { tx: secondTransferTx, signature: secondTransferEthSignature }
+];
 
 const transactionHashes = await syncWSProvider.submitTxsBatch(batch);
 // List of transaction hashes
@@ -189,16 +183,16 @@ async getContractAddress(): Promise<ContractAddress>;
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
+| Name    | Description                                                                         |
+| ------- | ----------------------------------------------------------------------------------- |
 | returns | Addresses of the Sync network smart contracts (see types, for detailed description) |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('testnet');
 
 const contractAddresses = await syncWSProvider.getContractAddress();
 ```
@@ -207,8 +201,8 @@ const contractAddresses = await syncWSProvider.getContractAddress();
 
 ```json
 {
-    "mainContract": "0xab..cd",
-    "govContract": "0xef..12"
+  "mainContract": "0xab..cd",
+  "govContract": "0xef..12"
 }
 ```
 
@@ -222,16 +216,16 @@ async getTokens(): Promise<Tokens>;
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
+| Name    | Description                                                |
+| ------- | ---------------------------------------------------------- |
 | returns | All supported tokens (see types, for detailed description) |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('testnet');
 
 const contractAddresses = await syncWSProvider.getTokens();
 ```
@@ -263,39 +257,39 @@ async getState(address: Address): Promise<AccountState>;
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| address | `0x`-prefixed hex-encoded address of the Sync account. |
+| Name    | Description                                                                                          |
+| ------- | ---------------------------------------------------------------------------------------------------- |
+| address | `0x`-prefixed hex-encoded address of the Sync account.                                               |
 | returns | Detailed state of the Sync account, including balances, nonce. (see types, for detailed description) |
 
 > Returns
 
 ```json
 {
-    "address": "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    "id": 1, // optional
-    "committed": {
-        "balances": {
-            "ETH": "1000000000000000000", // 1 Ether in Wei
-        },
-        "nonce": 1,
+  "address": "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
+  "id": 1, // optional
+  "committed": {
+    "balances": {
+      "ETH": "1000000000000000000" // 1 Ether in Wei
     },
-    "depositing": {
-        "balances": {
-            "FAU": {
-                "amount": "9000000000000000",
-                "expectedAcceptBlock": 438929
-            }
-        }
-    },
-    "verified": {
-        "balances": {
-            "ETH": "1000000000000000000", // 1 Ether in Wei
-            // ERC20 token
-            "FAU": "1000000000000000000"
-        },
-        "nonce": 0,
+    "nonce": 1
+  },
+  "depositing": {
+    "balances": {
+      "FAU": {
+        "amount": "9000000000000000",
+        "expectedAcceptBlock": 438929
+      }
     }
+  },
+  "verified": {
+    "balances": {
+      "ETH": "1000000000000000000", // 1 Ether in Wei
+      // ERC20 token
+      "FAU": "1000000000000000000"
+    },
+    "nonce": 0
+  }
 }
 ```
 
@@ -311,15 +305,15 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
+| Name    | Description                                                                                |
+| ------- | ------------------------------------------------------------------------------------------ |
 | returns | Amount of confirmations required for priority operations to be processed by zkSync network |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
+import * as zksync from 'zksync';
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
 const requiredConfirmationsAmount = await syncWSProvider.getConfirmationsForEthOpAmount();
 ```
 
@@ -333,9 +327,9 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| txHash | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction. |
+| Name    | Description                                                       |
+| ------- | ----------------------------------------------------------------- |
+| txHash  | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction.     |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
 > Returns
@@ -386,22 +380,22 @@ async notifyTransaction(
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| txHash | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction. |
-| action | "COMMIT" or "VERIFY" |
+| Name    | Description                                                       |
+| ------- | ----------------------------------------------------------------- |
+| txHash  | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction.     |
+| action  | "COMMIT" or "VERIFY"                                              |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
 
 const receipt = await syncWSProvider.notifyTransaction(
-    "sync-tx:1111111111111111111111111111111111111111111111111111111111111111",
-    "COMMIT"
+  'sync-tx:1111111111111111111111111111111111111111111111111111111111111111',
+  'COMMIT'
 );
 ```
 
@@ -417,21 +411,21 @@ async getPriorityOpStatus(
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
+| Name     | Description                                                                                                                         |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
-| returns | Receipt of this priority operation (see types, for detailed description) |
+| returns  | Receipt of this priority operation (see types, for detailed description)                                                            |
 
 > Returns
 
 ```json
 {
-    "executed": true,
-    "block": {
-      "blockNumber": 658,
-      "committed": true,
-      "verified": true
-    }
+  "executed": true,
+  "block": {
+    "blockNumber": 658,
+    "committed": true,
+    "verified": true
+  }
 }
 ```
 
@@ -451,22 +445,22 @@ async notifyPriorityOp(
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
+| Name     | Description                                                                                                                         |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
-| action | "COMMIT" or "VERIFY" |
-| returns | Receipt of this priority operation (see types, for detailed description) |
+| action   | "COMMIT" or "VERIFY"                                                                                                                |
+| returns  | Receipt of this priority operation (see types, for detailed description)                                                            |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
 
 const receipt = await syncWSProvider.notifyPriorityOp(
-    178, // priority op id
-    "COMMIT"
+  178, // priority op id
+  'COMMIT'
 );
 ```
 
@@ -501,12 +495,12 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| txType | Type of the transaction. |
-| address | Address of the transaction recipients' wallet. |
-| tokenLike | Token used in the transaction. |
-| returns | Object containing the [packable](utils.md#amount-packing) fee amount along with the price components used for calculation. |
+| Name      | Description                                                                                                                |
+| --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| txType    | Type of the transaction.                                                                                                   |
+| address   | Address of the transaction recipients' wallet.                                                                             |
+| tokenLike | Token used in the transaction.                                                                                             |
+| returns   | Object containing the [packable](utils.md#amount-packing) fee amount along with the price components used for calculation. |
 
 ### Get transaction batch fee from the server
 
@@ -526,12 +520,12 @@ async getTransactionsBatchFee(
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| txTypes | Array of types of transactions in the batch |
+| Name      | Description                                        |
+| --------- | -------------------------------------------------- |
+| txTypes   | Array of types of transactions in the batch        |
 | addresses | Addresses of the corresponding recipients' wallets |
-| tokenLike | Token used to pay fees for the batch |
-| returns | Fee amount sufficient for the batch |
+| tokenLike | Token used to pay fees for the batch               |
+| returns   | Fee amount sufficient for the batch                |
 
 ### Get token price
 
@@ -547,17 +541,17 @@ async getTokenPrice(
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| tokenLike | Type of token. |
-| returns | Currently observed price of the token (USD per token). |
+| Name      | Description                                            |
+| --------- | ------------------------------------------------------ |
+| tokenLike | Type of token.                                         |
+| returns   | Currently observed price of the token (USD per token). |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-const syncWSProvider = await zksync.getDefaultProvider("testnet")
-const ethPrice = await syncWSProvider.getTokenPrice("ETH");
+import * as zksync from 'zksync';
+const syncWSProvider = await zksync.getDefaultProvider('testnet');
+const ethPrice = await syncWSProvider.getTokenPrice('ETH');
 
 console.log(`Current Ethereum price is ${ethPrice} USD`);
 ```
@@ -579,25 +573,21 @@ constructor(
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| ethersProvider | `ethers.js` provider connected to ethereum node|
-| contractAddress | Addresses of the Sync network contracts |
+| Name            | Description                                     |
+| --------------- | ----------------------------------------------- |
+| ethersProvider  | `ethers.js` provider connected to ethereum node |
+| contractAddress | Addresses of the Sync network contracts         |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
-
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider("testnet")
+const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('testnet');
 
-const ethProxy = new zksync.ETHProxy(
-    ethersProvider,
-    syncProvider.contractAddress
-);
+const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 ```
 
 ### Resolve token id
@@ -613,28 +603,25 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 
 #### Inputs and outputs
 
-| Name | Description |
-| -- | -- |
-| token | Ethereum token address (ERC20 contract address) |
+| Name    | Description                                                  |
+| ------- | ------------------------------------------------------------ |
+| token   | Ethereum token address (ERC20 contract address)              |
 | returns | Numerical identifier of the given token inside Sync network. |
 
 > Example
 
 ```typescript
-import * as zksync from "zksync";
-import {ethers} from "ethers";
+import * as zksync from 'zksync';
+import { ethers } from 'ethers';
 
-const ethersProvider = new ethers.getDefaultProvider("rinkeby");
-const syncProvider = await zksync.getDefaultProvider("testnet");
-const ethProxy = new zksync.ETHProxy(
-    ethersProvider,
-    syncProvider.contractAddress
-);
+const ethersProvider = new ethers.getDefaultProvider('rinkeby');
+const syncProvider = await zksync.getDefaultProvider('testnet');
+const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 
-const ethId = await ethProxy.resolveTokenId("0x0000000000000000000000000000000000000000"); // ETH token address is 0x0..0
+const ethId = await ethProxy.resolveTokenId('0x0000000000000000000000000000000000000000'); // ETH token address is 0x0..0
 
- // ERC20 token if it is supported, >= 1
-const erc20Id = await ethProxy.resolveTokenId("0xFab46E002BbF0b4509813474841E0716E6730136");
+// ERC20 token if it is supported, >= 1
+const erc20Id = await ethProxy.resolveTokenId('0xFab46E002BbF0b4509813474841E0716E6730136');
 ```
 
 # Providers

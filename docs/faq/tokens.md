@@ -18,7 +18,7 @@ To submit a token listing support, please fill out [this form](https://docs.goog
 We can immediately list tokens that satisfy the following conditions:
 
 - price tracked at <https://coinmarketcap.com>
-- daily trading volume exceeds $1M over the period of the past 3 months.
+- daily trading volume exceeds \$1M over the period of the past 3 months.
 
 Tokens without sufficient liquidity or CMC price tracker will be listed as soon as we implement an option to pay fees in a different token (see below).
 

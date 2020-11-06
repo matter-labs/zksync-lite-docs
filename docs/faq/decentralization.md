@@ -15,7 +15,7 @@ Right now, **zkSync** is at level 4 of this scale. It is fully non-custodial wit
 
 However, the daily operation of the **zkSync** network at the moment depends on the health of the computational service provider who generates zero-knowledge proofs for the blocks.
 
-<span class="footnote"><sup>*</sup> For L1 networks, trustlessness is only guaranteed by the ability (and to the extent of that ability) of honest minority users to fork away from the network taken over by dishonest majority. For L2 protocols, this is not necessary, because users can ultimately rely on L1 to circumvent exit censorship.</span>
+<span class="footnote"><sup>\*</sup> For L1 networks, trustlessness is only guaranteed by the ability (and to the extent of that ability) of honest minority users to fork away from the network taken over by dishonest majority. For L2 protocols, this is not necessary, because users can ultimately rely on L1 to circumvent exit censorship.</span>
 
 ## Who operates zkSync now
 
