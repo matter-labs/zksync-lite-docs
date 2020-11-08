@@ -133,10 +133,12 @@ async submitTxsBatch(transactions: { tx: any; signature?: TxEthSignature }[]): P
 
 #### Inputs and outputs
 
-| Name         | Description                                                                                                                       |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| transactions | An array of transactions / signature pairs. For details on individual transactions, see [Submit transaction](#submit-transaction) |
-| returns      | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch                                                    |
+| Name         | Description                                                                    |
+| ------------ | ------------------------------------------------------------------------------ |
+| transactions | An array of transactions / signature pairs.                                    |
+| returns      | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
+
+For details on individual transactions, see [Submit transaction](#submit-transaction).
 
 > Example
 
@@ -413,10 +415,13 @@ async getPriorityOpStatus(
 
 #### Inputs and outputs
 
-| Name     | Description                                                                                                                         |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
-| returns  | Receipt of this priority operation (see types, for detailed description)                                                            |
+| Name     | Description                            |
+| -------- | -------------------------------------- |
+| serialId | Numerical ID of the priority operation |
+| returns  | Receipt of this priority operation     |
+
+Serial ID of the priority operation can be found in logs of the ethereum transaction that created this operation (e.g.
+deposit).
 
 > Returns
 
@@ -447,11 +452,14 @@ async notifyPriorityOp(
 
 #### Inputs and outputs
 
-| Name     | Description                                                                                                                         |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| serialId | Numerical id of the priority operation, can be found in logs of the ethereum transaction that created this operation (e.g. deposit) |
-| action   | "COMMIT" or "VERIFY"                                                                                                                |
-| returns  | Receipt of this priority operation (see types, for detailed description)                                                            |
+| Name     | Description                             |
+| -------- | --------------------------------------- |
+| serialId | Numerical id of the priority operation. |
+| action   | "COMMIT" or "VERIFY".                   |
+| returns  | Receipt of this priority operation.     |
+
+Serial ID of the priority operation can be found in logs of the ethereum transaction that created this operation (e.g.
+deposit).
 
 > Example
 
@@ -498,12 +506,14 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 #### Inputs and outputs
 
-| Name      | Description                                                                                                                |
-| --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| txType    | Type of the transaction.                                                                                                   |
-| address   | Address of the transaction recipients' wallet.                                                                             |
-| tokenLike | Token used in the transaction.                                                                                             |
-| returns   | Object containing the [packable](utils.md#amount-packing) fee amount along with the price components used for calculation. |
+| Name      | Description                                                                                |
+| --------- | ------------------------------------------------------------------------------------------ |
+| txType    | Type of the transaction.                                                                   |
+| address   | Address of the transaction recipients' wallet.                                             |
+| tokenLike | Token used in the transaction.                                                             |
+| returns   | Object containing the [packable] fee amount and the price components used for calculation. |
+
+[packable]: utils.md#amount-packing
 
 ### Get transaction batch fee from the server
 
