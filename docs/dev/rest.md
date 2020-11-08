@@ -82,11 +82,11 @@ Also, there are two additional parameters: `tx_id` and `limit`, which are passed
 
 Description of the parameters:
 
-| Parameter | Description                                                                                       | Default value                                            |
-| --------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| address   | Address of account to load history for. Must be encoded as hexadecimal string with a "0x" prefix. | N/A                                                      |
-| tx_id     | Identifier of the transaction to load the history from.                                           | The first transaction of the next block to be committed. |
-| limit     | Maximum amount of transactions to include to response. Must not be greater than 100.              | 100                                                      |
+| Parameter | Description                                               | Default value               | Max value |
+| --------- | --------------------------------------------------------- | --------------------------- | --------- |
+| address   | Account address in a hexadecimal form with a "0x" prefix. | N/A                         | N/A       |
+| tx_id     | ID of the transaction to load the history from.           | Latest executed transaction | N/A       |
+| limit     | Maximum amount of transactions in response.               | 100                         | 100       |
 
 `older_than` endpoint loads transactions that are older than the transaction with given `tx_id`. This endpoint may be
 used to implement "scrolling down" the history. `newer_than` endpoints loads transactions that are newer than the
@@ -101,7 +101,7 @@ base the client logic on will be taken from the initial query results.
 
 ### Examples
 
-```
+```bash
 https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?tx_id=1,1&limit=20
 ```
 
@@ -109,7 +109,7 @@ Load at most 20 transactions newer than the first transaction of the first block
 
 ---
 
-```
+```bash
 https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/older_than
 ```
 
@@ -117,7 +117,7 @@ Load the last 100 executed transactions (`limit` and `tx_id` are not provided, t
 
 ---
 
-```
+```bash
 https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?limit=10
 ```
 
@@ -143,6 +143,6 @@ Endpoint response is encoded as follows:
 
 ### Examples
 
-```
+```bash
 https://rinkeby-api.zksync.io/api/v0.1/withdrawal_processing_time
 ```

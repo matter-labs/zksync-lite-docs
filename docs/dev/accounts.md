@@ -1,5 +1,32 @@
 # Accounts
 
+<!-- Common links used alongside the file -->
+
+[signer]: #signer
+[set signing key transaction]: #changing-account-public-key
+[additional ethereum transaction]: #authorize-new-public-key-using-ethereum-transaction
+[transfer]: #transfer-in-the-zksync
+[withdraw]: #withdraw-token-from-the-zksync
+
+<!-- Common footnotes -->
+
+[^signer]: If undefined, `Signer` will be derived from ethereum signature of specific message.
+[^acc_id]: If undefined, it will be queried from the server.
+[^ethsig]: If undefined, it will be deduced using the signature output.
+[^undefined]: Returned `undefined` value means that the account does not exist in the state tree.
+[^token]: "ETH" or address of the ERC20 token
+[^amount]: To see if amount is packable use [pack amount util](utils.md#closest-packable-amount)
+[^fee]:
+    If not set, lowest possible fee will be requested from zkSync server. Fees are pain in the same token as the main
+    transaction token. To get how to manually obtain an acceptable fee amount, see
+    [Get transaction fee from the server](#get-transaction-fee-from-the-server). To see if amount is packable use
+    [pack fee util](utils.md#closest-packable-fee).
+
+[^fast_fee]: If fee was requested manually, request has to be of "FastWithdraw" type
+[^onchain_auth]:
+    When false, `ethers.Signer` is used to create signature, otherwise it is expected that user called
+    `onchainAuthSigningKey` to authorize new pubkey.
+
 ## Wallet
 
 `Wallet` object is used to interact with the zkSync network. The wallet has an ethereum address associated with it and
@@ -22,12 +49,6 @@ Transactions such as [Transfer] and [Withdraw] are additionally signed using eth
 signature is used for additional security in case zkSync keys of the wallet are compromised. User is asked to sign
 readable representation of the transaction and signature check is performed when transaction is submitted to the zkSync.
 
-[signer]: #signer
-[set signing key transaction]: #changing-account-public-key
-[additional ethereum transaction]: #authorize-new-public-key-using-ethereum-transaction
-[transfer]: #transfer-in-the-zksync
-[withdraw]: #withdraw-token-from-the-zksync
-
 ### Creating wallet from ETH signer
 
 > Signature
@@ -49,13 +70,9 @@ static async fromEthSigner(
 | ethWallet                   | `ethers.Signer` that corresponds to keys that own this account               |
 | provider                    | Sync provider that is used for submitting a transaction to the Sync network. |
 | signer (optional)           | Sync signer that will be used for transaction signing.[^signer]              |
-| accountId (optional)        | zkSync account id.[^accid]                                                   |
+| accountId (optional)        | zkSync account id.[^acc_id]                                                  |
 | ethSignatureType (optional) | Type of signature that is produced by `ethWallet`.[^ethsig]                  |
 | returns                     | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
-
-[^signer]: If undefined, `Signer` will be derived from ethereum signature of specific message.
-[^accid]: If undefined, it will be queried from the server.
-[^ethsig]: If undefined, it will be deduced using the signature output.
 
 > Example
 
@@ -92,7 +109,7 @@ without it, such as Deposit, Emergency exit and reading the account state.
 | --------------------------- | ---------------------------------------------------------------------------- |
 | ethWallet                   | `ethers.Signer` that corresponds to keys that own this account               |
 | provider                    | Sync provider that is used for submitting a transaction to the Sync network. |
-| accountId (optional)        | zkSync account id.[^accid]                                                   |
+| accountId (optional)        | zkSync account id.[^acc_id]                                                  |
 | ethSignatureType (optional) | Type of signature that is produced by `ethWallet`.[^ethsig]                  |
 | returns                     | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
 
@@ -133,9 +150,9 @@ For convenience it is possible to obtain the account ID.
 async getAccountId(): Promise<number | undefined>;
 ```
 
-| Name    | Description                                                                                                                            |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| returns | Numerical account ID in the the zkSync tree state. Returned `undefined` value means that the account does not exist in the state tree. |
+| Name    | Description                                                    |
+| ------- | -------------------------------------------------------------- |
+| returns | Numerical account ID in the the zkSync tree state.[^undefined] |
 
 ### Get token balance on zkSync
 
@@ -232,15 +249,18 @@ async isERC20DepositsApproved(token: TokenLike): Promise<boolean>;
 Moves funds from the ethereum account to the Sync account.
 
 To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever
-using [unlocking ERC20 token](#unlocking-erc20-deposits), or the user can approve the exact amount (required for a
-deposit) upon each deposit, but this is not recommended.
+using [unlocking ERC20 token], or the user can approve the exact amount (required for a deposit) upon each deposit, but
+this is not recommended.
 
 Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations (see
-[provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before
-accepting it in the zkSync network. After the transaction is committed to the zkSync network, funds are already usable
-by the recipient, meaning that there is no need to wait for verification before proceeding unless additional
-confirmation is required for your application. To wait for the transaction commitment on the zkSync network, use
-`awaitReceipt`(see [utils](#awaiting-for-operation-completion)).
+[provider docs] for exact number) before accepting it in the zkSync network. After the transaction is committed to the
+zkSync network, funds are already usable by the recipient, meaning that there is no need to wait for verification before
+proceeding unless additional confirmation is required for your application. To wait for the transaction commitment on
+the zkSync network, use `awaitReceipt`(see [utils]).
+
+[unlocking erc20 token]: #unlocking-erc20-deposits
+[provider docs]: providers.md#get-amount-of-confirmations-required-for-priority-operations
+[utils]: #awaiting-for-operation-completion
 
 > Signature
 
@@ -256,14 +276,17 @@ async depositToSyncFromEthereum(deposit: {
 
 #### Inputs and outputs
 
-| Name                                           | Description                                                                                                                                         |
-| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| deposit.depositTo                              | Sync account address of the receiver                                                                                                                |
-| deposit.token                                  | token to be transferred (symbol or address of the supported token)                                                                                  |
-| deposit.amount                                 | amount of token to be transferred                                                                                                                   |
-| deposit.ethTxOptions                           | arguments for the deposit Ethereum transaction. Used to specify e.g. a gas price or nonce.                                                          |
-| deposit.approveDepositAmountForERC20(optional) | If set, the user will be asked to approve the ERC20 token spending to our account (not required if [token was unlocked](#unlocking-erc20-deposits)) |
-| returns                                        | Handle for this transaction.                                                                                                                        |
+| Name                                           | Description                                                        |
+| ---------------------------------------------- | ------------------------------------------------------------------ |
+| deposit.depositTo                              | Sync account address of the receiver                               |
+| deposit.token                                  | token to be transferred (symbol or address of the supported token) |
+| deposit.amount                                 | amount of token to be transferred                                  |
+| deposit.ethTxOptions                           | arguments for the deposit Ethereum transaction, e.g. gas price.    |
+| deposit.approveDepositAmountForERC20(optional) | See below\*                                                        |
+| returns                                        | Handle for this transaction.                                       |
+
+\*: If set, the user will be asked to approve the ERC20 token spending to our account (not required if
+[token was unlocked](#unlocking-erc20-deposits))
 
 > Example
 
@@ -291,7 +314,7 @@ zkSync account has address which is ethereum address of the owner.
 
 There are two ways to authorize zksync key pair.
 
-1. Using ethereum signature of specific message. This way is prefered but can only be used if your ethereum wallet can
+1. Using ethereum signature of specific message. This way is preferred but can only be used if your ethereum wallet can
    sign messages.
 2. Using ethereum transaction to zkSync smart-contract.
 
@@ -302,9 +325,7 @@ The account should be present in the zkSync network in order to set a signing ke
 This function will throw an error if the account is not present in the zkSync network. Check the
 [account id](#get-account-state) to see if account is present in the zkSync state tree.
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
-forced exit. To get how to obtain an acceptable fee amount, see
-[Get transaction fee from the server](#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions.[^fee]
 
 > Signature
 
@@ -319,13 +340,13 @@ async setSigningKey(changePubKey: {
 
 #### Inputs and outputs
 
-| Name                     | Description                                                                                                                                                                                                                       |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| changePubKey.nonce       | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account)                                                                                                              |
-| changePubKey.feeToken    | token to pay fee in ("ETH" or address of the ERC20 token)                                                                                                                                                                         |
-| changePubKey.fee         | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| changePubKey.onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey.                                                                                |
-| returns                  | Handle of the submitted transaction                                                                                                                                                                                               |
+| Name                        | Description                                                               |
+| --------------------------- | ------------------------------------------------------------------------- |
+| changePubKey.nonce          | Nonce that is going to be used for this transaction.[^nonce]              |
+| changePubKey.feeToken       | Token to pay fee in.[^token]                                              |
+| changePubKey.fee (optional) | Amount of token to be paid as a fee for this transaction.[^fee]           |
+| changePubKey.onchainAuth    | Whether authorization for ChangePubKey is performed in L1.[^onchain_auth] |
+| returns                     | Handle of the submitted transaction.                                      |
 
 > Example
 
@@ -363,13 +384,13 @@ async signSetSigningKey(changePubKey: {
 
 #### Inputs and outputs
 
-| Name                     | Description                                                                                                                                        |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| changePubKey.nonce       | Nonce that is going to be used for this transaction.                                                                                               |
-| changePubKey.feeToken    | token to pay fee in ("ETH" or address of the ERC20 token)                                                                                          |
-| changePubKey.fee         | amount of token to be paid as a fee for this transaction.                                                                                          |
-| changePubKey.onchainAuth | When false `ethers.Signer` is used to create signature, otherwise it is expected that user called `onchainAuthSigningKey` to authorize new pubkey. |
-| returns                  | Signed transaction                                                                                                                                 |
+| Name                     | Description                                                              |
+| ------------------------ | ------------------------------------------------------------------------ |
+| changePubKey.nonce       | Nonce that is going to be used for this transaction.[^nonce]             |
+| changePubKey.feeToken    | Token to pay fee in.[^token]                                             |
+| changePubKey.fee         | Amount of token to be paid as a fee for this transaction.[^fee]          |
+| changePubKey.onchainAuth | Whether authorization for ChangePubKey is performed in L1[^onchain_auth] |
+| returns                  | Signed transaction                                                       |
 
 ### Authorize new public key using ethereum transaction
 
@@ -387,11 +408,11 @@ async onchainAuthSigningKey(
 
 #### Inputs and outputs
 
-| Name         | Description                                                                                                                     |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| nonce        | Nonce that is going to be used for `setSigningKey` transaction. ("committed" is used for the last known nonce for this account) |
-| ethTxOptions | arguments for the onchain authentication Ethereum transaction. Used to specify e.g. a gas price or nonce.                       |
-| returns      | Handle of the submitted transaction                                                                                             |
+| Name         | Description                                                                    |
+| ------------ | ------------------------------------------------------------------------------ |
+| nonce        | Nonce that is going to be used for `setSigningKey` transaction.[^nonce]        |
+| ethTxOptions | arguments for the onchain authentication Ethereum transaction, e.g. gas price. |
+| returns      | Handle of the submitted transaction                                            |
 
 > Example
 
@@ -441,9 +462,7 @@ After the transaction is committed, funds are already usable by the recipient, s
 verification before proceeding unless additional confirmation is required for your application. To wait for transaction
 commit use `awaitReceipt`(see [utils](utils.md#awaiting-for-operation-completion)).
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
-transfer. To get how to obtain an acceptable fee amount, see
-[Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions.[^fee]
 
 <aside class = notice>
 The transfer amount and fee should have a limited number of significant digits according to spec.
@@ -464,14 +483,14 @@ async syncTransfer(transfer: {
 
 #### Inputs and outputs
 
-| Name            | Description                                                                                                                                                                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| transfer.to     | Sync address of the recipient of funds                                                                                                                                                                                                                |
-| transfer.token  | token to be transferred (symbol or address of the token)                                                                                                                                                                                              |
-| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](utils.md#closest-packable-amount)                                                                                                                              |
-| transfer.fee    | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| transfer.nonce  | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account)                                                                                                                                  |
-| returns         | Handle of the submitted transaction                                                                                                                                                                                                                   |
+| Name                   | Description                                                     |
+| ---------------------- | --------------------------------------------------------------- |
+| transfer.to            | zkSync address of the recipient of funds                        |
+| transfer.token         | Token to be transferred[^token]                                 |
+| transfer.amount        | Amount of token to be transferred.[^amount]                     |
+| transfer.fee(optional) | Amount of token to be paid as a fee for this transaction.[^fee] |
+| transfer.nonce         | Nonce that is going to be used for this transaction.[^nonce]    |
+| returns                | Handle of the submitted transaction                             |
 
 > Example
 
@@ -510,14 +529,14 @@ async signSyncTransfer(transfer: {
 
 #### Inputs and outputs
 
-| Name            | Description                                                                                                                                                                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| transfer.to     | Sync address of the recipient of funds                                                                                                                                                                                                                |
-| transfer.token  | token to be transferred (symbol or address of the token)                                                                                                                                                                                              |
-| transfer.amount | amount of token to be transferred. To see if amount is packable use [pack amount util](utils.md#closest-packable-amount)                                                                                                                              |
-| transfer.fee    | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| transfer.nonce  | Nonce that is going to be used for this transaction.                                                                                                                                                                                                  |
-| returns         | Signed transaction.                                                                                                                                                                                                                                   |
+| Name            | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| transfer.to     | zkSync address of the recipient of funds                        |
+| transfer.token  | Token to be transferred.[^token]                                |
+| transfer.amount | Amount of token to be transferred.[^amount]                     |
+| transfer.fee    | Amount of token to be paid as a fee for this transaction.[^fee] |
+| transfer.nonce  | Nonce that is going to be used for this transaction.[^nonce]    |
+| returns         | Signed transaction.                                             |
 
 ### Batched Transfers in the zkSync
 
@@ -546,10 +565,12 @@ async syncMultiTransfer(
 
 #### Inputs and outputs
 
-| Name      | Description                                                                                                                        |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| transfers | An array of transfer transactions. For details on an individual transaction, see [Transfer in the zkSync](#transfer-in-the-zksync) |
-| returns   | Array of handle for each submitted transaction                                                                                     |
+| Name      | Description                                     |
+| --------- | ----------------------------------------------- |
+| transfers | An array of transfer transactions.              |
+| returns   | Array of handle for each submitted transaction. |
+
+For details on an individual transaction, see [Transfer in the zkSync](#transfer-in-the-zksync).
 
 > Example
 
@@ -583,9 +604,7 @@ this transaction. (see [change pub key](#changing-account-public-key))
 Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
 Ethereum account (because of the security reasons).
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
-withdraw. To get how to obtain an acceptable fee amount, see
-[Get transaction fee from the server](providers.md#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions.[^fee]
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
 `awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
@@ -605,15 +624,15 @@ async withdrawFromSyncToEthereum(withdraw: {
 
 #### Inputs and outputs
 
-| Name                    | Description                                                                                                                                                                                                                                           |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| withdraw.ethAddress     | ethereum address of the recipient                                                                                                                                                                                                                     |
-| withdraw.token          | token to be transferred ("ETH" or address of the ERC20 token)                                                                                                                                                                                         |
-| withdraw.amount         | amount of token to be transferred                                                                                                                                                                                                                     |
-| withdraw.fee            | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| withdraw.nonce          | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account)                                                                                                                                  |
-| withdraw.fastProcessing | Request faster processing of transaction. Note that this requires a higher fee (if fee was requested manually, request has to be of "FastWithdraw" type)                                                                                              |
-| returns                 | Handle of the submitted transaction                                                                                                                                                                                                                   |
+| Name                    | Description                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------- |
+| withdraw.ethAddress     | Ethereum address of the recipient                                                         |
+| withdraw.token          | Token to be transferred[^token].                                                          |
+| withdraw.amount         | Amount of token to be transferred[^amount].                                               |
+| withdraw.fee            | amount of token to be paid as a fee for this transaction[^fee].                           |
+| withdraw.nonce          | Nonce that is going to be used for this transaction[^nonce].                              |
+| withdraw.fastProcessing | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
+| returns                 | Handle of the submitted transaction                                                       |
 
 > Example
 
@@ -652,14 +671,14 @@ async signWithdrawFromSyncToEthereum(withdraw: {
 
 #### Inputs and outputs
 
-| Name                | Description                                                                                                                                                                                                                                           |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| withdraw.ethAddress | ethereum address of the recipient                                                                                                                                                                                                                     |
-| withdraw.token      | token to be transferred ("ETH" or address of the ERC20 token)                                                                                                                                                                                         |
-| withdraw.amount     | amount of token to be transferred                                                                                                                                                                                                                     |
-| withdraw.fee        | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee), also see [this](providers.md#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| withdraw.nonce      | Nonce that is going to be used for this transaction.                                                                                                                                                                                                  |
-| returns             | Signed transaction                                                                                                                                                                                                                                    |
+| Name                | Description                                                     |
+| ------------------- | --------------------------------------------------------------- |
+| withdraw.ethAddress | Ethereum address of the recipient                               |
+| withdraw.token      | Token to be transferred[^token].                                |
+| withdraw.amount     | Amount of token to be transferred[^amount].                     |
+| withdraw.fee        | amount of token to be paid as a fee for this transaction[^fee]. |
+| withdraw.nonce      | Nonce that is going to be used for this transaction[^nonce].    |
+| returns             | Signed transaction                                              |
 
 ### Initiate a forced exit for an account
 
@@ -671,9 +690,9 @@ token will be transferred.
 Sender account should have correct public key set before sending this transaction. (see
 [change pub key](#changing-account-public-key))
 
-The operators require a fee to be paid in order to process transactions. Fees are paid using the same token as the
-forced exit. **Note:** fee is paid by the transaction initiator, not by the target account. To get how to obtain an
-acceptable fee amount, see [Get transaction fee from the server](#get-transaction-fee-from-the-server).
+The operators require a fee to be paid in order to process transactions[^fee].
+
+**Note:** fee is paid by the transaction initiator, not by the target account.
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
 `awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
@@ -691,13 +710,13 @@ async syncForcedExit(forcedExit: {
 
 #### Inputs and outputs
 
-| Name              | Description                                                                                                                                                                                                                       |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| forcedExit.target | ethereum address of the target account                                                                                                                                                                                            |
-| forcedExit.token  | token to be transferred ("ETH" or address of the ERC20 token)                                                                                                                                                                     |
-| forcedExit.fee    | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| forcedExit.nonce  | Nonce that is going to be used for this transaction. ("committed" is used for the last known nonce for this account)                                                                                                              |
-| returns           | Handle of the submitted transaction                                                                                                                                                                                               |
+| Name              | Description                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| forcedExit.target | Ethereum address of the target account.                         |
+| forcedExit.token  | Token to be transferred[^token].                                |
+| forcedExit.fee    | Amount of token to be paid as a fee for this transaction[^fee]. |
+| forcedExit.nonce  | Nonce that is going to be used for this transaction[^nonce].    |
+| returns           | Handle of the submitted transaction                             |
 
 > Example
 
@@ -734,13 +753,13 @@ async signSyncForcedExit((forcedExit: {
 
 #### Inputs and outputs
 
-| Name              | Description                                                                                                                                                                                                                       |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| forcedExit.target | ethereum address of the target account                                                                                                                                                                                            |
-| forcedExit.token  | token to be transferred ("ETH" or address of the ERC20 token)                                                                                                                                                                     |
-| forcedExit.fee    | amount of token to be paid as a fee for this transaction. To see if amount is packable use [pack fee util](#closest-packable-fee), also see [this](#get-transaction-fee-from-the-server) section to get an acceptable fee amount. |
-| forcedExit.nonce  | Nonce that is going to be used for this transaction.                                                                                                                                                                              |
-| returns           | Signed transaction                                                                                                                                                                                                                |
+| Name              | Description                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| forcedExit.target | Ethereum address of the target account                          |
+| forcedExit.token  | Token to be transferred[^token].                                |
+| forcedExit.fee    | Amount of token to be paid as a fee for this transaction[^fee]. |
+| forcedExit.nonce  | Nonce that is going to be used for this transaction[^nonce].    |
+| returns           | Signed transaction                                              |
 
 ### Emergency withdraw from Sync
 
@@ -769,12 +788,12 @@ async emergencyWithdraw(withdraw: {
 
 #### Inputs and outputs
 
-| Name                  | Description                                                                                          |
-| --------------------- | ---------------------------------------------------------------------------------------------------- |
-| withdraw.token        | token to be withdrawn (symbol or address of the supported token)                                     |
-| withdraw.accountId    | Numerical id of the given account. If undefined it is going to be resolved from the zkSync provider. |
-| withdraw.ethTxOptions | arguments for emergency withdraw Ethereum transaction. It is used to specify a gas price or nonce.   |
-| returns               | Handle for this transaction.                                                                         |
+| Name                             | Description                                                            |
+| -------------------------------- | ---------------------------------------------------------------------- |
+| withdraw.token                   | Token to be withdrawn[^token].                                         |
+| withdraw.accountId (optional)    | Numerical id of the given account[^acc_id].                            |
+| withdraw.ethTxOptions (optional) | arguments for emergency withdraw Ethereum transaction, e.g. gas price. |
+| returns                          | Handle for this transaction.                                           |
 
 > Example
 
