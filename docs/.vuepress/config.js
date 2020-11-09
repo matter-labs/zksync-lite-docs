@@ -40,13 +40,13 @@ module.exports = {
                 '/legal/privacy'
             ],
             '/': [         
+                '',
                 {
                     title: 'FAQ',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                      //['/faq/why', 'Why should I care?'],
                       '/faq/intro',
                       '/faq/tech',
                       '/faq/tokens',
@@ -55,23 +55,69 @@ module.exports = {
                       '/faq/sc',
                       '/faq/privacy'
                     ]
-                },             
+                },
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/dev/tutorial',
                       '/dev/basic',
-                      '/dev/providers',
-                      '/dev/accounts',
-                      '/dev/rest',
-                      '/dev/utils',
-                      '/dev/types',
-                      '/dev/contracts',
-                      '/dev/browser-bundled',
+                      '/dev/overview',
+                      '/dev/contracts'
                     ]
+                },
+                {
+                    title: 'API documentation',  // required
+                    path: '/api', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: [
+                      '/api/v0.1',
+                      '/api/v1'
+                    ]
+                },
+                {
+                    title: 'JavaScript SDK',  // required
+                    path: '/sdk/js', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: [
+                      '/sdk/js/tutorial',
+                      '/sdk/js/providers',
+                      '/sdk/js/accounts',
+                      '/sdk/js/utils',
+                      '/sdk/js/types',
+                      '/sdk/js/browser-bundled'
+                    ]
+                },
+                {
+                    title: 'Rust SDK',  // required
+                    path: '/sdk/rust', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: ['']
+                },
+                {
+                    title: 'Java SDK',  // required
+                    path: '/sdk/java', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: ['']
+                },
+                {
+                    title: 'Swift SDK',  // required
+                    path: '/sdk/swift', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: ['']
+                },
+                {
+                    title: 'Go SDK',  // required
+                    path: '/sdk/go', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: ['']
                 },
             ]
         }

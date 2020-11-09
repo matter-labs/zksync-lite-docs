@@ -5,18 +5,13 @@ Ethereum network. This document is a description of javascript SDK that can be u
 
 ## Resources
 
-- [zkSync testnet](https://testnet.zksync.io)
-- [zkSync JS SDK github page](https://github.com/matter-labs/zksync/tree/master/sdk/zksync.js)
-- [zkSync Rust SDK github page](https://github.com/matter-labs/zksync/tree/master/sdk/zksync-rs)
+- [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
+- [zkSync Ropsten testnet](https://rinkeby.zksync.io)
+- [zkSync Mainnet](https://wallet.zksync.io)
 
 ## Table of contents
 
-- [Getting started](tutorial.html)
+- [Overview](overview.html)
 - [Basic concepts](basics.html)
-- [Providers](providers.html)
-- [Accounts](accounts.html)
-- [REST API](rest.html)
-- [Utils](utils.html)
-- [Types](types.html)
+- [Essential zkSync types](sdk/js/types.html)
 - [Smart contracts addresses](contracts.html)
-- [Appendix A: Using bundle in a browser](browser-bundled.html)
