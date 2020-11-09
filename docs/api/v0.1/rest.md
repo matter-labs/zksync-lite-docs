@@ -11,9 +11,9 @@ the `rinkeby` zkSync testnet API, thus URLs will look start `https://rinkeby-api
 
 All available API addresses for zkSync:
 
-- `https://rinkeby-api.zksync.io/` - API for Rinkeby testnet server
-- `https://ropsten-api.zksync.io/` - API for Ropsten testnet server
-- `https://api.zksync.io/` - API for Mainnet server
+- `https://rinkeby-api.zksync.io/api/v0.1/` - API for Rinkeby testnet server
+- `https://ropsten-api.zksync.io/api/v0.1/` - API for Ropsten testnet server
+- `https://api.zksync.io/api/v0.1/` - API for Mainnet server
 
 To interact with REST API from javascript one may use any of available packages providing the interface to perform HTTP
 requests. One of the simplest ways will be to use `Axios`, and in that case the interaction will look as follows:

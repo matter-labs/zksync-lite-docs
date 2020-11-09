@@ -73,8 +73,8 @@ module.exports = {
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/api/v0.1',
-                      '/api/v1'
+                      '/api/v0.1/',
+                      '/api/v1/'
                     ]
                 },
                 {
