@@ -64,7 +64,8 @@ module.exports = {
                     children: [
                       '/dev/basic',
                       '/dev/overview',
-                      '/dev/contracts'
+                      '/dev/contracts',
+                      '/dev/cryptography'
                     ]
                 },
                 {
