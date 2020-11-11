@@ -98,27 +98,6 @@ module.exports = {
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: ['']
                 },
-                {
-                    title: 'Java SDK',  // required
-                    path: '/sdk/java', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
-                    children: ['']
-                },
-                {
-                    title: 'Swift SDK',  // required
-                    path: '/sdk/swift', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
-                    children: ['']
-                },
-                {
-                    title: 'Go SDK',  // required
-                    path: '/sdk/go', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
-                    children: ['']
-                },
             ]
         }
     },
