@@ -52,6 +52,11 @@ export interface Fee {
   // for the actual operation.
   totalFee: utils.BigNumber;
 }
+
+export interface BatchFee {
+  // Total fee amount (in wei)
+  totalFee: BigNumber;
+}
 ```
 
 `ChangePubKeyFee` interface is defined as follows:
@@ -188,13 +193,6 @@ export interface ChangePubKey {
   nonce: number;
   signature: Signature;
   ethSignature: string;
-}
-
-export interface CloseAccount {
-  type: 'Close';
-  account: Address;
-  nonce: number;
-  signature: Signature;
 }
 
 export interface SignedTransaction {
