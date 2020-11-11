@@ -2,13 +2,15 @@
 
 This section contains the description of endpoints provided by the zkSync server via JSON RPC.
 
-<!-- prettier attempts to break the footnote section here -->
+<!-- both prettier and markdownlint don't handle footnotes extension well -->
 <!-- prettier-ignore-start -->
+<!-- markdownlint-disable no-space-in-code -->
 [^tx]:
     `Transaction` type can be expressed as follows:
     ```ts
     type Transaction = Transfer | Withdraw | ChangePubKey | ForcedExit;
     ```
+<!-- markdownlint-enable no-space-in-code -->
 <!-- prettier-ignore-end -->
 
 ## Introduction
