@@ -69,30 +69,30 @@ Messages for Ethereum signatures depend on the transaction type:
 
 // For Transfer:
 const transferEthMessage =
-    `Transfer ${stringAmount} ${stringToken}\n` +
-    `To: ${transfer.to.toLowerCase()}\n` +
-    `Nonce: ${transfer.nonce}\n` +
-    `Fee: ${stringFee} ${stringToken}\n` +
-    `Account Id: ${this.accountId}`;
+  `Transfer ${stringAmount} ${stringToken}\n` +
+  `To: ${transfer.to.toLowerCase()}\n` +
+  `Nonce: ${transfer.nonce}\n` +
+  `Fee: ${stringFee} ${stringToken}\n` +
+  `Account Id: ${this.accountId}`;
 
 // For Withdraw:
 const withdrawEthMessage =
-    `Withdraw ${stringAmount} ${stringToken}\n` +
-    `To: ${withdraw.ethAddress.toLowerCase()}\n` +
-    `Nonce: ${withdraw.nonce}\n` +
-    `Fee: ${stringFee} ${stringToken}\n` +
-    `Account Id: ${this.accountId}`;
+  `Withdraw ${stringAmount} ${stringToken}\n` +
+  `To: ${withdraw.ethAddress.toLowerCase()}\n` +
+  `Nonce: ${withdraw.nonce}\n` +
+  `Fee: ${stringFee} ${stringToken}\n` +
+  `Account Id: ${this.accountId}`;
 
 // For ChangePubKey (assuming it is a stand-alone transaction, for batch see details below):
 const msgNonce = utils.hexlify(serializeNonce(nonce));
 const msgAccId = utils.hexlify(serializeAccountId(accountId));
 const pubKeyHashHex = pubKeyHash.replace('sync:', '').toLowerCase();
 const changePubKeyRawMessage =
-    `Register zkSync pubkey:\n\n` +
-    `${pubKeyHashHex}\n` +
-    `nonce: ${msgNonce}\n` +
-    `account id: ${msgAccId}\n\n` +
-    `Only sign this message for a trusted client!`;
+  `Register zkSync pubkey:\n\n` +
+  `${pubKeyHashHex}\n` +
+  `nonce: ${msgNonce}\n` +
+  `account id: ${msgAccId}\n\n` +
+  `Only sign this message for a trusted client!`;
 
 const emptyHash = new Uint8Array(32);
 const bytes = concat([changePubKeyRawMessage, emptyHash]);
@@ -148,16 +148,16 @@ const message = Uint8Array.from(Buffer.from(hash, 'hex'));
 
 Requirement for adding a prefix described above still holds.
 
-This obtained signature may be sent together with batch via [corresponding JSON RPC method][send_batch], and none of
-the batch transactions is required to have an Ethereum signature.
+This obtained signature may be sent together with batch via [corresponding JSON RPC method][send_batch], and none of the
+batch transactions is required to have an Ethereum signature.
 
 ### Sending `ChangePubKey` operation in batch
 
 `ChangePubKey` operation has Ethereum signature as a mandatory field of transaction, and in only can be omitted if
 operation was approved on-chain via a separate transaction.
 
-Thus, if `ChangePubKey` is a part of the batch, it may have the same Ethereum signature as the batch signature.
-The logic may be expressed as follows:
+Thus, if `ChangePubKey` is a part of the batch, it may have the same Ethereum signature as the batch signature. The
+logic may be expressed as follows:
 
 ```js
 const changePubKeyMessage = getChangePubKeyMessage(changePubKeyTx);
