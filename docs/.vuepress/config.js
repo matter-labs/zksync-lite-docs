@@ -62,8 +62,9 @@ module.exports = {
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/dev/basic',
                       '/dev/overview',
+                      '/dev/basic',
+                      '/dev/sending_transactions',
                       '/dev/contracts',
                       '/dev/cryptography'
                     ]

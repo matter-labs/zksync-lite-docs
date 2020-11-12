@@ -1,4 +1,4 @@
-# Cryptographic backends
+# Cryptographic Backends
 
 zkSync uses cryptographical primitives different from ones that are used in Ethereum. So, in order to make basic
 operations, such as generating the private key and sign transactions, we provide interfaces for our cryptographic
@@ -12,7 +12,7 @@ Repository: <https://github.com/zksync-sdk/zksync-crypto-c>
 
 Installation: we distribute precompiled binaries for the common platforms, which can be found [here][c_libs].
 
-[c_libs]: TODO
+[c_libs]: https://github.com/zksync-sdk/zksync-crypto-c/releases/tag/v0.1.0
 
 ### Example
 
