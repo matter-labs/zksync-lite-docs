@@ -96,7 +96,10 @@ if (!(await syncWallet.isSigningKeySet())) {
     throw new Error('Unknwon account');
   }
 
-  const changePubkey = await syncWallet.setSigningKey();
+  // As any other kind of transaction, `ChangePubKey` transaction requires fee.
+  // User doesn't have (but can) to specify the fee amount. If omitted, library will query zkSync node for
+  // the lowest possible amount.
+  const changePubkey = await syncWallet.setSigningKey({ feeToken: 'ETH' });
 
   // Wait until the tx is committed
   await changePubkey.awaitReceipt();
