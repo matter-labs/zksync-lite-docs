@@ -25,7 +25,7 @@ function depositERC20(IERC20 _token, uint104 _amount, address _franklinAddr) ext
 Note that prior to deposit of ERC20 funds, corresponding amount of funds must be approved for contract, e.g. (in JS):
 
 ```js
-erc20contract.approve(zkSyncContractAddres, deposit_amount);
+erc20contract.approve(zkSyncContractAddress, deposit_amount);
 ```
 
 To perform a full exit, user must sequentially register an exit request (via `fullExit` contract call), and then
@@ -121,7 +121,7 @@ transfer. In order to do so, one can create a batch of two transactions:
 Server will check that sum of fees (0 in first transaction and 2x expected fee in the second one) is enough to cover
 processing of two transfers, and will execute batch.
 
-**Note on security:** In the current form, transaction batches is a server-side abstraction. Successfull execution is
+**Note on security:** In the current form, transaction batches is a server-side abstraction. Successful execution is
 checked pre-circuit, and information about batch is not passed into circuit. Thus, if this feature is being used to pay
 fees in a different token, it is recommended to set the fee payment transaction last (so that server even in theory will
 be unable to execute the last transaction, but ignore other ones). In the future, the batches will be enforced in

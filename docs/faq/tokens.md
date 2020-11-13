@@ -11,7 +11,7 @@ The full list of currently supported tokens is available under this link (as JSO
 <https://api.zksync.io/api/v0.1/tokens>
 
 DISCLAIMER: We will list any tokens fulfilling the criteria below on the first-come, first-serve basis. Listing of a
-token on zkSync does not represent an endorsment for this token by the Matter Labs team, Stichting ZK Sync or any other
+token on zkSync does not represent an endorsement for this token by the Matter Labs team, Stichting ZK Sync or any other
 entity. We do not have competence and authority to analyze the token business model and smart contract security
 guarantees of a particular token. Please use any token on your own risk and judgement.
 
@@ -36,7 +36,7 @@ In **zkSync** the cost of every transaction has two components:
   generation. This part depends on the use of hardware resources and is therefore invariable. Our benchmarks give
   estimates of ~0.001 USD per transfer.
 - **On-chain part (gas costs)**: for every **zkSync** block, the validator must pay Ethereum gas to verify the SNARK
-  (~1.5k gas right now going down to a negligable amount with zkSync v1.1), plus additionally ~0.4k gas per transaction
+  (~1.5k gas right now going down to a negligible amount with zkSync v1.1), plus additionally ~0.4k gas per transaction
   to publish the state ∆. The on-chain part is variable because it depends on the current gas price in the Ethereum
   network. However, this part is orders of magnitude cheaper than the cost of normal ETH/ERC20 transfers.
 

@@ -30,7 +30,7 @@ Currently, the computational service provider for the **zkSync** network is "Sti
 foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service will operated at
 break-even cost until the transition to full decentralization.
 
-## Decentralizaton roadmap
+## Decentralization roadmap
 
 Matter Labs is committed to developing **zkSync** into a fully decentralized protocol.
 

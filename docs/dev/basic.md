@@ -49,7 +49,7 @@ Ethereum using the `Verify` transaction. Only after the `Verify` tx was mined, t
 Multiple blocks can be committed but not verified yet.
 
 However, the execution model is slightly different: in order to not make users wait for the block finalization,
-transactions are grouped into "miniblocks" with a much smaller timeout. So, the blocks is being partially applied with a
+transactions are grouped into "mini-blocks" with a much smaller timeout. So, the blocks is being partially applied with a
 small interval, so that shortly after receiving the transaction is is executed and L2 state is updated correspondingly.
 
 It means that after sending the transaction, user doesn't have to wait for neither block commitment or verification, and
@@ -137,7 +137,7 @@ withdrawal of **all** available funds of certain token from the target L2 addres
 
 Also, the transaction initiator should cover the fee, which is exactly the same as for `Withdraw` operation.
 
-This method is preferred if funds should be withdrawn from an account that cannot set the siging key (i.e. smart
+This method is preferred if funds should be withdrawn from an account that cannot set the signing key (i.e. smart
 contract account), and there exists an L2 account which can send this type of transaction.
 
 Third one is `FullExit` priority operation.

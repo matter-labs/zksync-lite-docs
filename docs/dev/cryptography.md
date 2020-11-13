@@ -1,6 +1,6 @@
 # Cryptographic Backends
 
-zkSync uses cryptographical primitives different from ones that are used in Ethereum. So, in order to make basic
+zkSync uses cryptographic primitives different from ones that are used in Ethereum. So, in order to make basic
 operations, such as generating the private key and sign transactions, we provide interfaces for our cryptographic
 backend for various programming languages.
 
@@ -75,7 +75,7 @@ Installation: available via `npm` package [`zksync-crypto`][npm_lib].
 import { keccak256, arrayify, hexlify } from 'ethers/lib/utils';
 import { private_key_to_pubkey_hash, sign_musig, privateKeyFromSeed } from 'zksync-crypto';
 
-const privateKeySeed = arraify(keccak256([0x01]));
+const privateKeySeed = arrayify(keccak256([0x01]));
 const privateKey = privateKeyFromSeed(privateKeySeed);
 
 const bytes = arrayify(0x01);

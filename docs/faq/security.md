@@ -63,7 +63,7 @@ established cryptographic assumptions widely considered secure in the academic a
 | [Rescue](https://eprint.iacr.org/2019/426.pdf) | Hash function     | 1, 2                     |
 | [muSig](https://eprint.iacr.org/2018/068)      | Signature scheme  | 1, 2, 3                  |
 
-### Cryptographic asssumptions
+### Cryptographic assumptions
 
 1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision_resistance)
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
@@ -104,7 +104,7 @@ in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve,
 The ceremony ran from October 2019 until December 2019, with 176 participants from over 30 countries collaborating to
 compute a secure database of encrypted points, including
 [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the
-crypto community. Full ceremony transcript with the list of indviduals and organizations who claimed their contribution
+crypto community. Full ceremony transcript with the list of individuals and organizations who claimed their contribution
 [is available here](https://www.aztecprotocol.com/ignition/). You can use
 [this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed
 participants.
@@ -117,7 +117,7 @@ systems is much higher than in a trusted setup with hundreds of well-known parti
 operation of zkSync requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
 
 Nonetheless, we encourage you to check the list of the contributors of the Ignition ceremony and make your own opinion
-on whether there is at least one trustworthy person or organisation among them. And in the future, we strive to
+on whether there is at least one trustworthy person or organization among them. And in the future, we strive to
 eliminate trust assumptions altogether by embracing a transparent zero-knowledge proof system such as
 [RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
 

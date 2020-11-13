@@ -32,7 +32,7 @@ In other words, zkRollup strictly inherits the security guarantees of the underl
 Here are some links to explore the topic of zkRollups:
 
 - [Original idea proposal by Vitalik Buterin](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
-- [Matte Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
+- [Matter Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
 - [Awesome Zero-Knowledge Proofs materials](https://github.com/matter-labs/awesome-zero-knowledge-proofs)
 - [zkRollup vs. Optimistic Rollup deep dive](https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075)
 - [Validity proofs (zkRollup) vs. fraud proofs](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a)
@@ -85,7 +85,7 @@ consensus participants (weighted by stake).
 If a new **zkSync** block is produced and submitted to the mainchain, it cannot be reverted. However, if it doesn’t
 contain the promised transaction, the security bond of the intersection of the signers of the original receipt and the
 signers of the new blocks will be slashed. This intersection is guaranteed to have more than ⅓ of the stake. This
-guarantees that at least ⅓ of the security bond is slashable and that only malicious users will be punished.
+guarantees that at least ⅓ of the security bond can be slashed and that only malicious users will be punished.
 
 A portion of the slashed funds will be used to compensate the tx recipient. The rest will be burned.
 
@@ -95,7 +95,7 @@ Periodically, extraordinary events lead to very high levels of congestion on the
 [Cryptokitties crisis](https://media.consensys.net/the-inside-story-of-the-cryptokitties-congestion-crisis-499b35d119cc)
 or the [Shanghai DOS attack](https://blog.ethereum.org/2016/09/22/ethereum-network-currently-undergoing-dos-attack/)).
 During such peak load times, gas prices skyrocket and it might become prohibitively expensive to move crypto assets,
-rendering some services inoperational or preventing arbitrage opportunities.
+rendering some services inoperative or preventing arbitrage opportunities.
 
 Moreover, some systems can generally fail in the extreme circumstances, leading to cascading failures (the recent
 [DeFi Black Thursday](https://forklog.media/black-thursday-for-defi-wounds-to-lick-and-lessons-to-learn/) is an
