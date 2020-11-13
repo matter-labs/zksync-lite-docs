@@ -8,11 +8,14 @@
     "docs:deploy": "yarn docs:build && firebase deploy",
     "fmt": "prettier --write \"docs/**/*.md\"",
     "fmt:check": "prettier --check \"docs/**/*.md\"",
-    "cspell": "cspell docs/**/*.md"
+    "cspell": "cspell docs/**/*.md",
+    "md:lint": "markdownlint docs"
   },
   "devDependencies": {
     "prettier": "2.1.2",
-    "cspell": "^4.1.5"
+    "cspell": "^4.1.5",
+    "markdownlint": "^0.21.1",
+    "markdownlint-cli": "^0.24.0"
   },
   "prettier": {
     "tabWidth": 2,
