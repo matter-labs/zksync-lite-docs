@@ -17,13 +17,6 @@ module.exports = {
                 baseURL: 'https://zksync.io', // base url for your canonical link, optional, default: ''
                 stripExtension: false // strip '.html' , optional, default: false
             }
-        ],
-        [
-            'check-md',
-            {
-                pattern: '**/*.md',
-                ignoreFootnotes: true
-          }
         ]
     ],
     themeConfig: {
@@ -84,7 +77,7 @@ module.exports = {
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
                       '/api/v0.1',
-                      '/api/v1/'
+                      '/api/v1'
                     ]
                 },
                 {
@@ -106,7 +99,9 @@ module.exports = {
                     path: '/sdk/rust', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
-                    children: ['']
+                    children: [
+                        '/sdk/rust/tutorial'
+                    ]
                 },
             ]
         }
