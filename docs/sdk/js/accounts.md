@@ -33,7 +33,7 @@
 user that owns this ethereum account owns a corresponding zkSync account. By ownership of ethereum account we mean
 ability to send ethereum transactions and optionally ability to sign messages.
 
-Wallet has nonce associated with it and it is used to prevent transaction replay. Only transaction with the nonce that
+Wallet has nonce associated with it and it is used to prevent transaction replay. Only transactions with the nonce that
 is equal to the current nonce of the wallet can be executed.
 
 To create transactions in the zkSync network wallet must have zkSync key pair associated with it. zkSync keys are
