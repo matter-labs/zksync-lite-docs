@@ -19,11 +19,21 @@ See [Appendix A](browser-bundled.md) for how to add library to web project direc
 
 ## Adding imports
 
-Async is need to lazy-load cryptographic wasm libraries.
+You can import all the content of the zkSync library with the following statement:
 
-```js
-const zksync = await import('zksync');
+```typescript
+import * as zksync from 'zksync';
 ```
+
+Note, that it is not actually required to import all of the library. For instance, if you only need the Wallet class,
+you can safely do
+
+```typescript
+import { Wallet } from 'zksync';
+```
+
+But in the rest of the book we will assume that the library was imported the first way to differentiate content imported
+from the zksync and ethers libraries.
 
 ## Connecting to zkSync network
 
@@ -93,7 +103,7 @@ To control assets in zkSync network, an account must register a separate public 
 ```typescript
 if (!(await syncWallet.isSigningKeySet())) {
   if ((await syncWallet.getAccountId()) == undefined) {
-    throw new Error('Unknwon account');
+    throw new Error('Unknown account');
   }
 
   // As any other kind of transaction, `ChangePubKey` transaction requires fee.
@@ -155,6 +165,19 @@ const transfer = await syncWallet.syncTransfer({
 });
 ```
 
+Note that setting fee manually is not required. If `fee` field is omitted, SDK will choose the lowest possible fee
+acceptable by server:
+
+```typescript
+const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther('0.999'));
+
+const transfer = await syncWallet.syncTransfer({
+  to: syncWallet2.address(),
+  token: 'ETH',
+  amount
+});
+```
+
 To track the status of this transaction:
 
 ```typescript
@@ -164,13 +187,10 @@ const transferReceipt = await transfer.awaitReceipt();
 ## Withdrawing funds back to Ethereum
 
 ```typescript
-const fee = zksync.utils.closestPackableTransactionFee(ethers.utils.parseEther('0.001'));
-
-const withdraw = await syncWallet2.withdrawTo({
+const withdraw = await syncWallet2.withdrawFromSyncToEthereum({
   ethAddress: ethWallet2.address,
   token: 'ETH',
-  amount: ethers.utils.parseEther('0.998'),
-  fee
+  amount: ethers.utils.parseEther('0.998')
 });
 ```
 

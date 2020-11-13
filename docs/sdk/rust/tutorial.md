@@ -72,7 +72,8 @@ To control your account in zkSync, use the `zksync::Wallet` object. It can sign 
 In order to create a `Wallet` object, you have to initialize `Credentials` which will store the private keys for a
 wallet.
 
-`WalletCredentials` can be created either from a seed byte array, Ethereum private key, or from any `EthereumSigner` implementation:
+`WalletCredentials` can be created either from a seed byte array, Ethereum private key, or from any `EthereumSigner`
+implementation:
 
 ```rust
 use zksync::{WalletCredentials, Network};
@@ -191,10 +192,9 @@ zkSync is limited (see docs below).
 
 However, you can provide amount / fee values that won't be rounded by zkSync using methods `.amount_exact(..)` and
 `.fee_exact(..)`. In that case, ensure that your amount / fee is packable via `zksync::utils::is_token_amount_packable`
-and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually
-via `zksync::utils::closest_packable_token_amount` / `zksync::utils::closest_packable_fee_amount` functions.
-Attempt to send a transaction with either amount or fee that aren't packable will result in transaction being rejected
-by server.
+and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via
+`zksync::utils::closest_packable_token_amount` / `zksync::utils::closest_packable_fee_amount` functions. Attempt to send
+a transaction with either amount or fee that aren't packable will result in transaction being rejected by server.
 
 ```rust
 use zksync::utils::{closest_packable_fee_amount, closest_packable_token_amount};
