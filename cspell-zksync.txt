@@ -28,7 +28,6 @@ sidechain
 sidechains
 
 // Names
-Stichtig
 Stichting
 Kingsfordweg
 RSIN

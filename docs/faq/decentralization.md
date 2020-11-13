@@ -26,7 +26,7 @@ protocols, this is not necessary, because users can ultimately rely on L1 to cir
 
 ## Who operates zkSync now
 
-Currently, the computational service provider for the **zkSync** network is "Stichtig ZK Sync", a non-profit Dutch
+Currently, the computational service provider for the **zkSync** network is "Stichting ZK Sync", a non-profit Dutch
 foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service will operated at
 break-even cost until the transition to full decentralization.
 
