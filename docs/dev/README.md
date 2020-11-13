@@ -13,8 +13,8 @@ Ethereum network. This document is a developer guide for building an application
 
 ## Table of contents
 
-- [Overview](overview.html)
-- [Basic concepts](basics.html)
-- [Essential zkSync types](sdk/js/types.html)
-- [Smart contracts addresses](contracts.html)
-- [zkSync updates](updates.html)
+- [Overview](overview.md)
+- [Basic concepts](basic.md)
+- [Essential zkSync types](../sdk/js/types.md)
+- [Smart contracts addresses](contracts.md)
+- [zkSync updates](updates.md)

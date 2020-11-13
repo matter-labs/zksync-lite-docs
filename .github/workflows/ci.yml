@@ -30,3 +30,6 @@ jobs:
       
       - name: Markdown linting
         run: yarn md:lint
+      
+      - name: Markdown dead links
+        run: yarn md:deadlinks

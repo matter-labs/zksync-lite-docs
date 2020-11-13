@@ -9,4 +9,4 @@ This section contains documentation for the Rust SDK for zkSync.
 
 ## Table of contents
 
-- [Getting started](tutorial.html)
+- [Getting started](tutorial.md)

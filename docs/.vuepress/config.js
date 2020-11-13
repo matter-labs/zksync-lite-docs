@@ -17,6 +17,13 @@ module.exports = {
                 baseURL: 'https://zksync.io', // base url for your canonical link, optional, default: ''
                 stripExtension: false // strip '.html' , optional, default: false
             }
+        ],
+        [
+            'check-md',
+            {
+                pattern: '**/*.md',
+                ignoreFootnotes: true
+          }
         ]
     ],
     themeConfig: {

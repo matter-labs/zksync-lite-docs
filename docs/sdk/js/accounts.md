@@ -7,6 +7,7 @@
 [additional ethereum transaction]: #authorize-new-public-key-using-ethereum-transaction
 [transfer]: #transfer-in-the-zksync
 [withdraw]: #withdraw-token-from-the-zksync
+[get_fee]: providers.md#get-transaction-fee-from-the-server
 
 <!-- Common footnotes -->
 
@@ -18,9 +19,8 @@
 [^amount]: To see if amount is packable use [pack amount util](utils.md#closest-packable-amount)
 [^fee]:
     If not set, lowest possible fee will be requested from zkSync server. Fees are pain in the same token as the main
-    transaction token. To get how to manually obtain an acceptable fee amount, see
-    [Get transaction fee from the server](#get-transaction-fee-from-the-server). To see if amount is packable use
-    [pack fee util](utils.md#closest-packable-fee).
+    transaction token. To get how to manually obtain an acceptable fee amount, see [Get transaction fee from the
+    server][get_fee]. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee).
 
 [^fast_fee]: If fee was requested manually, request has to be of "FastWithdraw" type
 [^onchain_auth]:
@@ -187,7 +187,7 @@ const erc20VerifiedBalance = await getBalance("0xFab46E002BbF0b4509813474841E071
 
 ### Get token balance on Ethereum
 
-Method similar to [`syncWallet.getBalance`](#get-token-balance-on-zk-sync), used to query balance in the Ethereum
+Method similar to [`syncWallet.getBalance`](#get-token-balance-on-zksync), used to query balance in the Ethereum
 network.
 
 > Signature
@@ -260,7 +260,7 @@ the zkSync network, use `awaitReceipt`(see [utils]).
 
 [unlocking erc20 token]: #unlocking-erc20-deposits
 [provider docs]: providers.md#get-amount-of-confirmations-required-for-priority-operations
-[utils]: #awaiting-for-operation-completion
+[utils]: utils.md#awaiting-for-operation-completion
 
 > Signature
 
@@ -460,7 +460,7 @@ Ethereum account (because of the security reasons).
 
 After the transaction is committed, funds are already usable by the recipient, so there is no need to wait for
 verification before proceeding unless additional confirmation is required for your application. To wait for transaction
-commit use `awaitReceipt`(see [utils](utils.md#awaiting-for-operation-completion)).
+commit use `awaitReceipt`(see [utils]).
 
 The operators require a fee to be paid in order to process transactions.[^fee]
 
@@ -607,7 +607,7 @@ Ethereum account (because of the security reasons).
 The operators require a fee to be paid in order to process transactions.[^fee]
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
-`awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
+`awaitVerifyReceipt`(see [utils]) before checking ethereum balance.
 
 > Signature
 
@@ -695,7 +695,7 @@ The operators require a fee to be paid in order to process transactions[^fee].
 **Note:** fee is paid by the transaction initiator, not by the target account.
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
-`awaitVerifyReceipt`(see [utils](#awaiting-for-operation-completion)) before checking ethereum balance.
+`awaitVerifyReceipt`(see [utils]) before checking ethereum balance.
 
 > Signature
 
@@ -774,7 +774,7 @@ accepting it in the zkSync network. Operation will be processed within the zkSyn
 of confirmations is reached.
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
-`awaitVerifyReceipt`(see [utils](utils.md#awaiting-for-operation-completion)) before checking ethereum balance.
+`awaitVerifyReceipt`(see [utils]) before checking ethereum balance.
 
 > Signature
 

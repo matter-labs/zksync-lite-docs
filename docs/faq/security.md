@@ -20,7 +20,7 @@ Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/faq/tech.html#zkrollup-architecture). This means, every single user
+zkSync is built on [zkRollup architecture](/faq/tech.md#zkrollup-architecture). This means, every single user
 transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of
 the block. Thus, no operator can ever move the system into an incorrect state or take users money.
 

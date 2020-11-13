@@ -9,7 +9,7 @@ Tokens are identified with
    ERC20).
 
 To simplify conversions `TokenSet` class can be used, token set can be obtained from
-[zkSync provider](#current-token-set).
+[zkSync provider](providers.md#current-token-set).
 
 ### Resolve token ID
 

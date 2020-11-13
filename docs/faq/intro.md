@@ -17,7 +17,8 @@ Ethereum, for both end-users and builders. The best way to get an impression abo
 ## Project status
 
 - [zkSync v1 is Live on Mainnet][mainnet].
-- Security audit by [ABDK Consulting](https://www.abdk.consulting/) is [complete](/zksync-1.0-audit.pdf).
+- Security audit by [ABDK Consulting](https://www.abdk.consulting/) is
+  [complete](https://zksync.io/zksync-1.0-audit.pdf).
 - Testnet is available on [Rinkeby](https://rinkeby.zksync.io) and [Ropsten](https://ropsten.zksync.io).
 - [Zinc](https://github.com/matter-labs/zinc) smart contract framework is under active development.
 
@@ -34,8 +35,8 @@ Ethereum, for both end-users and builders. The best way to get an impression abo
 - Withdrawals to mainnet in under 15 min.
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html)
   support.
-- [Privacy](/faq/privacy.html) (coming soon).
-- Permissionless [smart contracts](/faq/sc.html) (coming soon).
+- [Privacy](/faq/privacy.md) (coming soon).
+- Permissionless [smart contracts](/faq/sc.md) (coming soon).
 
 ## Problems zkSync solves
 
@@ -49,16 +50,14 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 ## zkSync in comparison
 
-zkSync [stands out remarkably][comparison] in security and usability among existing L2 scaling solutions. Thanks to the
-combination of cutting-edge cryptography and on-chain data availability, zkRollup (the core technology of zkSync) is
-**the only** L2 scaling solution that doesn't require any operational activity to keep the funds safe. Users can go
-offline for a year, then come back and be sure to safely withdraw their assets without any external help — even if
-zkRollup operators were long gone.
+zkSync
+[stands out remarkably](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
+in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography
+and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that
+doesn't require any operational activity to keep the funds safe. Users can go offline for a year, then come back and be
+sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
 
-![L2 comparison](/chart3.png)
-
-[comparison]:
-  https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955
+![L2 comparison](https://zksync.io/chart3.png)
 
 <!-- markdownlint-disable line-length -->
 <!-- ![L2 comparison](https://miro.medium.com/max/1400/1*Q1IOxqm-nkr6JWz6kJpt5w.png) -->
