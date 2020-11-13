@@ -12,13 +12,14 @@ yarn docs:dev
 ## Development
 
 CI pipeline will check that the files are formatted according to `prettier`, `markdownlint` founds no issues in document
-and spelling is correct.
+and spelling is correct. Also, there should be no dead links.
 
 You can check it locally as follows:
 
 ```bash
 yarn
 yarn md:lint
+yarn md:deadlinks
 yarn fmt:check
 yarn cspell
 ```
