@@ -72,20 +72,21 @@ Installation: available via `npm` package [`zksync-crypto`][npm_lib].
 ### Example
 
 ```js
-import { keccak256, arrayify, hexlify } from 'ethers/lib/utils';
-import { private_key_to_pubkey_hash, sign_musig, privateKeyFromSeed } from 'zksync-crypto';
+import { keccak256 } from '@ethersproject/keccak256';
+import { arrayify, hexlify } from '@ethersproject/bytes';
+import { sign_musig, privateKeyFromSeed } from 'zksync-crypto';
 
 const privateKeySeed = arrayify(keccak256([0x01]));
 const privateKey = privateKeyFromSeed(privateKeySeed);
 
 const bytes = arrayify(0x01);
-const signaturePacked = sign_musig(privKey, bytes);
+const signaturePacked = sign_musig(privateKey, bytes);
 const pubKey = hexlify(signaturePacked.slice(0, 32)).substr(2);
 const signature = hexlify(signaturePacked.slice(32)).substr(2);
 
 console.log(`Private key: ${hexlify(privateKey)}`);
 console.log(`Public key: ${pubKey}`);
-console.log(`Signature: ${pubKey}`);
+console.log(`Signature: ${signature}`);
 ```
 
 ## Java
