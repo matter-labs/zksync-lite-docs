@@ -20,8 +20,8 @@ Currently, there are the following types of priority operations:
   address.
 - `FullExit`: Withdraws funds from the zkSync network to the Ethereum network without interacting with the zkSync
   server. This operation can be used as an emergency exit in case of detected censorship from the zkSync server node, or
-  to withdraw funds in the situation when the signing key for an account in zkSync network cannot be set (e.g. if address
-  corresponds to the smart contract).
+  to withdraw funds in the situation when the signing key for an account in zkSync network cannot be set (e.g. if
+  address corresponds to the smart contract).
 
 ### Transactions
 
@@ -33,8 +33,8 @@ Currently, there are the following types of transactions:
 
 - `ChangePubKey`: Sets (or changes) the signing key associated with the account. Without a signing key set, no operation
   (except for priority operations) can be authorized by the corresponding account.
-- `Transfer`: Transfers funds from one zkSync account to another zkSync account. If recipient account does not exist
-  yet in the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
+- `Transfer`: Transfers funds from one zkSync account to another zkSync account. If recipient account does not exist yet
+  in the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
 - `Withdraw`: Withdraws funds from the zkSync network to the Ethereum network.
 - `ForcedExit`: Withdraws funds from the "target" account in zkSync network that doesn't have a signing key set, to the
   same "target" address in the Ethereum network. This operation can be used to withdraw funds in the situation when the
@@ -99,8 +99,8 @@ Users may transfer any amount of funds in either Ether or any supported ERC-20 t
 found on the [corresponding explorer page](https://zkscan.io/tokens). It is also exposed via [API](../api).
 
 However, transfer to a non-existent account requires slightly more data to be sent on the smart contract (we have to
-include information about the new account), thus fee for such transfers is slightly higher than the fee for transfers to the
-existing account.
+include information about the new account), thus fee for such transfers is slightly higher than the fee for transfers to
+the existing account.
 
 ### Fees
 
@@ -112,8 +112,8 @@ Fees for each kind of transaction is calculated based on two main factors:
 - Current gas price.
 - Cost of computational resources to generate a proof for a block with transaction.
 
-Since we include many transactions in one block, the cost is amortized among all the included transactions, which results in
-very small fee values.
+Since we include many transactions in one block, the cost is amortized among all the included transactions, which
+results in very small fee values.
 
 Additionally, our API provides all the input data used for fee calculation via corresponding [API method][api_fee].
 
@@ -144,7 +144,7 @@ contract account), and there exists an L2 account which can send this type of tr
 Third one is `FullExit` priority operation.
 
 This kind of operation is called a "priority operation" since it's initiated from L1 and the smart contract provides
-[guarantees](../faq/security.md#security-overview) that either this request will be processed within a reasonable time interval, or network will be
-considered compromised / dead, and the contract will enter an exodus mode.
+[guarantees](../faq/security.md#security-overview) that either this request will be processed within a reasonable time
+interval, or network will be considered compromised / dead, and the contract will enter an exodus mode.
 
 This method is preferred if the user will ever experience censorship from the network operator.

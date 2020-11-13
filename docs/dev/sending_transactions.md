@@ -117,9 +117,9 @@ Server will check that sum of fees (0 in the first transaction and 2x expected f
 processing of two transfers and will execute the batch.
 
 **Note on security:** In the current form, transaction batches is a server-side abstraction. Successful execution is
-checked pre-circuit, and information about batch is not passed into the circuit. Thus, if this feature is being used to pay
-fees in a different token, it is recommended to set the fee payment transaction last (so that server even in theory will
-be unable to execute the last transaction, but ignore other ones). In the future, the batches will be enforced in
+checked pre-circuit, and information about batch is not passed into the circuit. Thus, if this feature is being used to
+pay fees in a different token, it is recommended to set the fee payment transaction last (so that server even in theory
+will be unable to execute the last transaction, but ignore other ones). In the future, the batches will be enforced in
 the circuit in order to increase the overall security of this feature.
 
 ### Ethereum signature for batch
