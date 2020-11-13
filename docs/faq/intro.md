@@ -44,7 +44,7 @@ Gas fees for token transfers on Ethereum [exceed \$2M per month](https://ethgass
 can be reduced to a small fraction.
 
 UX-first crypto wallets like [Argent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a
-banking alternative to entire societies. zkSync makes their mission accomplishable.
+banking alternative to entire societies. zkSync makes its mission accomplishable.
 
 The rise of DeFi opens many more interesting use cases. zkSync is here to unlock Paypal-scale for your project.
 

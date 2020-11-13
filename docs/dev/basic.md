@@ -31,7 +31,7 @@ Transactions are identified by the hash of their serialized representation.
 
 Currently, there are the following types of transactions:
 
-- `ChangePubKey`: Sets (or changes) the signing key associated with the account. Without signing key set, no operation
+- `ChangePubKey`: Sets (or changes) the signing key associated with the account. Without a signing key set, no operation
   (except for priority operations) can be authorized by the corresponding account.
 - `Transfer`: Transfers funds from one zkSync account to another zkSync account. If recipient account does not exist
   yet in the zkSync network, it will be created and a numeric ID will be assigned to the provided address.

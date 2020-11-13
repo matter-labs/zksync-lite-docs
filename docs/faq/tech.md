@@ -43,7 +43,7 @@ Here are some links to explore the topic of zkRollups:
 transaction throughput has an upper bound of 300 TPS due to the current limitations of the PLONK CRS. Yet, this number
 by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and
 should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal
-recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified and
+recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified, and
 benchmarked it. Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the
 already audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart
 contracts. We will provide more details later in a separate post.
@@ -97,7 +97,7 @@ or the [Shanghai DOS attack](https://blog.ethereum.org/2016/09/22/ethereum-netwo
 During such peak load times, gas prices skyrocket and it might become prohibitively expensive to move crypto assets,
 rendering some services inoperative or preventing arbitrage opportunities.
 
-Moreover, some systems can generally fail in the extreme circumstances, leading to cascading failures (the recent
+Moreover, some systems can generally fail in extreme circumstances, leading to cascading failures (the recent
 [DeFi Black Thursday](https://forklog.media/black-thursday-for-defi-wounds-to-lick-and-lessons-to-learn/) is an
 excellent example). This is especially worrisome for fraud-proof-based scaling solutions (payment channels, optimistic
 rollups), because there is a risk that their automated security bots won't be able to get their fraud-proof transactions
