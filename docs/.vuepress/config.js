@@ -66,7 +66,8 @@ module.exports = {
                       '/dev/basic',
                       '/dev/sending_transactions',
                       '/dev/contracts',
-                      '/dev/cryptography'
+                      '/dev/cryptography',
+                      '/dev/updates'
                     ]
                 },
                 {
