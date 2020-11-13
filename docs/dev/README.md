@@ -15,3 +15,4 @@ Ethereum network. This document is a description of javascript SDK that can be u
 - [Basic concepts](basics.html)
 - [Essential zkSync types](sdk/js/types.html)
 - [Smart contracts addresses](contracts.html)
+- [zkSync updates](updates.html)
