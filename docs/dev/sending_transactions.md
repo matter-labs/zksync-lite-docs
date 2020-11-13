@@ -87,17 +87,12 @@ const withdrawEthMessage =
 const msgNonce = utils.hexlify(serializeNonce(nonce));
 const msgAccId = utils.hexlify(serializeAccountId(accountId));
 const pubKeyHashHex = pubKeyHash.replace('sync:', '').toLowerCase();
-const changePubKeyRawMessage =
+const changePubKeyEthMessage =
   `Register zkSync pubkey:\n\n` +
   `${pubKeyHashHex}\n` +
   `nonce: ${msgNonce}\n` +
   `account id: ${msgAccId}\n\n` +
   `Only sign this message for a trusted client!`;
-
-const emptyHash = new Uint8Array(32);
-const bytes = concat([changePubKeyRawMessage, emptyHash]);
-const hash = ethers.utils.keccak256(bytes).slice(2);
-const message = Uint8Array.from(Buffer.from(hash, 'hex'));
 ```
 
 Note that since some Ethereum signers add a prefix `\x19Ethereum Signed Message:\n${messageBytes.length}` to the signed
@@ -150,26 +145,6 @@ Requirement for adding a prefix described above still holds.
 
 This obtained signature may be sent together with batch via [corresponding JSON RPC method][send_batch], and none of the
 batch transactions is required to have an Ethereum signature.
-
-### Sending `ChangePubKey` operation in batch
-
-`ChangePubKey` operation has Ethereum signature as a mandatory field of transaction, and in only can be omitted if
-operation was approved on-chain via a separate transaction.
-
-Thus, if `ChangePubKey` is a part of the batch, it may have the same Ethereum signature as the batch signature. The
-logic may be expressed as follows:
-
-```js
-const changePubKeyMessage = getChangePubKeyMessage(changePubKeyTx);
-const batchMessage = getBatchMessage(transactions);
-const bytes = concat([changePubKeyMessage, batchMessage]);
-const hash = ethers.utils.keccak256(bytes).slice(2);
-const message = Uint8Array.from(Buffer.from(hash, 'hex'));
-```
-
-This obtained message should be used as both batch Ethereum signature and ChangePubKey Ethereum signature.
-
-**Note:** There must not be more than one `ChangePubKey` transaction in the batch.
 
 [send_tx]: ../api/v0.1.md#tx-submit
 [send_batch]: ../api/v0.1.md#submit-txs-batch

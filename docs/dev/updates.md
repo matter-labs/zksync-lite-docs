@@ -21,7 +21,26 @@ client libraries.
 
 ## Upcoming breaking changes
 
+### Contract upgrade v4
+
+Scheduled upgrade date: **30.11.2020**
+
+List of upcoming changes and the migration guide will be provided later.
+
 ## Release history
+
+### `zksync.js`
+
+#### 0.8.1 (10.11.2020)
+
+- `syncMultiTransfer` method now uses only one Ethereum signature for a batch.
+- It is now possible to load `zksync` package synchronously if signing functionality is not used by the application.
+
+### `zksync-rs`
+
+#### 0.1.1 (13.11.2020)
+
+- `zksync_contracts` dependency was removed.
 
 ## Deprecated APIs
 
