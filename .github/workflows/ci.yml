@@ -1,0 +1,29 @@
+name: CI
+
+on: 
+  pull_request:
+    branches:
+     - '*'
+
+jobs:
+  CI checks:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: Install deps
+        run: yarn
+
+      - name: Build docs
+        run: yarn docs:build
+
+      - name: Check formatting
+        run: yarn fmt:check
+
+      - name: Check spelling
+        run: yarn cspell
