@@ -49,8 +49,9 @@ Ethereum using the `Verify` transaction. Only after the `Verify` tx was mined, t
 Multiple blocks can be committed but not verified yet.
 
 However, the execution model is slightly different: in order to not make users wait for the block finalization,
-transactions are grouped into "mini-blocks" with a much smaller timeout. So, the blocks is being partially applied with a
-small interval, so that shortly after receiving the transaction is is executed and L2 state is updated correspondingly.
+transactions are grouped into "mini-blocks" with a much smaller timeout. So, the blocks is being partially applied with
+a small interval, so that shortly after receiving the transaction is is executed and L2 state is updated
+correspondingly.
 
 It means that after sending the transaction, user doesn't have to wait for neither block commitment or verification, and
 transferred funds can be used immediately after corresponding transaction execution.
