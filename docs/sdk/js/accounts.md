@@ -979,12 +979,12 @@ async signSyncChangePubKey(changePubKey: {
 
 #### Inputs and outputs
 
-| Name                    | Description                              |
-| ----------------------- | ---------------------------------------- |
-| changePubKey.accountId  | Account id of the sender                 |
-| changePubKey.account    | zkSync address of the account            |
-| changePubKey.newPkHash  | Public key hash to be set for an account |
-| changePubKey.feeTokenId | Numerical token id                       |
-| changePubKey.fee        | Fee to pay for operation, paid in token  |
-| changePubKey.nonce      | Transaction nonce                        |
-| returns                 | Signed Sync change public key transaction      |
+| Name                    | Description                               |
+| ----------------------- | ----------------------------------------- |
+| changePubKey.accountId  | Account id of the sender                  |
+| changePubKey.account    | zkSync address of the account             |
+| changePubKey.newPkHash  | Public key hash to be set for an account  |
+| changePubKey.feeTokenId | Numerical token id                        |
+| changePubKey.fee        | Fee to pay for operation, paid in token   |
+| changePubKey.nonce      | Transaction nonce                         |
+| returns                 | Signed Sync change public key transaction |
