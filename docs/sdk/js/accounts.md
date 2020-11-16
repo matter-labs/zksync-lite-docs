@@ -878,7 +878,7 @@ Signs transfer transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncTransfer(transfer: {
+async signSyncTransfer(transfer: {
     accountId: number;
     from: Address;
     to: Address;
@@ -886,7 +886,7 @@ signSyncTransfer(transfer: {
     amount: ethers.BigNumberish;
     fee: ethers.BigNumberish;
     nonce: number;
-}): SyncTransfer;
+}): Promise<Transfer>;
 ```
 
 #### Inputs and outputs
@@ -909,7 +909,7 @@ Signs withdraw transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncWithdraw(withdraw: {
+async signSyncWithdraw(withdraw: {
     accountId: number;
     from: Address;
     ethAddress: string;
@@ -917,7 +917,7 @@ signSyncWithdraw(withdraw: {
     amount: ethers.BigNumberish;
     fee: ethers.BigNumberish;
     nonce: number;
-}): SyncWithdraw;
+}): Promise<Withdraw>;
 ```
 
 #### Inputs and outputs
@@ -940,13 +940,13 @@ Signs forced exit transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncForcedExit(forcedExit: {
+async signSyncForcedExit(forcedExit: {
     initiatorAccountId: number;
     target: Address;
     tokenId: number;
     fee: BigNumberish;
     nonce: number;
-}): ForcedExit;
+}): Promise<ForcedExit>;
 ```
 
 #### Inputs and outputs
@@ -967,14 +967,14 @@ Signs ChangePubKey transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncChangePubKey(changePubKey: {
+async signSyncChangePubKey(changePubKey: {
     accountId: number;
     account: Address;
     newPkHash: PubKeyHash;
     feeTokenId: number;
     fee: BigNumberish;
     nonce: number;
-}): ForcedExit;
+}): Promise<ChangePubKey>;
 ```
 
 #### Inputs and outputs
