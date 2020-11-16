@@ -93,7 +93,7 @@ export interface AccountState {
       // Token are indexed by their symbol (e.g. "ETH")
       [token: string]: {
         // Sum of pending deposits for the token.
-        amount: utils.BigNumberish;
+        amount: BigNumberish;
         // Value denoting the block number when the funds are expected
         // to be received by zkSync network.
         expectedAcceptBlock: number;
@@ -104,7 +104,7 @@ export interface AccountState {
   committed: {
     balances: {
       // Token are indexed by their symbol (e.g. "ETH")
-      [token: string]: utils.BigNumberish;
+      [token: string]: BigNumberish;
     };
     // Nonce is equal to that of the next valid transaction.
     nonce: number;
@@ -115,7 +115,7 @@ export interface AccountState {
   verified: {
     balances: {
       // Token are indexed by their symbol (e.g. "ETH")
-      [token: string]: utils.BigNumberish;
+      [token: string]: BigNumberish;
     };
     // Nonce is equal to that of the next valid transaction.
     nonce: number;
@@ -146,6 +146,13 @@ export interface Signature {
   signature: string;
 }
 
+export type EthSignerType = {
+  verificationMethod: 'ECDSA' | 'ERC-1271';
+  // Indicates if signer adds `\x19Ethereum Signed Message\n${msg.length}` prefix before signing message.
+  // i.e. if false, we should add this prefix manually before asking to sign message
+  isSignedMsgPrefixed: boolean;
+};
+
 export interface TxEthSignature {
   type: 'EthereumSignature' | 'EIP1271Signature';
   signature: string;
@@ -156,8 +163,8 @@ export interface Transfer {
   from: Address;
   to: Address;
   token: number;
-  amount: utils.BigNumberish;
-  fee: utils.BigNumberish;
+  amount: BigNumberish;
+  fee: BigNumberish;
   nonce: number;
   signature: Signature;
 }
@@ -167,8 +174,8 @@ export interface Withdraw {
   from: Address;
   to: Address;
   token: number;
-  amount: utils.BigNumberish;
-  fee: utils.BigNumberish;
+  amount: BigNumberish;
+  fee: BigNumberish;
   nonce: number;
   signature: Signature;
 }

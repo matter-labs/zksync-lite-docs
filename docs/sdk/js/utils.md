@@ -8,7 +8,7 @@ Tokens are identified with
 2. address ("0x0000000000000000000000000000000000000000" for "ETH" or "0xFab46E002BbF0b4509813474841E0716E6730136" for
    ERC20).
 
-To simplify conversions `TokenSet` class can be used, token set can be obtained from
+To use the token-related utility functions, `TokenSet` class must be used, token set can be obtained from
 [zkSync provider](providers.md#current-token-set).
 
 ### Resolve token ID
@@ -95,7 +95,7 @@ amount can be used as a transfer amount.
 > Signature
 
 ```typescript
-export function isTransactionAmountPackable(amount: utils.BigNumberish): boolean;
+export function isTransactionAmountPackable(amount: BigNumberish): boolean;
 ```
 
 ### Closest packable amount
@@ -106,7 +106,7 @@ packable amount by setting the least significant digits to zero.
 > Signature
 
 ```typescript
-export function closestPackableTransactionAmount(amount: ethers.utils.BigNumberish): ethers.utils.BigNumber;
+export function closestPackableTransactionAmount(amount: ethers.BigNumberish): ethers.utils.BigNumber;
 ```
 
 ### Check if fee is packable
@@ -117,7 +117,7 @@ is used to check if this amount can be used as a fee.
 > Signature
 
 ```typescript
-export function isTransactionFeePackable(amount: utils.BigNumberish): boolean;
+export function isTransactionFeePackable(amount: BigNumberish): boolean;
 ```
 
 ### Closest packable fee
@@ -128,7 +128,7 @@ returns the closest packable amount by setting the least significant digits to z
 > Signature
 
 ```typescript
-export function closestPackableTransactionFee(fee: ethers.utils.BigNumberish): ethers.utils.BigNumber;
+export function closestPackableTransactionFee(fee: ethers.BigNumberish): ethers.utils.BigNumber;
 ```
 
 ### Check if formatted amount is packable for token

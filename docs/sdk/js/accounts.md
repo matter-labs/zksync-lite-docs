@@ -59,7 +59,7 @@ static async fromEthSigner(
     provider: Provider,
     signer?: Signer
     accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    ethSignatureType?: EthSignerType
 ): Promise<Wallet>;
 ```
 
@@ -81,7 +81,7 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('testnet');
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
@@ -96,12 +96,12 @@ static async fromEthSignerNoKeys(
     ethWallet: ethers.Signer,
     provider: Provider,
     accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    ethSignatureType?: EthSignerType
 ): Promise<Wallet>;
 ```
 
 This way wallet won't contain any valid zkSync keys to perform transactions, but some of the operations can be used
-without it, such as Deposit, Emergency exit and reading the account state.
+without them, such as Deposit, Emergency exit and reading the account state.
 
 #### Inputs and outputs
 
@@ -120,7 +120,7 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('testnet');
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvider);
@@ -207,7 +207,7 @@ async getEthereumBalance(token: TokenLike): Promise<utils.BigNumber>;
 
 ```typescript
 import * as zksync from "zksync";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 // Setup zksync.Wallet with ethers signer/wallet that is connected to ethers provider
 const wallet = ..;
@@ -268,7 +268,7 @@ the zkSync network, use `awaitReceipt`(see [utils]).
 async depositToSyncFromEthereum(deposit: {
     depositTo: Address;
     token: TokenLike;
-    amount: utils.BigNumberish;
+    amount: BigNumberish;
     ethTxOptions?: ethers.providers.TransactionRequest;
     approveDepositAmountForERC20?: boolean;
 }): Promise<ETHOperation>;
@@ -292,7 +292,7 @@ async depositToSyncFromEthereum(deposit: {
 
 ```typescript
 import * as zksync from "zksync";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const syncWallet = ..; // Setup zksync wallet from ethers.Signer.
 
@@ -351,12 +351,12 @@ async setSigningKey(changePubKey: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
 if (! await wallet.isSigningKeySet()) {
-    const changePubkey= await wallet.setSigningKey({
+    const changePubkey = await wallet.setSigningKey({
         feeToken: "FAU",
         fee: ethers.utils.parseEther("0.001")
     });
@@ -417,7 +417,7 @@ async onchainAuthSigningKey(
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -426,7 +426,7 @@ if (! await wallet.isSigningKeySet()) {
     // Wait till transaction is committed on ethereum.
     await onchainAuthTransaction.wait();
 
-    const changePubkey= await wallet.setSigningKey("committed", true);
+    const changePubkey = await wallet.setSigningKey("committed", true);
 
     // Wait till transaction is committed
     const receipt = await changePubkey.awaitReceipt();
@@ -475,8 +475,8 @@ See utils for helping with amounts packing.
 async syncTransfer(transfer: {
     to: Address;
     token: TokenLike;
-    amount: utils.BigNumberish;
-    fee: utils.BigNumberish;
+    amount: BigNumberish;
+    fee: BigNumberish;
     nonce?: Nonce;
 }): Promise<Transaction>;
 ```
@@ -495,7 +495,7 @@ async syncTransfer(transfer: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -575,7 +575,7 @@ For details on an individual transaction, see [Transfer in the zkSync](#transfer
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -615,8 +615,8 @@ The transaction has to be verified until funds are available on the ethereum wal
 async withdrawFromSyncToEthereum(withdraw: {
     ethAddress: string;
     token: TokenLike;
-    amount: utils.BigNumberish;
-    fee: utils.BigNumberish;
+    amount: BigNumberish;
+    fee: BigNumberish;
     nonce?: Nonce;
     fastProcessing?: boolean;
 }): Promise<Transaction>;
@@ -637,7 +637,7 @@ async withdrawFromSyncToEthereum(withdraw: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -721,7 +721,7 @@ async syncForcedExit(forcedExit: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -799,7 +799,7 @@ async emergencyWithdraw(withdraw: {
 
 ```typescript
 import * as zksync from "zksync";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const syncWallet = ..; // Setup zksync wallet.
 
@@ -819,7 +819,7 @@ const priorityOpReceipt = await emergencyWithdrawPriorityOp.awaitVerifyReceipt()
 > Signature
 
 ```typescript
-static fromPrivateKey(pk: BN): Signer;
+static fromPrivateKey(pk: Uint8Array): Signer;
 ```
 
 #### Inputs and outputs
@@ -834,7 +834,7 @@ static fromPrivateKey(pk: BN): Signer;
 > Signature
 
 ```typescript
-static fromSeed(seed: Buffer): Signer;
+static async fromSeed(seed: Uint8Array): Promise<Signer>;
 ```
 
 ### Create from ethereum signature
@@ -846,7 +846,7 @@ static async fromETHSignature(
     ethSigner: ethers.Signer
 ): Promise<{
     signer: Signer;
-    ethSignatureType: "EthereumSignature" | "EIP1271Signature";
+    ethSignatureType: EthSignerType;
 }> {
 ```
 
@@ -862,7 +862,7 @@ static async fromETHSignature(
 > Signature
 
 ```typescript
-pubKeyHash(): PubKeyHash;
+async pubKeyHash(): Promise<PubKeyHash>;
 ```
 
 #### Inputs and outputs
@@ -878,15 +878,15 @@ Signs transfer transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncTransfer(transfer: {
+async signSyncTransfer(transfer: {
     accountId: number;
     from: Address;
     to: Address;
     tokenId: number;
-    amount: ethers.utils.BigNumberish;
-    fee: ethers.utils.BigNumberish;
+    amount: ethers.BigNumberish;
+    fee: ethers.BigNumberish;
     nonce: number;
-}): SyncTransfer;
+}): Promise<Transfer>;
 ```
 
 #### Inputs and outputs
@@ -909,15 +909,15 @@ Signs withdraw transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncWithdraw(withdraw: {
+async signSyncWithdraw(withdraw: {
     accountId: number;
     from: Address;
     ethAddress: string;
     tokenId: number;
-    amount: ethers.utils.BigNumberish;
-    fee: ethers.utils.BigNumberish;
+    amount: ethers.BigNumberish;
+    fee: ethers.BigNumberish;
     nonce: number;
-}): SyncWithdraw;
+}): Promise<Withdraw>;
 ```
 
 #### Inputs and outputs
@@ -940,13 +940,13 @@ Signs forced exit transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncForcedExit(forcedExit: {
+async signSyncForcedExit(forcedExit: {
     initiatorAccountId: number;
     target: Address;
     tokenId: number;
     fee: BigNumberish;
     nonce: number;
-}): ForcedExit;
+}): Promise<ForcedExit>;
 ```
 
 #### Inputs and outputs
@@ -967,24 +967,24 @@ Signs ChangePubKey transaction, the result can be submitted to the Sync network.
 > Signature
 
 ```typescript
-signSyncChangePubKey(changePubKey: {
+async signSyncChangePubKey(changePubKey: {
     accountId: number;
     account: Address;
     newPkHash: PubKeyHash;
     feeTokenId: number;
     fee: BigNumberish;
     nonce: number;
-}): ForcedExit;
+}): Promise<ChangePubKey>;
 ```
 
 #### Inputs and outputs
 
-| Name                    | Description                              |
-| ----------------------- | ---------------------------------------- |
-| changePubKey.accountId  | Account id of the sender                 |
-| changePubKey.account    | zkSync address of the account            |
-| changePubKey.newPkHash  | Public key hash to be set for an account |
-| changePubKey.feeTokenId | Numerical token id                       |
-| changePubKey.fee        | Fee to pay for operation, paid in token  |
-| changePubKey.nonce      | Transaction nonce                        |
-| returns                 | Signed Sync forced exit transaction      |
+| Name                    | Description                               |
+| ----------------------- | ----------------------------------------- |
+| changePubKey.accountId  | Account id of the sender                  |
+| changePubKey.account    | zkSync address of the account             |
+| changePubKey.newPkHash  | Public key hash to be set for an account  |
+| changePubKey.feeTokenId | Numerical token id                        |
+| changePubKey.fee        | Fee to pay for operation, paid in token   |
+| changePubKey.nonce      | Transaction nonce                         |
+| returns                 | Signed Sync change public key transaction |

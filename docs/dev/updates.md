@@ -34,7 +34,8 @@ List of upcoming changes and the migration guide will be provided later.
 #### 0.8.1 (10.11.2020)
 
 - `syncMultiTransfer` method now uses only one Ethereum signature for a batch.
-- It is now possible to load `zksync` package synchronously if signing functionality is not used by the application.
+- It is now possible to load `zksync` package synchronously at the expense of all the signing functionality becoming
+  asynchronous.
 
 ### `zksync-rs`
 

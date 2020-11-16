@@ -81,8 +81,8 @@ const privateKey = privateKeyFromSeed(privateKeySeed);
 
 const bytes = arrayify(0x01);
 const signaturePacked = sign_musig(privateKey, bytes);
-const pubKey = hexlify(signaturePacked.slice(0, 32)).substr(2);
-const signature = hexlify(signaturePacked.slice(32)).substr(2);
+const pubKey = hexlify(signaturePacked.slice(0, 32)).substring(2);
+const signature = hexlify(signaturePacked.slice(32)).substring(2);
 
 console.log(`Private key: ${hexlify(privateKey)}`);
 console.log(`Public key: ${pubKey}`);
