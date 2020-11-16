@@ -834,7 +834,7 @@ static fromPrivateKey(pk: Uint8Array): Signer;
 > Signature
 
 ```typescript
-static fromSeed(seed: Buffer): Signer;
+static async fromSeed(seed: Uint8Array): Promise<Signer>;
 ```
 
 ### Create from ethereum signature
