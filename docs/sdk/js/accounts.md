@@ -268,7 +268,7 @@ the zkSync network, use `awaitReceipt`(see [utils]).
 async depositToSyncFromEthereum(deposit: {
     depositTo: Address;
     token: TokenLike;
-    amount: utils.BigNumberish;
+    amount: BigNumberish;
     ethTxOptions?: ethers.providers.TransactionRequest;
     approveDepositAmountForERC20?: boolean;
 }): Promise<ETHOperation>;
@@ -475,8 +475,8 @@ See utils for helping with amounts packing.
 async syncTransfer(transfer: {
     to: Address;
     token: TokenLike;
-    amount: utils.BigNumberish;
-    fee: utils.BigNumberish;
+    amount: BigNumberish;
+    fee: BigNumberish;
     nonce?: Nonce;
 }): Promise<Transaction>;
 ```
@@ -615,8 +615,8 @@ The transaction has to be verified until funds are available on the ethereum wal
 async withdrawFromSyncToEthereum(withdraw: {
     ethAddress: string;
     token: TokenLike;
-    amount: utils.BigNumberish;
-    fee: utils.BigNumberish;
+    amount: BigNumberish;
+    fee: BigNumberish;
     nonce?: Nonce;
     fastProcessing?: boolean;
 }): Promise<Transaction>;
@@ -883,8 +883,8 @@ signSyncTransfer(transfer: {
     from: Address;
     to: Address;
     tokenId: number;
-    amount: ethers.utils.BigNumberish;
-    fee: ethers.utils.BigNumberish;
+    amount: ethers.BigNumberish;
+    fee: ethers.BigNumberish;
     nonce: number;
 }): SyncTransfer;
 ```
@@ -914,8 +914,8 @@ signSyncWithdraw(withdraw: {
     from: Address;
     ethAddress: string;
     tokenId: number;
-    amount: ethers.utils.BigNumberish;
-    fee: ethers.utils.BigNumberish;
+    amount: ethers.BigNumberish;
+    fee: ethers.BigNumberish;
     nonce: number;
 }): SyncWithdraw;
 ```
