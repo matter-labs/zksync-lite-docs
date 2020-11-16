@@ -59,7 +59,7 @@ static async fromEthSigner(
     provider: Provider,
     signer?: Signer
     accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    ethSignatureType?: EthSignerType
 ): Promise<Wallet>;
 ```
 
@@ -96,7 +96,7 @@ static async fromEthSignerNoKeys(
     ethWallet: ethers.Signer,
     provider: Provider,
     accountId?: number,
-    ethSignatureType?: "EthereumSignature" | "EIP1271Signature"
+    ethSignatureType?: EthSignerType
 ): Promise<Wallet>;
 ```
 
