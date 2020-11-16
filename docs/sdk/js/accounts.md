@@ -987,4 +987,4 @@ async signSyncChangePubKey(changePubKey: {
 | changePubKey.feeTokenId | Numerical token id                       |
 | changePubKey.fee        | Fee to pay for operation, paid in token  |
 | changePubKey.nonce      | Transaction nonce                        |
-| returns                 | Signed Sync forced exit transaction      |
+| returns                 | Signed Sync change public key transaction      |
