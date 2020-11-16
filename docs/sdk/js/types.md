@@ -146,6 +146,13 @@ export interface Signature {
   signature: string;
 }
 
+export type EthSignerType = {
+    verificationMethod: 'ECDSA' | 'ERC-1271';
+    // Indicates if signer adds `\x19Ethereum Signed Message\n${msg.length}` prefix before signing message.
+    // i.e. if false, we should add this prefix manually before asking to sign message
+    isSignedMsgPrefixed: boolean;
+};
+
 export interface TxEthSignature {
   type: 'EthereumSignature' | 'EIP1271Signature';
   signature: string;

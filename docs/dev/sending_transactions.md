@@ -111,7 +111,7 @@ That is, using transaction batches it is possible to pay the fee for transaction
 transfer. In order to do so, one can create a batch of two transactions:
 
 - Transfer to the recipient in token `FOO` with fee set to 0.
-- Transfer to the own account in token `ETH` with amount set to 0, and fee set enough to cover two transfers.
+- Transfer to the own account in token `BAR` (the token you want to pay the fee with) with amount set to 0, and fee set enough to cover two transfers.
 
 Server will check that sum of fees (0 in the first transaction and 2x expected fee in the second one) is enough to cover
 processing of two transfers and will execute the batch.

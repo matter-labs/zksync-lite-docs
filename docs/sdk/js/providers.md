@@ -14,7 +14,7 @@ usually, you don't need to deal with these objects directly.
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 
 // ..
 
@@ -24,7 +24,7 @@ await syncWSProvider.disconnect();
 
 Used to connect to the common endpoint for the given network over WebSocket transport.
 
-Supported networks are: "testnet", "localhost".
+Supported networks are: "rinkeby", "ropsten", "mainnet", and "localhost".
 
 ### Create WebSocket provider
 
@@ -33,7 +33,7 @@ Supported networks are: "testnet", "localhost".
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.Provider.newWebsocketProvider('wss://testnet.matter-labs.io/jsrpc-ws');
+const syncWSProvider = await zksync.Provider.newWebsocketProvider('wss://rinkeby-api.zksync.io/jsrpc-ws');
 
 // ..
 
@@ -73,7 +73,7 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 const signedTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
   type: 'Transfer',
@@ -127,7 +127,7 @@ For details on individual transactions, see [Submit transaction](#submit-transac
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 const firstTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
   type: 'Transfer',
@@ -178,7 +178,7 @@ async getContractAddress(): Promise<ContractAddress>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('rinkeby');
 
 const contractAddresses = await syncWSProvider.getContractAddress();
 ```
@@ -211,7 +211,7 @@ async getTokens(): Promise<Tokens>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('rinkeby');
 
 const contractAddresses = await syncWSProvider.getTokens();
 ```
@@ -299,7 +299,8 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 
 ```typescript
 import * as zksync from 'zksync';
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 const requiredConfirmationsAmount = await syncWSProvider.getConfirmationsForEthOpAmount();
 ```
 
@@ -377,7 +378,7 @@ async notifyTransaction(
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 
 const receipt = await syncWSProvider.notifyTransaction(
   'sync-tx:1111111111111111111111111111111111111111111111111111111111111111',
@@ -448,7 +449,7 @@ deposit).
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 
 const receipt = await syncWSProvider.notifyPriorityOp(
   178, // priority op id
@@ -547,7 +548,8 @@ async getTokenPrice(
 
 ```typescript
 import * as zksync from 'zksync';
-const syncWSProvider = await zksync.getDefaultProvider('testnet');
+
+const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
 const ethPrice = await syncWSProvider.getTokenPrice('ETH');
 
 console.log(`Current Ethereum price is ${ethPrice} USD`);
@@ -582,7 +584,7 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('testnet');
+const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('rinkeby');
 
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 ```
@@ -612,7 +614,7 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('testnet');
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 
 const ethId = await ethProxy.resolveTokenId('0x0000000000000000000000000000000000000000'); // ETH token address is 0x0..0

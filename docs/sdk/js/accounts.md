@@ -81,7 +81,7 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('testnet');
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
@@ -101,7 +101,7 @@ static async fromEthSignerNoKeys(
 ```
 
 This way wallet won't contain any valid zkSync keys to perform transactions, but some of the operations can be used
-without it, such as Deposit, Emergency exit and reading the account state.
+without them, such as Deposit, Emergency exit and reading the account state.
 
 #### Inputs and outputs
 
@@ -120,7 +120,7 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('testnet');
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvider);
@@ -207,7 +207,7 @@ async getEthereumBalance(token: TokenLike): Promise<utils.BigNumber>;
 
 ```typescript
 import * as zksync from "zksync";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 // Setup zksync.Wallet with ethers signer/wallet that is connected to ethers provider
 const wallet = ..;
@@ -292,7 +292,7 @@ async depositToSyncFromEthereum(deposit: {
 
 ```typescript
 import * as zksync from "zksync";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const syncWallet = ..; // Setup zksync wallet from ethers.Signer.
 
@@ -351,12 +351,12 @@ async setSigningKey(changePubKey: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
 if (! await wallet.isSigningKeySet()) {
-    const changePubkey= await wallet.setSigningKey({
+    const changePubkey = await wallet.setSigningKey({
         feeToken: "FAU",
         fee: ethers.utils.parseEther("0.001")
     });
@@ -417,7 +417,7 @@ async onchainAuthSigningKey(
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -426,7 +426,7 @@ if (! await wallet.isSigningKeySet()) {
     // Wait till transaction is committed on ethereum.
     await onchainAuthTransaction.wait();
 
-    const changePubkey= await wallet.setSigningKey("committed", true);
+    const changePubkey = await wallet.setSigningKey("committed", true);
 
     // Wait till transaction is committed
     const receipt = await changePubkey.awaitReceipt();
@@ -495,7 +495,7 @@ async syncTransfer(transfer: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -575,7 +575,7 @@ For details on an individual transaction, see [Transfer in the zkSync](#transfer
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -637,7 +637,7 @@ async withdrawFromSyncToEthereum(withdraw: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -721,7 +721,7 @@ async syncForcedExit(forcedExit: {
 > Example
 
 ```typescript
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const wallet = ..;// setup zksync wallet
 
@@ -799,7 +799,7 @@ async emergencyWithdraw(withdraw: {
 
 ```typescript
 import * as zksync from "zksync";
-import {ethers} from "ethers";
+import { ethers } from "ethers";
 
 const syncWallet = ..; // Setup zksync wallet.
 
@@ -819,7 +819,7 @@ const priorityOpReceipt = await emergencyWithdrawPriorityOp.awaitVerifyReceipt()
 > Signature
 
 ```typescript
-static fromPrivateKey(pk: BN): Signer;
+static fromPrivateKey(pk: Uint8Array): Signer;
 ```
 
 #### Inputs and outputs
@@ -846,7 +846,7 @@ static async fromETHSignature(
     ethSigner: ethers.Signer
 ): Promise<{
     signer: Signer;
-    ethSignatureType: "EthereumSignature" | "EIP1271Signature";
+    ethSignatureType: EthSignerType;
 }> {
 ```
 
@@ -862,7 +862,7 @@ static async fromETHSignature(
 > Signature
 
 ```typescript
-pubKeyHash(): PubKeyHash;
+async pubKeyHash(): Promise<PubKeyHash>;
 ```
 
 #### Inputs and outputs
