@@ -2,7 +2,9 @@
 
 ## Zinc
 
-Zinc is a framework for constructing R1CS-based SNARK circuits and smart contracts for zkSync platform. It includes a simple, safe and efficient high-level programming language for defining zero-knowledge circuits, and a ZKP-friendly runtime execution environment. Zinc is designed to make developing scalable and privacy-preserving smart contracts easy.
+Zinc is a framework for constructing R1CS-based SNARK circuits and smart contracts for zkSync platform. It includes a
+simple, safe and efficient high-level programming language for defining zero-knowledge circuits, and a ZKP-friendly
+runtime execution environment. Zinc is designed to make developing scalable and privacy-preserving smart contracts easy.
 
 Zinc [documentation](https://zinc.zksync.io/).
 

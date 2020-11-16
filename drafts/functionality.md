@@ -18,7 +18,7 @@ Although the time to hard finality is increased to ~5 min compared to L1, transa
 
 zkSync is cold-wallet friendly. Multisig is also possible with [muSig Schnorr signature scheme](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html).
 
-## What can zkSync be used for?
+## What can zkSync be used for
 
 - Affordable, scalable, secure, non-custodial ETH and ERC20 token transfers (for now)
 - Later: smart contracts (link to question)
@@ -41,12 +41,12 @@ For transfers:
 - Users pay in the same token as being transferred.
 - we are going to operate at break-even cost, later move to marketplace by permissionless validators
 - explain how the price the formed:
-    - variable:
-        - ETH onchain (gas) part: ~0.3k gas for every transfer (to compare: basic ETH transfer is 21k gas, average ERC20 transfer is 60k-80k gas)
-        - Technical note: `full_cost = (block_proof_cost + gas_per_tx * N_tx) / N_tx`; 
-            - block_proof_cost ~ 300k gas
-            - N_tx in block ~1000 - 15000
-            - as operators, we will charge as though blocks are full
-    - fixes (driven by physical costs):
-        - ZKP generation part: ~{placeholder, add when benches complete}
-        - storage part: ~1/1000 - 1/100 of the ETH storage cost (and, in contrast to ETH, it won't go up with increase gas costs)
+  - variable:
+    - ETH onchain (gas) part: ~0.3k gas for every transfer (to compare: basic ETH transfer is 21k gas, average ERC20 transfer is 60k-80k gas)
+    - Technical note: `full_cost = (block_proof_cost + gas_per_tx * N_tx) / N_tx`;
+      - block_proof_cost ~ 300k gas
+      - N_tx in block ~1000 - 15000
+      - as operators, we will charge as though blocks are full
+  - fixes (driven by physical costs):
+    - ZKP generation part: ~{placeholder, add when benches complete}
+    - storage part: ~1/1000 - 1/100 of the ETH storage cost (and, in contrast to ETH, it won't go up with increase gas costs)

@@ -6,6 +6,10 @@ module.exports = {
     markdown: {
         toc: { includeLevel: [2, 3] }
     },
+    extendMarkdown: md => {
+        // Add support of footnotes (like [^1]) in markdown
+        md.use(require('markdown-it-footnote'))
+    },
     plugins: [
         [
             'vuepress-plugin-canonical',
@@ -36,13 +40,13 @@ module.exports = {
                 '/legal/privacy'
             ],
             '/': [         
+                '',
                 {
                     title: 'FAQ',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                      //['/faq/why', 'Why should I care?'],
                       '/faq/intro',
                       '/faq/tech',
                       '/faq/tokens',
@@ -51,22 +55,52 @@ module.exports = {
                       '/faq/sc',
                       '/faq/privacy'
                     ]
-                },             
+                },
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/dev/tutorial',
+                      '/dev/overview',
                       '/dev/basic',
-                      '/dev/providers',
-                      '/dev/accounts',
-                      '/dev/rest',
-                      '/dev/utils',
-                      '/dev/types',
+                      '/dev/sending_transactions',
                       '/dev/contracts',
-                      '/dev/browser-bundled',
+                      '/dev/cryptography',
+                      '/dev/updates'
+                    ]
+                },
+                {
+                    title: 'API documentation',  // required
+                    path: '/api', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: [
+                      '/api/v0.1',
+                      '/api/v1'
+                    ]
+                },
+                {
+                    title: 'JavaScript SDK',  // required
+                    path: '/sdk/js', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: [
+                      '/sdk/js/tutorial',
+                      '/sdk/js/providers',
+                      '/sdk/js/accounts',
+                      '/sdk/js/utils',
+                      '/sdk/js/types',
+                      '/sdk/js/browser-bundled'
+                    ]
+                },
+                {
+                    title: 'Rust SDK',  // required
+                    path: '/sdk/rust', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: [
+                        '/sdk/rust/tutorial'
                     ]
                 },
             ]

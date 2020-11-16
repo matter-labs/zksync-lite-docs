@@ -1,21 +1,20 @@
 # Developer guide
 
-zkSync is a zkRollup for DeFi. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the Ethereum network. This document is a description of javascript SDK that can be used to interact with zkSync.
+zkSync is a zkRollup for DeFi. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the
+Ethereum network. This document is a developer guide for building an applications interacting with zkSync.
 
 ## Resources
 
-- [zkSync testnet](https://testnet.zksync.io)
-- [zkSync JS SDK github page](https://github.com/matter-labs/zksync/tree/master/sdk/zksync.js)
-- [zkSync Rust SDK github page](https://github.com/matter-labs/zksync/tree/master/sdk/zksync-rs)
+- [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
+- [zkSync Ropsten testnet](https://rinkeby.zksync.io)
+- [zkSync Mainnet](https://wallet.zksync.io)
+- [JavaScript SDK documentation](../sdk/js)
+- [Rust SDK documentation](../sdk/rust)
 
 ## Table of contents
 
-- [Getting started](tutorial.html)
-- [Basic concepts](basics.html)
-- [Providers](providers.html)
-- [Accounts](accounts.html)
-- [REST API](rest.html)
-- [Utils](utils.html)
-- [Types](types.html)
-- [Smart contracts addresses](contracts.html)
-- [Appendix A: Using bundle in a browser](browser-bundled.html)
+- [Overview](overview.md)
+- [Basic concepts](basic.md)
+- [Essential zkSync types](../sdk/js/types.md)
+- [Smart contracts addresses](contracts.md)
+- [zkSync updates](updates.md)

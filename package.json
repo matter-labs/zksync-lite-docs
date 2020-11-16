@@ -1,10 +1,41 @@
 {
+  "name": "zksync-docs",
+  "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn docs:build && firebase deploy"
+    "docs:deploy": "yarn docs:build && firebase deploy",
+    "fmt": "prettier --write \"docs/**/*.md\"",
+    "fmt:check": "prettier --check \"docs/**/*.md\"",
+    "cspell": "cspell docs/**/*.md",
+    "md:lint": "markdownlint docs",
+    "md:deadlinks": "check-md"
   },
   "devDependencies": {
+    "check-md": "^1.0.1",
+    "cspell": "^4.1.5",
+    "markdownlint": "^0.21.1",
+    "markdownlint-cli": "^0.24.0",
+    "prettier": "2.1.2"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 120,
+    "parser": "markdown",
+    "singleQuote": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "proseWrap": "always"
+  },
+  "check-md": {
+    "cwd": "./docs",
+    "defaultIndex": [ "README.md" ],
+    "exitLevel": "warn",
+    "ignoreFootnotes": true
+  },
+  "dependencies": {
+    "markdown-it-footnote": "3.0.2",
     "vuepress": "^1.4.0",
     "vuepress-plugin-canonical": "^1.0.0"
   }
