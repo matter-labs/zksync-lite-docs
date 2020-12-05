@@ -15,7 +15,7 @@ sidebar: false
 <br>
 <br>
 
-# zkSync <sup>BETA</sup> is temporarily down
+# zkSync testnet is temporarily down
 
 <br>
 <br>
