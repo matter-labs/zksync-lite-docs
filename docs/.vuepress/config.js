@@ -31,7 +31,11 @@ module.exports = {
             {
                 text: 'Contact',
                 link: '/contact.html'
-            }            
+            },
+            {
+                text: 'Status',
+                link: 'https://uptime.com/s/zksync'
+            }
         ],
         //displayAllHeaders: true,
         sidebar: {
@@ -102,6 +106,10 @@ module.exports = {
                     children: [
                         '/sdk/rust/tutorial'
                     ]
+                },
+                {
+                    title: 'Status',
+                    path: 'https://uptime.com/s/zksync'
                 },
             ]
         }
