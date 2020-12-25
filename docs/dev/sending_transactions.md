@@ -101,7 +101,17 @@ messages, it may be required to add this prefix manually if used signer doesn't 
 ## Sending transaction batches
 
 Transactions batch is a set of transactions that should succeed all together. If one of the batch transactions fails,
-all the transactions in this batch will be considered failed.
+all the transactions in this batch will fail as well.
+
+::: warning
+**Note on security:** In the current form, transaction batches is a server-side abstraction. Successful execution is
+checked pre-circuit, and information about batch is not passed into the circuit. Thus, if this feature is being used to
+pay fees in a different token, it is recommended to set the fee payment transaction last (so that server even in theory
+will be unable to execute the last transaction, but ignore other ones). In the future, the batches will be enforced in
+the circuit in order to increase the overall security of this feature.
+:::
+
+Currently, a batch is guaranteed to be able to successfully process a max of 50 transactions.
 
 For transaction batch, fee doesn't have to be set in each individual transaction, the only requirement is that sum of
 fees set in transactions must be equal or greater than the sum of fees for transactions if they would have been sent
@@ -116,12 +126,6 @@ transfer. In order to do so, one can create a batch of two transactions:
 
 Server will check that sum of fees (0 in the first transaction and 2x expected fee in the second one) is enough to cover
 processing of two transfers and will execute the batch.
-
-**Note on security:** In the current form, transaction batches is a server-side abstraction. Successful execution is
-checked pre-circuit, and information about batch is not passed into the circuit. Thus, if this feature is being used to
-pay fees in a different token, it is recommended to set the fee payment transaction last (so that server even in theory
-will be unable to execute the last transaction, but ignore other ones). In the future, the batches will be enforced in
-the circuit in order to increase the overall security of this feature.
 
 ### Ethereum signature for batch
 
