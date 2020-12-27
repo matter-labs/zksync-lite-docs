@@ -49,6 +49,7 @@ module.exports = {
                     children: [
                       '/faq/intro',
                       '/faq/tech',
+                      '/faq/wallets',
                       '/faq/tokens',
                       '/faq/security',
                       '/faq/decentralization',
