@@ -11,18 +11,18 @@ nutshell, it works as follows:
 2. Validators roll up thousands of transactions together in a single block and submit a cryptographic commitment (the
    root hash) of the new state to the smart contract on mainnet along with a cryptographic proof (a SNARK) that this new
    state is indeed the result of the application of some correct transactions to the old state.
-3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is also published over the
-   mainchain network as cheap `calldata`. This enables anyone to reconstruct the state at every moment.
-4. The proof and the state ∆ is verified by the smart contract, thus verifying both the validity of all the transactions
+3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is published over the
+   mainchain network as cheap `calldata`. This enables anyone to reconstruct the state at any moment.
+4. The proof and the state ∆ are verified by the smart contract, thus verifying both the validity of all the transactions
    included in the block and block data availability.
 
 The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is
-much cheaper than storing it in EVM. Hence a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
+significantly cheaper than storing it in EVM. Hence enabling a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
 
 zkRollup architecture provides the following guarantees:
 
 - Validators can never corrupt the state or steal funds (unlike Sidechains).
-- Users can always retrieve the funds from the zkRollup even if validator(s) stop cooperating because the data is
+- Users can always retrieve the funds from the zkRollup even if validator(s) stop cooperating, because the data is
   available (unlike Plasma).
 - Neither users nor a single trusted third party needs to be online to monitor zkRollup blocks in order to prevent fraud
   (unlike fraud-proof systems, such as payment channels or Optimistic Rollups).
@@ -45,12 +45,12 @@ by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Sc
 should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal
 recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified, and
 benchmarked it. Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the
-already audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart
+already-audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart
 contracts. We will provide more details later in a separate post.
 
 ## Transaction finality
 
-Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of **zkSync** block is generated accepted
+Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of **zkSync** block is generated and accepted
 by the smart contract. The proof time generation is expected to be ~10 min, i.e. after 10 minutes, the **zkSync**
 transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with the proof.
 
@@ -85,7 +85,7 @@ consensus participants (weighted by stake).
 If a new **zkSync** block is produced and submitted to the mainchain, it cannot be reverted. However, if it doesn’t
 contain the promised transaction, the security bond of the intersection of the signers of the original receipt and the
 signers of the new blocks will be slashed. This intersection is guaranteed to have more than ⅓ of the stake. This
-guarantees that at least ⅓ of the security bond can be slashed and that only malicious users will be punished.
+guarantees that at least ⅓ of the security bond can be slashed and that only malicious validators will be punished.
 
 A portion of the slashed funds will be used to compensate the tx recipient. The rest will be burned.
 
