@@ -1,7 +1,7 @@
 # Privacy
 
-At the moment, all transactions in **zkSync** are transparent: just like in Ethereum, anybody can see sender, recipient
-and all details of the transaction.
+At the moment, all transactions in **zkSync** are transparent: just like in Ethereum, anybody can see the sender, the recipient
+and all the details of the transaction.
 
 However, we take the privacy cause very seriously. Most people won’t feel comfortable moving large parts of their
 fortune into a publicly exposed glass box. Inhabitants of dangerous places are unlikely to pay a local merchant in
