@@ -10,17 +10,17 @@ There are two types of operations in zkSync:
 ### Priority operations
 
 Priority operations are initiated directly on the Ethereum mainnet. For example, the user creates a deposit transaction
-to move funds from Ethereum to zkSync. Priority operation can be identified with a numerical id or hash of the ethereum
+to move funds from Ethereum to zkSync. A priority operation can be identified with a numeric ID or hash of the ethereum
 transaction that created it.
 
 Currently, there are the following types of priority operations:
 
-- `Deposit`: Moves funds from the Ethereum network to the desired account in the zkSync network. If recipient account
+- `Deposit`: Moves funds from the Ethereum network to the designated account in the zkSync network. If the recipient account
   does not exist yet in the zkSync network, it will be created and a numeric ID will be assigned to the provided
   address.
 - `FullExit`: Withdraws funds from the zkSync network to the Ethereum network without interacting with the zkSync
   server. This operation can be used as an emergency exit in case of detected censorship from the zkSync server node, or
-  to withdraw funds in the situation when the signing key for an account in zkSync network cannot be set (e.g. if
+  to withdraw funds in the situation where the signing key for an account in zkSync network cannot be set (e.g. if
   address corresponds to the smart contract).
 
 ### Transactions
@@ -33,16 +33,16 @@ Currently, there are the following types of transactions:
 
 - `ChangePubKey`: Sets (or changes) the signing key associated with the account. Without a signing key set, no operation
   (except for priority operations) can be authorized by the corresponding account.
-- `Transfer`: Transfers funds from one zkSync account to another zkSync account. If recipient account does not exist yet
+- `Transfer`: Transfers funds from one zkSync account to another zkSync account. If the recipient account does not exist yet
   in the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
 - `Withdraw`: Withdraws funds from the zkSync network to the Ethereum network.
 - `ForcedExit`: Withdraws funds from the "target" account in zkSync network that doesn't have a signing key set, to the
-  same "target" address in the Ethereum network. This operation can be used to withdraw funds in the situation when the
+  same "target" address in the Ethereum network. This operation can be used to withdraw funds in the situation where the
   signing key for account in zkSync network cannot be set (e.g. if address corresponds to the smart contract).
 
 ## Blocks
 
-All operations inside zkSync are arranged in blocks. After zkSync operator creates a block, it is pushed to zkSync smart
+All operations inside zkSync are arranged in blocks. After zkSync operator creates a block, it is pushed to the zkSync smart
 contract on the Ethereum mainnet with a `Commit` transaction. When a block is committed, its state is not yet final.
 After a couple of minutes, the ZK proof for the correctness of this block is produced. This proof is published to
 Ethereum using the `Verify` transaction. Only after the `Verify` tx was mined, the new state is considered final.
@@ -50,7 +50,7 @@ Multiple blocks can be committed but not verified yet.
 
 However, the execution model is slightly different: in order to not make users wait for the block finalization,
 transactions are grouped into "mini-blocks" with a much smaller timeout. So, the blocks are being partially applied with
-a small interval, so that shortly after receiving the transaction is is executed and L2 state is updated
+a small interval, so that shortly after receiving the transaction it is executed and L2 state is updated
 correspondingly.
 
 It means that after sending the transaction, the user has to wait for neither block commitment nor verification, and
@@ -63,9 +63,9 @@ This section describes typical use-cases of zkSync in a sequential manner.
 ### Creating an account
 
 Account in zkSync can be created by either doing a deposit of funds from Ethereum or by transferring funds in zkSync to
-the desired address. Any of these options will create a new account in zkSync network if it didn't exist.
+the desired address. Any of these options will create a new account in the zkSync network if it didn't exist.
 
-However, created account will not be capable of authorizing any transactions from it yet. In order to do so, account
+However, created account will not be capable of authorizing any transactions from it yet. In order to do so, the account
 owner must set the signing key for the account.
 
 ### Setting the signing key
@@ -73,9 +73,9 @@ owner must set the signing key for the account.
 By default, the signing key for each account is set to the zero value, which marks account as "unowned". It's a
 requirement because of the following reasons:
 
-- If transfer to some address is valid in Ethereum, it's also valid in zkSync.
+- If a transfer to some address is valid in Ethereum, it's also valid in zkSync.
 - Not every address can have a private key (e.g. some smart contract).
-- Transfer to some user's account may happen before they've been interested in zkSync.
+- Transfers to some user's account may happen before they've been interested in zkSync.
 
 Thus, in order to make an account capable of initiating L2 transactions, user must set a signing key for it via
 `ChangePubKey` transaction.
@@ -93,7 +93,7 @@ zkSync signature of all the transaction fields must correspond to the public key
 
 ### Transferring funds
 
-As it was said above, any transfer that is valid in Ethereum, is also valid in zkSync.
+As mentioned above, any transfer that is valid in Ethereum, is also valid in zkSync.
 
 Users may transfer any amount of funds in either Ether or any supported ERC-20 token. A list of supported tokens can be
 found on the [corresponding explorer page](https://zkscan.io/tokens). It is also exposed via [API](../api).
@@ -106,11 +106,11 @@ the existing account.
 
 zkSync requires fees for transactions in order to cover expenses for network maintenance.
 
-Fees for each kind of transaction is calculated based on two main factors:
+Fees for each kind of transaction is calculated based on three main factors:
 
-- Amount of data we will have to send to the Ethereum.
+- Amount of data that will be sent to the Ethereum network.
 - Current gas price.
-- Cost of computational resources to generate a proof for a block with transaction.
+- Cost of computational resources to generate a proof for a block with the transaction.
 
 Since we include many transactions in one block, the cost is amortized among all the included transactions, which
 results in very small fee values.
@@ -121,7 +121,7 @@ Additionally, our API provides all the input data used for fee calculation via c
 
 ### Withdrawing funds
 
-Currently, there are three ways to withdraw funds from zkSync to the Ethereum account.
+Currently, there are three ways to withdraw funds from zkSync to an Ethereum account.
 
 First one is `Withdraw` transaction.
 
@@ -132,7 +132,7 @@ This method is preferred for situations when you own your account and have a pri
 
 Second one is `ForcedExit` transaction.
 
-It is an L2 transaction which can be used to request a withdrawal from any unowned account (one that does not have a
+It is an L2 transaction that can be used to request a withdrawal from any unowned account (one that does not have a
 signing key set). Neither Ethereum address or amount can be chosen in this transaction: the only option is to request a
 withdrawal of **all** available funds of certain token from the target L2 address to the target L1 address.
 
