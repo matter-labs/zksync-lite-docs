@@ -11,13 +11,14 @@ nutshell, it works as follows:
 2. Validators roll up thousands of transactions together in a single block and submit a cryptographic commitment (the
    root hash) of the new state to the smart contract on mainnet along with a cryptographic proof (a SNARK) that this new
    state is indeed the result of the application of some correct transactions to the old state.
-3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is published over the
-   mainchain network as cheap `calldata`. This enables anyone to reconstruct the state at any moment.
-4. The proof and the state ∆ are verified by the smart contract, thus verifying both the validity of all the transactions
-   included in the block and block data availability.
+3. Additionally to the proof, the state ∆ (a small amount of data for every transaction) is published over the mainchain
+   network as cheap `calldata`. This enables anyone to reconstruct the state at any moment.
+4. The proof and the state ∆ are verified by the smart contract, thus verifying both the validity of all the
+   transactions included in the block and block data availability.
 
 The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is
-significantly cheaper than storing it in EVM. Hence enabling a huge boost of scalability (~100-200x mainnet capacity) and tx cost savings.
+significantly cheaper than storing it in EVM. Hence enabling a huge boost of scalability (~100-200x mainnet capacity)
+and tx cost savings.
 
 zkRollup architecture provides the following guarantees:
 
@@ -50,9 +51,10 @@ contracts. We will provide more details later in a separate post.
 
 ## Transaction finality
 
-Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of **zkSync** block is generated and accepted
-by the smart contract. The proof time generation is expected to be ~10 min, i.e. after 10 minutes, the **zkSync**
-transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with the proof.
+Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of **zkSync** block is generated and
+accepted by the smart contract. The proof time generation is expected to be ~10 min, i.e. after 10 minutes, the
+**zkSync** transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with the
+proof.
 
 In contrast, fraud-based scaling solutions (e.g. optimistic rollup) require at least 2 weeks of lockout period to
 operate more or less securely, which results in 2 weeks objective<sup>\*</sup> tx finality time.

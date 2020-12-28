@@ -15,8 +15,8 @@ transaction that created it.
 
 Currently, there are the following types of priority operations:
 
-- `Deposit`: Moves funds from the Ethereum network to the designated account in the zkSync network. If the recipient account
-  does not exist yet in the zkSync network, it will be created and a numeric ID will be assigned to the provided
+- `Deposit`: Moves funds from the Ethereum network to the designated account in the zkSync network. If the recipient
+  account does not exist yet in the zkSync network, it will be created and a numeric ID will be assigned to the provided
   address.
 - `FullExit`: Withdraws funds from the zkSync network to the Ethereum network without interacting with the zkSync
   server. This operation can be used as an emergency exit in case of detected censorship from the zkSync server node, or
@@ -33,8 +33,8 @@ Currently, there are the following types of transactions:
 
 - `ChangePubKey`: Sets (or changes) the signing key associated with the account. Without a signing key set, no operation
   (except for priority operations) can be authorized by the corresponding account.
-- `Transfer`: Transfers funds from one zkSync account to another zkSync account. If the recipient account does not exist yet
-  in the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
+- `Transfer`: Transfers funds from one zkSync account to another zkSync account. If the recipient account does not exist
+  yet in the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
 - `Withdraw`: Withdraws funds from the zkSync network to the Ethereum network.
 - `ForcedExit`: Withdraws funds from the "target" account in zkSync network that doesn't have a signing key set, to the
   same "target" address in the Ethereum network. This operation can be used to withdraw funds in the situation where the
@@ -42,9 +42,9 @@ Currently, there are the following types of transactions:
 
 ## Blocks
 
-All operations inside zkSync are arranged in blocks. After zkSync operator creates a block, it is pushed to the zkSync smart
-contract on the Ethereum mainnet with a `Commit` transaction. When a block is committed, its state is not yet final.
-After a couple of minutes, the ZK proof for the correctness of this block is produced. This proof is published to
+All operations inside zkSync are arranged in blocks. After zkSync operator creates a block, it is pushed to the zkSync
+smart contract on the Ethereum mainnet with a `Commit` transaction. When a block is committed, its state is not yet
+final. After a couple of minutes, the ZK proof for the correctness of this block is produced. This proof is published to
 Ethereum using the `Verify` transaction. Only after the `Verify` tx was mined, the new state is considered final.
 Multiple blocks can be committed but not verified yet.
 

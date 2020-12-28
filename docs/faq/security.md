@@ -71,12 +71,12 @@ established cryptographic assumptions widely considered secure in the academic a
 
 ## Universal CRS setup
 
-The version 1.0 of zkSync protocol uses the PLONK proof system, which requires a "trusted setup" of a Common
-Reference String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is
-called Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution,
-the setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions,
-because larger number of prominent and respected members of the community have incentive to participate in it, and more
-scrutiny can be expected around the trusted setup ceremony.
+The version 1.0 of zkSync protocol uses the PLONK proof system, which requires a "trusted setup" of a Common Reference
+String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called
+Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the
+setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions, because
+larger number of prominent and respected members of the community have incentive to participate in it, and more scrutiny
+can be expected around the trusted setup ceremony.
 
 Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies
 (which are very difficult from the logistical and security perspectives).
