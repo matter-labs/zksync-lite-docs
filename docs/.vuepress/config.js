@@ -57,7 +57,8 @@ module.exports = {
                       '/faq/security',
                       '/faq/decentralization',
                       '/faq/sc',
-                      '/faq/privacy'
+                      '/faq/privacy',
+                      '/faq/status',
                     ]
                 },
                 {
@@ -106,10 +107,6 @@ module.exports = {
                     children: [
                         '/sdk/rust/tutorial'
                     ]
-                },
-                {
-                    title: 'Status',
-                    path: 'https://uptime.com/s/zksync'
                 },
             ]
         }
