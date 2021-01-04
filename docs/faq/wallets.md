@@ -20,4 +20,4 @@ Owners of some Ethereum addresses cannot use zkSync directly for various reasons
 
 In such cases, you can always withdraw funds from an L2 zkSync account to the same address in L1. The protocol allows this because the security invariant is not violated: funds never change the owning hand. It requires that the account have never registered a zkSync public key before.
 
-If you need to withdraw your funds from such an account, please shoot us your account address to **hello@matterlabs.dev** and we will initiate the withdrawal. In the future, this functionality will be fully automated.
+If you need to withdraw your funds from such an account, please shoot us your account address to **withdraw@zksync.io** and we will initiate the withdrawal. In the future, this functionality will be fully automated.
