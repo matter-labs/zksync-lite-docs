@@ -1,4 +1,6 @@
-# Environments and Smart Contracts Addresses
+# Environments
+
+Addresses of smart contracts and links:
 
 ## Mainnet
 
