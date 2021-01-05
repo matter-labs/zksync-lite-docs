@@ -7,7 +7,7 @@
 Generally, you can safely send funds to any Ethereum address (even to exchanges and smart contracts). The owner of this
 address will always be able to claim the funds.
 
-The up-to-date list of the Etherum wallets that you can control from the zkSync web wallet can be found directly on
+The up-to-date list of the Ethereum wallets that you can control from the zkSync web wallet can be found directly on
 [its homepage](https://wallet.zksync.io).
 
 To control an address programmatically, all you need to is to be able to sign a message with it — either with native
@@ -27,5 +27,5 @@ In such cases, you can always withdraw funds from an L2 zkSync account to the sa
 this because the security invariant is not violated: funds never change the owning hand. It requires that the account
 have never registered a zkSync public key before.
 
-If you need to withdraw your funds from such an account, please shoot us your account address to
-**hello@matterlabs.dev** and we will initiate the withdrawal. In the future, this functionality will be fully automated.
+If you need to withdraw your funds from such an account, please shoot us your account address to **withdraw@zksync.io**
+and we will initiate the withdrawal. In the future, this functionality will be fully automated.

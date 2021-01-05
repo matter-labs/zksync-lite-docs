@@ -8,7 +8,7 @@ zero-knowledge proofs and on-chain data availability to keep user's funds as saf
 While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively
 seek out improvements that eliminate friction and complexity in order to make zkSync the most enjoyable platform on
 Ethereum, for both end-users and builders. The best way to get an impression about it is to
-[try out zkSync](https://testnet.zksync.io) yourself — it should only take 2 minutes.
+[try out zkSync](https://wallet.zksync.io) yourself — it should only take 2 minutes.
 
 <!-- markdownlint-disable line-length -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/el-9YYGN1nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
