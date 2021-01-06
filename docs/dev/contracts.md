@@ -4,8 +4,8 @@ Addresses of smart contracts and links:
 
 ## Mainnet
 
-- Wallet: https://wallet.zksync.io
-- Explorer: https://zkscan.io
+- Wallet: [https://wallet.zksync.io](https://wallet.zksync.io)
+- Explorer: [https://zkscan.io](https://zkscan.io)
 - zkSync
   [0xabea9132b05a70803a4e85094fd0e1800777fbef](https://etherscan.io/address/0xabea9132b05a70803a4e85094fd0e1800777fbef)
 - Verifier
@@ -17,8 +17,8 @@ Addresses of smart contracts and links:
 
 ## Rinkeby
 
-- Wallet: https://rinkeby.zksync.io
-- Explorer: https://rinkeby.zkscan.io
+- Wallet: [https://rinkeby.zksync.io](https://rinkeby.zksync.io)
+- Explorer: [https://rinkeby.zkscan.io](https://rinkeby.zkscan.io)
 - zkSync
   [0x82F67958A5474e40E1485742d648C0b0686b6e5D](https://rinkeby.etherscan.io/address/0x82F67958A5474e40E1485742d648C0b0686b6e5D)
 - Verifier
@@ -30,8 +30,8 @@ Addresses of smart contracts and links:
 
 ## Ropsten
 
-- Wallet: https://ropsten.zksync.io
-- Explorer: https://ropsten.zkscan.io
+- Wallet: [https://ropsten.zksync.io](https://ropsten.zksync.io)
+- Explorer: [https://ropsten.zkscan.io](https://ropsten.zkscan.io)
 - zkSync
   [0x17dE8874259c59cd9f7E6ec86b6813Bda661A57c](https://ropsten.etherscan.io/address/0x17dE8874259c59cd9f7E6ec86b6813Bda661A57c)
 - Verifier
