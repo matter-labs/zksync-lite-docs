@@ -42,9 +42,9 @@ ensures that users will keep control of their assets. It works as follows.
 
 The version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design
 iterations. However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via
-the zkSync contract and all users get 4 week notice period to exit in case they don't like the changes.
+the zkSync contract and all users get a 4-week notice period to exit in case they don't like the changes.
 
-WARNING: the beta will be deployed with 1 day notice period, which will soon be bumped up to 1 week, then to 2 weeks,
+WARNING: the beta will be deployed with a 1-day notice period, which will soon be bumped up to 1 week, then to 2 weeks,
 and finally to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
 
 ## Cryptography used
@@ -67,16 +67,16 @@ established cryptographic assumptions widely considered secure in the academic a
 
 1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision_resistance)
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
-3. [Elliptic curve DLP](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
+3. [Finite field and elliptic curve DLP](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
 
 ## Universal CRS setup
 
-The version 1.0 of zkSync protocol is using the PLONK proof system which requires a "trusted setup" of a Common
-Reference String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is
-called Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution,
-the setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions,
-because larger number of prominent and respected members of the community have incentive to participate in it, and more
-scrutiny can be expected around the trusted setup ceremony.
+The version 1.0 of zkSync protocol uses the PLONK proof system, which requires a "trusted setup" of a Common Reference
+String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called
+Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the
+setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions, because
+larger number of prominent and respected members of the community have incentive to participate in it, and more scrutiny
+can be expected around the trusted setup ceremony.
 
 Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies
 (which are very difficult from the logistical and security perspectives).
