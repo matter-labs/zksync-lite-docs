@@ -107,7 +107,8 @@ all the transactions in this batch will fail as well.
 execution is checked pre-circuit, and information about batch is not passed into the circuit. Thus, if this feature is
 being used to pay fees in a different token, it is recommended to set the fee payment transaction last (so that server
 even in theory will be unable to execute the last transaction, but ignore other ones). In the future, the batches will
-be enforced in the circuit in order to increase the overall security of this feature. :::
+be enforced in the circuit in order to increase the overall security of this feature. 
+:::
 
 Currently, a batch is guaranteed to be able to successfully process a max of 50 transactions.
 
