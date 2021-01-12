@@ -165,7 +165,7 @@ Repository: <https://github.com/zksync-sdk/zksync-sdk-swift>
 
 ### Example
 
-Example could be found in the [repository][swift_example]
+Example could be found in the [repository][swift_example].
 
 [swift_example]: https://github.com/zksync-sdk/zksync-sdk-swift/tree/master/ZKSyncSample
 
@@ -183,7 +183,7 @@ Repository: <https://github.com/zksync-sdk/zksync-sdk-go>
 
 - Import github.com/zksync-sdk/zksync-sdk-go
 - Download `libzkscrypto` for your platform from <https://github.com/zksync-sdk/zksync-crypto-c/releases> and put it
-  into `./libs` directory
+  into `./libs` directory.
 
 ### Example
 

@@ -502,6 +502,9 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 Performs a query to the server, obtaining an acceptable fee for a batch transaction (multi-transfer).
 
++The fee provided is enough to perform **all** of the transactions of the batch. Thus you usually would need to specify
++the fee for only one transaction and set it to zero for the other ones.
+
 **Note:** For details about the type and amount of token for batch transaction fees, see
 [transaction batch docs](#submit-transactions-batch).
 

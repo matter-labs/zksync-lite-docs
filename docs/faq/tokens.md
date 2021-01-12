@@ -8,7 +8,7 @@
 by the operator. In the future, adding new tokens will be fully permissionless.
 
 The full list of currently supported tokens is available under this link (as JSON):
-<https://api.zksync.io/api/v0.1/tokens>
+<https://api.zksync.io/api/v0.1/tokens>.
 
 DISCLAIMER: We will list any tokens fulfilling the criteria below on a first-come, first-serve basis. Listing of a token
 on zkSync does not represent an endorsement for this token by the Matter Labs team, Stichting ZK Sync, or any other
@@ -22,7 +22,7 @@ To submit token listing support, please fill out
 
 We can immediately list tokens that satisfy the following conditions:
 
-- price tracked at <https://coinmarketcap.com>
+- price tracked at <https://coinmarketcap.com>.
 - daily trading volume exceeds \$1M over the period of the past 3 months.
 
 Tokens without sufficient liquidity or CMC price tracker will be listed as soon as we implement an option to pay fees in
