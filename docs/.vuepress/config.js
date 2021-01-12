@@ -31,7 +31,11 @@ module.exports = {
             {
                 text: 'Contact',
                 link: '/contact.html'
-            }            
+            },
+            {
+                text: 'Status',
+                link: 'https://uptime.com/s/zksync'
+            }
         ],
         //displayAllHeaders: true,
         sidebar: {
@@ -54,7 +58,8 @@ module.exports = {
                       '/faq/security',
                       '/faq/decentralization',
                       '/faq/sc',
-                      '/faq/privacy'
+                      '/faq/privacy',
+                      '/faq/status',
                     ]
                 },
                 {
