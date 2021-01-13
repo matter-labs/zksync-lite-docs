@@ -35,8 +35,9 @@ Ethereum, for both end-users and builders. The best way to get an impression abo
 - Withdrawals to mainnet in under 15 min.
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html)
   support.
-- [Privacy](/faq/privacy.md) (coming soon).
 - Permissionless [smart contracts](/faq/sc.md) (coming soon).
+
+<!-- - [Privacy](/faq/privacy.md) (coming soon). -->
 
 ## Problems zkSync solves
 
@@ -54,8 +55,11 @@ zkSync
 [stands out remarkably](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
 in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography
 and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that
-doesn't require any operational activity to keep the funds safe. Users can go offline for a year, then come back and be
-sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
+doesn't require any operational activity to keep the funds safe. Roughly speaking, users can go offline for a year, then come back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
+
+To quote from [Vitalik's 2021 guide to rollups](https://vitalik.ca/general/2021/01/05/rollup.html):
+
+> In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use cases, **but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves**.
 
 ![L2 comparison](https://zksync.io/chart3.png)
 
