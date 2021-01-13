@@ -2,7 +2,7 @@
 
 ## zkRollup architecture
 
-The architecture employed by **zkSync** is called **zkRollup**.
+**zkSync** is an L2 protocol based on the **ZK rollup** architecture. ZK rollup is a flavour of a larger "rollup" family. For more background, we recommend Vitalik Buterin's [guid to rollups](https://vitalik.ca/general/2021/01/05/rollup.html) (January 2021).
 
 All funds are held by a smart contract on the mainchain, while computation and storage are performed off-chain. In a
 nutshell, it works as follows:

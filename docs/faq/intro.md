@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by zkRollup technology. It uses
+**zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by [zkRollup technology](/faq/tech.md#zkrollup-architecture). It uses
 zero-knowledge proofs and on-chain data availability to keep user's funds as safe as though they never left the mainnet.
 
 While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively
