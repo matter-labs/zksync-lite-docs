@@ -32,7 +32,8 @@ In other words, zkRollup strictly inherits the security guarantees of the underl
 
 Here are some links to explore the topic of zkRollups:
 
-- [Original idea proposal by Vitalik Buterin](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
+- [Vitalik Buterin's guide to rollups (Jan 2021)](https://vitalik.ca/general/2021/01/05/rollup.html)
+- [Original idea proposal by Buterin](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
 - [Matter Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
 - [Awesome Zero-Knowledge Proofs materials](https://github.com/matter-labs/awesome-zero-knowledge-proofs)
 - [zkRollup vs. Optimistic Rollup deep dive](https://medium.com/matter-labs/optimistic-vs-zk-rollup-deep-dive-ea141e71e075)
