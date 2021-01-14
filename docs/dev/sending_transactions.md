@@ -129,6 +129,8 @@ transfer. In order to do so, one can create a batch of two transactions:
 Server will check that sum of fees (0 in the first transaction and 2x expected fee in the second one) is enough to cover
 processing of two transfers and will execute the batch.
 
+:::
+
 ### Ethereum signature for batch
 
 For transaction batches there is no need to provide an Ethereum signature for each transaction in it, instead, it is
