@@ -67,3 +67,7 @@ subsecond
 supermajority
 gemeente
 unauthorised
+
+// Famous crypto people
+Vitalik's
+Buterin's
