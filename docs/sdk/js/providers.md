@@ -3,9 +3,9 @@
 JSON-RPC protocol is used to communicate with Sync network nodes. `Provider` is used to abstract details of the
 communication and provides useful API for interaction with Sync network.
 
-We support HTTP and WebSocket transport protocol for JSON-RPC communications. WebSocket transport is preferred since it
-supports subscriptions. `HTTPTransport` and `WSTransport` classes are used to implement details of communication, but
-usually, you don't need to deal with these objects directly.
+We support HTTP and WebSocket transport protocols for JSON-RPC communications. Even though WebSocket transport supports
+subscriptions, HTTP transport is preferred due to its stability. `HTTPTransport` and `WSTransport` classes are used to
+implement details of communication, but usually, you don't need to deal with these objects directly.
 
 ## Sync provider
 
@@ -14,15 +14,10 @@ usually, you don't need to deal with these objects directly.
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
-
-// ..
-
-// Later to close connection.
-await syncWSProvider.disconnect();
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 ```
 
-Used to connect to the common endpoint for the given network over WebSocket transport.
+Used to connect to the common endpoint for the given network over HTTP transport.
 
 Supported networks are: "rinkeby", "ropsten", "mainnet", and "localhost".
 
@@ -73,7 +68,7 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 const signedTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
   type: 'Transfer',
@@ -97,7 +92,7 @@ const signedTransferTx = {
 //     `Account Id: 13`;
 const ethSignature = '0xdddaaa...1c'; // Ethereum ECDSA signature of the readableTxInfo
 
-const transactionHash = await syncWSProvider.submitTx(signedTransferTx, ethSignature);
+const transactionHash = await syncHttpProvider.submitTx(signedTransferTx, ethSignature);
 // 0x..hash (32 bytes)
 ```
 
@@ -127,7 +122,7 @@ For details on individual transactions, see [Submit transaction](#submit-transac
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 const firstTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
   type: 'Transfer',
@@ -155,7 +150,7 @@ const batch = [
   { tx: secondTransferTx, signature: secondTransferEthSignature }
 ];
 
-const transactionHashes = await syncWSProvider.submitTxsBatch(batch);
+const transactionHashes = await syncHttpProvider.submitTxsBatch(batch);
 // List of transaction hashes
 ```
 
@@ -178,9 +173,9 @@ async getContractAddress(): Promise<ContractAddress>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 
-const contractAddresses = await syncWSProvider.getContractAddress();
+const contractAddresses = await syncHttpProvider.getContractAddress();
 ```
 
 > Returns
@@ -211,9 +206,9 @@ async getTokens(): Promise<Tokens>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 
-const contractAddresses = await syncWSProvider.getTokens();
+const contractAddresses = await syncHttpProvider.getTokens();
 ```
 
 > Returns
@@ -300,8 +295,8 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
-const requiredConfirmationsAmount = await syncWSProvider.getConfirmationsForEthOpAmount();
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const requiredConfirmationsAmount = await syncHttpProvider.getConfirmationsForEthOpAmount();
 ```
 
 ### Get transaction receipt
@@ -378,9 +373,9 @@ async notifyTransaction(
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 
-const receipt = await syncWSProvider.notifyTransaction(
+const receipt = await syncHttpProvider.notifyTransaction(
   'sync-tx:1111111111111111111111111111111111111111111111111111111111111111',
   'COMMIT'
 );
@@ -449,9 +444,9 @@ deposit).
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 
-const receipt = await syncWSProvider.notifyPriorityOp(
+const receipt = await syncHttpProvider.notifyPriorityOp(
   178, // priority op id
   'COMMIT'
 );
@@ -552,8 +547,8 @@ async getTokenPrice(
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.getDefaultProvider('rinkeby');
-const ethPrice = await syncWSProvider.getTokenPrice('ETH');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const ethPrice = await syncHttpProvider.getTokenPrice('ETH');
 
 console.log(`Current Ethereum price is ${ethPrice} USD`);
 ```
@@ -587,9 +582,9 @@ import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
 const ethersProvider = new ethers.getDefaultProvider('rinkeby');
-const syncWSProvider = await zksync.SyncProvider.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 
-const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
+const ethProxy = new zksync.ETHProxy(ethersProvider, syncHttpProvider.contractAddress);
 ```
 
 ### Resolve token id

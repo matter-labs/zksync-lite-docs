@@ -2,8 +2,9 @@
 
 ## Introduction
 
-**zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by [zkRollup technology](/faq/tech.md#zkrollup-architecture). It uses
-zero-knowledge proofs and on-chain data availability to keep user's funds as safe as though they never left the mainnet.
+**zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by
+[zkRollup technology](/faq/tech.md#zkrollup-architecture). It uses zero-knowledge proofs and on-chain data availability
+to keep user's funds as safe as though they never left the mainnet.
 
 While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively
 seek out improvements that eliminate friction and complexity in order to make zkSync the most enjoyable platform on
@@ -55,11 +56,15 @@ zkSync
 [stands out remarkably](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
 in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography
 and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that
-doesn't require any operational activity to keep the funds safe. Roughly speaking, users can go offline for a year, then come back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
+doesn't require any operational activity to keep the funds safe. Roughly speaking, users can go offline for a year, then
+come back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long
+gone.
 
 To quote from [Vitalik's 2021 guide to rollups](https://vitalik.ca/general/2021/01/05/rollup.html):
 
-> In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use cases, **but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves**.
+> In general, my own view is that in the short term, optimistic rollups are likely to win out for general-purpose EVM
+> computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use
+> cases, **but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves**.
 
 ![L2 comparison](https://zksync.io/chart3.png)
 
