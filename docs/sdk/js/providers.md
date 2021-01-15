@@ -4,8 +4,8 @@ JSON-RPC protocol is used to communicate with Sync network nodes. `Provider` is 
 communication and provides useful API for interaction with Sync network.
 
 We support HTTP and WebSocket transport protocols for JSON-RPC communications. Even though WebSocket transport supports
-subscriptions, HTTP transport is preferred due to its stability. `HTTPTransport` and `WSTransport`
-classes are used to implement details of communication, but usually, you don't need to deal with these objects directly.
+subscriptions, HTTP transport is preferred due to its stability. `HTTPTransport` and `WSTransport` classes are used to
+implement details of communication, but usually, you don't need to deal with these objects directly.
 
 ## Sync provider
 
