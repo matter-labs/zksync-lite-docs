@@ -27,7 +27,7 @@ In such cases, you can always withdraw funds from an L2 zkSync account to the sa
 this because the security invariant is not violated: funds never change the owning hand. It requires that the account
 have never registered a zkSync public key before.
 
-If you need to withdraw your funds, please fill the following
+If you need to withdraw your funds from such an account, please fill the following
 [form](https://docs.google.com/forms/d/1fRLRhFzu2IHSgxITxz8y6iZkl9sNRvS5Z_Us2ZWAQM0/edit).
 
 In the future the process will be fully automated.
