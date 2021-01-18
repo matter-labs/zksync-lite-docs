@@ -27,5 +27,60 @@ In such cases, you can always withdraw funds from an L2 zkSync account to the sa
 this because the security invariant is not violated: funds never change the owning hand. It requires that the account
 have never registered a zkSync public key before.
 
-If you need to withdraw your funds from such an account, please shoot us your account address to **withdraw@zksync.io**
-and we will initiate the withdrawal. In the future, this functionality will be fully automated.
+If you need to withdraw your funds, please fill the following
+[form](https://docs.google.com/forms/d/1fRLRhFzu2IHSgxITxz8y6iZkl9sNRvS5Z_Us2ZWAQM0/edit).
+
+In the future the process will be fully automated.
+
+## Troubleshooting
+
+### Used "Transfer" instead of "Withdraw" to get your funds onto mainnet
+
+If you attempted to withdraw your zkSync funds to L1, but mistakenly used "Transfer" option instead of "Withdraw", you
+should try to log in to the zkSync with the wallet that received the funds. If that's not possible, then you should read
+the section above about how to withdraw the funds from a wallet that is not supported by zkSync.
+
+### My withdrawal was completed, but the funds have not arrived on mainnet
+
+If your withdrawal is marked as "Complete" in [zkscan](https://zkscan.io/), but the funds have not arrived on your
+wallet, here are a few steps you should take:
+
+#### 1. Make sure that enough time has passed
+
+"Withdraw" takes a while.
+
+Even when the transaction page says that the "Withdraw" is "Complete", it might still take a few hours before the funds
+will actually arrive at your wallet.
+
+#### 2. Make sure that the trouble is with zkSync
+
+So you've waited a day, but still, the funds have not reached your account. What do you do next?
+
+Please open the [etherscan](https://etherscan.io/) and go to your address page, then head to the "Internal Txs". There
+will be a list of all transactions to your account from smart contracts. There you should see a transaction coming from
+the zkSync smart contract. If you see the transaction, then your funds did arrive. Your wallet may not display these
+types of transactions, that's why it might seem like your account has not received any funds at all.
+
+If the account balance that is shown in your wallet is the same as on the etherscan, then everything is ok and your
+funds did arrive, just the transaction is not displayed.
+
+If the account balance is not the same as on the etherscan, contact the support of your wallet. zkSync did send funds to
+your account.
+
+#### 4. Your withdrawal transaction was "out of gas"
+
+Sorry for the inconvenience.
+
+You'll need to wait until the smart contract update (roughly a week) to recover your funds. We'll send you an email with
+the instructions of what to do when the update is complete.
+
+### If none of the above did help
+
+If nothing above have helped you, please shoot us email at **withdraw@zksync.io** describing your problem. It MUST
+contain the following info:
+
+- Your zkSync wallet address.
+- What wallet are you using (e.g. Trust).
+- What problems do you encounter.
+
+The more information you provide, the faster your problem will be solved!
