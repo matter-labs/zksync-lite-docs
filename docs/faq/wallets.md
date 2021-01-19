@@ -67,12 +67,11 @@ funds did arrive, just the transaction is not displayed.
 If the account balance is not the same as on the etherscan, contact the support of your wallet. zkSync did send funds to
 your account.
 
-#### 4. Your withdrawal transaction was "out of gas"
+#### 3. Your withdrawal transaction was "out of gas"
 
 Sorry for the inconvenience.
 
-You'll need to wait until the smart contract update (roughly a week) to recover your funds. We'll send you an email with
-the instructions of what to do when the update is complete.
+You'll need to wait until the smart contract upgrade (roughly by the end of January) to recover your funds. The instructions will appear here in the docs when the update is complete.
 
 ### If none of the above did help
 
