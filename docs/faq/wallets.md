@@ -71,7 +71,8 @@ your account.
 
 Sorry for the inconvenience.
 
-You'll need to wait until the smart contract upgrade (roughly by the end of January) to recover your funds. The instructions will appear here in the docs when the update is complete.
+You'll need to wait until the smart contract upgrade (roughly by the end of January) to recover your funds. The
+instructions will appear here in the docs when the update is complete.
 
 ### If none of the above did help
 
