@@ -47,7 +47,7 @@ Most operations require some read-only access to the Ethereum network. We use `e
 Ethereum.
 
 ```typescript
-const ethersProvider = new ethers.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('rinkeby');
 ```
 
 ## Creating a Wallet

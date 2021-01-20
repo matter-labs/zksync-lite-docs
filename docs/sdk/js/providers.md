@@ -581,7 +581,7 @@ constructor(
 import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
-const ethersProvider = new ethers.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('rinkeby');
 const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncHttpProvider.contractAddress);
@@ -611,7 +611,7 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
-const ethersProvider = new ethers.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('rinkeby');
 const syncProvider = await zksync.getDefaultProvider('rinkeby');
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 
