@@ -5,10 +5,10 @@
         <img v-if="data.heroImage" :src="$withBase(data.heroImage)" :alt="zkSync" />
       </h1>
 
-      <p class="subtitle">The new standard for crypto payments</p>
+      <p class="subtitle">Scalability without compromises</p>
       <p
         class="description"
-      >zkSync is a fully trustless, secure, user-centric protocol for scaling payments and smart contracts on Ethereum</p>
+      >zkSync is a trustless, secure, user-centric protocol for scaling payments and smart contracts on Ethereum</p>
 
       <p class="action">
         <NavLink class="action-button" :item="actionLink" />
