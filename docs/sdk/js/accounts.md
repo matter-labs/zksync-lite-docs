@@ -80,7 +80,7 @@ static async fromEthSigner(
 import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
-const ethersProvider = new ethers.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('rinkeby');
 const syncProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
@@ -119,7 +119,7 @@ without them, such as Deposit, Emergency exit and reading the account state.
 import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
-const ethersProvider = new ethers.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('rinkeby');
 const syncProvider = await zksync.getDefaultProvider('rinkeby');
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
