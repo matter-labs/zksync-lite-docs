@@ -25,7 +25,7 @@ You might know us as humble creators of [zkSync](https://zksync.io).
 
 We are scaling Ethereum with [zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs/).
 This is [a key technology](https://zksync.io/faq/tech.html#zkrollup-architecture) to enable mainstream adoption of
-crypto, and our mission is to accelerate this inevitable outcome.
+crypto, and our mission is to accelerate this inevitable process.
 
 The team consists of world-class experts in [cryptography](https://eprint.iacr.org/2019/1400.pdf),
 [hardware](https://medium.com/matter-labs/worlds-first-practical-hardware-for-zero-knowledge-proofs-acceleration-72bf974f8d6e),
