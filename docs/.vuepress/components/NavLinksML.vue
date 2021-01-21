@@ -32,6 +32,7 @@
       {{ repoLabel }}
       <OutboundLink />
     </a>
+
   </nav>
 </template>
 

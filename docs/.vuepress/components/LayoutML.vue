@@ -40,6 +40,7 @@
         <slot name="page-bottom" />
       </template>
     </Page>
+
   </div>
 </template>
 
