@@ -4,7 +4,6 @@ navbar: true
 footer: true
 search: false
 layout: LayoutML
-toggleSidebar: false
 ---
 
 <img :src="$withBase('matter_labs_logo_dark.svg')" width="260px"/>

@@ -31,9 +31,17 @@ module.exports = {
             {
                 text: 'Contact',
                 link: '/contact.html'
+            },            
+            {
+                text: 'Twitter',
+                link: 'https://twitter.com/the_matter_labs'
             },
             {
-                text: 'Status',
+                text: 'Medium',
+                link: 'https://medium.com/matterlabs'
+            },            
+            {
+                text: 'Uptime',
                 link: 'https://uptime.com/s/zksync'
             }
         ],
