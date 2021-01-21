@@ -24,8 +24,10 @@ You might know us as humble creators of [zkSync](https://zksync.io).
 ### What we're doing
 
 We are scaling Ethereum with [zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs/).
-This is [a key technology](https://zksync.io/faq/tech.html#zkrollup-architecture) to enable mainstream adoption of
-crypto, and our mission is to accelerate this inevitable outcome of the ongoing digital revolution.
+This is
+[a key technology](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
+to enable mainstream adoption of crypto, and our mission is to accelerate this inevitable outcome of the ongoing digital
+revolution.
 
 The team consists of world-class experts in [cryptography](https://eprint.iacr.org/2019/1400.pdf),
 [hardware](https://medium.com/matter-labs/worlds-first-practical-hardware-for-zero-knowledge-proofs-acceleration-72bf974f8d6e),
@@ -36,8 +38,8 @@ Our work is [being actively used](https://zkscan.io), and everything we build is
 
 ### How we work
 
-We stick to a strongly results-only mindest, implemented through autonomy and ownership. To get a deeper peek, check out
-the Matter Labs'
+Matter Labs is a place for ambitious people: you get lots of freedom to work on some of the world's most exciting
+engineering challenges, the only thing that matters is your results. To get a deeper peek, check out the Matter Labs'
 [Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02) and
 [Dev Handbook](https://www.notion.so/matterlabs/Matter-Labs-Dev-Handbook-734f92a38b1d42d3be024886b578ac18).
 
