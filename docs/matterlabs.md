@@ -6,7 +6,7 @@ search: false
 layout: LayoutML
 ---
 
-<img :src="$withBase('matter_labs_logo_dark.svg')" width="200px"/>
+<img :src="$withBase('matter_labs_logo_dark.svg')" width="260px"/>
 
 <br>
 <br>
