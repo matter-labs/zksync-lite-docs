@@ -39,7 +39,7 @@ Our work is [being actively used](https://zkscan.io), and everything we build is
 ### How we work
 
 Matter Labs is a place for ambitious people: you get lots of freedom to work on some of the world's most exciting
-engineering challenges, the only thing that matters is your results. To get a deeper peek, check out the Matter Labs'
+engineering challenges, the only thing that matters is your results. To take a deeper peek, check out the Matter Labs'
 [Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02) and
 [Dev Handbook](https://www.notion.so/matterlabs/Matter-Labs-Dev-Handbook-734f92a38b1d42d3be024886b578ac18).
 
