@@ -17,8 +17,8 @@ layout: LayoutML
 ## Hey! This is Matter Labs.
 
 We are an engineering team passionate about freedom, blockchain,
-[zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs/) and beautiful code. Our head office is [in Berlin](https://www.fullnode.berlin/), but we work from all over the world (mostly
-Europe).
+[zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs/) and beautiful code. Our head
+office is [in Berlin](https://www.fullnode.berlin/), but we work from all over the world (mostly Europe).
 
 You might know us as humble creators of [zkSync](https://twitter.com/zksync).
 
@@ -26,7 +26,9 @@ You might know us as humble creators of [zkSync](https://twitter.com/zksync).
 
 ### How we work
 
-Check out the [Matter Labs Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02).
+To get a deeper peek, check out the Matter Labs'
+[Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02) and
+[Dev Handbook](https://www.notion.so/matterlabs/Matter-Labs-Dev-Handbook-734f92a38b1d42d3be024886b578ac18).
 
 ### Interested to join?
 
