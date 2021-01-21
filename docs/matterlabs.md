@@ -3,6 +3,7 @@ sidebar: false
 navbar: true
 footer: true
 search: false
+layout: LayoutML
 ---
 
 <img :src="$withBase('matter_labs_logo_dark.svg')" width="200px"/>
