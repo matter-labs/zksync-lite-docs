@@ -6,6 +6,8 @@ search: false
 layout: LayoutML
 ---
 
+<!-- markdownlint-disable -->
+
 <img :src="$withBase('matter_labs_logo_dark.svg')" width="260px"/>
 
 <br>
@@ -24,19 +26,10 @@ You might know us as humble creators of [zkSync](https://twitter.com/zksync).
 
 ### How we work
 
-Check out the [Matter Labs Team Handbook]().
+Check out the [Matter Labs Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02).
 
 ### Interested to join?
 
 Matter Labs is always looking after exceptional talent. Please check out our
 [open positions](https://medium.com/matter-labs/software-engineering-jobs-at-matter-labs-c456d01b2a02), or just reach
 out if our mission and culture resonates with you.
-
-<!-- ### Footer
-
-- [Twitter]()
-- [Medium]()
-- [Telegram]()
-- [Contact]()
-- [Logos]()
-- [Impressum]() -->
