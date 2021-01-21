@@ -11,6 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    environment:
+      name: prod
+      url: https://github.com
+
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
