@@ -31,7 +31,8 @@ The team consists of world-class experts in [cryptography](https://eprint.iacr.o
 [hardware](https://medium.com/matter-labs/worlds-first-practical-hardware-for-zero-knowledge-proofs-acceleration-72bf974f8d6e),
 [compilers](https://zinc.zksync.io/), and
 [blockchain protocols](https://medium.com/matter-labs/zksync-v1-1-reddit-edition-recursion-up-to-3-000-tps-subscriptions-and-more-fea668b5b0ff).
-Our work is [being actively used](https://zkscan.io), and everything is [open source](https://github.com/matter-labs).
+Our work is [being actively used](https://zkscan.io), and everything we build is
+[open source](https://github.com/matter-labs).
 
 ### How we work
 
@@ -43,5 +44,5 @@ the Matter Labs'
 ### Interested to join?
 
 Matter Labs is always looking after exceptional talent. Please check out our
-[open positions](https://medium.com/matter-labs/software-engineering-jobs-at-matter-labs-c456d01b2a02), or just reach
-out if our mission, challenges and culture resonate with you.
+[open positions](https://www.notion.so/matterlabs/Jobs-4a69ed0f7acb45c89f662cf12dbc2464), or just reach out if our
+mission, challenges and culture resonate with you.
