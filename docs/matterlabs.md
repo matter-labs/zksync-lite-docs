@@ -4,6 +4,7 @@ navbar: true
 footer: true
 search: false
 layout: LayoutML
+toggleSidebar: false
 ---
 
 <img :src="$withBase('matter_labs_logo_dark.svg')" width="260px"/>
@@ -12,7 +13,7 @@ layout: LayoutML
 <br>
 <br>
 
-## Welcome to Matter Labs.
+## Hey! This is Matter Labs.
 
 We are a distributed team passionate about freedom, blockchain, security, [zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs/) and excellence in software engineering. 
 Our head office is [in Berlin](https://www.fullnode.berlin/), but we work from all over the world (mostly Europe). 
