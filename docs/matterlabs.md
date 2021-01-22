@@ -38,7 +38,7 @@ Everything we build is [open source](https://github.com/matter-labs).
 
 Matter Labs is a place full of ambitious people: we have tons of freedom but also a very strong results-first mindset.
 What matters here is getting things done. We value purposefulness, creativity, directness, minimalism, initiative, and
-BS-intolerance.
+BS-intolerance. Being in the business of security, we also pay huge respect to paranoid adversarial thinking.
 
 To take a deeper peek into our values and day-to-day work practices, check out the Matter Labs'
 [Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02) and
