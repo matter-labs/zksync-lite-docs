@@ -25,9 +25,9 @@ You might know us as humble creators of [zkSync](https://zksync.io).
 
 We are scaling Ethereum with [zero-knowledge proofs](https://github.com/matter-labs/awesome-zero-knowledge-proofs/).
 This is
-[a key technology](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
-to enable mainstream adoption of crypto, and our mission is to accelerate this inevitable outcome of the ongoing digital
-revolution.
+[an indispensable technology](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
+to enable mainstream adoption of crypto (i.e. public blockchains). Our mission is to accelerate this inevitable outcome
+of the ongoing digital revolution.
 
 zkSync is in production since Summer 2020, with [growing usage](https://zkscan.io). It makes crypto payments cheaper
 today, and it will soon be used to scale arbitrary smart contracts — imagine Solidity in a ZK rollup!
