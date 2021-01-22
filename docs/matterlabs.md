@@ -37,7 +37,7 @@ Everything we build is [open source](https://github.com/matter-labs).
 ### How we work
 
 Matter Labs is a place full of ambitious people: we have tons of freedom but also a very strong results-first mindset —
-what matters here is getting things done. We value purposefulness, creativity, directness, minimalism, initiative, and
+what matters is getting things done. We value purposefulness, creativity, directness, minimalism, initiative, and
 BS-intolerance. Being in the business of security, we also pay huge respect to paranoid adversarial thinking.
 
 To take a deeper peek into our values and day-to-day work practices, check out the Matter Labs'
