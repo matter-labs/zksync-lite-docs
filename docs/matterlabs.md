@@ -29,7 +29,7 @@ This is
 to enable mainstream adoption of crypto, and our mission is to accelerate this inevitable outcome of the ongoing digital
 revolution.
 
-zkSync is in production since Summer 2020, with [usage growing](https://zkscan.io).
+zkSync is in production since Summer 2020, with [growing usage](https://zkscan.io).
 
 Everything we build is [open source](https://github.com/matter-labs).
 
