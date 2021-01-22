@@ -29,15 +29,17 @@ This is
 to enable mainstream adoption of crypto, and our mission is to accelerate this inevitable outcome of the ongoing digital
 revolution.
 
-Our work is already [being actively used](https://zkscan.io). Everything we build is
-[open source](https://github.com/matter-labs).
+zkSync is in production since Summer 2020, with [usage growing](https://zkscan.io).
+
+Everything we build is [open source](https://github.com/matter-labs).
 
 ### How we work
 
 Matter Labs is a place full of ambitious people: we have tons of freedom but also a very strong results-first mindset.
-What matters here is getting things done. We value purposefulness, creativity, directness, minimalism, initiative, and BS-intolerance. 
+What matters here is getting things done. We value purposefulness, creativity, directness, minimalism, initiative, and
+BS-intolerance.
 
-To take a deeper peek, check out the Matter Labs'
+To take a deeper peek into our values and day-to-day work practices, check out the Matter Labs'
 [Team Handbook](https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02) and
 [Dev Handbook](https://www.notion.so/matterlabs/Matter-Labs-Dev-Handbook-734f92a38b1d42d3be024886b578ac18).
 
