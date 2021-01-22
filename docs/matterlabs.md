@@ -29,7 +29,8 @@ This is
 to enable mainstream adoption of crypto, and our mission is to accelerate this inevitable outcome of the ongoing digital
 revolution.
 
-zkSync is in production since Summer 2020, with [growing usage](https://zkscan.io). It makes crypto payments cheaper today, and it will soon be used to scale arbitrary smart contracts — imagine Solidity in a ZK rollup!
+zkSync is in production since Summer 2020, with [growing usage](https://zkscan.io). It makes crypto payments cheaper
+today, and it will soon be used to scale arbitrary smart contracts — imagine Solidity in a ZK rollup!
 
 Everything we build is [open source](https://github.com/matter-labs).
 
