@@ -45,7 +45,7 @@ To take a deeper peek into our values and day-to-day work practices, check out t
 
 ### Interested to join?
 
-Matter Labs is always looking after talent. Please check out our
+We're always hiring exceptional talent (expect the bar to be high). Please check out our
 [open positions](https://www.notion.so/matterlabs/Jobs-4a69ed0f7acb45c89f662cf12dbc2464), or just reach out if our
 mission, challenges and culture resonate with you.
 
