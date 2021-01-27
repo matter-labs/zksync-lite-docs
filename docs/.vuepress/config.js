@@ -44,6 +44,20 @@ module.exports = {
                 '/legal/terms',
                 '/legal/privacy'
             ],
+            '/partners/': [{
+                title: 'Partners',  // required
+                path: '/partners/', // optional, which should be a absolute path.
+                collapsable: false,  // optional, defaults to true
+                sidebarDepth: 1,     // optional, defaults to 1
+                children: [
+                    '/partners/ef',
+                    '/partners/placeholder'
+                ]
+            }],
+            // '/partners/': [
+            //     '/partners/ef',
+            //     '/partners/placeholder'
+            // ],
             '/': [         
                 '',
                 {
