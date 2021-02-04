@@ -48,7 +48,7 @@ function completeWithdrawals(uint32 _n) external nonReentrant;
 
 ## Sending transactions
 
-In order to send a transaction, user has to do the following steps:
+In order to send a transaction, the user has to do the following steps:
 
 1. Prepare the transaction data.
 2. Encode the transaction data into a byte sequence.
