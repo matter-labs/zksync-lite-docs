@@ -1,5 +1,7 @@
 # Basic Concepts
 
+[[toc]]
+
 ## Operations
 
 There are two types of operations in zkSync:

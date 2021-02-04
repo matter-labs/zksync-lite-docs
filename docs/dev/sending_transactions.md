@@ -4,6 +4,8 @@ This section explains principles of sending transactions into the zkSync network
 
 Provided examples are written in JavaScript, but aren't tied to any certain SDK.
 
+[[toc]]
+
 ## Sending priority operations
 
 Priority operations are invoked via calling the corresponding smart contract methods.

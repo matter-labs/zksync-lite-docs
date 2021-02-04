@@ -3,6 +3,8 @@
 This page contains the release notes for new features in zkSync network, and also notification about changes in the
 client libraries.
 
+[[toc]]
+
 ## Actual SDK versions
 
 | Network | JavaScript SDK | Rust SDK |
