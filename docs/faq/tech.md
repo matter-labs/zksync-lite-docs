@@ -57,9 +57,9 @@ contracts. We will provide more details later in a separate post.
 ## Transaction finality
 
 Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of **zkSync** block is generated and
-accepted by the smart contract. The proof time generation is expected to be ~10 min, i.e. 10 minutes after submitted, the
-**zkSync** transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with the
-proof.
+accepted by the smart contract. The proof time generation is expected to be ~10 min, i.e. 10 minutes after submitted,
+the **zkSync** transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with
+the proof.
 
 In contrast, fraud-based scaling solutions (e.g. optimistic rollup) require at least 2 weeks of lockout period to
 operate more or less securely, which results in 2 weeks objective<sup>\*</sup> tx finality time.

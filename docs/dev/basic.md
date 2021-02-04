@@ -22,8 +22,8 @@ Currently, there are the following types of priority operations:
   address.
 - `FullExit`: Withdraws funds from the zkSync network to the Ethereum network without interacting with the zkSync
   server. This operation can be used as an emergency exit in case of detected censorship from the zkSync server node, or
-  to withdraw funds in the situation where the signing key for an account in zkSync network cannot be set (e.g. if
-  the address corresponds to a smart contract).
+  to withdraw funds in the situation where the signing key for an account in zkSync network cannot be set (e.g. if the
+  address corresponds to a smart contract).
 
 ### Transactions
 
@@ -38,9 +38,9 @@ Currently, there are the following types of transactions:
 - `Transfer`: Transfers funds from one zkSync account to another zkSync account. If the recipient account does not exist
   yet on the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
 - `Withdraw`: Withdraws funds from the zkSync network to the Ethereum network.
-- `ForcedExit`: Withdraws funds from the "target" account, on the zkSync network, that doesn't have a signing key set, to the
-  same "target" address on the Ethereum network. This operation can be used to withdraw funds in the situation where the
-  signing key for account in zkSync network cannot be set (e.g. if address corresponds to a smart contract).
+- `ForcedExit`: Withdraws funds from the "target" account, on the zkSync network, that doesn't have a signing key set,
+  to the same "target" address on the Ethereum network. This operation can be used to withdraw funds in the situation
+  where the signing key for account in zkSync network cannot be set (e.g. if address corresponds to a smart contract).
 
 ## Blocks
 
@@ -67,8 +67,8 @@ This section describes typical use-cases of zkSync in a sequential manner.
 Accounts in zkSync can be created by either doing a deposit of funds from Ethereum or by transferring funds in zkSync to
 the desired address. Any of these options will create a new account in the zkSync network if it doesn't exist.
 
-However, newly created accounts are not capable of authorizing any transactions from it yet. In order to do so, the account
-owner must set the signing key for their account.
+However, newly created accounts are not capable of authorizing any transactions from it yet. In order to do so, the
+account owner must set the signing key for their account.
 
 ### Setting the signing key
 
@@ -101,8 +101,8 @@ Users may transfer any amount of funds in either Ether or any supported ERC-20 t
 found on the [corresponding explorer page](https://zkscan.io/tokens). It is also exposed via [API](../api).
 
 However, transfer to a non-existent account requires slightly more data to be sent on the smart contract (we have to
-include information about the new account), thus the fee for such transfers is slightly higher than the fee for transfers to
-existing accounts.
+include information about the new account), thus the fee for such transfers is slightly higher than the fee for
+transfers to existing accounts.
 
 ### Fees
 
