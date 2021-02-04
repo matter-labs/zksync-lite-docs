@@ -12,6 +12,7 @@ module.exports = {
     },
     plugins: [
         [
+            'fulltext-search',
             'vuepress-plugin-canonical',
             {
                 baseURL: 'https://zksync.io', // base url for your canonical link, optional, default: ''
