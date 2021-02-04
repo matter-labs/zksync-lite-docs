@@ -1,5 +1,7 @@
 # Overview
 
+[[toc]]
+
 ## Introduction
 
 **zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by

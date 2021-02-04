@@ -1,5 +1,7 @@
 # Technology
 
+[[toc]]
+
 ## zkRollup architecture
 
 **zkSync** is an L2 protocol based on the **ZK rollup** architecture. ZK rollup is a flavour of a larger "rollup"
