@@ -38,9 +38,9 @@ Currently, there are the following types of transactions:
 - `Transfer`: Transfers funds from one zkSync account to another zkSync account. If the recipient account does not exist
   yet on the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
 - `Withdraw`: Withdraws funds from the zkSync network to the Ethereum network.
-- `ForcedExit`: Withdraws funds from the "target" account, on the zkSync network, that doesn't have a signing key set,
-  to the same "target" address on the Ethereum network. This operation can be used to withdraw funds in the situation
-  where the signing key for account in zkSync network cannot be set (e.g. if address corresponds to a smart contract).
+- `ForcedExit`: Withdraws funds from the "target" L2 account that doesn't have a signing key set, to the same "target"
+  address on the Ethereum network. This operation can be used to withdraw funds in the situation where the signing key
+  for account in zkSync network cannot be set (e.g. if address corresponds to a smart contract).
 
 ## Blocks
 
