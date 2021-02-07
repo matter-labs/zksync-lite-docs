@@ -4,8 +4,8 @@
 
 ## Security overview
 
-[zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md) document explicitly lists
-the protocol's cryptographic assumptions and security properties.
+[zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md) explicitly lists the
+protocol's cryptographic assumptions and security properties.
 
 In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions,
 funds placed into zkSync will have the same security guarantees as if they are held in an Ethereum account without any
@@ -22,27 +22,27 @@ Several mechanisms are used to fulfill these guarantees, discussed below.
 
 zkSync is built on [zkRollup architecture](/faq/tech.md#zkrollup-architecture). This means, every single user
 transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of
-the block. Thus, no operator can ever move the system into an incorrect state or take users money.
+the block. Thus, no operator can ever move the system into an incorrect state or take users' funds.
 
 See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a) for a further overview of
-the benefits of the validity proofs.
+the benefits of validity proofs.
 
 ### Priority queue
 
 In the ultimate emergency case of all operators being shut down or becoming unresponsive, the emergency exit mechanism
 ensures that users will keep control of their assets. It works as follows.
 
-1. If transactions of a user are being for any reason ignored by the operator, an exit request can be submitted directly
-   on mainnet into the **priority queue**.
+1. If transactions of a user are being ignored, for any reason, by the operator, an exit request can be submitted
+   directly on mainnet into the **priority queue**.
 2. Operators are obliged to process priority queue requests within a short time window (~1 week).
 3. In case the operators fail to process the requests, the system enters **exodus mode** and every user can immediately
    exit all of their assets by making a direct transaction on the Ethereum mainnet.
 
 ### Upgrade mechanism
 
-The version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design
-iterations. However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via
-the zkSync contract and all users get a 4-week notice period to exit in case they don't like the changes.
+Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations.
+However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
+contract and all users get a 4-week notice period to exit in case they don't like the changes.
 
 WARNING: the beta will be deployed with a 1-day notice period, which will soon be bumped up to 1 week, then to 2 weeks,
 and finally to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
@@ -71,12 +71,12 @@ established cryptographic assumptions widely considered secure in the academic a
 
 ## Universal CRS setup
 
-The version 1.0 of zkSync protocol uses the PLONK proof system, which requires a "trusted setup" of a Common Reference
+Version 1.0 of zkSync protocol uses the PLONK proof system, which requires a "trusted setup" of a Common Reference
 String (CRS). In PLONK, this setup can be done once and be reused by any number of applications (this is called
 Universal CRS). If at least one participant deletes the entropy (randomness) used to provide their contribution, the
-setup is secure. Having universal and not application-specific setup significantly reduces trust assumptions, because
-larger number of prominent and respected members of the community have incentive to participate in it, and more scrutiny
-can be expected around the trusted setup ceremony.
+setup is secure. Having universal, and not application-specific, setup significantly reduces trust assumptions, because
+larger number of prominent and respected members of the community have the incentive to participate in it, and more
+scrutiny can be expected around the trusted setup ceremony.
 
 Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies
 (which are very difficult from the logistical and security perspectives).

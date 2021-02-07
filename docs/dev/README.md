@@ -6,7 +6,7 @@ Ethereum network. This document is a developer guide for building an application
 ## Resources
 
 - [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
-- [zkSync Ropsten testnet](https://rinkeby.zksync.io)
+- [zkSync Ropsten testnet](https://ropsten.zksync.io)
 - [zkSync Mainnet](https://wallet.zksync.io)
 - [JavaScript SDK documentation](../sdk/js)
 - [Rust SDK documentation](../sdk/rust)
@@ -16,5 +16,7 @@ Ethereum network. This document is a developer guide for building an application
 - [Overview](overview.md)
 - [Basic concepts](basic.md)
 - [Essential zkSync types](../sdk/js/types.md)
+- [Sending transactions](sending_transactions.md)
 - [Smart contracts addresses](contracts.md)
+- [Cryptographic backends](cryptography.md)
 - [zkSync updates](updates.md)

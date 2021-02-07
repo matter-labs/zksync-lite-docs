@@ -34,7 +34,7 @@ In the future the process will be fully automated.
 
 ## Troubleshooting
 
-### Used "Transfer" instead of "Withdraw" to get your funds onto mainnet
+### I used "Transfer" instead of "Withdraw" to get my funds onto mainnet
 
 If you attempted to withdraw your zkSync funds to L1, but mistakenly used "Transfer" option instead of "Withdraw", you
 should try to log in to the zkSync with the wallet that received the funds. If that's not possible, then you should read

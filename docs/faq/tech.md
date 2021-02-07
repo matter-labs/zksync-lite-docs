@@ -1,5 +1,7 @@
 # Technology
 
+[[toc]]
+
 ## zkRollup architecture
 
 **zkSync** is an L2 protocol based on the **ZK rollup** architecture. ZK rollup is a flavour of a larger "rollup"
@@ -18,8 +20,8 @@ nutshell, it works as follows:
 4. The proof and the state ∆ are verified by the smart contract, thus verifying both the validity of all the
    transactions included in the block and block data availability.
 
-The SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is
-significantly cheaper than storing it in EVM. Hence enabling a huge boost of scalability (~100-200x mainnet capacity)
+SNARK verification is much cheaper than verifying every transaction individually, and storing the state off-chain is
+significantly cheaper than storing it on EVM. Hence enabling a huge boost of scalability (~100-200x mainnet capacity)
 and tx cost savings.
 
 zkRollup architecture provides the following guarantees:
@@ -45,9 +47,9 @@ Here are some links to explore the topic of zkRollups:
 
 **zkSync** node infrastructure has been benchmarked to support >8000 TPS (transactions per second). Currently, actual
 transaction throughput has an upper bound of 300 TPS due to the current limitations of the PLONK CRS. Yet, this number
-by far exceeds [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and
+exceeds by far [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and
 should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal
-recursion (without such difficulties as the need for cycles of elliptic curves)! We already implemented, verified, and
+recursion (without difficulties such as the need for cycles of elliptic curves)! We already implemented, verified, and
 benchmarked it. Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the
 already-audited basic block circuit. Moreover, it is the key to the future implementation of privacy and smart
 contracts. We will provide more details later in a separate post.
@@ -55,9 +57,9 @@ contracts. We will provide more details later in a separate post.
 ## Transaction finality
 
 Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of **zkSync** block is generated and
-accepted by the smart contract. The proof time generation is expected to be ~10 min, i.e. after 10 minutes, the
-**zkSync** transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with the
-proof.
+accepted by the smart contract. The proof time generation is expected to be ~10 min, i.e. 10 minutes after submitted,
+the **zkSync** transaction is as final as any L1 Ethereum tx included in the same Ethereum block as the transaction with
+the proof.
 
 In contrast, fraud-based scaling solutions (e.g. optimistic rollup) require at least 2 weeks of lockout period to
 operate more or less securely, which results in 2 weeks objective<sup>\*</sup> tx finality time.
@@ -88,7 +90,7 @@ user that their transaction will be included in the next **zkSync** block, signe
 consensus participants (weighted by stake).
 
 If a new **zkSync** block is produced and submitted to the mainchain, it cannot be reverted. However, if it doesn’t
-contain the promised transaction, the security bond of the intersection of the signers of the original receipt and the
+contain the promised transactions, the security bond of the intersection of the signers of the original receipt and the
 signers of the new blocks will be slashed. This intersection is guaranteed to have more than ⅓ of the stake. This
 guarantees that at least ⅓ of the security bond can be slashed and that only malicious validators will be punished.
 
@@ -117,7 +119,7 @@ First and foremost, a congested network (just like as a targeted DOS attack) can
 **zkSync**. Any movement of funds within or out of **zkSync** requires a zero-knowledge proof of validity, and it's
 simply unaffected by censorship L1 in any way.
 
-Second, the normal operation of **zkSync** is also unlikely to be disrupted, even for smaller amounts. The operator's
+Secondly, the normal operation of **zkSync** is also unlikely to be disrupted, even for smaller amounts. The operator's
 node is configured to automatically increase the gas price to over-the-average level to get **zkSync** blocks mined with
 high priority. Since the on-chain costs per transaction are ~1/100th of the cost of corresponding plain transaction on
 the L1, **zkSync** users will be least affected.

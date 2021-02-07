@@ -4,6 +4,8 @@ zkSync uses cryptographic primitives different from ones that are used in Ethere
 operations, such as generating the private key and sign transactions, we provide interfaces for our cryptographic
 backend for various programming languages.
 
+[[toc]]
+
 This section provides an overview of existing cryptographic libraries.
 
 ## C

@@ -1,5 +1,7 @@
 # Smart contracts
 
+[[toc]]
+
 ## Zinc
 
 Zinc is a framework for constructing R1CS-based SNARK circuits and smart contracts for zkSync platform. It includes a

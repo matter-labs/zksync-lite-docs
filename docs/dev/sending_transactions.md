@@ -4,6 +4,8 @@ This section explains principles of sending transactions into the zkSync network
 
 Provided examples are written in JavaScript, but aren't tied to any certain SDK.
 
+[[toc]]
+
 ## Sending priority operations
 
 Priority operations are invoked via calling the corresponding smart contract methods.
@@ -46,7 +48,7 @@ function completeWithdrawals(uint32 _n) external nonReentrant;
 
 ## Sending transactions
 
-In order to send a transaction, user has to do the following steps:
+In order to send a transaction, the user has to do the following steps:
 
 1. Prepare the transaction data.
 2. Encode the transaction data into a byte sequence.
