@@ -2,16 +2,25 @@
 
 [[toc]]
 
+## Intro
+
+zkSync is on track to bring Turing-complete smart contracts 
+
+## Composability
+
 ## Zinc
 
-Zinc is a framework for constructing R1CS-based SNARK circuits and smart contracts for zkSync platform. It includes a
-simple, safe and efficient high-level programming language for defining zero-knowledge circuits, and a ZKP-friendly
-runtime execution environment. Zinc is designed to make developing scalable and privacy-preserving smart contracts easy.
+[Zinc](https://github.com/matter-labs/zinc) is a ramework for SNARK circuits and smart
+contracts for the zkSync platform. It includes a simple, safe and efficient Rust-based programming language for defining
+zero-knowledge circuits, and a ZKP-friendly runtime execution environment. Zinc is designed to make developing scalable
+and privacy-preserving smart contracts easy.
 
-Zinc [documentation](https://zinc.zksync.io/).
+[Get started](https://zinc.zksync.io/).
 
-Zinc on [GitHub](https://github.com/matter-labs/zinc).
+The testnet for smart contracts on zkSync is live with Curve Finance as the first resident dapp! Check out the
+[intro post](https://medium.com/@matterlabs/5a72c496b350).
 
-Zinc Alef, the testnet for smart contracts on zkSync is live with Curve Finance as the first resident dapp!
+## Solidity
 
-Check out the [intro post](https://medium.com/@matterlabs/5a72c496b350).
+## Roadmap
+
