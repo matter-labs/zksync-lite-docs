@@ -6,6 +6,7 @@ This repository contains the zkSync documentation hosted on <zksync.io>.
 
 ```bash
 yarn
+
 yarn docs:dev
 ```
 
