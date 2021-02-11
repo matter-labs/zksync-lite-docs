@@ -121,8 +121,6 @@ on whether there is at least one trustworthy person or organization among them. 
 eliminate trust assumptions altogether by embracing a transparent zero-knowledge proof system such as
 [RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
 
-## Security audit
+## Security audits
 
-The audit by [ABDK Consulting](https://www.abdk.consulting/) for zkSync v1.0 protocol is complete, the results are
-[available here](https://zksync.io/zksync-1.0-audit.pdf). The audit scope includes the protocol design, applied
-cryptography, smart contracts and zero-knowledge circuits.
+[Security audits](/updates/security-audits.md) are being conducted before each major update.
