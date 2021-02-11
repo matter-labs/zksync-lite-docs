@@ -17,11 +17,7 @@ and spelling is correct. Also, there should be no dead links.
 You can check it locally as follows:
 
 ```bash
-yarn
-yarn md:lint
-yarn md:deadlinks
-yarn fmt:check
-yarn cspell
+yarn run ci
 ```
 
 If `cspell` doesn't recognize a word but you're sure that it's correct, consider adding it to the `cspell-zksync.txt`.

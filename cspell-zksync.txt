@@ -20,6 +20,7 @@ unencrypted
 permissionless
 trustlessness
 IERC
+Composability
 
 mainchain
 offchain
