@@ -1,5 +1,7 @@
 # Smart contracts
 
+<!-- spell-checker:disable -->
+
 [[toc]]
 
 ## Intro
