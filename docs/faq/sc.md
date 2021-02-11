@@ -6,6 +6,8 @@
 
 zkSync is on track to bring Turing-complete smart contracts 
 
+## Programming model
+
 ## Composability
 
 ## Zinc
@@ -22,5 +24,6 @@ The testnet for smart contracts on zkSync is live with Curve Finance as the firs
 
 ## Solidity
 
-## Roadmap
+## How to deploy to zkSync?
 
+## Roadmap
