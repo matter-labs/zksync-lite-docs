@@ -24,6 +24,12 @@ The testnet for smart contracts on zkSync is live with Curve Finance as the firs
 
 ## Solidity
 
+## What should I choose?
+
 ## How to deploy to zkSync?
+
+### Testnet
+
+### Mainnet
 
 ## Roadmap
