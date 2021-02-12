@@ -7,6 +7,12 @@ We support HTTP and WebSocket transport protocols for JSON-RPC communications. E
 subscriptions, HTTP transport is preferred due to its stability. `HTTPTransport` and `WSTransport` classes are used to
 implement details of communication, but usually, you don't need to deal with these objects directly.
 
+::: warning
+
+Websocket support will be removed soon due to its instability.
+
+:::
+
 ## Sync provider
 
 ### Get default provider for network
@@ -21,7 +27,7 @@ Used to connect to the common endpoint for the given network over HTTP transport
 
 Supported networks are: "rinkeby", "ropsten", "mainnet", and "localhost".
 
-### Create WebSocket provider
+### Create WebSocket provider (it is deprecated and will be removed soon)
 
 > Creating provider over WebSocket transport. This call will create WS connection that should be closed.
 
