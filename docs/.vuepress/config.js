@@ -27,7 +27,8 @@ module.exports = {
         nav: [
             {
                 text: 'Docs',
-                link: '/faq/intro.html'
+                link: '/faq/'
+                //link: '/faq/intro.html'
             },
             {
                 text: 'Contact',
@@ -54,12 +55,14 @@ module.exports = {
                     children: [
                       '/faq/intro',
                       '/faq/tech',
+                      '/faq/security',
                       '/faq/wallets',
                       '/faq/tokens',
-                      '/faq/security',
                       '/faq/decentralization',
                       '/faq/sc',
                       '/faq/privacy',
+                      '/faq/tokenomics',
+                      '/faq/roadmap',
                       '/faq/status',
                     ]
                 },
