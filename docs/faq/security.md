@@ -20,9 +20,9 @@ Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/faq/tech.md#zkrollup-architecture). This means, every single 
-transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of
-the block. Thus, no operator can ever move the system into an incorrect state or take users' funds.
+zkSync is built on [zkRollup architecture](/faq/tech.md#zkrollup-architecture). This means, every single transaction is
+verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus,
+no operator can ever move the system into an incorrect state or take users' funds.
 
 See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a) for a further overview of
 the benefits of validity proofs.
@@ -50,8 +50,9 @@ and finally to 4 weeks. In the future, this opt-out mechanism will be replaced b
 ## Cryptography used
 
 Although zkSync is built on some of the most cutting-edge cryptography (such as PLONK and RedShift), we were very
-conservative with respect to security choices made in the protocol. Every component relies exclusively on 
-well-established cryptographic assumptions widely considered valid in the academic and professional security communities.
+conservative with respect to security choices made in the protocol. Every component relies exclusively on
+well-established cryptographic assumptions widely considered valid in the academic and professional security
+communities.
 
 ### Primitives
 
@@ -117,8 +118,8 @@ systems is much higher than in a trusted setup with hundreds of well-known parti
 operation of zkSync requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
 
 Nonetheless, we encourage you to check the list of the contributors of the Ignition ceremony and make your own opinion
-on whether there is at least one trustworthy person or organization among them. In the future, we strive to
-eliminate trust assumptions altogether by embracing a transparent zero-knowledge proof system such as
+on whether there is at least one trustworthy person or organization among them. In the future, we strive to eliminate
+trust assumptions altogether by embracing a transparent zero-knowledge proof system such as
 [RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
 
 ## Security audits

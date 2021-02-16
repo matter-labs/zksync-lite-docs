@@ -19,8 +19,8 @@ Ethereum, for both end-users and builders. The best way to get an impression abo
 
 ## Problems zkSync solves
 
-Gas fees on Ethereum [exceed \$50M per month](https://ethgasstation.info/). With zkSync these costs
-can be reduced to a small fraction.
+Gas fees on Ethereum [exceed \$50M per month](https://ethgasstation.info/). With zkSync these costs can be reduced to a
+small fraction.
 
 UX-first crypto wallets like [Argent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a
 banking alternative to entire societies. zkSync makes this mission accomplishable.
@@ -48,9 +48,8 @@ zkSync
 [stands out remarkably](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
 in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography
 and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that
-doesn't require any operational activity to keep the funds safe. For example, users can go offline for a year, then
-come back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long
-gone.
+doesn't require any operational activity to keep the funds safe. For example, users can go offline for a year, then come
+back and be sure to safely withdraw their assets without any external help — even if zkRollup operators were long gone.
 
 To quote from [Vitalik Buterin's 2021 guide to rollups](https://vitalik.ca/general/2021/01/05/rollup.html):
 
