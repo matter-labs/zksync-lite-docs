@@ -14,13 +14,13 @@ additional requirements on the user part. In particular:
 - Users do not need to monitor the network.
 - Private keys can be held in cold storage.
 - Operators can not steal funds or corrupt the zkSync state in any way.
-- Users can eventually withdraw their assets onto the mainnet, regardless of cooperation from zkSync operators.
+- Users can always withdraw their assets onto the mainnet, regardless of cooperation from zkSync operators.
 
 Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/faq/tech.md#zkrollup-architecture). This means, every single user
+zkSync is built on [zkRollup architecture](/faq/tech.md#zkrollup-architecture). This means, every single 
 transaction is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of
 the block. Thus, no operator can ever move the system into an incorrect state or take users' funds.
 
@@ -32,7 +32,7 @@ the benefits of validity proofs.
 In the ultimate emergency case of all operators being shut down or becoming unresponsive, the emergency exit mechanism
 ensures that users will keep control of their assets. It works as follows.
 
-1. If transactions of a user are being ignored, for any reason, by the operator, an exit request can be submitted
+1. If transactions of a user are being ignored, for any reason, by the operators, an exit request can be submitted
    directly on mainnet into the **priority queue**.
 2. Operators are obliged to process priority queue requests within a short time window (~1 week).
 3. In case the operators fail to process the requests, the system enters **exodus mode** and every user can immediately
@@ -44,14 +44,14 @@ Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order 
 However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
 contract and all users get a 4-week notice period to exit in case they don't like the changes.
 
-WARNING: the beta will be deployed with a 1-day notice period, which will soon be bumped up to 1 week, then to 2 weeks,
+NOTICE: the beta will be deployed with a 1-day notice period, which will soon be bumped up to 1 week, then to 2 weeks,
 and finally to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
 
 ## Cryptography used
 
 Although zkSync is built on some of the most cutting-edge cryptography (such as PLONK and RedShift), we were very
-conservative with respect to security choices made in the protocol. Every component relies exclusively on well
-established cryptographic assumptions widely considered secure in the academic and professional security community.
+conservative with respect to security choices made in the protocol. Every component relies exclusively on 
+well-established cryptographic assumptions widely considered valid in the academic and professional security communities.
 
 ### Primitives
 
@@ -67,7 +67,7 @@ established cryptographic assumptions widely considered secure in the academic a
 
 1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision_resistance)
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
-3. [Finite field and elliptic curve DLP](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
+3. [Discrete logarithm problem, on elliptic curves and finite fields](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
 
 ## Universal CRS setup
 
@@ -117,7 +117,7 @@ systems is much higher than in a trusted setup with hundreds of well-known parti
 operation of zkSync requires zero trust from any party whatsoever, which is unique among all L2 scaling solutions.
 
 Nonetheless, we encourage you to check the list of the contributors of the Ignition ceremony and make your own opinion
-on whether there is at least one trustworthy person or organization among them. And in the future, we strive to
+on whether there is at least one trustworthy person or organization among them. In the future, we strive to
 eliminate trust assumptions altogether by embracing a transparent zero-knowledge proof system such as
 [RedShift](https://eprint.iacr.org/2019/1400) (developed by Matter Labs).
 
