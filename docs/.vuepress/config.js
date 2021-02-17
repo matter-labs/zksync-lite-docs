@@ -59,9 +59,9 @@ module.exports = {
                       '/faq/wallets',
                       '/faq/tokens',
                       '/faq/decentralization',
+                      '/faq/tokenomics',
                       '/faq/sc',
                       '/faq/privacy',
-                      '/faq/tokenomics',
                       '/faq/roadmap',
                       '/faq/status',
                     ]

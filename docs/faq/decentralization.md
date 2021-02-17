@@ -16,10 +16,10 @@ scale can be used to asses a level of decentralization of a crypto project with 
 
 Right now, **zkSync** is at level 4 of this scale. It is fully non-custodial with zero trust assumptions: the **zkSync**
 operator has no power to do anything with user's assets without explicit authorization. Users can always withdraw all of
-their funds to Ethereum without any cooperation from operator (even if the latter is completely shut down and
+their funds to Ethereum mainnet without any cooperation from operators (even if the latter is completely shut down and
 unresponsive).
 
-However, the daily operation of the **zkSync** network at the moment depends on the health of the computational service
+However, at the moment, the daily operation of the **zkSync** network depends on the health of the computational service
 provider who generates zero-knowledge proofs for the blocks.
 
 <span class="footnote"><sup>\*</sup> For L1 networks, trustlessness is only guaranteed by the ability (and to the extent
@@ -29,8 +29,8 @@ protocols, this is not necessary, because users can ultimately rely on L1 to cir
 ## Who operates zkSync now
 
 Currently, the computational service provider for the **zkSync** network is "Stichting ZK Sync", a non-profit Dutch
-foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service will operate at break-even
-cost until the transition to full decentralization.
+foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service operates at break-even
+costs. For the business model, see [here](/faq/tokenomis.md).
 
 ## Decentralization roadmap
 
