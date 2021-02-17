@@ -2,9 +2,6 @@
 
 [[toc]]
 
-
-
-
 ## Project status
 
 - [zkSync v1 is Live on Mainnet][mainnet].
