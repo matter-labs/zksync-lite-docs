@@ -30,7 +30,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 ## zkSync features
 
 - Mainnet-level security with zero reliance on 3rd parties.
-- ETH and ERC20 token transfers with instant confirmations and 10-minute finality on L1.
+- ETH and ERC20 token transfers with instant confirmations and 10-minute finality on L1 (see [supported tokens](/faq/tokens.md#supported-tokens)).
 - Zero-cost account creation.
 - Ultra-low transaction fees (~ \$0.001 per transfer).
 - Payments to existing Ethereum addresses (including smart-contracts).

@@ -14,7 +14,7 @@ To control an address programmatically, all you need to is to be able to sign a 
 Ethereum signature, or via [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md) in case of smart
 contracts. Learn more in the [developer guide](../dev/).
 
-## What if my wallet is not supported or can't sign a message?
+## What if my wallet is not supported or can't sign messages?
 
 Owners of some Ethereum addresses cannot use zkSync directly for various reasons:
 
@@ -32,12 +32,24 @@ If you need to withdraw your funds from such an account, please fill the followi
 
 In the future the process will be fully automated.
 
+## Why do I need to unlock my account and why does it cost more than other transactions?
+
+Informally, you need to do a one-time 'registration' of your account. More technically, zkSync accounts are defined 
+over a different elliptic curve than Ethereum's that is better suited for zero-knowledge proofs. Unlocking your account 
+generates and published a new private-public key pair over this curve, which is associated to your Ethereum address.
+
+Unlocking your account incur higher costs than other zkSync transactions, because the process of registration happens 
+directly on the Etheruem smart contract, and not as part of a zero-knowledge proof. If you are using an ERC-1271 compatible 
+wallet (like Argent), this one-time cost becomes greater because of higher interaction with the zkSync smart contract. 
+The fee you pay for this operation is used to pay the fee for the corresponding Ethereum transaction, and so it goes to 
+Ethereum miners and not to zkSync operators.
+
 ## Troubleshooting
 
 ### I used "Transfer" instead of "Withdraw" to get my funds onto mainnet
 
 If you attempted to withdraw your zkSync funds to L1, but mistakenly used "Transfer" option instead of "Withdraw", you
-should try to log in to the zkSync with the wallet that received the funds. If that's not possible, then you should read
+should try to log in to zkSync with the wallet that received the funds. If that's not possible, then you should read
 the section above about how to withdraw the funds from a wallet that is not supported by zkSync.
 
 ### My withdrawal was completed, but the funds have not arrived on mainnet
@@ -56,8 +68,8 @@ will actually arrive at your wallet.
 
 So you've waited a day, but still, the funds have not reached your account. What do you do next?
 
-Please open the [etherscan](https://etherscan.io/) and go to your address page, then head to the "Internal Txs". There
-will be a list of all transactions to your account from smart contracts. There you should see a transaction coming from
+Please open [etherscan](https://etherscan.io/) and go to your address page, then head to "Internal Txs". There
+will be a list of all transactions to your account from smart contracts. In there you should see a transaction coming from
 the zkSync smart contract. If you see the transaction, then your funds did arrive. Your wallet may not display these
 types of transactions, that's why it might seem like your account has not received any funds at all.
 
@@ -69,14 +81,22 @@ your account.
 
 #### 3. Your withdrawal transaction was "out of gas"
 
-Sorry for the inconvenience.
+If you see an internal transaction from the zkSync smart contract (as explained in the previous item), it is possible 
+that this transaction was not completed because of insufficient gas. You can check if this is the case by clicking on 
+the transaction (on etherscan) and see if there's an error message "out of gas".
 
-You'll need to wait until the smart contract upgrade (roughly by the end of January) to recover your funds. The
-instructions will appear here in the docs when the update is complete.
+If this happened, we are sorry for the inconvenience.
+
+If you are experienced working with Ethereum smart contracts, you should do the following; otherwise, please 
+skip to the next item.
+- call `getPendingBalance(yourAddress, token)` on the zkSync smart contract to know the exact amount of funds 
+  stuck on the contract.
+- call `withdrawPendingBalance(yourAddress, token, amount)` on the zkSync smart contract to withdraw the funds.
+
 
 ### If none of the above did help
 
-If nothing above have helped you, please shoot us email at **withdraw@zksync.io** describing your problem. It MUST
+If nothing above have helped you, please shoot us email to **withdraw@zksync.io** describing your problem. It MUST
 contain the following info:
 
 - Your zkSync wallet address.
