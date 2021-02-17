@@ -22,5 +22,5 @@ This has not been determined yet. Stay tuned.
 
 ### How will it work?
 
-As stated [here](/faq/decentralization.html#how-decentralized-is-zksync), zkSync will become fully decentralized. The
+As stated [here](/faq/decentralization.md#how-decentralized-is-zksync), zkSync will become fully decentralized. The
 token will be used for staking in order to become a validator in the zkSync network. More details to come.
