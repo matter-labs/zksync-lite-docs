@@ -15,10 +15,11 @@
 ## Future plans
 
 We highlight some of our future plans -- more details will be given at a later time.
+
 - Enable permissionless token listing.
 - Integrations of zkSync with a variety of wallets.
 - Integrations of zkSync with exchanges.
 - Introduce [smart contracts](/faq/sc.md) on zkSync.
-- Introduce a proof-of-stake consensus protocol on L2 as part of the [decentralization](/faq/decentralization.md) 
+- Introduce a proof-of-stake consensus protocol on L2 as part of the [decentralization](/faq/decentralization.md)
   process.
 - Launch [token](/faq/tokenomics.md).

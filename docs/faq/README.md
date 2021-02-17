@@ -1,9 +1,10 @@
 # Welcome to zkSync
 
-**zkSync** is a user-centric zkRollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for 
-Ethereum, already live on Etheruem mainnet.
+**zkSync** is a user-centric zkRollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
+Ethereum, already live on Ethereum mainnet.
 
 Some of the main features of zkSync are:
+
 - Extremely low transaction fees
 - Trustless protocol
 - Funds are as secure as in Ethereum mainnet
