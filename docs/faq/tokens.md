@@ -35,10 +35,10 @@ In **zkSync** the cost of every transaction has two components:
 - **Off-chain part (storage + prover costs)**: the cost of the state storage and the SNARK (zero-knowledge proof)
   generation. This part depends on the use of hardware resources and is therefore invariable. Our benchmarks give
   estimates of ~0.001 USD per transfer.
-- **On-chain part (gas costs)**: for every **zkSync** block, the validator must pay Ethereum gas to verify the SNARK, 
-  plus additionally ~0.4k gas per transaction to publish the state ∆. The on-chain part is a variable that depends 
-  on the current gas price in the Ethereum network. However, this part is orders of magnitude cheaper than the cost 
-  of normal ETH/ERC20 transfers.
+- **On-chain part (gas costs)**: for every **zkSync** block, the validator must pay Ethereum gas to verify the SNARK,
+  plus additionally ~0.4k gas per transaction to publish the state ∆. The on-chain part is a variable that depends on
+  the current gas price in the Ethereum network. However, this part is orders of magnitude cheaper than the cost of
+  normal ETH/ERC20 transfers.
 
 ## How fees are payed
 
