@@ -2,7 +2,7 @@
 
 In this tutorial we will demonstrate how to integrate basic zkSync checkout flow into any website:
 
-1. Check if the user has enough balance to pay for the goods.
+1. Check if the user has sufficient balance to pay for the goods.
 2. Proceed to checkout.
 3. Verify that the transactions have been completed.
 
@@ -85,8 +85,8 @@ const checkoutManager = new CheckoutManager('mainnet');
 
 ## Checking user's balance
 
-If the address of the user is known, we should check if the user has enough funds to proceed with the payment. This can
-be done easily with the following piece of code:
+If the address of the user is known, we should check if the user has sufficient funds to proceed with the payment. This
+can be done easily with the following piece of code:
 
 ```ts
 // For testing purposes, the default providers could be used
@@ -96,7 +96,7 @@ const ethProvider = ethers.providers.getDefaultProvider('mainnet');
 
 // ...
 
-// Checks that both L1 + L2 balances of the user is enough to pay
+// Checks that sum of L1 + L2 balances of the user are sufficient to pay
 // for the transactions
 const hasEnoughBalance = await checkoutManager.checkEnoughBalance(transactions, feeToken, address, ethProvider);
 
@@ -126,8 +126,8 @@ It is always a good practice to validate the data received from the front-end on
 
 So make sure to check on the server side that the transactions were valid and have been completed. This can be easily
 done through the SDKs for the supported languages. Here is
-[an example from JS SDK](/sdk/js/providers#wait-for-transaction-receipt). If there is no zkSync SDK for your
-backend language you can easily check the transaction status [via our API](/api/v0.1.md#transaction-details).
+[an example from JS SDK](/sdk/js/providers#wait-for-transaction-receipt). If there is no zkSync SDK for your backend
+language you can easily check the transaction status [via our API](/api/v0.1.md#transaction-details).
 
 :::
 
@@ -154,7 +154,7 @@ async function checkoutUser(
   const checkoutManager = new CheckoutManager('mainnet');
 
   if (address) {
-    // Checks that both L1 + L2 balances of the user is enough to pay
+    // Checks that sum of L1 + L2 balances of the user are sufficient to pay
     // for the transactions
     const hasEnoughBalance = await checkoutManager.checkEnoughBalance(transactions, feeToken, address, ethProvider);
 

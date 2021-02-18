@@ -4,17 +4,17 @@
 
 The library provides a convenient way to integrate zkSync checkout flow into any website.
 
-The main export of the library is `CheckoutManager` class, which must be instantiated separately for each checkout.
+The main export of the library is the `CheckoutManager` class, which must be instantiated separately for each checkout.
 
-The library also exports `Constants`, `Types`, `Utils`. These export constants, type definitions and type guards,
-collection of the utilities.
+The library also exports `Constants`, `Types`, `Utils`. These export constants, type definitions and type guards, as
+well as some utility functions.
 
 It also exports functions that might be commonly used:
 
 - `estimateBatchFee` is used to estimate the fee for a batch of transactions.
 - `wait` is used to wait until a batch of transactions is either committed or verified.
 - `getState` is used to get the state of a zkSync account.
-- `checkEnoughBalance` is used to check if the user has enough balance to proceed to the checkout.
+- `checkEnoughBalance` is used to check if the user has sufficient balance to proceed to the checkout.
 
 Note that the library might also export other functions or classes. However, you should not use functions or classes
 that are not mentioned in the reference. These are exported for internal use and are unstable, so they can be removed at
@@ -40,12 +40,12 @@ interface ZkSyncTransaction {
 }
 ```
 
-- `from` field contains the Ethereum address of the transaction sender. The field can be omitted since the user has to
-  log in to zkSync before continuing the checkout process. But if this field is specified and the account from which the
-  user logs in to zkSync differs from any of the `from` fields of the transactions, the zkSync checkout page will notify
-  the user about that and will ask her to log in to the appropriate account.
-- `to` field contains the Ethereum address of the recipient of the transaction.
-- `token` — a the symbol of the token in which the transaction will be done.
+- `from` — this field contains the Ethereum address of the transaction sender. The field can be omitted since the user
+  has to log in to zkSync before continuing the checkout process. But if this field is specified and the account from
+  which the user logs in to zkSync differs from any of the `from` fields of the transactions, the zkSync checkout page
+  will notify the user about that and will ask her to log in to the appropriate account.
+- `to` — this field contains the Ethereum address of the recipient of the transaction.
+- `token` — the symbol of the token in which the transaction will be done.
 - `amount` — amount of tokens in wei to be transferred.
 - `semanticType` — semantic type of the transaction, it is used to help the zkSync checkout popup provide better UX. For
   instance, if your website collects fees in a certain transaction, you should set `semanticType` to
@@ -54,7 +54,7 @@ interface ZkSyncTransaction {
 **Note** that if you set `semanticType` to `'FeeOrCommission'` then you also MUST provide a non-empty `description`. If
 you don't, the checkout will fail with `RECEIVED_INVALID_DATA_ERROR`.
 
-- `description` — the description of the transaction. For now, it is only used when `semanticType` is set to
+- `description` — the transaction description. For now, it is only used when `semanticType` is set to
   `'FeeOrCommission'`, and is ignored otherwise.
 
 ### TokenLike
@@ -110,11 +110,11 @@ Gets an array of the zkSync transactions for the flow and token in which the zkS
 `userAddress` is the optional parameter, which, if supplied, will be used to check that the user logs in with the
 correct address.
 
-Returns a Promise that resolves with the array of the hashes of the transactions in the same order as the transactions
+Returns a promise that resolves with the array of the hashes of the transactions in the same order as the transactions
 were supplied.
 
-**Note, that you should NOT add the fee transaction on yourselves.** Just specify the `feeToken` and everything else
-will be handled by us.
+**Note, that you should NOT add the fee transaction by yourself.** Just specify the `feeToken` and everything else will
+be handled by us.
 
 ### estimateBatchFee
 
@@ -140,9 +140,10 @@ Gets an array of the zkSync transactions for the flow and the token in which the
 
 Returns the promise that resolves with the number of `feeToken` (in wei) that will be paid by the user.
 
-Note, that the value that the method returns does not take into account the amount of fee that will be paid by the user
-in process of depositing the tokens she lacks. But it DOES take into account the fact that one transaction will be added
-to pay the fee.
+Note, that the value that the method returns does not take into account the amount of the gas fee that will be paid by
+the user in process of depositing the tokens she lacks on L2 to proceed to checkout. But it DOES take into account the
+fact that one transaction will be added to pay the fee. You can read more on the optional additional fee transaction in
+batches [here](/dev/sending_transactions.md#sending-transaction-batches).
 
 ### wait
 
@@ -213,10 +214,10 @@ async function checkEnoughBalance(
 ): Promise<boolean>;
 ```
 
-Gets the list of transactions, token to pay the fee with, and the address of the user as parameters. Also takes an
-ethers provider as a parameter. It is needed to check L1 balance of the user.
+Gets a list of transactions, token to pay the fee with, and the address of the user as parameters. Also takes an ethers
+provider as a parameter. It is needed for checking the L1 balance of the user.
 
-Returns a Promise that resolves with `true` if the user has enough combined balance on L1 + L2 to do all the
+Returns a promise that resolves with `true` if the user has combined balance on L1 + L2 sufficient to do all the
 transactions and pay the fee, and `false` otherwise.
 
 The function can throw `FAILED_TO_GET_ONCHAIN_BALANCE` if it fails to get the on-chain balance of the user.
@@ -225,7 +226,7 @@ The function can throw `FAILED_TO_GET_ONCHAIN_BALANCE` if it fails to get the on
 
 A collection of all the important constants.
 
-The majority of the constants are for the internal use but there are some of them that might be useful.
+The majority of the constants are for internal use but some of them might be useful.
 
 ### CheckoutErrors
 
@@ -315,7 +316,7 @@ The internal part of the checkout will consist of the following stages:
 
 1. The client calls `zkSyncBatchCheckout`.
 2. When the tab is open, the zkSync page will send the `ZKSYNC_OPENED` message. If it fails to do within
-   `OPENING_TIMEOUT` ms, the checkout Promise resolves with `OPENING_TIMEOUT_ERROR`. After receiving the `ZKSYNC_OPEN`
+   `OPENING_TIMEOUT` ms, the checkout promise resolves with `OPENING_TIMEOUT_ERROR`. After receiving the `ZKSYNC_OPEN`
    message, the client's page will send a `START_SESSION` message to the zkSync page. The message contains:
    - Array of the transactions, specified by the user.
    - Token to pay the fee with.
