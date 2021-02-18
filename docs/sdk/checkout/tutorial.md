@@ -126,8 +126,8 @@ It is always a good practice to validate the data received from the front-end on
 
 So make sure to check on the server side that the transactions were valid and have been completed. This can be easily
 done through the SDKs for the supported languages. Here is
-[an example from JS SDK](/sdk/js/providers.html#wait-for-transaction-receipt). If there is no zkSync SDK for your
-backend language you can easily check the transaction status [via our API](/api/v0.1.html#transaction-details).
+[an example from JS SDK](/sdk/js/providers#wait-for-transaction-receipt). If there is no zkSync SDK for your
+backend language you can easily check the transaction status [via our API](/api/v0.1.md#transaction-details).
 
 :::
 

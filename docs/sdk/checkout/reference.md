@@ -30,7 +30,7 @@ interface:
 ```tsx
 interface ZkSyncTransaction {
   // If the address specified differs from the one that the
-  // user logs in to zkSync with, the user will be asked to relogin
+  // user logs in to zkSync with, the user will be asked to re-login
   from?: string;
   to: string;
   token: TokenLike;
@@ -231,6 +231,12 @@ The majority of the constants are for the internal use but there are some of the
 
 An object that contains the text messages of all the errors that might be thrown during the checkout flow.
 
+<!--
+  There were some spelling mistakes in the library itself.
+  There is a task to correct them and update the docs (ZKS-497)
+-->
+<!-- cSpell:ignore enviroment occured retreive -->
+
 ```tsx
 export const CheckoutErrors = {
   NOT_IMPLEMENTED_ERROR: 'This functionality is not implemented',
@@ -252,7 +258,7 @@ export const CheckoutErrors = {
 
 The `CheckoutErrors` contains the errors of which might happen both on the zkSync side and on the client's side.
 
-#### Common errors:
+#### Common errors
 
 - `NOT_IMPLEMENTED_ERROR`. When the library is complete, there should be no places, where such an error could be thrown,
   but for the time of development, this error is thrown in the places which have not been properly implemented yet.
@@ -264,7 +270,7 @@ The `CheckoutErrors` contains the errors of which might happen both on the zkSyn
   address is broken.
 - `FAILED_TO_GET_ONCHAIN_BALANCE`. This error is thrown if the library fails to retrieve the user's Ethereum balance.
 
-#### Client-side errors:
+#### Client-side errors
 
 - `NOT_IN_BROWSER_ERROR`. This error is thrown because the library is intended to be used only in the browser
   environment. Particularly, the error is thrown if the `window` global object is not defined.
@@ -275,7 +281,7 @@ The `CheckoutErrors` contains the errors of which might happen both on the zkSyn
 - `ZKSYNC_CLOSED_ERROR`. This error is thrown when the user closes the zkSync checkout page without initiating any
   transactions.
 
-#### zkSync-side errors:
+#### zkSync-side errors
 
 - `NO_OPENER_ERROR`. This error is thrown if the checkout page is opened without an opener (basically that means, that
   the page was opened directly, but not as a popup). That's why you may see the gray screen if you open the checkout
@@ -309,14 +315,12 @@ The internal part of the checkout will consist of the following stages:
 
 1. The client calls `zkSyncBatchCheckout`.
 2. When the tab is open, the zkSync page will send the `ZKSYNC_OPENED` message. If it fails to do within
-   `OPENING_TIMOUT` ms, the checkout Promise resolves with `OPENING_TIMEOUT_ERROR`. After receiving the `ZKSYNC_OPEN`
+   `OPENING_TIMEOUT` ms, the checkout Promise resolves with `OPENING_TIMEOUT_ERROR`. After receiving the `ZKSYNC_OPEN`
    message, the client's page will send a `START_SESSION` message to the zkSync page. The message contains:
-
-- Array of the transactions, specified by the user.
-- Token to pay the fee with.
-- The origin of the opener. Must be equal to the origin of the opener (zkSync checks it on its side).
-- The checkout id — a feature that enables multiple checkouts at the same time.
-
+   - Array of the transactions, specified by the user.
+   - Token to pay the fee with.
+   - The origin of the opener. Must be equal to the origin of the opener (zkSync checks it on its side).
+   - The checkout id — a feature that enables multiple checkouts at the same time.
 3. If at least in one transaction the `from` field differs from the user's one, the zkSync page will tell the user about
    it and will offer him to log in with the other account.
 
@@ -336,7 +340,7 @@ wait until they are committed or verified using the `wait` function.
 
 **Time constants (all in ms):**
 
-- `OPENING_TIMOUT` — 10000
+- `OPENING_TIMEOUT` — 10000
 - `CLOSE_POLL_INTERVAL` — 3000
 - `FOLLOWUP_HASHES_TIMEOUT` — 500
 - `OPENER_CLOSED_POLL_INTERVAL` — 300

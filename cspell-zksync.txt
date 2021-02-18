@@ -67,6 +67,7 @@ subsecond
 supermajority
 gemeente
 unauthorised
+SDKs
 
 // Famous crypto people
 Vitalik's
