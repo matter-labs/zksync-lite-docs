@@ -6,7 +6,8 @@ It is possible to use `zksync-checkout` in a browser directly.
 
 > The example from the tutorial with zksync-checkout fetched from [https://unpkg.com](https://unpkg.com) CDN
 
-**Note** that it is likely that if the checkout is called instantly, the popup will be blocked by the browser. You should open the checkout after some event, e.g. button click.
+**Note** that it is likely that if the checkout is called instantly, the popup will be blocked by the browser. You
+should open the checkout after some event, e.g. button click.
 
 ```html
 <html>
@@ -14,13 +15,9 @@ It is possible to use `zksync-checkout` in a browser directly.
     <script type="text/javascript" src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/zksync-checkout@latest/dist/main.js"></script>
     <script type="text/javascript">
-      async function checkoutUser(
-        transactions,
-        feeToken,
-        address
-      ) {
-        const checkoutManager = new ZkSyncCheckout.CheckoutManager('mainnet'); 
-        if(address) {
+      async function checkoutUser(transactions, feeToken, address) {
+        const checkoutManager = new ZkSyncCheckout.CheckoutManager('mainnet');
+        if (address) {
           const hasEnoughBalance = await checkoutManager.checkEnoughBalance(
             transactions,
             feeToken,
@@ -32,7 +29,7 @@ It is possible to use `zksync-checkout` in a browser directly.
             throw new Error('Not enough balance!');
           }
         }
-        
+
         const txHashes = await checkoutManager.zkSyncBatchCheckout(transactions, feeToken);
         const receipts = await checkoutManager.wait(txHashes);
       }
@@ -44,7 +41,6 @@ It is possible to use `zksync-checkout` in a browser directly.
           description: 'For apples'
         },
         {
-          
           to: '<your-eth-address>',
           token: 'DAI',
           amount: '55500000000000000000',
