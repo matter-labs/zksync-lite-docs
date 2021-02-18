@@ -7,7 +7,7 @@ public interface Provider {
 
     /**
      * Get current state of the account
-     * 
+     *
      * @param accountAddress - Address of the account in hex format
      * @return AccountState that represent state of the account
      */
@@ -15,7 +15,7 @@ public interface Provider {
 
     /**
      * Get fee of transaction that means cost of transaction execution in ZkSync network
-     * 
+     *
      * @param feeRequest - Transaction information for estimation fee
      * @return Details of fee amount for transaction execution
      */
@@ -23,7 +23,7 @@ public interface Provider {
 
     /**
      * Get fee of batch of transaction that means cost of transaction batch execution in ZkSync network
-     * 
+     *
      * @param feeRequest - Transaction batch information for estimation fee
      * @return Details of fee amount for transaction execution
      */
@@ -31,14 +31,14 @@ public interface Provider {
 
     /**
      * Get list of tokens supproted by ZkSync network
-     * 
+     *
      * @return Token information
      */
     Tokens getTokens();
 
     /**
      * Get the token price in USD known to server
-     * 
+     *
      * @param token - Token details object
      * @return current token price
      */
@@ -46,7 +46,7 @@ public interface Provider {
 
     /**
      * Submit signed transaction to ZkSync network
-     * 
+     *
      * @param tx - Signed transaction object
      * @param ethereumSignature - Signature of Ethereum account as 2-FA authorization
      * @param fastProcessing - Mark the transaction should be executed as soon as possible
@@ -56,7 +56,7 @@ public interface Provider {
 
     /**
      * Submit signed transaction to ZkSync network
-     * 
+     *
      * @param tx - Signed transaction object
      * @param fastProcessing - Mark the transaction should be executed as soon as possible
      * @return Hash of the sent transaction in ZkSync network
@@ -65,7 +65,7 @@ public interface Provider {
 
     /**
      * Submit signed transaction batch to ZkSync network
-     * 
+     *
      * @param txs- List of signed transaction objects
      * @param ethereumSignature - Signature of Ethereum account as 2-FA authorization
      * @return List of hashes of the sent transactions in ZkSync network
@@ -74,7 +74,7 @@ public interface Provider {
 
     /**
      * Submit signed transaction batch to ZkSync network
-     * 
+     *
      * @param txs - List of signed transaction objects
      * @return List of hashes of the sent transactions in ZkSync network
      */
@@ -82,7 +82,7 @@ public interface Provider {
 
     /**
      * Get details of the transaction in ZkSync network by hash
-     * 
+     *
      * @param txHash - Hash of the transaction in format: `sync-tx:[hex]`
      * @return Details of the transaction
      */
@@ -90,14 +90,14 @@ public interface Provider {
 
     /**
      * Get address of ZkSync contract deployed in Ethereum network
-     * 
+     *
      * @return Address of contract in hex
      */
     ContractAddress contractAddress();
 
     /**
      * Get information for Priority Operation by id
-     * 
+     *
      * @param priorityOperationId - Identifier of Priority Operation
      * @return Information of Priority Operation
      */
@@ -105,14 +105,14 @@ public interface Provider {
 
     /**
      * Get the amount of confirmations on Ethereum required for Priority Operation to be processed
-     * 
+     *
      * @return Amount of confirmations
      */
     BigInteger getConfirmationsForEthOpAmount();
 
     /**
      * Get hash of the transaction in Ethereum network by hash of the transaction sent in ZkSync
-     * 
+     *
      * @param zkSyncWithdrawalHash - Hash of the transaction in format: `sync-tx:[hex]`
      * @return Hash of the sent transaction in Ethereum network
      */
@@ -120,7 +120,7 @@ public interface Provider {
 
     /**
      * Create default ZkSync provider by given chain id
-     * 
+     *
      * @param chainId - Chain id supproted by ZkSync network
      * @return ZkSync provider object
      */
@@ -145,7 +145,7 @@ public interface EthereumProvider {
 
     /**
      * Send approve transaction to token contract.
-     * 
+     *
      * @param token - Token object supported by ZkSync
      * @param limit - Maximum amount to approve for ZkSync contract
      * @return CompletableFuture for waiting for transaction mine
@@ -154,7 +154,7 @@ public interface EthereumProvider {
 
     /**
      * Send transfer transaction. This is the regular transfer of ERC20 token
-     * 
+     *
      * @param token - Token object supported by ZkSync
      * @param amount - Amount tokens to transfer
      * @param to - Address of receiver tokens
@@ -164,17 +164,17 @@ public interface EthereumProvider {
 
     /**
      * Send deposit transaction to ZkSync contract. For ERC20 token must be approved before. @see EthereumProvider.approveDepodits
-     * 
+     *
      * @param token - Token object supported by ZkSync
      * @param amount - Amount tokens to transfer
      * @param userAddress - Address of L2 receiver deposit in ZkSync
      * @return CompletableFuture for waiting for transaction mine
      */
     CompletableFuture<TransactionReceipt> deposit(Token token, BigInteger amount, String userAddress);
-    
+
     /**
      * Send withdraw transaction to ZkSync contract.
-     * 
+     *
      * @param token - Token object supported by ZkSync
      * @param amount - Amount tokens to transfer
      * @return CompletableFuture for waiting for transaction mine
@@ -182,8 +182,8 @@ public interface EthereumProvider {
     CompletableFuture<TransactionReceipt> withdraw(Token token, BigInteger amount);
 
     /**
-     * Return back deposit by token. 
-     * 
+     * Return back deposit by token.
+     *
      * @param token - Token object supported by ZkSync
      * @param accountId - Id of account in ZkSync
      * @return CompletableFuture for waiting for transaction mine
@@ -192,7 +192,7 @@ public interface EthereumProvider {
 
     /**
      * Setup L2 public key hash for specific nonce
-     * 
+     *
      * @param pubKeyhash - Public key hash generated by ZkSigner
      * @param nonce - Nonce value of account
      * @return CompletableFuture for waiting for transaction mine
@@ -201,7 +201,7 @@ public interface EthereumProvider {
 
     /**
      * Check if deposit is approved in enough amount
-     * 
+     *
      * @param token - Token object supported by ZkSync
      * @param threshold - Minimum threshold of approved tokens
      * @return CompletableFuture of blockchain smart-contract call
@@ -210,7 +210,7 @@ public interface EthereumProvider {
 
     /**
      * Check if public key hash set for specific nonce
-     * 
+     *
      * @param nonce - Nonce value of account
      * @return CompletableFuture of blockchain smart-contract call
      */
@@ -218,21 +218,21 @@ public interface EthereumProvider {
 
     /**
      * Get balance of account in Etereum
-     * 
+     *
      * @return CompletableFuture of blockchain call
      */
     CompletableFuture<BigInteger> getBalance();
 
     /**
      * Get current nonce of account
-     * 
+     *
      * @return CompletableFuture of blockchain call
      */
     CompletableFuture<BigInteger> getNonce();
 
     /**
      * Get ZkSync smart-contract address in Ethereum blockchain
-     * 
+     *
      * @return Contract address in hex string
      */
     String contractAddress();

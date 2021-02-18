@@ -8,9 +8,8 @@
 ## Adding dependencies
 
 ```ruby=
-pod 'ZKSync' 
+pod 'ZKSync'
 ```
-
 
 ## Creating signers
 
@@ -21,12 +20,14 @@ let zkSigner = try ZkSigner(seed: seed)
 ```
 
 Using raw private key
+
 ```swift=
 let privateKey = Data(hex: "0x...")
 let zkSigner = try ZkSigner(rawPrivateKey: privateKey)
 ```
 
-Using EthSigner (explained below). The private key used by ZkSigner is implicitly derived from Ethereum signature of a special message.
+Using EthSigner (explained below). The private key used by ZkSigner is implicitly derived from Ethereum signature of a
+special message.
 
 ```swift=
 let ethSigner = ...
@@ -35,7 +36,8 @@ let zkSigner = try ZkSigner(ethSigner: ethSigner, chainId: .ropsten)
 
 ---
 
-In case of interacting with Ethereum network like `Deposit` or onchain `Withdraw` and for creating ZkSigner you may need to create `EthSigner`.
+In case of interacting with Ethereum network like `Deposit` or onchain `Withdraw` and for creating ZkSigner you may need
+to create `EthSigner`.
 
 ```swift=
 let ethSigner = try DefaultEthSigner(privateKey: "0x...")
@@ -50,7 +52,9 @@ For interact with both zkSync and Ethereum networks you need to create providers
 
 ### zkSync provider
 
-Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that officially supports by MatterLabs. Also you can use local node for testing `ChainId.Localhost` set to `http://127.0.0.1:3030`
+Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that
+officially supports by MatterLabs. Also you can use local node for testing `ChainId.Localhost` set to
+`http://127.0.0.1:3030`
 
 ```swift=
 let provider = DefaultProvider(chainId: .ropsten)
@@ -65,7 +69,8 @@ let provider = DefaultProvider(transport: transport)
 
 ### Ethereum provider
 
-For onchain operation in Ethereum network you may create `EthereumProvider` using method `createEthereumProvider` of `Wallet`
+For onchain operation in Ethereum network you may create `EthereumProvider` using method `createEthereumProvider` of
+`Wallet`
 
 ```swift=
 let wallet = ...
@@ -74,7 +79,8 @@ let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
 
 ## Creating a Wallet
 
-To control your account in zkSync, use the `Wallet`. It can sign transactions with keys stored in `ZkSigner` and `EthSigner` and send transaction to zkSync network using `Provider`.
+To control your account in zkSync, use the `Wallet`. It can sign transactions with keys stored in `ZkSigner` and
+`EthSigner` and send transaction to zkSync network using `Provider`.
 
 ```swift=
 let ethSigner = ...
@@ -123,7 +129,8 @@ firstly {
 
 ## Unlocking zkSync account
 
-To make any transaction in zkSync network, you must register your ZkSigner's public key to your account provided EthSigner.
+To make any transaction in zkSync network, you must register your ZkSigner's public key to your account provided
+EthSigner.
 
 ```swift=
 let wallet = ...
@@ -146,6 +153,7 @@ firstly {
 ```
 
 ## Making transfer funds in zkSync
+
 Now after `Deposit` and `Unlocking` your account you can create second account and transfer some funds to it.
 
 > Note that we can send assets to any fresh Ethereum account, without preliminary registration!
@@ -177,8 +185,8 @@ firstly {
 }
 ```
 
-
 ## Withdrawing funds back to Ethereum
+
 All (or part of) your funds can be withdrawn back to any yours account in Ethereum.
 
 ```swift=
@@ -207,12 +215,12 @@ firstly {
 
 ## Forced and Full exit
 
-*Forced exit withdraws all your funds to Ethereum account*
+_Forced exit withdraws all your funds to Ethereum account_
 
 ```swift=
 let ethSigner = ...
 let wallet = ...
-        
+
 firstly {
     wallet.getAccountStatePromise()
 }.then { state in
@@ -232,12 +240,13 @@ firstly {
 }
 ```
 
-Full exit has the same meaning but executes onchain in Ethereum network without creating transaction to zkSync. It makes sense in case when some zkSync network censoured by its creators.
+Full exit has the same meaning but executes onchain in Ethereum network without creating transaction to zkSync. It makes
+sense in case when some zkSync network censoured by its creators.
 
 ```swift=
 let wallet = ...
 let ethereum = ...
-        
+
 firstly {
     wallet.getAccountStatePromise()
 }.then { state in
