@@ -110,6 +110,17 @@ module.exports = {
                         '/sdk/rust/tutorial'
                     ]
                 },
+                {
+                  title: 'zkCheckout SDK',  // required
+                  path: '/sdk/checkout', // optional, which should be a absolute path.
+                  collapsable: true,  // optional, defaults to true
+                  sidebarDepth: 2,    // optional, defaults to 1
+                  children: [
+                      '/sdk/checkout/tutorial',
+                      '/sdk/checkout/reference',
+                      '/sdk/checkout/appendix-a'
+                  ]
+                },
             ]
         }
     },
