@@ -36,7 +36,7 @@ In the future the process will be fully automated.
 
 Informally, you need to do a one-time 'registration' of your account. More technically, zkSync accounts are defined over
 a different elliptic curve than Ethereum's that is better suited for zero-knowledge proofs. Unlocking your account
-generates and published a new private-public key pair over this curve, which is associated to your Ethereum address.
+generates and publishes a new private-public key pair over this curve, which is associated to your Ethereum address.
 
 Unlocking your account incur higher costs than other zkSync transactions, because the process of registration happens
 directly on the Ethereum smart contract, and not as part of a zero-knowledge proof. If you are using an ERC-1271

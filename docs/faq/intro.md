@@ -33,7 +33,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - ETH and ERC20 token transfers with instant confirmations and 10-minute finality on L1 (see
   [supported tokens](/faq/tokens.md#supported-tokens)).
 - Zero-cost account creation.
-- Ultra-low transaction fees (~ \$0.001 per transfer).
+- Ultra-low transaction fees (~\$0.001 per transfer).
 - Payments to existing Ethereum addresses (including smart-contracts).
 - Fees conveniently payable in token being transferred.
 - Withdrawals to mainnet in under 15 minutes.
