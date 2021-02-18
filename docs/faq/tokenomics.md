@@ -12,7 +12,9 @@ cheaper for ETH (and nearly 100 times cheaper for ERC20 tokens) than the ones on
 
 We plan to launch our token in the future. Our business model will be expressed through it.
 
-## Will zkSync have a native token?
+## Token, participation and governance
+
+### Will zkSync have a native token?
 
 Yes.
 
