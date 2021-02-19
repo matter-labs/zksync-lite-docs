@@ -26,6 +26,7 @@ offchain
 blockchains
 sidechain
 sidechains
+tokenomics
 
 // Names
 Stichting
@@ -67,6 +68,7 @@ subsecond
 supermajority
 gemeente
 unauthorised
+Ethereum's
 SDKs
 
 // Famous crypto people

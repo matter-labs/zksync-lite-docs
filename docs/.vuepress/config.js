@@ -26,15 +26,24 @@ module.exports = {
         repo: 'matter-labs/zksync',
         nav: [
             {
+                text: 'FAQ',
+                link: '/faq/'
+                //link: '/faq/intro.html'
+            },
+            {
                 text: 'Docs',
-                link: '/faq/intro.html'
+                link: '/dev/'
+            },
+            {
+                text: 'API',
+                link: '/api/'
             },
             {
                 text: 'Contact',
                 link: '/contact.html'
             },
             {
-                text: 'Status',
+                text: 'Uptime',
                 link: 'https://uptime.com/s/zksync'
             }
         ],
@@ -44,39 +53,107 @@ module.exports = {
                 '/legal/terms',
                 '/legal/privacy'
             ],
-            '/': [         
-                '',
+            '/faq/': [
                 {
-                    title: 'FAQ',  // required
+                    title: 'Welcome to ZkSync',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
-                    children: [
-                      '/faq/intro',
-                      '/faq/tech',
-                      '/faq/wallets',
-                      '/faq/tokens',
-                      '/faq/security',
-                      '/faq/decentralization',
-                      '/faq/sc',
-                      '/faq/privacy',
-                      '/faq/status',
-                    ]
                 },
+                {
+                    title: 'Overview',  // required
+                    path: '/faq/intro', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                    children: [
+                        ]
+                },
+                {
+                    title: 'Technology',  // required
+                    path: '/faq/tech', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Security',  // required
+                    path: '/faq/security', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Wallets',  // required
+                    path: '/faq/wallets', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Tokens & fees',  // required
+                    path: '/faq/tokens', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Decentralization',  // required
+                    path: '/faq/decentralization', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Tokenomics',  // required
+                    path: '/faq/tokenomics', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Privacy',  // required
+                    path: '/faq/privacy', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Roadmap',  // required
+                    path: '/faq/roadmap', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                //{
+                //    title: 'FAQ',  // required
+                //    path: '/faq/', // optional, which should be a absolute path.
+                //    collapsable: true,  // optional, defaults to true
+                //    sidebarDepth: 1,     // optional, defaults to 1
+                //    children: [
+                        //'/faq/intro',
+                        //'/faq/tech',
+                        //'/faq/security',
+                        //'/faq/wallets',
+                        //'/faq/tokens',
+                        //'/faq/decentralization',
+                        //'/faq/tokenomics',
+                        //'/faq/sc',
+                        //'/faq/privacy',
+                        //'/faq/roadmap',
+                        //'/faq/status',
+                //    ]
+                //},
+            ],
+            '/dev/': [
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/dev/overview',
-                      '/dev/basic',
-                      '/dev/sending_transactions',
-                      '/dev/contracts',
-                      '/dev/cryptography',
-                      '/dev/updates'
+                        '/dev/overview',
+                        '/dev/basic',
+                        '/dev/sending_transactions',
+                        '/dev/contracts',
+                        '/dev/cryptography',
+                        '/dev/updates'
                     ]
                 },
+            ],
+            '/': [         
+                '',
                 {
                     title: 'API documentation',  // required
                     path: '/api', // optional, which should be a absolute path.

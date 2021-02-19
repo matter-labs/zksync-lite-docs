@@ -3,8 +3,8 @@ home: true
 heroImage: /LogoHero.svg
 heroAlt: 'zkSync: secure, scalable crypto payments'
 tagline: Scalability without compromises
-actionText2: FAQ & docs
-actionLink2: faq/intro.html
+actionText2: Frequently Asked Questions
+actionLink2: faq/
 actionText: Open wallet
 actionLink: https://wallet.zksync.io
 features:

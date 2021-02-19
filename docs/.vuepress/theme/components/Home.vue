@@ -19,8 +19,8 @@
       </p>
       <p>
         <RouterLink
-        to="/faq/intro.html"
-        class="action-link">FAQ and docs</RouterLink>
+        to="/faq/"
+        class="action-link">Frequently Asked Questions</RouterLink>
       </p>
     </header>
 
