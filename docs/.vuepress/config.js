@@ -93,24 +93,48 @@ module.exports = {
                     sidebarDepth: 1,     // optional, defaults to 1
                 },
                 {
-                    title: 'FAQ',  // required
-                    path: '/faq/', // optional, which should be a absolute path.
+                    title: 'Decentralization',  // required
+                    path: '/faq/decentralization', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
-                    children: [
+                },
+                {
+                    title: 'Tokenomics',  // required
+                    path: '/faq/tokenomics', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Privacy',  // required
+                    path: '/faq/privacy', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Roadmap',  // required
+                    path: '/faq/roadmap', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                //{
+                //    title: 'FAQ',  // required
+                //    path: '/faq/', // optional, which should be a absolute path.
+                //    collapsable: true,  // optional, defaults to true
+                //    sidebarDepth: 1,     // optional, defaults to 1
+                //    children: [
                         //'/faq/intro',
                         //'/faq/tech',
                         //'/faq/security',
                         //'/faq/wallets',
                         //'/faq/tokens',
-                        '/faq/decentralization',
-                        '/faq/tokenomics',
-                        '/faq/sc',
-                        '/faq/privacy',
-                        '/faq/roadmap',
+                        //'/faq/decentralization',
+                        //'/faq/tokenomics',
+                        //'/faq/sc',
+                        //'/faq/privacy',
+                        //'/faq/roadmap',
                         //'/faq/status',
-                    ]
-                },
+                //    ]
+                //},
             ],
             '/dev/': [
                 {
