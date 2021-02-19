@@ -64,7 +64,33 @@ module.exports = {
                     title: 'Overview',  // required
                     path: '/faq/intro', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,     // optional, defaults to 1
+                    sidebarDepth: 1,     // optional, defaults to 1
+                    children: [
+                        ]
+                },
+                {
+                    title: 'Technology',  // required
+                    path: '/faq/tech', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Security',  // required
+                    path: '/faq/security', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Wallets',  // required
+                    path: '/faq/wallets', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
+                    title: 'Tokens & fees',  // required
+                    path: '/faq/tokens', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
                 },
                 {
                     title: 'FAQ',  // required
@@ -73,10 +99,10 @@ module.exports = {
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
                         //'/faq/intro',
-                        '/faq/tech',
-                        '/faq/security',
-                        '/faq/wallets',
-                        '/faq/tokens',
+                        //'/faq/tech',
+                        //'/faq/security',
+                        //'/faq/wallets',
+                        //'/faq/tokens',
                         '/faq/decentralization',
                         '/faq/tokenomics',
                         '/faq/sc',
