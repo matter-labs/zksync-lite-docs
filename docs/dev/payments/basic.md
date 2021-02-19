@@ -98,7 +98,7 @@ The zkSync signature on all transaction fields must correspond to the public key
 As mentioned above, any transfer that is valid in Ethereum, is also valid in zkSync.
 
 Users may transfer any amount of funds in either Ether or any supported ERC-20 token. A list of supported tokens can be
-found on the [corresponding explorer page](https://zkscan.io/tokens). It is also exposed via [API](../api).
+found on the [corresponding explorer page](https://zkscan.io/tokens). It is also exposed via [API](/api).
 
 However, transfer to a non-existent account requires slightly more data to be sent on the smart contract (we have to
 include information about the new account), thus the fee for such transfers is slightly higher than the fee for
@@ -119,7 +119,7 @@ results in very small fee values.
 
 Additionally, our API provides all the input data used for fee calculation via corresponding [API method][api_fee].
 
-[api_fee]: ../api/v0.1.md#get-tx-fee
+[api_fee]: /api/v0.1.md#get-tx-fee
 
 ### Withdrawing funds
 
@@ -146,7 +146,7 @@ contract account), and there exists an L2 account which can send this type of tr
 Third one is `FullExit` priority operation.
 
 This kind of operation is called a "priority operation" since it's initiated from L1 and the smart contract provides
-[guarantees](../faq/security.md#security-overview) that either this request will be processed within a reasonable time
+[guarantees](/faq/security.md#security-overview) that either this request will be processed within a reasonable time
 interval, or network will be considered compromised / dead, and the contract will enter an exodus mode.
 
 This method is preferred if the user will ever experience censorship from the network operator.

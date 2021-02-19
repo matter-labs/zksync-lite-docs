@@ -1,6 +1,7 @@
 # zkSync API documentation
 
-This section provides documentation for zkSync server API.
+This section provides description of zkSync from the developers perspective. Covered topics are:
 
-- [API v0.1](./v0.1.md)
-- [API v1](./v1.md)
+- [zkSync server API](./v0.1.md).
+- [zkSync SDK for different platforms](./sdk).
+- [zkSync ecosystem libraries](./sdk/#ecosystem-libraries).

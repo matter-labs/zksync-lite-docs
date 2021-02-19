@@ -106,7 +106,7 @@ const transactionHash = await syncHttpProvider.submitTx(signedTransferTx, ethSig
 
 For description of transaction batches, see the [corresponding dev docs section][tx_batches].
 
-[tx_batches]: ../../dev/sending_transactions.md#sending-transaction-batches
+[tx_batches]: /dev/payments/sending_transactions.md#sending-transaction-batches
 
 > Signature
 
