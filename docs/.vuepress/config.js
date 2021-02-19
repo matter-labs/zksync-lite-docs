@@ -129,6 +129,20 @@ module.exports = {
                         '/sdk/swift/tutorial'
                     ]
                 },
+                {
+                    title: 'zkCheckout SDK',  // required
+                    path: '/sdk/checkout', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 2,    // optional, defaults to 1
+                    children: [
+                        '/sdk/checkout/tutorial',
+                        '/sdk/checkout/checkout-manager',
+                        '/sdk/checkout/types',
+                        '/sdk/checkout/constants',
+                        '/sdk/checkout/protocol',
+                        '/sdk/checkout/appendix-a'
+                    ]
+                }
             ]
         }
     },
