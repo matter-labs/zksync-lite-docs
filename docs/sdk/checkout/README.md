@@ -1,4 +1,4 @@
-# zkSync checkout
+# zkCheckout SDK
 
 This section contains documentation for the zkCheckout SDK, the tool that helps to conveniently create payments with
 zkSync.

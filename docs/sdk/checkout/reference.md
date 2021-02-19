@@ -6,8 +6,8 @@ The library provides a convenient way to integrate zkSync checkout flow into any
 
 The main export of the library is the `CheckoutManager` class, which must be instantiated separately for each checkout.
 
-The library also exports `Constants`, `Types`, `Utils`. These export constants, type definitions and type guards, as
-well as some utility functions.
+The library also exports `Constants`, `Types`, `Utils`. They export constants, type definitions and type guards, as well
+as some utility functions.
 
 It also exports functions that might be commonly used:
 
@@ -46,7 +46,7 @@ interface ZkSyncTransaction {
   will notify the user about that and will ask her to log in to the appropriate account.
 - `to` — this field contains the Ethereum address of the recipient of the transaction.
 - `token` — the symbol of the token in which the transaction will be done.
-- `amount` — amount of tokens in wei to be transferred.
+- `amount` — the number of tokens in wei to be transferred.
 - `semanticType` — semantic type of the transaction, it is used to help the zkSync checkout popup provide better UX. For
   instance, if your website collects fees in a certain transaction, you should set `semanticType` to
   `'FeeOrCommission'`. The default value is `'Transaction'`.
@@ -261,22 +261,22 @@ The `CheckoutErrors` contains the errors of which might happen both on the zkSyn
 
 #### Common errors
 
-- `NOT_IMPLEMENTED_ERROR`. When the library is complete, there should be no places, where such an error could be thrown,
+- `NOT_IMPLEMENTED_ERROR`. When the library is complete, there should be no places where such an error could be thrown,
   but for the time of development, this error is thrown in the places which have not been properly implemented yet.
 - `LOGICAL_ERROR`. This error is thrown if something that should never happen happens. That means that there is a bug in
   the library's code.
-- `INVALID_SENDER_ERROR`. This error is thrown if the `userAddress` argument (if supplied) of the `zkSyncBatchCheckout`
-  function is different from any of the supplied `from` fields of the transactions, or if any supplied `from` field of
-  the transactions is different from any other. In other words, that error is thrown if the consistency of the sender
-  address is broken.
+- `INVALID_SENDER_ERROR`. This error is thrown if the consistency of the sender address is broken. That is, if either
+  the `userAddress` argument (if supplied) of the `zkSyncBatchCheckout` function is different from any of the supplied
+  `from` fields of the transactions, or if any supplied `from` field of the transactions is different from any other. In
+  other words,
 - `FAILED_TO_GET_ONCHAIN_BALANCE`. This error is thrown if the library fails to retrieve the user's Ethereum balance.
 
 #### Client-side errors
 
 - `NOT_IN_BROWSER_ERROR`. This error is thrown because the library is intended to be used only in the browser
   environment. Particularly, the error is thrown if the `window` global object is not defined.
-- `OPENING_TIMEOUT_ERROR`. This error is thrown if the zkSync page takes too long to load. Used to tackle the case when
-  the user opens the checkout page, but then closes it quickly.
+- `OPENING_TIMEOUT_ERROR`. This error is thrown if the zkSync page takes too long to load. It is used to tackle the case
+  when the user opens the checkout page, but then closes it quickly.
 - `FAILED_TO_OPEN_ZKSYNC`. This error is thrown if the client's page fails to open the zkSync page. (Technically
   speaking, when the `window.open` returns null)
 - `ZKSYNC_CLOSED_ERROR`. This error is thrown when the user closes the zkSync checkout page without initiating any
@@ -285,9 +285,9 @@ The `CheckoutErrors` contains the errors of which might happen both on the zkSyn
 #### zkSync-side errors
 
 - `NO_OPENER_ERROR`. This error is thrown if the checkout page is opened without an opener (basically that means, that
-  the page was opened directly, but not as a popup). That's why you may see the gray screen if you open the checkout
-  page directly in the browser.
-- `CHECKOUT_NOT_STARTED_ERROR`. This error is thrown if the checkout page tries to retrieve the state (e,g, list of
+  the page was opened directly, but not as a popup). That's why you may see a gray screen if you open the checkout page
+  directly in the browser.
+- `CHECKOUT_NOT_STARTED_ERROR`. This error is thrown if the checkout page tries to retrieve the state (e.g. list of
   transactions, fee token, etc) of the checkout before the data has been received.
 - `CLIENT_CLOSED_ERROR`. This error is thrown when the user closes the client's page. This is used to prevent the user
   from starting the transfer because the client's page won't be able to receive the transactions hashes.
@@ -312,32 +312,29 @@ The protocol follows
 [web security best practices](https://developer.mozilla.org/en-US/docs/Web/library/Window/postMessage#Security_concerns),
 associated with cross-origin communication.
 
-The internal part of the checkout will consist of the following stages:
+The internal part of the checkout consists of the following stages:
 
 1. The client calls `zkSyncBatchCheckout`.
-2. When the tab is open, the zkSync page will send the `ZKSYNC_OPENED` message. If it fails to do within
+2. When the tab is open, the zkSync page will send the `ZKSYNC_OPENED` message. If it fails to do so within
    `OPENING_TIMEOUT` ms, the checkout promise resolves with `OPENING_TIMEOUT_ERROR`. After receiving the `ZKSYNC_OPEN`
    message, the client's page will send a `START_SESSION` message to the zkSync page. The message contains:
    - Array of the transactions, specified by the user.
    - Token to pay the fee with.
    - The origin of the opener. Must be equal to the origin of the opener (zkSync checks it on its side).
    - The checkout id — a feature that enables multiple checkouts at the same time.
-3. If at least in one transaction the `from` field differs from the user's one, the zkSync page will tell the user about
-   it and will offer him to log in with the other account.
-
-The zkSync page will remember the client's origin. Now, all the `postMessage`-s sent from the zkSync page will only go
-to the remembered origin. 4. Every `CLOSE_POLL_INTERVAL` ms the client's page will check if the zkSync page is closed.
-
-If the zkSync page is closed without starting the transactions, the client waits for `FOLLOWUP_HASHES_TIMEOUT` ms in
-case the hashes were sent to the client, but the browser was too slow. If the hashes don't arrive within this time, the
-checkout promise will be rejected with `ZKSYNC_CLOSED_ERROR`.
-
-On the other hand, every `OPENER_CLOSED_POLL_INTERVAL` ms the zkSync page checks if the client's page is closed. If it
-is closed before the transactions' hashes were sent, there is a danger that the hashes that the zkSync page will send
-won't be processed by the client. To prevent this from happening the zkSync page will warn the user about that and
-advice her not to continue the checkout. 5. When the user clicks on transfer, the zkSync page sends the opener the array
-of hashes of the transactions. 6. (Optional for the client) After the client receives the transactions, he can either
-wait until they are committed or verified using the `wait` function.
+3. If at least in one transaction the `from` field differs from the user's address, the zkSync page will tell the user
+   about it and will offer him to log in with the other account. The zkSync page will remember the client's origin. Now,
+   all the `postMessage`-s sent from the zkSync page will only go to the remembered origin.
+4. Every `CLOSE_POLL_INTERVAL` ms the client's page will check if the zkSync page is closed. If the zkSync page is
+   closed without starting the transactions, the client waits for `FOLLOWUP_HASHES_TIMEOUT` ms in case the hashes were
+   sent to the client, but the browser was too slow. If the hashes don't arrive within this time, the checkout promise
+   will be rejected with `ZKSYNC_CLOSED_ERROR`. On the other hand, every `OPENER_CLOSED_POLL_INTERVAL` ms the zkSync
+   page checks if the client's page is closed. If it is closed before the transactions' hashes were sent, there is a
+   danger that the hashes that the zkSync page will send won't be processed by the client. To prevent this from
+   happening the zkSync page will warn the user about that and advice her not to continue the checkout.
+5. When the user clicks on transfer, the zkSync page sends to the opener the array of hashes of the transactions.
+6. (Optional for the client) After the client receives the transactions, he can either wait until they are committed or
+   verified using the `wait` function.
 
 **Time constants (all in ms):**
 
