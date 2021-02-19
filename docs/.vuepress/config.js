@@ -117,7 +117,10 @@ module.exports = {
                   sidebarDepth: 2,    // optional, defaults to 1
                   children: [
                       '/sdk/checkout/tutorial',
-                      '/sdk/checkout/reference',
+                      '/sdk/checkout/checkout-manager',
+                      '/sdk/checkout/types',
+                      '/sdk/checkout/constants',
+                      '/sdk/checkout/protocol',
                       '/sdk/checkout/appendix-a'
                   ]
                 },
