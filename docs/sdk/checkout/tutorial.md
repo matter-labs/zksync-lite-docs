@@ -85,8 +85,8 @@ const checkoutManager = new CheckoutManager('mainnet');
 
 ## Checking user's balance
 
-If the user's address is known, we should check if the user has sufficient funds to proceed with the payment. This
-can be done easily with the following piece of code:
+If the user's address is known, we should check if the user has sufficient funds to proceed with the payment. This can
+be done easily with the following piece of code:
 
 ```ts
 // For testing purposes, the default providers could be used

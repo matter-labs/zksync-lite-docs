@@ -37,7 +37,7 @@ you don't, the checkout will fail with `RECEIVED_INVALID_DATA_ERROR`.
 
 ## TokenLike
 
-Just a string. Has a special type name to clarify that the string should be equal to some token symbol.
+Just a string. Has a special type name to clarify that the string should be equal to a token's symbol.
 
 ```tsx
 type TokenLike = string;
