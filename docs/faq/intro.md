@@ -58,7 +58,7 @@ To quote from [Vitalik Buterin's 2021 guide to rollups](https://vitalik.ca/gener
 > computation and ZK rollups are likely to win out for simple payments, exchange and other application-specific use
 > cases, **but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves**.
 
-![L2 comparison](https://zksync.io/chart3.png)
+![L2 comparison](https://zksync.io/chart4.png)
 
 <!-- markdownlint-disable line-length -->
 <!-- ![L2 comparison](https://miro.medium.com/max/1400/1*Q1IOxqm-nkr6JWz6kJpt5w.png) -->
