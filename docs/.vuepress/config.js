@@ -65,8 +65,6 @@ module.exports = {
                     path: '/faq/intro', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
-                    children: [
-                        ]
                 },
                 {
                     title: 'Technology',  // required
@@ -87,7 +85,7 @@ module.exports = {
                     sidebarDepth: 1,     // optional, defaults to 1
                 },
                 {
-                    title: 'Tokens & fees',  // required
+                    title: 'Tokens & Fees',  // required
                     path: '/faq/tokens', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
