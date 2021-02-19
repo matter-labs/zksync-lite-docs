@@ -27,7 +27,7 @@ platforms:
 
 Here you need only add just one dependency into your build configuration. `Gradle`
 
-```groovy=
+```groovy
 dependencies {
     implementation ('io.zksync:zksync:0.0.1-b1-SNAPSHOT')
 }
@@ -35,7 +35,7 @@ dependencies {
 
 `Maven`
 
-```xml=
+```xml
 <dependencies>
     <dependency>
         <groupId>io.zksync</groupId>
@@ -47,7 +47,7 @@ dependencies {
 
 Library published to Maven Central thus for Gradle you need to enable it.
 
-```groovy=
+```groovy
 repositories {
     mavenCentral()
 
@@ -62,7 +62,7 @@ repositories {
 
 For Android adding dependencies little bit difficult becase it requres in including aar package with native binaries.
 
-```groovy=
+```groovy
 implementation("org.web3j:core:4.6.0-android")
 
 implementation 'org.scijava:native-lib-loader:2.3.4'
@@ -84,13 +84,13 @@ options:
 
 Using seed bytes (like MNEMONIC phrase). Must have length >= 32
 
-```java=
+```java
 ZkSigner zkSigner = ZkSigner.fromSeed(SEED);
 ```
 
 Using raw private key
 
-```java=
+```java
 // You can use built-in Web3j converter for convertion private key encoded to hex into byte array
 byte [] privateKey = Numeric.hexStringToByteArray("0x...");
 ZkSigner zkSigner = ZkSigner.fromRawPrivateKey(privateKey);
@@ -99,7 +99,7 @@ ZkSigner zkSigner = ZkSigner.fromRawPrivateKey(privateKey);
 Using EthSigner (explained below). The private key used by io.zksync.signer.ZkSigner is implicitly derived from Ethereum
 signature of a special message.
 
-```java=
+```java
 EthSigner ethSigner = ...
 ZkSigner zkSigner = ZkSigner.fromEthSigner(ethSigner, ChainId.Mainnet);
 ```
@@ -113,7 +113,7 @@ to create `io.zksync.signer.EthSigner`.
 > `io.zksync.signer..DefaultEthSigner`, but you can implement you own `io.zksync.signer.EthSigner` for custom logic of
 > signing and verifying messages.
 
-```java=
+```java
 Web3j web3j = Web3j.build(new HttpService("http://localhost:8545"));
 EthSigner ethSigner = DefaultEthSigner.fromMnemonic(web3j, "some mnemonic phrase");
 // or from raw private key
@@ -130,14 +130,14 @@ Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Ro
 officially supports by MatterLabs. Also you can use local node for testing `ChainId.Localhost` set to
 `http://127.0.0.1:3030`
 
-```java=
+```java
 Provider povider = Provider.defaultProvider(ChainId.Rinkeby)
 ```
 
 You can create `io.zksync.provider.Provider` with any custom URL, just use `io.zksync.transport.HttpTransport` for
 `io.zksync.provider.DefaultProvider`
 
-```java=
+```java
 HttpTransport transport = new HttpTransport("http://localhost:3030");
 Provider provider = new DefaultProvider(transport);
 ```
@@ -147,7 +147,7 @@ Provider provider = new DefaultProvider(transport);
 For onchain operation in Ethereum network you may create `io.zksync.ethereum.EthereumProvider` using method
 `createEthereumProvider` of `io.zksync.wallet.ZkSyncWallet`
 
-```java=
+```java
 ZkSyncWallet wallet = ...;
 Web3j web3j = Web3j.build(new HttpService("http://localhost:8545"));
 GasProvider gasProvider = new DefaultGasProvider();
@@ -161,7 +161,7 @@ To control your account in zkSync, use the `io.zksync.wallet.ZkSyncWallet`. It c
 `io.zksync.signer.ZkSigner` and `io.zksync.signer.EthSigner` and send transaction to zkSync network using
 `io.zksync.provider.Provider`.
 
-```java=
+```java
 EthSigner ethSigner = ...;
 ZkSigner zkSigner = ...;
 ZkSyncWallet wallet = ZkSyncWallet.build(ethSigner, zkSigner, Provider.defaultProvider(ChainId.Rinkeby));
@@ -171,7 +171,7 @@ ZkSyncWallet wallet = ZkSyncWallet.build(ethSigner, zkSigner, Provider.defaultPr
 
 Let's try to deposit 1.0 ETH to our zkSync account.
 
-```java=
+```java
 Web3j web3j = Web3j.build(new HttpService("http://localhost:8545"));
 EthSigner ethSigner = ...;
 ZkSigner zkSigner = ...;
@@ -197,7 +197,7 @@ if (receipt.isStatusOK()) {
 
 You should be want to check your balance in zkSync network after deposit.
 
-```java=
+```java
 ZkSyncWallet wallet = ...;
 String balanceStr = state.getCommitted().getBalances().getOrDefault("ETH", "0");
 
@@ -209,7 +209,7 @@ BigDecimal balance = Convert.fromWei(balanceStr, Convert.Unit.ETHER);
 To make any transaction in zkSync network, you must register your ZkSigner's public key to your account provided
 EthSigner.
 
-```java=
+```java
 ZkSyncWallet wallet = ...;
 
 AccountState state = wallet.getState();
@@ -248,7 +248,7 @@ Now after `Deposit` and `Unlocking` your account you can create second account a
 
 We're going to transfer 0.1 ETH
 
-```java=
+```java
 ZkSyncWallet wallet = ...;
 
 EthSigner ethSignerAnother = ...;
@@ -276,7 +276,7 @@ wallet.syncTransfer(
 
 All your funds can be withdrawn back to any yours account in Ethereum.
 
-```java=
+```java
 ZkSyncWallet wallet = ...;
 AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()

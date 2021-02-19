@@ -2,7 +2,7 @@
 
 ## Provider interface
 
-```java=
+```java
 public interface Provider {
 
     /**
@@ -140,7 +140,7 @@ public interface Provider {
 
 ## Ethereum provider interface
 
-```java=
+```java
 public interface EthereumProvider {
 
     /**

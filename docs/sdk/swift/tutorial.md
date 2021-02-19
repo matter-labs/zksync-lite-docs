@@ -7,7 +7,7 @@
 
 ## Adding dependencies
 
-```ruby=
+```ruby
 pod 'ZKSync'
 ```
 
@@ -15,13 +15,13 @@ pod 'ZKSync'
 
 Using seed bytes (like MNEMONIC phrase). Must have length >= 32
 
-```swift=
+```swift
 let zkSigner = try ZkSigner(seed: seed)
 ```
 
 Using raw private key
 
-```swift=
+```swift
 let privateKey = Data(hex: "0x...")
 let zkSigner = try ZkSigner(rawPrivateKey: privateKey)
 ```
@@ -29,7 +29,7 @@ let zkSigner = try ZkSigner(rawPrivateKey: privateKey)
 Using EthSigner (explained below). The private key used by ZkSigner is implicitly derived from Ethereum signature of a
 special message.
 
-```swift=
+```swift
 let ethSigner = ...
 let zkSigner = try ZkSigner(ethSigner: ethSigner, chainId: .ropsten)
 ```
@@ -39,7 +39,7 @@ let zkSigner = try ZkSigner(ethSigner: ethSigner, chainId: .ropsten)
 In case of interacting with Ethereum network like `Deposit` or onchain `Withdraw` and for creating ZkSigner you may need
 to create `EthSigner`.
 
-```swift=
+```swift
 let ethSigner = try DefaultEthSigner(privateKey: "0x...")
 
 // or from Mnemonic
@@ -56,13 +56,13 @@ Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Ro
 officially supports by MatterLabs. Also you can use local node for testing `ChainId.Localhost` set to
 `http://127.0.0.1:3030`
 
-```swift=
+```swift
 let provider = DefaultProvider(chainId: .ropsten)
 ```
 
 You can create `Provider` with any custom URL, just use `HTTPTransport` for `DefaultProvider`
 
-```swift=
+```swift
 let transport = HTTPTransport(networkURL: "http://127.0.0.1:3030")
 let provider = DefaultProvider(transport: transport)
 ```
@@ -72,7 +72,7 @@ let provider = DefaultProvider(transport: transport)
 For onchain operation in Ethereum network you may create `EthereumProvider` using method `createEthereumProvider` of
 `Wallet`
 
-```swift=
+```swift
 let wallet = ...
 let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
 ```
@@ -82,7 +82,7 @@ let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
 To control your account in zkSync, use the `Wallet`. It can sign transactions with keys stored in `ZkSigner` and
 `EthSigner` and send transaction to zkSync network using `Provider`.
 
-```swift=
+```swift
 let ethSigner = ...
 let zkSigner = ...
 let wallet = try DefaultWallet(ethSigner: ethSigner, zkSigner: zkSigner, provider: DefaultProvider(chainId: .ropsten))
@@ -90,7 +90,7 @@ let wallet = try DefaultWallet(ethSigner: ethSigner, zkSigner: zkSigner, provide
 
 For onchain operations you can create Ethereum provider from `Wallet`
 
-```swift=
+```swift
 let wallet = ...
 let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
 ```
@@ -99,7 +99,7 @@ let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
 
 Let's try to deposit 1.0 ETH to our zkSync account.
 
-```swift=
+```swift
 let ethSigner = ...
 let ethereum = ...
 let amount = Web3.Utils.parseToBigUInt("1", units: .eth)!
@@ -116,7 +116,7 @@ firstly {
 
 You should be want to check your balance in zkSync network after deposit.
 
-```swift=
+```swift
 firstly {
     wallet.getAccountStatePromise()
 }.done { (state) in
@@ -132,7 +132,7 @@ firstly {
 To make any transaction in zkSync network, you must register your ZkSigner's public key to your account provided
 EthSigner.
 
-```swift=
+```swift
 let wallet = ...
 
 firstly {
@@ -162,7 +162,7 @@ Now after `Deposit` and `Unlocking` your account you can create second account a
 
 We're going to transfer 0.1 ETH
 
-```swift=
+```swift
 let receiver = "0x..."
 let wallet = ...
 let amount = Web3.Utils.parseToBigUInt("1000000", units: .Gwei)!
@@ -191,7 +191,7 @@ firstly {
 
 All (or part of) your funds can be withdrawn back to any yours account in Ethereum.
 
-```swift=
+```swift
 let wallet = ...
 let amount = Web3.Utils.parseToBigUInt("1000", units: .Gwei)!
 
@@ -219,7 +219,7 @@ firstly {
 
 Forced exit withdraws all your funds to Ethereum account
 
-```swift=
+```swift
 let ethSigner = ...
 let wallet = ...
 
@@ -245,7 +245,7 @@ firstly {
 Full exit has the same meaning but executes onchain in Ethereum network without creating transaction to zkSync. It makes
 sense in case when some zkSync network censoured by its creators.
 
-```swift=
+```swift
 let wallet = ...
 let ethereum = ...
 
