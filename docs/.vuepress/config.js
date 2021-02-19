@@ -55,10 +55,16 @@ module.exports = {
             ],
             '/faq/': [
                 {
+                    title: 'Welcome to ZkSync',  // required
+                    path: '/faq/', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
                     title: 'Overview',  // required
                     path: '/faq/intro', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 1,     // optional, defaults to 1
+                    sidebarDepth: 2,     // optional, defaults to 1
                 },
                 {
                     title: 'FAQ',  // required
