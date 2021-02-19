@@ -83,11 +83,11 @@ submitted to **zkSync** by users are instantly confirmed, instantly displayed to
 (although they are marked as unconfirmed), and the transferred assets can immediately be used to make further transfers
 (which might even end up in the same **zkSync** block).
 
-At the moment, instant confirmations are pure promise on the side of **zkSync** operators to include the transaction in
-the next block. Users who do not trust the operator should await full finality before considering the assets as
+At the moment, instant confirmations are pure promise on the side of **zkSync** validators to include the transaction in
+the next block. Users who do not trust the validator should await full finality before considering the assets as
 received.
 
-In the future, a security bond will be added to **zkSync** by the operators. This will provide instant economic finality
+In the future, a security bond will be added to **zkSync** by the validators. This will provide instant economic finality
 guarantees. It will work as follows.
 
 Validators elected to participate in the **zkSync** block production will have to post a significant security bond to
@@ -126,7 +126,7 @@ First and foremost, a congested network (just like a case of targeted DOS attack
 in **zkSync**. Any movement of funds within or out of **zkSync** requires a zero-knowledge proof of validity, and it's
 simply unaffected by L1 censorship in any way.
 
-Secondly, the normal operation of **zkSync** is also unlikely to be disrupted, even for smaller amounts. The operator's
+Secondly, the normal operation of **zkSync** is also unlikely to be disrupted, even for smaller amounts. The validator's
 node is configured to automatically increase the gas price to over-the-average level to get **zkSync** blocks mined with
-high priority. Since the on-chain costs per transaction are ~1/100th of the cost of corresponding plain transaction on
-the L1, **zkSync** users will be least affected.
+high priority. Since the cost per transaction are ~1/100th of the cost of corresponding plain transaction on the L1, 
+**zkSync** users will be least affected.

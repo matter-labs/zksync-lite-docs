@@ -41,8 +41,10 @@ generates and publishes a new private-public key pair over this curve, which is 
 Unlocking your account incur higher costs than other zkSync transactions, because the process of registration happens
 directly on the Ethereum smart contract, and not as part of a zero-knowledge proof. If you are using an ERC-1271
 compatible wallet (like Argent), this one-time cost becomes greater because of higher interaction with the zkSync smart
-contract. The fee you pay for this operation is used to pay the fee for the corresponding Ethereum transaction, and so
-it goes to Ethereum miners and not to zkSync operators.
+contract. On the other hand, if you are using a CREATE2 smart contract based wallet, this operation is cheaper. 
+
+The fee you pay for this operation is used to pay the fee for the corresponding Ethereum transaction, and so it goes to 
+Ethereum miners and not to zkSync validators.
 
 ## Troubleshooting
 

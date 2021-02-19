@@ -5,15 +5,16 @@
 ## Supported tokens
 
 **zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially, new tokens need to be manually whitelisted
-by the operator. In the future, adding new tokens will be fully permissionless.
+by the validator. In the future, adding new tokens will be fully permissionless.
 
 The full list of currently supported tokens is available under this link (as JSON):
 <https://api.zksync.io/api/v0.1/tokens>.
 
-DISCLAIMER: We will list any token fulfilling the criteria below on a first-come, first-serve basis. Listing of a token
-on zkSync does not represent an endorsement for this token by the Matter Labs team, Stichting ZK Sync, or any other
-entity. We do not have competence and authority to analyze the token business model and smart contract security
-guarantees of a particular token. Please use any token on your own risk and judgement.
+DISCLAIMER: We will list any token fulfilling the criteria below on a first-come, first-serve basis. This will become
+permissionless on our next system upgrade. Listing of a token on zkSync does not represent an endorsement for this 
+token by the Matter Labs team, Stichting ZK Sync, or any other entity. We do not have competence and authority to 
+analyze the token business model and smart contract security guarantees of a particular token. Please use any token on 
+your own risk and judgement.
 
 ## Listing a token
 
@@ -24,9 +25,6 @@ We can immediately list tokens that satisfy the following conditions:
 
 - price tracked at <https://coinmarketcap.com>.
 - daily trading volume exceeds \$1M over the period of the past 3 months.
-
-Tokens without sufficient liquidity or CMC price tracker will be listed as soon as we implement an option to pay fees in
-a different token (see below).
 
 ## Fee costs
 
@@ -46,4 +44,4 @@ Transfers in **zkSync** support "gasless meta-transactions": users pay transacti
 Thus, for example, if you want to transfer DAI stable-coin, there is no need for you to own ETH or any other tokens.
 Just pay your fees in a fraction of DAI.
 
-For tokens without a liquid market price, we will soon add an option to pay fees in a different token.
+For tokens without a liquid market price, fees are paid in a different token.

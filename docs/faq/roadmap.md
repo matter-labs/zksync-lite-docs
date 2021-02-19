@@ -4,10 +4,13 @@
 
 ## Project status
 
+- Finalizing the [Atomic Swap library](https://github.com/matter-labs/atomic-swaps).
 - Proof recursion has been integrated.
+- [Numio wallet integration](https://numio.one/fast-cheap-ethereum-transactions-now-on-google-play/).
+- Checkout option in [Gitcoin Round 7](https://gitcoin.co/blog/gitcoin-grants-round-7/) and Round 8.
 - [zkSync v1 is Live on Mainnet][mainnet].
 - [Security audits](/updates/security-audits.md) are being conducted before each major update.
-- Testnet is available on [Rinkeby](https://rinkeby.zksync.io) and [Ropsten](https://ropsten.zksync.io).
+- Testnet version is available on [Rinkeby](https://rinkeby.zksync.io) and [Ropsten](https://ropsten.zksync.io).
 - [Zinc](https://github.com/matter-labs/zinc) smart contract framework is under active development.
 
 [mainnet]: https://medium.com/matter-labs/zksync-is-live-bringing-trustless-scalable-payments-to-ethereum-9c634b3e6823
@@ -22,4 +25,4 @@ We highlight some of our future plans -- more details will be given at a later t
 - Introduce [smart contracts](/faq/sc.md) on zkSync.
 - Introduce a proof-of-stake consensus protocol on L2 as part of the [decentralization](/faq/decentralization.md)
   process.
-- Launch [token](/faq/tokenomics.md).
+- Launch [zkSync governance token](/faq/tokenomics.md).
