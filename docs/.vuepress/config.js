@@ -55,12 +55,18 @@ module.exports = {
             ],
             '/faq/': [
                 {
+                    title: 'Overview',  // required
+                    path: '/faq/intro', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },
+                {
                     title: 'FAQ',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                        '/faq/intro',
+                        //'/faq/intro',
                         '/faq/tech',
                         '/faq/security',
                         '/faq/wallets',

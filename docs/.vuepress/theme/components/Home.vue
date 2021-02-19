@@ -20,7 +20,7 @@
       <p>
         <RouterLink
         to="/faq/"
-        class="action-link">FAQ and docs</RouterLink>
+        class="action-link">Frequently Asked Questions</RouterLink>
       </p>
     </header>
 
