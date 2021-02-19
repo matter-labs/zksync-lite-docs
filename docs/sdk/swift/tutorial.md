@@ -138,7 +138,9 @@ let wallet = ...
 firstly {
     wallet.getAccountStatePromise()
 }.then { state in
-    wallet.provider.transactionFeePromise(for: .changePubKey, address: wallet.address, tokenIdentifier: Token.ETH.address).map { ($0, state) }
+    wallet.provider
+        .transactionFeePromise(for: .changePubKey, address: wallet.address, tokenIdentifier: Token.ETH.address)
+        .map { ($0, state) }
 }.then { (feeDetails, state) -> Promise<String> in
     let fee = TransactionFee(feeToken: Token.ETH.address,
                              fee: feeDetails.totalFeeInteger)
@@ -215,7 +217,7 @@ firstly {
 
 ## Forced and Full exit
 
-_Forced exit withdraws all your funds to Ethereum account_
+Forced exit withdraws all your funds to Ethereum account
 
 ```swift=
 let ethSigner = ...

@@ -10,13 +10,13 @@
 Library contains precompiled binary of zkSync cryptography implementation. Therefore currently we're support only these
 platforms:
 
-#### Desktop
+### Desktop
 
 - Linux x86_64
 - OSX x86_64 (MacOS 11 BigSur included)
 - Windows x86_64
 
-#### Android
+### Android
 
 - Arm64-v8a
 - Armeabi-v7a
@@ -91,7 +91,8 @@ ZkSigner zkSigner = ZkSigner.fromSeed(SEED);
 Using raw private key
 
 ```java=
-byte [] privateKey = Numeric.hexStringToByteArray("0x..."); // You can use built-in Web3j converter for convertion private key encoded to hex into byte array
+// You can use built-in Web3j converter for convertion private key encoded to hex into byte array
+byte [] privateKey = Numeric.hexStringToByteArray("0x...");
 ZkSigner zkSigner = ZkSigner.fromRawPrivateKey(privateKey);
 ```
 
@@ -180,7 +181,11 @@ ZkSyncWallet wallet = ...;
 EthereumProvider provider = wallet.createEthereumProvider(web3j, new DefaultGasProvider());
 
 // Create and send Deposit transaction to Ethereum network
-TransactionReceipt receipt = provider.deposit(Token.createETH(), Convert.toWei("1.0", Convert.Unit.ETHER).toBigInteger(), ethSigner.getAddress()).join();
+TransactionReceipt receipt = provider.deposit(
+    Token.createETH(),
+    Convert.toWei("1.0", Convert.Unit.ETHER).toBigInteger(),
+    ethSigner.getAddress()
+).join();
 
 // You can check if transaction executed successful
 if (receipt.isStatusOK()) {
