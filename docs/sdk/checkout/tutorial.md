@@ -28,7 +28,7 @@ popup**
 This tutorial does not cover back-end or front-end code that is needed for a website but focuses solely on how to use
 the `zksync-checkout` library.
 
-This tutorial will show the basic flow of the checkout by putting all the action inside the single function:
+This tutorial will show the basic checkout flow by putting all the action inside a single function:
 
 ```ts
 import { Types } from 'zksync-checkout';
@@ -46,7 +46,7 @@ async function checkoutUser(
 ```
 
 Let's say that the user has to make two payments: one for some apples worth 23 DAI and one for the bananas worth 55.5
-DAI, the user should pay the zkSync fee also in DAI. Then you could call the function the following way:
+DAI, also the user should pay the zkSync fee in DAI. Then you could call the function the following way:
 
 ```ts
 const transactions = [
@@ -85,7 +85,7 @@ const checkoutManager = new CheckoutManager('mainnet');
 
 ## Checking user's balance
 
-If the address of the user is known, we should check if the user has sufficient funds to proceed with the payment. This
+If the user's address is known, we should check if the user has sufficient funds to proceed with the payment. This
 can be done easily with the following piece of code:
 
 ```ts
