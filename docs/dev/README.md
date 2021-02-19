@@ -1,4 +1,4 @@
-# Developer guide
+# Introduction to zkSync for Developers
 
 ## Overview
 
@@ -36,10 +36,3 @@ Third, zkSync is friendly for exchanges. Atomic swaps -- an essential component 
 
 Finally, zkSync support is implemented for all the main platforms. Check out our [SDK section](/api/sdk) of docs, and
 start developing with zkSync!
-
-## Resources
-
-- [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
-- [zkSync Ropsten testnet](https://ropsten.zksync.io)
-- [zkSync Mainnet](https://wallet.zksync.io)
-- [SDK documentation](/api/sdk/)

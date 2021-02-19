@@ -31,19 +31,11 @@ module.exports = {
                 //link: '/faq/intro.html'
             },
             {
-                text: 'Docs',
+                text: 'Developer Docs',
                 link: '/dev/'
             },
             {
-                text: 'API',
-                link: '/api/'
-            },
-            {
-                text: 'Docs',
-                link: '/dev/'
-            },
-            {
-                text: 'API',
+                text: 'API Reference',
                 link: '/api/'
             },
             {
@@ -144,31 +136,33 @@ module.exports = {
                 //    ]
                 //},
             ],
-            '/dev/': [
+            '/dev': [
                 {
-                    title: 'Developer guide',  // required
-                    path: '/dev/', // optional, which should be a absolute path.
+                    title: 'Introduction',  // required
+                    path: '/dev/',      // optional, which should be a absolute path.
+                    collapsable: false  // optional, defaults to true
+                },
+                {
+                    title: 'Payments',  // required
+                    path: '/dev/payments', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                        '/dev/overview',
-                        '/dev/basic',
-                        '/dev/sending_transactions',
-                        '/dev/contracts',
-                        '/dev/cryptography',
-                        '/dev/updates'
+                      '/dev/payments/basic',
+                      '/dev/payments/sending_transactions',
+                      '/dev/payments/contracts',
+                      '/dev/payments/updates'
                     ]
                 },
-            ],
-            '/': [         
-                '',
                 {
-                    title: 'Contracts',  // required
+                    title: 'Smart contracts',  // required
                     path: '/dev/contracts', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
+                    sidebarDepth: 0,    // optional, defaults to 1
                     children: [
-                        '/dev/contracts/zinc'
+                        '/dev/contracts/overview',
+                        '/dev/contracts/zinc',
+                        '/dev/contracts/solidity'
                     ]
                 }
             ],

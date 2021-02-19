@@ -1,4 +1,4 @@
-# Zinc programming language
+# Zinc
 
 Zinc is a programming language which can be used to develop:
 
