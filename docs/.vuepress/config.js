@@ -26,16 +26,24 @@ module.exports = {
         repo: 'matter-labs/zksync',
         nav: [
             {
-                text: 'Docs',
+                text: 'FAQ',
                 link: '/faq/'
                 //link: '/faq/intro.html'
+            },
+            {
+                text: 'Docs',
+                link: '/dev/'
+            },
+            {
+                text: 'API',
+                link: '/api/'
             },
             {
                 text: 'Contact',
                 link: '/contact.html'
             },
             {
-                text: 'Status',
+                text: 'Uptime',
                 link: 'https://uptime.com/s/zksync'
             }
         ],
@@ -45,27 +53,30 @@ module.exports = {
                 '/legal/terms',
                 '/legal/privacy'
             ],
-            '/': [         
-                '',
+            '/faq/': [
                 {
                     title: 'FAQ',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                     children: [
-                      '/faq/intro',
-                      '/faq/tech',
-                      '/faq/security',
-                      '/faq/wallets',
-                      '/faq/tokens',
-                      '/faq/decentralization',
-                      '/faq/tokenomics',
-                      '/faq/sc',
-                      '/faq/privacy',
-                      '/faq/roadmap',
-                      '/faq/status',
+                        '/faq/intro',
+                        '/faq/tech',
+                        '/faq/security',
+                        '/faq/wallets',
+                        '/faq/tokens',
+                        '/faq/decentralization',
+                        '/faq/tokenomics',
+                        '/faq/sc',
+                        '/faq/privacy',
+                        '/faq/roadmap',
+                        //'/faq/status',
                     ]
                 },
+            ],
+            '/': [         
+                '',
+
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
