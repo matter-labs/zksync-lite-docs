@@ -78,7 +78,8 @@ to play around with it.
     If you are going to start a new project, <a href="https://zinc.zksync.io/"> embrace Zinc today!</a>
     </td>
     <td>
-    If you possess a large Solidity codebase, it is reasonable to wait for the Solidity support, and start migrating to Zinc after the mainnet release.
+    If you possess a large Solidity codebase, it is reasonable to wait for the Solidity support,
+    and start migrating to Zinc after the mainnet release.
     </td>
   </tr>
 </table>
