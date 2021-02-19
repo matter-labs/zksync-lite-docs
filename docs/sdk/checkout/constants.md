@@ -60,7 +60,7 @@ The `CheckoutErrors` contains the errors of which might happen both on the zkSyn
 
 ### zkSync-side errors
 
-- `NO_OPENER_ERROR`. This error is thrown if the checkout page is opened without an opener (basically that means, that
+- `NO_OPENER_ERROR`. This error is thrown if the checkout page is opened without an opener (basically this means that
   the page was opened directly, but not as a popup). That's why you may see a gray screen if you open the checkout page
   directly in the browser.
 - `CHECKOUT_NOT_STARTED_ERROR`. This error is thrown if the checkout page tries to retrieve the state (e.g. list of
