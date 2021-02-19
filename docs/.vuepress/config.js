@@ -74,23 +74,24 @@ module.exports = {
                     ]
                 },
             ],
-            '/': [         
-                '',
-
+            '/dev/': [
                 {
                     title: 'Developer guide',  // required
                     path: '/dev/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/dev/overview',
-                      '/dev/basic',
-                      '/dev/sending_transactions',
-                      '/dev/contracts',
-                      '/dev/cryptography',
-                      '/dev/updates'
+                        '/dev/overview',
+                        '/dev/basic',
+                        '/dev/sending_transactions',
+                        '/dev/contracts',
+                        '/dev/cryptography',
+                        '/dev/updates'
                     ]
                 },
+            ],
+            '/': [         
+                '',
                 {
                     title: 'API documentation',  // required
                     path: '/api', // optional, which should be a absolute path.
