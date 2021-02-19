@@ -13,3 +13,4 @@ This section also covers the ecosystem libraries we maintain:
 
 - [Cryptographic backends](./crypto): support of zkSync cryptography in different programming languages.
 - [zkCheckout](./checkout): TypeScript library to integrate zkSync payments for your application.
+- [Schnorr MuSig](https://github.com/matter-labs/schnorr-musig): Rust / WASM library for multisignature support.
