@@ -144,12 +144,10 @@ module.exports = {
                     title: 'Payments',  // required
                     path: '/dev/payments', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
+                    sidebarDepth: 1,    // optional, defaults to 1
                     children: [
                       '/dev/payments/basic',
                       '/dev/payments/sending_transactions',
-                      '/dev/payments/contracts',
-                      '/dev/payments/updates'
                     ]
                 },
                 {
@@ -159,15 +157,13 @@ module.exports = {
                 }
             ],
             '/api': [
+                '/api/changelog',
+                '/api/environments',
                 {
-                    title: 'API documentation',  // required
-                    path: '/api', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
-                    children: [
-                      '/api/v0.1',
-                      '/api/v1'
-                    ]
+                    title: 'API v0.1',  // required
+                    path: '/api/v0.1', // optional, which should be a absolute path.
+                    collapsable: false,  // optional, defaults to true
+                    sidebarDepth: 1    // optional, defaults to 1
                 },
                 {
                     title: 'JavaScript SDK',  // required
@@ -211,7 +207,6 @@ module.exports = {
                         '/api/sdk/swift/tutorial'
                     ]
                 },
-                '/api/sdk/crypto',
                 {
                     title: 'zkCheckout SDK',  // required
                     path: '/api/sdk/checkout', // optional, which should be a absolute path.
@@ -225,7 +220,8 @@ module.exports = {
                         '/api/sdk/checkout/protocol',
                         '/api/sdk/checkout/appendix-a'
                     ]
-                }
+                },
+                '/api/sdk/crypto',
             ]
         }
     },

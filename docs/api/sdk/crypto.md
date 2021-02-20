@@ -1,8 +1,10 @@
-# Cryptographic Backends
+# Cryptographic libraries
 
 zkSync uses cryptographic primitives different from ones that are used in Ethereum. So, in order to make basic
 operations, such as generating the private key and sign transactions, we provide interfaces for our cryptographic
 backend for various programming languages.
+
+## Table of contents
 
 [[toc]]
 

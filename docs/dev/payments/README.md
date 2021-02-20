@@ -6,5 +6,3 @@ This section provides a guide on how zkSync protocol works, and how to interact 
 
 - [Basic protocol overview](./basic)
 - [Guide on sending transactions](./sending_transactions)
-- [zkSync core updates](./updates)
-- [zkSync network contracts on Ethereum](./contracts)

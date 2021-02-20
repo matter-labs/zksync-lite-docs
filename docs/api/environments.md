@@ -1,7 +1,5 @@
 # Environments
 
-Addresses of smart contracts and links:
-
 ## Mainnet
 
 - Wallet: [https://wallet.zksync.io](https://wallet.zksync.io)
