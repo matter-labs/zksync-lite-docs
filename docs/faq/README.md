@@ -1,6 +1,6 @@
 # Welcome to zkSync
 
-**zkSync** is a user-centric zkRollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
+**zkSync** is a user-centric zk rollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
 Ethereum, already live on Ethereum mainnet.
 
 <b>Some of the main features of zkSync are:</b>
