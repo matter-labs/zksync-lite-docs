@@ -55,18 +55,10 @@ module.exports = {
             ],
             '/faq/': [
                 {
-                    title: 'Welcome to ZkSync',  // required
+                    title: 'Overview',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
-                },
-                {
-                    title: 'Overview',  // required
-                    path: '/faq/intro', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 1,     // optional, defaults to 1
-                    children: [
-                        ]
                 },
                 {
                     title: 'Technology',  // required
@@ -104,6 +96,12 @@ module.exports = {
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
                 },
+                {
+                    title: 'Smart contracts',  // required
+                    path: '/faq/sc', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },                
                 {
                     title: 'Privacy',  // required
                     path: '/faq/privacy', // optional, which should be a absolute path.

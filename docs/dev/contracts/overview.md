@@ -1,4 +1,4 @@
-# Smart contracts overview
+# Overview
 
 [[toc]]
 

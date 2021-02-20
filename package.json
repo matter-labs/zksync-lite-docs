@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "ci": "",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "yarn docs:build && firebase deploy",
@@ -10,7 +11,8 @@
     "fmt:check": "prettier --check \"docs/**/*.md\"",
     "cspell": "cspell docs/**/*.md",
     "md:lint": "markdownlint docs",
-    "md:deadlinks": "check-md"
+    "md:deadlinks": "check-md",
+    "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks"
   },
   "devDependencies": {
     "check-md": "^1.0.1",
