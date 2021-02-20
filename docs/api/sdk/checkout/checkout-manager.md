@@ -68,7 +68,7 @@ Returns the promise that resolves with the number of `feeToken` (in wei) that wi
 Note, that the value that the method returns does not take into account the amount of the gas fee that will be paid by
 the user in process of depositing the tokens she lacks on L2 to proceed to checkout. But it DOES take into account the
 fact that one transaction will be added to pay the fee. You can read more on the optional additional fee transaction in
-batches [here](/dev/sending_transactions.md#sending-transaction-batches).
+batches [here](/dev/payments/sending_transactions.md#sending-transaction-batches).
 
 ## wait
 

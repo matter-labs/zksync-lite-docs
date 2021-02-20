@@ -20,6 +20,8 @@ unencrypted
 permissionless
 trustlessness
 IERC
+Schnorr
+MuSig
 
 mainchain
 offchain
