@@ -157,6 +157,12 @@ module.exports = {
                 }
             ],
             '/api': [
+                {
+                    title: 'Overview',  // required
+                    path: '/api/', // optional, which should be a absolute path.
+                    collapsable: false,  // optional, defaults to true
+                    sidebarDepth: 0    // optional, defaults to 1
+                },
                 '/api/changelog',
                 '/api/environments',
                 {
