@@ -154,14 +154,8 @@ module.exports = {
                 },
                 {
                     title: 'Smart contracts',  // required
-                    path: '/dev/contracts', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 0,    // optional, defaults to 1
-                    children: [
-                        '/dev/contracts/overview',
-                        '/dev/contracts/zinc',
-                        '/dev/contracts/solidity'
-                    ]
+                    path: '/dev/contracts/', // optional, which should be a absolute path.
+                    collapsable: false,  // optional, defaults to true
                 }
             ],
             '/api': [
