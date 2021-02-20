@@ -2,7 +2,7 @@
 
 ## Meta
 
-- [Changelog and notifications](./changelog)
+- [Changelog and notifications for developers](./changelog)
 - [Development and production environments](./environments)
 
 ## API
