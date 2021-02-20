@@ -48,7 +48,7 @@ Here are some links to explore the topic of zkRollups:
 
 ## Maximum throughput
 
-Since [the upgrade on Feb 9, 2021](https://twitter.com/zksync/status/1359190015671164930) that brough support of
+Since [the upgrade on Feb 9, 2021](https://twitter.com/zksync/status/1359190015671164930) that brought support of
 recursion to **zkSync** on mainnet, protocol throughput is limited essentially only by the need to publish state changes
 for every transaction via `calldata` Ethereum, to ensure data availability. With the current block gas limit of 12.5M,
 zkSync can process over 2000 TPS.

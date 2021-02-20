@@ -15,7 +15,7 @@ In-depth articles can be found on our [Medium page](https://medium.com/matter-la
 
 ## Introduction
 
-**zkSync** is powered by the [ZK rollup technology](/faq/tech.md#zkrollup-architecture). It uses zero-knowledge proofs
+**zkSync** is powered by the [ZK rollup technology](/faq/tech.md#zk-rollup-architecture). It uses zero-knowledge proofs
 and on-chain data availability to keep users' funds as safe as though they never left the mainnet.
 
 While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively
