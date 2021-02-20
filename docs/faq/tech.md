@@ -51,20 +51,19 @@ Here are some links to explore the topic of zkRollups:
 ## Maximum throughput
 
 **zkSync** node infrastructure has been benchmarked to support more than 8000 TPS (transactions per second). Currently,
-the actual transaction throughput has an upper bound of 2000 TPS due to Ethereum's block gas limits. Yet,
-this number exceeds by far
-[the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient
-for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal recursion (without
-difficulties such as the need for cycles of elliptic curves)! Recursion allows us to easily implement uncapped blocks in
-zkSync v1.1 without reimplementing the already-audited basic block circuit. Moreover, it is the key to the future 
-implementation of privacy and smart contracts. Recursion is now live in production!
+the actual transaction throughput has an upper bound of 2000 TPS due to Ethereum's block gas limits. Yet, this number
+exceeds by far [the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and
+should be sufficient for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal
+recursion (without difficulties such as the need for cycles of elliptic curves)! Recursion allows us to easily implement
+uncapped blocks in zkSync v1.1 without reimplementing the already-audited basic block circuit. Moreover, it is the key
+to the future implementation of privacy and smart contracts. Recursion is now live in production!
 
 ## Transaction finality
 
 Transactions in **zkSync** reach the finality of Ethereum once the SNARK proof of the **zkSync** block is generated and
 accepted by the smart contract. The proof time generation is expected to be about 10 minutes, i.e. 10 minutes after
 submitted, the **zkSync** (proof) transaction is as final as any L1 Ethereum transaction included in the same Ethereum
-block as the transaction with the proof. At the moment, when a user sends a transaction, we wait for the block to get 
+block as the transaction with the proof. At the moment, when a user sends a transaction, we wait for the block to get
 filled, and so we don't generate the proof immediately. With higher throughput on the zkSync system, time between blocks
 will decrease.
 
@@ -88,8 +87,8 @@ At the moment, instant confirmations are pure promise on the side of **zkSync** 
 the next block. Users who do not trust the validator should await full finality before considering the assets as
 received.
 
-In the future, a security bond will be added to **zkSync** by the validators. This will provide instant economic finality
-guarantees. It will work as follows.
+In the future, a security bond will be added to **zkSync** by the validators. This will provide instant economic
+finality guarantees. It will work as follows.
 
 Validators elected to participate in the **zkSync** block production will have to post a significant security bond to
 the **zkSync** smart contract on the mainnet. A consensus run by the validators provides a subsecond confirmation to the
@@ -129,5 +128,5 @@ simply unaffected by L1 censorship in any way.
 
 Secondly, the normal operation of **zkSync** is also unlikely to be disrupted, even for smaller amounts. The validator's
 node is configured to automatically increase the gas price to over-the-average level to get **zkSync** blocks mined with
-high priority. Since the cost per transaction are ~1/100th of the cost of corresponding plain transaction on the L1, 
+high priority. Since the cost per transaction are ~1/100th of the cost of corresponding plain transaction on the L1,
 **zkSync** users will be least affected.

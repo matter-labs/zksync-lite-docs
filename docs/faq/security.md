@@ -44,7 +44,7 @@ Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order 
 However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
 contract and all users get a 4-week notice period to exit in case they don't like the changes.
 
-NOTICE: Currently, the beta is deployed with a 2-week notice period, and eventually will be bumped to 4 weeks. In the 
+NOTICE: Currently, the beta is deployed with a 2-week notice period, and eventually will be bumped to 4 weeks. In the
 future, this opt-out mechanism will be replaced by a strict opt-in.
 
 ## Cryptography used

@@ -27,6 +27,7 @@ blockchains
 sidechain
 sidechains
 tokenomics
+validator's
 
 // Names
 Stichting
@@ -35,6 +36,8 @@ RSIN
 ABDK
 Alef
 Zcon
+Paypal
+Numio
 
 // Used libraries
 numberish
@@ -60,7 +63,6 @@ checkmark
 Vitalik
 Buterin
 roadmap
-Paypal
 majeure
 conveniens
 reimplementing

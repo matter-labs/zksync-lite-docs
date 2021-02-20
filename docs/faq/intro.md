@@ -41,16 +41,14 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
   support
 - Permissionless [smart contracts](/faq/sc.md) (coming soon)
 
-<span class="footnote"><sup>\*</sup> Currently, it may take longer to fill a block with transactions. Once the block is 
+<span class="footnote"><sup>\*</sup> Currently, it may take longer to fill a block with transactions. Once the block is
 'sealed', it is sent to the prover and appears on L1 within 10 minutes.</span>
 
 <!-- - [Privacy](/faq/privacy.md) (coming soon). -->
 
-
 <!-- ## What can I do with zkSync? -->
 <!-- ADD HERE THE "PARTNER LIST" TABLE FROM NEW WEBSITE -->
 <!-- WAITING UNTIL NEW WEBSITE IS LAUNCHED -->
-
 
 ## zkSync in comparison
 
@@ -60,7 +58,7 @@ in security and usability among existing L2 scaling solutions. Thanks to the com
 and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that
 doesn't require any operational activity to keep the funds safe. For example, users can go offline for a year, then come
 back and be sure to safely withdraw their assets without any external help — even if zkRollup validators were long gone.
-At our current stage of development, we encourge users to monitor the chain for upgrades, and withdraw if they disagree 
+At our current stage of development, we encourage users to monitor the chain for upgrades, and withdraw if they disagree
 with upcoming changes — in the future, upgrades will require a strict opt-in.
 
 To quote from [Vitalik Buterin's 2021 guide to rollups](https://vitalik.ca/general/2021/01/05/rollup.html):
