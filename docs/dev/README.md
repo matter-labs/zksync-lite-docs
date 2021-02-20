@@ -31,7 +31,7 @@ Secondly, zkSync is smart-contract friendly. Targeting 2021, it will be possible
 Rust-based type-safe programming language, or even reuse existing Solidity code. Contracts interoperability is covered
 in the [contracts section](/dev/contracts).
 
-Third, zkSync is friendly for exchanges. Atomic swaps -- an essential component of exchange protocols -- are being
+Third, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols -- are being
 [actively developed](https://github.com/matter-labs/atomic-swaps) and will soon go live. Stay tuned!
 
 Finally, zkSync support is implemented for all the main platforms. Check out our [SDK section](/api/sdk) of docs, and
