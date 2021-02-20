@@ -39,7 +39,7 @@ module.exports = {
                 link: '/api/'
             },
             {
-                text: 'Contact',
+                text: 'Contact and media',
                 link: '/contact.html'
             },
             {
