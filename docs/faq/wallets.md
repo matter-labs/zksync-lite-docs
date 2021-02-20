@@ -38,11 +38,11 @@ Informally, you need to do a one-time 'registration' of your account. More techn
 a different elliptic curve than Ethereum's that is better suited for zero-knowledge proofs. Unlocking your account
 generates and publishes a new private-public key pair over this curve, which is associated to your Ethereum address.
 
-Unlocking your account incur higher costs than other zkSync transactions (11k gas for normal Ethereum key pair accounts),
-because the process of registration happens directly on the Ethereum smart contract, and not as part of a zero-knowledge
-proof. If you are using an ERC-1271 compatible wallet (like Argent), this one-time cost becomes greater because of
-higher interaction with the zkSync smart contract. On the other hand, if you are using a CREATE2 smart contract based
-wallet, this operation is cheaper.
+Unlocking your account incur higher costs than other zkSync transactions (11k gas for normal Ethereum key pair
+accounts), because the process of registration happens directly on the Ethereum smart contract, and not as part of a
+zero-knowledge proof. If you are using an ERC-1271 compatible wallet (like Argent), this one-time cost becomes greater
+because of higher interaction with the zkSync smart contract. On the other hand, if you are using a CREATE2 smart
+contract based wallet, this operation is cheaper.
 
 The fee you pay for this operation is used to pay the fee for the corresponding Ethereum transaction, and so it goes to
 Ethereum miners and not to zkSync validators.
