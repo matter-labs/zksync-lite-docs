@@ -20,7 +20,8 @@ Yes.
 
 ### When? How can I get the token?
 
-This has not been determined yet. Stay tuned.
+We intend to distribute the majority of the network government rights to our community. Please
+[follow our news](../contact.md) to get all the important updates.
 
 ### How will it work?
 

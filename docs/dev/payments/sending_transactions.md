@@ -60,7 +60,7 @@ In order to send a transaction, the user has to do the following steps:
 Details on transaction data and encoding it into byte sequence could be found in the [formal protocol
 description][protocol].
 
-To see the programming language support for signing primitives, see the [cryptography section](cryptography.md).
+To see the programming language support for signing primitives, see the [cryptography section](/api/sdk/crypto).
 
 Messages for Ethereum signatures depend on the transaction type:
 
@@ -157,6 +157,6 @@ Requirement for adding a prefix described above still holds.
 This obtained signature may be sent together with batch via [corresponding JSON RPC method][send_batch], and none of the
 batch transactions is required to have an Ethereum signature.
 
-[send_tx]: ../api/v0.1.md#tx-submit
-[send_batch]: ../api/v0.1.md#submit-txs-batch
+[send_tx]: /api/v0.1.md#tx-submit
+[send_batch]: /api/v0.1.md#submit-txs-batch
 [protocol]: https://github.com/matter-labs/zksync/blob/master/docs/protocol.md

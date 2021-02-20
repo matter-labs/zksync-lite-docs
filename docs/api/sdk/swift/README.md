@@ -1,6 +1,6 @@
-# Java SDK
+# iOS SDK
 
-This section contains documentation for the Java SDK for zkSync.
+This section contains documentation for the Swift SDK for zkSync.
 
 ::: warning
 
@@ -11,9 +11,8 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 ## Resources
 
 - [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
-- [zkSync Java SDK github page](https://github.com/zksync-sdk/zksync-java)
+- [zkSync Swift SDK github page](https://github.com/zksync-sdk/zksync-swift)
 
 ## Table of contents
 
 - [Getting started](tutorial.md)
-- [Interfaces](interfaces.md)

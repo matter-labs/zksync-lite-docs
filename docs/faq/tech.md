@@ -2,7 +2,7 @@
 
 [[toc]]
 
-## zkRollup architecture
+## ZK rollup architecture
 
 **zkSync** is an L2 protocol based on **ZK rollup** architecture. ZK rollup is a flavour of a larger "rollup" family.
 For more background, we recommend Vitalik Buterin's
@@ -27,8 +27,6 @@ SNARK verification is much cheaper than verifying every transaction individually
 significantly cheaper than storing it on EVM. Hence enabling a huge boost of scalability (~100-200x mainnet capacity)
 and tx cost savings.
 
-### Security
-
 zkRollup architecture provides the following guarantees:
 
 - Validators can never corrupt the state or steal funds (unlike Sidechains).
@@ -50,15 +48,10 @@ Here are some links to explore the topic of zkRollups:
 
 ## Maximum throughput
 
-**zkSync** node infrastructure has been benchmarked to support more than 8000 TPS (transactions per second). Currently,
-the actual transaction throughput has an upper bound of 300 TPS due to the current limitations of the PLONK CRS. Yet,
-this number exceeds by far
-[the average transaction load on Paypal](https://en.bitcoin.it/Scalability#Scalability_targets) and should be sufficient
-for a while. More importantly, PLONK is one of the few proof systems that allow efficient universal recursion (without
-difficulties such as the need for cycles of elliptic curves)! We already implemented, verified, and benchmarked it.
-Recursion allows us to easily implement uncapped blocks in zkSync v1.1 without reimplementing the already-audited basic
-block circuit. Moreover, it is the key to the future implementation of privacy and smart contracts. More details will be
-provided at a later time.
+Since [the upgrade on Feb 9, 2021](https://twitter.com/zksync/status/1359190015671164930) that brought support of
+recursion to **zkSync** on mainnet, protocol throughput is limited essentially only by the need to publish state changes
+for every transaction via `calldata` Ethereum, to ensure data availability. With the current block gas limit of 12.5M,
+zkSync can process over 2000 TPS.
 
 ## Transaction finality
 

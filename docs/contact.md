@@ -2,28 +2,14 @@
 sidebar: false
 ---
 
-# Contacts
-
-## Developers
-
-All technical/developer discussions will only take place in gitter:
-
-- [gitter.im/matter-labs/zksync](https://gitter.im/matter-labs/zksync) (general integration questions)
-- [gitter.im/matter-labs/zinc](https://gitter.im/matter-labs/zinc) (smart contracts)
-
-## Community & user support
-
-Welcome to our zkSync [Discord](https://discord.gg/px2aR7w).
-
-## Partnerships, questions, integrations and press
-
-Please reach out directly via **hello@matter-labs.io** or dm in [Twitter](https://twitter.com/the_matter_labs).
+# Contact and media
 
 ## Follow the news
 
-- [Twitter](https://twitter.com/the_matter_labs)
-- [Medium](https://medium.com/matter-labs)
-- [Telegram channel](https://t.me/zksync)
+- [Twitter: zkSync](https://twitter.com/zksync)
+- [Twitter: Matter Labs](https://twitter.com/the_matter_labs)
+- [Medium: Matter Labs' blog](https://medium.com/matter-labs)
+- [Telegram: zkSync announcements channel](https://t.me/zksync)
 
 <form
 action="//dev.us4.list-manage.com/subscribe/post?u=ef8545da9c594ae082297352d&amp;id=fa715c9af0"
@@ -58,7 +44,24 @@ novalidate
 </div>
 </form>
 
+## Developer community
+
+All technical/developer discussions will only take place in gitter:
+
+- [gitter.im/matter-labs/zksync](https://gitter.im/matter-labs/zksync) (general integration questions)
+- [gitter.im/matter-labs/zinc](https://gitter.im/matter-labs/zinc) (smart contracts)
+
+## User community and support
+
+- [Telegram: user support group](https://t.me/zksync_support) (new!).
+- [Telegram: community discussion group](https://t.me/zksync_community) (new!).
+- [Discord: discussions](https://discord.gg/px2aR7w).
+
+## Partnerships, questions, integrations and press
+
+Please reach out directly via **hello@matter-labs.io** or dm in [Twitter](https://twitter.com/the_matter_labs).
+
 ## Career opportunities
 
-Matter Labs is always hiring talented software engineers and cryptographers. Please check out our
-[open positions](https://medium.com/matter-labs/software-engineering-jobs-at-matter-labs-c456d01b2a02).
+We are always hiring! Please check out our
+[open positions](https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464).

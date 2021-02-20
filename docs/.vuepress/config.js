@@ -31,15 +31,15 @@ module.exports = {
                 //link: '/faq/intro.html'
             },
             {
-                text: 'Docs',
+                text: 'Developer Docs',
                 link: '/dev/'
             },
             {
-                text: 'API',
+                text: 'API Reference',
                 link: '/api/'
             },
             {
-                text: 'Contact',
+                text: 'Contact and media',
                 link: '/contact.html'
             },
             {
@@ -55,18 +55,10 @@ module.exports = {
             ],
             '/faq/': [
                 {
-                    title: 'Welcome to ZkSync',  // required
+                    title: 'Overview',  // required
                     path: '/faq/', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 1,     // optional, defaults to 1
-                },
-                {
-                    title: 'Overview',  // required
-                    path: '/faq/intro', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 1,     // optional, defaults to 1
-                    children: [
-                        ]
                 },
                 {
                     title: 'Technology',  // required
@@ -105,6 +97,12 @@ module.exports = {
                     sidebarDepth: 1,     // optional, defaults to 1
                 },
                 {
+                    title: 'Smart contracts',  // required
+                    path: '/faq/sc', // optional, which should be a absolute path.
+                    collapsable: true,  // optional, defaults to true
+                    sidebarDepth: 1,     // optional, defaults to 1
+                },                
+                {
                     title: 'Privacy',  // required
                     path: '/faq/privacy', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
@@ -136,90 +134,94 @@ module.exports = {
                 //    ]
                 //},
             ],
-            '/dev/': [
+            '/dev': [
                 {
-                    title: 'Developer guide',  // required
-                    path: '/dev/', // optional, which should be a absolute path.
+                    title: 'Introduction',  // required
+                    path: '/dev/',      // optional, which should be a absolute path.
+                    collapsable: false  // optional, defaults to true
+                },
+                {
+                    title: 'Payments',  // required
+                    path: '/dev/payments', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
+                    sidebarDepth: 1,    // optional, defaults to 1
                     children: [
-                        '/dev/overview',
-                        '/dev/basic',
-                        '/dev/sending_transactions',
-                        '/dev/contracts',
-                        '/dev/cryptography',
-                        '/dev/updates'
+                      '/dev/payments/basic',
+                      '/dev/payments/sending_transactions',
                     ]
                 },
-            ],
-            '/': [         
-                '',
                 {
-                    title: 'API documentation',  // required
-                    path: '/api', // optional, which should be a absolute path.
-                    collapsable: true,  // optional, defaults to true
-                    sidebarDepth: 2,    // optional, defaults to 1
-                    children: [
-                      '/api/v0.1',
-                      '/api/v1'
-                    ]
+                    title: 'Smart contracts',  // required
+                    path: '/dev/contracts/', // optional, which should be a absolute path.
+                    collapsable: false,  // optional, defaults to true
+                }
+            ],
+            '/api': [
+                '/api/changelog',
+                '/api/environments',
+                {
+                    title: 'API v0.1',  // required
+                    path: '/api/v0.1', // optional, which should be a absolute path.
+                    collapsable: false,  // optional, defaults to true
+                    sidebarDepth: 1    // optional, defaults to 1
                 },
                 {
                     title: 'JavaScript SDK',  // required
-                    path: '/sdk/js', // optional, which should be a absolute path.
+                    path: '/api/sdk/js', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                      '/sdk/js/tutorial',
-                      '/sdk/js/providers',
-                      '/sdk/js/accounts',
-                      '/sdk/js/utils',
-                      '/sdk/js/types',
-                      '/sdk/js/browser-bundled'
+                      '/api/sdk/js/tutorial',
+                      '/api/sdk/js/providers',
+                      '/api/sdk/js/accounts',
+                      '/api/sdk/js/utils',
+                      '/api/sdk/js/types',
+                      '/api/sdk/js/browser-bundled'
                     ]
                 },
                 {
                     title: 'Rust SDK',  // required
-                    path: '/sdk/rust', // optional, which should be a absolute path.
+                    path: '/api/sdk/rust', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                        '/sdk/rust/tutorial'
+                        '/api/sdk/rust/tutorial'
                     ]
                 },
                 {
                     title: 'Java SDK',  // required
-                    path: '/sdk/java', // optional, which should be a absolute path.
+                    path: '/api/sdk/java', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                        '/sdk/java/tutorial',
-                        'sdk/java/interfaces'
+                        '/api/sdk/java/tutorial',
+                        '/api/sdk/java/interfaces'
                     ]
                 },
                 {
                     title: 'Swift SDK',  // required
-                    path: '/sdk/swift', // optional, which should be a absolute path.
+                    path: '/api/sdk/swift', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                        '/sdk/swift/tutorial'
+                        '/api/sdk/swift/tutorial'
                     ]
                 },
                 {
                     title: 'zkCheckout SDK',  // required
-                    path: '/sdk/checkout', // optional, which should be a absolute path.
+                    path: '/api/sdk/checkout', // optional, which should be a absolute path.
                     collapsable: true,  // optional, defaults to true
                     sidebarDepth: 2,    // optional, defaults to 1
                     children: [
-                        '/sdk/checkout/tutorial',
-                        '/sdk/checkout/checkout-manager',
-                        '/sdk/checkout/types',
-                        '/sdk/checkout/constants',
-                        '/sdk/checkout/protocol',
-                        '/sdk/checkout/appendix-a'
+                        '/api/sdk/checkout/tutorial',
+                        '/api/sdk/checkout/checkout-manager',
+                        '/api/sdk/checkout/types',
+                        '/api/sdk/checkout/constants',
+                        '/api/sdk/checkout/protocol',
+                        '/api/sdk/checkout/appendix-a'
                     ]
-                }
+                },
+                '/api/sdk/crypto',
             ]
         }
     },
