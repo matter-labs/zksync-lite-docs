@@ -61,4 +61,4 @@ novalidate
 ## Career opportunities
 
 Matter Labs is always hiring talented software engineers and cryptographers. Please check out our
-[open positions](https://medium.com/matter-labs/software-engineering-jobs-at-matter-labs-c456d01b2a02).
+[open positions](https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464).
