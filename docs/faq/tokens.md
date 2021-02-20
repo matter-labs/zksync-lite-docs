@@ -1,4 +1,4 @@
-# Tokens & fees
+# Tokens & Fees
 
 [[toc]]
 
@@ -23,8 +23,8 @@ To submit a token for listing, please fill out
 
 We can immediately list tokens that satisfy the following conditions:
 
-- price tracked at <https://coinmarketcap.com>.
-- daily trading volume exceeds \$1M over the period of the past 3 months.
+- price tracked at <https://coinmarketcap.com>
+- daily trading volume exceeds \$1M over the period of the past 3 months
 
 ## Fee costs
 

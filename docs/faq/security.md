@@ -14,7 +14,7 @@ additional requirements on the user part. In particular:
 - Users do not need to monitor the network.
 - Private keys can be held in cold storage.
 - Validators can not steal funds or corrupt the zkSync state in any way.
-- Users can always withdraw their assets onto the mainnet, regardless of cooperation from zkSync validators.
+- Users can withdraw their assets onto the mainnet, regardless of cooperation from zkSync validators.
 
 Several mechanisms are used to fulfill these guarantees, discussed below.
 
