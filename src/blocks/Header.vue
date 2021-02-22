@@ -4,7 +4,9 @@
       <i-container class="mobileOnly">
         <i-row>
           <i-column>
-            <logo/>
+            <transition name="fade">
+              <logo v-if="showLogo || opened"/>
+            </transition>
           </i-column>
           <i-column class="_padding-right-0">
             <div class="hamContainer">
@@ -68,17 +70,22 @@ export default Vue.extend({
   data() {
     return {
       opened: false,
+      showLogo: true,
     };
   },
+  beforeMount() {
+    if (process.client && window.pageXOffset < 768) {
+      window.addEventListener("scroll", this.handleScroll);
+    }
+  },
+  beforeDestroy() {
+    if (process.client && window.pageXOffset < 768) {
+      window.removeEventListener("scroll", this.handleScroll);
+    }
+  },
   methods: {
-    scrollDown() {
-      // noinspection JSCheckFunctionSignatures @ts-link ignore
-      this.$scrollTo(document.getElementById("about")!, 500, {
-        x: false,
-        y: true,
-        cancelable: true,
-        offset: -84,
-      });
+    handleScroll() {
+      this.showLogo = window.pageYOffset > 300;
     },
   },
 });

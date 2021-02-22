@@ -11,8 +11,9 @@
 @import "vue-prism-editor/dist/prismeditor.min.css"; // import the styles somewhere
 
 
-//zkInk
-@import "zkInk/base";
+//zk
+@import "zk/base";
+@import "zk/table";
 
 //Layouts
 @import "./layouts/default";

@@ -9,19 +9,23 @@ export const state = () => ({
 export type ScrollModuleState = ReturnType<typeof state>;
 
 export const mutations: MutationTree<ScrollModuleState> = {
-  setLastScroll(state, lastScroll: Number) {
-    state.lastScroll = lastScroll ?? false;
+  setLastScroll(state: { lastScroll: boolean | Number }, lastScroll: Number) {
+    if (!lastScroll) {
+      state.lastScroll = false;
+    } else {
+      state.lastScroll = lastScroll;
+    }
   },
-  setLastPath(state, lastPath: String) {
+  setLastPath(state: { lastPath: String }, lastPath: String) {
     state.lastPath = lastPath;
   },
 };
 
 export const getters: GetterTree<ScrollModuleState, RootState> = {
-  getLastScroll(state): false | Number {
+  getLastScroll(state: { lastScroll: boolean | Number }): boolean | Number {
     return state.lastScroll;
   },
-  getLastPath(state): String {
+  getLastPath(state: { lastPath: String }): String {
     return state.lastPath;
   },
 };

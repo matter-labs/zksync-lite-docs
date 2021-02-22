@@ -6,13 +6,13 @@
           Rely on math,<br>not validators
         </h1>
       </i-row>
-      <i-row>
+      <i-row class="_margin-top-2">
         <p class="grayText aboutZkSync subheaderText" data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000">
           <emphasis show-logo="true"/>
           solves Ethereum scalability<br>with zero security compromises.
         </p>
       </i-row>
-      <i-row center data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000">
+      <i-row center data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000" class="_margin-top-1">
         <zk-button href="https://wallet.zksync.io" variant="glow" size="lg" css-class="antilink">Open Wallet</zk-button>
       </i-row>
       <i-row
@@ -31,7 +31,7 @@
         </a>
       </i-row>
       <div
-        class="scrollDown _margin-top-7" data-aos-offset="0" data-aos="fade-up" data-aos-delay="100"
+        class="scrollDown" data-aos-offset="0" data-aos="fade-up" data-aos-delay="100"
         data-aos-duration="700" @click.capture="scrollTo('#about')"
       >
         <i class="fal fa-arrow-down"/>

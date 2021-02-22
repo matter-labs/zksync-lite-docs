@@ -42,6 +42,7 @@
     "nuxt-i18n": "^6.20.1",
     "nuxt-social-meta": "^0.0.5",
     "nuxt-socialsplash-module": "^1.0.0",
+    "postcss": "7.0.32",
     "prismjs": "^1.23.0",
     "vue": "^2.6.12",
     "vue-prism-editor": "1.2.2",

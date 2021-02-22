@@ -1,0 +1,103 @@
+@import "../variables";
+
+.table-wrapper.tg {
+  overflow: initial !important;
+  overflow-x: auto !important;
+
+  table.table.-dark {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    ._bg-red {
+      text-align: center;
+
+      background: linear-gradient(91.83deg, #bb3b7f 2.26%, rgb(218, 74, 87) 95.81%) !important;
+    }
+
+    ._bg-green {
+      text-align: center;
+      background: #56ac6a80 linear-gradient(91.83deg, rgb(140, 207, 64) 2.26%, rgb(193, 210, 72) 95.81%) !important;
+    }
+
+    tr {
+      & > td, th {
+        vertical-align: middle;
+        border: 1px solid $white;
+        font-size: 18px;
+        padding: 0.6rem 1.2rem;
+        word-break: normal;
+        overflow: initial;
+        background-color: transparent !important;
+        font-weight: normal;
+        font-style: normal;
+        color: $white;
+
+        span {
+          font-weight: normal;
+          font-style: normal;
+          color: $white;
+        }
+      }
+
+      th {
+        border-width: 0;
+        border-bottom-width: 1px;
+        white-space: nowrap;
+        font-size: 18px;
+      }
+
+      & > td {
+        word-break: normal;
+
+        &:first-child,
+        &:last-child {
+          border-width: 0;
+          border-bottom-width: 1px;
+        }
+      }
+
+      &:last-child > td {
+        border-width: 0;
+        border-right-width: 1px;
+
+        &:last-child {
+          border-right-width: 0;
+        }
+      }
+    }
+  }
+
+  .tg-rrgg {
+    text-align: left;
+    vertical-align: top
+  }
+
+  .tg-95qi {
+    color: $white;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top
+  }
+
+  .tg-pta1 {
+    color: $white;
+    text-align: left;
+    vertical-align: top
+  }
+
+  .tg-fr5z {
+    background-color: #850002;
+    color: $white;
+    text-align: left;
+    vertical-align: top
+  }
+
+  @media (max-width: $mobile) {
+    th, td {
+      padding: 0.4rem 1rem;
+      font-size: 16px;
+    }
+
+  }
+}

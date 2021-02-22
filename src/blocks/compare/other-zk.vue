@@ -3,61 +3,63 @@
     <i-table class="tg" variant="dark" responsive>
       <thead>
       <tr>
-        <th class="tg-0lax"></th>
-        <th class="tg-95qi">SNARK-based</th>
-        <th class="tg-95qi">STARK-based</th>
-        <th class="tg-0lax"><logo/></th>
+        <th ></th>
+        <th >SNARK-based</th>
+        <th >STARK-based</th>
+        <th >
+          <logo />
+        </th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">App-specific trusted setup</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;">Required</td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Not required</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Not required</span></td>
+        <td >App-specific trusted setup</td>
+        <td class=" _bg-red">Required</td>
+        <td class=" _bg-green">Not required</td>
+        <td class=" _bg-green">Not required</td>
       </tr>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">Smart contracts</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;"><span>None</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
+        <td >Smart contracts</td>
+        <td class=" _bg-red">None</td>
+        <td class=" _bg-green">Yes</td>
+        <td class=" _bg-green">Yes</td>
       </tr>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">EVM-compatible</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;"><span>None</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;"><span>None</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
+        <td >EVM-compatible</td>
+        <td class=" _bg-red">None</td>
+        <td class=" _bg-red">None</td>
+        <td class=" _bg-green">Yes</td>
       </tr>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">Free open source</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;"><span>None</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
+        <td >Free open source</td>
+        <td class=" _bg-green">Yes</td>
+        <td class=" _bg-red">None</td>
+        <td class=" _bg-green">Yes</td>
       </tr>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">Community-owned</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;"><span>None</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">Yes</span></td>
+        <td >Community-owned</td>
+        <td class=" _bg-green">Yes</td>
+        <td class=" _bg-red">None</td>
+        <td class=" _bg-green">Yes</td>
       </tr>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">Verification cost on L1</span></td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">300k gas</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;">5,000k gas</td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">600k gas</span></td>
+        <td >Verification cost on L1</td>
+        <td class=" _bg-green">300k gas</td>
+        <td class=" _bg-red">5,000k gas</td>
+        <td class=" _bg-green">600k gas</td>
       </tr>
       <tr>
-        <td class="tg-pta1"><span style="font-weight:normal;font-style:normal;color:#ffffff">Gas for a unique account tx</span></td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;">3k</td>
-        <td class="tg-fr5z" style="color: rgb(255, 255, 255); background-color: rgb(255, 23, 23) !important;">1k</td>
-        <td class="tg-rrgg" style="color: rgb(255, 255, 255); background-color: rgb(106, 168, 79) !important;"><span style="font-weight:normal;font-style:normal;color:#ffffff">0.5k</span></td>
+        <td >Gas for a unique account tx</td>
+        <td class=" _bg-red">3k</td>
+        <td class=" _bg-red">1k</td>
+        <td class=" _bg-green">0.5k</td>
       </tr>
       </tbody>
     </i-table>
   </div>
 </template>
 <script>
-import Logo from '@/blocks/Logo.vue'
+import Logo from "@/blocks/Logo.vue";
 
 export default {
   components: {

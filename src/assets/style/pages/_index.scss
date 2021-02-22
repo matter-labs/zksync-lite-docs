@@ -41,7 +41,7 @@
     flex-direction: column;
     justify-content: center;
     padding-bottom: 20px;
-    height: calc(100vh - 100px) !important;
+    height: calc(100vh - 84px) !important;
     @media screen and (max-height: 770px) {
       height: calc(100vh - 84px);
     }
@@ -53,7 +53,7 @@
       font-size: 80px;
       line-height: 96px;
       text-align: center;
-      color: #FFFFFF;
+      color: #ffffff;
     }
 
     .grayText {
@@ -71,6 +71,11 @@
 
       color: rgba(255, 255, 255, 0.5);
       /* or 34px */
+
+      .emphasis {
+        color: $white !important;
+        font-size: inherit !important;
+      }
     }
 
     .mainHeadline {
@@ -79,6 +84,7 @@
       font-weight: 800;
       max-width: 555px;
       margin: 0;
+
     }
 
     .grayText {
@@ -86,7 +92,7 @@
     }
 
     .exploreFAQ {
-      margin: 57px auto 0 !important;
+      margin: 30px auto 0 !important;
       cursor: pointer;
       text-decoration: none;
       font-style: normal;
@@ -126,7 +132,7 @@
       display: inline-flex;
       cursor: pointer;
       height: 53px;
-      margin: 0 auto;
+      margin: 30px auto 0;
       width: 53px;
       justify-content: center;
       align-items: center;
@@ -425,7 +431,7 @@
         .button {
           margin-top: 25px;
           background: rgba(24, 24, 32, 0.01);
-          border: 1px solid #FFFFFF;
+          border: 1px solid #ffffff;
           box-sizing: border-box;
           line-height: 24px;
           font-size: 20px;
@@ -545,7 +551,7 @@
 
         a.button {
           background: rgba(24, 24, 32, 0.01);
-          border: 1px solid #FFFFFF;
+          border: 1px solid #ffffff;
           box-sizing: border-box;
           line-height: 24px;
           font-size: 20px;
@@ -571,7 +577,7 @@
   }
 
   &::before, &::after {
-    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #FF8D6C 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0) 100%);
+    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520aeb 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00a7ff 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #ff8d6c 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #e81d72 0%, rgba(255, 0, 0, 0) 100%);
     background-blend-mode: overlay, normal, normal, color-dodge, normal;
     border-radius: 6px;
     content: '';
@@ -599,13 +605,13 @@
   }
 
   .topBlock {
-    background-color: #171A49;
+    background-color: #171a49;
     padding: 50px 30px;
     border-radius: .25rem .25rem 0 0;
   }
 
   .bottomBlock {
-    background-color: #1D2039;
+    background-color: #1d2039;
     padding: 50px 30px;
     border-radius: 0 0 .25rem .25rem;
 
@@ -652,6 +658,8 @@
       &.subheaderText {
         font-size: 18px !important;
         line-height: 20px;
+
+
       }
 
       br {
@@ -659,6 +667,8 @@
       }
 
       white-space: initial !important;
+
+
     }
 
     .h2 {
@@ -670,9 +680,14 @@
       height: 450px;
 
       .grayText.subheaderText {
-        margin: 16px auto 30px !important;
+        margin: 0 auto 30px !important;
         line-height: 140% !important;
         font-size: 20px !important;
+
+        .emphasis {
+          color: $white !important;
+          font-size: inherit !important;
+        }
       }
 
       .mainHeadline {
@@ -880,9 +895,9 @@
         }
       }
     }
-    .mainFooter > .container > .row
-    {
-      padding: 1rem 0!important;
+
+    .mainFooter > .container > .row {
+      padding: 1rem 0 !important;
     }
   }
 
@@ -1032,7 +1047,7 @@ body .openWallet {
     top: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #FF8D6C 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0) 100%);
+    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520aeb 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00a7ff 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #ff8d6c 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #e81d72 0%, rgba(255, 0, 0, 0) 100%);
     background-blend-mode: overlay, normal, normal, color-dodge, normal;
     mix-blend-mode: normal;
     border-radius: 6px;
@@ -1046,78 +1061,5 @@ body .openWallet {
 
   &::after {
     filter: blur(40px) brightness(100%);
-  }
-}
-
-.table-wrapper.tg {
-  overflow: initial !important;
-  overflow-x: auto !important;
-
-  table.table.-dark {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-
-    td, th {
-      border: 1px solid $violet;
-      font-size: 18px;
-      padding: 0.6rem 1.2rem;
-      word-break: normal;
-      overflow: initial;
-
-      span {
-        font-weight: normal;
-        font-style: normal;
-        color: #ffffff
-      }
-    }
-
-    td {
-      word-break: normal;
-      background-color: $darkViolet !important;
-    }
-
-    th {
-      white-space: nowrap;
-    }
-
-    th, tr > td:first-child {
-      font-size: 18px;
-      background-color: $darkBlack !important;
-    }
-
-    .tg-rrgg {
-      background-color: #1E3F10;
-      color: #FFF;
-      text-align: left;
-      vertical-align: top
-    }
-
-    .tg-95qi {
-      color: #FFF;
-      font-weight: bold;
-      text-align: left;
-      vertical-align: top
-    }
-
-    .tg-pta1 {
-      color: #FFF;
-      text-align: left;
-      vertical-align: top
-    }
-
-    .tg-fr5z {
-      background-color: #850002;
-      color: #FFF;
-      text-align: left;
-      vertical-align: top
-    }
-
-    @media (max-width: $mobile) {
-      th, td {
-        padding: 0.4rem 1rem;
-      }
-
-    }
   }
 }
