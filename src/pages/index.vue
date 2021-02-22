@@ -169,9 +169,11 @@ with zero security compromises"
               Develop type-safe, functional style smart contracts on Zinc: a Rust-based framework.
             </div>
             <zk-button
-              href="https://zksync.curve.fi"
-              target="_blank"
-              size="md" outline css-class="width-300"
+              css-class='width-300'
+              href='https://zksync.curve.fi'
+              outline
+              size='md'
+              target='_blank'
             >Try <strong>Curve + zkSync</strong> testnet
             </zk-button>
           </div>
@@ -289,7 +291,6 @@ with zero security compromises"
 
 <script>
 import codeBlock from "@/blocks/CodeBlock.vue";
-import NoneRollups from "@/blocks/compare/non-rollups";
 import Optimistic from "@/blocks/compare/optimistic";
 import OtherZk from "@/blocks/compare/other-zk";
 import newsletter from "@/blocks/Newsletter.vue";
@@ -302,7 +303,6 @@ export default {
   components: {
     OtherZk,
     Optimistic,
-    NoneRollups,
     ZkButton,
     Emphasis,
     ReviewsSlider,
