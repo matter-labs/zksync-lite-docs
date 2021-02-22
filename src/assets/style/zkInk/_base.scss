@@ -1,0 +1,423 @@
+/**
+ * Text styling
+ */
+
+//styleName: h0;
+.zkHeader0 {
+  font-family: $grotesk;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 96px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.zkSubHeader {
+  //styleName: Subheading;
+  font-family: $openSans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.zkSubHeader2 {
+
+  //styleName: Subheading 2;
+  font-family: $openSans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.zkSubHeader3 {
+  font-family: $grotesk;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.zkHeader3 {
+  //styleName: h3;
+  font-family: $openSans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+
+/* Rectangle 100 *
+
+
+position: absolute;
+width: 1440px;
+height: 357.5px;
+left: 0px;
+top: 6821px;
+
+/* Bg/FadedDark *
+
+background: rgba(0, 0, 0, 0.3);
+
+
+/* Union *   /
+
+
+position: absolute;
+width: nanpx;
+height: nanpx;
+left: nanpx;
+top: nanpx;
+
+background: #2D3987;
+transform: matrix(nan, nan, nan, nan, nan, nan);
+
+
+/* Frame 8 *   /
+
+
+/* Auto Layout *   /
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 79px;
+height: 110.83px;
+left: 479px;
+top: 6903.5px;
+
+
+
+/* Frame 9 *   /
+
+
+/* Auto Layout *   /
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 42px;
+height: 49.17px;
+left: 647px;
+top: 6903.5px;
+
+
+
+/* Newsletter sign-up *   /
+
+
+position: absolute;
+width: 161px;
+height: 25px;
+left: 937px;
+top: 6900.17px;
+
+/* h3 *   /
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 140%;
+                  /* or 25px *   /
+
+                letter-spacing: 0.01em;
+
+/* Text/main *   /
+
+color: #FFFFFF;
+
+
+/* ant-design:medium-outlined *   /
+
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 937px;
+top: 6993px;
+
+
+
+/* ant-design:github-filled *   /
+
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 973px;
+top: 6993px;
+
+
+
+/* ant-design:twitter-outlined *   /
+
+
+position: absolute;
+width: 20px;
+height: 20px;
+left: 1009px;
+top: 6993px;
+
+
+
+/* Group 10545 *   /
+
+
+position: absolute;
+width: 278px;
+height: 40px;
+left: 936px;
+top: 6937px;
+
+
+
+/* Zk/Logo *   /
+
+
+position: absolute;
+width: 150px;
+height: 33.72px;
+left: 227px;
+top: 6902px;
+
+
+
+/* Line 10 *   /
+
+
+position: absolute;
+width: 987px;
+height: 0px;
+left: 228px;
+top: 7075px;
+
+border: 0.833333px solid rgba(255, 255, 255, 0.1);
+
+
+/* Made with ♡ by Matter Labs *   /
+
+
+position: absolute;
+width: 235px;
+height: 18.33px;
+left: 227px;
+top: 7115.17px;
+
+/* Subheading 2 *   /
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 20px;
+
+/* Text/faded *   /
+
+color: rgba(255, 255, 255, 0.5);
+
+
+/* Frame 10 *   /
+
+
+/* Auto Layout *   /
+
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 221px;
+height: 20px;
+right: 225.5px;
+top: 7115.17px;
+
+
+
+/* Zk/Logo *   /
+
+
+position: absolute;
+visibility: hidden;
+width: 120px;
+height: 26.98px;
+left: 467px;
+top: 3947px;
+
+
+
+/* Rely on math, not validators *   /
+
+
+position: absolute;
+width: 854px;
+height: 192px;
+left: 298px;
+top: 232px;
+
+/* h0 *   /
+
+font-family: FK Grotesk;
+font-style: normal;
+font-weight: bold;
+font-size: 80px;
+line-height: 96px;
+text-align: center;
+
+/* Text/main *   /
+
+color: #FFFFFF;
+
+
+/* zksync solves Ethereum scalability  with zero security compromises. *   /
+
+
+position: absolute;
+width: 735px;
+height: 70px;
+left: 353px;
+top: 446px;
+
+/* Subheading *   /
+
+font-family: FK Grotesk;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 140%;
+                  /* or 34px *   /
+
+                text-align: center;
+
+/* Text/faded *   /
+
+color: rgba(255, 255, 255, 0.5);
+
+
+/* Group 10525 *   /
+
+
+position: absolute;
+width: 257px;
+height: 120px;
+left: 592px;
+top: 573px;
+
+
+
+/* Group 10578 *   /
+
+
+position: absolute;
+width: 988px;
+height: 845.17px;
+left: 209px;
+top: 1377px;
+
+
+
+/* Group 10585 *   /
+
+
+position: absolute;
+width: 1442px;
+height: 380px;
+left: -1px;
+top: 933px;
+
+
+
+/* Group 10582 *   /
+
+
+position: absolute;
+width: 1011.67px;
+height: 823px;
+left: 214px;
+top: 5836px;
+
+
+
+/* Group 10584 *   /
+
+
+position: absolute;
+width: 1442px;
+height: 809px;
+left: -1px;
+top: 2652px;
+
+
+
+/* Group 10587 *   /
+
+
+position: absolute;
+width: 987.67px;
+height: 767.33px;
+left: 226px;
+top: 3553px;
+
+
+
+/* Group 10580 *   /
+
+
+position: absolute;
+width: 1000px;
+height: 1196px;
+left: 220px;
+top: 4469px;
+
+
+
+/* Group 10586 *   /
+
+
+position: absolute;
+width: 990px;
+height: 259px;
+left: 209px;
+top: 2301px;
+
+
+
+/* Group 10588 *   /
+
+
+position: absolute;
+width: 53px;
+height: 53.07px;
+left: 698px;
+top: 803px;
+
+
+
+/* Brand / Logo / Icon *   /
+
+
+position: absolute;
+left: 33.68%;
+           right: 63.68%;
+                       top: 6.32%;
+                                bottom: 93.35%;
+*/

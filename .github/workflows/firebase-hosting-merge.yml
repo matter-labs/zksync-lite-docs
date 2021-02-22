@@ -13,12 +13,9 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Install deps
-        run: yarn
-
       - name: Build docs
-        run: yarn docs:build
-      
+        run: yarn zk-ci-prepare
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

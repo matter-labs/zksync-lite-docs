@@ -1,0 +1,8 @@
+{
+  "pages": {
+    "contacts":{
+      "add": "Add contact",
+      "edit": "Edit contact"
+    }
+  }
+}

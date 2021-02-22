@@ -1,0 +1,177 @@
+.newsletterContainer {
+  .newsletterHeadline {
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .succesBlock {
+    font-size: 14px;
+    min-height: 40px;
+    color: $green;
+  }
+
+
+  //.newsletterInput {
+  //  align-items: center;
+  //  background-color: transparentize($color: $white, $amount: 0.95);
+  //  border-radius: 0.25rem;
+  //  display: grid;
+  //  grid-gap: 5px;
+  //  grid-template-columns: 1fr max-content;
+  //  grid-template-rows: 100%;
+  //  height: 40px;
+  //  margin: 0;
+  //  padding: 5px 5px 5px 16px;
+  //  transition: box-shadow $transition1;
+  //  width: 100%;
+  //
+  //  &.focused {
+  //    box-shadow: 0 0 0 1px transparentize($color: $white, $amount: 0.8);
+  //  }
+  //
+  //  input {
+  //    background-color: transparent;
+  //    border: none;
+  //
+  //    color: $white;
+  //    font-family: $openSans;
+  //    font-size: 16px;
+  //    height: 100%;
+  //    outline: none;
+  //    text-align: left;
+  //    transition: color $transition1;
+  //    width: 100%;
+  //
+  //    &:disabled {
+  //      color: transparentize($color: $white, $amount: 0.5);
+  //    }
+  //
+  //    &::placeholder {
+  //      color: transparentize($color: $white, $amount: 0.5);
+  //    }
+  //  }
+  //
+  //
+  //}
+
+  .newsletterInput {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    background-color: transparentize($color: $white, $amount: 0.95);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: 100%;
+    grid-gap: 5px;
+    align-items: center;
+    transition: box-shadow $transition1;
+    padding: 5px 5px 5px 16px;
+    //  background-color: transparentize($color: $white, $amount: 0.95);
+
+
+    &.focused {
+      box-shadow: 0 0 0 1px transparentize($color: $white, $amount: 0.8);
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      text-align: left;
+      font-family: $grotesk;
+      color: $white;
+      outline: none;
+      transition: color $transition1;
+
+      &:disabled {
+        color: transparentize($color: $white, $amount: 0.5);
+      }
+
+      &::placeholder {
+        color: transparentize($color: $white, $amount: 0.5);
+      }
+    }
+
+    .submitBtn {
+      background-color: $lightViolet;
+      overflow: hidden;
+
+      color: $white;
+      font-family: $openSans;
+      height: 100%;
+      transition: background-color $transition1;
+      width: 93px;
+
+      &:hover {
+        background-color: $lightViolet;
+      }
+
+      &.loading {
+        background-color: $violet;
+      }
+
+      .loaderSpinner {
+        margin: 0 auto;
+      }
+
+      &.loading {
+        background-color: $violet;
+      }
+
+      .loaderSpinner {
+        margin: 0 auto;
+      }
+    }
+  }
+
+
+  max-width: 485px;
+  margin: 0 auto;
+
+  .newsletterHeadline {
+    display: none;
+  }
+
+  .newsletterInput {
+    height: 56px;
+
+    input[type="email"] {
+
+      &::placeholder {
+        color: $gray;
+      }
+    }
+
+    .submitBtn {
+      width: 160px;
+      text-align: center;
+    }
+  }
+
+  .succesBlock {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    .newsletterInput {
+      height: 45px;
+
+      input, .button {
+        font-size: 16px;
+      }
+
+      .submitBtn {
+        width: 110px;
+      }
+    }
+
+    .succesBlock {
+      font-size: 16px;
+    }
+  }
+}

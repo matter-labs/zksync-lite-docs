@@ -1,33 +1,18 @@
 {
-  "name": "zksync-docs",
-  "version": "0.1.0",
+  "version": "1.0.0-beta",
   "license": "MIT",
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn docs:build && firebase deploy",
-    "fmt": "prettier --write \"docs/**/*.md\"",
-    "fmt:check": "prettier --check \"docs/**/*.md\"",
-    "cspell": "cspell docs/**/*.md",
-    "md:lint": "markdownlint docs",
-    "md:deadlinks": "check-md",
-    "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks"
-  },
-  "devDependencies": {
-    "check-md": "^1.0.1",
-    "cspell": "^4.1.5",
-    "markdownlint": "^0.21.1",
-    "markdownlint-cli": "^0.24.0",
-    "prettier": "2.1.2"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "printWidth": 120,
-    "parser": "markdown",
-    "singleQuote": true,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "proseWrap": "always"
+  "author": "Matter Labs",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "check-md": {
     "cwd": "./docs",
@@ -37,10 +22,170 @@
     "exitLevel": "warn",
     "ignoreFootnotes": true
   },
+  "bugs": {
+    "url": "https://github.com/matter-labs/zksync-docs/issues"
+  },
   "dependencies": {
+    "@nuxt/typescript-runtime": "^2.0.1",
+    "@nuxtjs/google-gtag": "^1.0.4",
+    "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/sentry": "^5.0.1",
+    "@types/js-cookie": "^2.2.6",
+    "@types/lodash": "^4.14.168",
+    "@types/prismjs": "^1.16.3",
+    "@vuepress/core": "^1.8.2",
+    "aos": "^2.3.4",
+    "css-loader": "^5.0.2",
+    "js-cookie": "^2.2.1",
     "markdown-it-footnote": "3.0.2",
-    "vuepress": "^1.4.0",
+    "nuxt": "^2.15.0",
+    "nuxt-i18n": "^6.20.1",
+    "nuxt-social-meta": "^0.0.5",
+    "nuxt-socialsplash-module": "^1.0.0",
+    "prismjs": "^1.23.0",
+    "vue": "^2.6.12",
+    "vue-prism-editor": "1.2.2",
+    "vue-scrollto": "^2.20.0",
+    "vuepress": "^1.8.2",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-fulltext-search": "^2.1.0"
+  },
+  "description": "zkSync.io new landing",
+  "devDependencies": {
+    "@inkline/nuxt": "^2.3.5",
+    "@nuxt/types": "^2.15.0",
+    "@nuxt/typescript-build": "^2.0.4",
+    "@nuxtjs/axios": "latest",
+    "@nuxtjs/dotenv": "1.4.1",
+    "@nuxtjs/eslint-config-typescript": "^5.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@typescript-eslint/parser": "^4.15.1",
+    "check-md": "^1.0.1",
+    "commitlint": "^11.0.0",
+    "cspell": "^4.1.5",
+    "dotenv": "8.2.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier-vue": "^2.1.1",
+    "eslint-plugin-vue": "^7.6.0",
+    "fork-ts-checker-webpack-plugin": "^6.1.0",
+    "markdownlint": "^0.21.1",
+    "markdownlint-cli": "^0.24.0",
+    "node-sass": "latest",
+    "prettier": "^2.2.1",
+    "sass-loader": "^10.1.1",
+    "stylelint": "^13.10.0",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.1.5",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.46.0"
+  },
+  "eslintConfig": {
+    "extends": "@nuxtjs/eslint-config"
+  },
+  "homepage": "https://zksync.io",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --format -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{css,scss}": "yarn run lint-css",
+    "*.{ts,tsx}": [
+      "yarn run lint-ts",
+      "yarn run format"
+    ]
+  },
+  "name": "landing.matter",
+  "optionalDependencies": {
+    "@sentry/webpack-plugin": "^1.14.0",
+    "fs-extra": "^9.0.1"
+  },
+  "private": true,
+  "scripts": {
+    "nuxt-ci": "rm -fr node_modules && rm -rf 'public/*' && sh ./cli-check-env.sh && yarn install --frozen-lockfile",
+    "nuxt-ci:build": "yarn nuxt-ci && yarn generate --fail-on-error",
+    "start:firebase": "firebase serve --only hosting",
+    "deploy:prod": "./cli-deploy-production.sh",
+    "dev": "sh ./cli-check-env.sh && nuxt-ts",
+    "start": "sh ./cli-check-env.sh && nuxt-ts start",
+    "build": "sh ./cli-check-env.sh && nuxt-ts build",
+    "generate": "sh ./cli-check-env.sh && nuxt-ts generate",
+    "test": "jest",
+    "format": "prettier --write",
+    "lint-ts": "eslint --fix \"**/*.{ts, js, vue}\"",
+    "lint-css": "stylelint --fix \"**/*.scss\"",
+    "audit_dependencies": "yarn audit --package-lock-only --audit-level critical --json | yarn-audit-html --output audit.html",
+    "check-md": "^1.0.1",
+    "markdownlint": "^0.21.1",
+    "markdownlint-cli": "^0.24.0",
+    "prettier": "2.1.2",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "yarn docs:build && firebase deploy",
+    "fmt": "prettier --write \"docs/**/*.md\"",
+    "fmt:check": "prettier --check \"docs/**/*.md\"",
+    "cspell": "cspell docs/**/*.md",
+    "md:lint": "markdownlint docs",
+    "md:deadlinks": "check-md",
+    "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks",
+    "zk-copy": "sh ./cli-merge.sh",
+    "zk-ci-prepare": "yarn nuxt-ci:build && yarn ci && yarn docs:build && yarn zk-copy"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-rational-order"
+    ],
+    "plugins": [
+      "stylelint-order",
+      "stylelint-scss",
+      "stylelint-config-rational-order/plugin",
+      "stylelint-high-performance-animation",
+      "stylelint-declaration-use-variable"
+    ],
+    "rules": {
+      "no-empty-source": [
+        true,
+        {
+          "severity": "warning"
+        }
+      ],
+      "plugin/no-low-performance-animation-properties": [
+        true,
+        {
+          "severity": "warning"
+        }
+      ],
+      "sh-waqar/declaration-use-variable": [
+        [
+          "/color/",
+          "font-size",
+          "font-family",
+          "font-weight"
+        ]
+      ],
+      "order/properties-order": [],
+      "plugin/rational-order": [
+        true,
+        {
+          "border-in-box-model": false,
+          "empty-line-between-groups": false
+        }
+      ],
+      "selector-type-no-unknown": [
+        true,
+        {
+          "ignore": [
+            "custom-elements"
+          ]
+        }
+      ],
+      "no-descending-specificity": true,
+      "at-rule-no-unknown": null,
+      "scss/at-rule-no-unknown": true
+    }
   }
 }

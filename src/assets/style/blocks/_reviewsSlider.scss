@@ -1,0 +1,196 @@
+.reviewsContainer {
+  position: relative;
+  width: 100%;
+  padding: 51px 0 !important;
+  height: auto;
+  background-color: transparentize($color: #000000, $amount: 0.7);
+  overflow: hidden;
+  @media screen and (min-width: 1225px) {
+    .arrow {
+      display: none;
+
+      &.left {
+        left: calc(50vw - 450px - 30px - 100px);
+      }
+
+      &.right {
+        right: calc(50vw - 450px - 30px - 100px);
+      }
+    }
+  }
+  @media screen and (max-width: 1224px) {
+    .arrow {
+      &.left {
+        left: calc(5vw - 25px);
+      }
+
+      &.right {
+        right: calc(5vw - 25px);
+      }
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .arrow {
+      display: none;
+    }
+  }
+
+
+  .itemsContainer {
+    width: max-content;
+    height: fit-content;
+    display: grid;
+    align-items: stretch;
+    grid-auto-flow: column;
+    grid-auto-columns: 286px;
+    grid-gap: 40px;
+    transition: transform $transition1;
+    will-change: transform;
+
+    .reviewItem {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 28px 30px;
+      border-radius: 16px;
+      background-color: $darkBlack;
+
+      text-decoration: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      @media (min-width: $mobile) {
+
+      }
+
+      &:hover {
+        background: #141837;
+        cursor: pointer;
+        color: $white !important;
+        box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.03);
+        text-decoration: none !important;
+      }
+
+      .reviewHeader {
+        height: 36px;
+        width: 100%;
+        margin-bottom: 20px;
+        color: $white;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 80%;
+          width: auto;
+          margin-right: 10px;
+        }
+
+        span {
+          text-align: left;
+          font-size: 18px;
+          letter-spacing: 0.02rem;
+        }
+      }
+
+      .reviewText {
+        text-align: left;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.02rem;
+        color: $white;
+        &:hover
+        {
+          text-decoration: none !important;
+        }
+      }
+
+      .arrowLink {
+        position: absolute;
+        display: block;
+        right: 20px;
+        top: 20px;
+        width: 22.2px;
+        height: 22.2px;
+        border-radius: 50%;
+        text-decoration: none !important;
+        transition: background-color $transition1;
+        will-change: background-color;
+
+        i {
+          width: 100%;
+          height: 100%;
+          display: block;
+          color: $white;
+          text-align: center;
+          line-height: 22px;
+          font-size: 20px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .arrow {
+    z-index: 2;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: calc(50% - 25px);
+    background-color: $lightViolet;
+    color: $white;
+    line-height: 50px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: background-color $transition1;
+    will-change: background-color, opacity, transform;
+
+    &:not(:active):hover {
+      background-color: lighten($color: $lightViolet, $amount: 5);
+    }
+
+    &:active {
+      transition-duration: 0.0001s;
+      opacity: 1 !important;
+    }
+    i {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .gradient {
+    z-index: 1;
+    position: absolute;
+    width: 20vw;
+    height: 100%;
+    top: 0;
+    will-change: opacity;
+
+    &.right {
+      background: linear-gradient(90deg, transparentize($color: #0a0c1a, $amount: 1) 0%, #0a0c1a 90%);
+      right: 0;
+    }
+
+    &.left {
+      background: linear-gradient(-90deg, transparentize($color: #0a0c1a, $amount: 1) 0%, #0a0c1a 90%);
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .arrow {
+      &.left {
+        left: calc(10vw - 25px);
+      }
+
+      &.right {
+        right: calc(10vw - 25px);
+      }
+    }
+
+  }
+}

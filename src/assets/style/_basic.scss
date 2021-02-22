@@ -1,0 +1,78 @@
+@import "variables";
+
+/**
+ * Basics for the general elements like <a>, <p>, <blockquote>.
+ * Text rendering with anti-aliasing
+ */
+body {
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-size: 16px;
+
+
+  /**
+   * .antilink — special class to avoid generic links style application
+   */
+  a[href]:not(.socialItem):not(.openWallet):not(.exploreFAQ):not(.antilink) {
+    color: $white !important;
+    text-decoration: none !important;
+
+    &:hover {
+      transition: color $transition1;
+      color: $lightViolet !important;
+      text-decoration: none !important;
+
+    }
+  }
+
+  /**
+   * Badge
+   * @refs: https://inkline.io/docs/components/badge
+   */
+  .badge.-secondary {
+    background: transparent !important;
+    top: -10px;
+    position: relative;
+    left: -10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #b6cbe6 !important;
+    opacity: 1 !important;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    &._upcoming-h3 {
+      left: -5px;
+      top: -20px;
+    }
+  }
+
+  /**
+   * Tooltip component
+   * @refs: https://inkline.io/docs/components/tooltip
+   */
+  .tooltip-wrapper {
+    .tooltip.-dark, .tooltip {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      margin-right: -20px !important;
+    }
+  }
+
+  .button
+  {
+    transition: background-color, color $transition1;
+    &:hover
+    {
+      color: darken($white, 10) !important;
+      span
+      {
+        color: darken($white, 10) !important;
+      }
+      background-color: $lightViolet !important;
+    }
+  }
+}

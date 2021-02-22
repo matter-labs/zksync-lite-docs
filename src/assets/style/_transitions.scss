@@ -1,0 +1,62 @@
+/* Fade */
+.fade-enter-active,.fade-leave-active {
+    transition: $transition1;
+    pointer-events: none;
+}
+.fade-enter,.fade-leave-to {
+    opacity: 0;
+}
+
+
+/* Slide */
+.slideFromLeft-enter-active,.slideFromLeft-leave-active,.slideFromRight-enter-active,.slideFromRight-leave-active {
+    transition: $transition2 !important;
+    transition-property: background-color, transform, opacity;
+    pointer-events: none;
+}
+.slideFromLeft-enter,.slideFromLeft-leave-to {
+    opacity: 0 !important;
+    transform: translateX(-70px);
+}
+.slideFromRight-enter,.slideFromRight-leave-to {
+    opacity: 0 !important;
+    transform: translateX(70px);
+}
+
+/* Fade */
+.fade-enter-active,.fade-leave-active {
+    transition: $transition1;
+    pointer-events: none;
+}
+.fade-enter,.fade-leave-to {
+    opacity: 0;
+}
+
+/* Code block sliding */
+.slideRight-enter-active,.slideRight-leave-active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .5s ease;
+    pointer-events: none;
+}
+.slideRight-enter,.slideRight-leave-to {
+    opacity: 0;
+    transform: translateX(70px);
+}
+
+
+/* Slide */
+.slideFromLeft-enter-active,.slideFromLeft-leave-active,.slideFromRight-enter-active,.slideFromRight-leave-active {
+    transition: $transition2 !important;
+    transition-property: background-color, transform, opacity;
+    pointer-events: none;
+}
+.slideFromLeft-enter,.slideFromLeft-leave-to {
+    opacity: 0 !important;
+    transform: translateX(-70px);
+}
+.slideFromRight-enter,.slideFromRight-leave-to {
+    opacity: 0 !important;
+    transform: translateX(70px);
+}

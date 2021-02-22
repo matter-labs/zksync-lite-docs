@@ -1,0 +1,38 @@
+// Core
+@import "./variables";
+@import "./default";
+@import "./basic";
+@import "./transitions";
+@import "./fonts";
+@import "./aos.css";
+
+@import "prismjs/themes/prism-tomorrow.css"; // import syntax highlighting styles
+
+@import "vue-prism-editor/dist/prismeditor.min.css"; // import the styles somewhere
+
+
+//zkInk
+@import "zkInk/base";
+
+//Layouts
+@import "./layouts/default";
+
+//Blocks
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./blocks/logo";
+@import "./blocks/investors";
+@import "./blocks/cookie";
+@import "./blocks/socialBlock";
+@import "./blocks/newsletter";
+@import "./blocks/reviewsSlider";
+@import "./blocks/codeBlock";
+
+//Components
+@import "./components/loader";
+@import "./components/dropdownBlock";
+@import "./components/emphasis";
+@import "./components/button";
+
+//Pages
+@import "./pages/index";
