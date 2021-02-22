@@ -245,7 +245,7 @@ with zero security compromises"
               <div class="grayText">
                 Free access to finance is a fundamental right.
                 <Emphasis/>
-                is unconditionally permissionless from day one, and will also bring strong censorship- resistance to L2.
+                is unconditionally permissionless from day one, and will also bring strong censorship-resistance to L2.
               </div>
             </div>
             <div class="textItem">
