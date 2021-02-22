@@ -113,8 +113,7 @@ In the current form, transaction batches is a server-side abstraction. Successfu
 information about batch is not passed into the circuit. Thus, if this feature is being used to pay fees in a different
 token, it is recommended to set the fee payment transaction last (so that server even in theory will be unable to
 execute the last transaction, but ignore other ones). In the future, the batches will be enforced in the circuit in
-order to increase the overall security of this feature. 
-:::
+order to increase the overall security of this feature. :::
 
 Currently, a batch is guaranteed to be able to successfully process a max of 50 transactions.
 
@@ -131,7 +130,6 @@ transfer. In order to do so, one can create a batch of two transactions:
 
 Server will check that sum of fees (0 in the first transaction and 2x expected fee in the second one) is enough to cover
 processing of two transfers and will execute the batch.
-
 
 ### Ethereum signature for batch
 
