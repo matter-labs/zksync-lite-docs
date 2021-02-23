@@ -4,6 +4,7 @@
 Ethereum, already live on Ethereum mainnet.
 
 <!-- using HTML style instead of Markdown ## since our formatter screams when a title is punctuated -->
+
 <b>Some of the main features of zkSync are:</b>
 
 - Extremely low transaction fees
@@ -13,7 +14,6 @@ Ethereum, already live on Ethereum mainnet.
 - No requirement for operational activity to keep the funds safe
 
 <b>Get started by reading [the overview](/faq/intro.md).</b>
-
 
 ## For Developers
 
