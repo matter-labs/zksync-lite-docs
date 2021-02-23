@@ -1,17 +1,17 @@
 <template>
   <i-button
-    :class="buttonClass"
-    :href="href"
-    :size="size"
-    :target="target"
-    :variant="variant"
-    :outline="outline"
+      :class="buttonClass"
+      :href="href"
+      :size="size"
+      :target="target"
+      :variant="variant"
+      :outline="outline"
   ><span><slot/></span></i-button>
 </template>
 
 <script>
 export default {
-  name: "ZkButton",
+  name: "ZButton",
   props: {
     glow: {
       required: false,

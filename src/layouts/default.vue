@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import footerComponent from '@/blocks/Footer.vue'
-import headerComponent from '@/blocks/Header.vue'
+import footerComponent from "@/blocks/Footer.vue";
+import headerComponent from "@/blocks/Header.vue";
 
 /** @var AOS AOS **/
-import AOS from 'aos'
+import AOS from "aos";
 
 export default {
   components: {
@@ -53,12 +53,6 @@ export default {
     if (process.client) {
       window.history.scrollRestoration = "manual";
     }
-  },
-  methods: {
-    toggleDarkMode() {
-      this.$inkline.config.variant = this.$inkline.config.variant === "light" ? "dark" : "light";
-      localStorage.setItem("colorTheme", this.$inkline.config.variant);
-    },
   },
 };
 </script>

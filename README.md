@@ -1,10 +1,8 @@
-# [zkSync.io](https://zksync.io/) &middot; [zkSync docs](https://zksync.io/) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/matter-labs/zksync-wallet/blob/master/LICENSE-MIT) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/matter-labs/zksync-wallet/blob/master/LICENSE-MIT) 
+# [zkSync.io](https://zksync.io/) &middot; [zkSync docs](https://zksync.io/) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/matter-labs/zksync-wallet/blob/master/LICENSE-MIT) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/matter-labs/zksync-wallet/blob/master/LICENSE-MIT)
 
-
-# Website zkSync.io 
+# Website zkSync.io
 
 First public release of the updated zkSync.io landing page design
- 
 
 ## CHANGELOG.md
 
@@ -73,12 +71,47 @@ If `cspell` doesn't recognize a word but you're sure that it's correct, consider
 
 > will do:
 
- * install node modules;
- * prepare, test and build documentation;
- * prepare and build nuxt.js-version of the landing page of zksync.io/index.html
- * afterwards all contained into the `dist` folder will be deployed in form of the static website
+* install node modules;
+* prepare, test and build documentation;
+* prepare and build nuxt.js-version of the landing page of zksync.io/index.html
+* afterwards all contained into the `dist` folder will be deployed in form of the static website
 
 ```bash
 yarn zk-ci-prepare
 yarn firebase deploy
+```
+
+# Extra documentation
+
+## cSpell
+
+Configuration in `.cSpell.json`:
+ * `version` — version of the setting file, always **0.1**
+ * `language` — language - current active spelling language
+ * `words[]` — words - list of words to be always considered correct
+ * `dictionaries[]`
+```
+"dictionaryDefinitions": [
+    {
+      "name": "zksync", "path": "./cspell-zksync.txt"
+    }
+]
+```
+
+```bash
+{
+  
+  "version": "0.1",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [],
+  "dictionaries": ["typescript", "zksync"],
+  //
+  "dictionaryDefinitions": [
+  { 
+    "name": "zksync", "path": "./cspell-zksync.txt"
+  }
+]
+}
 ```

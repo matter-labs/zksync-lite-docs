@@ -65,8 +65,15 @@
                 padding-right: 45px;
                 user-select: none;
                 margin-right: 20px;
+                transition: color $transition1;
+                will-change: color;
+                &.error {
+                    color: $red;
+                }
             }
             .errorText {
+                position: relative;
+                top: 2.5px;
                 height: max-content;
                 width: max-content;
                 align-self: center;

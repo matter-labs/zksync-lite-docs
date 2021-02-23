@@ -289,7 +289,7 @@
   </i-table>
 </template>
 <script>
-import Logo from '@/blocks/Logo.vue'
+import Logo from "@/blocks/Logo.vue";
 
 export default {
   components: {

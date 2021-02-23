@@ -52,22 +52,21 @@ export default {
     color: "#8c8dfc",
     continuous: true,
   },
+
   /*
    ** Global CSS
    */
   css: ["@/assets/style/main.scss"],
+
   /*
    ** Plugins to load before mounting the App
    */
   plugins: ["@/plugins/main"],
 
-  router: {
-    middleware: [],
-  },
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build", ["@nuxtjs/dotenv", { path: __dirname }]],
+  buildModules: ["@nuxt/typescript-build", "@nuxtjs/eslint-module", ["@nuxtjs/dotenv", { path: __dirname }]],
 
   /*
    ** Nuxt.js modules

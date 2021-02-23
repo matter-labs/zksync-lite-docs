@@ -9,16 +9,17 @@ body {
     background: -moz-linear-gradient(top, rgba(24, 24, 32, 0.9), rgba(24, 24, 32, 0.7));
     box-shadow: 1px 1px 5px 10px rgba(0, 0, 0, 0.01);
 
+    .linksContainer {
+      .linkItem {
+        line-height: 2rem;
+        font-weight: normal;
+        transition: color $transition1;
+        text-decoration: none;
+        cursor: pointer;
 
-    .linkItem {
-      line-height: 2rem;
-      font-weight: normal;
-      transition: color $transition1;
-      text-decoration: none;
-      cursor: pointer;
-
-      &:hover {
-        color: $lightViolet !important;
+        &:hover {
+          color: $lightViolet !important;
+        }
       }
     }
 
@@ -47,6 +48,11 @@ body {
 
     .dropdown.-dark {
       padding: 0;
+
+      @media screen and (min-width: $mobile+1) and (max-width: 991px) {
+        font-size: 14px;
+        padding: 0 5px;
+      }
 
       & > .menu[data-popper-placement="bottom"] {
         padding: 0;
@@ -81,12 +87,12 @@ body {
 
           &:first-of-type {
             overflow: hidden;
-            border-radius: 8px 8px 0 0 !important;
+            border-radius: $borderRadius $borderRadius 0 0 !important;
           }
 
           &:last-of-type {
             overflow: hidden;
-            border-radius: 0 0 8px 8px !important;
+            border-radius: 0 0 $borderRadius $borderRadius !important;
           }
         }
 
@@ -273,17 +279,15 @@ body {
               text-align: left;
             }
 
-            & > .menu[data-popper-placement="bottom"]
-            {
+            & > .menu[data-popper-placement="bottom"] {
               position: initial !important;
               width: 100% !important;
 
-              & > span.arrow
-              {
-                dispay:none;
+              & > span.arrow {
+                display: none;
               }
-              & > a.item
-              {
+
+              & > a.item {
                 font-size: 18px;
                 padding: 12px;
               }
@@ -305,7 +309,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    a {
+    a.linkItem {
       padding: 0 10px;
       white-space: nowrap;
       color: $white !important;

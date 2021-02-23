@@ -1,10 +1,12 @@
+@import "../variables";
+
 .glow-button {
   margin: auto;
   position: relative;
   display: flex;
   font-weight: 400;
   box-shadow: none;
-  border-radius: 8px;
+  border-radius: $borderRadius;
   width: 246px;
   height: 60px;
   font: 20px $openSans;

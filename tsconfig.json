@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "target": "ES2018",
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -29,11 +30,11 @@
       ]
     },
     "types": [
+      "@types/nuxt",
       "@types/node",
       "@nuxt/types",
       "@nuxtjs/axios",
       "@nuxt/vue-app",
-      "@types/jest",
       "lodash"
     ]
   },

@@ -7,7 +7,7 @@
           <div class="yellow"></div>
           <div class="green"></div>
         </div>
-        <div class="fileTab codeText">filename.{{ !transpiled ? 'sol' : 'rs' }}</div>
+        <div class="fileTab codeText" :class="{'error': !!error}">filename.{{ transpiled ? 'zink' : 'sol' }}</div>
         <div class="errorText">{{ error }}</div>
       </div>
       <transition name="fade">
@@ -24,20 +24,25 @@
     <div class="codeBlockFooter">
       <div class="buttonBlock">
         <i-button v-if="opened===false" class="_padding-x-2" size="lg" variant="secondary" @click="opened=true">
-          Try our transpiler!
+          Try our transpiler
         </i-button>
-        <i-button v-else-if="transpiled===false" class="_padding-x-2" size="lg" variant="secondary" :disabled="!code || code.length<=0 || loading" @click="transpile()">
-          Transpile into Zinc
-        </i-button>
+        <div v-else-if="transpiled===false" class="buttonGrid">
+          <i-button class="_padding-x-2" size="lg" variant="secondary"
+                    :disabled="!code || code.length<=0 || loading" @click="transpile()">
+            Transpile!
+          </i-button>
+          <i-button size="lg" class="fal fa-times-circle _text-white _padding-x-2" @click="transpiled=false;opened=false;">
+          </i-button>
+        </div>
         <div v-else class="buttonGrid">
           <i-tooltip trigger="click">
-            <i-button class="_padding-x-2" size="lg" variant="secondary" @click="copy()">
-              Copy
+            <i-button class="_padding-x-2" size="lg" variant="transparent" @click="copy()">
+              <em class="fal fa-copy _text-white"></em>
             </i-button>
             <template slot="body">Copied!</template>
           </i-tooltip>
-          <i-button class="_padding-x-2" size="lg" variant="secondary" @click="transpiled=false">
-            Edit
+          <i-button class="_padding-x-2" size="lg" variant="transparent" @click="transpiled=false">
+            <em class="fal fa-pen-alt _text-white"/>
           </i-button>
         </div>
       </div>
@@ -46,6 +51,7 @@
 </template>
 
 <script>
+import httpinvoke from "httpinvoke";
 import { PrismEditor } from "vue-prism-editor";
 import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
@@ -57,7 +63,45 @@ export default {
     PrismEditor,
   },
   data: () => ({
-    code: "",
+    code: `// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.7.0;
+
+struct Funder {
+    address addr;
+    uint amount;
+}
+
+contract CrowdFunding {
+    struct Campaign {
+        address payable beneficiary;
+        uint fundingGoal;
+        uint numFunders;
+        uint amount;
+    }
+
+    uint numCampaigns;
+    mapping (uint => Campaign) campaigns;
+
+    function newCampaign(address payable beneficiary, uint goal) public returns (uint campaignID) {
+        campaignID = numCampaigns++;
+        Campaign storage c = campaigns[campaignID];
+        c.beneficiary = beneficiary;
+        c.fundingGoal = goal;
+    }
+
+    function contribute(uint campaignID) public payable {
+        Campaign storage c = campaigns[campaignID];
+        c.amount += msg.value;
+    }
+
+    function checkGoalReached(uint campaignID) public view returns (bool reached) {
+        Campaign storage c = campaigns[campaignID];
+        if (c.amount < c.fundingGoal)
+            return false;
+        return true;
+    }
+}
+`,
     error: "",
     loading: false,
     opened: false,
@@ -74,12 +118,13 @@ export default {
       this.loading = true;
       this.error = "";
       try {
-        await new Promise((resolve) => {
-          setTimeout(() => {
-            resolve();
-          }, 1500);
+        const response = await httpinvoke("https://sol2zinc.zksync.dev/api/v1/transpiler", "POST", {
+          input: this.code,
         });
-        this.transpiled = "Transpiled code";
+        if (!response.body) {
+          throw new Error({ message: "Code error" });
+        }
+        this.transpiled = response.body;
       } catch (error) {
         this.error = error.message;
       }

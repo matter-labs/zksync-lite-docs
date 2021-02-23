@@ -19,14 +19,9 @@
 </template>
 
 <script lang="ts">
-import logo from "@/blocks/Logo.vue";
-import SocialBlock from "@/blocks/SocialBlock.vue";
 import Vue from "vue";
 
 export default Vue.extend({
-  components: {
-    logo,
-    SocialBlock,
-  },
+  name: "Footer",
 });
 </script>

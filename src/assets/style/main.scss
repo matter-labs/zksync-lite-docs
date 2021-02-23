@@ -6,14 +6,15 @@
 @import "./fonts";
 @import "./aos.css";
 
+//noinspection CssUnknownTarget
 @import "prismjs/themes/prism-tomorrow.css"; // import syntax highlighting styles
-
+//noinspection CssUnknownTarget
 @import "vue-prism-editor/dist/prismeditor.min.css"; // import the styles somewhere
 
 
 //zk
-@import "zk/base";
-@import "zk/table";
+@import "zkDS/base";
+@import "zkDS/table";
 
 //Layouts
 @import "./layouts/default";
@@ -33,7 +34,7 @@
 @import "./components/loader";
 @import "./components/dropdownBlock";
 @import "./components/emphasis";
-@import "./components/button";
+@import "components/z-button";
 
 //Pages
 @import "./pages/index";

@@ -71,3 +71,13 @@ public*
 /firebase-debug.log
 /report.txt
 /tokens.txt
+/.run/
+
+
+# Yarn 2: upgraded dependency management
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

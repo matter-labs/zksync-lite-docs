@@ -1,3 +1,5 @@
+@import "../variables";
+
 .newsletterContainer {
   .newsletterHeadline {
     font-size: 18px;
@@ -10,50 +12,6 @@
     min-height: 40px;
     color: $green;
   }
-
-
-  //.newsletterInput {
-  //  align-items: center;
-  //  background-color: transparentize($color: $white, $amount: 0.95);
-  //  border-radius: 0.25rem;
-  //  display: grid;
-  //  grid-gap: 5px;
-  //  grid-template-columns: 1fr max-content;
-  //  grid-template-rows: 100%;
-  //  height: 40px;
-  //  margin: 0;
-  //  padding: 5px 5px 5px 16px;
-  //  transition: box-shadow $transition1;
-  //  width: 100%;
-  //
-  //  &.focused {
-  //    box-shadow: 0 0 0 1px transparentize($color: $white, $amount: 0.8);
-  //  }
-  //
-  //  input {
-  //    background-color: transparent;
-  //    border: none;
-  //
-  //    color: $white;
-  //    font-family: $openSans;
-  //    font-size: 16px;
-  //    height: 100%;
-  //    outline: none;
-  //    text-align: left;
-  //    transition: color $transition1;
-  //    width: 100%;
-  //
-  //    &:disabled {
-  //      color: transparentize($color: $white, $amount: 0.5);
-  //    }
-  //
-  //    &::placeholder {
-  //      color: transparentize($color: $white, $amount: 0.5);
-  //    }
-  //  }
-  //
-  //
-  //}
 
   .newsletterInput {
     width: 100%;
@@ -68,8 +26,6 @@
     align-items: center;
     transition: box-shadow $transition1;
     padding: 5px 5px 5px 16px;
-    //  background-color: transparentize($color: $white, $amount: 0.95);
-
 
     &.focused {
       box-shadow: 0 0 0 1px transparentize($color: $white, $amount: 0.8);

@@ -1,42 +1,6 @@
 <template>
   <div class="indexPage">
-    <i-container class="indexFullScreen">
-      <i-row center>
-        <h1 class="mainHeadline" data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000">
-          Rely on math,<br>not validators
-        </h1>
-      </i-row>
-      <i-row class="_margin-top-2">
-        <p class="grayText aboutZkSync subheaderText" data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000">
-          <emphasis show-logo="true"/>
-          solves Ethereum scalability<br>with zero security compromises.
-        </p>
-      </i-row>
-      <i-row center data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000" class="_margin-top-1">
-        <zk-button href="https://wallet.zksync.io" variant="glow" size="lg" css-class="antilink">Open Wallet</zk-button>
-      </i-row>
-      <i-row
-        center data-aos="fade-up"
-        data-aos-delay="300"
-        data-aos-duration="2000"
-        data-aos-once="true"
-      >
-        <a
-          href="/faq/"
-          target="_blank"
-          class="grayText exploreFAQ"
-
-        >
-          FAQ and docs
-        </a>
-      </i-row>
-      <div
-        class="scrollDown" data-aos-offset="0" data-aos="fade-up" data-aos-delay="100"
-        data-aos-duration="700" @click.capture="scrollTo('#about')"
-      >
-        <i class="fal fa-arrow-down"/>
-      </div>
-    </i-container>
+    <z-hero/>
 
     <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4"/>
     <div id="about" ref="scrollToBlock" class="featuresContainer _margin-sm-2 _margin-y-md-4 _padding-y-2 _padding-top-md-4 _padding-bottom-md-4">
@@ -106,23 +70,29 @@
           also supports meta-transactions, instant confirmations with<br>
           economic finality, low-cost privacy, and more.
         </div>
-        <i-row center><a href="/faq/tech.html" target="_blank" class="underlinedLink">
-          How all of this works
-        </a>
+        <i-row center-xs>
+          <a :href="'/faq/tech.html'" target="_blank" class="underlinedLink">
+            How all of this works
+          </a>
         </i-row>
       </i-container>
     </div>
 
-    <i-container id="zksync-vs-rollup-solutions" class="_padding-top-3 _padding-bottom-3 _text-center">
-      <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+    <i-container id="zksync-vs-rollup-solutions" class="_padding-y-3 _text-center">
+      <div class="h2 _margin-bottom-1" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
         <img
           src="@/assets/images/pages/index/logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
 with zero security compromises"
         /> in comparison
       </div>
+      <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+        Unbiased comparison based on well-known pros and const of the
+        <emphasis/>
+        against the other L2-scaling solutions
+      </div>
       <i-row center>
         <i-column :xs="true">
-          <i-collapsible variant="unstyled _width-full">
+          <i-collapsible variant="dark" class="_width-full">
             <i-collapsible-item>
               <template slot="title">zkSync vs <span>optimistic rollups</span></template>
               <optimistic/>
@@ -131,10 +101,10 @@ with zero security compromises"
               <template slot="title">zkSync vs <span>other ZK rollups</span></template>
               <other-zk/>
             </i-collapsible-item>
-<!--            <i-collapsible-item>-->
-<!--              <template slot="title">zkSync vs <span>non-rollups</span></template>-->
-<!--              <none-rollups/>-->
-<!--            </i-collapsible-item>-->
+            <!--            <i-collapsible-item>-->
+            <!--              <template slot="title">zkSync vs <span>non-rollups</span></template>-->
+            <!--              <none-rollups/>-->
+            <!--            </i-collapsible-item>-->
           </i-collapsible>
         </i-column>
       </i-row>
@@ -168,14 +138,14 @@ with zero security compromises"
             <div class="grayText">
               Develop type-safe, functional style smart contracts on Zinc: a Rust-based framework.
             </div>
-            <zk-button
+            <z-button
               css-class='width-300'
               href='https://zksync.curve.fi'
-              outline
+              :outline="true"
               size='md'
               target='_blank'
             >Try <strong>Curve + zkSync</strong> testnet
-            </zk-button>
+            </z-button>
           </div>
           <div class="textItem">
             <div class="h2 _position-relative _text-nowrap">
@@ -193,7 +163,7 @@ with zero security compromises"
       </div>
     </i-container>
 
-    <div class="decentrContainer _padding-y-2 _padding-top-md-4 _padding-bottom-md-4">
+    <div class="decentralizedContainer _padding-y-2 _padding-top-md-4 _padding-bottom-md-4">
       <i-container>
         <img
           alt="Decentralized, on principle"
@@ -201,9 +171,9 @@ with zero security compromises"
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="500"
-          src="@/assets/images/pages/index/decentralizated.jpg"
+          src="@/assets/images/pages/index/decentralized.jpg"
         >
-        <div class="decentrGrid">
+        <div class="decentralizedGrid">
           <div data-aos="fade-right">
             <div class="h2 _margin-bottom-2">
               Decentralized,<br>
@@ -219,14 +189,16 @@ with zero security compromises"
               </p>
               <p>While healthy pragmatism is necessary to move fast,
                 <emphasis/>
-                 will never betray the ethos of crypto. Over the past two years, we’ve <a
+                will never betray the ethos of crypto. Over the past two years, we’ve <a
                   href="https://medium.com/matter-labs/tagged/l2" target="_blank"
                 >fought relentlessly</a> to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. And we won’t rest until <a
                   href="https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58" target="_blank"
                 >the original zkSync vision</a> is fully materialized.
               </p>
             </div>
-            <zk-button class="_padding-x-2 _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More about our philosophy</zk-button>
+            <z-button class="_padding-x-2 _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More about
+              our philosophy
+            </z-button>
           </div>
           <div class="textGrid">
             <div class="ourValues _text-bold">
@@ -237,7 +209,9 @@ with zero security compromises"
                 Fairness
               </div>
               <div class="grayText">
-                The rules of the game must be equal for all, with no preferences to the wealthy or powerful. <emphasis/> reinforces this by making Ethereum affordable.
+                The rules of the game must be equal for all, with no preferences to the wealthy or powerful.
+                <emphasis/>
+                reinforces this by making Ethereum affordable.
               </div>
             </div>
             <div class="textItem">
@@ -257,7 +231,7 @@ with zero security compromises"
               <div class="grayText">
                 We believe that only the paranoid survive.
                 <Emphasis/>
-                is being <a href="/faq/decentralization.html" target="_blank">progressively decentralized</a> to resist even the most powerful
+                is being <a :href="'/faq/decentralization.html'" target="_blank">progressively decentralized</a> to resist even the most powerful
                 potential
                 adversaries.
               </div>
@@ -296,14 +270,16 @@ import OtherZk from "@/blocks/compare/other-zk";
 import newsletter from "@/blocks/Newsletter.vue";
 import ReviewsSlider from "@/blocks/ReviewsSlider.vue";
 import socialBlock from "@/blocks/SocialBlock.vue";
-import ZkButton from "@/components/Button";
+import ZButton from "@/components/ZButton";
 import Emphasis from "@/components/Emphasis";
+import ZHero from "~/components/ZHero";
 
 export default {
   components: {
+    ZHero,
     OtherZk,
     Optimistic,
-    ZkButton,
+    ZButton,
     Emphasis,
     ReviewsSlider,
     codeBlock,
@@ -319,13 +295,14 @@ export default {
     };
   },
   head() {
-    const image = this.$socialsplash.generate("enterprise-website", {
-      title: "zkSync is Ethereum's most user-centric ZK-rollup",
-      subtitle: "Endorsed by V.Butering, partnered with Ethereum Foundation",
-      website: "zksync.io",
-      logo_url: "localhost:3000/static/logos/socialsplash.png",
-      background: "#2311142",
-    });
+    const image =
+      this.$socialsplash.generate("enterprise-website", {
+        title: "zkSync is Ethereum's most user-centric ZK-rollup",
+        subtitle: "Endorsed by V.Butering, partnered with Ethereum Foundation",
+        website: "zksync.io",
+        logo_url: "localhost:3000/static/logos/socialsplash.png",
+        background: "#2311142",
+      }) ?? "/static/social.jpg";
 
     return [
       { hid: "og:image", name: "og:image", content: image },

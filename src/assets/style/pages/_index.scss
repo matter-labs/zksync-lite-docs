@@ -1,3 +1,5 @@
+@import "../variables";
+
 .indexPage {
   .row.-center {
     p {
@@ -39,7 +41,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding-bottom: 20px;
     height: calc(100vh - 84px) !important;
     @media screen and (max-height: 770px) {
@@ -57,7 +59,7 @@
     }
 
     .grayText {
-      margin: 22px auto 57px !important;
+      margin: 0 auto 57px !important;
 
       font-style: normal;
       font-weight: normal;
@@ -83,7 +85,7 @@
       text-align: center;
       font-weight: 800;
       max-width: 555px;
-      margin: 0;
+      margin: 148px auto 22px;
 
     }
 
@@ -92,7 +94,7 @@
     }
 
     .exploreFAQ {
-      margin: 30px auto 0 !important;
+      margin: 0 auto !important;
       cursor: pointer;
       text-decoration: none;
       font-style: normal;
@@ -112,6 +114,8 @@
       &:hover {
         color: $lightViolet !important;
         border-bottom: 1px solid lighten($lightViolet, 2);
+
+
       }
 
       @media (max-width: $mobile) {
@@ -184,63 +188,6 @@
         }
       }
     }
-
-
-  }
-
-  .investorsContainer {
-    width: 100%;
-    height: auto;
-    background-color: transparentize($color: #000000, $amount: 0.7);
-    box-sizing: border-box;
-    @media screen and (max-height: 770px) {
-      min-height: calc(100vh - 84px);
-    }
-
-    .h2 span {
-      display: inline-block;
-      border: 2px solid $lightViolet;
-      border-radius: 6px;
-      padding: 0 3px;
-      margin: 0 4px;
-    }
-
-    .investorsImgs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 0;
-
-      img {
-        width: 20%;
-        height: 80px;
-        object-fit: contain;
-        transition: $transition2;
-        transition-property: box-shadow, transform;
-        will-change: box-shadow, transform;
-        border-radius: 8px;
-        user-select: none;
-        padding: 10px 0;
-
-        &:hover {
-          transform: scale(1.1);
-          box-shadow: inset 0 0 13px transparentize($color: $violet, $amount: 0.5), 0 0 13px transparentize($color: $violet, $amount: 0.5);
-        }
-
-        @media screen and (max-width: 270px) {
-          width: 100%;
-        }
-        @media screen and (min-width: 271px) and (max-width: 650px) {
-          width: 50%;
-        }
-        /* @media screen and (min-width: 451px) and (max-width: 650px) {
-          width: 50%;
-        } */
-        @media screen and (min-width: 651px) and (max-width: 850px) {
-          width: 33%;
-        }
-      }
-    }
   }
 
   .subheaderText {
@@ -269,7 +216,7 @@
         height: 100%;
         padding: 35px !important;
         background-color: transparentize($color: #000000, $amount: 0.7);
-        border-radius: 16px;
+        border-radius: $borderRadius;
 
         .featureItemIcon {
           display: block;
@@ -483,7 +430,7 @@
   }
 }
 
-.decentrContainer {
+.decentralizedContainer {
   width: 100%;
 
   .mainImg {
@@ -493,7 +440,7 @@
     border-radius: 16px;
   }
 
-  .decentrGrid {
+  .decentralizedGrid {
     width: 100%;
     height: auto;
     display: grid;
@@ -577,7 +524,7 @@
   }
 
   &::before, &::after {
-    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520aeb 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00a7ff 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #ff8d6c 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #e81d72 0%, rgba(255, 0, 0, 0) 100%);
+    background: $zBgGradient;
     background-blend-mode: overlay, normal, normal, color-dodge, normal;
     border-radius: 6px;
     content: '';
@@ -652,7 +599,7 @@
 @media screen and (max-width: $mobile) {
   .indexPage {
     .grayText {
-      font-size: 20px !important;
+      font-size: 18px !important;
       max-width: calc(100vw - 30px) !important;
 
       &.subheaderText {
@@ -680,9 +627,9 @@
       height: 450px;
 
       .grayText.subheaderText {
-        margin: 0 auto 30px !important;
+        margin: 30px auto !important;
         line-height: 140% !important;
-        font-size: 20px !important;
+        font-size: 18px !important;
 
         .emphasis {
           color: $white !important;
@@ -694,6 +641,7 @@
         font-size: 40px;
         max-width: 295px;
         line-height: 140%;
+        margin: 30px auto !important;
       }
     }
 
@@ -818,6 +766,11 @@
             }
           }
 
+          .button
+          {
+            display: none;
+          }
+
           .grayText {
             margin-top: 12px;
             font-size: 18px !important;
@@ -831,10 +784,10 @@
       }
     }
 
-    .decentrContainer {
+    .decentralizedContainer {
       width: 100%;
 
-      .decentrGrid {
+      .decentralizedGrid {
         height: auto;
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, max-content);
@@ -915,119 +868,168 @@
     }
   }
 
-  .collapsible.-unstyled._width-full > .item {
-    margin: 15px 0;
-    border-radius: 16px;
-    text-align: left;
-    justify-content: flex-start;
-    background-color: rgba(0, 0, 0, 0.4);
+  @media screen and (max-width: $mobile)
+  {
+  .subheaderText
+  {
+    margin-bottom: 20px;
+  }
+  }
 
-    &:not(.-active) {
+  .collapsible.-dark._width-full {
+    border: none !important;
+
+    > .item {
+      margin: 30px 0;
+      border-radius: $borderRadiusBig;
+      text-align: left;
+      justify-content: flex-start;
+      background: $darkBlack;
+
+      @media screen and (max-width: $mobile) {
+        margin: 15px 0;
+      }
+
+      &:not(.-active) {
+        & > .header {
+          border-radius: $borderRadiusBig !important;
+          background-color: #0A0C1A !important;
+        }
+
+      }
+
       & > .header {
-        border-radius: 16px !important;
+        font: bold 22px/120% $grotesk;
+        display: flex;
+        align-items: center;
+        color: $whiteFaded;
+        transition: background, border $transition2;
+        border-radius: $borderRadiusBig $borderRadiusBig 0 0 !important;
+        will-change: background, border;
+        border: none !important;
+        letter-spacing: 0.01em;
+        padding: 30px;
+        height: 70px;
+        background-color: lighten(#0A0C1A, 15) !important;
+
+        @media screen and (max-width: $mobile)
+        {
+          font-size: 18px;
+          padding: 20px;
+          height: 60px;
+        }
+
+
+        &:hover {
+          background: $violet !important;
+        }
+
+        span {
+          color: $white;
+          margin-left: 7px;
+        }
+
+        i.icon {
+          margin-left: auto;
+        }
       }
 
-    }
-
-    & > .header {
-      font: 22px/120% $grotesk;
-      display: flex;
-      align-items: center;
-      letter-spacing: 0.01em;
-      color: $whiteFaded;
-      transition: background, border $transition2;
-      border-radius: 16px 16px 0 0 !important;
-      will-change: background, border;
-
-      &:hover {
-        background-color: $darkViolet;
-      }
-
-      span {
-        color: $white;
-        margin-left: 7px;
-      }
-
-      i.icon {
-        margin-left: auto;
-      }
-    }
-
-    & > .body {
-      background: rgba(0, 0, 0, 0.4) !important;
-
-      & > .content {
+      & > .body {
         background: rgba(0, 0, 0, 0.4) !important;
 
+        & > .content {
+          padding: 10px !important;
+          background: rgba(0, 0, 0, 0.4) !important;
+
+          img {
+            width: 100%;
+            margin: 10px auto;
+          }
+        }
+      }
+
+    }
+
+    @media (max-width: $mobile) {
+
+      .h2 {
+        margin-bottom: 16px;
+        white-space: nowrap;
+        font-size: 26px;
+
         img {
-          width: 100%;
-          margin: 10px auto;
+
+          min-height: 30px;
+        }
+      }
+
+      .bottomBlock {
+        .socialIcons {
+          margin: 0 auto 2rem;
+        }
+      }
+
+      .mainFooter {
+        & > .container > .row {
+          padding: 1rem 0;
         }
       }
     }
-
   }
 
-  @media (max-width: $mobile) {
-    .collapsible > .item {
-
-      > .header {
-        font-size: 19px !important;
-        font-weight: bold;
-      }
-    }
-    .h2 {
-      margin-bottom: 16px;
-      white-space: nowrap;
-      font-size: 26px;
-
-      img {
-
-        min-height: 30px;
-      }
-    }
-    .bottomBlock {
-      .socialIcons {
-        margin: 0 auto 2rem;
-      }
-    }
-
-    .mainFooter {
-      & > .container > .row {
-        padding: 1rem 0;
-      }
+  #balancer-review {
+    img {
+      width: 110px !important;
     }
   }
-}
-
-#balancer-review {
-  img {
-    width: 110px !important;
-  }
-}
 
 
-body .openWallet {
-  position: relative;
-  background: black;
+  body .openWallet {
+    position: relative;
+    background: black;
 
-  text-align: center;
-  border: none;
-  outline: none;
-  padding: 15px 66px;
-  text-decoration: none;
-  cursor: pointer;
-  color: $white !important;
-  text-transform: uppercase;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 15px 66px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $white !important;
+    text-transform: uppercase;
 
-  &:hover {
-    text-decoration: none !important;
-    background-color: $darkViolet;
-  }
+    &:hover {
+      text-decoration: none !important;
+      background-color: $darkViolet;
+    }
 
-  &:active {
+    &:active {
+      &::before, &::after {
+        transition-duration: 0.001s;
+      }
+
+      &::before {
+        filter: blur(5px) brightness(100%);
+      }
+
+      &::after {
+        filter: blur(48px) brightness(100%);
+      }
+    }
+
     &::before, &::after {
-      transition-duration: 0.001s;
+      z-index: -1;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $zBgGradient;
+      background-blend-mode: overlay, normal, normal, color-dodge, normal;
+      mix-blend-mode: normal;
+      border-radius: 6px;
+      transition: filter $transition1;
+      will-change: filter;
     }
 
     &::before {
@@ -1035,31 +1037,7 @@ body .openWallet {
     }
 
     &::after {
-      filter: blur(48px) brightness(100%);
+      filter: blur(40px) brightness(100%);
     }
-  }
-
-  &::before, &::after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520aeb 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00a7ff 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #ff8d6c 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #e81d72 0%, rgba(255, 0, 0, 0) 100%);
-    background-blend-mode: overlay, normal, normal, color-dodge, normal;
-    mix-blend-mode: normal;
-    border-radius: 6px;
-    transition: filter $transition1;
-    will-change: filter;
-  }
-
-  &::before {
-    filter: blur(5px) brightness(100%);
-  }
-
-  &::after {
-    filter: blur(40px) brightness(100%);
   }
 }

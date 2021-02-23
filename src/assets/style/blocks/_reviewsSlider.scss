@@ -1,3 +1,5 @@
+@import "../variables";
+
 .reviewsContainer {
   position: relative;
   width: 100%;
@@ -53,7 +55,7 @@
       width: 100%;
       height: auto;
       padding: 28px 30px;
-      border-radius: 16px;
+      border-radius: $borderRadiusBig;
       background-color: $darkBlack;
 
       text-decoration: none;
