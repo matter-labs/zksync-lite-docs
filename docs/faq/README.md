@@ -15,14 +15,14 @@ Ethereum, already live on Ethereum mainnet.
 
 <b>Get started by reading [the overview](/faq/intro.md).</b>
 
-## For Developers
+### For Developers
 
 If you are interested in developing with zkSync, view our [Developers Guide](/dev/) and [API Reference](/api).
 
-## Interested in reading more?
+### Interested in reading more?
 
 In-depth articles can be found on our [Medium page](https://medium.com/matter-labs).
 
-## Contact
+### Contact
 
 If you have any questions or want to be part of our community, please check out our [contact page](/contact.md).
