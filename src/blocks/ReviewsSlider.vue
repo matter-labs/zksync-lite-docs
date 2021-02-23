@@ -1,5 +1,6 @@
 <template>
   <div class="reviewsContainer">
+    <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
       <div v-if="currentItem>0" class="arrow left" @click="scrollItem('minus')">
         <i class="fal fa-angle-left"/>
@@ -18,44 +19,38 @@
     </transition>
     <i-container ref="container">
       <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition}px)`}">
-        <a ref="1" class="reviewItem" href="https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync" target="_blank">
+        <a
+          v-for="(singleReview) in reviewsData"
+          :id="singleReview.hasOwnProperty('id') ? singleReview.id : ''"
+          :key="singleReview.ref"
+          :ref="singleReview.ref"
+          :href="singleReview.link"
+          class="reviewItem"
+          target="_blank"
+        >
           <div class="reviewHeader">
-            <img src="@/assets/images/pages/index/curve.svg"
-                 alt="Curve Finance - automatic market-making for stablecoins and not only."
-                 title="Curve + zkSync L2: Ethereum’s first user-defined ZK rollup smart contract!"
+            <img
+              v-if="singleReview.thumbnail"
+              :src="getAssetUrl(singleReview.thumbnail)"
+              :alt="singleReview.thumbnailAlt"
+              :title="singleReview.thumbnailTitle"
             >
+            <span v-if="singleReview.title">{{ singleReview.title }}</span>
           </div>
           <div class="reviewText">
-            “ZK rollups are extremely secure even with a single validator, as they rely on pure math.”
+            {{ singleReview.text }}
+            <i-badge v-if="singleReview.isUpcoming" variant="secondary _upcoming-h3">upcoming</i-badge>
           </div>
-          <span class="arrowLink">
-            <i class="fal fa-arrow-up"/>
-          </span>
-        </a>
-        <a ref="2" class="reviewItem" href="https://vitalik.ca/general/2021/01/05/rollup.html#conclusions" target="_blank">
-          <div class="reviewHeader">
-            <img src="@/assets/images/pages/index/buter.png"
-                 title="Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception"
-                 alt="Vitalik Buterin, co-founder of Ethereum about zksynk">
-            <span>Vitalik Buterin</span>
-          </div>
-          <div class="reviewText">
-            “In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.”
-          </div>
-          <span class="arrowLink">
-            <i class="fal fa-arrow-up"/>
-          </span>
-        </a>
-        <a id="balancer-review" ref="3" class="reviewItem" href="https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21" target="_blank">
-          <div class="reviewHeader">
-            <img src="@/assets/images/pages/index/balancer.svg"
-                 alt="Mike McDonal, CTO @BalancerLabs"
-                 title="Mike McDonal, Co-founder & CTO @BalancerLabs. Security Engineer about ZK Rollups">
-          </div>
-          <div class="reviewText">
-            “ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm).”
-          </div>
-          <span class="arrowLink">
+          <z-button
+            v-if="singleReview.isButton"
+            css-class='width-300'
+            href='https://zksync.curve.fi'
+            outline="outline"
+            size='xs'
+            target='_blank'
+          >Try <strong>Curve + zkSync</strong> testnet
+          </z-button>
+          <span v-if="!singleReview.isButton" class="arrowLink">
             <i class="fal fa-arrow-up"/>
           </span>
         </a>
@@ -64,11 +59,55 @@
   </div>
 </template>
 
-<script>
+<script type="ts">
+import ZButton from "~/components/ZButton.vue";
 export default {
+  components: {
+    ZButton,
+  },
+  props: {
+    reviewsData: {
+      default: () => {
+        return [
+          {
+            id: null,
+            ref: 1,
+            title: null,
+            link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
+            thumbnail: "curve.svg",
+            thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
+            thumbnailTitle: "Curve + zkSync L2: Ethereum’s first user-defined ZK rollup smart contract!",
+            text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math",
+          },
+          {
+            id: null,
+            ref: 2,
+            link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
+            thumbnail: "buter.png",
+            thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
+            thumbnailTitle: "Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception",
+            text: "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
+            title: "Vitalik Buterin",
+          },
+          {
+            id: null,
+            ref: 3,
+            title: null,
+            link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
+            thumbnail: "balancer.svg",
+            thumbnailAlt: "Mike McDonal, CTO @BalancerLabs",
+            thumbnailTitle: "Mike McDonal, Co-founder & CTO @BalancerLabs. Security Engineer about ZK Rollups",
+            text: "ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm).",
+          },
+        ];
+      },
+      require: true,
+      type: Array,
+    },
+  },
   data() {
     return {
-      totalItems: 3,
+      totalItems: this.reviewsData.length,
       currentItem: 0,
       displayRightArrow: true,
     };
@@ -119,6 +158,9 @@ export default {
         if (item === "container" || !this.$refs[item]) {
           continue;
         }
+        if (!this.$refs[item] || typeof this.$refs[item] !== "object" || this.$refs[item].getBoundingClientRect !== "function") {
+          continue;
+        }
         const itemSizes = this.$refs[item].getBoundingClientRect();
         if (itemSizes.left >= containerSizes.left - 20 && itemSizes.right <= containerSizes.right + 20) {
           inViewTotal++;
@@ -129,6 +171,13 @@ export default {
     checkArrowDisplay() {
       const inViewNow = Math.max(1, this.itemsInView());
       this.displayRightArrow = !(inViewNow > 1 && this.currentItem + inViewNow >= this.totalItems);
+    },
+    /**
+     * @param img
+     * @returns {any}
+     */
+    getAssetUrl(img) {
+      return require("@/assets/images/pages/index/" + img);
     },
   },
 };

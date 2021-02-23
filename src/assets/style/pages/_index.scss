@@ -43,9 +43,9 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 20px;
-    height: calc(100vh - 84px) !important;
+    height: calc(var(--app-height) - 84px) !important;
     @media screen and (max-height: 770px) {
-      height: calc(100vh - 84px);
+      height: calc(var(--app-height) - 84px);
     }
 
     h1 {
@@ -94,7 +94,6 @@
     }
 
     .exploreFAQ {
-      margin: 0 auto !important;
       cursor: pointer;
       text-decoration: none;
       font-style: normal;
@@ -186,6 +185,11 @@
             filter: blur(10px) brightness(100%);
           }
         }
+        margin: auto 0 3rem !important;
+      }
+
+      @media (max-width: $mobile) {
+        margin: 10px 0 0 !important;
       }
     }
   }
@@ -340,6 +344,10 @@
     width: 100%;
     height: auto;
     margin: 30px auto 80px;
+    .reviewsContainer
+    {
+      display: none !important;
+    }
 
     .codeBlockSpace {
       position: relative;
@@ -729,6 +737,7 @@
       margin-bottom: 10px;
       padding: 0 12px;
 
+
       .codeGrid {
         width: auto;
         max-width: 100%;
@@ -766,8 +775,7 @@
             }
           }
 
-          .button
-          {
+          .button {
             display: none;
           }
 
@@ -791,10 +799,30 @@
         height: auto;
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, max-content);
-        grid-gap: 80px;
+        grid-gap: 20px;
+
+        .h2
+        {
+          font-size: 24px;
+          margin: 0 0 10px !important;
+          br
+          {
+            display: none !important;
+          }
+        }
+
+        .ourValues
+        {
+          font-size: 30px;
+          font-weight: bold;
+        }
 
         .grayText {
-          font-size: 14px;
+          font-size: 16px;
+          p
+          {
+            font-size: 16px;
+          }
         }
 
         .textGrid {
@@ -805,14 +833,17 @@
           }
 
           .textItem {
-            padding: 30px 0;
+            padding: 0 0 20px !important;
+            font-size: 16px;
 
             .h2 {
-              font-size: 30px;
+              font-size: 20px;
+              margin: 20px 0 0 !important;
             }
 
             .grayText {
-              margin-top: 20px;
+              font-size: 16px !important;
+              margin-top: 10px;
             }
           }
         }
@@ -823,7 +854,7 @@
       margin: 2rem auto;
 
       .topBlock {
-        padding: 40px 30px 30px;
+        padding: 30px 20px 20px !important;
       }
 
       .bottomBlock {
@@ -852,6 +883,17 @@
     .mainFooter > .container > .row {
       padding: 1rem 0 !important;
     }
+
+    #zksync-vs-rollup-solutions {
+      .collapsible.-dark._width-full > .item > .body > .content
+      {
+        td,th
+        {
+          font-size: 16px !important;
+          padding: .4rem !important;
+        }
+      }
+    }
   }
 
 }
@@ -868,12 +910,10 @@
     }
   }
 
-  @media screen and (max-width: $mobile)
-  {
-  .subheaderText
-  {
-    margin-bottom: 20px;
-  }
+  @media screen and (max-width: $mobile) {
+    .subheaderText {
+      margin-bottom: 20px;
+    }
   }
 
   .collapsible.-dark._width-full {
@@ -912,8 +952,7 @@
         height: 70px;
         background-color: lighten(#0A0C1A, 15) !important;
 
-        @media screen and (max-width: $mobile)
-        {
+        @media screen and (max-width: $mobile) {
           font-size: 18px;
           padding: 20px;
           height: 60px;
@@ -936,10 +975,14 @@
 
       & > .body {
         background: rgba(0, 0, 0, 0.4) !important;
+        border-radius: $borderRadiusBig;
+        overflow: hidden;
 
         & > .content {
+          border-radius: $borderRadiusBig;
           padding: 10px !important;
           background: rgba(0, 0, 0, 0.4) !important;
+
 
           img {
             width: 100%;
@@ -1039,5 +1082,210 @@
     &::after {
       filter: blur(40px) brightness(100%);
     }
+  }
+}
+
+
+@media screen and (max-width: $mobile) {
+  .indexPage {
+
+    .featuresContainer {
+      margin: 10px auto 10px !important;
+      padding: 0 !important;
+
+      .grayText {
+        display: none;
+      }
+    }
+
+    .featuresContainer .featuresGrid .featureItem {
+      flex-wrap: wrap !important;
+      height: auto;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+
+      width: 100%;
+      background-color: #1a1e3c;
+      border-radius: $borderRadiusBig;
+      justify-content: center;
+      margin-top: 10px !important;
+      padding: 7px 0 0 !important;
+
+      .featureHeadline {
+        font-size: 24px;
+        line-height: 140%;
+        letter-spacing: 0.01em;
+        text-align: left;
+        margin: 5px 0 !important;
+
+        max-width: none !important;
+
+
+      }
+
+      br {
+        display: none !important;
+      }
+
+      .divider {
+        width: 100%;
+        height: 1px;
+        margin: 2px auto !important;
+        background-color: rgba(82, 81, 99, 0.5);
+        min-width: 100%;
+      }
+
+      .bottomBlock {
+        width: 100%;
+        /* width: 100%; */
+        height: max-content;
+        grid-template-columns: initial;
+        grid-template-rows: initial;
+        grid-auto-flow: initial;
+        grid-auto-rows: initial;
+        grid-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        padding: 0 10px 10px;
+        display: inline !important;
+      }
+
+      .featureItemIcon {
+        font-size: 25px;
+        margin: 0 10px 0 0 !important;
+        width: auto;
+        height: auto;
+        max-height: 25px;
+      }
+
+
+      .bottomBlock {
+        height: auto !important;
+        padding: 0 5px 5px;
+        display: inline !important;
+        text-align: center;
+
+        & > * {
+          display: inline !important;
+        }
+
+        .arrowDown {
+          font-size: 14px !important;
+
+          &:before {
+            content: "\f061";
+          }
+        }
+      }
+    }
+
+    .featuresContainer .featuresGrid .featureItem .arrowDown {
+      font-size: 15px;
+      display: inline;
+      transform: rotate(10rad);
+      padding: 0 5px;
+    }
+
+    .featuresContainer .featuresGrid {
+      grid-gap: 10px;
+      margin-bottom: 25px;
+
+      .featureItem .featureDescription {
+        /* margin: 0; */
+        font-size: 14px !important;
+        line-height: 140%;
+        text-align: center;
+        letter-spacing: 0.01em;
+        min-width: 100%;
+        /* display: inline-flex; */
+        display: inline-block;
+        max-width: 40%;
+        flex-basis: 40%;
+        width: 40%;
+        height: 100%;
+        margin: 0 !important;
+      }
+    }
+
+    #zksync-vs-rollup-solutions {
+      background: #1a1e3c !important;
+      margin: 35px auto 20px !important;
+      min-width: 100%;
+
+      & > .row:first-child {
+        max-width: calc(100% - 24px) !important;
+        margin: 0 auto !important;
+
+        & > .column {
+          .collapsible.-dark._width-full {
+            > .header {
+              border-radius: 8px !important;
+              font-size: 16px !important;
+              background-color: #2d314e !important;
+              a
+              {
+                font-size: 18px !important;
+              }
+            }
+          }
+        }
+      }
+
+      .h2 {
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 20px;
+      }
+
+      .subheaderText {
+        margin: 15px 0 !important;
+      }
+
+      img {
+        max-height: 30px;
+        min-height: 0 !important;
+      }
+
+      .subheaderText {
+        margin: 35px auto !important;
+        width: calc(100% - 24px);
+        line-height: 140%;
+      }
+    }
+
+    .codeContainer {
+      margin: 10px auto !important;
+      .columnGrid
+      {
+        display: none !important;
+      }
+      .reviewsContainer
+      {
+        display: block !important;
+      }
+      .reviewHeader {
+        span {
+          font-size: 22px !important;
+        }
+      }
+      .reviewText
+      {
+        color: $whiteFaded !important;
+        .badge.-secondary._upcoming-h3
+        {
+          top: 0;
+        }
+      }
+      .button.-xs
+      {
+        padding: 0.25rem 0.5rem;
+        margin: 10px 0 0;
+        font-size: 16px;
+      }
+    }
+
   }
 }

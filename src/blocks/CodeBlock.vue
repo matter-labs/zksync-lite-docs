@@ -7,7 +7,7 @@
           <div class="yellow"></div>
           <div class="green"></div>
         </div>
-        <div class="fileTab codeText" :class="{'error': !!error}">filename.{{ transpiled ? 'zink' : 'sol' }}</div>
+        <div class="fileTab codeText" :class="{'error': !!error}">filename.{{ transpiled ? 'zinc' : 'sol' }}</div>
         <div class="errorText">{{ error }}</div>
       </div>
       <transition name="fade">

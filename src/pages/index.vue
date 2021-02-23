@@ -78,20 +78,20 @@
       </i-container>
     </div>
 
-    <i-container id="zksync-vs-rollup-solutions" class="_padding-y-3 _text-center">
-      <div class="h2 _margin-bottom-1" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-        <img
-          src="@/assets/images/pages/index/logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
+    <i-container id="zksync-vs-rollup-solutions" fluid class="_padding-y-3 _text-center">
+      <i-row>
+        <i-column xs="12">
+          <div class="h2 _margin-bottom-1 _paddin-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+            <img
+              src="@/assets/images/pages/index/logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
 with zero security compromises"
-        /> in comparison
-      </div>
-      <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-        Unbiased comparison based on well-known pros and const of the
-        <emphasis/>
-        against the other L2-scaling solutions
-      </div>
-      <i-row center>
-        <i-column :xs="true">
+            /> in comparison
+          </div>
+          <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+            Unbiased comparison based on well-known pros and const of the
+            <emphasis/>
+            against the other L2-scaling solutions
+          </div>
           <i-collapsible variant="dark" class="_width-full">
             <i-collapsible-item>
               <template slot="title">zkSync vs <span>optimistic rollups</span></template>
@@ -101,10 +101,6 @@ with zero security compromises"
               <template slot="title">zkSync vs <span>other ZK rollups</span></template>
               <other-zk/>
             </i-collapsible-item>
-            <!--            <i-collapsible-item>-->
-            <!--              <template slot="title">zkSync vs <span>non-rollups</span></template>-->
-            <!--              <none-rollups/>-->
-            <!--            </i-collapsible-item>-->
           </i-collapsible>
         </i-column>
       </i-row>
@@ -120,8 +116,10 @@ with zero security compromises"
         design
       </div>
 
+      <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4" :reviews-data="dataForDevelopers"/>
       <div class="codeGrid _margin-top-3">
         <div class="columnGrid">
+
           <div class="textItem" :class="{'chosen': chosenBlock===0}" @click="chosenBlock=0">
             <div class="h2">
               Powerful, easy-to-use API
@@ -141,7 +139,7 @@ with zero security compromises"
             <z-button
               css-class='width-300'
               href='https://zksync.curve.fi'
-              :outline="true"
+              outline="outline"
               size='md'
               target='_blank'
             >Try <strong>Curve + zkSync</strong> testnet
@@ -289,6 +287,40 @@ export default {
   layout: "index",
   data() {
     return {
+      dataForDevelopers: [
+        {
+          id: null,
+          ref: 1,
+          link: null,
+          thumbnail: null,
+          thumbnailAlt: null,
+          thumbnailTitle: null,
+          title: "Powerful, easy-to-use API",
+          text: "Integrate payments and atomic swaps in a few lines of code.",
+        },
+        {
+          id: null,
+          ref: 2,
+          link: null,
+          thumbnail: null,
+          thumbnailAlt: null,
+          thumbnailTitle: null,
+          title: "Smart contracts in Zinc",
+          text: "Develop type-safe, functional style smart contracts on Zinc: a Rust-based framework.",
+        },
+        {
+          id: null,
+          ref: 3,
+          link: "https://zksync.curve.fi",
+          isButton: true,
+          thumbnail: null,
+          thumbnailAlt: null,
+          thumbnailTitle: null,
+          isUpcoming: true,
+          title: "Powerful, easy-to-use API",
+          text: "Smart contracts in Solidity ",
+        },
+      ],
       lockVisible: false,
       contactInfoShown: false,
       chosenBlock: 0,
