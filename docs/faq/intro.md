@@ -68,8 +68,3 @@ To quote from [Vitalik Buterin's 2021 guide to rollups](https://vitalik.ca/gener
 > cases, **but in the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves**.
 
 ![L2 comparison](https://zksync.io/chart4.png)
-
-<!-- markdownlint-disable line-length -->
-<!-- ![L2 comparison](https://miro.medium.com/max/1400/1*Q1IOxqm-nkr6JWz6kJpt5w.png) -->
-<!-- <iframe width="100%" height="950px" frameBorder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQfpVcOEMWfdrhsK1jRYaPIeeYqaFzanFkMkg6pYjR17KCG4R4X54sGpmTFrNjxwoOap8SiHwq4GCmK/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe> -->
-<!-- markdownlint-enable line-length -->
