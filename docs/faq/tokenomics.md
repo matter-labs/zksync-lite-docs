@@ -14,6 +14,12 @@ We plan to launch our token in the future. Our business model will be expressed 
 
 ## Token, participation and governance
 
+Our efforts and focus have been so far dedicated for the development of zkSync and its security. As zkSync evolves and
+the community around it grows, we are allocating more resources to zkSync governance structure. This is still in a very
+early stage, and we encourage community members to be active in this process.
+
+Here are answers to some common questions we have been asked.
+
 ### Will zkSync have a native token?
 
 Yes.
@@ -25,5 +31,6 @@ We intend to distribute the majority of the network government rights to our com
 
 ### How will it work?
 
-As stated [here](/faq/decentralization.md#how-decentralized-is-zksync), zkSync will become fully decentralized. The
-token will be used for staking in order to become a validator in the zkSync network. More details to come.
+The token will be used for zkSync governance. In addition, when zkSync becomes
+[fully decentralized](/faq/decentralization.md#how-decentralized-is-zksync), the token will be used for staking in order
+to become a validator in the zkSync network. More details to come.
