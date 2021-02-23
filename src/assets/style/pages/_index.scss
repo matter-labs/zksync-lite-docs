@@ -117,6 +117,9 @@
 
       }
 
+      @media (min-width: $mobile) {
+        margin-top: 35px !important;
+      }
       @media (max-width: $mobile) {
         margin-top: 10px;
         font-size: 14px !important;
@@ -173,7 +176,8 @@
         background: $gradientRegularPieceAfter;
       }
 
-      @media (min-width: $mobile) {
+      @media screen and (min-width: $mobile) {
+        margin: 110px 0 0 !important;
         &:hover {
 
           i {
@@ -185,7 +189,6 @@
             filter: blur(10px) brightness(100%);
           }
         }
-        margin: auto 0 3rem !important;
       }
 
       @media (max-width: $mobile) {
