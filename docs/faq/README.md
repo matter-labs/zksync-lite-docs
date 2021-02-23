@@ -15,6 +15,8 @@ Ethereum, already live on Ethereum mainnet.
 
 <b>Get started by reading [the overview](/faq/intro.md).</b>
 
+<!-- markdownlint-disable MD001 -->
+
 ### For Developers
 
 If you are interested in developing with zkSync, view our [Developers Guide](/dev/) and [API Reference](/api).
