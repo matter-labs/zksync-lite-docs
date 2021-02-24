@@ -107,15 +107,7 @@
       /* Text/faded */
 
       color: rgba(255, 255, 255, 0.5) !important;
-      border-bottom: 1px solid transparentize($color: $white, $amount: 0.7);
-      transition: color, border-bottom-color ease $transition1;
-
-      &:hover {
-        color: $lightViolet !important;
-        border-bottom: 1px solid lighten($lightViolet, 2);
-
-
-      }
+      transition: color $transition1;
 
       @media (min-width: $mobile) {
         margin-top: 35px !important;
@@ -215,12 +207,12 @@
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 100%;
       grid-gap: 20px;
-      margin-top: 80px;
+      margin-top: 25px;
 
       .featureItem {
         width: 100%;
         height: 100%;
-        padding: 35px !important;
+        padding: 25px !important;
         background-color: transparentize($color: #000000, $amount: 0.7);
         border-radius: $borderRadius;
 
@@ -236,10 +228,8 @@
           font-size: 30px;
           letter-spacing: 0.01em;
           max-width: 170px;
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: 25px;
           text-align: center;
+          margin: 1.5rem auto 15px !important;
 
           h3 {
             font-size: 30px;
@@ -251,13 +241,13 @@
         .divider {
           width: 100%;
           height: 1px;
-          margin: 24px auto !important;
+          margin: 10px auto !important;
           background-color: transparentize($color: #525163, $amount: 0.5);
         }
 
         .bottomBlock {
           width: 100%;
-          height: 230px;
+          height: 200px;
           display: grid;
           grid-template-columns: 100%;
           grid-template-rows: repeat(3, 1fr);
@@ -298,18 +288,14 @@
     font-size: 18px;
     line-height: 140%;
     /* or 25px */
-    transition: color, border-bottom-color ease $transition1;
-
     letter-spacing: 0.01em;
 
     /* Text/faded */
 
     color: rgba(255, 255, 255, 0.5) !important;
-    border-bottom: 1px solid transparentize($color: $white, $amount: 0.7);
 
     &:hover {
       color: $lightViolet !important;
-      border-bottom: 1px solid lighten($lightViolet, 2);
     }
   }
 
@@ -345,11 +331,13 @@
   .codeContainer {
     width: 100%;
     height: auto;
-    margin: 30px auto 80px;
+    margin: 10px auto 30px !important;
     .reviewsContainer
     {
       display: none !important;
     }
+
+    .h1,.h1, .h1, .h1
 
     .codeBlockSpace {
       position: relative;
@@ -456,11 +444,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    grid-gap: 180px;
+    grid-gap: 150px;
 
     .h2 {
       text-align: left;
       margin: 0;
+
     }
 
     .grayText {
@@ -497,7 +486,7 @@
         }
 
         .h2 {
-          margin-top: 34px !important;
+          margin-top: 0 !important;
           padding-top: 0 !important;
           font-size: 30px;
         }
@@ -533,29 +522,29 @@
     margin-top: 0;
   }
 
-  &::before, &::after {
-    background: $zBgGradient;
-    background-blend-mode: overlay, normal, normal, color-dodge, normal;
-    border-radius: 6px;
-    content: '';
-    height: 100%;
-    left: 0;
-    mix-blend-mode: normal;
-    position: absolute;
-    top: 0;
-    transition: filter $transition1;
-    width: 100%;
-    will-change: filter;
-    z-index: -1;
-  }
+  //&::before, &::after {
+  //  background: $zBgGradient;
+  //  background-blend-mode: overlay, normal, normal, color-dodge, normal;
+  //  border-radius: 6px;
+  //  content: '';
+  //  height: 100%;
+  //  left: 0;
+  //  mix-blend-mode: normal;
+  //  position: absolute;
+  //  top: 0;
+  //  transition: filter $transition1;
+  //  width: 100%;
+  //  will-change: filter;
+  //  z-index: -1;
+  //}
 
-  &::before {
-    filter: blur(5px) brightness(100%);
-  }
-
-  &::after {
-    filter: blur(48px) brightness(100%);
-  }
+  //&::before {
+  //  filter: blur(5px) brightness(100%);
+  //}
+  //
+  //&::after {
+  //  filter: blur(48px) brightness(100%);
+  //}
 
   .grayText {
     max-width: 535px;
@@ -563,13 +552,13 @@
 
   .topBlock {
     background-color: #171a49;
-    padding: 50px 30px;
+    padding: 30px;
     border-radius: .25rem .25rem 0 0;
   }
 
   .bottomBlock {
     background-color: #1d2039;
-    padding: 50px 30px;
+    padding: 30px;
     border-radius: 0 0 .25rem .25rem;
 
     .socialIcons {
@@ -856,11 +845,12 @@
       margin: 2rem auto;
 
       .topBlock {
-        padding: 30px 20px 20px !important;
+        border-radius: 16px 16px 0 0  !important;
       }
 
       .bottomBlock {
         padding: 30px;
+        border-radius: 0 0 16px 16px !important;
 
         .socialIcons {
           margin-left: auto !important;

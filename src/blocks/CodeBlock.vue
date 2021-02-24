@@ -23,8 +23,11 @@
     </div>
     <div class="codeBlockFooter">
       <div class="buttonBlock">
-        <i-button v-if="opened===false" class="_padding-x-2" size="lg" variant="secondary" @click="opened=true">
-          Try our transpiler
+<!--        <i-button v-if="opened===false" class="_padding-x-2" size="lg" variant="secondary" @click="opened=true">-->
+<!--          Try our transpiler-->
+<!--        </i-button>-->
+        <i-button v-if="opened===false" class="_padding-x-2 antilink" size="lg" variant="secondary" :href="'/dev'" target="_blank">
+          Get started!
         </i-button>
         <div v-else-if="transpiled===false" class="buttonGrid">
           <i-button class="_padding-x-2" size="lg" variant="secondary"
@@ -55,11 +58,12 @@
  * @var document
  */
 import httpinvoke from "httpinvoke";
-import "prismjs/components/prism-clike";
+import { PrismEditor } from "vue-prism-editor";
 import { highlight, languages } from "prismjs/components/prism-core";
+
+import "prismjs/components/prism-clike";
 import "prismjs/components/prism-rust";
 import "prismjs/components/prism-solidity";
-import { PrismEditor } from "vue-prism-editor";
 
 export default {
   components: {

@@ -16,7 +16,7 @@ body {
   /**
    * .antilink — special class to avoid generic links style application
    */
-  a[href]:not(.socialItem):not(.openWallet):not(.exploreFAQ):not(.antilink) {
+  a[href]:not(.socialItem):not(.openWallet):not(.antilink) {
     color: $white !important;
     text-decoration: none !important;
 
@@ -62,17 +62,23 @@ body {
     }
   }
 
-  .button
-  {
+  .button {
     transition: background-color, color $transition1;
-    &:hover
-    {
+
+    &:hover {
       color: darken($white, 10) !important;
-      span
-      {
+
+      span {
         color: darken($white, 10) !important;
       }
+
       background-color: $lightViolet !important;
+    }
+  }
+
+  @media screen and (min-width: $mobile) {
+    ._zk-font-18 {
+      font-size: 18px !important;
     }
   }
 }

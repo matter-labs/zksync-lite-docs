@@ -4,8 +4,8 @@
       <thead>
       <tr>
         <th ></th>
-        <th >SNARK-based</th>
-        <th >STARK-based</th>
+        <th>SNARK-based</th>
+        <th class="_border-left _border-right">STARK-based</th>
         <th >
           <logo />
         </th>

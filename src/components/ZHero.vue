@@ -19,7 +19,7 @@
       <a
         :href="'/faq/'"
         target="_blank"
-        class="exploreFAQ underlinedLink _margin-top-xs-1 _margin-bottom-xs-2 _margin-y-lg-3"
+        class="exploreFAQ _margin-top-xs-1 _margin-bottom-xs-2 _margin-y-lg-3"
       >
         FAQ and docs
       </a>

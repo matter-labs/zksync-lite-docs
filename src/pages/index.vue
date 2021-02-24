@@ -24,8 +24,7 @@
               </p>
               <i class="arrowDown fal fa-arrow-down"/>
               <p class="featureDescription">
-                <Emphasis/>
-                DeFi ecosystem can grow without limits.
+                zkSync DeFi ecosystem can grow without limits.
               </p>
             </div>
           </div>
@@ -54,8 +53,7 @@
             <div class="bottomBlock">
               <p class="featureDescription">
                 Live since June 2020,
-                <Emphasis/>
-                has the lowest real tx costs across all existing and planned rollups.
+                zkSync has the lowest real tx costs across all existing and planned rollups.
               </p>
               <i class="arrowDown fal fa-arrow-down"/>
               <p class="featureDescription">
@@ -65,8 +63,7 @@
           </div>
         </div>
         <div class="grayText _margin-top-2 _margin-bottom-1">
-          <emphasis/>
-          also supports meta-transactions, instant confirmations with<br>
+          zkSync also supports meta-transactions, instant confirmations with<br>
           economic finality, low-cost privacy, and more.
         </div>
         <i-row center-xs>
@@ -77,17 +74,17 @@
       </i-container>
     </div>
 
-    <i-container id="zksync-vs-rollup-solutions" fluid class="_padding-y-3 _text-center">
+    <i-container id="zksync-vs-rollup-solutions" fluid class="_padding-top-3 _text-center">
       <i-row>
         <i-column xs="12">
-          <div class="h2 _margin-bottom-1 _padding-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+          <div class="h2 _margin-bottom-1 _padding-0" data-aos="fade-up" data-aos-delay="50" data-aos-offset="-100" data-aos-duration="1200">
             <img
               src="@/assets/images/pages/index/logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
 with zero security compromises"
             /> in comparison
           </div>
           <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-            Unbiased comparison based on well-known pros and const of the
+            based on well-known pros and const of the
             <emphasis/>
             against the other L2-scaling solutions
           </div>
@@ -106,10 +103,10 @@ with zero security compromises"
     </i-container>
 
     <i-container class="codeContainer _padding-y-2 _padding-top-md-4 _padding-bottom-md-4 _margin-y-3 _margin-bottom-8">
-      <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+      <div class="h2" data-aos="fade-up" data-aos-delay="50" data-aos-duration="800" data-aos-offset="0">
         By developers, for developers
       </div>
-      <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+      <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="50" data-aos-offset="0" data-aos-duration="1200">
         Ease and fun of development are at the<br> core of
         <Emphasis/>
         design
@@ -238,19 +235,19 @@ with zero security compromises"
       </i-container>
     </div>
 
-    <i-container class="_margin-y-lg-5 _margin-y-xs-2 communityOwned">
-      <div class="topBlock _padding-bottom-5">
-        <div class="h2">Owned by the community</div>
+    <i-container class="_margin-y-lg-2 _margin-y-xs-2 communityOwned">
+      <div class="topBlock _padding-bottom-2">
+        <div class="h2 _padding-top-1">Owned by the community</div>
         <div class="grayText _margin-top-2 _margin-bottom-0">
-          <p class="_margin-bottom-3">
+          <p class="_margin-bottom-0">
             <Emphasis/>
             is 100% <i class="fab fa-github"/> <a href="https://github.com/matter-labs/zksync">free open source</a></p>
-          <p class="_margin-bottom-0">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>
+          <p class="_margin-bottom-0 _zk-font-18">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>
         </div>
       </div>
       <div class="bottomBlock">
-        <div class="h2">Get involved</div>
-        <div class="grayText">
+        <div class="h2 _padding-top-1">Get involved</div>
+        <div class="grayText _zk-font-18">
           Take part in the community discussions and don’t miss important updates
         </div>
         <social-block class="_margin-y-lg-2 _margin-y-xs-1 "/>
