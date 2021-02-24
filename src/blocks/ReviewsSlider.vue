@@ -81,14 +81,14 @@ export default {
             text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math",
           },
           {
-            id: null,
-            ref: 2,
-            link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
-            thumbnail: "buter.png",
-            thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
+            id:             null,
+            ref:            2,
+            link:           "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
+            thumbnail:      "buter.png",
+            thumbnailAlt:   "Vitalik Buterin, co-founder of Ethereum about zkSynk",
             thumbnailTitle: "Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception",
-            text: "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
-            title: "Vitalik Buterin",
+            text:           "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
+            title:          "Vitalik Buterin"
           },
           {
             id:             "balancer-review",

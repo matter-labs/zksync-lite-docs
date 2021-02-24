@@ -9,8 +9,8 @@
         </i-column>
         <i-column :xs="12" :md="6" class="_padding-right-0">
           <div class="rightSideLinks">
-            <a href="/legal/terms.html">Terms</a>
-            <a href="/legal/privacy.html">Privacy Policy</a>
+            <a :href="'/legal/terms.html'">Terms</a>
+            <a :href="'/legal/privacy.html'">Privacy Policy</a>
           </div>
         </i-column>
       </i-row>

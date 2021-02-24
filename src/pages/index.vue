@@ -9,8 +9,7 @@
           Security and UX first
         </div>
         <div class="grayText subheaderText" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-          <emphasis/>
-          is Ethereum’s most user-centric ZK rollup
+          zkSync is Ethereum’s most user-centric ZK rollup
         </div>
         <div class="featuresGrid">
           <div class="featureItem">
@@ -81,7 +80,7 @@
     <i-container id="zksync-vs-rollup-solutions" fluid class="_padding-y-3 _text-center">
       <i-row>
         <i-column xs="12">
-          <div class="h2 _margin-bottom-1 _paddin-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
+          <div class="h2 _margin-bottom-1 _padding-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
             <img
               src="@/assets/images/pages/index/logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
 with zero security compromises"
@@ -268,8 +267,8 @@ import OtherZk from "@/blocks/compare/other-zk";
 import newsletter from "@/blocks/Newsletter.vue";
 import ReviewsSlider from "@/blocks/ReviewsSlider.vue";
 import socialBlock from "@/blocks/SocialBlock.vue";
-import ZButton from "@/components/ZButton";
 import Emphasis from "@/components/Emphasis";
+import ZButton from "@/components/ZButton";
 import ZHero from "~/components/ZHero";
 
 export default {
@@ -343,17 +342,6 @@ export default {
       { hid: "twitter:image", name: "twitter:image", content: image },
       { hid: "twitter:card", name: "twitter:card", content: "summary_large_image" },
     ];
-  },
-  methods: {
-    scrollDown() {
-      // noinspection JSCheckFunctionSignatures @ts-link ignore
-      this.$scrollTo(this.$refs.scrollToBlock, 500, {
-        x: false,
-        y: true,
-        cancelable: true,
-        offset: -84,
-      });
-    },
   },
 };
 </script>

@@ -1,12 +1,12 @@
 .mainFooter {
+  height: 90px;
   font-weight: normal;
   background-color: transparentize($color: #000000, $amount: 0.7);
 
-  &>.container
-  {
+  & > .container {
     max-width: 870px;
-    .row
-    {
+
+    .row {
       padding: 2rem 0;
       @media screen and (max-width: $mobile)
       {

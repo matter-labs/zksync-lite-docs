@@ -4459,6 +4459,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"asap@npm:~2.0.3":
+  version: 2.0.6
+  resolution: "asap@npm:2.0.6"
+  checksum: 3d314f8c598b625a98347bacdba609d4c889c616ca5d8ea65acaae8050ab8b7aa6630df2cfe9856c20b260b432adf2ee7a65a1021f268ef70408c70f809e3a39
+  languageName: node
+  linkType: hard
+
 "asn1.js@npm:^5.2.0":
   version: 5.4.1
   resolution: "asn1.js@npm:5.4.1"
@@ -5431,6 +5438,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"change-emitter@npm:^0.1.2":
+  version: 0.1.6
+  resolution: "change-emitter@npm:0.1.6"
+  checksum: 5ae3c26e0b22a40fb22c06912d4ff423d47c806201177268ae476c0df4b21864f814be5b7049b6b065c0ba59b271304fb101dc45ccc50368c87a550a396378c6
+  languageName: node
+  linkType: hard
+
 "character-entities-legacy@npm:^1.0.0":
   version: 1.1.4
   resolution: "character-entities-legacy@npm:1.1.4"
@@ -6206,6 +6220,13 @@ __metadata:
     browserslist: ^4.16.3
     semver: 7.0.0
   checksum: ebcd01c9ad2b3114cfcf9316a8d324dffc2e1362249f48b734e941e8de32e1c7f5f859198a212c0af2e6cef3164fc4457817b4568faec46f815ebb8dcb8f8f11
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^1.0.0":
+  version: 1.2.7
+  resolution: "core-js@npm:1.2.7"
+  checksum: 845cd9fe577300e5ce549fea1b66665e79e699ed7ab3bc4d64c9c1e2a35a479c331198039666a7675190e17e8d55097a162e962bec8c9ca3db393425724bbb29
   languageName: node
   linkType: hard
 
@@ -7469,6 +7490,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"encoding@npm:^0.1.11":
+  version: 0.1.13
+  resolution: "encoding@npm:0.1.13"
+  dependencies:
+    iconv-lite: ^0.6.2
+  checksum: 282d5696a4916383b0f71a87375505e33ef0be0c3a30939fb559a878b691873d48acc61ee6dcbfacf3e68404ab4462e081bcfd0aa3c9a3f1fabb900306aad77d
+  languageName: node
+  linkType: hard
+
 "end-of-stream@npm:^1.0.0, end-of-stream@npm:^1.1.0":
   version: 1.4.4
   resolution: "end-of-stream@npm:1.4.4"
@@ -8393,6 +8423,21 @@ __metadata:
   dependencies:
     websocket-driver: ">=0.5.1"
   checksum: 94c48a5b4e9ab6ff05a424dfeebe0da6c7963776172c8713588926f1e15348c423e440c601360d105602586d59f8daeed5dadb76e29070f0b468ebd55e1f868d
+  languageName: node
+  linkType: hard
+
+"fbjs@npm:^0.8.1":
+  version: 0.8.17
+  resolution: "fbjs@npm:0.8.17"
+  dependencies:
+    core-js: ^1.0.0
+    isomorphic-fetch: ^2.1.1
+    loose-envify: ^1.0.0
+    object-assign: ^4.1.0
+    promise: ^7.1.1
+    setimmediate: ^1.0.5
+    ua-parser-js: ^0.7.18
+  checksum: fa37e4dfa8bbe17c4cd7a037840d22d97584a6ca9511ea0ab396995d6f403567dbbfad13d9ea9e0d78ea98072b5829bd6437dfb7949ad979dca5738d547803b5
   languageName: node
   linkType: hard
 
@@ -9559,6 +9604,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"hoist-non-react-statics@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "hoist-non-react-statics@npm:1.2.0"
+  checksum: 30158f66fa14083dac65f1bdf266947a8fc1911f4fcf452dcf4323bce4d138bc09e4923320c6d59f8a14800bfa36f280247f4560bc7c4ede4728f9dea87e3c5f
+  languageName: node
+  linkType: hard
+
 "hoopy@npm:^0.1.4":
   version: 0.1.4
   resolution: "hoopy@npm:0.1.4"
@@ -10634,7 +10686,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"is-stream@npm:^1.1.0":
+"is-stream@npm:^1.0.1, is-stream@npm:^1.1.0":
   version: 1.1.0
   resolution: "is-stream@npm:1.1.0"
   checksum: 39843ee9ff68ebda05237199f18831eb6e0e28db7799ee9ddaac5573b0681f18b4dc427afdb7b7ad906db545e4648999c42a1810b277acc8451593ff59da00fa
@@ -10763,6 +10815,16 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"isomorphic-fetch@npm:^2.1.1":
+  version: 2.2.1
+  resolution: "isomorphic-fetch@npm:2.2.1"
+  dependencies:
+    node-fetch: ^1.0.1
+    whatwg-fetch: ">=0.10.0"
+  checksum: a4174e332ae98fc93269162f1d8a3ee1f7255257d4eaeea5145d4068f64ac2dbff7e7f681889097238e1e009f7a74ba1a23ffd8ed967402777a32cca96204508
+  languageName: node
+  linkType: hard
+
 "isstream@npm:~0.1.2":
   version: 0.1.2
   resolution: "isstream@npm:0.1.2"
@@ -10858,7 +10920,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"js-tokens@npm:^4.0.0":
+"js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
   checksum: 1fc4e4667ac2d972aba65148b9cbf9c17566b2394d3504238d8492bbd3e68f496c657eab06b26b40b17db5cac0a34d153a12130e2d2d2bb6dc2cdc8a4764eb1b
@@ -11504,6 +11566,17 @@ fsevents@~2.3.1:
   version: 2.0.4
   resolution: "longest-streak@npm:2.0.4"
   checksum: ba5ebac14700c0a5f88a312be789b651c35bfed84bd5e2b4f04ac0898add697c36ede401d0b17dfaac0956171027b61ad49ad866ac949ae1d36f9e4ced60cbe1
+  languageName: node
+  linkType: hard
+
+"loose-envify@npm:^1.0.0":
+  version: 1.4.0
+  resolution: "loose-envify@npm:1.4.0"
+  dependencies:
+    js-tokens: ^3.0.0 || ^4.0.0
+  bin:
+    loose-envify: cli.js
+  checksum: 5c3b47bbe5f597a3889fb001a3a98aaea2a3fafa48089c19034de1e0121bf57dbee609d184478514d74d5c5a7e9cfa3d846343455e5123b060040d46c39e91dc
   languageName: node
   linkType: hard
 
@@ -12464,6 +12537,16 @@ fsevents@~2.3.1:
     lower-case: ^2.0.2
     tslib: ^2.0.3
   checksum: 84db4909caec37504c6655f995a004067f8733be8cd8d849f1578661b60a1685e086325fa4e1a5e8ce94e7416c1d0f037e2a00f635a14457183de80ab4fc7612
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^1.0.1":
+  version: 1.7.3
+  resolution: "node-fetch@npm:1.7.3"
+  dependencies:
+    encoding: ^0.1.11
+    is-stream: ^1.0.1
+  checksum: d04afb2e328ffb974a5ac4800fe5714d7419243d72f089a6a2383d3b93368c61ae88954a4866c476c0d7f95d7af414c1b9a885e051971061efe4054d526e23ed
   languageName: node
   linkType: hard
 
@@ -14694,6 +14777,34 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"prism-react@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "prism-react@npm:1.0.2"
+  dependencies:
+    recompose: ^0.22.0
+  peerDependencies:
+    react: ^15.0.2 || ^0.14.8
+  checksum: dd601a6619333300adb0aa195c353f90dc64a290eb1977349b80b4caf9c4da52a0f741445bd745e27856c6cdc03b88b9868f89bd48ec0a086d14decf9f95024f
+  languageName: node
+  linkType: hard
+
+"prism-redux@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "prism-redux@npm:1.0.2"
+  checksum: 0637d10ac103e6fb5a6ac884d4287cb95d0e49ffd3babd90848f0a306293ac2f029df5e5968987f8d51cc3fdb04e45fe6ec9336e9970e8b315fb4575028f544f
+  languageName: node
+  linkType: hard
+
+"prism@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "prism@npm:4.1.2"
+  dependencies:
+    prism-react: ^1.0.2
+    prism-redux: ^1.0.2
+  checksum: 917926a13fe74375d1bb3f57ab7b87df1d7bd176a1a71bc358c41a0b3284d0acb6a01b024cb9e87f0bc003338773836db1e4437c0a478dfd00146c8bbe6b5cc7
+  languageName: node
+  linkType: hard
+
 "prismjs@npm:^1.13.0, prismjs@npm:^1.23.0":
   version: 1.23.0
   resolution: "prismjs@npm:1.23.0"
@@ -14731,6 +14842,15 @@ fsevents@~2.3.1:
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
   checksum: c06bce0fc60b1c7979f291e489b9017db9c15f872d5cef0dfbb2b56694e9db574bc5c28f332a7033cdbd3a1d6417c5a1ee03889743638f0241e82e5a6b9c277f
+  languageName: node
+  linkType: hard
+
+"promise@npm:^7.1.1":
+  version: 7.3.1
+  resolution: "promise@npm:7.3.1"
+  dependencies:
+    asap: ~2.0.3
+  checksum: 23267a4b078fcb02c57b06ca1a1d5739109deb0932c0fd79615a2c5636dd0571ac6a161f19c4ea9683a4ab89791da13112678fa410b65334de490e97c33410ae
   languageName: node
   linkType: hard
 
@@ -15148,6 +15268,20 @@ fsevents@~2.3.1:
   dependencies:
     picomatch: ^2.2.1
   checksum: a64fe5606937d9655252230003362d95da05dbfd3baecedb4bb8c1bc0df497d051a192f9b75345c944e58a0b362c68349be602d6dbf05d03770e510b35a9f80f
+  languageName: node
+  linkType: hard
+
+"recompose@npm:^0.22.0":
+  version: 0.22.0
+  resolution: "recompose@npm:0.22.0"
+  dependencies:
+    change-emitter: ^0.1.2
+    fbjs: ^0.8.1
+    hoist-non-react-statics: ^1.0.0
+    symbol-observable: ^1.0.4
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0
+  checksum: 98ef46cf3d4eb7dd9149a852cb024c959a0fd65b9ab092836a642bf27411acfb5cbce667bdcc85326c53e8610d2cf692830d14ccb0bdee6b2724c69b3dbe1dbf
   languageName: node
   linkType: hard
 
@@ -16002,7 +16136,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"setimmediate@npm:^1.0.4":
+"setimmediate@npm:^1.0.4, setimmediate@npm:^1.0.5":
   version: 1.0.5
   resolution: "setimmediate@npm:1.0.5"
   checksum: 87884d8add4779fe47ccf763396a5bf875640ae34d80a10802da4de5c25d87647c12f6e7748fd5b8c143b57201caf2a5a781631456c228825f166ca305c12f20
@@ -16953,6 +17087,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"symbol-observable@npm:^1.0.4":
+  version: 1.2.0
+  resolution: "symbol-observable@npm:1.2.0"
+  checksum: 268834a1d4cba19d40f367e5c2755f612969c8418e43a3be17408e392802a667f8bb542893440d58a080a8ea8da05ea98e27e472b9f4ff6fbda78a21a1a41c53
+  languageName: node
+  linkType: hard
+
 "table@npm:^6.0.4, table@npm:^6.0.7":
   version: 6.0.7
   resolution: "table@npm:6.0.7"
@@ -17571,7 +17712,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"ua-parser-js@npm:^0.7.24":
+"ua-parser-js@npm:^0.7.18, ua-parser-js@npm:^0.7.24":
   version: 0.7.24
   resolution: "ua-parser-js@npm:0.7.24"
   checksum: a15aa0e79de2c46941d80f677d79a8f621a45df581692475f2712023de3dca5f0d13adb0f86df0cad182a842e9a788211b65b23d160bb9925623efa6af7bac11
@@ -18168,12 +18309,22 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"vue-prism-editor@npm:1.2.2":
+"vue-prism-editor@npm:^1.2.2":
   version: 1.2.2
   resolution: "vue-prism-editor@npm:1.2.2"
   peerDependencies:
     vue: ^2.6.11
   checksum: 07e1a3e1332f7559efcc7c30f6a3711345f016610bb11dcec963a52e8c506230438db1f14b1118d48e0e254955828d5149e6e984d9abc3d285ab5ce42b239eab
+  languageName: node
+  linkType: hard
+
+"vue-property-decorator@npm:^9.1.2":
+  version: 9.1.2
+  resolution: "vue-property-decorator@npm:9.1.2"
+  peerDependencies:
+    vue: "*"
+    vue-class-component: "*"
+  checksum: a4af390197a0f0695f72804be2d71b1fb3530b34d9f425f38c42aae2fc3024d85fc0ccfd60aefb5e3413a8b3fcba7428f4c12379e110831c53616082fb6730a6
   languageName: node
   linkType: hard
 
@@ -18648,7 +18799,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"whatwg-fetch@npm:^3.6.1":
+"whatwg-fetch@npm:>=0.10.0, whatwg-fetch@npm:^3.6.1":
   version: 3.6.1
   resolution: "whatwg-fetch@npm:3.6.1"
   checksum: a018f35071f8059cfb0e0edea1a6729ff7669c80275e8cc6773f239d1f7a44ef6018cd073c89d013e36eba9554cc374fa28b3179a08454598012f40f99adeb8a
@@ -19061,6 +19212,7 @@ fsevents@~2.3.1:
     nuxt-socialsplash-module: ^1.0.0
     postcss: 7.0.32
     prettier: ^2.2.1
+    prism: ^4.1.2
     prismjs: ^1.23.0
     sass-loader: ^10.1.1
     stylelint: ^13.10.0
@@ -19068,7 +19220,9 @@ fsevents@~2.3.1:
     typescript: ^4.1.5
     vue: ^2.6.12
     vue-cli-plugin-pnp: ^1.0.0
-    vue-prism-editor: 1.2.2
+    vue-loader: ^15.9.6
+    vue-prism-editor: ^1.2.2
+    vue-property-decorator: ^9.1.2
     vue-scrollto: ^2.20.0
     vue-server-renderer: ^2.6.12
     vue-template-compiler: ^2.6.12
