@@ -51,12 +51,15 @@
 </template>
 
 <script>
+/**
+ * @var document
+ */
 import httpinvoke from "httpinvoke";
 import "prismjs/components/prism-clike";
-import {highlight, languages} from "prismjs/components/prism-core";
+import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-rust";
 import "prismjs/components/prism-solidity";
-import {PrismEditor} from "vue-prism-editor";
+import { PrismEditor } from "vue-prism-editor";
 
 export default {
   components: {
@@ -121,8 +124,9 @@ contract CrowdFunding {
         const response = await httpinvoke("https://sol2zinc.zksync.dev/api/v1/transpiler", "POST", {
           input: this.code,
         });
-        if (!response.body) {
-          throw new Error({ message: "Code error" });
+        // eslint-disable-next-line no-prototype-builtins
+        if (typeof response !== "object" || !response.hasOwnProperty("body")) {
+          throw new Error("Code error");
         }
         this.transpiled = response.body;
       } catch (error) {
@@ -131,15 +135,18 @@ contract CrowdFunding {
       this.loading = false;
     },
     copy() {
-      const elem = document.createElement("textarea");
-      elem.style.position = "absolute";
-      elem.style.left = -99999999 + "px";
-      elem.style.top = -99999999 + "px";
-      elem.value = this.transpiled;
-      document.body.appendChild(elem);
-      elem.select(0);
-      document.execCommand("copy");
-      document.body.removeChild(elem);
+      if (process.client && document) {
+        const elem = document.createElement("textarea");
+        elem.style.position = "absolute";
+        elem.style.left = -99999999 + "px";
+        elem.style.top = -99999999 + "px";
+        elem.value = this.transpiled;
+        document.body.appendChild(elem);
+        elem.select(0);
+        // noinspection JSUnresolvedFunction
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+      }
     },
   },
 };
