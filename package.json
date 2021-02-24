@@ -63,7 +63,6 @@
     "@babel/core": "^7.13.1",
     "@babel/plugin-syntax-jsx": "latest",
     "@babel/preset-env": "7.12.17",
-    "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/google-gtag": "^1.0.4",
     "@nuxtjs/pwa": "^3.3.5",

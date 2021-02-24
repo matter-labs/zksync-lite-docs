@@ -1,5 +1,5 @@
 <template>
-  <div class="reviewsContainer">
+  <div class="reviewsContainer" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
     <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
       <div v-if="currentItem>0" class="arrow left" @click="scrollItem('minus')">

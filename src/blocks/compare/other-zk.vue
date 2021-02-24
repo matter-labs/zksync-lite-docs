@@ -1,6 +1,6 @@
 <template>
   <div>
-    <i-table class="tg" variant="dark" responsive>
+    <i-table class="tg _width-100" variant="dark">
       <thead>
       <tr>
         <th ></th>

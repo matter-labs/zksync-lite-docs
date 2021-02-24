@@ -13,7 +13,7 @@
           zkSync is Ethereum’s most user-centric ZK rollup
         </div>
         <div class="featuresGrid">
-          <div class="featureItem">
+          <div class="featureItem" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1200">
             <img class="featureItemIcon" src="@/assets/images/pages/index/shield.svg" alt="Uncapped Security">
             <div class="featureHeadline h3">
               Uncapped Security
@@ -29,7 +29,7 @@
               </p>
             </div>
           </div>
-          <div class="featureItem">
+          <div class="featureItem" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
             <img class="featureItemIcon" src="@/assets/images/pages/index/clock.svg" alt="10-Minute Finality">
             <div class="featureHeadline h3">
               10-Minute<br>Finality
@@ -45,7 +45,7 @@
               </p>
             </div>
           </div>
-          <div class="featureItem">
+          <div class="featureItem" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1200">
             <img class="featureItemIcon" src="@/assets/images/pages/index/weights.svg" alt="0.5k Gas per tx">
             <div class="featureHeadline h3">
               0.5k Gas<br> per tx
@@ -84,7 +84,7 @@
 with zero security compromises"
             /> zkSync in comparison
           </div>
-          <i-collapsible variant="dark" class="_width-full">
+          <i-collapsible variant="dark" class="_width-full" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
             <i-collapsible-item>
               <template slot="title">zkSync vs <span>optimistic rollups</span></template>
               <optimistic/>
@@ -136,7 +136,7 @@ with zero security compromises"
             </z-button>
           </div>
           <div class="textItem">
-            <div class="h2 _position-relative _text-nowrap">
+            <div class="h2 _position-relative">
               Smart contracts in Solidity
               <i-badge variant="secondary _upcoming-h3">upcoming</i-badge>
             </div>
@@ -162,7 +162,7 @@ with zero security compromises"
           src="@/assets/images/pages/index/decentralized.jpg"
         >
         <div class="decentralizedGrid">
-          <div data-aos="fade-right">
+          <div data-aos="fade-right _text-sm-center _text-lg-left">
             <div class="h2 _margin-bottom-2">
               Decentralized,<br>
               on principle
@@ -184,7 +184,8 @@ with zero security compromises"
                 >the original zkSync vision</z-cta> is fully materialized.
               </p>
             </div>
-            <z-button class="_padding-x-2 _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More about
+            <z-button class="_margin-x-xs-auto _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More
+              about
               our philosophy
             </z-button>
           </div>
@@ -233,7 +234,7 @@ with zero security compromises"
       <div class="topBlock _padding-bottom-2">
         <div class="h2 _padding-top-1">Owned by the community</div>
         <div class="grayText _margin-top-2 _margin-bottom-0">
-          <p class="_margin-bottom-0 _text-nowrap">
+          <p class="_margin-bottom-0">
             <Emphasis/>
             is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta></p>
           <p class="_margin-bottom-0 _zk-font-18">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>

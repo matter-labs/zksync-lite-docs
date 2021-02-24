@@ -4,7 +4,7 @@
       <thead>
       <tr>
         <th class="_border-0"></th>
-        <th class="_text-center">ORL</th>
+        <th class="_text-center">Optimistic</th>
         <th class="_text-center">
           <emphasis :show-logo="true" brand-name=""/>
         </th>

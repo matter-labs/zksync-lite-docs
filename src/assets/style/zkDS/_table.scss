@@ -2,12 +2,12 @@
 
 .table-wrapper.tg {
   overflow: initial !important;
-  overflow-x: auto !important;
 
   table.table.-dark {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+    margin-bottom: 0;
 
     tr {
       & > td, th {
@@ -101,8 +101,14 @@
 
   @media (max-width: $mobile) {
     th, td {
-      padding: 0.4rem 1rem;
-      font-size: 16px;
+      padding: 0.4rem 0.5rem;
+      font-size: 16px !important;
+      word-break: break-word !important;
+    }
+
+    tr > td:first-child
+    {
+      width: 25%;
     }
 
   }

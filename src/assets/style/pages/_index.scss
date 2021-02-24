@@ -427,9 +427,10 @@
       font-size: 18px;
     }
   }
-  .fab.fa-github
-  {
-    margin-top: 4px;
+  .CtaButton {
+    .fab.fa-github {
+      margin: 4px 7px 0;
+    }
   }
 }
 
@@ -735,7 +736,7 @@
 
         height: auto;
         display: block;
-        padding: 0 20px;
+        padding: 0;
 
         .codeBlockSpace {
           grid-area: codeBlock;
@@ -757,7 +758,7 @@
             &._position-relative {
               display: flex;
               flex-direction: column-reverse;
-              height: 40px;
+              min-height: 40px;
 
               .badge {
                 text-align: right;
@@ -797,7 +798,7 @@
         grid-template-rows: repeat(2, max-content);
         grid-gap: 20px;
 
-        & > .row
+        & > div:first-child
         {
           text-align: center;
         }
@@ -808,8 +809,8 @@
 
         .h2
         {
-          font-size: 24px;
-          margin: 0 0 15px !important;
+          font-size: 22px !important;
+          margin: 0 !important;
           br
           {
             display: none !important;
@@ -838,7 +839,7 @@
           }
 
           .textItem {
-            padding: 15px 0 !important;
+            padding: 20px 0 15px !important;
             text-align: center;
 
             .h2 {
@@ -859,23 +860,29 @@
     .communityOwned {
       margin: 2rem auto;
 
-      .topBlock {
+      .topBlock, .bottomBlock {
         border-radius: 16px 16px 0 0  !important;
+        padding: 1rem;
+        .h2
+        {
+          font-size: 24px;
+        }
       }
 
       .bottomBlock {
-        padding: 30px;
         border-radius: 0 0 16px 16px !important;
 
+        // mobile
         .socialIcons {
           margin-left: auto !important;
           margin-right: auto !important;
           padding: 0;
           height: 35px;
           grid-auto-columns: 35px;
-          grid-gap: 10px;;
+          grid-gap: 10px;
 
           .socialItem {
+            background: transparent !important;
             border-radius: 6px;
 
             i {
@@ -921,26 +928,23 @@
     .subheaderText {
       margin-bottom: 20px;
     }
-    padding-bottom: 48px;
   }
 
   .collapsible.-dark._width-full {
     border: none !important;
+    margin: 0 -10px;
 
     > .item {
-      margin: 30px 0;
-      border-radius: $borderRadiusBig;
+      margin: 20px 0 !important;
+      border-radius: $borderRadiusSm;
       text-align: left;
       justify-content: flex-start;
       background: $darkBlack;
 
-      @media screen and (max-width: $mobile) {
-        margin: 15px 0;
-      }
 
       &:not(.-active) {
         & > .header {
-          border-radius: $borderRadiusBig !important;
+          border-radius: $borderRadiusSm !important;
           background-color: #0A0C1A !important;
         }
 
@@ -952,20 +956,16 @@
         align-items: center;
         color: $whiteFaded;
         transition: background, border $transition2;
-        border-radius: $borderRadiusBig $borderRadiusBig 0 0 !important;
+        border-radius: $borderRadiusSm $borderRadiusSm 0 0 !important;
         will-change: background, border;
         border: none !important;
         letter-spacing: 0.01em;
-        padding: 30px;
-        height: 70px;
         background-color: lighten(#0A0C1A, 15) !important;
 
-        @media screen and (max-width: $mobile) {
-          font-size: 18px;
-          padding: 20px;
-          height: 60px;
-        }
-
+        padding: 10px !important;
+        font-size: 16px !important;
+        height: 50px !important;
+        line-height: 50px !important;
 
         &:hover {
           background: $violet !important;
@@ -983,13 +983,13 @@
 
       & > .body {
         background: rgba(0, 0, 0, 0.4) !important;
-        border-radius: $borderRadiusBig;
+        border-radius: 0 !important;
         overflow: hidden;
 
         & > .content {
-          border-radius: $borderRadiusBig;
-          padding: 10px !important;
+          padding: 0 !important;
           background: rgba(0, 0, 0, 0.4) !important;
+          border-radius: 0 !important;
 
 
           img {
@@ -1205,8 +1205,11 @@
 
     #zksync-vs-rollup-solutions {
       background: #1a1e3c !important;
-      margin: 35px auto 20px !important;
       min-width: 100%;
+
+      margin: 30px auto 20px !important;
+      padding: 30px 0 20px !important;
+
 
       & > .row:first-child {
         max-width: calc(100% - 24px) !important;
