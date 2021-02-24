@@ -21,7 +21,7 @@
       <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition}px)`}">
         <a
           v-for="(singleReview) in reviewsData"
-          :id="singleReview.hasOwnProperty('id') ? singleReview.id : ''"
+          :id="singleReview.id"
           :key="singleReview.ref"
           :ref="singleReview.ref"
           :href="singleReview.link"
@@ -61,6 +61,7 @@
 
 <script type="ts">
 import ZButton from "~/components/ZButton.vue";
+
 export default {
   components: {
     ZButton,
@@ -90,15 +91,15 @@ export default {
             title: "Vitalik Buterin",
           },
           {
-            id: null,
-            ref: 3,
-            title: null,
-            link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
-            thumbnail: "balancer.svg",
-            thumbnailAlt: "Mike McDonal, CTO @BalancerLabs",
+            id:             "balancer-review",
+            ref:            3,
+            title:          null,
+            link:           "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
+            thumbnail:      "balancer.svg",
+            thumbnailAlt:   "Mike McDonal, CTO @BalancerLabs",
             thumbnailTitle: "Mike McDonal, Co-founder & CTO @BalancerLabs. Security Engineer about ZK Rollups",
-            text: "ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm).",
-          },
+            text:           "ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm)."
+          }
         ];
       },
       require: true,

@@ -52,11 +52,11 @@
 
 <script>
 import httpinvoke from "httpinvoke";
-import { PrismEditor } from "vue-prism-editor";
-import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
+import {highlight, languages} from "prismjs/components/prism-core";
 import "prismjs/components/prism-rust";
 import "prismjs/components/prism-solidity";
+import {PrismEditor} from "vue-prism-editor";
 
 export default {
   components: {
@@ -137,7 +137,7 @@ contract CrowdFunding {
       elem.style.top = -99999999 + "px";
       elem.value = this.transpiled;
       document.body.appendChild(elem);
-      elem.select();
+      elem.select(0);
       document.execCommand("copy");
       document.body.removeChild(elem);
     },

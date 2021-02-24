@@ -7,6 +7,15 @@
   height: auto;
   background-color: transparentize($color: #000000, $amount: 0.7);
   overflow: hidden;
+
+
+  #balancer-review {
+    img {
+      width: 110px !important;
+    }
+  }
+
+
   @media screen and (min-width: 1225px) {
     .arrow {
       display: none;
