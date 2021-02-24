@@ -16,13 +16,12 @@
       data-aos-duration="2000"
       data-aos-once="true"
     >
-      <a
+      <z-cta
         :href="'/faq/'"
-        target="_blank"
         class="exploreFAQ _margin-top-xs-1 _margin-bottom-xs-2 _margin-y-lg-3"
       >
         FAQ and docs
-      </a>
+      </z-cta>
     </i-row>
     <a
       class="scrollDown" data-aos-offset="-100" data-aos="fade-up" data-aos-delay="100"
@@ -35,10 +34,12 @@
 <script type="ts">
 import Emphasis from "~/components/Emphasis";
 import ZButton from "~/components/ZButton";
+import ZCta from "~/components/ZCta.vue";
 
 export default {
   name: "ZHero",
   components: {
+    ZCta,
     Emphasis,
     ZButton,
   },

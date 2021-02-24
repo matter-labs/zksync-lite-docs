@@ -37,7 +37,7 @@
             >
             <span v-if="singleReview.title">{{ singleReview.title }}</span>
           </div>
-          <div class="reviewText">
+          <div class="reviewText grayText">
             {{ singleReview.text }}
             <i-badge v-if="singleReview.isUpcoming" variant="secondary _upcoming-h3">upcoming</i-badge>
           </div>

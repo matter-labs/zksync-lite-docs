@@ -14,7 +14,7 @@
     margin: 10px auto;
 
     &, & a {
-      color: transparentize($color: $white, $amount: 0.5);
+      color: $colorTxt;
     }
 
     a {
@@ -256,6 +256,7 @@
         .featureDescription {
           font-size: 16px;
           text-align: center;
+          white-space: initial;
           margin: 0;
 
           &:last-child {
@@ -425,6 +426,10 @@
       text-align: center;
       font-size: 18px;
     }
+  }
+  .fab.fa-github
+  {
+    margin-top: 4px;
   }
 }
 
@@ -693,7 +698,6 @@
           .featureDescription {
             margin-left: auto;
             margin-right: auto;
-            font-size: 14px !important;
             line-height: 140%;
             /* or 20px */
 
@@ -705,10 +709,6 @@
             font-size: 28px;
           }
         }
-      }
-
-      .row a {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       }
     }
 
@@ -786,26 +786,34 @@
     .decentralizedContainer {
       width: 100%;
 
+      img
+      {
+        margin-bottom: 20px !important;
+      }
+
       .decentralizedGrid {
         height: auto;
         grid-template-columns: 100%;
         grid-template-rows: repeat(2, max-content);
         grid-gap: 20px;
 
+        & > .row
+        {
+          text-align: center;
+        }
+
+        .button{
+          margin: 30px auto 50px !important;
+        }
+
         .h2
         {
           font-size: 24px;
-          margin: 0 0 10px !important;
+          margin: 0 0 15px !important;
           br
           {
             display: none !important;
           }
-        }
-
-        .ourValues
-        {
-          font-size: 30px;
-          font-weight: bold;
         }
 
         .grayText {
@@ -820,21 +828,28 @@
           grid-template-rows: 45px repeat(3, max-content);
 
           .ourValues {
-            font-size: 20px;
+            font-size: 24px;
+            font-family: $grotesk;
+            font-weight: bold;
+            line-height: 140%;
+            letter-spacing: 0.01rem;
+            margin-bottom: 0 !important;
+            text-align: center;
           }
 
           .textItem {
-            padding: 0 0 20px !important;
-            font-size: 16px;
+            padding: 15px 0 !important;
+            text-align: center;
 
             .h2 {
               font-size: 20px;
-              margin: 20px 0 0 !important;
+              margin: 0 0 10px !important;
+              text-align: center;
             }
 
             .grayText {
-              font-size: 16px !important;
               margin-top: 10px;
+              text-align: center;
             }
           }
         }
@@ -906,6 +921,7 @@
     .subheaderText {
       margin-bottom: 20px;
     }
+    padding-bottom: 48px;
   }
 
   .collapsible.-dark._width-full {
@@ -988,7 +1004,7 @@
     @media (max-width: $mobile) {
 
       .h2 {
-        margin-bottom: 16px;
+        margin-bottom: 15px;
         white-space: nowrap;
         font-size: 26px;
 
@@ -1150,20 +1166,12 @@
 
       .bottomBlock {
         height: auto !important;
-        padding: 0 5px 5px;
+        padding: 10px;
         display: inline !important;
         text-align: center;
 
-        & > * {
-          display: inline !important;
-        }
-
-        .arrowDown {
-          font-size: 14px !important;
-
-          &:before {
-            content: "\f061";
-          }
+        .arrowDown, .featureDescription:last-of-type {
+          display: none;
         }
       }
     }
@@ -1181,7 +1189,6 @@
 
       .featureItem .featureDescription {
         /* margin: 0; */
-        font-size: 14px !important;
         line-height: 140%;
         text-align: center;
         letter-spacing: 0.01em;
@@ -1242,11 +1249,25 @@
       }
     }
 
+    .codeBlockContainer {
+      display: initial;
+    }
     .codeContainer {
+      height: min-content;
       margin: 10px auto !important;
-      .columnGrid
+      .codeBlockTop
       {
         display: none !important;
+      }
+      .codeBlockFooter{
+        height: min-content;
+        .buttonBlock {
+          display: inline-block;
+          text-align: center;
+          padding: 10px;
+          height: auto;
+          background: transparent;
+        }
       }
       .reviewsContainer
       {

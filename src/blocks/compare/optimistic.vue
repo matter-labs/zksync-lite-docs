@@ -4,9 +4,9 @@
       <thead>
       <tr>
         <th class="_border-0"></th>
-        <th class="_border-right">Optimistic rollup</th>
-        <th class="_border-left">
-          <logo/>
+        <th class="_text-center">ORL</th>
+        <th class="_text-center">
+          <emphasis :show-logo="true" brand-name=""/>
         </th>
       </tr>
       </thead>
@@ -40,7 +40,7 @@
       </tr>
       <tr>
         <td class="_border-top">Cost of privacy (over normal tx)</td>
-        <td class="_border-left _border-right _bg-red _bg-react">
+        <td class="_border-left  _bg-red _bg-react">
           10-100x
           <sup><a class="_fancyUnderline" title="“A rollup-centric ethereum roadmap” by V.Buterin"
                   href="https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698/20" target="_blank">3</a></sup>
@@ -52,11 +52,10 @@
   </div>
 </template>
 <script>
-import Logo from "@/blocks/Logo.vue";
-
+import Emphasis from "@/components/Emphasis";
 export default {
   components: {
-    Logo,
+    Emphasis,
   },
 };
 </script>

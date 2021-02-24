@@ -3,6 +3,7 @@
     <z-hero/>
 
     <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4"/>
+
     <div id="about" ref="scrollToBlock" class="featuresContainer _margin-sm-2 _margin-y-md-4 _padding-y-2 _padding-top-md-4 _padding-bottom-md-4">
       <i-container>
         <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
@@ -19,11 +20,11 @@
             </div>
             <div class="divider _margin-y-1"/>
             <div class="bottomBlock">
-              <p class="featureDescription">
+              <p class="featureDescription grayText">
                 Unlike any other scaling approach, ZK rollup has no upper bound on the value it can securely handle in L2.
               </p>
               <i class="arrowDown fal fa-arrow-down"/>
-              <p class="featureDescription">
+              <p class="featureDescription grayText">
                 zkSync DeFi ecosystem can grow without limits.
               </p>
             </div>
@@ -35,11 +36,11 @@
             </div>
             <div class="divider _margin-y-1"/>
             <div class="bottomBlock">
-              <p class="featureDescription">
+              <p class="featureDescription grayText">
                 Unlike optimistic rollups, all assets can be moved capital-efficiently and fast between ZK rollup and L1.
               </p>
               <i class="arrowDown fal fa-arrow-down"/>
-              <p class="featureDescription">
+              <p class="featureDescription grayText">
                 Protocols can migrate<br> from L1 to L2 gradually.
               </p>
             </div>
@@ -51,12 +52,12 @@
             </div>
             <div class="divider _margin-y-1"/>
             <div class="bottomBlock">
-              <p class="featureDescription">
+              <p class="featureDescription grayText">
                 Live since June 2020,
                 zkSync has the lowest real tx costs across all existing and planned rollups.
               </p>
               <i class="arrowDown fal fa-arrow-down"/>
-              <p class="featureDescription">
+              <p class="featureDescription grayText">
                 VISA-scale is possible today with 2000+ TPS.
               </p>
             </div>
@@ -67,9 +68,9 @@
           economic finality, low-cost privacy, and more.
         </div>
         <i-row center-xs>
-          <a :href="'/faq/tech.html'" target="_blank" class="underlinedLink">
+          <z-cta :href="'/faq/tech.html'" target="_blank" class="underlinedLink">
             How all of this works
-          </a>
+          </z-cta>
         </i-row>
       </i-container>
     </div>
@@ -79,14 +80,9 @@
         <i-column xs="12">
           <div class="h2 _margin-bottom-1 _padding-0" data-aos="fade-up" data-aos-delay="50" data-aos-offset="-100" data-aos-duration="1200">
             <img
-              src="@/assets/images/pages/index/logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
+              src="@/assets/images/pages/index/symbol-logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
 with zero security compromises"
-            /> in comparison
-          </div>
-          <div class="grayText subheaderText _margin-bottom-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-            based on well-known pros and const of the
-            <emphasis/>
-            against the other L2-scaling solutions
+            /> zkSync in comparison
           </div>
           <i-collapsible variant="dark" class="_width-full">
             <i-collapsible-item>
@@ -112,10 +108,8 @@ with zero security compromises"
         design
       </div>
 
-      <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4" :reviews-data="dataForDevelopers"/>
       <div class="codeGrid _margin-top-3">
         <div class="columnGrid">
-
           <div class="textItem" :class="{'chosen': chosenBlock===0}" @click="chosenBlock=0">
             <div class="h2">
               Powerful, easy-to-use API
@@ -177,17 +171,17 @@ with zero security compromises"
               <p>
                 <Emphasis/>
                 is a mission-driven project. Its purpose is to break financial barriers and enhance world’s freedom — by accelerating the mass adoption of
-                public blockchains. We take this mission to heart: check out our <a
+                public blockchains. We take this mission to heart: check out our <z-cta
                 href="https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02"
-              >Team Handbook</a>.
+              >Team Handbook</z-cta>
               </p>
               <p>While healthy pragmatism is necessary to move fast,
                 <emphasis/>
-                will never betray the ethos of crypto. Over the past two years, we’ve <a
+                will never betray the ethos of crypto. Over the past two years, we’ve <z-cta
                   href="https://medium.com/matter-labs/tagged/l2" target="_blank"
-                >fought relentlessly</a> to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. And we won’t rest until <a
+                >fought relentlessly</z-cta> to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. And we won’t rest until <z-cta
                   href="https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58" target="_blank"
-                >the original zkSync vision</a> is fully materialized.
+                >the original zkSync vision</z-cta> is fully materialized.
               </p>
             </div>
             <z-button class="_padding-x-2 _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More about
@@ -225,7 +219,7 @@ with zero security compromises"
               <div class="grayText">
                 We believe that only the paranoid survive.
                 <Emphasis/>
-                is being <a :href="'/faq/decentralization.html'" target="_blank">progressively decentralized</a> to resist even the most powerful
+                is being <z-cta :href="'/faq/decentralization.html'" target="_blank">progressively decentralized</z-cta> to resist even the most powerful
                 potential
                 adversaries.
               </div>
@@ -239,9 +233,9 @@ with zero security compromises"
       <div class="topBlock _padding-bottom-2">
         <div class="h2 _padding-top-1">Owned by the community</div>
         <div class="grayText _margin-top-2 _margin-bottom-0">
-          <p class="_margin-bottom-0">
+          <p class="_margin-bottom-0 _text-nowrap">
             <Emphasis/>
-            is 100% <i class="fab fa-github"/> <a href="https://github.com/matter-labs/zksync">free open source</a></p>
+            is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta></p>
           <p class="_margin-bottom-0 _zk-font-18">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>
         </div>
       </div>
@@ -266,10 +260,12 @@ import ReviewsSlider from "@/blocks/ReviewsSlider.vue";
 import socialBlock from "@/blocks/SocialBlock.vue";
 import Emphasis from "@/components/Emphasis";
 import ZButton from "@/components/ZButton";
-import ZHero from "~/components/ZHero";
+import ZHero from "@/components/ZHero";
+import ZCta from "@/components/ZCta";
 
 export default {
   components: {
+    ZCta,
     ZHero,
     OtherZk,
     Optimistic,

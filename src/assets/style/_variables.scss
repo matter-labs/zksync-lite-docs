@@ -11,6 +11,7 @@ $red: #F25F5C;
 $muted: #565656;
 $whiteFaded: rgba(255, 255, 255, .5);
 $whiteFadedLight: rgba(255, 255, 255, .85);
+$colorTxt: rgba(255, 255, 255, .60);
 
 
 $borderRadius: 8px;
@@ -34,17 +35,17 @@ $zBgGradient: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0
 /**
  * Colors
  */
-$zkColorTxtHeading:#C4C4C4;
+$zkColorTxtHeading: #C4C4C4;
 $zkColorTxtCommon: $white;
 $zkColorTxtFaded: rgba(255, 255, 255, 0.5);
 $zkColorTxtFadedLight: rgba(255, 255, 255, 0.3);
 
 $zkColorBg: #11142B;
-$zkColorBgFadedDark: rgba(0,0,0,0.3);
+$zkColorBgFadedDark: rgba(0, 0, 0, 0.3);
 $zkColorBgButton: #121429;
 
 
-$zkColorBorderMedium: rgba(0,0,0,0.3);
+$zkColorBorderMedium: rgba(0, 0, 0, 0.3);
 $zkColorBorderLight: rgba(255, 255, 255, 0.1);
 
 $zkColorHover: rgba(0, 0, 0, 0.4);
@@ -87,7 +88,7 @@ $font-family-headers: $grotesk;
 
 /* Transitions */
 $transition1: ease .2s;
-$transition2: ease .3s ;
+$transition2: ease .3s;
 $transition3: ease .8s;
 
 /* Responsive */

@@ -4,7 +4,7 @@
       :href="href"
       :size="size"
       :target="target"
-      :variant="variant"
+      :variant="buttonVariant"
       :outline="outline"
   ><span><slot/></span></i-button>
 </template>

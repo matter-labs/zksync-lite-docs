@@ -13,8 +13,9 @@
 
 
 //zk
-@import "zkDS/base";
-@import "zkDS/table";
+@import "./zkDS/base";
+@import "./zkDS/table";
+@import "./zkDS/cta";
 
 //Layouts
 @import "./layouts/default";
@@ -34,7 +35,7 @@
 @import "./components/loader";
 @import "./components/dropdownBlock";
 @import "./components/emphasis";
-@import "components/z-button";
+@import "./components/z-button";
 
 //Pages
 @import "./pages/index";

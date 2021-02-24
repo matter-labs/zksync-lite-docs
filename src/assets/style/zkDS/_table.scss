@@ -12,7 +12,7 @@
     tr {
       & > td, th {
         vertical-align: middle;
-        border: 1px solid $white;
+        border: 1px solid $white !important;
         font-size: 18px;
         padding: 0.6rem 1.2rem;
         word-break: normal;

@@ -4,10 +4,10 @@
       <thead>
       <tr>
         <th ></th>
-        <th>SNARK-based</th>
-        <th class="_border-left _border-right">STARK-based</th>
-        <th >
-          <logo />
+        <th class="_text-center">SNARK<br>based</th>
+        <th class="_text-center">STARK<br>based</th>
+        <th class="_text-center">
+          <emphasis :show-logo="true" brand-name=""/>
         </th>
       </tr>
       </thead>
@@ -59,11 +59,11 @@
   </div>
 </template>
 <script>
-import Logo from "@/blocks/Logo.vue";
+import Emphasis from "@/components/Emphasis.vue";
 
 export default {
   components: {
-    Logo,
+    Emphasis,
   },
 };
 </script>
