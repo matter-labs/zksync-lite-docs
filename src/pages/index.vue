@@ -31,7 +31,7 @@
           <div class="featureItem">
             <img class="featureItemIcon" src="@/assets/images/pages/index/clock.svg" alt="10-Minute Finality">
             <div class="featureHeadline h3">
-              15-Minute<br>Finality
+              10-Minute<br>Finality
             </div>
             <div class="divider _margin-y-1"/>
             <div class="bottomBlock">
