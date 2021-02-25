@@ -2163,21 +2163,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/typescript-runtime@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@nuxt/typescript-runtime@npm:2.0.1"
-  dependencies:
-    ts-node: ^9.1.1
-    typescript: ~4.1
-  peerDependencies:
-    "@nuxt/types": ">=2.13.1"
-  bin:
-    nuxt-ts: bin/nuxt-ts.js
-    nuxts: bin/nuxt-ts.js
-  checksum: a74f2152a17ff6377f00a8472e1f212689f56a4a41fbcf155fa0643c0e70d22072e665e41b235d16fd8f0f3e891b44228a8cd221255aa08c29cb2f82854f6077
-  languageName: node
-  linkType: hard
-
 "@nuxt/utils@npm:2.15.1":
   version: 2.15.1
   resolution: "@nuxt/utils@npm:2.15.1"
@@ -3165,24 +3150,6 @@ __metadata:
     "@types/webpack-sources": "*"
     source-map: ^0.6.0
   checksum: c84012af1d0159e6c17b065139d8c15ffe18042445db4f9c61e2fe3aff1d4ebeb8a65af6824e991eb161334c2842c6d2b55f9d700bd7e64bf492f3dcbf1a92d1
-  languageName: node
-  linkType: hard
-
-"@types/whatwg-fetch@npm:^0.0.33":
-  version: 0.0.33
-  resolution: "@types/whatwg-fetch@npm:0.0.33"
-  dependencies:
-    "@types/whatwg-streams": "*"
-  checksum: 805bee14919bc20adfa791db76187d4c4f9e3e34332e77735b6ae308cfb3125065144e4977e5bf143bf1f7cd08e37c36ed8732e610bcfe4fa2f3081ba0e665df
-  languageName: node
-  linkType: hard
-
-"@types/whatwg-streams@npm:*":
-  version: 3.2.1
-  resolution: "@types/whatwg-streams@npm:3.2.1"
-  dependencies:
-    whatwg-streams: "*"
-  checksum: 78bdf03c60e9ef7e903eaabdab88a0a94abfe5761976ebfcd2e91858343041cb782eb52d568155b59accf6b0f26394737db29f9ce50df5a2a96633a087eb8f00
   languageName: node
   linkType: hard
 
@@ -4319,13 +4286,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"arg@npm:^4.1.0":
-  version: 4.1.3
-  resolution: "arg@npm:4.1.3"
-  checksum: 81b3b40b1529c4fbf75b12f7c3e6fb2dcce9e78072063babc169de9b4f40777788f3d2b04380f659ef676a756e03ccfbfe78adf4477353bda906295fa69dab89
-  languageName: node
-  linkType: hard
-
 "arg@npm:^5.0.0":
   version: 5.0.0
   resolution: "arg@npm:5.0.0"
@@ -4815,13 +4775,6 @@ __metadata:
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 4f2288662f3d4eadbb82d4daa4a7d7976a28fa3c7eb4102c9b4033b03e5be4574ba123ac52a7c103cde4cb7b2d2afc1dbe41817ca15a29ff21ecd258d0286047
-  languageName: node
-  linkType: hard
-
-"bluebird@npm:~1.0.0":
-  version: 1.0.8
-  resolution: "bluebird@npm:1.0.8"
-  checksum: 061440dd2353da6ba7e613e6f68155f3e139c899bae1f3c610ec564ec524ab7902b3c3773d77ea60dfc4f55ba683878be87004f54956b3432d2f482a26ed455d
   languageName: node
   linkType: hard
 
@@ -6342,7 +6295,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-require@npm:^1.1.0, create-require@npm:^1.1.1":
+"create-require@npm:^1.1.1":
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
   checksum: babd307893abfb26d77ae11cb9d6b6cfa6d18c9cee435cf70b5a3fb44aa8d90c9ec26ea89cbb16e0a94b8d34f5fcaee164b90ed526cdd3158955673ab9652d01
@@ -6958,13 +6911,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deep-equal@npm:~0.1.0":
-  version: 0.1.2
-  resolution: "deep-equal@npm:0.1.2"
-  checksum: b0ecb9a6608a0f9148703fc534144f55771aaac8a4b210425233298d9e27655bcac073ebeabdb361149de024e34332ed9056a4c11fb9eefed1c379ee65a6ce1b
-  languageName: node
-  linkType: hard
-
 "deep-extend@npm:^0.6.0":
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
@@ -7069,13 +7015,6 @@ __metadata:
     is-descriptor: ^1.0.2
     isobject: ^3.0.1
   checksum: 00c7ec53b5040507016736922a9678b3247bc85e0ea0429e47d6ca6a993890f9dc338fb19d5bf6f8c0ca29016a68aa7e7da5c35d4ed8b3646347d86a3b2b4b01
-  languageName: node
-  linkType: hard
-
-"defined@npm:~0.0.0":
-  version: 0.0.0
-  resolution: "defined@npm:0.0.0"
-  checksum: 6578c67a62461ddd672ad06f9cc4d415ded674849c35d2c6067204cca57f86688754094d6d63e04f69373eeadb40401e83a56c54084236fce2557d427c8c2889
   languageName: node
   linkType: hard
 
@@ -7185,13 +7124,6 @@ __metadata:
   version: 1.3.0
   resolution: "diacritics@npm:1.3.0"
   checksum: 89191c856f1a95966992fc7158bc121c06f9b19ef2d20b7beb60818e6cb10058d61d11a547c70ee421664b023d1c86507d8f09f51f393469bdcec46338d05c0c
-  languageName: node
-  linkType: hard
-
-"diff@npm:^4.0.1":
-  version: 4.0.2
-  resolution: "diff@npm:4.0.2"
-  checksum: 81b5cd7ddde6f0ba2a532d434cfdca365aedd6cc62bb133e851e66e071d40382a30924a07c1034bd3d5a2e332146f64514b73c06fe2ebc0490a67f0c98da79fb
   languageName: node
   linkType: hard
 
@@ -11116,13 +11048,6 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"jsonify@npm:~0.0.0":
-  version: 0.0.0
-  resolution: "jsonify@npm:0.0.0"
-  checksum: 53630f54108a55e062534503bf4a236165082ff75d2872a08ce8625b476dcf5ad8c990b012b9c740f93c61f20227161eb58dd41a16a0894699cc47d697d6d7c7
-  languageName: node
-  linkType: hard
-
 "jsonparse@npm:^1.2.0":
   version: 1.3.1
   resolution: "jsonparse@npm:1.3.1"
@@ -11694,13 +11619,6 @@ fsevents@~2.3.1:
   dependencies:
     semver: ^6.0.0
   checksum: 54b6f186c209c1b133d0d1710e6b04c41ebfcb0dac699e5a369ea1223f22c0574ef820b91db37cae6c245f5bda8aff9bfec94f6c23e7d75970446b34a58a79b0
-  languageName: node
-  linkType: hard
-
-"make-error@npm:^1.1.1":
-  version: 1.3.6
-  resolution: "make-error@npm:1.3.6"
-  checksum: 2c780bab8409b865e8ee86697c599a2bf2765ec64d21eb67ccda27050e039f983feacad05a0d43aba3c966ea03d305d2612e94fec45474bcbc61181f57c5bb88
   languageName: node
   linkType: hard
 
@@ -15683,15 +15601,6 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"resumer@npm:~0.0.0":
-  version: 0.0.0
-  resolution: "resumer@npm:0.0.0"
-  dependencies:
-    through: ~2.3.4
-  checksum: e80d35f2d49b22e8b356e2b65849347f41bb613be75b74bc018842f150fbb8f86fbef694678eccebca11596503b7faa4a366d890785f4799ed584dcdea9c700c
-  languageName: node
-  linkType: hard
-
 "ret@npm:~0.1.10":
   version: 0.1.15
   resolution: "ret@npm:0.1.15"
@@ -16396,7 +16305,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.17, source-map-support@npm:~0.5.12, source-map-support@npm:~0.5.19":
+"source-map-support@npm:~0.5.12, source-map-support@npm:~0.5.19":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
   dependencies:
@@ -17127,22 +17036,6 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"tape@npm:~2.3.2":
-  version: 2.3.3
-  resolution: "tape@npm:2.3.3"
-  dependencies:
-    deep-equal: ~0.1.0
-    defined: ~0.0.0
-    inherits: ~2.0.1
-    jsonify: ~0.0.0
-    resumer: ~0.0.0
-    through: ~2.3.4
-  bin:
-    tape: ./bin/tape
-  checksum: 18fbc7bddef247eee6f18fc208ccfef3d534d6dddde19917e662c26bd93a1f5eb4a11f1c29a229ce912b218a8c9761645afe98690ef4b3b9cb46c1140e35f7a9
-  languageName: node
-  linkType: hard
-
 "tar@npm:^6.0.2":
   version: 6.1.0
   resolution: "tar@npm:6.1.0"
@@ -17542,27 +17435,6 @@ fsevents@~2.3.1:
     typescript: "*"
     webpack: "*"
   checksum: e09b71875034ec5daf0f6eac2acefea31c78df1a0aa2d6f76f66954326acf93bafa9092a5a7f5872276bba39ba4dfebbcb7c21ef88d4334ff95bb4d216b9dfe0
-  languageName: node
-  linkType: hard
-
-"ts-node@npm:^9.1.1":
-  version: 9.1.1
-  resolution: "ts-node@npm:9.1.1"
-  dependencies:
-    arg: ^4.1.0
-    create-require: ^1.1.0
-    diff: ^4.0.1
-    make-error: ^1.1.1
-    source-map-support: ^0.5.17
-    yn: 3.1.1
-  peerDependencies:
-    typescript: ">=2.7"
-  bin:
-    ts-node: dist/bin.js
-    ts-node-script: dist/bin-script.js
-    ts-node-transpile-only: dist/bin-transpile.js
-    ts-script: dist/bin-script-deprecated.js
-  checksum: a90db4a342872cd0e7a80babdfcb15d2f7c06e700d735003098f7cc79db575c3380580c58a19ae0d0eaab553af083651d4237060c92170e6f8ac4e64693113ea
   languageName: node
   linkType: hard
 
@@ -18813,20 +18685,10 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"whatwg-fetch@npm:>=0.10.0, whatwg-fetch@npm:^3.6.1":
+"whatwg-fetch@npm:>=0.10.0":
   version: 3.6.1
   resolution: "whatwg-fetch@npm:3.6.1"
   checksum: a018f35071f8059cfb0e0edea1a6729ff7669c80275e8cc6773f239d1f7a44ef6018cd073c89d013e36eba9554cc374fa28b3179a08454598012f40f99adeb8a
-  languageName: node
-  linkType: hard
-
-"whatwg-streams@npm:*":
-  version: 0.1.1
-  resolution: "whatwg-streams@npm:0.1.1"
-  dependencies:
-    bluebird: ~1.0.0
-    tape: ~2.3.2
-  checksum: 8f02e6dd638fc80fca2dbebe21bdf38e441ca021efef57184eb1cf2b6335a3f635441ce2d170426c92f22cada98bb69c6f8b3e9fa9619c649be5d932b7525c7d
   languageName: node
   linkType: hard
 
@@ -19152,13 +19014,6 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"yn@npm:3.1.1":
-  version: 3.1.1
-  resolution: "yn@npm:3.1.1"
-  checksum: bff63b80568d80c711670935427494dde47cdf97e8b04196b140ce0af519c81c5ee857eddad0caa8b422dd65aea0157bbfaacbb1546bebba623f0f383d5d9ae5
-  languageName: node
-  linkType: hard
-
 "yocto-queue@npm:^0.1.0":
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
@@ -19183,7 +19038,6 @@ fsevents@~2.3.1:
     "@inkline/nuxt": ^2.3.5
     "@nuxt/types": 2.13.2
     "@nuxt/typescript-build": ^2.0.5
-    "@nuxt/typescript-runtime": ^2.0.1
     "@nuxtjs/axios": latest
     "@nuxtjs/dotenv": 1.4.1
     "@nuxtjs/eslint-config-typescript": ^5.0.0
@@ -19199,7 +19053,6 @@ fsevents@~2.3.1:
     "@types/js-cookie": ^2.2.6
     "@types/lodash": ^4.14.168
     "@types/prismjs": ^1.16.3
-    "@types/whatwg-fetch": ^0.0.33
     "@typescript-eslint/parser": ^4.15.1
     "@vue/cli-service": ^4.5.11
     "@vuepress/core": ^1.8.2
@@ -19246,7 +19099,6 @@ fsevents@~2.3.1:
     vuepress-plugin-canonical: ^1.0.0
     vuepress-plugin-fulltext-search: ^2.1.0
     webpack: ^4.46.0
-    whatwg-fetch: ^3.6.1
   dependenciesMeta:
     "@sentry/webpack-plugin":
       optional: true

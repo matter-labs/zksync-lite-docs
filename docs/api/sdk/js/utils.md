@@ -64,8 +64,8 @@ public formatToken(tokenLike: TokenLike, amount: BigNumberish): string;
 > Example
 
 ```typescript
-provider.tokenSet.formatToken('ETH', '1000000000'); // "0.000000001"
-provider.tokenSet.formatToken('USDC', '1000000000'); // "1000.0"
+provider.tokenSet.formatToken("ETH", "1000000000"); // "0.000000001"
+provider.tokenSet.formatToken("USDC", "1000000000"); // "1000.0"
 ```
 
 ### Parse amount for token
@@ -81,8 +81,8 @@ public parseToken(tokenLike: TokenLike, amount: string): BigNumber;
 > Example
 
 ```typescript
-provider.tokenSet.parseToken('ETH', '0.000000001'); // '1000000000'
-provider.tokenSet.parseToken('USDC', '1000.0'); // '1000000000'
+provider.tokenSet.parseToken("ETH", "0.000000001"); // '1000000000'
+provider.tokenSet.parseToken("USDC", "1000.0"); // '1000000000'
 ```
 
 ## Amount packing

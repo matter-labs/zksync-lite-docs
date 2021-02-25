@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /LogoHero.svg
-heroAlt: 'zkSync: secure, scalable crypto payments'
+heroAlt: "zkSync: secure, scalable crypto payments"
 tagline: Scalability without compromises
 actionText2: Frequently Asked Questions
 actionLink2: faq/

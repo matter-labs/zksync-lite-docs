@@ -30,7 +30,7 @@ export interface ContractAddress {
 export type Address = string;
 
 // Committed nonce is going to be resolved to last nonce known to the zkSync network
-export type Nonce = number | 'committed';
+export type Nonce = number | "committed";
 ```
 
 ## Fees
@@ -38,7 +38,7 @@ export type Nonce = number | 'committed';
 ```typescript
 export interface Fee {
   // Operation type (amount of chunks in operation differs and impacts the total fee).
-  feeType: 'Withdraw' | 'Transfer' | 'TransferToNew' | 'FastWithdraw' | ChangePubKeyFee;
+  feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee;
   // Amount of gas used by transaction
   gasTxAmount: utils.BigNumber;
   // Gas price (in wei)
@@ -75,7 +75,7 @@ export interface ChangePubKeyFee {
 ## Account state
 
 ```typescript
-import { utils } from 'ethers';
+import { utils } from "ethers";
 
 // 0x-prefixed, hex encoded, ethereum account address
 export type Address = string;
@@ -139,7 +139,7 @@ guarantee of the execution.
 ## Transactions
 
 ```typescript
-import { utils } from 'ethers';
+import { utils } from "ethers";
 
 export interface Signature {
   pubKey: string;
@@ -147,19 +147,19 @@ export interface Signature {
 }
 
 export type EthSignerType = {
-  verificationMethod: 'ECDSA' | 'ERC-1271';
+  verificationMethod: "ECDSA" | "ERC-1271";
   // Indicates if signer adds `\x19Ethereum Signed Message\n${msg.length}` prefix before signing message.
   // i.e. if false, we should add this prefix manually before asking to sign message
   isSignedMsgPrefixed: boolean;
 };
 
 export interface TxEthSignature {
-  type: 'EthereumSignature' | 'EIP1271Signature';
+  type: "EthereumSignature" | "EIP1271Signature";
   signature: string;
 }
 
 export interface Transfer {
-  type: 'Transfer';
+  type: "Transfer";
   from: Address;
   to: Address;
   token: number;
@@ -170,7 +170,7 @@ export interface Transfer {
 }
 
 export interface Withdraw {
-  type: 'Withdraw';
+  type: "Withdraw";
   from: Address;
   to: Address;
   token: number;
@@ -181,7 +181,7 @@ export interface Withdraw {
 }
 
 export interface ForcedExit {
-  type: 'ForcedExit';
+  type: "ForcedExit";
   initiatorAccountId: number;
   target: Address;
   token: number;
@@ -191,7 +191,7 @@ export interface ForcedExit {
 }
 
 export interface ChangePubKey {
-  type: 'ChangePubKey';
+  type: "ChangePubKey";
   accountId: number;
   account: Address;
   newPkHash: PubKeyHash;
