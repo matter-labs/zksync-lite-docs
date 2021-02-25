@@ -18,32 +18,32 @@ export default {
     return {
       socialNetworks: [
         {
-          name: "Read our story",
+          name: "Medium Blog",
           icon: ["fa-medium-m", "fab"],
           url: "https://medium.com/matter-labs",
         },
         {
-          name: "Integrate zkSync",
-          icon: ["fa-github", "fab"],
-          url: "https://github.com/matter-labs/zksync",
-        },
-        {
-          name: "Join dev community",
+          name: "Gitter Rooms",
           icon: ["fa-gitter", "fab"],
           url: "https://gitter.im/matter-labs/zksync",
         },
         {
-          name: "Follow us on Twitter",
-          icon: ["fa-twitter", "fab"],
-          url: "https://twitter.com/zksync",
+          name: "Discord Community",
+          icon: ["fa-discord", "fab"],
+          url: "https://discord.com/invite/px2aR7w",
         },
         {
-          name: "Join the discussion",
+          name: "Telegram Community",
           icon: ["fa-telegram-plane", "fab"],
           url: "https://t.me/zksync",
         },
         {
-          name: "Contact us directly",
+          name: "Twitter Community",
+          icon: ["fa-twitter", "fab"],
+          url: "https://twitter.com/zksync",
+        },
+        {
+          name: "All Contacts",
           icon: ["fa-at", "fal"],
           url: "/contact.html",
         },

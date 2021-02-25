@@ -577,6 +577,7 @@
       margin: 0 auto 2rem;
 
       .socialItem {
+        display: block;
         text-align: center;
         width: 100%;
         height: 100%;
@@ -605,10 +606,12 @@
 
         i {
           display: block;
-          width: 100%;
-          line-height: 80px;
-          font-size: 28px;
           text-align: center;
+          width: 60px;
+          line-height: 60px;
+          font-size: 38px;
+          text-align: center;
+          margin: auto;
         }
       }
     }
