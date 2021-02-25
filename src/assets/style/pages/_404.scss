@@ -1,0 +1,36 @@
+@import "../variables";
+
+.page-404 {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 90px - 84px) !important;
+  @media screen and (max-height: 770px) {
+    height: calc(var(--app-height) - 90px - 84px);
+  }
+
+  svg {
+    font-size: 40px;
+    line-height: 1;
+    color: $white;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+    max-width: 80%;
+    width: auto;
+    display: inline-flex;
+
+    a.linkItem {
+      color: $white;
+      text-decoration: none;
+      transition: color $transition1;
+
+      &:hover {
+        color: $violet
+      }
+    }
+  }
+}

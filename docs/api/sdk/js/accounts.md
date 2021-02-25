@@ -77,11 +77,11 @@ static async fromEthSigner(
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
@@ -116,11 +116,11 @@ without them, such as Deposit, Emergency exit and reading the account state.
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvider);

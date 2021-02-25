@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'FK Grotesk';
+    src: url('FKGrotesk-Bold.eot');
+    src: local('FK Grotesk Bold'), local('FKGrotesk-Bold'),
+        url('FKGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('FKGrotesk-Bold.woff2') format('woff2'),
+        url('FKGrotesk-Bold.woff') format('woff'),
+        url('FKGrotesk-Bold.ttf') format('truetype'),
+        url('FKGrotesk-Bold.svg#FKGrotesk-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FK Grotesk';
+    src: url('FKGrotesk-Regular.eot');
+    src: local('FK Grotesk Regular'), local('FKGrotesk-Regular'),
+        url('FKGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FKGrotesk-Regular.woff2') format('woff2'),
+        url('FKGrotesk-Regular.woff') format('woff'),
+        url('FKGrotesk-Regular.ttf') format('truetype'),
+        url('FKGrotesk-Regular.svg#FKGrotesk-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

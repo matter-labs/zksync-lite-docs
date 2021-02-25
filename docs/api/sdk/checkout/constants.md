@@ -16,18 +16,17 @@ An object that contains the text messages of all the errors that might be thrown
 
 ```tsx
 export const CheckoutErrors = {
-  NOT_IMPLEMENTED_ERROR: 'This functionality is not implemented',
-  NOT_IN_BROWSER_ERROR: 'The library is intended for use in browser enviroment only!',
-  OPENING_TIMEOUT_ERROR: 'Took too long for the zkSync page to open',
-  FAILED_TO_OPEN_ZKSYNC: 'Failed to open zkSync page',
-  NO_OPENER_ERROR: 'ZkSync manager object should be instantiated only if the window is a popup',
-  LOGICAL_ERROR: 'An unknown error occured.',
-  ZKSYNC_CLOSED_ERROR: 'User closed zkSync',
-  CHECKOUT_NOT_STARTED_ERROR: 'The checkout has not been started',
+  NOT_IMPLEMENTED_ERROR: "This functionality is not implemented",
+  NOT_IN_BROWSER_ERROR: "The library is intended for use in browser enviroment only!",
+  OPENING_TIMEOUT_ERROR: "Took too long for the zkSync page to open",
+  FAILED_TO_OPEN_ZKSYNC: "Failed to open zkSync page",
+  NO_OPENER_ERROR: "ZkSync manager object should be instantiated only if the window is a popup",
+  LOGICAL_ERROR: "An unknown error occured.",
+  ZKSYNC_CLOSED_ERROR: "User closed zkSync",
+  CHECKOUT_NOT_STARTED_ERROR: "The checkout has not been started",
   CLIENT_CLOSED_ERROR: "The client's page has been closed",
-  INVALID_SENDER_ERROR:
-    'Either the `sender` supplied into the checkout or some of the `from` parameters differ from each other',
-  FAILED_TO_GET_ONCHAIN_BALANCE: "Failed to retreive the user's onchain balance"
+  INVALID_SENDER_ERROR: "Either the `sender` supplied into the checkout or some of the `from` parameters differ from each other",
+  FAILED_TO_GET_ONCHAIN_BALANCE: "Failed to retreive the user's onchain balance",
 } as const;
 ```
 
@@ -74,7 +73,7 @@ An object that contains all the possible semantic types.
 
 ```tsx
 export const SemanticTypes = {
-  Transaction: 'Transaction',
-  FeeOrCommission: 'FeeOrCommission'
+  Transaction: "Transaction",
+  FeeOrCommission: "FeeOrCommission",
 } as const;
 ```

@@ -16,17 +16,12 @@ should open the checkout after some event, e.g. button click.
     <script type="text/javascript" src="https://unpkg.com/zksync-checkout@latest/dist/main.js"></script>
     <script type="text/javascript">
       async function checkoutUser(transactions, feeToken, address) {
-        const checkoutManager = new ZkSyncCheckout.CheckoutManager('mainnet');
+        const checkoutManager = new ZkSyncCheckout.CheckoutManager("mainnet");
         if (address) {
-          const hasEnoughBalance = await checkoutManager.checkEnoughBalance(
-            transactions,
-            feeToken,
-            address,
-            ethProvider
-          );
+          const hasEnoughBalance = await checkoutManager.checkEnoughBalance(transactions, feeToken, address, ethProvider);
 
           if (!hasEnoughBalance) {
-            throw new Error('Not enough balance!');
+            throw new Error("Not enough balance!");
           }
         }
 
@@ -35,20 +30,20 @@ should open the checkout after some event, e.g. button click.
       }
       const transactions = [
         {
-          to: '<your-eth-address>',
-          token: 'DAI',
-          amount: '23000000000000000000',
-          description: 'For apples'
+          to: "<your-eth-address>",
+          token: "DAI",
+          amount: "23000000000000000000",
+          description: "For apples",
         },
         {
-          to: '<your-eth-address>',
-          token: 'DAI',
-          amount: '55500000000000000000',
-          description: 'For bananas'
-        }
+          to: "<your-eth-address>",
+          token: "DAI",
+          amount: "55500000000000000000",
+          description: "For bananas",
+        },
       ];
 
-      checkoutUser(transactions, 'DAI');
+      checkoutUser(transactions, "DAI");
     </script>
   </body>
 </html>

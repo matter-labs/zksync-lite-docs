@@ -1,0 +1,32 @@
+.headerWrapper {
+  justify-content: center;
+
+  .projectLogo {
+    display: block;
+
+    .logoLetter {
+      transition: $transition1;
+    }
+  }
+
+  .badge {
+    cursor: default;
+    margin-top: -40px;
+    border-radius: 27px;
+    transform: translateY(3.5px);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    color: $lightViolet !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+}
+
+body.inkline.-light .headerWrapper {
+}
+
+body.inkline.-dark .headerWrapper {
+}

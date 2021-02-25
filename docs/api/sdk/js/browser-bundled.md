@@ -15,13 +15,13 @@ It is possible to use `zksync.js` in a browser directly.
       (async () => {
         const ethWallet = ethers.Wallet.createRandom();
 
-        const zksProvider = await zksync.getDefaultProvider('rinkeby');
+        const zksProvider = await zksync.getDefaultProvider("rinkeby");
         const zkSyncWallet = await zksync.Wallet.fromEthSigner(ethWallet, zksProvider);
-        console.log('ETH balance:', (await zkSyncWallet.getBalance('ETH')).toString());
+        console.log("ETH balance:", (await zkSyncWallet.getBalance("ETH")).toString());
 
         const privateKey = await zksync.crypto.privateKeyFromSeed(new Uint8Array(32));
         const pubkeyHash = await zksync.crypto.privateKeyToPubKeyHash(privateKey);
-        console.log('PrivateKey', ethers.utils.hexlify(privateKey), 'PubkeyHash', pubkeyHash);
+        console.log("PrivateKey", ethers.utils.hexlify(privateKey), "PubkeyHash", pubkeyHash);
       })();
     </script>
   </body>

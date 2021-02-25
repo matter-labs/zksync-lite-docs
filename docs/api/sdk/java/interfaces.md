@@ -30,7 +30,7 @@ public interface Provider {
     TransactionFeeDetails getTransactionFee(TransactionFeeBatchRequest feeRequest);
 
     /**
-     * Get list of tokens supproted by ZkSync network
+     * Get list of tokens supported by ZkSync network
      *
      * @return Token information
      */
@@ -121,7 +121,7 @@ public interface Provider {
     /**
      * Create default ZkSync provider by given chain id
      *
-     * @param chainId - Chain id supproted by ZkSync network
+     * @param chainId - Chain id supported by ZkSync network
      * @return ZkSync provider object
      */
     static Provider defaultProvider(ChainId chainId) {
@@ -163,7 +163,7 @@ public interface EthereumProvider {
     CompletableFuture<TransactionReceipt> transfer(Token token, BigInteger amount, String to);
 
     /**
-     * Send deposit transaction to ZkSync contract. For ERC20 token must be approved before. @see EthereumProvider.approveDepodits
+     * Send deposit transaction to ZkSync contract. For ERC20 token must be approved before. @see EthereumProvider.approveDeposits
      *
      * @param token - Token object supported by ZkSync
      * @param amount - Amount tokens to transfer
@@ -217,7 +217,7 @@ public interface EthereumProvider {
     CompletableFuture<Boolean> isOnChainAuthPubkeyHashSet(BigInteger nonce);
 
     /**
-     * Get balance of account in Etereum
+     * Get balance of account in Ethereum
      *
      * @return CompletableFuture of blockchain call
      */

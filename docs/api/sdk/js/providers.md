@@ -18,9 +18,9 @@ Websocket support will be removed soon due to its instability.
 ### Get default provider for network
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 ```
 
 Used to connect to the common endpoint for the given network over HTTP transport.
@@ -32,9 +32,9 @@ Supported networks are: "rinkeby", "ropsten", "mainnet", and "localhost".
 > Creating provider over WebSocket transport. This call will create WS connection that should be closed.
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncWSProvider = await zksync.Provider.newWebsocketProvider('wss://rinkeby-api.zksync.io/jsrpc-ws');
+const syncWSProvider = await zksync.Provider.newWebsocketProvider("wss://rinkeby-api.zksync.io/jsrpc-ws");
 
 // ..
 
@@ -47,9 +47,9 @@ await syncWSProvider.disconnect();
 > Creating provider over HTTP transport.
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHTTPProvider = await zksync.Provider.newHttpProvider('https://rinkeby-api.zksync.io/jsrpc');
+const syncHTTPProvider = await zksync.Provider.newHttpProvider("https://rinkeby-api.zksync.io/jsrpc");
 ```
 
 ### Submit transaction
@@ -72,22 +72,22 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 const signedTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
-  type: 'Transfer',
-  from: '0x..address1',
-  to: '0x..address2',
+  type: "Transfer",
+  from: "0x..address1",
+  to: "0x..address2",
   token: 0, // id of the ETH token
-  amount: '1000000000000000000', // 1 Ether in Wei
-  fee: '10000000000000000', // 0.01 Ether in Wei
+  amount: "1000000000000000000", // 1 Ether in Wei
+  fee: "10000000000000000", // 0.01 Ether in Wei
   nonce: 0,
   signature: {
-    pubKey: 'dead..', // hex encoded packed public key of signer (32 bytes)
-    signature: 'beef..' // hex encoded signature of the tx (64 bytes)
-  }
+    pubKey: "dead..", // hex encoded packed public key of signer (32 bytes)
+    signature: "beef..", // hex encoded signature of the tx (64 bytes)
+  },
 };
 
 // const readableTxInfo =
@@ -96,7 +96,7 @@ const signedTransferTx = {
 //     `Nonce: 0\n` +
 //     `Fee: 0.01 ETH\n` +
 //     `Account Id: 13`;
-const ethSignature = '0xdddaaa...1c'; // Ethereum ECDSA signature of the readableTxInfo
+const ethSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature of the readableTxInfo
 
 const transactionHash = await syncHttpProvider.submitTx(signedTransferTx, ethSignature);
 // 0x..hash (32 bytes)
@@ -126,34 +126,34 @@ For details on individual transactions, see [Submit transaction](#submit-transac
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 const firstTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
-  type: 'Transfer',
-  from: '0x..address1',
-  to: '0x..address2',
+  type: "Transfer",
+  from: "0x..address1",
+  to: "0x..address2",
   token: 0, // id of the ETH token
-  amount: '1000000000000000000', // 1 Ether in Wei
-  fee: '10000000000000000', // 0.01 Ether in Wei
+  amount: "1000000000000000000", // 1 Ether in Wei
+  fee: "10000000000000000", // 0.01 Ether in Wei
   nonce: 0,
   signature: {
-    pubKey: 'dead..', // hex encoded packed public key of signer (32 bytes)
-    signature: 'beef..' // hex encoded signature of the tx (64 bytes)
-  }
+    pubKey: "dead..", // hex encoded packed public key of signer (32 bytes)
+    signature: "beef..", // hex encoded signature of the tx (64 bytes)
+  },
 };
-const firstTransferEthSignature = '0xdddaaa...1c'; // Ethereum ECDSA signature for the first message
+const firstTransferEthSignature = "0xdddaaa...1c"; // Ethereum ECDSA signature for the first message
 
 const secondTransferTx = {
-  type: 'Transfer'
+  type: "Transfer",
   // ...other fields omitted
 };
-const secondTransferEthSignature = '0xaaaddd...ff'; // Ethereum ECDSA signature for the second message
+const secondTransferEthSignature = "0xaaaddd...ff"; // Ethereum ECDSA signature for the second message
 
 const batch = [
   { tx: firstTransferTx, signature: firstTransferEthSignature },
-  { tx: secondTransferTx, signature: secondTransferEthSignature }
+  { tx: secondTransferTx, signature: secondTransferEthSignature },
 ];
 
 const transactionHashes = await syncHttpProvider.submitTxsBatch(batch);
@@ -177,9 +177,9 @@ async getContractAddress(): Promise<ContractAddress>;
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 
 const contractAddresses = await syncHttpProvider.getContractAddress();
 ```
@@ -210,9 +210,9 @@ async getTokens(): Promise<Tokens>;
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 
 const contractAddresses = await syncHttpProvider.getTokens();
 ```
@@ -299,9 +299,9 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 const requiredConfirmationsAmount = await syncHttpProvider.getConfirmationsForEthOpAmount();
 ```
 
@@ -377,14 +377,11 @@ async notifyTransaction(
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 
-const receipt = await syncHttpProvider.notifyTransaction(
-  'sync-tx:1111111111111111111111111111111111111111111111111111111111111111',
-  'COMMIT'
-);
+const receipt = await syncHttpProvider.notifyTransaction("sync-tx:1111111111111111111111111111111111111111111111111111111111111111", "COMMIT");
 ```
 
 ### Get priority operation receipt
@@ -448,13 +445,13 @@ deposit).
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 
 const receipt = await syncHttpProvider.notifyPriorityOp(
   178, // priority op id
-  'COMMIT'
+  "COMMIT",
 );
 ```
 
@@ -551,10 +548,10 @@ async getTokenPrice(
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
+import * as zksync from "zksync";
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
-const ethPrice = await syncHttpProvider.getTokenPrice('ETH');
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
+const ethPrice = await syncHttpProvider.getTokenPrice("ETH");
 
 console.log(`Current Ethereum price is ${ethPrice} USD`);
 ```
@@ -584,11 +581,11 @@ constructor(
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const syncHttpProvider = await zksync.getDefaultProvider("rinkeby");
 
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncHttpProvider.contractAddress);
 ```
@@ -614,15 +611,15 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 
-const ethId = await ethProxy.resolveTokenId('0x0000000000000000000000000000000000000000'); // ETH token address is 0x0..0
+const ethId = await ethProxy.resolveTokenId("0x0000000000000000000000000000000000000000"); // ETH token address is 0x0..0
 
 // ERC20 token if it is supported, >= 1
-const erc20Id = await ethProxy.resolveTokenId('0xFab46E002BbF0b4509813474841E0716E6730136');
+const erc20Id = await ethProxy.resolveTokenId("0xFab46E002BbF0b4509813474841E0716E6730136");
 ```

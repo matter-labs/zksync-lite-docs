@@ -31,7 +31,7 @@ the `zksync-checkout` library.
 This tutorial will show the basic checkout flow by putting all the action inside a single function:
 
 ```ts
-import { Types } from 'zksync-checkout';
+import { Types } from "zksync-checkout";
 
 async function checkoutUser(
   // The list of payments the user has to do
@@ -39,7 +39,7 @@ async function checkoutUser(
   // The token in which the user will pay the fee
   feeToken: Types.TokenLike,
   // The app can accept payments whether you know the address of the user or you don't
-  address?: string
+  address?: string,
 ) {
   // Here will go the code
 }
@@ -51,22 +51,22 @@ DAI, also the user should pay the zkSync fee in DAI. Then you could call the fun
 ```ts
 const transactions = [
   {
-    to: '<your-eth-address>',
-    token: 'DAI',
+    to: "<your-eth-address>",
+    token: "DAI",
     // The amount should be specified in wei
-    amount: '23000000000000000000',
-    description: 'For apples'
+    amount: "23000000000000000000",
+    description: "For apples",
   },
   {
-    to: '<your-eth-address>',
-    token: 'DAI',
-    amount: '55500000000000000000',
-    description: 'For bananas'
-  }
+    to: "<your-eth-address>",
+    token: "DAI",
+    amount: "55500000000000000000",
+    description: "For bananas",
+  },
 ];
 
 // Here we assume that we don't know the address of the user
-checkoutUser(transactions, 'DAI');
+checkoutUser(transactions, "DAI");
 ```
 
 ## Creating checkout manager
@@ -75,12 +75,12 @@ For each checkout we need to create a separate `CheckoutManager` object which ha
 for the checkout:
 
 ```ts
-import { CheckoutManager } from 'zksync-checkout';
+import { CheckoutManager } from "zksync-checkout";
 
 // ..
 
 // 'ropsten' and 'rinkeby' are also supported
-const checkoutManager = new CheckoutManager('mainnet');
+const checkoutManager = new CheckoutManager("mainnet");
 ```
 
 ## Checking user's balance
@@ -92,7 +92,7 @@ be done easily with the following piece of code:
 // For testing purposes, the default providers could be used
 // but for the production, it is preferred to use custom providers
 // (e.g. Infura, Alchemy, etc)
-const ethProvider = ethers.providers.getDefaultProvider('mainnet');
+const ethProvider = ethers.providers.getDefaultProvider("mainnet");
 
 // ...
 
@@ -102,7 +102,7 @@ const hasEnoughBalance = await checkoutManager.checkEnoughBalance(transactions, 
 
 // Notify the user that she does not hold enough funds
 if (!hasEnoughBalance) {
-  throw new Error('Not enough balance!');
+  throw new Error("Not enough balance!");
 }
 ```
 
@@ -113,7 +113,7 @@ if (!hasEnoughBalance) {
 const txHashes = await checkoutManager.zkSyncBatchCheckout(transactions, feeToken);
 
 // Waiting until the transactions complete
-const receipts = await checkoutManager.wait(txHashes, 'COMMIT');
+const receipts = await checkoutManager.wait(txHashes, "COMMIT");
 ```
 
 zkSync will guide the user through the process of the payment.
@@ -136,12 +136,12 @@ language you can easily check the transaction status [via our API](/api/v0.1.md#
 Here is the code of the full user checkout flow:
 
 ```tsx
-import { Types, CheckoutManager } from 'zksync-checkout';
+import { Types, CheckoutManager } from "zksync-checkout";
 
 // For the testing purposes the default providers could be used
 // but for the production it is preferred to use custom providers
 // (e.g. Infura, Alchemy, etc)
-const ethProvider = ethers.providers.getDefaultProvider('mainnet');
+const ethProvider = ethers.providers.getDefaultProvider("mainnet");
 
 async function checkoutUser(
   // The list of payments the user has to do
@@ -149,9 +149,9 @@ async function checkoutUser(
   // The token in which the user will pay the fee
   feeToken: Types.TokenLike,
   // The app can accept payments whether you know the address of the user or you don't
-  address?: string
+  address?: string,
 ) {
-  const checkoutManager = new CheckoutManager('mainnet');
+  const checkoutManager = new CheckoutManager("mainnet");
 
   if (address) {
     // Checks that sum of L1 + L2 balances of the user are sufficient to pay
@@ -159,7 +159,7 @@ async function checkoutUser(
     const hasEnoughBalance = await checkoutManager.checkEnoughBalance(transactions, feeToken, address, ethProvider);
 
     if (!hasEnoughBalance) {
-      throw new Error('Not enough balance!');
+      throw new Error("Not enough balance!");
     }
   }
 
@@ -167,7 +167,7 @@ async function checkoutUser(
   const txHashes = await checkoutManager.zkSyncBatchCheckout(transactions, feeToken);
 
   // Waiting until the transactions complete
-  const receipts = await checkoutManager.wait(txHashes, 'COMMIT');
+  const receipts = await checkoutManager.wait(txHashes, "COMMIT");
 
   // Now we now that the transactions have completed and
   // we can send the payment info to be processed on the back-end of your app
@@ -175,20 +175,20 @@ async function checkoutUser(
 
 const transactions = [
   {
-    to: '<your-eth-address>',
-    token: 'DAI',
+    to: "<your-eth-address>",
+    token: "DAI",
     // The amount should be specified in wei
-    amount: '23000000000000000000',
-    description: 'For apples'
+    amount: "23000000000000000000",
+    description: "For apples",
   },
   {
-    to: '<your-eth-address>',
-    token: 'DAI',
-    amount: '55500000000000000000',
-    description: 'For bananas'
-  }
+    to: "<your-eth-address>",
+    token: "DAI",
+    amount: "55500000000000000000",
+    description: "For bananas",
+  },
 ];
 
 // Here we assume that you don't know the address of the user
-checkoutUser(transactions, 'DAI');
+checkoutUser(transactions, "DAI");
 ```

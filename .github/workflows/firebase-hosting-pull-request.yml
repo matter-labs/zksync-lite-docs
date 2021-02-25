@@ -10,24 +10,9 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      - name: Install deps
-        run: yarn
+      - name: Prepare CI
+        run: yarn zk-ci-prepare
 
-      - name: Check formatting
-        run: yarn fmt:check
-
-      - name: Check spelling
-        run: yarn cspell
-      
-      - name: Markdown linting
-        run: yarn md:lint
-
-      - name: Markdown dead links
-        run: yarn md:deadlinks
-
-      - name: Build docs
-        run: yarn docs:build
-        
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

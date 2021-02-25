@@ -60,7 +60,7 @@ repositories {
 
 ### Android
 
-For Android adding dependencies little bit difficult becase it requres in including aar package with native binaries.
+For Android adding dependencies little bit difficult because it requires in including aar package with native binaries.
 
 ```groovy
 implementation("org.web3j:core:4.6.0-android")
@@ -131,7 +131,7 @@ officially supports by MatterLabs. Also you can use local node for testing `Chai
 `http://127.0.0.1:3030`
 
 ```java
-Provider povider = Provider.defaultProvider(ChainId.Rinkeby)
+Provider provider = Provider.defaultProvider(ChainId.Rinkeby)
 ```
 
 You can create `io.zksync.provider.Provider` with any custom URL, just use `io.zksync.transport.HttpTransport` for

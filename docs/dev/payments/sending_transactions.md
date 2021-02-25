@@ -88,13 +88,9 @@ const withdrawEthMessage =
 // For ChangePubKey (assuming it is a stand-alone transaction, for batch see details below):
 const msgNonce = utils.hexlify(serializeNonce(nonce));
 const msgAccId = utils.hexlify(serializeAccountId(accountId));
-const pubKeyHashHex = pubKeyHash.replace('sync:', '').toLowerCase();
+const pubKeyHashHex = pubKeyHash.replace("sync:", "").toLowerCase();
 const changePubKeyEthMessage =
-  `Register zkSync pubkey:\n\n` +
-  `${pubKeyHashHex}\n` +
-  `nonce: ${msgNonce}\n` +
-  `account id: ${msgAccId}\n\n` +
-  `Only sign this message for a trusted client!`;
+  `Register zkSync pubkey:\n\n` + `${pubKeyHashHex}\n` + `nonce: ${msgNonce}\n` + `account id: ${msgAccId}\n\n` + `Only sign this message for a trusted client!`;
 ```
 
 Note that since some Ethereum signers add a prefix `\x19Ethereum Signed Message:\n${messageBytes.length}` to the signed
@@ -149,7 +145,7 @@ const bytes = concat(transactions.map((tx) => serializeTx(tx)));
 // Calculate `keccak256` hash of this byte sequence.
 const hash = ethers.utils.keccak256(bytes).slice(2);
 // Decode it into a byte sequence.
-const message = Uint8Array.from(Buffer.from(hash, 'hex'));
+const message = Uint8Array.from(Buffer.from(hash, "hex"));
 ```
 
 Requirement for adding a prefix described above still holds.

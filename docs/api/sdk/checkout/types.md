@@ -13,7 +13,7 @@ interface ZkSyncTransaction {
   to: string;
   token: TokenLike;
   amount: string;
-  semanticType?: 'Transaction' | 'FeeOrCommission';
+  semanticType?: "Transaction" | "FeeOrCommission";
   description?: string;
 }
 ```
@@ -48,5 +48,5 @@ type TokenLike = string;
 The type which specifies an Ethereum network.
 
 ```tsx
-type EthereumNetwork = 'rinkeby' | 'mainnet' | 'ropsten' | 'localhost';
+type EthereumNetwork = "rinkeby" | "mainnet" | "ropsten" | "localhost";
 ```
