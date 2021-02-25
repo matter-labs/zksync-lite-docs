@@ -34,8 +34,8 @@
           </i-column>
           <i-column :xs="12" :md="4" class="_padding-y-0">
             <div class="linksContainer">
-              <a :href="'/faq'" target="_blank" class="linkItem">FAQ</a>
-              <a :href="'/dev'" target="_blank" class="linkItem">Docs</a>
+              <a :href="'/faq/'" target="_blank" class="linkItem">FAQ</a>
+              <a :href="'/dev/'" target="_blank" class="linkItem">Docs</a>
               <i-dropdown class="_background-transparent _border-none likeLinkItem" size="sm" variation="dark" placement="bottom">
                 <a class="dropDownHandler linkItem _position-top-0" @click.capture="event => true">zkTools <i class="fal fa-chevron-down"/></a>
                 <i-dropdown-menu>

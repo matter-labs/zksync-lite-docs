@@ -44,7 +44,7 @@ export default {
         {
           name: "contacts",
           icon: ["fa-at", "fal"],
-          url: "/contacts",
+          url: "/contact.html",
         },
       ],
     };
