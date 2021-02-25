@@ -582,10 +582,18 @@
         width: 100%;
         height: 100%;
         text-decoration: none;
+
         i {
+          display: block;
+          text-align: center;
+          margin: auto;
+          width: 50px;
+          line-height: 50px;
+          font-size: 28px;
           background-color: transparent;
           border-radius: 8px;
           transition: background-color $transition1;
+          will-change: background-color;
         }
 
         span
@@ -596,22 +604,10 @@
         }
 
         &:hover {
-
-
           i {
             background-color: lighten($color: $violet, $amount: 5);
             color: $white;
           }
-        }
-
-        i {
-          display: block;
-          text-align: center;
-          width: 60px;
-          line-height: 60px;
-          font-size: 38px;
-          text-align: center;
-          margin: auto;
         }
       }
     }
@@ -899,7 +895,8 @@
           margin-left: auto !important;
           margin-right: auto !important;
           padding: 0;
-          height: 35px;
+          min-height: 35px;
+          height: auto;
           grid-auto-columns: 35px;
           grid-gap: 10px;
 
@@ -1047,7 +1044,7 @@
 
       .bottomBlock {
         .socialIcons {
-          margin: 0 auto 2rem;
+          margin: 2rem auto 2.3rem;
         }
       }
 
