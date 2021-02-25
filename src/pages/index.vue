@@ -250,23 +250,5 @@ export default {
       chosenBlock: 0,
     };
   },
-  head() {
-    const image =
-      this.$socialsplash.generate("enterprise-website", {
-        title: "zkSync is Ethereum's most user-centric ZK-rollup",
-        subtitle: "Endorsed by V.Butering, partnered with Ethereum Foundation",
-        website: "zksync.io",
-        logo_url: "localhost:3000/static/logos/socialsplash.png",
-        background: "#2311142",
-      }) ?? "/static/social.jpg";
-
-    return [
-      { hid: "og:image", name: "og:image", content: image },
-      { hid: "og:image:width", name: "og:image:width", content: "1200" },
-      { hid: "og:image:height", name: "og:image:height", content: "628" },
-      { hid: "twitter:image", name: "twitter:image", content: image },
-      { hid: "twitter:card", name: "twitter:card", content: "summary_large_image" },
-    ];
-  },
 };
 </script>

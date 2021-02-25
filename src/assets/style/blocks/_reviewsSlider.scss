@@ -47,10 +47,7 @@
     }
   }
 
-  @media (max-width: $mobile) {
-    gap: 10px;
-    grid-auto-columns: 300px;
-  }
+
 
   .itemsContainer {
     width: max-content;
@@ -62,6 +59,10 @@
     grid-gap: 40px;
     transition: transform $transition1;
     will-change: transform;
+
+    @media (max-width: $mobile) {
+      gap: 15px;
+    }
 
     .reviewItem {
       position: relative;
