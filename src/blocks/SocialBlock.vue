@@ -3,10 +3,11 @@
     <a
       v-for="(socialProfile, numIndex) in socialNetworks"
       :key="numIndex"
-      :href="socialProfile['url']"
+      :href="socialProfile.url"
       class="socialItem"
       target="_blank">
-      <i :class="[socialProfile['icon'],'fab']"/>
+      <i :class="[socialProfile.icon,'fab']"/>
+      <span>{{socialProfile.name}}</span>
     </a>
   </div>
 </template>
@@ -17,32 +18,32 @@ export default {
     return {
       socialNetworks: [
         {
-          name: "medium",
+          name: "Read our story",
           icon: ["fa-medium-m", "fab"],
           url: "https://medium.com/matter-labs",
         },
         {
-          name: "github",
+          name: "Integrate zkSync",
           icon: ["fa-github", "fab"],
           url: "https://github.com/matter-labs/zksync",
         },
         {
-          name: "twitter",
+          name: "Follow us on Twitter",
           icon: ["fa-twitter", "fab"],
           url: "https://twitter.com/zksync",
         },
         {
-          name: "gitter:",
+          name: "Join the discussion",
           icon: ["fa-gitter", "fab"],
           url: "https://gitter.im/matter-labs/zksync",
         },
         {
-          name: "telegram",
+          name: "Sign for our news",
           icon: ["fa-telegram-plane", "fab"],
           url: "https://t.me/zksync",
         },
         {
-          name: "contacts",
+          name: "Contact us directly",
           icon: ["fa-at", "fal"],
           url: "/contact.html",
         },

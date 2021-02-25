@@ -101,7 +101,7 @@ with zero security compromises"
               <p>
                 <Emphasis/>
                 is a mission-driven project. Its purpose is to break financial barriers and enhance world’s freedom — by accelerating the mass adoption of
-                public blockchains. We take this mission to heart: check out our <z-cta
+                public blockchains. We take this mission to heart: check out our public <z-cta
                 href="https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02"
               >Team Handbook</z-cta>
               </p>
@@ -109,9 +109,9 @@ with zero security compromises"
                 <emphasis/>
                 will never betray the ethos of crypto. Over the past two years, we’ve <z-cta
                   href="https://medium.com/matter-labs/tagged/l2" target="_blank"
-                >fought relentlessly</z-cta> to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. And we won’t rest until <z-cta
+                >fought relentlessly</z-cta> to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. We won’t rest until the original <z-cta
                   href="https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58" target="_blank"
-                >the original zkSync vision</z-cta> is fully materialized.
+                >zkSync vision</z-cta> is fully materialized.
               </p>
             </div>
             <z-button class="_margin-x-xs-auto _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More
@@ -149,10 +149,8 @@ with zero security compromises"
               </div>
               <div class="grayText">
                 We believe that only the paranoid survive.
-                <Emphasis/>
-                is being <z-cta :href="'/faq/decentralization.html'" target="_blank">progressively decentralized</z-cta> to resist even the most powerful
-                potential
-                adversaries.
+                To resist even the most powerful potential adversaries, <Emphasis/> is embracing constant <z-cta :href="'/faq/decentralization.html'" target="_blank">progressive
+                decentralization</z-cta>
               </div>
             </div>
           </div>
