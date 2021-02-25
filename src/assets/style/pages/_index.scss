@@ -338,8 +338,6 @@
       display: none !important;
     }
 
-    .h1,.h1, .h1, .h1
-
     .codeBlockSpace {
       position: relative;
       width: 100%;
@@ -362,6 +360,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        .h2._position-relative
+        {
+          white-space: nowrap;
+        }
 
         a.width-300 {
           width: 300px;
@@ -573,7 +576,7 @@
       margin: 0 auto 2rem;
 
       .socialItem {
-        background-color: $violet;
+        background-color: transparent;
         border-radius: 8px;
         width: 100%;
         height: 100%;
@@ -760,6 +763,8 @@
               flex-direction: column-reverse;
               min-height: 40px;
 
+              white-space: initial;
+
               .badge {
                 text-align: right;
                 top: initial !important;
@@ -932,11 +937,10 @@
 
   .collapsible.-dark._width-full {
     border: none !important;
-    margin: 0 -10px;
 
     > .item {
-      margin: 20px 0 !important;
-      border-radius: $borderRadiusSm;
+      margin: 30px 0;
+      border-radius: $borderRadiusBig;
       text-align: left;
       justify-content: flex-start;
       background: $darkBlack;
@@ -944,7 +948,7 @@
 
       &:not(.-active) {
         & > .header {
-          border-radius: $borderRadiusSm !important;
+          border-radius: $borderRadiusBig !important;
           background-color: #0A0C1A !important;
         }
 
@@ -956,16 +960,20 @@
         align-items: center;
         color: $whiteFaded;
         transition: background, border $transition2;
-        border-radius: $borderRadiusSm $borderRadiusSm 0 0 !important;
+        border-radius: $borderRadiusBig $borderRadiusBig 0 0 !important;
         will-change: background, border;
         border: none !important;
         letter-spacing: 0.01em;
+        padding: 30px;
+        height: 70px;
         background-color: lighten(#0A0C1A, 15) !important;
 
-        padding: 10px !important;
-        font-size: 16px !important;
-        height: 50px !important;
-        line-height: 50px !important;
+        @media screen and (max-width: $mobile) {
+          font-size: 18px;
+          padding: 20px;
+          height: 60px;
+        }
+
 
         &:hover {
           background: $violet !important;
@@ -983,13 +991,13 @@
 
       & > .body {
         background: rgba(0, 0, 0, 0.4) !important;
-        border-radius: 0 !important;
+        border-radius: $borderRadiusBig;
         overflow: hidden;
 
         & > .content {
-          padding: 0 !important;
+          border-radius: $borderRadiusBig;
+          padding: 10px !important;
           background: rgba(0, 0, 0, 0.4) !important;
-          border-radius: 0 !important;
 
 
           img {
@@ -1203,6 +1211,10 @@
       }
     }
 
+
+    /**
+     * Compare mobile
+     */
     #zksync-vs-rollup-solutions {
       background: #1a1e3c !important;
       min-width: 100%;
@@ -1221,8 +1233,8 @@
               border-radius: 8px !important;
               font-size: 16px !important;
               background-color: #2d314e !important;
-              a
-              {
+
+              a {
                 font-size: 18px !important;
               }
             }
@@ -1250,7 +1262,83 @@
         width: calc(100% - 24px);
         line-height: 140%;
       }
+
+      .collapsible.-dark._width-full {
+        border: none !important;
+        margin: 0 -10px;
+
+        > .item {
+          margin: 20px 0 !important;
+          border-radius: $borderRadiusSm;
+          text-align: left;
+          justify-content: flex-start;
+          background: $darkBlack;
+
+
+          &:not(.-active) {
+            & > .header {
+              border-radius: $borderRadiusSm !important;
+              background-color: #0A0C1A !important;
+            }
+
+          }
+
+          & > .header {
+            font: bold 22px/120% $grotesk;
+            display: flex;
+            align-items: center;
+            color: $whiteFaded;
+            transition: background, border $transition2;
+            border-radius: $borderRadiusSm $borderRadiusSm 0 0 !important;
+            will-change: background, border;
+            border: none !important;
+            letter-spacing: 0.01em;
+            background-color: lighten(#0A0C1A, 15) !important;
+
+            padding: 10px !important;
+            font-size: 16px !important;
+            height: 50px !important;
+            line-height: 50px !important;
+
+            &:hover {
+              background: $violet !important;
+            }
+
+            span {
+              color: $white;
+              margin-left: 7px;
+            }
+
+            i.icon {
+              margin-left: auto;
+            }
+          }
+
+          & > .body {
+            background: rgba(0, 0, 0, 0.4) !important;
+            border-radius: 0 !important;
+            overflow: hidden;
+
+            & > .content {
+              padding: 0 !important;
+              background: rgba(0, 0, 0, 0.4) !important;
+              border-radius: 0 !important;
+
+
+              img {
+                width: 100%;
+                margin: 10px auto;
+              }
+            }
+          }
+
+        }
+      }
     }
+
+    /**
+     * Developers Mobile
+     */
 
     .codeBlockContainer {
       display: initial;
