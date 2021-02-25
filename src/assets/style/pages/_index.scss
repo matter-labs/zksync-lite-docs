@@ -742,6 +742,8 @@
         padding: 0;
 
         .codeBlockSpace {
+          min-height: 0;
+          height: min-content;
           grid-area: codeBlock;
         }
 

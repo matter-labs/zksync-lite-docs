@@ -47,6 +47,10 @@
     }
   }
 
+  @media (max-width: $mobile) {
+    gap: 10px;
+    grid-auto-columns: 300px;
+  }
 
   .itemsContainer {
     width: max-content;
@@ -73,9 +77,6 @@
       flex-direction: column;
       justify-content: flex-start;
 
-      @media (min-width: $mobile) {
-
-      }
 
       &:hover {
         background: #141837;
