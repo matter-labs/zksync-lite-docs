@@ -605,8 +605,7 @@
 
         &:hover {
           i {
-            background-color: lighten($color: $violet, $amount: 5);
-            color: $white;
+            color: lighten($color: $violet, $amount: 5);
           }
         }
       }
