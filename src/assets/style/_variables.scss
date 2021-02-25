@@ -12,8 +12,10 @@ $muted: #565656;
 $whiteFaded: rgba(255, 255, 255, .5);
 $whiteFadedLight: rgba(255, 255, 255, .85);
 $colorTxt: rgba(255, 255, 255, .60);
+$dividerColor: transparentize($color: #525163, $amount: 0.5);
 
 
+$borderRadiusXs: 6.6px;
 $borderRadiusSm: 0.25rem;
 $borderRadius: 8px;
 $borderRadiusBig: 16px;

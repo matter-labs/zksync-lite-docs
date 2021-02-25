@@ -174,7 +174,7 @@ with zero security compromises"
         <div class="grayText _zk-font-18">
           Take part in the community discussions and don’t miss important updates
         </div>
-        <social-block class="_margin-y-lg-2 _margin-y-xs-1 "/>
+        <social-block class="_margin-y-lg-2 _margin-y-xs-1" location="footer"/>
         <newsletter/>
       </div>
     </i-container>

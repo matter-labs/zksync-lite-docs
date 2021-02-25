@@ -7,16 +7,23 @@
       class="socialItem"
       target="_blank">
       <i :class="[socialProfile.icon,'fab']"/>
-      <span>{{socialProfile.name}}</span>
+      <span>{{ socialProfile.name }}</span>
     </a>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      socialNetworks: [
+  props: {
+    location: {
+      required: false,
+      type: String,
+      default: "header",
+    },
+  },
+  computed: {
+    socialNetworks() {
+      const socialIcons = [
         {
           name: "Medium Blog",
           icon: ["fa-medium-m", "fab"],
@@ -46,9 +53,11 @@ export default {
           name: "All Contacts",
           icon: ["fa-at", "fal"],
           url: "/contact.html",
+          hideIn: "footer",
         },
-      ],
-    };
+      ];
+      return socialIcons.filter((item) => !item.hideIn || item.hideIn !== this.location);
+    },
   },
 };
 </script>

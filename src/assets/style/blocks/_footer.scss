@@ -1,3 +1,5 @@
+@import "../variables";
+
 .mainFooter {
   height: 90px;
   font-weight: normal;
@@ -8,8 +10,7 @@
 
     .row {
       padding: 2rem 0;
-      @media screen and (max-width: $mobile)
-      {
+      @media screen and (max-width: $mobile) {
         padding: 1rem 0;
       }
     }
@@ -23,12 +24,15 @@
       max-width: 150px;
     }
   }
+
   .linkItem {
     display: block;
   }
+
   .firstRow {
     border-bottom: 1px solid transparentize($color: $white, $amount: 0.9);
   }
+
   .rightSideLinks {
     display: flex;
     justify-content: flex-end;
@@ -44,11 +48,12 @@
     ._padding-top-md-0 {
       padding-top: 0 !important;
     }
-
+    .bottomBlock {
+      padding: 30px 0 70px;
+    }
   }
   @media screen and (max-width: $mobile) {
-    .firstRow
-    {
+    .firstRow {
       display: none;
     }
     .linkItem {
@@ -65,6 +70,7 @@
         .secondaryText {
           text-align: center;
         }
+
         .rightSideLinks {
           padding-top: 0;
           justify-content: center;
