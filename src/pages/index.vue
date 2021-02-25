@@ -149,7 +149,7 @@ with zero security compromises"
               </div>
               <div class="grayText">
                 We believe that only the paranoid survive.
-                To resist even the most powerful potential adversaries, <Emphasis/> is embracing constant <z-cta :href="'/faq/decentralization.html'" target="_blank">progressive
+                To resist even the most powerful potential adversaries, <Emphasis/> is going the path of <z-cta :href="'/faq/decentralization.html'" target="_blank">progressive
                 decentralization</z-cta>
               </div>
             </div>
