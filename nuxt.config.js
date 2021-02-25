@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const pageTitle = process.env.SITE_TITLE;
-const pageDescription = process.env.SITE_TITLE || process.env.npm_package_description;
+const pageDescription = process.env.SITE_DESCRIPTION || process.env.npm_package_description;
 
 export default {
   ssr: false,
@@ -18,6 +18,16 @@ export default {
     name: pageTitle,
     titleTemplate: pageTitle,
     meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: pageDescription,
+      },
+      {
+        hid: "author",
+        name: "author",
+        content: "https://matter-labs.io",
+      },
       { "http-equiv": "pragma", content: "no-cache" },
       { "http-equiv": "cache-control", content: "no-cache , no-store, must-revalidate" },
       { "http-equiv": "expires", content: "0" },
@@ -92,6 +102,20 @@ export default {
         ],
         defaultLocale: "en",
         langDir: "./locales/",
+      },
+    ],
+    [
+      "nuxt-social-meta",
+      {
+        url: "https://zksync.io",
+        title: pageTitle,
+        site_name: pageTitle,
+        description: pageDescription,
+        img: "https://zksync.io/social.jpg",
+        locale: "en_US",
+        twitter: "@zksync",
+        twitter_card: "https://zksync.io/social.jpg",
+        themeColor: "#4e529a",
       },
     ],
     "@nuxtjs/sentry",

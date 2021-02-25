@@ -5,7 +5,7 @@
     </h1>
     <p class="grayText aboutZkSync subheaderText" data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000">
       <emphasis :show-logo="true"/>
-      solves Ethereum scalability<br>with zero security compromises.
+      solves Ethereum scalability<br>&nbsp;with zero security compromises
     </p>
     <i-row center data-aos="fade-up" data-aos-delay="100" data-aos-duration="2000">
       <z-button href="https://wallet.zksync.io" variant="glow" size="lg" css-class="antilink">Open Wallet</z-button>
