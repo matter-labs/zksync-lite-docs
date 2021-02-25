@@ -2,12 +2,13 @@
   <div class="reviewsContainer" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
     <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
-      <div v-if="currentItem>0" class="arrow left" @click="scrollItem('minus')">
+      <div v-if="currentItem>0" class="arrow left _hidden-md-and-down"
+           @click="scrollItem('minus')">
         <i class="fal fa-angle-left"/>
       </div>
     </transition>
     <transition name="slideFromRight">
-      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="arrow right" @click="scrollItem('plus')">
+      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="_hidden-md-and-down arrow right" @click="scrollItem('plus')">
         <i class="fal fa-angle-right"/>
       </div>
     </transition>
@@ -60,6 +61,7 @@
 </template>
 
 <script type="ts">
+import Hammer from "hammerjs";
 import ZButton from "~/components/ZButton.vue";
 
 export default {
@@ -136,6 +138,18 @@ export default {
       });
     }, 0);
     window.addEventListener("resize", this.checkArrowDisplay);
+    const galleryBlock = document.querySelector(".reviewsContainer");
+    new Hammer(galleryBlock)
+      .on("swiperight", () => {
+        if (this.currentItem > 0) {
+          this.scrollItem("minus");
+        }
+      })
+      .on("swipeleft", () => {
+        if (this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
+          this.scrollItem("plus");
+        }
+      });
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.checkArrowDisplay);
