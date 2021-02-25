@@ -40,7 +40,7 @@ with zero security compromises"
       </div>
 
       <div class="codeGrid _margin-top-3">
-        <div class="columnGrid">
+        <div class="columnGrid" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1200">
           <div class="textItem" :class="{'chosen': chosenBlock===0}" @click="chosenBlock=0">
             <div class="h2">
               Powerful, easy-to-use API

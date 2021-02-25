@@ -1,5 +1,5 @@
 <template>
-  <div class="codeBlockContainer">
+  <div class="codeBlockContainer" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1200">
     <div class="codeBlockTop">
       <div class="codeBlockHeader">
         <div class="codeBlockCircles">
