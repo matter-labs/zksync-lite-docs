@@ -66,8 +66,13 @@
           text-align: center;
         }
         .rightSideLinks {
-          padding-top: 5px;
+          padding-top: 0;
           justify-content: center;
+
+          a {
+            padding: 15px 10px;
+            font-size: 14px;
+          }
         }
       }
     }
