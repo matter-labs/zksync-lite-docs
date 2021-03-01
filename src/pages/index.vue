@@ -146,7 +146,6 @@
         </div>
       </div>
       <div class="bottomBlock">
-
         <div class="h2 _padding-top-1">Get involved</div>
         <div class="grayText _zk-font-18">
           Take part in the community discussions and don’t miss important updates
