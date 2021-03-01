@@ -368,6 +368,8 @@ async notifyTransaction(
 
 #### Inputs and outputs
 
+<!-- markdownlint-disable MD013 -->
+
 | Name    | Description                                                       |
 | ------- | ----------------------------------------------------------------- |
 | txHash  | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction.     |

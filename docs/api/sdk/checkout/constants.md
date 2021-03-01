@@ -13,6 +13,7 @@ An object that contains the text messages of all the errors that might be thrown
   There is a task to correct them and update the docs (ZKS-497)
 -->
 <!-- cSpell:ignore enviroment occured retreive -->
+<!-- markdownlint-disable MD013 -->
 
 ```tsx
 export const CheckoutErrors = {
