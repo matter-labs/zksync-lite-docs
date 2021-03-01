@@ -48,6 +48,7 @@
       height: calc(var(--app-height) - 84px);
     }
 
+
     h1 {
       font-family: $grotesk;
       font-style: normal;
@@ -86,7 +87,29 @@
       font-weight: 800;
       max-width: 555px;
       margin: 148px auto 22px;
+    }
 
+    @media (max-height: 600px) and (min-width: $mobile) {
+      min-height: 500px;
+      height: calc(var(--app-height) - 84px);
+
+      .mainHeadline {
+        font-size: 50px;
+        text-align: center;
+        line-height: 120%;
+        margin: 10px auto 15px !important;
+      }
+      .aboutZkSync
+      {
+        margin-bottom: 20px !important;
+      }
+      a.exploreFAQ {
+        margin-top: 20px !important;
+      }
+      a.scrollDown
+      {
+        margin-top: 15px !important;
+      }
     }
 
     .grayText {
@@ -333,8 +356,8 @@
     width: 100%;
     height: auto;
     margin: 10px auto 30px !important;
-    .reviewsContainer
-    {
+
+    .reviewsContainer {
       display: none !important;
     }
 
@@ -361,8 +384,7 @@
         flex-direction: column;
         justify-content: center;
 
-        .h2._position-relative
-        {
+        .h2._position-relative {
           white-space: nowrap;
         }
 
@@ -430,6 +452,7 @@
       font-size: 18px;
     }
   }
+
   .CtaButton {
     .fab.fa-github {
       margin: 4px 7px 0;
@@ -596,8 +619,7 @@
           will-change: background-color;
         }
 
-        span
-        {
+        span {
           font-size: 15px;
           line-height: 18px;
           display: inline-flex;
@@ -611,6 +633,192 @@
       }
     }
 
+  }
+}
+
+#zksync-vs-rollup-solutions {
+  background: #1a1e3c !important;
+  max-width: 100%;
+  width: 100%;
+
+
+  .h2 {
+    margin-bottom: 50px;
+
+    img {
+
+      min-height: 52px;
+    }
+  }
+
+  & > .row {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: $mobile) {
+    .subheaderText {
+      margin-bottom: 20px;
+    }
+  }
+
+  .collapsible.-dark._width-full {
+    border: none !important;
+
+    > .item {
+      margin: 30px 0;
+      border-radius: $borderRadiusBig;
+      text-align: left;
+      justify-content: flex-start;
+      background: $darkBlack;
+
+
+      &:not(.-active) {
+        & > .header {
+          border-radius: $borderRadiusBig !important;
+          background-color: #0A0C1A !important;
+        }
+
+      }
+
+      & > .header {
+        font: bold 22px/120% $grotesk;
+        display: flex;
+        align-items: center;
+        color: $whiteFaded;
+        transition: background, border $transition2;
+        border-radius: $borderRadiusBig $borderRadiusBig 0 0 !important;
+        will-change: background, border;
+        border: none !important;
+        letter-spacing: 0.01em;
+        padding: 30px;
+        height: 70px;
+        background-color: lighten(#0A0C1A, 15) !important;
+
+        @media screen and (max-width: $mobile) {
+          font-size: 18px;
+          padding: 20px;
+          height: 60px;
+        }
+
+
+        &:hover {
+          background: $violet !important;
+        }
+
+        span {
+          color: $white;
+          margin-left: 7px;
+        }
+
+        i.icon {
+          margin-left: auto;
+        }
+      }
+
+      & > .body {
+        background: rgba(0, 0, 0, 0.4) !important;
+        border-radius: $borderRadiusBig;
+        overflow: hidden;
+
+        & > .content {
+          border-radius: $borderRadiusBig;
+          padding: 10px !important;
+          background: rgba(0, 0, 0, 0.4) !important;
+
+
+          img {
+            width: 100%;
+            margin: 10px auto;
+          }
+        }
+      }
+
+    }
+
+    @media (max-width: $mobile) {
+
+      .h2 {
+        margin-bottom: 15px;
+        white-space: nowrap;
+        font-size: 26px;
+
+        img {
+
+          min-height: 30px;
+        }
+      }
+
+      .bottomBlock {
+        .socialIcons {
+          margin: 2rem auto 2.3rem;
+        }
+      }
+
+      .mainFooter {
+        & > .container > .row {
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+
+
+  body .openWallet {
+    position: relative;
+    background: black;
+
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 15px 66px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $white !important;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: none !important;
+      background-color: $darkViolet;
+    }
+
+    &:active {
+      &::before, &::after {
+        transition-duration: 0.001s;
+      }
+
+      &::before {
+        filter: blur(5px) brightness(100%);
+      }
+
+      &::after {
+        filter: blur(48px) brightness(100%);
+      }
+    }
+
+    &::before, &::after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $zBgGradient;
+      background-blend-mode: overlay, normal, normal, color-dodge, normal;
+      mix-blend-mode: normal;
+      border-radius: 6px;
+      transition: filter $transition1;
+      will-change: filter;
+    }
+
+    &::before {
+      filter: blur(5px) brightness(100%);
+    }
+
+    &::after {
+      filter: blur(40px) brightness(100%);
+    }
   }
 }
 
@@ -804,8 +1012,7 @@
     .decentralizedContainer {
       width: 100%;
 
-      img
-      {
+      img {
         margin-bottom: 20px !important;
       }
 
@@ -815,29 +1022,27 @@
         grid-template-rows: repeat(2, max-content);
         grid-gap: 20px;
 
-        & > div:first-child
-        {
+        & > div:first-child {
           text-align: center;
         }
 
-        .button{
+        .button {
           margin: 30px auto 50px !important;
         }
 
-        .h2
-        {
+        .h2 {
           font-size: 22px !important;
           margin: 0 !important;
-          br
-          {
+
+          br {
             display: none !important;
           }
         }
 
         .grayText {
           font-size: 16px;
-          p
-          {
+
+          p {
             font-size: 16px;
           }
         }
@@ -878,10 +1083,10 @@
       margin: 2rem auto;
 
       .topBlock, .bottomBlock {
-        border-radius: 16px 16px 0 0  !important;
+        border-radius: 16px 16px 0 0 !important;
         padding: 1rem;
-        .h2
-        {
+
+        .h2 {
           font-size: 24px;
         }
       }
@@ -908,8 +1113,7 @@
               font-size: 16px;
             }
 
-            span
-            {
+            span {
               display: none;
             }
 
@@ -923,200 +1127,13 @@
     }
 
     #zksync-vs-rollup-solutions {
-      .collapsible.-dark._width-full > .item > .body > .content
-      {
-        td,th
-        {
+      .collapsible.-dark._width-full > .item > .body > .content {
+        td, th {
           font-size: 16px !important;
           padding: .4rem !important;
         }
       }
     }
-  }
-
-}
-
-#zksync-vs-rollup-solutions {
-  margin: 20px auto 30px;
-
-  .h2 {
-    margin-bottom: 50px;
-
-    img {
-
-      min-height: 52px;
-    }
-  }
-
-  @media screen and (max-width: $mobile) {
-    .subheaderText {
-      margin-bottom: 20px;
-    }
-  }
-
-  .collapsible.-dark._width-full {
-    border: none !important;
-
-    > .item {
-      margin: 30px 0;
-      border-radius: $borderRadiusBig;
-      text-align: left;
-      justify-content: flex-start;
-      background: $darkBlack;
-
-
-      &:not(.-active) {
-        & > .header {
-          border-radius: $borderRadiusBig !important;
-          background-color: #0A0C1A !important;
-        }
-
-      }
-
-      & > .header {
-        font: bold 22px/120% $grotesk;
-        display: flex;
-        align-items: center;
-        color: $whiteFaded;
-        transition: background, border $transition2;
-        border-radius: $borderRadiusBig $borderRadiusBig 0 0 !important;
-        will-change: background, border;
-        border: none !important;
-        letter-spacing: 0.01em;
-        padding: 30px;
-        height: 70px;
-        background-color: lighten(#0A0C1A, 15) !important;
-
-        @media screen and (max-width: $mobile) {
-          font-size: 18px;
-          padding: 20px;
-          height: 60px;
-        }
-
-
-        &:hover {
-          background: $violet !important;
-        }
-
-        span {
-          color: $white;
-          margin-left: 7px;
-        }
-
-        i.icon {
-          margin-left: auto;
-        }
-      }
-
-      & > .body {
-        background: rgba(0, 0, 0, 0.4) !important;
-        border-radius: $borderRadiusBig;
-        overflow: hidden;
-
-        & > .content {
-          border-radius: $borderRadiusBig;
-          padding: 10px !important;
-          background: rgba(0, 0, 0, 0.4) !important;
-
-
-          img {
-            width: 100%;
-            margin: 10px auto;
-          }
-        }
-      }
-
-    }
-
-    @media (max-width: $mobile) {
-
-      .h2 {
-        margin-bottom: 15px;
-        white-space: nowrap;
-        font-size: 26px;
-
-        img {
-
-          min-height: 30px;
-        }
-      }
-
-      .bottomBlock {
-        .socialIcons {
-          margin: 2rem auto 2.3rem;
-        }
-      }
-
-      .mainFooter {
-        & > .container > .row {
-          padding: 1rem 0;
-        }
-      }
-    }
-  }
-
-
-  body .openWallet {
-    position: relative;
-    background: black;
-
-    text-align: center;
-    border: none;
-    outline: none;
-    padding: 15px 66px;
-    text-decoration: none;
-    cursor: pointer;
-    color: $white !important;
-    text-transform: uppercase;
-
-    &:hover {
-      text-decoration: none !important;
-      background-color: $darkViolet;
-    }
-
-    &:active {
-      &::before, &::after {
-        transition-duration: 0.001s;
-      }
-
-      &::before {
-        filter: blur(5px) brightness(100%);
-      }
-
-      &::after {
-        filter: blur(48px) brightness(100%);
-      }
-    }
-
-    &::before, &::after {
-      z-index: -1;
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: $zBgGradient;
-      background-blend-mode: overlay, normal, normal, color-dodge, normal;
-      mix-blend-mode: normal;
-      border-radius: 6px;
-      transition: filter $transition1;
-      will-change: filter;
-    }
-
-    &::before {
-      filter: blur(5px) brightness(100%);
-    }
-
-    &::after {
-      filter: blur(40px) brightness(100%);
-    }
-  }
-}
-
-
-@media screen and (max-width: $mobile) {
-  .indexPage {
 
     .featuresContainer {
       margin: 10px auto 10px !important;
@@ -1235,7 +1252,6 @@
      * Compare mobile
      */
     #zksync-vs-rollup-solutions {
-      background: #1a1e3c !important;
       min-width: 100%;
 
       margin: 30px auto 20px !important;
@@ -1362,15 +1378,18 @@
     .codeBlockContainer {
       display: initial;
     }
+
     .codeContainer {
       height: min-content;
       margin: 10px auto !important;
-      .codeBlockTop
-      {
+
+      .codeBlockTop {
         display: none !important;
       }
-      .codeBlockFooter{
+
+      .codeBlockFooter {
         height: min-content;
+
         .buttonBlock {
           display: inline-block;
           text-align: center;
@@ -1379,25 +1398,26 @@
           background: transparent;
         }
       }
-      .reviewsContainer
-      {
+
+      .reviewsContainer {
         display: block !important;
       }
+
       .reviewHeader {
         span {
           font-size: 22px !important;
         }
       }
-      .reviewText
-      {
+
+      .reviewText {
         color: $whiteFaded !important;
-        .badge.-secondary._upcoming-h3
-        {
+
+        .badge.-secondary._upcoming-h3 {
           top: 0;
         }
       }
-      .button.-xs
-      {
+
+      .button.-xs {
         padding: 0.25rem 0.5rem;
         margin: 10px 0 0;
         font-size: 16px;

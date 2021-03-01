@@ -1,33 +1,10 @@
 <template>
   <div class="indexPage">
     <z-hero/>
-
     <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4"/>
-
     <about/>
-
-    <i-container id="zksync-vs-rollup-solutions" fluid class="_padding-top-3 _text-center">
-      <i-row>
-        <i-column xs="12">
-          <div class="h2 _margin-bottom-1 _padding-0" data-aos="fade-up" data-aos-delay="50" data-aos-offset="-100" data-aos-duration="1200">
-            <img
-              src="@/assets/images/pages/index/symbol-logo.svg" alt="zkSync is Ethereum’s most user-centric ZK rollup" title="zkSync solves Ethereum scalability
-with zero security compromises"
-            /> zkSync in comparison
-          </div>
-          <i-collapsible variant="dark" class="_width-full" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-            <i-collapsible-item>
-              <template slot="title">zkSync vs <span>optimistic rollups</span></template>
-              <optimistic/>
-            </i-collapsible-item>
-            <i-collapsible-item>
-              <template slot="title">zkSync vs <span>other ZK rollups</span></template>
-              <other-zk/>
-            </i-collapsible-item>
-          </i-collapsible>
-        </i-column>
-      </i-row>
-    </i-container>
+    <Comparison/>
+    <Partners/>
 
     <i-container class="codeContainer _padding-y-2 _padding-top-md-4 _padding-bottom-md-4 _margin-y-3 _margin-bottom-8">
       <div class="h2" data-aos="fade-up" data-aos-delay="50" data-aos-duration="800" data-aos-offset="0">
@@ -162,7 +139,7 @@ with zero security compromises"
     <i-container class="_margin-y-lg-2 _margin-y-xs-2 communityOwned">
       <div class="topBlock _padding-bottom-2">
         <div class="h2 _padding-top-1">Owned by the community</div>
-        <div class="grayText _margin-top-2 _margin-bottom-0">
+        <div  class="grayText _margin-top-2 _margin-bottom-0">
           <p class="_margin-bottom-0">
             <Emphasis/>
             is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta></p>
@@ -170,7 +147,7 @@ with zero security compromises"
         </div>
       </div>
       <div class="bottomBlock">
-        <div class="h2 _padding-top-1">Get involved</div>
+        <div id="community" class="h2 _padding-top-1">Get involved</div>
         <div class="grayText _zk-font-18">
           Take part in the community discussions and don’t miss important updates
         </div>
@@ -182,25 +159,25 @@ with zero security compromises"
 </template>
 
 <script>
+import About from "@/blocks/About";
 import codeBlock from "@/blocks/CodeBlock.vue";
-import Optimistic from "@/blocks/compare/optimistic";
-import OtherZk from "@/blocks/compare/other-zk";
 import newsletter from "@/blocks/Newsletter.vue";
 import ReviewsSlider from "@/blocks/ReviewsSlider.vue";
 import socialBlock from "@/blocks/SocialBlock.vue";
-import About from "@/blocks/About";
 import Emphasis from "@/components/Emphasis";
 import ZButton from "@/components/ZButton";
 import ZCta from "@/components/ZCta";
 import ZHero from "@/components/ZHero";
+import Comparison from "@/components/Comparison";
+import Partners from "@/components/Partners";
 
 export default {
   components: {
+    Partners,
+    Comparison,
     About,
     ZCta,
     ZHero,
-    OtherZk,
-    Optimistic,
     ZButton,
     Emphasis,
     ReviewsSlider,
