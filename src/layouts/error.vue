@@ -26,14 +26,15 @@
       </defs>
     </svg>
     <div class="flex _text-nowrap">
-      Start from <a href="/" class="linkItem">the homepage</a>
+      Start from <z-cta href="/" target="_self" class="linkItem">the homepage</z-cta>
     </div>
   </div>
 </template>
 
 <script>
+import ZCta from "@/components/ZCta";
 export default {
-  layout: "index",
+  components: { ZCta },
   props: {
     activeColor: {
       required: false,
@@ -43,7 +44,7 @@ export default {
     className: {
       required: false,
       type: String,
-      default: "",
+      default: "image-404",
     },
     color: {
       required: false,
@@ -79,6 +80,11 @@ export default {
       required: false,
       type: String,
       default: "",
+    },
+  },
+  head: {
+    bodyAttrs: {
+      class: "page-404-body inkline -dark",
     },
   },
   computed: {
