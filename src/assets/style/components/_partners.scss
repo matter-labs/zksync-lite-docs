@@ -6,7 +6,12 @@
   {
     span
     {
-      color: $gradientRegularPieceBefore
+      color: $white;
+      display: inline-flex;
+      position: relative;
+      background: $gradientRegularPieceBefore;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
