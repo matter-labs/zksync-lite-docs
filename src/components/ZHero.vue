@@ -38,9 +38,9 @@
   </i-container>
 </template>
 <script type="ts">
-import Emphasis from "~/components/Emphasis";
-import ZButton from "~/components/ZButton";
-import ZCta from "~/components/ZCta.vue";
+import Emphasis from "@/components/Emphasis";
+import ZButton from "@/components/ZButton";
+import ZCta from "@/components/ZCta.vue";
 
 export default {
   name: "ZHero",
