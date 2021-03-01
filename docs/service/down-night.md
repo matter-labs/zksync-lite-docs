@@ -15,7 +15,7 @@ sidebar: false
 <br>
 <br>
 
-# zkSync <sub>BETA</sub> is temporarily unavailable
+# zkSync <sup>BETA</sup> is temporarily unavailable
 
 <br>
 <br>

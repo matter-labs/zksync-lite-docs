@@ -1,7 +1,8 @@
 require("dotenv").config();
 
 const pageTitle = process.env.SITE_TITLE;
-const pageDescription = process.env.SITE_DESCRIPTION || process.env.npm_package_description;
+const pageDescription = process.env.SITE_DESCRIPTION;
+const pageKeywords = process.env.SITE_KEYWORDS;
 
 export default {
   ssr: false,
@@ -19,9 +20,9 @@ export default {
     titleTemplate: pageTitle,
     meta: [
       {
-        hid: "description",
-        name: "description",
-        content: pageDescription,
+        hid: "keywords",
+        name: "keywords",
+        content: pageKeywords,
       },
       {
         hid: "author",

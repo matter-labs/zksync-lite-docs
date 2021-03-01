@@ -23,7 +23,6 @@ $borderRadiusBig: 16px;
 
 $gradientRegularPieceBefore: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #FF8D6C 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0) 100%);
 
-
 $gradientRegularPieceBefore: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #FF8D6C 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0) 100%);
 
 $gradientRegularPieceAfter: radial-gradient(19.49% 58.52% at 50% 0%, rgba(249, 196, 60, 0.3) 0%, rgba(231, 166, 1, 0) 100%), radial-gradient(50% 50% at 100% 100%, #520AEB 10.27%, rgba(159, 115, 255, 0) 100%), radial-gradient(77.86% 77.86% at 100% 0%, #00A7FF 0%, rgba(0, 166, 254, 0.12) 100%), radial-gradient(50% 50% at 0% 0%, #FF8D6C 0%, rgba(255, 92, 0, 0.6) 100%), radial-gradient(70.24% 70.24% at 0% 100%, #E81D72 0%, rgba(255, 0, 0, 0) 100%);
@@ -93,6 +92,7 @@ $font-family-headers: $grotesk;
 $transition1: ease .2s;
 $transition2: ease .3s;
 $transition3: ease .8s;
+$transitionMedium: ease .27s;
 
 /* Responsive */
 $mobile: 768px;

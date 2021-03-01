@@ -1,35 +1,55 @@
 @import "../variables";
 
-.page-404 {
-  z-index: 1;
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: calc(100vh - 90px - 84px) !important;
-  @media screen and (max-height: 770px) {
-    height: calc(var(--app-height) - 90px - 84px);
+body.page-404-body {
+  overflow: hidden !important;
+  min-height: 0 !important;
+  max-height: var(--app-height) !important;
+  height: var(--app-height) !important;
+
+  #__nuxt, #__layout, .defaultLayout {
+    height: auto !important;
+    overflow: hidden;
+    max-height: var(--app-height) !important;
+    min-height: 0 !important;
+    width: 100%;
   }
 
-  svg {
-    font-size: 40px;
-    line-height: 1;
-    color: $white;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 15px;
-    max-width: 80%;
-    width: auto;
-    display: inline-flex;
 
-    a.linkItem {
+  .page-404 {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: calc(100vh - 90px - 84px) !important;
+    min-height: 0;
+    @media screen and (max-width: $mobile) {
+      height: calc(var(--app-height) - 90px - 84px);
+    }
+
+    svg.image-404 {
+      font-size: 40px;
+      max-width: 80% !important;
+      width: auto !important;
+      line-height: 1;
       color: $white;
-      text-decoration: none;
-      transition: color $transition1;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 15px;
+      display: inline-flex;
 
-      &:hover {
-        color: $violet
+      a.linkItem {
+        color: $white;
+        text-decoration: none;
+        transition: color $transition1;
+
+        &:hover {
+          color: $violet
+        }
       }
     }
   }
