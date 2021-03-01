@@ -4,7 +4,6 @@
     <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4"/>
     <about/>
     <Comparison/>
-    <Partners/>
 
     <i-container class="codeContainer _padding-y-2 _padding-top-md-4 _padding-bottom-md-4 _margin-y-3 _margin-bottom-8">
       <div class="h2" data-aos="fade-up" data-aos-delay="50" data-aos-duration="800" data-aos-offset="0">
@@ -140,14 +139,15 @@
       <div class="topBlock _padding-bottom-2">
         <div class="h2 _padding-top-1">Owned by the community</div>
         <div  class="grayText _margin-top-2 _margin-bottom-0">
-          <p class="_margin-bottom-0">
+          <p id="community" class="_margin-bottom-0">
             <Emphasis/>
             is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta></p>
           <p class="_margin-bottom-0 _zk-font-18">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>
         </div>
       </div>
       <div class="bottomBlock">
-        <div id="community" class="h2 _padding-top-1">Get involved</div>
+
+        <div class="h2 _padding-top-1">Get involved</div>
         <div class="grayText _zk-font-18">
           Take part in the community discussions and don’t miss important updates
         </div>
@@ -169,11 +169,9 @@ import ZButton from "@/components/ZButton";
 import ZCta from "@/components/ZCta";
 import ZHero from "@/components/ZHero";
 import Comparison from "@/components/Comparison";
-import Partners from "@/components/Partners";
 
 export default {
   components: {
-    Partners,
     Comparison,
     About,
     ZCta,

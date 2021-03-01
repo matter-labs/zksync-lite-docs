@@ -585,13 +585,13 @@
   .topBlock {
     background-color: #171a49;
     padding: 30px;
-    border-radius: .25rem .25rem 0 0;
+    border-radius: $borderRadiusBig $borderRadiusBig 0 0;
   }
 
   .bottomBlock {
     background-color: #1d2039;
     padding: 30px;
-    border-radius: 0 0 .25rem .25rem;
+    border-radius: 0 0 $borderRadiusBig $borderRadiusBig;
 
     .socialIcons {
       min-height: 80px;
