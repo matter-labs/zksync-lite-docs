@@ -139,7 +139,7 @@
       <div class="topBlock _padding-bottom-2">
         <div class="h2 _padding-top-1">Owned by the community</div>
         <div  class="grayText _margin-top-2 _margin-bottom-0">
-          <p id="community" class="_margin-bottom-0">
+          <p class="_margin-bottom-0">
             <Emphasis/>
             is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta></p>
           <p class="_margin-bottom-0 _zk-font-18">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>
@@ -153,6 +153,7 @@
         </div>
         <social-block class="_margin-y-lg-2 _margin-y-xs-1" location="footer"/>
         <newsletter/>
+        <a id="community"/>
       </div>
     </i-container>
   </div>
