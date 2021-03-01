@@ -5,7 +5,7 @@
                 Security and UX first
             </div>
             <div class="grayText subheaderText" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-                zkSync is Ethereum’s most user-centric ZK rollup
+                <emphasis/> is Ethereum’s most user-centric ZK rollup
             </div>
             <div class="featuresGrid">
                 <div class="featureItem" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1200">
@@ -72,9 +72,10 @@
 </template>
 <script>
 import ZCta from "@/components/ZCta";
+import Emphasis from "@/components/Emphasis";
 
 export default {
   name: "About",
-  components: { ZCta },
+  components: { Emphasis, ZCta },
 };
 </script>

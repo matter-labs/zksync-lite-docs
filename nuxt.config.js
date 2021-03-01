@@ -83,7 +83,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    "nuxt-socialsplash-module",
     "@nuxtjs/dotenv",
     "@nuxtjs/pwa",
     "@nuxtjs/axios",

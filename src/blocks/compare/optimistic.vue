@@ -3,8 +3,8 @@
     <i-table class="tg" responsive hover varint="dark">
       <thead>
       <tr>
-        <th class="_border-0"></th>
-        <th class="_text-center">Optimistic</th>
+        <th></th>
+        <th class="_text-center _border-left _border-right">Optimistic</th>
         <th class="_text-center">
           <emphasis :show-logo="true" brand-name=""/>
         </th>
@@ -12,12 +12,12 @@
       </thead>
       <tbody>
       <tr>
-        <td class="_border-0">Solidity smart contracts</td>
+        <td>Solidity smart contracts</td>
         <td class="_bg-green">Yes</td>
         <td class="_bg-green">Yes</td>
       </tr>
       <tr>
-        <td class="_border-top">Max secure Total Locked Value</td>
+        <td>Max secure Total Locked Value</td>
         <td class=" _bg-red _bg-react">
           &lt;$50M
           <sup><a
@@ -29,7 +29,7 @@
       </tr>
 
       <tr>
-        <td class="_border-top">Finality / capital-efficient exit time</td>
+        <td>Finality / capital-efficient exit time</td>
         <td class=" _bg-red _bg-react">
           1-2 weeks <sup><a
           class="_fancyUnderline" title="“The Optimistic Rollup Dilemma” by StarkWare"
@@ -39,8 +39,8 @@
         <td class="_bg-green">5 min</td>
       </tr>
       <tr>
-        <td class="_border-top">Cost of privacy (over normal tx)</td>
-        <td class="_border-left  _bg-red _bg-react">
+        <td>Cost of privacy (over normal tx)</td>
+        <td class="  _bg-red _bg-react">
           10-100x
           <sup><a class="_fancyUnderline" title="“A rollup-centric ethereum roadmap” by V.Buterin"
                   href="https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698/20" target="_blank">3</a></sup>
@@ -53,6 +53,7 @@
 </template>
 <script>
 import Emphasis from "@/components/Emphasis";
+
 export default {
   components: {
     Emphasis,

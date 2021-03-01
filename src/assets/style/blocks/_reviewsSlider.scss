@@ -5,16 +5,14 @@
   width: 100%;
   padding: 51px 0 !important;
   height: auto;
-  background-color: transparentize($color: #000000, $amount: 0.7);
+  background-color: transparentize($color: $trueBlack, $amount: 0.7);
   overflow: hidden;
-
 
   #balancer-review {
     img {
       width: 110px !important;
     }
   }
-
 
   @media screen and (min-width: 1225px) {
     .arrow {
@@ -47,8 +45,6 @@
     }
   }
 
-
-
   .itemsContainer {
     width: max-content;
     height: fit-content;
@@ -61,7 +57,10 @@
     will-change: transform;
 
     @media (max-width: $mobile) {
-      gap: 15px;
+      gap: 10px;
+      grig-gap: 10px;
+      transition: transform ease-out .2s;
+      grid-auto-columns: 260px;
     }
 
     .reviewItem {
@@ -183,12 +182,12 @@
     will-change: opacity;
 
     &.right {
-      background: linear-gradient(90deg, transparentize($color: #0a0c1a, $amount: 1) 0%, #0a0c1a 90%);
+      background: linear-gradient(90deg, transparentize($color: $obsidianBlack, $amount: 1) 0%, $obsidianBlack 90%);
       right: 0;
     }
 
     &.left {
-      background: linear-gradient(-90deg, transparentize($color: #0a0c1a, $amount: 1) 0%, #0a0c1a 90%);
+      background: linear-gradient(-90deg, transparentize($color: $obsidianBlack, $amount: 1) 0%, $obsidianBlack 90%);
       left: 0;
     }
   }

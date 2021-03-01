@@ -192,7 +192,7 @@
       }
 
       @media screen and (min-width: $mobile) {
-        margin: 110px 0 0 !important;
+        margin: 90px 0 0 !important;
         &:hover {
 
           i {
@@ -236,7 +236,7 @@
         width: 100%;
         height: 100%;
         padding: 25px !important;
-        background-color: transparentize($color: #000000, $amount: 0.7);
+        background-color: transparentize($color: $trueBlack, $amount: 0.7);
         border-radius: $borderRadius;
 
         .featureItemIcon {
@@ -554,30 +554,6 @@
     margin-top: 0;
   }
 
-  //&::before, &::after {
-  //  background: $zBgGradient;
-  //  background-blend-mode: overlay, normal, normal, color-dodge, normal;
-  //  border-radius: 6px;
-  //  content: '';
-  //  height: 100%;
-  //  left: 0;
-  //  mix-blend-mode: normal;
-  //  position: absolute;
-  //  top: 0;
-  //  transition: filter $transition1;
-  //  width: 100%;
-  //  will-change: filter;
-  //  z-index: -1;
-  //}
-
-  //&::before {
-  //  filter: blur(5px) brightness(100%);
-  //}
-  //
-  //&::after {
-  //  filter: blur(48px) brightness(100%);
-  //}
-
   .grayText {
     max-width: 535px;
   }
@@ -676,7 +652,7 @@
       &:not(.-active) {
         & > .header {
           border-radius: $borderRadiusBig !important;
-          background-color: #0A0C1A !important;
+          background-color: $obsidianBlack !important;
         }
 
       }
@@ -686,14 +662,14 @@
         display: flex;
         align-items: center;
         color: $whiteFaded;
-        transition: background, border $transition2;
+        transition: all $transitionMedium !important;
         border-radius: $borderRadiusBig $borderRadiusBig 0 0 !important;
-        will-change: background, border;
+        will-change: all !important;
         border: none !important;
         letter-spacing: 0.01em;
         padding: 30px;
         height: 70px;
-        background-color: lighten(#0A0C1A, 15) !important;
+        background-color: lighten($obsidianBlack, 15) !important;
 
         @media screen and (max-width: $mobile) {
           font-size: 18px;
@@ -703,7 +679,7 @@
 
 
         &:hover {
-          background: $violet !important;
+          background-color: $violet !important;
         }
 
         span {
@@ -718,12 +694,12 @@
 
       & > .body {
         background: rgba(0, 0, 0, 0.4) !important;
-        border-radius: $borderRadiusBig;
+        border-radius: 0 0 $borderRadiusBig $borderRadiusBig;
         overflow: hidden;
 
         & > .content {
-          border-radius: $borderRadiusBig;
-          padding: 10px !important;
+          border-radius: 0 0 $borderRadiusBig $borderRadiusBig;
+          padding: 0 !important;
           background: rgba(0, 0, 0, 0.4) !important;
 
 
@@ -900,7 +876,7 @@
           }
 
           .featureHeadline {
-            font-size: 24px;
+            font-size: 22px;
             line-height: 140%;
             letter-spacing: 0.01em;
             margin-top: 20px;
@@ -1126,15 +1102,6 @@
       padding: 1rem 0 !important;
     }
 
-    #zksync-vs-rollup-solutions {
-      .collapsible.-dark._width-full > .item > .body > .content {
-        td, th {
-          font-size: 16px !important;
-          padding: .4rem !important;
-        }
-      }
-    }
-
     .featuresContainer {
       margin: 10px auto 10px !important;
       padding: 0 !important;
@@ -1147,7 +1114,6 @@
     .featuresContainer .featuresGrid .featureItem {
       flex-wrap: wrap !important;
       height: auto;
-      background-color: rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
 
@@ -1313,40 +1279,24 @@
           &:not(.-active) {
             & > .header {
               border-radius: $borderRadiusSm !important;
-              background-color: #0A0C1A !important;
+              background-color: $obsidianBlack !important;
             }
-
           }
 
+
           & > .header {
-            font: bold 22px/120% $grotesk;
-            display: flex;
-            align-items: center;
-            color: $whiteFaded;
-            transition: background, border $transition2;
-            border-radius: $borderRadiusSm $borderRadiusSm 0 0 !important;
-            will-change: background, border;
-            border: none !important;
-            letter-spacing: 0.01em;
-            background-color: lighten(#0A0C1A, 15) !important;
-
+            font: bold 16px/50px $grotesk;
+            transition: none !important;
+            will-change: none !important;
             padding: 10px !important;
-            font-size: 16px !important;
             height: 50px !important;
-            line-height: 50px !important;
-
+            border-radius: 0 !important;
             &:hover {
-              background: $violet !important;
+              background-color: initial !important;
             }
-
-            span {
-              color: $white;
-              margin-left: 7px;
-            }
-
-            i.icon {
-              margin-left: auto;
-            }
+          }
+          &.-active > .header {
+            background-color: $violet !important;
           }
 
           & > .body {
@@ -1401,6 +1351,10 @@
 
       .reviewsContainer {
         display: block !important;
+        & > .container
+        {
+          width: auto !important;
+        }
       }
 
       .reviewHeader {

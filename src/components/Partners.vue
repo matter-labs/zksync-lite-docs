@@ -1,16 +1,22 @@
 <template>
-  <div class="indexTextBlock _padding-y-2 _margin-y-3">
+  <div id="partners"  class="_padding-y-2 _margin-y-2 _hidden-md-and-down">
     <i-container>
-      <a id="partners"/>
       <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
-        Embraced by for<span>eth</span>inkers
+        A growing
+        <emphasis brand-name="" show-logo="true"/>
+        movement
       </div>
-      <div class="sponsorsContainer _margin-top-5" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1200">
+      <div class="subheaderText grayText">
+        Join the for<span>eth</span>inkers in the
+        <emphasis/>
+        ecosystem
+      </div>
+      <div class="sponsorsContainer _margin-top-1" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1200">
         <a
           v-for="(singlePartner) in partnersData"
           :id="singlePartner.id"
           :key="singlePartner.id"
-          :href="singlePartner.link"
+          :href="!singlePartner.link ? `https://matterlabs.medium.com/leading-defi-projects-and-exchanges-invest-to-bring-solidity-to-zksync-9a3df978f843` : singlePartner.link"
           class="antilink"
           target="_blank"
         >
@@ -25,173 +31,149 @@
   </div>
 </template>
 <script>
+import Emphasis from "@/components/Emphasis";
+
 export default {
   name: "Partners",
+  components: { Emphasis },
   props: {
     partnersData: {
       type: Array,
       default: () => {
         return [
           {
-            id: "ethereumFoundation",
-            link: "https://medium.com/matter-labs/grant-from-the-ethereum-foundation-for-matter-labs-64338f3dd938",
-            img: "ethereumFoundation.svg",
-            alt: "Ethereum Foundation",
-            title: "Grant from the Ethereum Foundation for zkSync",
-          },
-          {
-            id: "dekryptcapital",
-            link: "https://dekrypt.capital/",
-            img: "dekryptcapital.svg",
-            alt: "Dekrypt Capital investment firm",
-            title: "Grant from the Dekrypt Capital for zkSync",
-          },
-          {
-            id: "hashed",
-            link: "https://www.hashed.com/",
-            img: "hashed.svg",
-            alt: "Hashed blockchain experts and builders",
-            title: "Grant from the Hashed for zkSync",
-          },
-          {
-            id: "aave",
-            link: "https://aave.com",
-            img: "aave.svg",
-            alt: "Aave SAGL",
-            title: "Aave SAGL",
-          },
-          {
-            id: "Balancer",
-            link: "https://balancer.exchange",
-            img: "balancer.svg",
-            alt: "Balancer Exchange",
-            title: "Balancer Exchange",
-          },
-          {
-            id: "1inch",
-            link: "https://1inch.exchange",
-            img: "1inch.svg",
-            alt: "1inch Exchange",
-            title: "1inch Exchange",
-          },
-          {
-            id: "curve",
-            link: "https://zksync.curve.fi",
-            img: "curve.svg",
-            alt: "Curve + zkSync",
-            title: "Curve + zkSync",
-          },
-          {
-            id: "binance",
-            link: "https://www.binance.com",
-            img: "binance.svg",
-            alt: "Binance",
-            title: "Binance",
-          },
-          {
             id: "coinbase",
-            link: "https://www.coinbase.com",
-            img: "coinbase-ventures.svg",
+            img: "coinbase.svg",
             alt: "Coinbase Ventures",
             title: "Coinbase Ventures",
           },
           {
-            id: "imtoken",
-            link: "https://token.im",
-            img: "imtoken.svg",
-            alt: "imToken Ventures",
-            title: "imToken Ventures",
-          },
-          {
-            id: "loopring",
-            link: "https://loopring.org",
-            img: "loopring.svg",
-            alt: "LOOPRING WALLET",
-            title: "LOOPRING WALLET",
-          },
-          {
-            id: "argent",
-            link: "https://www.argent.xyz",
-            img: "argent.svg",
-            alt: "Argent Wallet",
-            title: "Argent Wallet",
-          },
-          {
-            id: "mykey",
-            link: "https://mykey.org",
-            img: "mykey.svg",
-            alt: "MYKEY Wallet",
-            title: "MYKEY Wallet",
-          },
-          {
             id: "huobi",
-            link: "https://www.huobi.com",
             img: "huobi.svg",
             alt: "Huobi Global",
             title: "Huobi Global",
           },
           {
-            id: "flexa",
-            link: "https://flexa.network",
-            img: "flexa.svg",
-            alt: "Flexa payments",
-            title: "Flexa payments",
+            id: "binance",
+            img: "binance.svg",
+            alt: "Binance",
+            title: "Binance",
           },
           {
             id: "moonpay",
-            link: "https://www.moonpay.com",
             img: "moonpay.svg",
             alt: "Moon Pay",
             title: "Moon Pay",
           },
           {
             id: "ripio",
-            link: "https://www.ripio.com",
             img: "ripio.svg",
             alt: "Ripio",
             title: "Ripio",
           },
           {
-            id: "dragonfly",
-            link: "https://www.dcp.capital/",
-            img: "dragonfly.svg",
-            alt: "Dragonfly Capital",
-            title: "Investment from the Dragonfly Capital for zkSync",
+            id: "curve",
+            img: "curve.svg",
+            alt: "Curve + zkSync",
+            title: "Curve + zkSync",
           },
           {
-            id: "zkv",
-            link: "https://zkvalidator.com",
-            img: "zkv.svg",
-            alt: "ZKValidator",
-            title: "ZKValidator",
+            id: "aave",
+            img: "aave.svg",
+            alt: "Aave SAGL",
+            title: "Aave SAGL",
           },
           {
-            id: "usv",
-            link: "https://www.usv.com",
-            img: "usv.svg",
-            alt: "Union Square Ventures",
-            title: "Union Square Ventures",
+            id: "loopring",
+            img: "loopring.svg",
+            alt: "LOOPRING WALLET",
+            title: "LOOPRING WALLET",
           },
           {
-            id: "placeholder",
-            link: "https://www.placeholder.vc/",
-            img: "placeholder.svg",
-            alt: "Placeholder Venture Capital",
-            title: "Investment from the Placeholder for the Matter Labs",
+            id: "Balancer",
+            img: "balancer.svg",
+            alt: "Balancer Exchange",
+            title: "Balancer Exchange",
+          },
+          {
+            id: "1inch",
+            img: "1inch.svg",
+            alt: "1inch Exchange",
+            title: "1inch Exchange",
+          },
+          {
+            id: "argent",
+            img: "argent.svg",
+            alt: "Argent Wallet",
+            title: "Argent Wallet",
+          },
+          {
+            id: "imtoken",
+            img: "imtoken.svg",
+            alt: "imToken Ventures",
+            title: "imToken Ventures",
+          },
+          {
+            id: "mykey",
+            img: "mykey.svg",
+            alt: "MYKEY Wallet",
+            title: "MYKEY Wallet",
+          },
+          {
+            id: "flexa",
+            img: "flexa.svg",
+            alt: "Flexa payments",
+            title: "Flexa payments",
           },
           {
             id: "coingecko",
-            link: "https://coingecko.ventures",
             img: "coingecko.svg",
             alt: "CoinGecko Ventures",
             title: "CoinGecko Ventures",
           },
           {
-            id: "1kx",
-            link: "https://t.co/j9z0U8fHDL?amp=1",
-            img: "1kx.svg",
-            alt: "1kx Token network fund",
-            title: "Funding from the 1kx for zkSync",
+            id: "Storj",
+            link: "https://twitter.com/kleffew94/status/1360260821524369410",
+            img: "storj.svg",
+            alt: "Decentralized Cloud Storage",
+            title: "Coop w/t zkSync will decrease transaction fees, increase privacy, and enable STORJ nodes to interact directly with the world of DeFi",
+          },
+
+          {
+            id: "stablepay",
+            link: "https://stablepayio.medium.com/update-stablepay-integrates-the-zksync-l2-protocol-2cc3a9b458be",
+            img: "stablepay.svg",
+            alt: "StablePay decentralized payment platform",
+            title: "Update: StablePay integrates the zkSync L2 protocol",
+          },
+
+          {
+            id: "Golem",
+            link: "https://blog.golemproject.net/zksync/",
+            img: "golem.svg",
+            alt: "The Golem Network",
+            title: "Sliding (we mean - rolling!) into Layer 2 with zkSync🌀: scalability on Golem + Ethereum",
+          },
+          {
+            id: "Gitcoin",
+            link: "https://gitcoin.co/blog/gitcoin-grants-round-7/",
+            img: "gitcoin.svg",
+            alt: "Gitcoin",
+            title: "Gitcoin Grants R7 Improvements: Scalability & Identity thanks to Layer 2 Integration w/ zkSync",
+          },
+
+          {
+            id: "Numio",
+            link: "https://twitter.com/GetNumio/status/1346421335438872576",
+            img: "numio.png",
+            alt: "Numio",
+            title: "Numio is using zkRollups from zkSync in the mobile payments app",
+          },
+          {
+            id: "zkv",
+            img: "zkv.svg",
+            alt: "ZKValidator",
+            title: "ZKValidator",
           },
         ];
       },

@@ -1,6 +1,7 @@
 <template>
   <div class="indexPage">
     <z-hero/>
+    <Partners/>
     <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4"/>
     <about/>
     <Comparison/>
@@ -169,9 +170,11 @@ import ZButton from "@/components/ZButton";
 import ZCta from "@/components/ZCta";
 import ZHero from "@/components/ZHero";
 import Comparison from "@/components/Comparison";
+import Partners from "@/components/Partners";
 
 export default {
   components: {
+    Partners,
     Comparison,
     About,
     ZCta,

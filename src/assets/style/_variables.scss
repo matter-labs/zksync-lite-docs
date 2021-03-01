@@ -2,10 +2,12 @@
 $white: #fff;
 $gray: #9eaebb;
 $black: #242424;
+$trueBlack: #000;
 $violet: #4e529a;
 $green: #1d9b4a;
 $darkViolet: #171A49; //MajorDark
 $darkBlack: #11142b;
+$obsidianBlack: #0a0c1a;
 $lightViolet: #8c8dfc;
 $red: #F25F5C;
 $muted: #565656;
@@ -42,12 +44,9 @@ $zkColorTxtCommon: $white;
 $zkColorTxtFaded: rgba(255, 255, 255, 0.5);
 $zkColorTxtFadedLight: rgba(255, 255, 255, 0.3);
 
-$zkColorBg: #11142B;
 $zkColorBgFadedDark: rgba(0, 0, 0, 0.3);
 $zkColorBgButton: #121429;
 
-
-$zkColorBorderMedium: rgba(0, 0, 0, 0.3);
 $zkColorBorderLight: rgba(255, 255, 255, 0.1);
 
 $zkColorHover: rgba(0, 0, 0, 0.4);
