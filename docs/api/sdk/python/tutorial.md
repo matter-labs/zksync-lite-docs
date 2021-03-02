@@ -15,15 +15,15 @@ ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 $ pip install git+https://github.com/zksync-sdk/zksync-python.git 
 ```
 
-Unfortunately, currently SDK is not published on <pip>, thus install the dependency through the repository is
+Unfortunately, currently, SDK is not published on <pip>, thus install the dependency through the repository is
 the only option.
 
-## Setup library
+## Setup crypto library
 For using this library:
  1. You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
- 2. Set env variable `ZK_SYNC_LIBRARY_PATH` with path to the downloaded library 
+ 2. Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library 
 
-## Initialize library
+## Initialize crypto library
 ```
 from zksync_sdk import ZkSyncLibrary
 
@@ -32,7 +32,7 @@ lib = ZkSyncLibrary()
 
 ## Connecting to zkSync network
 
-To interact with Sync network users need to know the endpoint of the operator node.
+To interact with zkSync network users need to know the endpoint of the operator node.
 
 ```python
 from zksync_sdk import HttpJsonRPCTransport, ZkSyncProviderV01, network
@@ -42,13 +42,13 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 
 ## Ethereum signer
 
-Ethereum signer is mandatory for sending both L1 and L2 transactions, since L2 transactions require an Ethereum
+Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
 signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
 key, but such a wallet will only be able to perform read requests to the zkSync server.
 
 Ethereum signer is represented by the `EthereumSignerInterface` abstract class from `zksync_sdk.ethereum_signer.interface`.
 
-By default, there exist implementation for web3 version of signer.
+By default, there is an implementation for web3 signer.
 
 ```python
 from zksync_sdk import EthereumSignerWeb3
@@ -62,9 +62,9 @@ ethereum_signer = EthereumSignerWeb3(account=account)
 ## Creating a Wallet
 
 To control your account in zkSync, use the `Wallet` object. It can sign transactions with keys stored in
-`ZkSyncSigner` and send transaction to zkSync network using `ZkSyncProviderInterface`.
+`ZkSyncSigner` and send a transaction to zkSync network using `ZkSyncProviderInterface`.
 
-In order to create a `Wallet` object, you have to initialize `ZkSyncSigner`
+To create a `Wallet` object, you have to initialize `ZkSyncSigner`
 
 ```python
 from web3 import Account
@@ -79,7 +79,8 @@ signer_v2 = ZkSyncSigner.from_seed(library, b"seed")
 signer_v3 = ZkSyncSigner(library, b"private_key")
 ```
 
-For creating `Wallet` we have to create `EthereumProvider`.
+For creating `Wallet` we have to create:
+ `EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`, `ZkSyncSigner`  .
 
 ```python
 from web3 import Web3, HTTPProvider, Account
@@ -111,7 +112,7 @@ wallet = Wallet(ethereum_provider=ethereum_provider, zk_signer=signer,
 
 ## Depositing assets from Ethereum into zkSync
 
-Depositing requires `Wallet` object to be created with an access to the Ethereum signer.
+Depositing requires `Wallet` object to be created with access to the Ethereum signer.
 
 We are going to deposit `1.0 USDT` to our zkSync account.
 
@@ -133,7 +134,7 @@ You don't need to approve a deposit to transfer ETH.
 To control assets in zkSync network, an account must register a separate public key once.
 
 ```python
-if not wallet.is_signing_key_set():
+if not await wallet.is_signing_key_set():
     await wallet.set_signing_key("ETH", eth_auth_data=ChangePubKeyEcdsa())
 ```
 
@@ -164,7 +165,7 @@ tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            amount=Decimal("0.01"), token="USDC")
 
 ```
-For better controlling you can optionally provide `nonce` and `fee`
+For better controlling, you can optionally provide `nonce` and `fee`
 
 ## Withdrawing funds back to Ethereum
 
