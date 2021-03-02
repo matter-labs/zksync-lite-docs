@@ -6,7 +6,13 @@ First public release of the updated zkSync.io landing page design
 
 ## CHANGELOG.md
 
-⌛️ Coming soon
+### v.2.1.1 🗓 1.03.2021
+
+---
+
+* Partners block addded 
+* Tables purified
+* Code optimized
 
 ## Build Setup
 

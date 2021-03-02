@@ -20,7 +20,7 @@
       <div v-if="currentItem>0" class="gradient left"/>
     </transition>
     <i-container ref="container">
-      <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition}px)`}">
+      <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition-scrollOffset}px)`}">
         <a
           v-for="(singleReview) in reviewsData"
           :id="singleReview.id"
@@ -114,6 +114,7 @@ export default {
       totalItems: this.reviewsData.length,
       currentItem: 0,
       displayRightArrow: true,
+      scrollOffset: 0,
     };
   },
   computed: {
@@ -121,15 +122,16 @@ export default {
       if (this.$refs.container) {
         const inViewNow = Math.max(1, this.itemsInView());
         if (inViewNow === 1) {
-          return Math.max(0, this.currentItem * (286 + 20) - 20);
+          return Math.max(0, this.currentItem * 257 - 10);
         }
       }
-      return Math.max(0, this.currentItem * (286 + 20) - 20);
+      return Math.max(0, this.currentItem * 257 - 10);
     },
   },
   watch: {
     currentItem() {
       this.checkArrowDisplay();
+      this.scrollOffset = 0;
     },
   },
   mounted() {
@@ -140,17 +142,25 @@ export default {
     }, 0);
     window.addEventListener("resize", this.checkArrowDisplay);
     const galleryBlock = document.querySelector(".reviewsContainer");
-    new Hammer(galleryBlock)
-      .on("swiperight", () => {
-        if (this.currentItem > 0) {
-          this.scrollItem("minus");
+    new Hammer(galleryBlock).on("pan", (e) => {
+      if (e.direction !== 2 && e.direction !== 4) {
+        return;
+      }
+      if (!e.isFinal) {
+        this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
+      } else {
+        if (Math.abs(this.scrollOffset) > 50) {
+          if (Math.sign(this.scrollOffset) < 0) {
+            if (this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
+              this.scrollItem("plus");
+            }
+          } else if (this.currentItem > 0) {
+            this.scrollItem("minus");
+          }
         }
-      })
-      .on("swipeleft", () => {
-        if (this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
-          this.scrollItem("plus");
-        }
-      });
+        this.scrollOffset = 0;
+      }
+    });
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.checkArrowDisplay);
@@ -188,6 +198,7 @@ export default {
       const inViewNow = Math.max(1, this.itemsInView());
       this.displayRightArrow = !(inViewNow > 1 && this.currentItem + inViewNow >= this.totalItems);
     },
+
     /**
      * @param img
      * @returns {any}

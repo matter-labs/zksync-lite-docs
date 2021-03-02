@@ -4,8 +4,8 @@
       <thead>
       <tr>
         <th ></th>
-        <th class="_text-center">SNARK<br>based</th>
-        <th class="_text-center">STARK<br>based</th>
+        <th class="_text-center _border-left">SNARK<br>based</th>
+        <th class="_text-center _border-left _border-right">STARK<br>based</th>
         <th class="_text-center">
           <emphasis :show-logo="true" brand-name=""/>
         </th>

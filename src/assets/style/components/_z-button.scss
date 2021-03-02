@@ -61,7 +61,7 @@
     box-shadow: none !important;
     border: none !important;
     @media (min-width: $mobile) {
-      //border-color: #0a0c1a !important;
+      //border-color: $obsidianBlack !important;
       color: $white !important;
       background: lighten(#121429, 10) !important;
       &::after,

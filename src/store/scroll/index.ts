@@ -1,10 +1,12 @@
 import { GetterTree, MutationTree } from "vuex";
-import { RootState } from "~/store";
+import { RootState } from "@/store";
 
-export const state = () => ({
-  lastScroll: false as false | Number,
-  lastPath: "" as String,
-});
+export const state = () => {
+  return {
+    lastScroll: false as false | Number,
+    lastPath: "" as String,
+  };
+};
 
 export type ScrollModuleState = ReturnType<typeof state>;
 

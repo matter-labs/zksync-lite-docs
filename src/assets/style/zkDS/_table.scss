@@ -12,7 +12,7 @@
     tr {
       & > td, th {
         vertical-align: middle;
-        border: 1px solid $white !important;
+        border: 1px solid $gray;
         font-size: 18px;
         padding: 0.6rem 1.2rem;
         word-break: normal;
@@ -42,13 +42,11 @@
 
         &._bg-red {
           text-align: center;
-          //background: linear-gradient(91.83deg, #bb3b7f 2.26%, rgb(218, 74, 87) 95.81%) !important;
           background: #990000 !important;
         }
 
         &._bg-green {
           text-align: center;
-          //background: #56ac6a80 linear-gradient(91.83deg, rgb(140, 207, 64) 2.26%, rgb(193, 210, 72) 95.81%) !important;
           background: #274E12 !important;
         }
       }
@@ -62,6 +60,7 @@
 
       & > td {
         word-break: normal;
+
 
         &:first-child,
         &:last-child {
@@ -81,34 +80,20 @@
     }
   }
 
-  .tg-rrgg {
-    text-align: left;
-    vertical-align: top
-  }
-
-  .tg-95qi {
-    color: $white;
-    font-weight: bold;
-    text-align: left;
-    vertical-align: top
-  }
-
-  .tg-pta1 {
-    color: $white;
-    text-align: left;
-    vertical-align: top
-  }
-
   @media (max-width: $mobile) {
-    th, td {
-      padding: 0.4rem 0.5rem;
-      font-size: 16px !important;
-      word-break: break-word !important;
+    tr {
+      & > th, & > td {
+        padding: 0.3rem !important;
+        font-size: 15px !important;
+        white-space: normal !important;
+        word-break: normal !important;
+      }
     }
 
     tr > td:first-child
     {
       width: 25%;
+      padding: 0.5rem 0.5rem 0.5rem 1rem !important;
     }
 
   }
