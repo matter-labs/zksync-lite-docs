@@ -18093,6 +18093,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"vue-class-component@npm:^7.2.6":
+  version: 7.2.6
+  resolution: "vue-class-component@npm:7.2.6"
+  peerDependencies:
+    vue: ^2.0.0
+  checksum: 1cc05c1b69525e012a293f7611f574bbdd052bfc43a1c3577e34248760fde9a1b9d1ec7492cb5288fbba5063f68eda07c8095679f8a66116bfc81161285c15ba
+  languageName: node
+  linkType: hard
+
 "vue-cli-plugin-pnp@npm:^1.0.0":
   version: 1.0.0
   resolution: "vue-cli-plugin-pnp@npm:1.0.0"
@@ -19080,6 +19089,7 @@ fsevents@~2.3.1:
     ts-loader: ^8.0.17
     typescript: <=4.1.5
     vue: ^2.6.12
+    vue-class-component: ^7.2.6
     vue-cli-plugin-pnp: ^1.0.0
     vue-loader: ^15.9.6
     vue-prism-editor: ^1.2.2

@@ -1,8 +1,6 @@
 @import "../variables";
 
 #partners {
-  //background-color: $obsidianBlack;
-
   .h2 {
     span {
       color: $white;
@@ -24,13 +22,12 @@
 
 
     a {
-      width: 16%;
+      width: 20%;
       position: relative;
       display: flex;
       align-items: baseline;
       justify-content: center;
-      padding: 0;
-      margin: 3% 2%;
+      padding: 3% 2%;
 
 
       img {
