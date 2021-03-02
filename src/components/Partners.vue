@@ -1,5 +1,5 @@
 <template>
-  <div id="partners"  class="_padding-y-2 _margin-y-2 _hidden-md-and-down">
+  <div id="partners" class="_padding-y-2 _margin-bottom-0 _margin-top-2 _hidden-md-and-down">
     <i-container>
       <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
         A growing
@@ -11,7 +11,7 @@
         <emphasis/>
         ecosystem
       </div>
-      <div class="sponsorsContainer _margin-top-1 _margin-bottom-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1200">
+      <div class="sponsorsContainer _margin-y-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1200">
         <a
           v-for="(singlePartner) in partnersData"
           :id="singlePartner.id"
