@@ -10,6 +10,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    .badge img {
+      min-height: 35px;
+    }
   }
 
   .sponsorsContainer {
@@ -25,10 +29,10 @@
       width: 20%;
       position: relative;
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: center;
-      padding: 3% 2%;
-
+      padding: 0 2%;
+      height: 120px;
 
       img {
         display: inline-flex;
@@ -36,7 +40,6 @@
         transition: all $transitionMedium;
         width: 100%;
         height: auto;
-        margin: auto;
         object-fit: contain;
       }
 
