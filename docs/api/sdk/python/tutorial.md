@@ -175,3 +175,12 @@ await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
 generated and verified by the mainnet contract.
+
+## Getting information about zk sync transaction 
+
+For getting information about tx we have to use ZkSyncProviderV01
+
+```python
+provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
+tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
+```
