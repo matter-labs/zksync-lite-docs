@@ -17,6 +17,7 @@ zkSync support has been implemented for various platforms:
 - [Rust](./sdk/rust)
 - [Android (Java)](./sdk/java)
 - [iOS (Swift)](./sdk/swift)
+- [Python](./sdk/python)
 
 ## Ecosystem libraries
 
