@@ -15,7 +15,7 @@ ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 $ pip install git+https://github.com/zksync-sdk/zksync-python.git 
 ```
 
-Unfortunately, currently, SDK is not published on <pip>, thus install the dependency through the repository is
+Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is
 the only option.
 
 ## Setup crypto library
@@ -24,7 +24,7 @@ For using this library:
  2. Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library 
 
 ## Initialize crypto library
-```
+```python
 from zksync_sdk import ZkSyncLibrary
 
 lib = ZkSyncLibrary()
@@ -154,7 +154,7 @@ To list all tokens of this account at once, use `account_info`:
 ```python
 account_state = await wallet.get_account_state()
 committed_eth_balance = account_state.committed.balances.get("ETH")
-verified_dai_balance = account_state.balance.balances.get("DAI")
+verified_dai_balance = account_state.verified.balances.get("DAI")
 ```
 
 ## Making a transfer in zkSync
@@ -163,9 +163,8 @@ For making transfer to another account you just need to set receiver amount and 
 ```python
 tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            amount=Decimal("0.01"), token="USDC")
-
 ```
-For better controlling, you can optionally provide `nonce` and `fee`
+If you want more control over the transaction, you can optionally provide `nonce` and `fee`
 
 ## Withdrawing funds back to Ethereum
 
