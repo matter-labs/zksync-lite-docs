@@ -61,6 +61,7 @@
       & > td {
         word-break: normal;
 
+
         &:first-child,
         &:last-child {
           border-width: 0;
@@ -92,6 +93,7 @@
     tr > td:first-child
     {
       width: 25%;
+      padding: 0.5rem 0.5rem 0.5rem 1rem !important;
     }
 
   }

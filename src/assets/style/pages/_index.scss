@@ -1270,7 +1270,7 @@
 
         > .item {
           margin: 20px 0 !important;
-          border-radius: $borderRadiusSm;
+          border-radius: $borderRadiusBig;
           text-align: left;
           justify-content: flex-start;
           background: $darkBlack;
@@ -1278,19 +1278,25 @@
 
           &:not(.-active) {
             & > .header {
-              border-radius: $borderRadiusSm !important;
+              border-radius: $borderRadiusBig;
               background-color: $obsidianBlack !important;
             }
           }
 
+          &.-active {
+          ;
+            border-radius: $borderRadiusBig $borderRadiusBig 0 0;
+
+          }
+
 
           & > .header {
-            font: bold 16px/50px $grotesk;
+            font: bold 18px/20px $grotesk;
             transition: none !important;
             will-change: none !important;
-            padding: 10px !important;
-            height: 50px !important;
-            border-radius: 0 !important;
+            padding: 20px !important;
+            height: 60px !important;
+            /*padding: 0.5rem 0.5rem 0.5rem 1rem !important;*/
             &:hover {
               background-color: initial !important;
             }

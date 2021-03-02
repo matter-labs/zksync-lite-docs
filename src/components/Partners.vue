@@ -11,12 +11,12 @@
         <emphasis/>
         ecosystem
       </div>
-      <div class="sponsorsContainer _margin-top-1" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1200">
+      <div class="sponsorsContainer _margin-top-1 _margin-bottom-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1200">
         <a
           v-for="(singlePartner) in partnersData"
           :id="singlePartner.id"
           :key="singlePartner.id"
-          :href="!singlePartner.link ? `https://matterlabs.medium.com/leading-defi-projects-and-exchanges-invest-to-bring-solidity-to-zksync-9a3df978f843` : singlePartner.link"
+          :href="!singlePartner.link ? `https://medium.com/matter-labs/leading-defi-projects-and-exchanges-invest-to-bring-solidity-to-zksync-9a3df978f824` : singlePartner.link"
           class="antilink"
           target="_blank"
         >
@@ -41,36 +41,6 @@ export default {
       type: Array,
       default: () => {
         return [
-          {
-            id: "coinbase",
-            img: "coinbase.svg",
-            alt: "Coinbase Ventures",
-            title: "Coinbase Ventures",
-          },
-          {
-            id: "huobi",
-            img: "huobi.svg",
-            alt: "Huobi Global",
-            title: "Huobi Global",
-          },
-          {
-            id: "binance",
-            img: "binance.svg",
-            alt: "Binance",
-            title: "Binance",
-          },
-          {
-            id: "moonpay",
-            img: "moonpay.svg",
-            alt: "Moon Pay",
-            title: "Moon Pay",
-          },
-          {
-            id: "ripio",
-            img: "ripio.svg",
-            alt: "Ripio",
-            title: "Ripio",
-          },
           {
             id: "curve",
             img: "curve.svg",
@@ -100,6 +70,36 @@ export default {
             img: "1inch.svg",
             alt: "1inch Exchange",
             title: "1inch Exchange",
+          },
+          {
+            id: "coinbase",
+            img: "coinbase.svg",
+            alt: "Coinbase Ventures",
+            title: "Coinbase Ventures",
+          },
+          {
+            id: "huobi",
+            img: "huobi.svg",
+            alt: "Huobi Global",
+            title: "Huobi Global",
+          },
+          {
+            id: "binance",
+            img: "binance.svg",
+            alt: "Binance",
+            title: "Binance",
+          },
+          {
+            id: "moonpay",
+            img: "moonpay.svg",
+            alt: "Moon Pay",
+            title: "Moon Pay",
+          },
+          {
+            id: "ripio",
+            img: "ripio.svg",
+            alt: "Ripio",
+            title: "Ripio",
           },
           {
             id: "argent",
@@ -168,12 +168,6 @@ export default {
             img: "numio.png",
             alt: "Numio",
             title: "Numio is using zkRollups from zkSync in the mobile payments app",
-          },
-          {
-            id: "zkv",
-            img: "zkv.svg",
-            alt: "ZKValidator",
-            title: "ZKValidator",
           },
         ];
       },
