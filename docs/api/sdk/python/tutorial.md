@@ -176,7 +176,7 @@ await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
 generated and verified by the mainnet contract.
 
-## Getting information about zk sync transaction 
+## Getting information about zkSync transaction 
 
 For getting information about tx we have to use ZkSyncProviderV01
 
