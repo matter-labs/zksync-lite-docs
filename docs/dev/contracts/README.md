@@ -1,6 +1,6 @@
 # Smart contracts
 
-zkSync is on track to introduce high-efficient, secure, Turing-complete, multi-language smart contracts.
+zkSync is on track to introduce highly efficient, secure, Turing-complete, multi-language smart contracts.
 
 ## Table of contents
 
@@ -25,7 +25,7 @@ Any DeFi project can be migrated to zkSync, since most of the existing Solidity 
 
 ## Sync VM
 
-The Sync VM is a high-efficient, Turing-complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
+The Sync VM is a highly efficient, Turing-complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
 
 State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
 for high-load, allowing to execute transactions in a blink of an eye.
