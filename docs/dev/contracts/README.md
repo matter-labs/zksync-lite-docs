@@ -1,6 +1,6 @@
 # Smart contracts
 
-zkSync is on track to introduce highly efficient, secure, Turing-complete, multi-language smart contracts.
+zkSync is on track to introduce highly efficient, secure, Turing complete, multi-language smart contracts.
 
 ## Table of contents
 
@@ -12,7 +12,7 @@ zkSync is on track to introduce highly efficient, secure, Turing-complete, multi
 
 The zkSync smart contract programming model inherits that of Ethereum.
 
-Both Zinc and Solidity languages are Turing-complete, so you can use unbounded loops, recursion, vectors and maps of
+Both Zinc and Solidity languages are Turing complete, so you can use unbounded loops, recursion, vectors and maps of
 arbitrary length, and so on. Local variables are stored on the stack or in the heap memory, whereas the contract storage
 is accessed globally. Contracts call one another via strongly-typed interfaces and have access to public storage fields.
 
@@ -25,7 +25,7 @@ Any DeFi project can be migrated to zkSync, since most of the existing Solidity 
 
 ## Sync VM
 
-The Sync VM is a highly efficient, Turing-complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
+The Sync VM is a highly efficient, Turing complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
 
 State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
 for high-load, allowing to execute transactions in a blink of an eye.
@@ -48,7 +48,7 @@ generalistic expressiveness.
 Zinc is created to fill the gap between the two worlds: to provide a smart contract language optimized for ZKP circuits,
 which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
 
-The framework includes a simple, Turing-complete, safety-focused, general-purpose language, designed specifically for
+The framework includes a simple, Turing complete, safety-focused, general purpose language, designed specifically for
 developing smart contracts and zero-knowledge proof circuits with a flat learning curve. Syntax and semantic closely
 follow [Rust](https://www.rust-lang.org/).
 
