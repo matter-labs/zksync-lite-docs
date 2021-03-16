@@ -15,12 +15,12 @@ Put the following line in your `Cargo.toml`:
 zksync = { git = "https://github.com/matter-labs/zksync", version = "0.1.1" }
 ```
 
-Unfortunately, currently SDK is not published on <crates.io>, thus specifying the dependency through the repository is
+Unfortunately, currently the SDK is not published on <crates.io>, thus specifying the dependency through the repository is
 the only option.
 
-## Connecting to zkSync network
+## Connecting to the zkSync network
 
-To interact with Sync network users need to know the endpoint of the operator node.
+To interact with the Sync network users need to know the endpoint of the operator node.
 
 ```rust
 use zksync::{Provider, Network};
@@ -34,11 +34,11 @@ Ethereum signer is mandatory for sending both L1 and L2 transactions, since L2 t
 signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
 key, but such a wallet will only be able to perform read requests to the zkSync server.
 
-Ethereum signer is represented by the `EthereumSigner` trait from `zksync_eth_signer` crate.
+The Ethereum signer is represented by the `EthereumSigner` trait from the `zksync_eth_signer` crate.
 
 By default, there exist two different implementations for that trait: `PrivateKeySigner` and `JsonRpcSigner`.
 
-First one assumes that you own your private key and can use it directly:
+The first one assumes that you own your private key and can use it directly:
 
 ```rust
 use zksync_eth_signer::PrivateKeySigner;
@@ -46,7 +46,7 @@ use zksync_eth_signer::PrivateKeySigner;
 let signer = PrivateKeySigner::new(YOUR_PRIVATE_KEY);
 ```
 
-The latter may be used if private key is managed by software which exposes personal Web3 API:
+The latter may be used if the private key is managed by software which exposes personal Web3 API:
 
 ```rust
 use zksync_eth_signer::JsonRpcSigner;
@@ -54,20 +54,20 @@ use zksync_eth_signer::JsonRpcSigner;
 let address = JsonRpcSigner::new("http://127.0.0.1:8545", None, None, None);
 ```
 
-Arguments are:
+The arguments are:
 
-- `rpc_addr`: Address of the wallet RPC server.
-- `address_or_index`: Identifier of wallet to be used. If `None`, first available wallet will be chosen.
-- `signer_type`: Whether signer adds `\x19Ethereum...` prefix to signed messages or not. If `None`, it will be deduced
+- `rpc_addr`: The address of the wallet RPC server.
+- `address_or_index`: Identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
+- `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages or not. If `None`, it will be deduced
   automatically by signing an additional message.
 - `password_to_unlock`: Sets the wallet password if it's required.
 
-Also, if your software uses custom signer, you can always provide your implementation of `EthereumSigner` trait.
+Also, if your software uses custom signer, you can always provide your implementation of the `EthereumSigner` trait.
 
 ## Creating a Wallet
 
 To control your account in zkSync, use the `zksync::Wallet` object. It can sign transactions with keys stored in
-`zksync::Signer` and send transaction to zkSync network using `zksync::Provider`.
+`zksync::Signer` and send transaction to the zkSync network using `zksync::Provider`.
 
 In order to create a `Wallet` object, you have to initialize `Credentials` which will store the private keys for a
 wallet.
@@ -86,8 +86,8 @@ let cred_1 = WalletCredentials::from_seed(address, &[0u8; 32]);
 let cred_2 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, None);
 // Generate from both zkSync and Ethereum private keys.
 let cred_3 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, Some(ETH_PRIVATE_KEY));
-// Generate from custom Ethereum signer. Ethereum private key will be assumed to be accessible through provided signer,
-// zkSync private key will be derived from Ethereum private key using a deterministic algorithm.
+// Generate from custom Ethereum signer. The Ethereum private key will be assumed to be accessible through the provided signer,
+// zkSync private key will be derived from the Ethereum private key using a deterministic algorithm.
 let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Rinkeby);
 ```
 
@@ -102,14 +102,14 @@ let wallet = Wallet::new(provider, cred).await;
 
 ## Depositing assets from Ethereum into zkSync
 
-Depositing requires `WalletCredentials` object to be created with an access to the Ethereum signer.
+Depositing requires the `WalletCredentials` object to be created with an access to the Ethereum signer.
 
 We are going to deposit `1.0 ETH` to our zkSync account.
 
 ```rust
 let one_ether = U256::from(10).pow(18.into());
 
-// Address of the server that provides an access to the Ethereum node API, e.g. `infura` or local node.
+// The address of the server that provides an access to the Ethereum node API, e.g. `infura` or local node.
 // It is required in order to interact with the Ethereum blockchain.
 let web3_address = "http://127.0.0.1:8545";
 
@@ -117,7 +117,7 @@ let ethereum = wallet.ethereum(web3_address).await?
 let deposit_tx_hash = ethereum.deposit("ETH", one_ether, wallet.address()).await?;
 ```
 
-"ETH" stands for native Ether. To transfer supported ERC20 token use ERC20 address or ERC20 symbol instead of "ETH".
+"ETH" stands for native Ether. To transfer supported ERC20 token use the ERC20 address or ERC20 symbol instead of "ETH".
 
 After the tx is submitted to the Ethereum node, we can track its status using the returned object:
 
@@ -127,13 +127,13 @@ let receipt = ethereum.wait_for_tx(deposit_tx_hash).await?;
 
 let deposit_op = receipt.priority_op().expect("Transaction receipt should hold priority operation data");
 
-// Now we can query zkSync server for information about deposit execution.
+// Now we can query the zkSync server for information about deposit execution.
 let deposit_info = wallet.provider.ethop_info(deposit_op.serial_id as u32);
 ```
 
 ## Unlocking zkSync account
 
-To control assets in zkSync network, an account must register a separate public key once.
+To control assets in the zkSync network, an account must register a separate public key once.
 
 ```rust
 if !wallet.is_signing_key_set().await? {
@@ -148,7 +148,7 @@ if !wallet.is_signing_key_set().await? {
     let change_pubkey_receipt = change_pubkey.wait_for_commit().await?;
     assert_eq!(change_pubkey_receipt.success, Some(true));
 
-    // After setting the signing key, we have to update account ID stored in the wallet.
+    // After setting the signing key, we have to update the account ID stored in the wallet.
     wallet.update_account_id().await?;
     assert!(wallet.account_id().is_some());
 }
@@ -159,10 +159,10 @@ if !wallet.is_signing_key_set().await? {
 ```rust
 use zksync::types::BlockStatus;
 
-// Committed state is not final yet
+// The committed state is not final yet
 let committedETHBalance = wallet.getBalance(BlockStatus::Committed, 'ETH').await?;
 
-// Verified state is final
+// The verified state is final
 let verifiedETHBalance = wallet.getBalance(BlockStatus::Verified, 'ETH').await?;
 ```
 
@@ -184,17 +184,17 @@ let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);
 let another_wallet = Wallet::new(provider, cred).await;
 ```
 
-We are going to transfer `0.5 ETH` to another account. Fee will be chosen automatically to be the least possible fee
-acceptable by server.
+We are going to transfer `0.5 ETH` to another account. The fee will be chosen automatically to be the least possible fee
+acceptable by the server.
 
-Note that SDK may round the transfer/fee down to the closest supported amount because the precision of transfer in
+Note that the SDK may round the transfer/fee down to the closest supported amount because the precision of transfer in
 zkSync is limited (see docs below).
 
 However, you can provide amount / fee values that won't be rounded by zkSync using methods `.amount_exact(..)` and
 `.fee_exact(..)`. In that case, ensure that your amount / fee is packable via `zksync::utils::is_token_amount_packable`
-and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via
+and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via the
 `zksync::utils::closest_packable_token_amount` / `zksync::utils::closest_packable_fee_amount` functions. Attempt to send
-a transaction with either amount or fee that aren't packable will result in transaction being rejected by server.
+a transaction with either amount or fee that aren't packable will result in the transaction being rejected by the server.
 
 ```rust
 use zksync::utils::{closest_packable_fee_amount, closest_packable_token_amount};
@@ -252,7 +252,7 @@ let withdraw_handle = wallet
   .await?;
 ```
 
-Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
+Assets will be withdrawn to the target wallet after the zero-knowledge proof of the zkSync block with this operation is
 generated and verified by the mainnet contract.
 
 We can wait until ZKP verification is complete:

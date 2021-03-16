@@ -12,7 +12,7 @@ zkSync is on track to introduce highly efficient, secure, Turing complete, multi
 
 The zkSync smart contract programming model inherits that of Ethereum.
 
-Both Zinc and Solidity languages are Turing complete, so you can use unbounded loops, recursion, vectors and maps of
+Both the Zinc and Solidity languages are Turing complete, so you can use unbounded loops, recursion, vectors and maps of
 arbitrary length, and so on. Local variables are stored on the stack or in the heap memory, whereas the contract storage
 is accessed globally. Contracts call one another via strongly-typed interfaces and have access to public storage fields.
 
@@ -49,7 +49,7 @@ Zinc is created to fill the gap between the two worlds: to provide a smart contr
 which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
 
 The framework includes a simple, Turing complete, safety-focused, general purpose language, designed specifically for
-developing smart contracts and zero-knowledge proof circuits with a flat learning curve. Syntax and semantic closely
+developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantic closely
 follow [Rust](https://www.rust-lang.org/).
 
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides an extremely powerful set of solutions for
@@ -60,7 +60,7 @@ basic principles, such as security and simplicity, will never be questioned.
 
 ### Learning Zinc
 
-Zinc programming language has an official [book](https://zinc.zksync.io/) which provides an introduction to its core
+The Zinc programming language has an official [book](https://zinc.zksync.io/) which provides an introduction to its core
 principles and conventions.
 
 ### Getting help
@@ -119,4 +119,4 @@ contract to the Rinkeby testnet.
 
 zkSync smart contracts are going mainnet in 2021.
 
-Both Zinc and Solidity languages will be supported at the same time.
+Both the Zinc and Solidity languages will be supported at the same time.
