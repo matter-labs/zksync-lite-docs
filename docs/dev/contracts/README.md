@@ -49,7 +49,7 @@ Zinc is created to fill the gap between the two worlds: to provide a smart contr
 which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
 
 The framework includes a simple, Turing complete, safety-focused, general purpose language, designed specifically for
-developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantic closely
+developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantics closely
 follow [Rust](https://www.rust-lang.org/).
 
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides an extremely powerful set of solutions for
@@ -85,7 +85,7 @@ likely be prohibited and should be omitted in order to keep the code compatible:
 
 As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify the migration process.
 
-## Choosig the framework
+## Choosing the framework
 
 <table>
   <tr>
