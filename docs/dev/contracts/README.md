@@ -72,7 +72,7 @@ email at hello@matter-labs.io.
 
 ## Solidity
 
-[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general-purpose language with a huge codebase and
+[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general purpose language with a huge codebase and
 numberous DeFi projects, a language adopted by thousands of blockchain developers from all over the world.
 
 It will be possible to deploy the most of Solidity projects almost without modifications. However, some features will
