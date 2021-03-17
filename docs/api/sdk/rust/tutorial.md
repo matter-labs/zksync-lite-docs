@@ -119,7 +119,7 @@ let deposit_tx_hash = ethereum.deposit("ETH", one_ether, wallet.address()).await
 
 "ETH" stands for native ether. To transfer a supported ERC20 token, use the ERC20 address or ERC20 symbol instead of "ETH".
 
-After the tx is submitted to the Ethereum node, we can track its status using the returned object:
+After the transaction is submitted to the Ethereum node, we can track its status using the returned object:
 
 ```rust
 use zksync::ethereum::PriorityOpHolder;
