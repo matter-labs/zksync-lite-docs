@@ -119,4 +119,4 @@ contract to the Rinkeby testnet.
 
 zkSync smart contracts are going mainnet in 2021.
 
-Both the Zinc and Solidity languages will be supported at the same time.
+Both the Zinc and Solidity languages will be supported at launch.

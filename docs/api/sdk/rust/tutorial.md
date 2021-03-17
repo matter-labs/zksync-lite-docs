@@ -187,7 +187,7 @@ let another_wallet = Wallet::new(provider, cred).await;
 We are going to transfer `0.5 ETH` to another account. The fee will be chosen automatically to be the least possible fee
 accepted by the server.
 
-Note that the SDK may round the transfer or fee down to the closest supported amount because the precision of transfers in
+Note that the SDK may round the transferred amount or the fee down to the closest supported amount because the precision of transfers in
 zkSync is limited (see docs below).
 
 However, you can provide amount and fee values that won't be rounded by zkSync: use the methods `.amount_exact(..)` and
