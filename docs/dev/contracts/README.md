@@ -18,7 +18,7 @@ is accessed globally. Contracts call one another via strongly typed interfaces a
 
 ## Composability
 
-zkSync smart contracts are able to call one another just like in the Ethereum ecosystem. Each call transaction tree is
+zkSync smart contracts are able to call one another just like Ethereum smart contracts can. Each call transaction tree is
 atomic regardless of the number of contract instances involved.
 
 Any DeFi project can be migrated to zkSync, since most of the existing Solidity code can be deployed without changes.
@@ -50,7 +50,7 @@ which is reliable and simple at the same time, and can be quickly learned by a l
 
 The framework includes a simple, Turing complete, safety-focused, general purpose language designed specifically for
 developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantics closely
-follow [Rust](https://www.rust-lang.org/).
+follow that of [Rust](https://www.rust-lang.org/).
 
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides an extremely powerful set of solutions for
 code optimization.
@@ -73,7 +73,7 @@ email at hello@matter-labs.io.
 ## Solidity
 
 [Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general-purpose language with a huge codebase and
-number of DeFi projects, a language adopted by thousands of blockchain developers from all over the world.
+numberous DeFi projects, a language adopted by thousands of blockchain developers from all over the world.
 
 It will be possible to deploy the most of Solidity projects almost without modifications. However, some features will
 likely be prohibited and should be omitted in order to keep the code compatible:

@@ -28,7 +28,7 @@ use zksync::{Provider, Network};
 let provider = Provider::new(Network::Rinkeby);
 ```
 
-## Ethereum signer
+## Choosing an Ethereum signer
 
 An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
 signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
@@ -72,7 +72,7 @@ To control your account in zkSync, use the `zksync::Wallet` object. It can sign 
 In order to create a `Wallet` object, you have to initialize credentials that will store the private keys for the
 wallet.
 
-`WalletCredentials` can be created either from a seed byte array, an Ethereum private key, or from any `EthereumSigner`
+A `WalletCredentials` object can be created from a seed byte array, an Ethereum private key, or any `EthereumSigner`
 implementation:
 
 ```rust
@@ -91,7 +91,7 @@ let cred_3 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, Some(ETH_PR
 let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Rinkeby);
 ```
 
-Using both `WalletCredentials` and `Provider`, you can create a wallet:
+Using both the `WalletCredentials` and `Provider` objects, you can create a wallet:
 
 ```rust
 use zksync::Wallet;
