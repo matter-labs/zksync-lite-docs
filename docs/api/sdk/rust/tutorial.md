@@ -1,6 +1,6 @@
 # Getting started
 
-In this tutorial we will demonstrate how to:
+In this tutorial, we will demonstrate how to:
 
 1. Connect to the zkSync network.
 1. Deposit assets from Ethereum into zkSync.
