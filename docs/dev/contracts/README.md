@@ -13,7 +13,7 @@ zkSync is on track to introduce highly efficient, secure, Turing complete, multi
 The zkSync smart contract programming model inherits that of Ethereum.
 
 Both the Zinc and Solidity languages are Turing complete, so you can use unbounded loops, recursion, vectors and maps of
-arbitrary length, and so on. Local variables are stored on the stack or in the heap memory, whereas the contract storage
+arbitrary length, and so on. Local variables are stored on the stack or the heap, whereas the contract storage
 is accessed globally. Contracts call one another via strongly typed interfaces and have access to public storage fields.
 
 ## Composability
@@ -43,7 +43,7 @@ on the zkSync platform.
 Existing ZKP frameworks lack functionality specific to smart contracts. Security and safety aspects are crucial for
 developing smart contracts since they deal with valuable financial assets. Modern smart contract languages, such as
 Simplicity or Libra's Move, deliberately made design choices that favor safety and formal verifiability of the code over
-generalistic expressiveness.
+expressiveness.
 
 Zinc is created to fill the gap between the two worlds: to provide a smart contract language optimized for ZKP circuits,
 which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
@@ -52,7 +52,7 @@ The framework includes a simple, Turing complete, safety-focused, general purpos
 developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantics closely
 follow that of [Rust](https://www.rust-lang.org/).
 
-The Zinc compiler uses LLVM as its middle-end and back-end, which provides an extremely powerful set of solutions for
+The Zinc compiler uses LLVM as its middle-end and back-end, which provides a powerful set of solutions for
 code optimization.
 
 The language is under heavy development; thus many of its aspects will eventually be improved or changed. However, the
@@ -72,11 +72,11 @@ email at hello@matter-labs.io.
 
 ## Solidity
 
-[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general purpose language with a huge codebase and
+[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a general purpose language with a huge codebase and
 numberous DeFi projects, a language adopted by thousands of blockchain developers from all over the world.
 
-It will be possible to deploy the most of Solidity projects almost without modifications. However, some features will
-likely be prohibited and should be omitted in order to keep the code compatible:
+It will be possible to deploy most Solidity projects almost without modification. However, some features will
+likely be prohibited and should be omitted to keep the code compatible:
 
 - ASM blocks with memory access
 - Facilitating calculations via overflows
@@ -94,10 +94,10 @@ As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify t
   </tr>
   <tr>
     <td>
-    If you are going to start a new project, <a href="https://zinc.zksync.io/"> embrace Zinc today!</a>
+    If you are starting a new project, <a href="https://zinc.zksync.io/"> embrace Zinc today!</a>
     </td>
     <td>
-    If you possess a large Solidity codebase, it is reasonable to wait for the Solidity support
+    If you possess a large Solidity codebase, it is reasonable to wait for Solidity support
     and start migrating to Zinc after the mainnet release.
     </td>
   </tr>

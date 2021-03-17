@@ -5,7 +5,7 @@ In this tutorial we will demonstrate how to:
 1. Connect to the zkSync network.
 1. Deposit assets from Ethereum into zkSync.
 1. Make transfers.
-1. Withdraw funds back to Ethereum mainnet.
+1. Withdraw funds back to Ethereum.
 
 ## Adding dependencies
 
@@ -15,7 +15,7 @@ Put the following line in your `Cargo.toml`:
 zksync = { git = "https://github.com/matter-labs/zksync", version = "0.1.1" }
 ```
 
-Unfortunately, the SDK is not currently published on <crates.io>; thus specifying the dependency from the repository is
+Unfortunately, the SDK is not currently published on crates.io; thus specifying the dependency from the repository is
 the only option.
 
 ## Connecting to the zkSync network
@@ -31,12 +31,12 @@ let provider = Provider::new(Network::Rinkeby);
 ## Choosing an Ethereum signer
 
 An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
-signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
+signature as part of 2-factor authentication. It is possible to create a wallet without an Ethereum private
 key, but such a wallet will only be able to perform read requests to the zkSync server.
 
 The Ethereum signer is represented by the `EthereumSigner` trait from the `zksync_eth_signer` crate.
 
-By default, there exist two different implementations for that trait: `PrivateKeySigner` and `JsonRpcSigner`.
+By default, there exist two implementations for that trait: `PrivateKeySigner` and `JsonRpcSigner`.
 
 The first one assumes that you own your private key and can use it directly:
 
@@ -58,7 +58,7 @@ The arguments are:
 
 - `rpc_addr`: The address of the wallet RPC server.
 - `address_or_index`: Identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
-- `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages or not. If `None`, it will be deduced
+- `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, it will be deduced
   automatically by signing an additional message.
 - `password_to_unlock`: Sets the wallet password if it's required.
 
@@ -102,7 +102,7 @@ let wallet = Wallet::new(provider, cred).await;
 
 ## Depositing assets from Ethereum into zkSync
 
-Depositing requires the `WalletCredentials` object to be created with an access to the Ethereum signer.
+Depositing requires the `WalletCredentials` object to be created with access to the Ethereum signer.
 
 We are going to deposit `1.0 ETH` to our zkSync account.
 
@@ -133,7 +133,7 @@ let deposit_info = wallet.provider.ethop_info(deposit_op.serial_id as u32);
 
 ## Unlocking a zkSync account
 
-To control assets in the zkSync network, an account must register a separate public key once.
+To control assets in the zkSync network, an account must register a public key once.
 
 ```rust
 if !wallet.is_signing_key_set().await? {
@@ -166,7 +166,7 @@ let committedETHBalance = wallet.getBalance(BlockStatus::Committed, 'ETH').await
 let verifiedETHBalance = wallet.getBalance(BlockStatus::Verified, 'ETH').await?;
 ```
 
-To list all tokens of this account at once, use `account_info`:
+To list all tokens of this account, use `account_info`:
 
 ```rust
 let info = wallet.account_info().await?;
@@ -184,13 +184,13 @@ let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);
 let another_wallet = Wallet::new(provider, cred).await;
 ```
 
-We are going to transfer `0.5 ETH` to another account. The fee will be chosen automatically to be the least possible fee
+We are going to transfer `0.5 ETH` to another account. The fee will be set automatically to the least possible fee
 accepted by the server.
 
 Note that the SDK may round the transferred amount or the fee down to the closest supported amount because the precision of transfers in
 zkSync is limited (see docs below).
 
-However, you can provide amount and fee values that won't be rounded by zkSync: use the methods `.amount_exact(..)` and
+However, you can provide amount and fee values that won't be rounded: use the methods `.amount_exact(..)` and
 `.fee_exact(..)` and ensure that your amount and fee are packable via `zksync::utils::is_token_amount_packable`
 and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via the
 `zksync::utils::closest_packable_token_amount` and `zksync::utils::closest_packable_fee_amount` functions. An attempt to send
@@ -211,7 +211,7 @@ let transfer_handle = wallet
   .await?;
 ```
 
-If you want to have more control over the transaction flow, you can manually request the fee and check whether it's
+For more control over the transaction flow, you can manually request the fee and check whether it's
 appropriate.
 
 ```rust
