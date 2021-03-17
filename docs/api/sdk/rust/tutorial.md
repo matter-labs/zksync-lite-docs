@@ -46,7 +46,7 @@ use zksync_eth_signer::PrivateKeySigner;
 let signer = PrivateKeySigner::new(YOUR_PRIVATE_KEY);
 ```
 
-The `JsonRpcSigner` implementation may be used if the private key is managed by software which exposes a personal Web3 API:
+The `JsonRpcSigner` implementation may be used if the private key is managed by software that exposes a personal Web3 API:
 
 ```rust
 use zksync_eth_signer::JsonRpcSigner;
