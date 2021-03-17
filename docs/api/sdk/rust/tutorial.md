@@ -109,7 +109,7 @@ We are going to deposit `1.0 ETH` to our zkSync account.
 ```rust
 let one_ether = U256::from(10).pow(18.into());
 
-// The address of the server that provides an access to the Ethereum node API, e.g. Infura or a local node.
+// The address of the server that provides an access to the Ethereum node API, for example, Infura or a local node.
 // It is required in order to interact with the Ethereum blockchain.
 let web3_address = "http://127.0.0.1:8545";
 
