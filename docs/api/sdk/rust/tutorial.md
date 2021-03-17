@@ -199,7 +199,7 @@ a transaction with either an amount or a fee that aren't packable will result in
 ```rust
 use zksync::utils::{closest_packable_fee_amount, closest_packable_token_amount};
 
-// `one_ether` is the same variable we declared above.
+// "one_ether" is the same variable we declared above.
 let transfer_amount = one_ether / 2u64.into();
 
 let transfer_handle = wallet
