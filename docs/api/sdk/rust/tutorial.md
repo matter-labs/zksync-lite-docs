@@ -91,7 +91,7 @@ let cred_3 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, Some(ETH_PR
 let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Rinkeby);
 ```
 
-Once both `WalletCredentials` and `Provider` are created, it is possible to create a wallet:
+Using both `WalletCredentials` and `Provider`, you can create a wallet:
 
 ```rust
 use zksync::Wallet;
