@@ -69,7 +69,7 @@ Also, if your software uses a custom signer, you can always provide your impleme
 To control your account in zkSync, use the `zksync::Wallet` object. It can sign transactions with keys stored in
 `zksync::Signer` and send transactions to the zkSync network by using `zksync::Provider`.
 
-In order to create a `Wallet` object, you have to initialize `Credentials` that will store the private keys for the
+In order to create a `Wallet` object, you have to initialize credentials that will store the private keys for the
 wallet.
 
 `WalletCredentials` can be created either from a seed byte array, an Ethereum private key, or from any `EthereumSigner`
