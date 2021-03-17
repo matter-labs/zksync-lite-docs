@@ -57,7 +57,7 @@ let address = JsonRpcSigner::new("http://127.0.0.1:8545", None, None, None);
 The arguments are:
 
 - `rpc_addr`: The address of the wallet RPC server.
-- `address_or_index`: Identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
+- `address_or_index`: The identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
 - `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, the signer type will be deduced
   automatically by signing an additional message.
 - `password_to_unlock`: Sets the wallet password if it's required.
