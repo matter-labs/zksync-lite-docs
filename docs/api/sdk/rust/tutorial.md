@@ -30,7 +30,7 @@ let provider = Provider::new(Network::Rinkeby);
 
 ## Ethereum signer
 
-An Ethereum signer is mandatory for sending both L1 and L2 transactions, since L2 transactions require an Ethereum
+An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
 signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
 key, but such a wallet will only be able to perform read requests to the zkSync server.
 
@@ -177,7 +177,7 @@ let verified_dai_balance = info.balance.balances.get("DAI");
 ## Making a transfer in zkSync
 
 Now, let's create a second wallet and transfer some funds into it. Note that we can send assets to any fresh Ethereum
-account, without preliminary registration!
+account without preliminary registration!
 
 ```rust
 let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);

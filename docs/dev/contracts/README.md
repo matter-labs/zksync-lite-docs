@@ -18,8 +18,8 @@ is accessed globally. Contracts call one another via strongly-typed interfaces a
 
 ## Composability
 
-zkSync smart contracts are able to call one another, just like in the Ethereum ecosystem. Each call transaction tree is
-atomic, regardless of the number of contract instances involved.
+zkSync smart contracts are able to call one another just like in the Ethereum ecosystem. Each call transaction tree is
+atomic regardless of the number of contract instances involved.
 
 Any DeFi project can be migrated to zkSync, since most of the existing Solidity code can be deployed without changes.
 
@@ -48,7 +48,7 @@ generalistic expressiveness.
 Zinc is created to fill the gap between the two worlds: to provide a smart contract language optimized for ZKP circuits,
 which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
 
-The framework includes a simple, Turing complete, safety-focused, general purpose language, designed specifically for
+The framework includes a simple, Turing complete, safety-focused, general purpose language designed specifically for
 developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantics closely
 follow [Rust](https://www.rust-lang.org/).
 
@@ -97,7 +97,7 @@ As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify t
     If you are going to start a new project, <a href="https://zinc.zksync.io/"> embrace Zinc today!</a>
     </td>
     <td>
-    If you possess a large Solidity codebase, it is reasonable to wait for the Solidity support,
+    If you possess a large Solidity codebase, it is reasonable to wait for the Solidity support
     and start migrating to Zinc after the mainnet release.
     </td>
   </tr>
