@@ -64,7 +64,7 @@ The arguments are:
 
 Also, if your software uses a custom signer, you can always provide your implementation of the `EthereumSigner` trait.
 
-## Creating a Wallet
+## Creating a wallet
 
 To control your account in zkSync, use the `zksync::Wallet` object. It can sign transactions with keys stored in
 `zksync::Signer` and send transaction to the zkSync network using `zksync::Provider`.
@@ -117,7 +117,7 @@ let ethereum = wallet.ethereum(web3_address).await?
 let deposit_tx_hash = ethereum.deposit("ETH", one_ether, wallet.address()).await?;
 ```
 
-"ETH" stands for native Ether. To transfer a supported ERC20 token, use the ERC20 address or ERC20 symbol instead of "ETH".
+"ETH" stands for native ether. To transfer a supported ERC20 token, use the ERC20 address or ERC20 symbol instead of "ETH".
 
 After the tx is submitted to the Ethereum node, we can track its status using the returned object:
 
