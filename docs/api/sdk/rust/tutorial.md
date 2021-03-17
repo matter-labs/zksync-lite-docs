@@ -67,7 +67,7 @@ Also, if your software uses a custom signer, you can always provide your impleme
 ## Creating a wallet
 
 To control your account in zkSync, use the `zksync::Wallet` object. It can sign transactions with keys stored in
-`zksync::Signer` and send transaction to the zkSync network using `zksync::Provider`.
+`zksync::Signer` and send transaction to the zkSync network by using `zksync::Provider`.
 
 In order to create a `Wallet` object, you have to initialize `Credentials` which will store the private keys for a
 wallet.
@@ -190,8 +190,8 @@ acceptable by the server.
 Note that the SDK may round the transfer or fee down to the closest supported amount because the precision of transfer in
 zkSync is limited (see docs below).
 
-However, you can provide amount and fee values that won't be rounded by zkSync using methods `.amount_exact(..)` and
-`.fee_exact(..)`. In that case, ensure that your amount and fee are packable via `zksync::utils::is_token_amount_packable`
+However, you can provide amount and fee values that won't be rounded by zkSync: use the methods `.amount_exact(..)` and
+`.fee_exact(..)` and ensure that your amount and fee are packable via `zksync::utils::is_token_amount_packable`
 and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via the
 `zksync::utils::closest_packable_token_amount` and `zksync::utils::closest_packable_fee_amount` functions. An attempt to send
 a transaction with either an amount or a fee that aren't packable will result in the transaction being rejected by the server.
