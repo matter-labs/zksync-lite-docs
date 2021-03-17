@@ -20,7 +20,7 @@ the only option.
 
 ## Connecting to the zkSync network
 
-To interact with the Sync network users need to know the endpoint of the operator node.
+To interact with the Sync network, users need to know the endpoint of the operator node.
 
 ```rust
 use zksync::{Provider, Network};
@@ -117,7 +117,7 @@ let ethereum = wallet.ethereum(web3_address).await?
 let deposit_tx_hash = ethereum.deposit("ETH", one_ether, wallet.address()).await?;
 ```
 
-"ETH" stands for native Ether. To transfer a supported ERC20 token use the ERC20 address or ERC20 symbol instead of "ETH".
+"ETH" stands for native Ether. To transfer a supported ERC20 token, use the ERC20 address or ERC20 symbol instead of "ETH".
 
 After the tx is submitted to the Ethereum node, we can track its status using the returned object:
 

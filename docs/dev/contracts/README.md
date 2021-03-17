@@ -60,7 +60,7 @@ basic principles, such as security and simplicity, will never be questioned.
 
 ### Learning Zinc
 
-The Zinc programming language has an official [book](https://zinc.zksync.io/) which provides an introduction to its core
+The Zinc programming language has an official [book](https://zinc.zksync.io/), which provides an introduction to its core
 principles and conventions.
 
 ### Getting help
