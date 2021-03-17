@@ -27,7 +27,7 @@ Any DeFi project can be migrated to zkSync, since most of the existing Solidity 
 
 The Sync VM is a highly efficient, Turing complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
 
-State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
+State-of-the-art optimizations are applied to smart contract bytecode, while the virtual machine itself is optimized
 for high load, allowing to execute transactions in a blink of an eye.
 
 The machine is SNARK-friendly; that is, the execution trace can be proven in SNARKs. However, it does not require a
