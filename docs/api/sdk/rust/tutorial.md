@@ -15,7 +15,7 @@ Put the following line in your `Cargo.toml`:
 zksync = { git = "https://github.com/matter-labs/zksync", version = "0.1.1" }
 ```
 
-Unfortunately, the SDK is not currently published on <crates.io>; thus specifying the dependency through the repository is
+Unfortunately, the SDK is not currently published on <crates.io>; thus specifying the dependency from the repository is
 the only option.
 
 ## Connecting to the zkSync network
@@ -185,7 +185,7 @@ let another_wallet = Wallet::new(provider, cred).await;
 ```
 
 We are going to transfer `0.5 ETH` to another account. The fee will be chosen automatically to be the least possible fee
-acceptable by the server.
+accepted by the server.
 
 Note that the SDK may round the transfer or fee down to the closest supported amount because the precision of transfers in
 zkSync is limited (see docs below).
@@ -211,7 +211,7 @@ let transfer_handle = wallet
   .await?;
 ```
 
-If you want to have more control on the transaction flow, you can manually request the fee and check whether it's
+If you want to have more control over the transaction flow, you can manually request the fee and check whether it's
 appropriate.
 
 ```rust
