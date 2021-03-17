@@ -159,10 +159,10 @@ if !wallet.is_signing_key_set().await? {
 ```rust
 use zksync::types::BlockStatus;
 
-// The committed state is not final yet
+// The committed state is not final yet.
 let committedETHBalance = wallet.getBalance(BlockStatus::Committed, 'ETH').await?;
 
-// The verified state is final
+// The verified state is final.
 let verifiedETHBalance = wallet.getBalance(BlockStatus::Verified, 'ETH').await?;
 ```
 
