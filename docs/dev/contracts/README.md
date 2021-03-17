@@ -14,7 +14,7 @@ The zkSync smart contract programming model inherits that of Ethereum.
 
 Both the Zinc and Solidity languages are Turing complete, so you can use unbounded loops, recursion, vectors and maps of
 arbitrary length, and so on. Local variables are stored on the stack or in the heap memory, whereas the contract storage
-is accessed globally. Contracts call one another via strongly-typed interfaces and have access to public storage fields.
+is accessed globally. Contracts call one another via strongly typed interfaces and have access to public storage fields.
 
 ## Composability
 
@@ -28,7 +28,7 @@ Any DeFi project can be migrated to zkSync, since most of the existing Solidity 
 The Sync VM is a highly efficient, Turing complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
 
 State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
-for high-load, allowing to execute transactions in a blink of an eye.
+for high load, allowing to execute transactions in a blink of an eye.
 
 The machine is SNARK-friendly; that is, the execution trace can be proven in SNARKs. However, it does not require a
 circuit per program. A single circuit can be used instead, which needs to be audited only once.
