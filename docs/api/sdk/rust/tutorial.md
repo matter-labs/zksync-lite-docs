@@ -187,13 +187,13 @@ let another_wallet = Wallet::new(provider, cred).await;
 We are going to transfer `0.5 ETH` to another account. The fee will be chosen automatically to be the least possible fee
 acceptable by the server.
 
-Note that the SDK may round the transfer/fee down to the closest supported amount because the precision of transfer in
+Note that the SDK may round the transfer or fee down to the closest supported amount because the precision of transfer in
 zkSync is limited (see docs below).
 
-However, you can provide amount / fee values that won't be rounded by zkSync using methods `.amount_exact(..)` and
-`.fee_exact(..)`. In that case, ensure that your amount / fee is packable via `zksync::utils::is_token_amount_packable`
+However, you can provide amount and fee values that won't be rounded by zkSync using methods `.amount_exact(..)` and
+`.fee_exact(..)`. In that case, ensure that your amount and fee are packable via `zksync::utils::is_token_amount_packable`
 and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via the
-`zksync::utils::closest_packable_token_amount` / `zksync::utils::closest_packable_fee_amount` functions. An attempt to send
+`zksync::utils::closest_packable_token_amount` and `zksync::utils::closest_packable_fee_amount` functions. An attempt to send
 a transaction with either an amount or a fee that aren't packable will result in the transaction being rejected by the server.
 
 ```rust
