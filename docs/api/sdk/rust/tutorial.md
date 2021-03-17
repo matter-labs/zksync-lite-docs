@@ -32,7 +32,7 @@ let provider = Provider::new(Network::Rinkeby);
 
 An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
 signature as part of 2-factor authentication. It is possible to create a wallet without an Ethereum private
-key, but such a wallet will only be able to perform read requests to the zkSync server.
+key, but this wallet will only be able to perform read requests to the zkSync server.
 
 The Ethereum signer is represented by the `EthereumSigner` trait from the `zksync_eth_signer` crate.
 
