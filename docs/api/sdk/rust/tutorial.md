@@ -15,7 +15,7 @@ Put the following line in your `Cargo.toml`:
 zksync = { git = "https://github.com/matter-labs/zksync", version = "0.1.1" }
 ```
 
-Unfortunately, currently the SDK is not published on <crates.io>; thus specifying the dependency through the repository is
+Unfortunately, the SDK is not currently published on <crates.io>; thus specifying the dependency through the repository is
 the only option.
 
 ## Connecting to the zkSync network
@@ -67,9 +67,9 @@ Also, if your software uses a custom signer, you can always provide your impleme
 ## Creating a wallet
 
 To control your account in zkSync, use the `zksync::Wallet` object. It can sign transactions with keys stored in
-`zksync::Signer` and send transaction to the zkSync network by using `zksync::Provider`.
+`zksync::Signer` and send transactions to the zkSync network by using `zksync::Provider`.
 
-In order to create a `Wallet` object, you have to initialize `Credentials` which will store the private keys for a
+In order to create a `Wallet` object, you have to initialize `Credentials` that will store the private keys for the
 wallet.
 
 `WalletCredentials` can be created either from a seed byte array, an Ethereum private key, or from any `EthereumSigner`
@@ -80,13 +80,13 @@ use zksync::{WalletCredentials, Network};
 
 let address = ...; // Not essential for the example.
 
-// Generate from seed. A zkSync private key will be initialized, an Ethereum private key will be not.
+// Generate from seed. A zkSync private key will be initialized, an Ethereum private key will not.
 let cred_1 = WalletCredentials::from_seed(address, &[0u8; 32]);
 // Generate from a zkSync private key only. An Ethereum private key will not be set.
 let cred_2 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, None);
 // Generate from both a zkSync and an Ethereum private key.
 let cred_3 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, Some(ETH_PRIVATE_KEY));
-// Generate from a custom Ethereum signer. The Ethereum private key will be assumed to be accessible through the provided signer,
+// Generate from a custom Ethereum signer. The Ethereum private key is assumed to be accessible through the provided signer,
 // A zkSync private key will be derived from the Ethereum private key using a deterministic algorithm.
 let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Rinkeby);
 ```
@@ -187,14 +187,14 @@ let another_wallet = Wallet::new(provider, cred).await;
 We are going to transfer `0.5 ETH` to another account. The fee will be chosen automatically to be the least possible fee
 acceptable by the server.
 
-Note that the SDK may round the transfer or fee down to the closest supported amount because the precision of transfer in
+Note that the SDK may round the transfer or fee down to the closest supported amount because the precision of transfers in
 zkSync is limited (see docs below).
 
 However, you can provide amount and fee values that won't be rounded by zkSync: use the methods `.amount_exact(..)` and
 `.fee_exact(..)` and ensure that your amount and fee are packable via `zksync::utils::is_token_amount_packable`
 and `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via the
 `zksync::utils::closest_packable_token_amount` and `zksync::utils::closest_packable_fee_amount` functions. An attempt to send
-a transaction with either an amount or a fee that aren't packable will result in the transaction being rejected by the server.
+a transaction with either an amount or a fee that isn't packable will result in the transaction being rejected by the server.
 
 ```rust
 use zksync::utils::{closest_packable_fee_amount, closest_packable_token_amount};
