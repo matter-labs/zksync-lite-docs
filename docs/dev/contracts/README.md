@@ -30,7 +30,7 @@ The Sync VM is a highly efficient, Turing complete, SNARK-friendly virtual machi
 State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
 for high-load, allowing to execute transactions in a blink of an eye.
 
-The machine is SNARK-friendly, that is, the execution trace can be proven in SNARKs. However, it does not require a
+The machine is SNARK-friendly; that is, the execution trace can be proven in SNARKs. However, it does not require a
 circuit per program. A single circuit can be used instead, which needs to be audited only once.
 
 The target proof system of the Sync VM is [PLONK](https://eprint.iacr.org/2019/953).
@@ -55,7 +55,7 @@ follow [Rust](https://www.rust-lang.org/).
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides an extremely powerful set of solutions for
 code optimization.
 
-The language is under heavy development, thus many of its aspects will eventually be improved or changed. However, the
+The language is under heavy development; thus many of its aspects will eventually be improved or changed. However, the
 basic principles, such as security and simplicity, will never be questioned.
 
 ### Learning Zinc

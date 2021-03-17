@@ -15,7 +15,7 @@ Put the following line in your `Cargo.toml`:
 zksync = { git = "https://github.com/matter-labs/zksync", version = "0.1.1" }
 ```
 
-Unfortunately, currently the SDK is not published on <crates.io>, thus specifying the dependency through the repository is
+Unfortunately, currently the SDK is not published on <crates.io>; thus specifying the dependency through the repository is
 the only option.
 
 ## Connecting to the zkSync network
