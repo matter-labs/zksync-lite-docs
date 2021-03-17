@@ -36,9 +36,9 @@ key, but such a wallet will only be able to perform read requests to the zkSync 
 
 The Ethereum signer is represented by the `EthereumSigner` trait from the `zksync_eth_signer` crate.
 
-By default, there exist two implementations for that trait: `PrivateKeySigner` and `JsonRpcSigner`.
+By default, this trait has two implementations: `PrivateKeySigner` and `JsonRpcSigner`.
 
-The first one assumes that you own your private key and can use it directly:
+The `PrivateKeySigner` implementation assumes that you own your private key and can use it directly:
 
 ```rust
 use zksync_eth_signer::PrivateKeySigner;
@@ -46,7 +46,7 @@ use zksync_eth_signer::PrivateKeySigner;
 let signer = PrivateKeySigner::new(YOUR_PRIVATE_KEY);
 ```
 
-The latter may be used if the private key is managed by software which exposes a personal Web3 API:
+The `JsonRpcSigner` implementation may be used if the private key is managed by software which exposes a personal Web3 API:
 
 ```rust
 use zksync_eth_signer::JsonRpcSigner;
@@ -58,7 +58,7 @@ The arguments are:
 
 - `rpc_addr`: The address of the wallet RPC server.
 - `address_or_index`: Identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
-- `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, it will be deduced
+- `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, the signer type will be deduced
   automatically by signing an additional message.
 - `password_to_unlock`: Sets the wallet password if it's required.
 
@@ -78,7 +78,7 @@ implementation:
 ```rust
 use zksync::{WalletCredentials, Network};
 
-let address = ...; // Not essential for the example.
+let address = ...; // Not essential for this example.
 
 // Generate from seed. A zkSync private key will be initialized, an Ethereum private key will not.
 let cred_1 = WalletCredentials::from_seed(address, &[0u8; 32]);
@@ -96,7 +96,7 @@ Using both the `WalletCredentials` and `Provider` objects, you can create a wall
 ```rust
 use zksync::Wallet;
 
-// Method is asynchronous since in constructor it retrieves an account ID from the server.
+// This method is asynchronous since it retrieves an account ID from the server in the constructor.
 let wallet = Wallet::new(provider, cred).await;
 ```
 
@@ -109,8 +109,8 @@ We are going to deposit `1.0 ETH` to our zkSync account.
 ```rust
 let one_ether = U256::from(10).pow(18.into());
 
-// The address of the server that provides an access to the Ethereum node API, for example, Infura or a local node.
-// It is required in order to interact with the Ethereum blockchain.
+// The address of the server providing access to the API of the Ethereum node, for example, Infura or a local node.
+// This address is required in order to interact with the Ethereum blockchain.
 let web3_address = "http://127.0.0.1:8545";
 
 let ethereum = wallet.ethereum(web3_address).await?
