@@ -40,8 +40,8 @@ The target proof system of the Sync VM is [PLONK](https://eprint.iacr.org/2019/9
 [Zinc](https://github.com/matter-labs/zinc) is an emerging framework for developing smart contracts and SNARK circuits
 on the zkSync platform.
 
-Existing ZKP frameworks lack functionality specific to smart contracts. Since smart contracts deal with valuable financial assets, security and safety are crucial. That's why modern smart contract languages, such as
-Simplicity or Libra's Move, deliberately made design choices that favor safety and formal verifiability of the code over
+Existing ZKP frameworks lack functionality specific to smart contracts. Since smart contracts deal with valuable financial assets, security and safety are crucial. That's why designers of modern smart contract languages, such as
+Simplicity or Libra's Move, favored safety and formal verifiability of the code over
 expressiveness.
 
 Zinc is created to fill the gap between these two worlds by providing a simple, reliable smart contract language that is optimized for ZKP circuits and easy for
