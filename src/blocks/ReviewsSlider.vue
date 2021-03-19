@@ -3,13 +3,13 @@
        data-aos-delay="50" data-aos-duration="800">
     <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
-      <div v-if="currentItem>0" class="arrow left _hidden-md-and-down"
+      <div v-if="currentItem>0" class="arrow left"
            @click="scrollItem('minus')">
         <i class="fal fa-angle-left"/>
       </div>
     </transition>
     <transition name="slideFromRight">
-      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="_hidden-md-and-down arrow right" @click="scrollItem('plus')">
+      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="arrow right" @click="scrollItem('plus')">
         <i class="fal fa-angle-right"/>
       </div>
     </transition>
@@ -27,6 +27,7 @@
           :key="singleReview.ref"
           :ref="singleReview.ref"
           :href="singleReview.link"
+          :class="singleReview.classes"
           class="reviewItem"
           target="_blank"
         >
@@ -39,7 +40,7 @@
             >
             <span v-if="singleReview.title">{{ singleReview.title }}</span>
           </div>
-          <div class="reviewText grayText">
+          <div class="reviewText">
             {{ singleReview.text }}
             <i-badge v-if="singleReview.isUpcoming" variant="secondary _upcoming-h3">upcoming</i-badge>
           </div>
@@ -76,6 +77,21 @@ export default {
           {
             id: null,
             ref: 1,
+            classes: "small-text round-thumbnail",
+            title: "Chris Burnisk",
+            link: "https://twitter.com/cburniske/status/1372005938316541955",
+            thumbnail: "argent_chris.jpg",
+            thumbnailAlt: "Chris Burnisk @argentHQ",
+            thumbnailTitle: "Chris Burnisk from @argentHQ",
+            text: `.@argentHQ chooses @zksync L2:
+                  "We're fans of the Optimism team and will monitor their progress with great interest.
+                  Our choice came down to the fact that zkSync has been live on mainnet for months,
+                  has lower transaction costs & fast finality." -@itamarl`,
+          },
+          {
+            id: null,
+            ref: 2,
+            classes: null,
             title: null,
             link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
             thumbnail: "curve.svg",
@@ -85,7 +101,8 @@ export default {
           },
           {
             id: null,
-            ref: 2,
+            ref: 3,
+            classes: null,
             link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
             thumbnail: "buter.png",
             thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
@@ -95,7 +112,8 @@ export default {
           },
           {
             id: "balancer-review",
-            ref: 3,
+            ref: 4,
+            classes: null,
             title: null,
             link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
             thumbnail: "balancer.svg",

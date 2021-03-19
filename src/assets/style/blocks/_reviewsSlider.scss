@@ -16,7 +16,7 @@
 
   @media screen and (min-width: 1225px) {
     .arrow {
-      display: none;
+      //display: none;
 
       &.left {
         left: calc(50vw - 450px - 30px - 100px);
@@ -70,7 +70,6 @@
       padding: 28px 30px;
       border-radius: $borderRadiusBig;
       background-color: $darkBlack;
-
       text-decoration: none;
       cursor: pointer;
       display: flex;
@@ -84,6 +83,17 @@
         color: $white !important;
         box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.03);
         text-decoration: none !important;
+      }
+
+      &.small-text {
+        .reviewText {
+          font-size: 14px !important;
+        }
+      }
+      &.round-thumbnail {
+        .reviewHeader img {
+          border-radius: 50%;
+        }
       }
 
       .reviewHeader {
@@ -111,6 +121,7 @@
         text-align: left;
         font-size: 18px;
         line-height: 140%;
+        color: $colorTxt;
         letter-spacing: 0.02rem;
         &:hover
         {

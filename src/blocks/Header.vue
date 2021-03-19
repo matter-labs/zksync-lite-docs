@@ -36,9 +36,9 @@
             <div class="linksContainer">
               <a :href="'/faq/'" target="_blank" class="linkItem">FAQ</a>
               <a :href="'/dev/'" target="_blank" class="linkItem">Docs</a>
-              <i-dropdown class="_background-transparent _border-none likeLinkItem" size="sm" variation="dark" placement="bottom">
-                <a class="dropDownHandler linkItem _position-top-0" @click.capture="event => true">zkTools <i class="fal fa-chevron-down"/></a>
-                <i-dropdown-menu>
+              <i-dropdown class="_background-transparent _border-none likeLinkItem" :class="{'opened': dropdownOpened}" size="sm" variation="dark" placement="bottom" trigger="manual">
+                <a class="dropDownHandler linkItem _position-top-0" @click.capture="dropdownOpened = !dropdownOpened">zkTools <i class="fal" :class="dropdownOpened?'fa-chevron-up':'fa-chevron-down'"/></a>
+                <i-dropdown-menu v-model="dropdownOpened">
                   <i-dropdown-item href="https://wallet.zksync.io" target="_blank">zkWallet</i-dropdown-item>
                   <i-dropdown-item href="https://link.zksync.io/" target="_blank">zkLink</i-dropdown-item>
                   <i-dropdown-item href="https://zkscan.io/" target="_blank">zkScan</i-dropdown-item>
@@ -71,6 +71,7 @@ export default Vue.extend({
     return {
       opened: false,
       showLogo: true,
+      dropdownOpened: false,
     };
   },
   beforeMount() {

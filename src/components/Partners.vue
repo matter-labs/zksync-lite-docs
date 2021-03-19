@@ -3,7 +3,7 @@
     <i-container>
       <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
         A growing
-        <emphasis brand-name="" show-logo="true"/>
+        <emphasis brand-name="" :show-logo="true"/>
         movement
       </div>
       <div class="subheaderText grayText">
