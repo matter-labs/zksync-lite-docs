@@ -53,19 +53,22 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 /**
  * @var document
  */
+// @ts-ignore: Unreachable code error
 import httpinvoke from "httpinvoke";
 import { PrismEditor } from "vue-prism-editor";
+// @ts-ignore: Unreachable code error
 import { highlight, languages } from "prismjs/components/prism-core";
 
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-rust";
 import "prismjs/components/prism-solidity";
 
-export default {
+export default Vue.extend({
   components: {
     PrismEditor,
   },
@@ -112,13 +115,13 @@ contract CrowdFunding {
     error: "",
     loading: false,
     opened: false,
-    transpiled: false,
+    transpiled: false as false | string,
   }),
   methods: {
-    highlighter(code) {
+    highlighter(code: string) {
       return highlight(code, languages.solidity, languages.solidity);
     },
-    rustHighlighter(code) {
+    rustHighlighter(code: string) {
       return highlight(code, languages.rust, languages.rust);
     },
     async transpile() {
@@ -144,14 +147,14 @@ contract CrowdFunding {
         elem.style.position = "absolute";
         elem.style.left = -99999999 + "px";
         elem.style.top = -99999999 + "px";
-        elem.value = this.transpiled;
+        elem.value = this.transpiled as string;
         document.body.appendChild(elem);
-        elem.select(0);
+        elem.select();
         // noinspection JSUnresolvedFunction
         document.execCommand("copy");
         document.body.removeChild(elem);
       }
     },
   },
-};
+});
 </script>

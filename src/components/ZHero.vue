@@ -37,17 +37,20 @@
     </a>
   </i-container>
 </template>
+
 <script type="ts">
-import Emphasis from "@/components/Emphasis";
-import ZButton from "@/components/ZButton";
+import Vue from "vue";
+
+import Emphasis from "@/components/Emphasis.vue";
+import ZButton from "@/components/ZButton.vue";
 import ZCta from "@/components/ZCta.vue";
 
-export default {
+export default Vue.extend({
   name: "ZHero",
   components: {
     ZCta,
     Emphasis,
     ZButton,
   },
-};
+});
 </script>

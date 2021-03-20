@@ -2,8 +2,10 @@
   <div class="loaderSpinner" :class="`size-${size}`">Loading...</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   name: "Loader",
   props: {
     size: {
@@ -12,5 +14,5 @@ export default {
       required: false,
     },
   },
-};
+});
 </script>

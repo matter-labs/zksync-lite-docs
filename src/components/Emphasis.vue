@@ -8,8 +8,10 @@ with zero security compromises">
   </i-badge>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   props: {
     showLogo: {
       default: false,
@@ -22,5 +24,5 @@ export default {
       required: false,
     },
   },
-};
+});
 </script>

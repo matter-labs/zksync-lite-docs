@@ -62,11 +62,25 @@
   </div>
 </template>
 
-<script type="ts">
-import Hammer from "hammerjs";
-import ZButton from "~/components/ZButton.vue";
+<script lang="ts">
+import Vue from "vue";
 
-export default {
+import Hammer from "hammerjs";
+import ZButton from "@/components/ZButton.vue";
+
+interface Review {
+  id: string;
+  ref: number;
+  classes: string;
+  title: string;
+  link: string;
+  thumbnail: string;
+  thumbnailAlt: string;
+  thumbnailTitle: string;
+  text: string;
+}
+
+export default Vue.extend({
   components: {
     ZButton,
   },
@@ -75,7 +89,7 @@ export default {
       default: () => {
         return [
           {
-            id: null,
+            id: "",
             ref: 1,
             classes: "small-text round-thumbnail",
             title: "Chris Burnisk",
@@ -89,10 +103,10 @@ export default {
                   has lower transaction costs & fast finality." -@itamarl`,
           },
           {
-            id: null,
+            id: "",
             ref: 2,
-            classes: null,
-            title: null,
+            classes: "",
+            title: "",
             link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
             thumbnail: "curve.svg",
             thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
@@ -100,9 +114,9 @@ export default {
             text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math",
           },
           {
-            id: null,
+            id: "",
             ref: 3,
-            classes: null,
+            classes: "",
             link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
             thumbnail: "buter.png",
             thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
@@ -113,17 +127,17 @@ export default {
           {
             id: "balancer-review",
             ref: 4,
-            classes: null,
-            title: null,
+            classes: "",
+            title: "",
             link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
             thumbnail: "balancer.svg",
             thumbnailAlt: "Mike McDonal, CTO @BalancerLabs",
             thumbnailTitle: "Mike McDonal, Co-founder & CTO @BalancerLabs. Security Engineer about ZK Rollups",
             text: "ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm).",
           },
-        ];
+        ] as Array<Review>;
       },
-      require: true,
+      required: false,
       type: Array,
     },
   },
@@ -136,7 +150,7 @@ export default {
     };
   },
   computed: {
-    leftPosition() {
+    leftPosition(): number {
       if (this.$refs.container) {
         const inViewNow = Math.max(1, this.itemsInView());
         if (inViewNow === 1) {
@@ -160,7 +174,10 @@ export default {
     }, 0);
     window.addEventListener("resize", this.checkArrowDisplay);
     const galleryBlock = document.querySelector(".reviewsContainer");
-    new Hammer(galleryBlock).on("pan", (e) => {
+    if (!galleryBlock) {
+      return;
+    }
+    new Hammer(galleryBlock as HTMLElement).on("pan", (e) => {
       if (e.direction !== 2 && e.direction !== 4) {
         return;
       }
@@ -184,7 +201,7 @@ export default {
     window.removeEventListener("resize", this.checkArrowDisplay);
   },
   methods: {
-    scrollItem(direction) {
+    scrollItem(direction: "plus" | "minus") {
       const inViewNow = Math.max(1, this.itemsInView());
       if (direction === "plus") {
         const scrollTo = this.currentItem + Math.max(1, inViewNow);
@@ -197,15 +214,16 @@ export default {
     itemsInView() {
       let inViewTotal = 0;
       const refsKeys = Object.keys(this.$refs);
-      const containerSizes = this.$refs.container.$el.getBoundingClientRect();
+      const containerSizes = ((this.$refs.container as Vue).$el as HTMLElement).getBoundingClientRect();
       for (const item in refsKeys) {
         if (item === "container" || !this.$refs[item]) {
           continue;
         }
-        if (!this.$refs[item] || typeof this.$refs[item] !== "object" || this.$refs[item].getBoundingClientRect !== "function") {
+        const itemEl = this.$refs[item] as HTMLElement;
+        if (!itemEl || typeof itemEl !== "object" || typeof itemEl.getBoundingClientRect !== "function") {
           continue;
         }
-        const itemSizes = this.$refs[item].getBoundingClientRect();
+        const itemSizes = itemEl.getBoundingClientRect();
         if (itemSizes.left >= containerSizes.left - 20 && itemSizes.right <= containerSizes.right + 20) {
           inViewTotal++;
         }
@@ -221,9 +239,9 @@ export default {
      * @param img
      * @returns {any}
      */
-    getAssetUrl(img) {
+    getAssetUrl(img: string) {
       return require("@/assets/images/pages/index/" + img);
     },
   },
-};
+});
 </script>

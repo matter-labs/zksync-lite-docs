@@ -16,8 +16,6 @@
 
   @media screen and (min-width: 1225px) {
     .arrow {
-      //display: none;
-
       &.left {
         left: calc(50vw - 450px - 30px - 100px);
       }

@@ -10,14 +10,18 @@
   </div>
 </template>
 
-<script>
-import footerComponent from "@/blocks/Footer.vue";
+<script lang="ts">
+import Vue from "vue";
+
 import headerComponent from "@/blocks/Header.vue";
 
 /** @var AOS AOS **/
+// @ts-ignore: Unreachable code error
 import AOS from "aos";
 
-export default {
+import footerComponent from "@/blocks/Footer.vue";
+
+export default Vue.extend({
   components: {
     headerComponent,
     footerComponent,
@@ -47,12 +51,12 @@ export default {
     AOS.init({
       once: true,
     });
-    this.$inkline.config.variant = "dark";
+    (this as any).$inkline.config.variant = "dark";
   },
   mounted() {
     if (process.client) {
       window.history.scrollRestoration = "manual";
     }
   },
-};
+});
 </script>

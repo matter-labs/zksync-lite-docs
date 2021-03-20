@@ -51,12 +51,15 @@
     </i-table>
   </div>
 </template>
-<script>
-import Emphasis from "@/components/Emphasis";
 
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+import Emphasis from "@/components/Emphasis.vue";
+
+export default Vue.extend({
   components: {
     Emphasis,
   },
-};
+});
 </script>
