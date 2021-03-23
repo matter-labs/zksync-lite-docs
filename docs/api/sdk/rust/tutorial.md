@@ -113,7 +113,7 @@ let one_ether = U256::from(10).pow(18.into());
 // This address is required in order to interact with the Ethereum blockchain.
 let web3_address = "http://127.0.0.1:8545";
 
-let ethereum = wallet.ethereum(web3_address).await?
+let ethereum = wallet.ethereum(web3_address).await?;
 let deposit_tx_hash = ethereum.deposit("ETH", one_ether, wallet.address()).await?;
 ```
 
