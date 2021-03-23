@@ -20,7 +20,7 @@ the only option.
 
 ## Connecting to the zkSync network
 
-To interact with the Sync network, users need to know the endpoint of the operator node.
+To interact with the zkSync network, users need to know the endpoint of the operator node.
 
 ```rust
 use zksync::{Provider, Network};
@@ -58,7 +58,7 @@ The arguments are:
 
 - `rpc_addr`: The address of the wallet RPC server.
 - `address_or_index`: The identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
-- `signer_type`: Whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, the signer type will be deduced
+- `signer_type`: Indicates whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, the signer type will be deduced
   automatically by signing an additional message.
 - `password_to_unlock`: Sets the wallet password if it's required.
 
@@ -91,7 +91,7 @@ let cred_3 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, Some(ETH_PR
 let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Rinkeby);
 ```
 
-Using both the `WalletCredentials` and `Provider` objects, you can create a wallet:
+Once the `WalletCredentials` and `Provider` objects are set, you can create a wallet:
 
 ```rust
 use zksync::Wallet;
@@ -133,7 +133,7 @@ let deposit_info = wallet.provider.ethop_info(deposit_op.serial_id as u32);
 
 ## Unlocking a zkSync account
 
-To control assets in the zkSync network, an account must register a public key once.
+To control assets in the zkSync network, an account must register its public key.
 
 ```rust
 if !wallet.is_signing_key_set().await? {
@@ -184,10 +184,10 @@ let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);
 let another_wallet = Wallet::new(provider, cred).await;
 ```
 
-We are going to transfer `0.5 ETH` to another account. The fee will be set automatically to the least possible fee
-accepted by the server.
+We are going to transfer `0.5 ETH` to another account. The fee will be set automatically by the server to the minimal
+acceptable amount.
 
-Note that the SDK may round the transferred amount or the fee down to the closest supported amount because the precision of transfers in
+Note that the SDK may round down the transferred amount or fee to the closest supported amount because the precision of transfers in
 zkSync is limited (see docs below).
 
 However, you can provide amount and fee values that won't be rounded: use the methods `.amount_exact(..)` and

@@ -19,7 +19,7 @@ is accessed globally. Contracts call one another via strongly typed interfaces a
 ## Composability
 
 zkSync smart contracts are able to call one another just like Ethereum smart contracts can. Each call transaction tree is
-atomic regardless of the number of contract instances involved.
+atomic, regardless of the number of contract instances involved.
 
 Any DeFi project can be migrated to zkSync, since most of the existing Solidity code can be deployed without changes.
 
@@ -118,4 +118,4 @@ contract to the Rinkeby testnet.
 
 zkSync smart contracts are going mainnet in 2021.
 
-Both the Zinc and Solidity languages will be supported at launch.
+Both Zinc and Solidity will be supported at launch.
