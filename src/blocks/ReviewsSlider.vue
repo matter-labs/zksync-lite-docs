@@ -22,10 +22,10 @@
     <i-container ref="container">
       <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition-scrollOffset}px)`}">
         <a
-          v-for="(singleReview) in reviewsData"
+          v-for="(singleReview, index) in reviewsData"
           :id="singleReview.id"
-          :key="singleReview.ref"
-          :ref="singleReview.ref"
+          :key="index"
+          ref="reviewItem"
           :href="singleReview.link"
           :class="singleReview.classes"
           class="reviewItem"
@@ -70,7 +70,6 @@ import ZButton from "@/components/ZButton.vue";
 
 interface Review {
   id: string;
-  ref: number;
   classes: string;
   title: string;
   link: string;
@@ -90,7 +89,6 @@ export default Vue.extend({
         return [
           {
             id: "",
-            ref: 1,
             classes: "small-text round-thumbnail",
             title: "Chris Burnisk",
             link: "https://twitter.com/cburniske/status/1372005938316541955",
@@ -104,7 +102,6 @@ export default Vue.extend({
           },
           {
             id: "",
-            ref: 2,
             classes: "",
             title: "",
             link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
@@ -115,7 +112,6 @@ export default Vue.extend({
           },
           {
             id: "",
-            ref: 3,
             classes: "",
             link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
             thumbnail: "buter.png",
@@ -126,7 +122,6 @@ export default Vue.extend({
           },
           {
             id: "balancer-review",
-            ref: 4,
             classes: "",
             title: "",
             link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
@@ -205,7 +200,7 @@ export default Vue.extend({
       const inViewNow = Math.max(1, this.itemsInView());
       if (direction === "plus") {
         const scrollTo = this.currentItem + Math.max(1, inViewNow);
-        this.currentItem = Math.min(scrollTo, Object.keys(this.$refs).length - 1 - inViewNow);
+        this.currentItem = Math.min(scrollTo, (this.$refs.reviewItem as HTMLElement[]).length - inViewNow);
       } else {
         const scrollTo = this.currentItem - Math.max(1, inViewNow);
         this.currentItem = Math.max(scrollTo, 0);
@@ -213,14 +208,10 @@ export default Vue.extend({
     },
     itemsInView() {
       let inViewTotal = 0;
-      const refsKeys = Object.keys(this.$refs);
       const containerSizes = ((this.$refs.container as Vue).$el as HTMLElement).getBoundingClientRect();
-      for (const item in refsKeys) {
-        if (item === "container" || !this.$refs[item]) {
-          continue;
-        }
-        const itemEl = this.$refs[item] as HTMLElement;
-        if (!itemEl || typeof itemEl !== "object" || typeof itemEl.getBoundingClientRect !== "function") {
+      const reviewItems = this.$refs.reviewItem as HTMLElement[];
+      for (const itemEl of reviewItems) {
+        if (!itemEl.getBoundingClientRect) {
           continue;
         }
         const itemSizes = itemEl.getBoundingClientRect();

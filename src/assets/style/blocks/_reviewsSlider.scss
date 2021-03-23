@@ -37,11 +37,11 @@
     }
   }
 
-  @media (min-width: 1400px) {
+  /* @media (min-width: 1400px) {
     .arrow {
       display: none;
     }
-  }
+  } */
 
   .itemsContainer {
     width: max-content;
@@ -86,6 +86,10 @@
       &.small-text {
         .reviewText {
           font-size: 14px !important;
+
+          @media screen and (max-width: $mobile) {
+            font-size: 12px !important;
+          }
         }
       }
       &.round-thumbnail {
