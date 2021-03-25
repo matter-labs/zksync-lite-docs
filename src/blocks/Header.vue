@@ -42,6 +42,7 @@
                   <i-dropdown-item href="https://wallet.zksync.io" target="_blank">zkWallet</i-dropdown-item>
                   <i-dropdown-item href="https://link.zksync.io/" target="_blank">zkLink</i-dropdown-item>
                   <i-dropdown-item href="https://zkscan.io/" target="_blank">zkScan</i-dropdown-item>
+                  <i-dropdown-item href="https://withdraw.zksync.io/" target="_blank">Alternative Withdrawal</i-dropdown-item>
                   <i-dropdown-item href="https://www.npmjs.com/package/zksync-checkout" target="_blank">zkCheckout</i-dropdown-item>
                 </i-dropdown-menu>
               </i-dropdown>
