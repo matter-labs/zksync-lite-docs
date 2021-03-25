@@ -89,6 +89,10 @@ export default Vue.extend({
           link: "https://zkscan.io/",
         },
         {
+          name: "zkWithdraw",
+          link: "https://withdraw.zksync.io/",
+        },
+        {
           name: "zkCheckout",
           link: "https://www.npmjs.com/package/zksync-checkout/",
         },
