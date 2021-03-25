@@ -3,7 +3,7 @@
     <i-container>
       <div class="h2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1200">
         A growing
-        <emphasis brand-name="" show-logo="true"/>
+        <emphasis brand-name="" :show-logo="true"/>
         movement
       </div>
       <div class="subheaderText grayText">
@@ -30,10 +30,21 @@
     </i-container>
   </div>
 </template>
-<script>
-import Emphasis from "@/components/Emphasis";
 
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+import Emphasis from "@/components/Emphasis.vue";
+
+interface PartnerDataItem {
+  id: string;
+  img: string;
+  alt: string;
+  title: string;
+  link?: string;
+}
+
+export default Vue.extend({
   name: "Partners",
   components: { Emphasis },
   props: {
@@ -138,7 +149,6 @@ export default {
             alt: "Decentralized Cloud Storage",
             title: "Coop w/t zkSync will decrease transaction fees, increase privacy, and enable STORJ nodes to interact directly with the world of DeFi",
           },
-
           {
             id: "stablepay",
             link: "https://stablepayio.medium.com/update-stablepay-integrates-the-zksync-l2-protocol-2cc3a9b458be",
@@ -146,7 +156,6 @@ export default {
             alt: "StablePay decentralized payment platform",
             title: "Update: StablePay integrates the zkSync L2 protocol",
           },
-
           {
             id: "Golem",
             link: "https://blog.golemproject.net/zksync/",
@@ -161,7 +170,6 @@ export default {
             alt: "Gitcoin",
             title: "Gitcoin Grants R7 Improvements: Scalability & Identity thanks to Layer 2 Integration w/ zkSync",
           },
-
           {
             id: "Numio",
             link: "https://twitter.com/GetNumio/status/1346421335438872576",
@@ -169,15 +177,15 @@ export default {
             alt: "Numio",
             title: "Numio is using zkRollups from zkSync in the mobile payments app",
           },
-        ];
+        ] as Array<PartnerDataItem>;
       },
       required: false,
     },
   },
   methods: {
-    getAssetUrl(img) {
+    getAssetUrl(img: string) {
       return require("@/assets/images/investors/" + img);
     },
   },
-};
+});
 </script>

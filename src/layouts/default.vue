@@ -10,14 +10,18 @@
   </div>
 </template>
 
-<script>
-import footerComponent from "@/blocks/Footer.vue";
+<script lang="ts">
+import Vue from "vue";
+
 import headerComponent from "@/blocks/Header.vue";
 
-/** @var AOS AOS **/
+/* AOS doesn't support TS */
+// @ts-ignore: Unreachable code error
 import AOS from "aos";
 
-export default {
+import footerComponent from "@/blocks/Footer.vue";
+
+export default Vue.extend({
   components: {
     headerComponent,
     footerComponent,
@@ -47,12 +51,12 @@ export default {
     AOS.init({
       once: true,
     });
-    this.$inkline.config.variant = "dark";
+    (this as any).$inkline.config.variant = "dark"; /* Vue 2 TS doesn't support custom global properties, therefore we need to bypass type checking */
   },
   mounted() {
     if (process.client) {
       window.history.scrollRestoration = "manual";
     }
   },
-};
+});
 </script>

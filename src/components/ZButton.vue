@@ -9,8 +9,10 @@
   ><span><slot/></span></i-button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   name: "ZButton",
   props: {
     glow: {
@@ -64,13 +66,13 @@ export default {
         cssClasses.push("glow-button");
       }
       if (this.cssClass) {
-        const parsedClasses = this.cssClass.split(" ");
-        parsedClasses.forEach(function (singleClassName) {
+        const parsedClasses = (this.cssClass as string).split(" ");
+        parsedClasses.forEach((singleClassName: string) => {
           cssClasses.push(singleClassName);
         });
       }
       return cssClasses;
     },
   },
-};
+});
 </script>

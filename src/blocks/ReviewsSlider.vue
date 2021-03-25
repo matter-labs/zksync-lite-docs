@@ -3,18 +3,18 @@
        data-aos-delay="50" data-aos-duration="800">
     <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
-      <div v-if="currentItem>0" class="arrow left _hidden-md-and-down"
-           @click="scrollItem('minus')">
+      <div v-if="currentItem>0" class="arrow left"
+           @click="scrollItemBack()">
         <i class="fal fa-angle-left"/>
       </div>
     </transition>
     <transition name="slideFromRight">
-      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="_hidden-md-and-down arrow right" @click="scrollItem('plus')">
+      <div v-if="rightArrowDisplayed" class="arrow right" @click="scrollItemForward()">
         <i class="fal fa-angle-right"/>
       </div>
     </transition>
     <transition name="fade">
-      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="gradient right"/>
+      <div v-if="rightArrowDisplayed" class="gradient right"/>
     </transition>
     <transition name="fade">
       <div v-if="currentItem>0" class="gradient left"/>
@@ -22,11 +22,12 @@
     <i-container ref="container">
       <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition-scrollOffset}px)`}">
         <a
-          v-for="(singleReview) in reviewsData"
+          v-for="(singleReview, index) in reviewsData"
           :id="singleReview.id"
-          :key="singleReview.ref"
-          :ref="singleReview.ref"
+          :key="index"
+          ref="reviewItem"
           :href="singleReview.link"
+          :class="singleReview.classes"
           class="reviewItem"
           target="_blank"
         >
@@ -39,7 +40,7 @@
             >
             <span v-if="singleReview.title">{{ singleReview.title }}</span>
           </div>
-          <div class="reviewText grayText">
+          <div class="reviewText">
             {{ singleReview.text }}
             <i-badge v-if="singleReview.isUpcoming" variant="secondary _upcoming-h3">upcoming</i-badge>
           </div>
@@ -61,11 +62,24 @@
   </div>
 </template>
 
-<script type="ts">
-import Hammer from "hammerjs";
-import ZButton from "~/components/ZButton.vue";
+<script lang="ts">
+import Vue from "vue";
 
-export default {
+import Hammer from "hammerjs";
+import ZButton from "@/components/ZButton.vue";
+
+interface Review {
+  id: string;
+  classes: string;
+  title: string;
+  link: string;
+  thumbnail: string;
+  thumbnailAlt: string;
+  thumbnailTitle: string;
+  text: string;
+}
+
+export default Vue.extend({
   components: {
     ZButton,
   },
@@ -74,9 +88,22 @@ export default {
       default: () => {
         return [
           {
-            id: null,
-            ref: 1,
-            title: null,
+            id: "",
+            classes: "small-text round-thumbnail",
+            title: "Chris Burnisk",
+            link: "https://twitter.com/cburniske/status/1372005938316541955",
+            thumbnail: "argent_chris.jpg",
+            thumbnailAlt: "Chris Burnisk @argentHQ",
+            thumbnailTitle: "Chris Burnisk from @argentHQ",
+            text: `.@argentHQ chooses @zksync L2:
+                  "We're fans of the Optimism team and will monitor their progress with great interest.
+                  Our choice came down to the fact that zkSync has been live on mainnet for months,
+                  has lower transaction costs & fast finality." -@itamarl`,
+          },
+          {
+            id: "",
+            classes: "",
+            title: "",
             link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
             thumbnail: "curve.svg",
             thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
@@ -84,8 +111,8 @@ export default {
             text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math",
           },
           {
-            id: null,
-            ref: 2,
+            id: "",
+            classes: "",
             link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
             thumbnail: "buter.png",
             thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
@@ -95,17 +122,17 @@ export default {
           },
           {
             id: "balancer-review",
-            ref: 3,
-            title: null,
+            classes: "",
+            title: "",
             link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
             thumbnail: "balancer.svg",
             thumbnailAlt: "Mike McDonal, CTO @BalancerLabs",
             thumbnailTitle: "Mike McDonal, Co-founder & CTO @BalancerLabs. Security Engineer about ZK Rollups",
             text: "ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm).",
           },
-        ];
+        ] as Array<Review>;
       },
-      require: true,
+      required: false,
       type: Array,
     },
   },
@@ -118,14 +145,14 @@ export default {
     };
   },
   computed: {
-    leftPosition() {
-      if (this.$refs.container) {
-        const inViewNow = Math.max(1, this.itemsInView());
-        if (inViewNow === 1) {
-          return Math.max(0, this.currentItem * 257 - 10);
-        }
+    leftPosition(): number {
+      if (this.$refs.container && Math.max(1, this.itemsInView()) === 1) {
+        return Math.max(0, this.currentItem * 257 - 10);
       }
       return Math.max(0, this.currentItem * 257 - 10);
+    },
+    rightArrowDisplayed(): boolean {
+      return this.currentItem < this.totalItems - 1 && this.displayRightArrow;
     },
   },
   watch: {
@@ -142,21 +169,20 @@ export default {
     }, 0);
     window.addEventListener("resize", this.checkArrowDisplay);
     const galleryBlock = document.querySelector(".reviewsContainer");
-    new Hammer(galleryBlock).on("pan", (e) => {
+    if (!galleryBlock) {
+      return;
+    }
+    new Hammer(galleryBlock as HTMLElement).on("pan", (e) => {
       if (e.direction !== 2 && e.direction !== 4) {
         return;
       }
       if (!e.isFinal) {
         this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
       } else {
-        if (Math.abs(this.scrollOffset) > 50) {
-          if (Math.sign(this.scrollOffset) < 0) {
-            if (this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
-              this.scrollItem("plus");
-            }
-          } else if (this.currentItem > 0) {
-            this.scrollItem("minus");
-          }
+        if (this.scrollOffset < 50 && this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
+          this.scrollItemForward();
+        } else if (this.scrollOffset > 50 && this.currentItem > 0) {
+          this.scrollItemBack();
         }
         this.scrollOffset = 0;
       }
@@ -166,28 +192,25 @@ export default {
     window.removeEventListener("resize", this.checkArrowDisplay);
   },
   methods: {
-    scrollItem(direction) {
+    scrollItemBack() {
       const inViewNow = Math.max(1, this.itemsInView());
-      if (direction === "plus") {
-        const scrollTo = this.currentItem + Math.max(1, inViewNow);
-        this.currentItem = Math.min(scrollTo, Object.keys(this.$refs).length - 1 - inViewNow);
-      } else {
-        const scrollTo = this.currentItem - Math.max(1, inViewNow);
-        this.currentItem = Math.max(scrollTo, 0);
-      }
+      const scrollTo = this.currentItem - Math.max(1, inViewNow);
+      this.currentItem = Math.max(scrollTo, 0);
+    },
+    scrollItemForward() {
+      const inViewNow = Math.max(1, this.itemsInView());
+      const scrollTo = this.currentItem + Math.max(1, inViewNow);
+      this.currentItem = Math.min(scrollTo, (this.$refs.reviewItem as HTMLElement[]).length - inViewNow);
     },
     itemsInView() {
       let inViewTotal = 0;
-      const refsKeys = Object.keys(this.$refs);
-      const containerSizes = this.$refs.container.$el.getBoundingClientRect();
-      for (const item in refsKeys) {
-        if (item === "container" || !this.$refs[item]) {
+      const containerSizes = ((this.$refs.container as Vue).$el as HTMLElement).getBoundingClientRect();
+      const reviewItems = this.$refs.reviewItem as HTMLElement[];
+      for (const itemEl of reviewItems) {
+        if (!itemEl.getBoundingClientRect) {
           continue;
         }
-        if (!this.$refs[item] || typeof this.$refs[item] !== "object" || this.$refs[item].getBoundingClientRect !== "function") {
-          continue;
-        }
-        const itemSizes = this.$refs[item].getBoundingClientRect();
+        const itemSizes = itemEl.getBoundingClientRect();
         if (itemSizes.left >= containerSizes.left - 20 && itemSizes.right <= containerSizes.right + 20) {
           inViewTotal++;
         }
@@ -203,9 +226,9 @@ export default {
      * @param img
      * @returns {any}
      */
-    getAssetUrl(img) {
+    getAssetUrl(img: string) {
       return require("@/assets/images/pages/index/" + img);
     },
   },
-};
+});
 </script>
