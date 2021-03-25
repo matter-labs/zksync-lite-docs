@@ -27,24 +27,26 @@ Any DeFi project can be migrated to zkSync, since most of the existing Solidity 
 
 The Sync VM is a high-efficient, Turing-complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
 
-State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized for high-load, allowing executing transactions in a blink of
-an eye.
+State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
+for high-load, allowing to execute transactions in a blink of an eye.
 
-The machine is SNARK-friendly, that is, the execution trace can be proven in SNARKs. However, it does not require a circuit per program. A single circuit can be used instead, which
-needs to be audited only once.
+The machine is SNARK-friendly, that is, the execution trace can be proven in SNARKs. However, it does not require a
+circuit per program. A single circuit can be used instead, which needs to be audited only once.
 
 The target proof system of the Sync VM is [PLONK](https://eprint.iacr.org/2019/953).
 
 ## Zinc
 
-[Zinc](https://github.com/matter-labs/zinc) is an emerging framework for developing smart contracts and SNARK circuits on the zkSync platform.
+[Zinc](https://github.com/matter-labs/zinc) is an emerging framework for developing smart contracts and SNARK circuits
+on the zkSync platform.
 
-Existing ZKP frameworks lack functionality specific for smart contracts. Security and safety aspects are crucial for developing smart contracts since they deal with valuable
-financial assets. Modern smart contract languages, such as Simplicity or Libra's Move, deliberately made design choices that favor safety and formal verifiability of the code over
+Existing ZKP frameworks lack functionality specific for smart contracts. Security and safety aspects are crucial for
+developing smart contracts since they deal with valuable financial assets. Modern smart contract languages, such as
+Simplicity or Libra's Move, deliberately made design choices that favor safety and formal verifiability of the code over
 generalistic expressiveness.
 
-Zinc is created to fill the gap between the two worlds: to provide a smart contract language optimized for ZKP circuits, which is reliable and simple at the same time, and can be
-quickly learned by a large number of software developers.
+Zinc is created to fill the gap between the two worlds: to provide a smart contract language optimized for ZKP circuits,
+which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
 
 The framework includes a simple, Turing-complete, safety-focused, general-purpose language, designed specifically for
 developing smart contracts and zero-knowledge proof circuits with a flat learning curve. Syntax and semantic closely
@@ -65,15 +67,16 @@ principles and conventions.
 
 You can ask questions and get assistance in our [Gitter](https://gitter.im/matter-labs/zinc) chat room.
 
-If you would like to migrate an existing project to [zkSync](https://zksync.io) and require help, please email us at hello@matter-labs.io.
+If you would like to migrate an existing project to [zkSync](https://zksync.io) and require help, please send us an
+email at hello@matter-labs.io.
 
 ## Solidity
 
-[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general-purpose language with a huge codebase and number of DeFi projects, adopted by thousands of blockchain
-developers from all over the world.
+[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general-purpose language with a huge codebase and
+number of DeFi projects, adopted by thousands of blockchain developers from all over the world.
 
-It will be possible to deploy the most of the Solidity projects almost without modifications. However, some features will likely be prohibited and should be omitted in order to
-keep the code compatible:
+It will be possible to deploy the most of Solidity projects almost without modifications. However, some features will
+likely be prohibited and should be omitted in order to keep the code compatible:
 
 - ASM blocks with memory access
 - facilitating calculations via overflows
@@ -82,7 +85,7 @@ keep the code compatible:
 
 As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify the migration process.
 
-## Choosing the framework
+## Choosig the framework
 
 <table>
   <tr>
