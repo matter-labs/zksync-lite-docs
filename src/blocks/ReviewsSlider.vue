@@ -4,17 +4,17 @@
     <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
       <div v-if="currentItem>0" class="arrow left"
-           @click="scrollItem('minus')">
+           @click="scrollItemBack()">
         <i class="fal fa-angle-left"/>
       </div>
     </transition>
     <transition name="slideFromRight">
-      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="arrow right" @click="scrollItem('plus')">
+      <div v-if="rightArrowDisplayed" class="arrow right" @click="scrollItemForward()">
         <i class="fal fa-angle-right"/>
       </div>
     </transition>
     <transition name="fade">
-      <div v-if="currentItem<(totalItems-1) && displayRightArrow" class="gradient right"/>
+      <div v-if="rightArrowDisplayed" class="gradient right"/>
     </transition>
     <transition name="fade">
       <div v-if="currentItem>0" class="gradient left"/>
@@ -146,13 +146,13 @@ export default Vue.extend({
   },
   computed: {
     leftPosition(): number {
-      if (this.$refs.container) {
-        const inViewNow = Math.max(1, this.itemsInView());
-        if (inViewNow === 1) {
-          return Math.max(0, this.currentItem * 257 - 10);
-        }
+      if (this.$refs.container && Math.max(1, this.itemsInView()) === 1) {
+        return Math.max(0, this.currentItem * 257 - 10);
       }
       return Math.max(0, this.currentItem * 257 - 10);
+    },
+    rightArrowDisplayed(): boolean {
+      return this.currentItem < this.totalItems - 1 && this.displayRightArrow;
     },
   },
   watch: {
@@ -179,14 +179,10 @@ export default Vue.extend({
       if (!e.isFinal) {
         this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
       } else {
-        if (Math.abs(this.scrollOffset) > 50) {
-          if (Math.sign(this.scrollOffset) < 0) {
-            if (this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
-              this.scrollItem("plus");
-            }
-          } else if (this.currentItem > 0) {
-            this.scrollItem("minus");
-          }
+        if (this.scrollOffset < 50 && this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
+          this.scrollItemForward();
+        } else if (this.scrollOffset > 50 && this.currentItem > 0) {
+          this.scrollItemBack();
         }
         this.scrollOffset = 0;
       }
@@ -196,15 +192,15 @@ export default Vue.extend({
     window.removeEventListener("resize", this.checkArrowDisplay);
   },
   methods: {
-    scrollItem(direction: "plus" | "minus") {
+    scrollItemBack() {
       const inViewNow = Math.max(1, this.itemsInView());
-      if (direction === "plus") {
-        const scrollTo = this.currentItem + Math.max(1, inViewNow);
-        this.currentItem = Math.min(scrollTo, (this.$refs.reviewItem as HTMLElement[]).length - inViewNow);
-      } else {
-        const scrollTo = this.currentItem - Math.max(1, inViewNow);
-        this.currentItem = Math.max(scrollTo, 0);
-      }
+      const scrollTo = this.currentItem - Math.max(1, inViewNow);
+      this.currentItem = Math.max(scrollTo, 0);
+    },
+    scrollItemForward() {
+      const inViewNow = Math.max(1, this.itemsInView());
+      const scrollTo = this.currentItem + Math.max(1, inViewNow);
+      this.currentItem = Math.min(scrollTo, (this.$refs.reviewItem as HTMLElement[]).length - inViewNow);
     },
     itemsInView() {
       let inViewTotal = 0;

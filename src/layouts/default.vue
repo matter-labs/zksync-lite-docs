@@ -15,7 +15,7 @@ import Vue from "vue";
 
 import headerComponent from "@/blocks/Header.vue";
 
-/** @var AOS AOS **/
+/* AOS doesn't support TS */
 // @ts-ignore: Unreachable code error
 import AOS from "aos";
 
@@ -51,7 +51,7 @@ export default Vue.extend({
     AOS.init({
       once: true,
     });
-    (this as any).$inkline.config.variant = "dark";
+    (this as any).$inkline.config.variant = "dark"; /* Vue 2 TS doesn't support custom global properties, therefore we need to bypass type checking */
   },
   mounted() {
     if (process.client) {

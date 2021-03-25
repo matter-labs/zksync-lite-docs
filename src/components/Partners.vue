@@ -36,7 +36,7 @@ import Vue from "vue";
 
 import Emphasis from "@/components/Emphasis.vue";
 
-interface parenerDataItem {
+interface PartnerDataItem {
   id: string;
   img: string;
   alt: string;
@@ -177,7 +177,7 @@ export default Vue.extend({
             alt: "Numio",
             title: "Numio is using zkRollups from zkSync in the mobile payments app",
           },
-        ] as Array<parenerDataItem>;
+        ] as Array<PartnerDataItem>;
       },
       required: false,
     },
