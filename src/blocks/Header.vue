@@ -89,7 +89,7 @@ export default Vue.extend({
           link: "https://zkscan.io/",
         },
         {
-          name: "zkWithdraw",
+          name: "Alternative Withdrawal",
           link: "https://withdraw.zksync.io/",
         },
         {
