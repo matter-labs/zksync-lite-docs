@@ -6,7 +6,7 @@
       <i-button type="submit" class="submitBtn" size="lg" variant="secondary">
         Subscribe
       </i-button>
-      <div class="hiddenFormElement" aria-hidden="true"><input name="b_ef8545da9c594ae082297352d_fa715c9af0" tabindex="-1" value=""></div>
+      <div class="_display-none" aria-hidden="true"><input name="b_ef8545da9c594ae082297352d_fa715c9af0" tabindex="-1" value=""></div>
     </form>
   </div>
 </template>
