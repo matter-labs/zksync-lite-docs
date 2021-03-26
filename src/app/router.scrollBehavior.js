@@ -23,6 +23,7 @@ export default async function (to, from, savedPosition) {
   };
 
   if (to.hash) {
+    /* Need to wait until DOM and main styles loads, to get correct element position */
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
