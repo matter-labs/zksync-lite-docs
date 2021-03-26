@@ -24,7 +24,7 @@ export default async function (to, from, savedPosition) {
 
   if (to.hash) {
     const el = await findEl(to.hash);
-    const offsetTop = el.getBoundingClientRect().top + window.pageYOffset;
+    const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 84; /* 84px - size of the header */
     if ("scrollBehavior" in document.documentElement.style) {
       return window.scrollTo({ top: offsetTop, behavior: "smooth" });
     } else {

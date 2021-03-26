@@ -29,24 +29,6 @@ export default Vue.extend({
   data() {
     return {};
   },
-  watch: {
-    $route: {
-      immediate: true,
-      handler(val, oldVal) {
-        if (!oldVal) {
-          return this.$nextTick(() => {
-            document.documentElement.scrollTop = 0;
-          });
-        }
-        if (val.path !== oldVal.path) {
-          this.$nextTick(() => {
-            const lastScroll = this.$store.getters["scroll/getLastScroll"];
-            document.documentElement.scrollTop = lastScroll !== false ? lastScroll.y : 0;
-          });
-        }
-      },
-    },
-  },
   created() {
     AOS.init({
       once: true,
@@ -57,6 +39,13 @@ export default Vue.extend({
     if (process.client) {
       window.history.scrollRestoration = "manual";
     }
+    this.handlePageScroll();
+  },
+  methods: {
+    handlePageScroll() {
+      const lastScroll = this.$store.getters["scroll/getLastScroll"];
+      document.documentElement.scrollTop = lastScroll !== false ? lastScroll.y : 0;
+    },
   },
 });
 </script>
