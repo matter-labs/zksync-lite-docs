@@ -12,8 +12,17 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+interface socialIcon {
+  name: string;
+  icon: Array<string>;
+  url: string;
+  hideIn?: string;
+}
+
+export default Vue.extend({
   props: {
     location: {
       required: false,
@@ -22,7 +31,7 @@ export default {
     },
   },
   computed: {
-    socialNetworks() {
+    socialNetworks(): Array<socialIcon> {
       const socialIcons = [
         {
           name: "Medium Blog",
@@ -55,9 +64,9 @@ export default {
           url: "/contact.html",
           hideIn: "footer",
         },
-      ];
+      ] as Array<socialIcon>;
       return socialIcons.filter((item) => !item.hideIn || item.hideIn !== this.location);
     },
   },
-};
+});
 </script>
