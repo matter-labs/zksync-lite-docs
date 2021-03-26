@@ -159,20 +159,22 @@
   </div>
 </template>
 
-<script>
-import About from "@/blocks/About";
+<script lang="ts">
+import Vue from "vue";
+
+import About from "@/blocks/About.vue";
 import codeBlock from "@/blocks/CodeBlock.vue";
 import newsletter from "@/blocks/Newsletter.vue";
 import ReviewsSlider from "@/blocks/ReviewsSlider.vue";
 import socialBlock from "@/blocks/SocialBlock.vue";
-import Emphasis from "@/components/Emphasis";
-import ZButton from "@/components/ZButton";
-import ZCta from "@/components/ZCta";
-import ZHero from "@/components/ZHero";
-import Comparison from "@/components/Comparison";
-import Partners from "@/components/Partners";
+import Emphasis from "@/components/Emphasis.vue";
+import ZButton from "@/components/ZButton.vue";
+import ZCta from "@/components/ZCta.vue";
+import ZHero from "@/components/ZHero.vue";
+import Comparison from "@/components/Comparison.vue";
+import Partners from "@/components/Partners.vue";
 
-export default {
+export default Vue.extend({
   components: {
     Partners,
     Comparison,
@@ -228,5 +230,5 @@ export default {
       chosenBlock: 0,
     };
   },
-};
+});
 </script>

@@ -31,9 +31,12 @@
   </div>
 </template>
 
-<script>
-import ZCta from "@/components/ZCta";
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+import ZCta from "@/components/ZCta.vue";
+
+export default Vue.extend({
   components: { ZCta },
   props: {
     activeColor: {
@@ -96,5 +99,5 @@ export default {
       };
     },
   },
-};
+});
 </script>

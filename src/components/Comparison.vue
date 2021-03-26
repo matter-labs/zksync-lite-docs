@@ -22,15 +22,18 @@ with zero security compromises"
         </i-row>
     </i-container>
 </template>
-<script>
-import Optimistic from "@/blocks/compare/optimistic";
-import OtherZk from "@/blocks/compare/other-zk";
 
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+import Optimistic from "@/blocks/compare/optimistic.vue";
+import OtherZk from "@/blocks/compare/other-zk.vue";
+
+export default Vue.extend({
   name: "Comparison",
   components: {
     Optimistic,
     OtherZk,
   },
-};
+});
 </script>
