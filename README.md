@@ -10,7 +10,7 @@ First public release of the updated zkSync.io landing page design
 
 ---
 
-* Partners block addded 
+* Partners block added 
 * Tables purified
 * Code optimized
 
