@@ -31,6 +31,9 @@ export type Address = string;
 
 // Committed nonce is going to be resolved to last nonce known to the zkSync network
 export type Nonce = number | "committed";
+
+// Committed nonce is going to be resolved to last nonce known to the zkSync network
+export type ChangePubkeyTypes = "Onchain" | "ECDSA" | "CREATE2" | "ECDSALegacyMessage";
 ```
 
 ## Fees

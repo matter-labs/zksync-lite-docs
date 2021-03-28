@@ -224,14 +224,16 @@ so that user would not need to approve each deposit.
 
 ```typescript
 async approveERC20TokenDeposits(
-    token: TokenLike
+    token: TokenLike,
+    max_erc20_approve_amount?: BigNumberish
 ): Promise<ethers.ContractTransaction>;
 ```
 
-| Name          | Description                          |
-| ------------- | ------------------------------------ |
-| deposit.token | ERC20 token                          |
-| returns       | Handle for the ethereum transaction. |
+| Name                                | Description                          |
+| ----------------------------------- | ------------------------------------ |
+| token                               | ERC20 token                          |
+| max_erc20_approve_amount (optional) | Amount of token to be unlocked       |
+| returns                             | Handle for the ethereum transaction. |
 
 > Signature
 
@@ -241,7 +243,7 @@ async isERC20DepositsApproved(token: TokenLike): Promise<boolean>;
 
 | Name          | Description                             |
 | ------------- | --------------------------------------- |
-| deposit.token | ERC20 token to be approved for deposits |
+| token | ERC20 token to be approved for deposits |
 | returns       | True if the token deposits are approved |
 
 ### Deposit token to Sync
@@ -276,14 +278,14 @@ async depositToSyncFromEthereum(deposit: {
 
 #### Inputs and outputs
 
-| Name                                           | Description                                                        |
-| ---------------------------------------------- | ------------------------------------------------------------------ |
-| deposit.depositTo                              | Sync account address of the receiver                               |
-| deposit.token                                  | token to be transferred (symbol or address of the supported token) |
-| deposit.amount                                 | amount of token to be transferred                                  |
-| deposit.ethTxOptions                           | arguments for the deposit Ethereum transaction, e.g. gas price.    |
-| deposit.approveDepositAmountForERC20(optional) | See below\*                                                        |
-| returns                                        | Handle for this transaction.                                       |
+| Name                                            | Description                                                        |
+| ----------------------------------------------- | ------------------------------------------------------------------ |
+| deposit.depositTo                               | Sync account address of the receiver                               |
+| deposit.token                                   | token to be transferred (symbol or address of the supported token) |
+| deposit.amount                                  | amount of token to be transferred                                  |
+| deposit.ethTxOptions                            | arguments for the deposit Ethereum transaction, e.g. gas price.    |
+| deposit.approveDepositAmountForERC20 (optional) | See below\*                                                        |
+| returns                                         | Handle for this transaction.                                       |
 
 \*: If set, the user will be asked to approve the ERC20 token spending to our account (not required if
 [token was unlocked](#unlocking-erc20-deposits))
@@ -332,21 +334,25 @@ The operators require a fee to be paid in order to process transactions.[^fee]
 ```typescript
 async setSigningKey(changePubKey: {
     feeToken: TokenLike;
+    ethAuthType: ChangePubkeyTypes;
     fee?: BigNumberish;
     nonce?: Nonce;
-    onchainAuth?: boolean;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
 
-| Name                        | Description                                                               |
-| --------------------------- | ------------------------------------------------------------------------- |
-| changePubKey.nonce          | Nonce that is going to be used for this transaction.[^nonce]              |
-| changePubKey.feeToken       | Token to pay fee in.[^token]                                              |
-| changePubKey.fee (optional) | Amount of token to be paid as a fee for this transaction.[^fee]           |
-| changePubKey.onchainAuth    | Whether authorization for ChangePubKey is performed in L1.[^onchain_auth] |
-| returns                     | Handle of the submitted transaction.                                      |
+| Name                                   | Description                                                               |
+| -------------------------------------- | ------------------------------------------------------------------------- |
+| changePubKey.feeToken                  | Token to pay fee in.[^token]                                              |
+| changePubKey.ethAuthType               | <!-- TODO -->                                                             |
+| changePubKey.fee (optional)            | Amount of token to be paid as a fee for this transaction.[^fee]           |
+| changePubKey.nonce (optional)          | Nonce that is going to be used for this transaction.[^nonce]              |
+| changePubKey.validFrom (optional)      | <!-- TODO -->                                                             |
+| changePubKey.validUntil (optional)     | <!-- TODO -->                                                             |
+| returns                                | Handle of the submitted transaction.                                      |
 
 > Example
 
@@ -358,7 +364,8 @@ const wallet = ..;// setup zksync wallet
 if (! await wallet.isSigningKeySet()) {
     const changePubkey = await wallet.setSigningKey({
         feeToken: "FAU",
-        fee: ethers.utils.parseEther("0.001")
+        fee: ethers.utils.parseEther("0.001"),
+        ethAuthType: "ECDSA"
     });
 
     // Wait till transaction is committed
@@ -378,19 +385,25 @@ async signSetSigningKey(changePubKey: {
     feeToken: TokenLike;
     fee: BigNumberish;
     nonce: number;
-    onchainAuth: boolean;
+    ethAuthType: ChangePubkeyTypes;
+    batchHash?: string;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
 
-| Name                     | Description                                                              |
-| ------------------------ | ------------------------------------------------------------------------ |
-| changePubKey.nonce       | Nonce that is going to be used for this transaction.[^nonce]             |
-| changePubKey.feeToken    | Token to pay fee in.[^token]                                             |
-| changePubKey.fee         | Amount of token to be paid as a fee for this transaction.[^fee]          |
-| changePubKey.onchainAuth | Whether authorization for ChangePubKey is performed in L1[^onchain_auth] |
-| returns                  | Signed transaction                                                       |
+| Name                                 | Description                                                              |
+| ------------------------------------ | ------------------------------------------------------------------------ |
+| changePubKey.feeToken                | Token to pay fee in.[^token]                                             |
+| changePubKey.fee                     | Amount of token to be paid as a fee for this transaction.[^fee]          |
+| changePubKey.nonce                   | Nonce that is going to be used for this transaction.[^nonce]             |
+| changePubKey.ethAuthType             | <!-- TODO -->                                                            |
+| changePubKey.batchHash  (optional)   | <!-- TODO -->                                                            |
+| changePubKey.validFrom  (optional)   | <!-- TODO -->                                                            |
+| changePubKey.validUntil (optional)   | <!-- TODO -->                                                            |
+| returns                              | Signed transaction                                                       |
 
 ### Authorize new public key using ethereum transaction
 
@@ -408,11 +421,11 @@ async onchainAuthSigningKey(
 
 #### Inputs and outputs
 
-| Name         | Description                                                                    |
-| ------------ | ------------------------------------------------------------------------------ |
-| nonce        | Nonce that is going to be used for `setSigningKey` transaction.[^nonce]        |
-| ethTxOptions | arguments for the onchain authentication Ethereum transaction, e.g. gas price. |
-| returns      | Handle of the submitted transaction                                            |
+| Name                    | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| nonce                   | Nonce that is going to be used for `setSigningKey` transaction.[^nonce]        |
+| ethTxOptions (optional) | arguments for the onchain authentication Ethereum transaction, e.g. gas price. |
+| returns                 | Handle of the submitted transaction                                            |
 
 > Example
 
@@ -426,7 +439,10 @@ if (! await wallet.isSigningKeySet()) {
     // Wait till transaction is committed on ethereum.
     await onchainAuthTransaction.wait();
 
-    const changePubkey = await wallet.setSigningKey("committed", true);
+    const changePubkey = await wallet.setSigningKey({
+        feeToken: "ETH",
+        ethAuthType: "ECDSA"
+    });
 
     // Wait till transaction is committed
     const receipt = await changePubkey.awaitReceipt();
@@ -476,21 +492,25 @@ async syncTransfer(transfer: {
     to: Address;
     token: TokenLike;
     amount: BigNumberish;
-    fee: BigNumberish;
+    fee?: BigNumberish;
     nonce?: Nonce;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
 
-| Name                   | Description                                                     |
-| ---------------------- | --------------------------------------------------------------- |
-| transfer.to            | zkSync address of the recipient of funds                        |
-| transfer.token         | Token to be transferred[^token]                                 |
-| transfer.amount        | Amount of token to be transferred.[^amount]                     |
-| transfer.fee(optional) | Amount of token to be paid as a fee for this transaction.[^fee] |
-| transfer.nonce         | Nonce that is going to be used for this transaction.[^nonce]    |
-| returns                | Handle of the submitted transaction                             |
+| Name                                   | Description                                                     |
+| -------------------------------------- | --------------------------------------------------------------- |
+| transfer.to                            | zkSync address of the recipient of funds                        |
+| transfer.token                         | Token to be transferred[^token]                                 |
+| transfer.amount                        | Amount of token to be transferred.[^amount]                     |
+| transfer.fee (optional)                | Amount of token to be paid as a fee for this transaction.[^fee] |
+| transfer.nonce (optional)              | Nonce that is going to be used for this transaction.[^nonce]    |
+| transfer.validFrom (optional)          | <!-- TODO -->                                                   |
+| transfer.validUntil (optional)         | <!-- TODO -->                                                   |
+| returns                                | Handle of the submitted transaction                             |
 
 > Example
 
@@ -524,19 +544,23 @@ async signSyncTransfer(transfer: {
     amount: BigNumberish;
     fee: BigNumberish;
     nonce: number;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
 
-| Name            | Description                                                     |
-| --------------- | --------------------------------------------------------------- |
-| transfer.to     | zkSync address of the recipient of funds                        |
-| transfer.token  | Token to be transferred.[^token]                                |
-| transfer.amount | Amount of token to be transferred.[^amount]                     |
-| transfer.fee    | Amount of token to be paid as a fee for this transaction.[^fee] |
-| transfer.nonce  | Nonce that is going to be used for this transaction.[^nonce]    |
-| returns         | Signed transaction.                                             |
+| Name                           | Description                                                     |
+| ------------------------------ | --------------------------------------------------------------- |
+| transfer.to                    | zkSync address of the recipient of funds                        |
+| transfer.token                 | Token to be transferred.[^token]                                |
+| transfer.amount                | Amount of token to be transferred.[^amount]                     |
+| transfer.fee                   | Amount of token to be paid as a fee for this transaction.[^fee] |
+| transfer.nonce                 | Nonce that is going to be used for this transaction.[^nonce]    |
+| transfer.validFrom (optional)  | <!-- TODO -->                                                   |
+| transfer.validUntil (optional) | <!-- TODO -->                                                   |
+| returns                        | Signed transaction.                                             |
 
 ### Batched Transfers in the zkSync
 
@@ -559,6 +583,8 @@ async syncMultiTransfer(
         amount: BigNumberish;
         fee: BigNumberish;
         nonce?: Nonce;
+        validFrom?: number;
+        validUntil?: number;
     }[]
 ): Promise<Transaction[]>;
 ```
@@ -616,23 +642,27 @@ async withdrawFromSyncToEthereum(withdraw: {
     ethAddress: string;
     token: TokenLike;
     amount: BigNumberish;
-    fee: BigNumberish;
+    fee?: BigNumberish;
     nonce?: Nonce;
     fastProcessing?: boolean;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
 
-| Name                    | Description                                                                               |
-| ----------------------- | ----------------------------------------------------------------------------------------- |
-| withdraw.ethAddress     | Ethereum address of the recipient                                                         |
-| withdraw.token          | Token to be transferred[^token].                                                          |
-| withdraw.amount         | Amount of token to be transferred[^amount].                                               |
-| withdraw.fee            | amount of token to be paid as a fee for this transaction[^fee].                           |
-| withdraw.nonce          | Nonce that is going to be used for this transaction[^nonce].                              |
-| withdraw.fastProcessing | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
-| returns                 | Handle of the submitted transaction                                                       |
+| Name                               | Description                                                                               |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- |
+| withdraw.ethAddress                | Ethereum address of the recipient                                                         |
+| withdraw.token                     | Token to be transferred[^token].                                                          |
+| withdraw.amount                    | Amount of token to be transferred[^amount].                                               |
+| withdraw.fee (optional)                       | amount of token to be paid as a fee for this transaction[^fee].                           |
+| withdraw.nonce (optional)          | Nonce that is going to be used for this transaction[^nonce].                              |
+| withdraw.fastProcessing (optional) | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
+| withdraw.validFrom (optional)      | <!-- TODO --> |
+| withdraw.validUntil (optional)     | <!-- TODO --> |
+| returns                            | Handle of the submitted transaction                                                       |
 
 > Example
 
@@ -666,19 +696,23 @@ async signWithdrawFromSyncToEthereum(withdraw: {
     amount: BigNumberish;
     fee: BigNumberish;
     nonce: number;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
 
-| Name                | Description                                                     |
-| ------------------- | --------------------------------------------------------------- |
-| withdraw.ethAddress | Ethereum address of the recipient                               |
-| withdraw.token      | Token to be transferred[^token].                                |
-| withdraw.amount     | Amount of token to be transferred[^amount].                     |
-| withdraw.fee        | amount of token to be paid as a fee for this transaction[^fee]. |
-| withdraw.nonce      | Nonce that is going to be used for this transaction[^nonce].    |
-| returns             | Signed transaction                                              |
+| Name                           | Description                                                     |
+| ------------------------------ | --------------------------------------------------------------- |
+| withdraw.ethAddress            | Ethereum address of the recipient                               |
+| withdraw.token                 | Token to be transferred[^token].                                |
+| withdraw.amount                | Amount of token to be transferred[^amount].                     |
+| withdraw.fee                   | amount of token to be paid as a fee for this transaction[^fee]. |
+| withdraw.nonce                 | Nonce that is going to be used for this transaction[^nonce].    |
+| withdraw.validFrom (optional)  | <!-- TODO -->                                                   |
+| withdraw.validUntil (optional) | <!-- TODO -->                                                   |
+| returns                        | Signed transaction                                              |
 
 ### Initiate a forced exit for an account
 
@@ -705,18 +739,22 @@ async syncForcedExit(forcedExit: {
     token: TokenLike;
     fee?: BigNumberish;
     nonce?: Nonce;
+    validFrom?: number;
+    validUntil?: number;
 }): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
 
-| Name              | Description                                                     |
-| ----------------- | --------------------------------------------------------------- |
-| forcedExit.target | Ethereum address of the target account.                         |
-| forcedExit.token  | Token to be transferred[^token].                                |
-| forcedExit.fee    | Amount of token to be paid as a fee for this transaction[^fee]. |
-| forcedExit.nonce  | Nonce that is going to be used for this transaction[^nonce].    |
-| returns           | Handle of the submitted transaction                             |
+| Name                             | Description                                                     |
+| -------------------------------- | --------------------------------------------------------------- |
+| forcedExit.target                | Ethereum address of the target account.                         |
+| forcedExit.token                 | Token to be transferred[^token].                                |
+| forcedExit.fee (optional)        | Amount of token to be paid as a fee for this transaction[^fee]. |
+| forcedExit.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce].    |
+| forcedExit.validFrom (optional)  | <!-- TODO -->                                                   |
+| forcedExit.validUntil (optional) | <!-- TODO -->                                                   |
+| returns                          | Handle of the submitted transaction                             |
 
 > Example
 
@@ -810,6 +848,97 @@ const emergencyWithdrawPriorityOp = await syncWallet.emergencyWithdraw({
 
 // Wait till priority operation is verified.
 const priorityOpReceipt = await emergencyWithdrawPriorityOp.awaitVerifyReceipt();
+```
+
+### Withdraw pending balance
+
+<!-- TODO --> Description
+
+> Signature
+
+```typescript
+async withdrawPendingBalance(
+    from: Address;
+    token: TokenLike;
+    amount?: BigNumberish
+): Promise<ContractTransaction>;
+```
+
+#### Inputs and outputs
+
+| Name                             | Description                                                            |
+| -------------------------------- | ---------------------------------------------------------------------- |
+| from                             | Ethereum address of the target account.                                |
+| token                            | Token to be withdrawn[^token]                                          |
+| amount (optional)                | Amount to withdraw                                                     |
+| returns                          | Handle for this transaction.                                           |
+
+> Example
+
+```typescript
+import * as zksync from "zksync";
+import { ethers } from "ethers";
+
+const syncWallet = ..; // Setup zksync wallet.
+
+const withdrawPendingTx = await syncWallet.withdrawPendingBalance(
+  "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c"
+  "ETH",
+  ethers.utils.parseEther("0.001")
+);
+
+
+// Wait till priority operation is verified.
+const priorityOpReceipt = await withdrawPendingTx.wait();
+```
+
+### Withdraw pending balances
+
+<!-- TODO --> Description
+
+> Signature
+
+```typescript
+async withdrawPendingBalances(
+    addresses: Address[];
+    tokens: TokenLike[];
+    multicallParams: {
+        address?: Address;
+        network?: Network;
+        gasLimit?: BigNumberish;
+    };
+    amounts?: BigNumberish[]
+): Promise<ContractTransaction>;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| from                              | Ethereum addresses of the target account.                              |
+| tokens                            | Tokens to be withdrawn[^token]                                         |
+| multicallParams                   | <!-- TODO -->                                                          |
+| amounts (optional)                | Amounts to withdraw                                                    |
+| returns                           | Handle for this transaction.                                           |
+
+> Example
+
+```typescript
+import * as zksync from "zksync";
+import { ethers } from "ethers";
+
+const syncWallet = ..; // Setup zksync wallet.
+
+const withdrawPendingTx = await syncWallet.withdrawPendingBalances(
+  ["0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c","0x2D9835a1C1662559975B00AEA00e326D1F9f13d0"]
+  ["ETH","DAI"],
+  {},
+  [ethers.utils.parseEther("0.001"),ethers.utils.parseEther("0.002")]
+);
+
+
+// Wait till priority operation is verified.
+const priorityOpReceipt = await withdrawPendingTx.wait();
 ```
 
 ## Signer
@@ -974,17 +1103,25 @@ async signSyncChangePubKey(changePubKey: {
     feeTokenId: number;
     fee: BigNumberish;
     nonce: number;
+    validFrom: number;
+    validUntil: number;
+    ethAuthData?: ChangePubKeyOnchain | ChangePubKeyECDSA | ChangePubKeyCREATE2;
+    ethSignature?: string;
 }): Promise<ChangePubKey>;
 ```
 
 #### Inputs and outputs
 
-| Name                    | Description                               |
-| ----------------------- | ----------------------------------------- |
-| changePubKey.accountId  | Account id of the sender                  |
-| changePubKey.account    | zkSync address of the account             |
-| changePubKey.newPkHash  | Public key hash to be set for an account  |
-| changePubKey.feeTokenId | Numerical token id                        |
-| changePubKey.fee        | Fee to pay for operation, paid in token   |
-| changePubKey.nonce      | Transaction nonce                         |
-| returns                 | Signed Sync change public key transaction |
+| Name                                 | Description                               |
+| ------------------------------------ | ----------------------------------------- |
+| changePubKey.accountId               | Account id of the sender                  |
+| changePubKey.account                 | zkSync address of the account             |
+| changePubKey.newPkHash               | Public key hash to be set for an account  |
+| changePubKey.feeTokenId              | Numerical token id                        |
+| changePubKey.fee                     | Fee to pay for operation, paid in token   |
+| changePubKey.nonce                   | Transaction nonce                         |
+| changePubKey.validFrom               | <!-- TODO -->                             |
+| changePubKey.validUntil              | <!-- TODO -->                             |
+| changePubKey.ethAuthData (optional)  | <!-- TODO -->                             |
+| changePubKey.ethSignature (optional) | <!-- TODO -->                             |
+| returns                              | Signed Sync change public key transaction |
