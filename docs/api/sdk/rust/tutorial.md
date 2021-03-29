@@ -154,7 +154,7 @@ if !wallet.is_signing_key_set().await? {
 }
 ```
 
-## Checking a zkSync account balance
+## Checking a zkSync account's balance
 
 ```rust
 use zksync::types::BlockStatus;
@@ -184,8 +184,8 @@ let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);
 let another_wallet = Wallet::new(provider, cred).await;
 ```
 
-We are going to transfer `0.5 ETH` to another account. The fee will be set automatically by the server to the minimal
-acceptable amount.
+We are going to transfer `0.5 ETH` to another account. The fee will be set automatically to the least possible fee
+accepted by the server.
 
 Note that the SDK may round down the transferred amount or fee to the closest supported amount because the precision of transfers in
 zkSync is limited (see docs below).

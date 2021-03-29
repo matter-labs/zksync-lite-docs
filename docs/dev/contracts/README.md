@@ -44,10 +44,10 @@ Existing ZKP frameworks lack functionality specific to smart contracts. Since sm
 Simplicity or Libra's Move, favored safety and formal verifiability of the code over
 expressiveness.
 
-Zinc is created to fill the gap between these two worlds by providing a simple, reliable smart contract language that is optimized for ZKP circuits and easy for
+Zinc is created to fill the gap between these two worlds by providing a simple, reliable smart contract language that is optimized for ZKP circuits and is easy for
 developers to learn.
 
-The framework includes a simple, Turing complete, safety-focused, general purpose language designed specifically for
+The framework includes a simple, Turing complete, safety-focused, general-purpose language designed specifically for
 developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantics closely
 follow that of [Rust](https://www.rust-lang.org/).
 
@@ -71,7 +71,7 @@ email at hello@matter-labs.io.
 
 ## Solidity
 
-[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a general purpose language with a huge codebase and
+[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a general-purpose language with a huge codebase and
 numberous DeFi projects, a language adopted by thousands of blockchain developers from all over the world.
 
 It will be possible to deploy most Solidity projects almost without modification. However, some features will
