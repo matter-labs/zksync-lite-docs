@@ -3,6 +3,7 @@
 <!-- Common links used alongside the file -->
 
 [signer]: #signer
+[batch builder]: #batch-builder
 [set signing key transaction]: #changing-account-public-key
 [additional ethereum transaction]: #authorize-new-public-key-using-ethereum-transaction
 [transfer]: #transfer-in-the-zksync
@@ -124,6 +125,50 @@ const syncProvider = await zksync.getDefaultProvider("rinkeby");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvider);
+```
+
+### Creating wallet from CREATE2 data
+
+> Signature
+
+```typescript
+static async fromCreate2Data(
+    syncSigner: Signer,
+    provider: Provider,
+    create2Data: Create2Data,
+    accountId?: number
+): Promise<Wallet>;
+```
+
+#### Inputs and outputs
+
+| Name                        | Description                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| syncSigner                  | Sync signer that will be used for transaction signing.[^signer]              |
+| provider                    | Sync provider that is used for submitting a transaction to the Sync network. |
+| create2Data                 | <!-- TODO -->                                                                |
+| accountId (optional)        | zkSync account id.[^acc_id]                                                  |
+| returns                     | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
+
+> Example
+
+```typescript
+import * as zksync from "zksync";
+import crypto from "crypto"
+import { ethers } from "ethers"
+
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const signer = await zksync.Signer.fromSeed(crypto.randomBytes(32));
+const randomHex = (length: number) => {
+  const bytes = crypto.randomBytes(length);
+  return ethers.utils.hexlify(bytes);
+};
+const create2Data = {
+  creatorAddress: randomHex(20),
+  saltArg: randomHex(32),
+  codeHash: randomHex(32)
+};
+const syncWallet = await zksync.Wallet.fromCreate2Data(signer, syncProvider, create2Data);
 ```
 
 ### Get account state
@@ -793,7 +838,7 @@ async signSyncForcedExit((forcedExit: {
 
 | Name              | Description                                                     |
 | ----------------- | --------------------------------------------------------------- |
-| forcedExit.target | Ethereum address of the target account                          |
+| forcedExit.target | zkSync address of the target account                            |
 | forcedExit.token  | Token to be transferred[^token].                                |
 | forcedExit.fee    | Amount of token to be paid as a fee for this transaction[^fee]. |
 | forcedExit.nonce  | Nonce that is going to be used for this transaction[^nonce].    |
@@ -870,7 +915,7 @@ async withdrawPendingBalance(
 | -------------------------------- | ---------------------------------------------------------------------- |
 | from                             | Ethereum address of the target account.                                |
 | token                            | Token to be withdrawn[^token]                                          |
-| amount (optional)                | Amount to withdraw                                                     |
+| amount (optional)                | Amount to withdraw[^amount]                                            |
 | returns                          | Handle for this transaction.                                           |
 
 > Example
@@ -939,6 +984,277 @@ const withdrawPendingTx = await syncWallet.withdrawPendingBalances(
 
 // Wait till priority operation is verified.
 const priorityOpReceipt = await withdrawPendingTx.wait();
+```
+
+## Batch Builder
+
+### Create Batch Builder
+
+Creating Batch Builder
+
+> Signature
+
+```typescript
+batchBuilder(
+  nonce?: Nonce;
+): BatchBuilder;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| nonce (optional)                  | Starting nonce for the transactions [^nonce].                          |
+| returns                           | Batch Builder instance.                                                |
+
+> Example
+
+```typescript
+const syncWallet = ..; // Setup zksync wallet.
+
+const batchBuilder = syncWallet.batchBuilder();
+```
+
+### Set fee token
+
+Set fee token for the batch transaction.
+
+*If fee token is set for the batch transaction it is expected that all transactions fees will be zero and no signed transactions to be presented in the batch*
+
+> Signature
+
+```typescript
+setFeeToken(
+  feeToken: TokenLike;
+): void;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| feeToken                          | Token to pay fee in.[^token]                                           |
+| returns                           | void                                                                   |
+
+> Example
+
+```typescript
+const batchBuilder = ..; // Setup batch builder.
+
+batchBuilder.setFeeToken("ETH");
+```
+
+### Add withdraw transaction
+
+Adding withdraw transaction to the batch.
+
+> Signature
+
+```typescript
+addWithdraw(withdraw: {
+  ethAddress: string;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee?: BigNumberish;
+  fastProcessing?: boolean;
+  validFrom?: number;
+  validUntil?: number;
+}): BatchBuilder;
+```
+
+#### Inputs and outputs
+
+| Name                               | Description                                                            |
+| ---------------------------------- | ---------------------------------------------------------------------- |
+| withdraw.ethAddress                | Ethereum address of the target.                                        |
+| withdraw.token                     | Token to be withdrawn[^token]                                          |
+| withdraw.amount                    | Amount to withdraw[^amount]                                            |
+| withdraw.fee (optional)            | Amount of token to be paid as a fee for this transaction[^fee]         |
+| withdraw.fastProcessing (optional) | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
+| withdraw.validFrom (optional)      | <!-- TODO -->                                                          |
+| withdraw.validUntil (optional)     | <!-- TODO -->                                                          |
+| returns                            | Batch Builder instance.                                                |
+
+> Example
+
+```typescript
+import { ethers } from "ethers";
+
+const syncWallet = ..; // Setup zksync wallet.
+const batchBuilder = ..; // Setup batch builder.
+
+batchBuilder.addWithdraw({
+  ethAddress: syncWallet.address(),
+  token: "ETH",
+  amount: ethers.utils.parseEther("0.001")
+});
+```
+
+### Add transfer transaction
+
+Adding transfer transaction to the batch.
+
+> Signature
+
+```typescript
+addTransfer(transfer: {
+  to: Address;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee?: BigNumberish;
+  validFrom?: number;
+  validUntil?: number;
+}): BatchBuilder;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| transfer.to                       | zkSync address of the recipient of funds.                              |
+| transfer.token                    | Token to be transferred[^token]                                        |
+| transfer.amount                   | Amount of token to be transferred.[^amount]                            |
+| transfer.fee (optional)           | Amount of token to be paid as a fee for this transaction.[^fee]        |
+| transfer.validFrom (optional)     | <!-- TODO -->                                                          |
+| transfer.validUntil (optional)    | <!-- TODO -->                                                          |
+| returns                           | Batch Builder instance.                                                |
+
+> Example
+
+```typescript
+import { ethers } from "ethers";
+
+const batchBuilder = ..; // Setup batch builder.
+
+batchBuilder.addTransfer({
+  to: "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0",
+  token: "ETH",
+  amount: ethers.utils.parseEther("0.001")
+});
+```
+
+### Add change pub key transaction
+
+Adding change pub key transaction to the batch.
+
+> Signature
+
+```typescript
+addChangePubKey(
+  changePubKey:
+  | {
+      feeToken: TokenLike;
+      ethAuthType: ChangePubkeyTypes;
+      fee?: BigNumberish;
+      validFrom?: number;
+      validUntil?: number;
+    }
+  | SignedTransaction
+): BatchBuilder;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| changePubKey.feeToken                 | Token to pay fee in.[^token]                                             |
+| changePubKey.ethAuthType              | <!-- TODO -->                                                          |
+| changePubKey.fee (optional)           | Amount of token to be paid as a fee for this transaction.[^fee]        |
+| changePubKey.validFrom (optional)     | <!-- TODO -->                                                          |
+| changePubKey.validUntil (optional)    | <!-- TODO -->                                                          |
+| returns                           | Batch Builder instance.                                                |
+
+> Example
+
+```typescript
+const batchBuilder = ..; // Setup batch builder.
+
+batchBuilder.addChangePubKey({
+  feeToken: "ETH",
+  ethAuthType: 'ECDSA'
+});
+```
+
+### Add forced exit transaction
+
+Adding forced exit transaction to the batch.
+
+> Signature
+
+```typescript
+addForcedExit(forcedExit: {
+  target: Address;
+  token: TokenLike;
+  fee?: BigNumberish;
+  validFrom?: number;
+  validUntil?: number;
+}): BatchBuilder;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| forcedExit.target                 | zkSync address of the target account                                   |
+| forcedExit.token                  | Token to be withdrawn[^token]                                          |
+| forcedExit.fee (optional)         | Amount of token to be paid as a fee for this transaction.[^fee]        |
+| forcedExit.validFrom (optional)   | <!-- TODO -->                                                          |
+| forcedExit.validUntil (optional)  | <!-- TODO -->                                                          |
+| returns                           | Batch Builder instance.                                                |
+
+> Example
+
+```typescript
+import { ethers } from "ethers";
+
+const syncWallet = ..; // Setup zksync wallet.
+const batchBuilder = ..; // Setup batch builder.
+
+batchBuilder.addForcedExit({
+  target: syncWallet.address(),
+  token: "ETH"
+});
+```
+
+### Build batch
+
+Construct the batch from the given transactions.
+
+*If feeToken was provided, the fee for the whole batch will be obtained from the server in this token.*
+
+> Signature
+
+```typescript
+build(
+  feeToken?: TokenLike;
+): Promise<{ txs: SignedTransaction[]; signature: TxEthSignature; totalFee: TotalFee }>;
+```
+
+#### Inputs and outputs
+
+| Name                              | Description                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| feeToken (optional)               | Token to pay fee for in.[^token]                                       |
+| returns                           | Transactions, Ethereum signature, total fee.                           |
+
+> Example
+
+```typescript
+import { ethers } from "ethers";
+
+const syncWallet = ..; // Setup zksync wallet.
+const batchBuilder = ..; // Setup batch builder.
+
+batchBuilder.addForcedExit({
+  target: syncWallet.address(),
+  token: "ETH"
+});
+batchBuilder.addTransfer({
+  to: "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0",
+  token: "ETH",
+  amount: ethers.utils.parseEther("0.001")
+});
+await batchBuilder.build("ETH");
 ```
 
 ## Signer
