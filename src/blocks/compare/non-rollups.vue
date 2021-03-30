@@ -288,12 +288,15 @@
     </tbody>
   </i-table>
 </template>
-<script>
+
+<script lang="ts">
+import Vue from "vue";
+
 import Logo from "@/blocks/Logo.vue";
 
-export default {
+export default Vue.extend({
   components: {
     Logo,
   },
-};
+});
 </script>
