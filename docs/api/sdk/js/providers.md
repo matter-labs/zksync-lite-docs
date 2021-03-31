@@ -111,15 +111,19 @@ For description of transaction batches, see the [corresponding dev docs section]
 > Signature
 
 ```typescript
-async submitTxsBatch(transactions: { tx: any; signature?: TxEthSignature }[]): Promise<string[]>;
+async submitTxsBatch(
+  transactions: { tx: any; signature?: TxEthSignature }[],
+  ethSignatures?: TxEthSignature | TxEthSignature[]
+): Promise<string[]>;
 ```
 
 #### Inputs and outputs
 
-| Name         | Description                                                                    |
-| ------------ | ------------------------------------------------------------------------------ |
-| transactions | An array of transactions / signature pairs.                                    |
-| returns      | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
+| Name                     | Description                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| transactions             | An array of transactions / signature pairs.                                    |
+| ethSignatures (optional) | <!-- TODO -->                                                                  |
+| returns                  | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
 
 For details on individual transactions, see [Submit transaction](#submit-transaction).
 
@@ -479,7 +483,7 @@ all the price components used for the fee calculation, and the fee itself (`tota
 
 ```typescript
 async getTransactionFee(
-    txType: "Withdraw" | "Transfer" | "FastWithdraw" | ChangePubKeyFee,
+    txType: "Withdraw" | "Transfer" | "FastWithdraw" | ChangePubKeyFee | LegacyChangePubKeyFee,
     address: Address,
     tokenLike: TokenLike
 ): Promise<Fee>;
@@ -512,7 +516,7 @@ Performs a query to the server, obtaining an acceptable fee for a batch transact
 
 ```typescript
 async getTransactionsBatchFee(
-    txTypes: ("Transfer" | "Withdraw" | "FastWithdraw")[],
+    txTypes: ("Transfer" | "Withdraw" | "FastWithdraw" | ChangePubKeyFee | LegacyChangePubKeyFee)[],
     addresses: Address[],
     tokenLike: TokenLike
 ): Promise<BigNumber>;

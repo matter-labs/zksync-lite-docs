@@ -48,7 +48,7 @@ export interface Create2Data {
 ```typescript
 export interface Fee {
   // Operation type (amount of chunks in operation differs and impacts the total fee).
-  feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee;
+  feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee | LegacyChangePubKeyFee;
   // Amount of gas used by transaction
   gasTxAmount: utils.BigNumber;
   // Gas price (in wei)
@@ -70,6 +70,20 @@ export interface BatchFee {
 ```
 
 `ChangePubKeyFee` interface is defined as follows:
+
+```typescript
+export interface ChangePubKeyFee {
+  ChangePubKey: {
+    // Denotes how authorization of operation is performed:
+    // 'Onchain' if it's done by sending an Ethereum transaction,
+    // 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
+    // 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
+    "ChangePubKey": ChangePubkeyTypes;
+  };
+}
+
+```
+`LegacyChangePubKeyFee` interface is defined as follows:
 
 ```typescript
 export interface ChangePubKeyFee {
