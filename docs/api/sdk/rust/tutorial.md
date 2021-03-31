@@ -28,7 +28,7 @@ use zksync::{Provider, Network};
 let provider = Provider::new(Network::Rinkeby);
 ```
 
-## Choosing an Ethereum signer
+## Instantiating an Ethereum signer
 
 An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
 signature as part of 2-factor authentication. It is possible to create a wallet without an Ethereum private
