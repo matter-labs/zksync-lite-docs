@@ -85,7 +85,7 @@ likely be prohibited and should be omitted in order to keep the code compatible:
 
 As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify the migration process.
 
-## Choosig the framework
+## Choosing the framework
 
 <table>
   <tr>
