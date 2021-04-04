@@ -158,13 +158,12 @@ static async fromCreate2Data(
 
 ```typescript
 import * as zksync from "zksync";
-import crypto from "crypto"
 import { ethers } from "ethers"
 
 const syncProvider = await zksync.getDefaultProvider("rinkeby");
-const signer = await zksync.Signer.fromSeed(crypto.randomBytes(32));
+const signer = await zksync.Signer.fromSeed(ethers.utils.randomBytes(32));
 const randomHex = (length: number) => {
-  const bytes = crypto.randomBytes(length);
+  const bytes = ethers.utils.randomBytes(length);
   return ethers.utils.hexlify(bytes);
 };
 const create2Data = {
