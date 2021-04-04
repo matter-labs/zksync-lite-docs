@@ -111,7 +111,7 @@ if (!(await syncWallet.isSigningKeySet())) {
   // the lowest possible amount.
   const changePubkey = await syncWallet.setSigningKey({
     feeToken: "ETH",
-    ethAuthType: "ECDSA"
+    ethAuthType: "ECDSA",
   });
 
   // Wait until the tx is committed
