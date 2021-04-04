@@ -129,6 +129,10 @@ const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvid
 
 ### Creating wallet from CREATE2 data
 
+This way you can create a wallet, which corresponding L1 account could be created using the CREATE2 opcode. The `syncSigner` pubKeyHash is encoded as a part of the salt for CREATE2. Note that you do not need to manually add it to the `saltArg` of the `create2Data` as it is done automatically.
+
+Such wallets are the only ones that do not need to sign Ethereum messages for transactions. Also, unlocking these accounts costs less than unlocking `ECDSA` accounts.
+
 > Signature
 
 ```typescript
@@ -146,7 +150,7 @@ static async fromCreate2Data(
 | --------------------------- | ---------------------------------------------------------------------------- |
 | syncSigner                  | Sync signer that will be used for transaction signing.[^signer]              |
 | provider                    | Sync provider that is used for submitting a transaction to the Sync network. |
-| create2Data                 | <!-- TODO -->                                                                |
+| create2Data                 | Data out of which the CREATE2 algrorithm would derive the address.                                                                 |
 | accountId (optional)        | zkSync account id.[^acc_id]                                                  |
 | returns                     | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
 
@@ -392,11 +396,11 @@ async setSigningKey(changePubKey: {
 | Name                                   | Description                                                               |
 | -------------------------------------- | ------------------------------------------------------------------------- |
 | changePubKey.feeToken                  | Token to pay fee in.[^token]                                              |
-| changePubKey.ethAuthType               | <!-- TODO -->                                                             |
+| changePubKey.ethAuthType               | The type which determines how will the Ethereum signature be verified.                                                             |
 | changePubKey.fee (optional)            | Amount of token to be paid as a fee for this transaction.[^fee]           |
 | changePubKey.nonce (optional)          | Nonce that is going to be used for this transaction.[^nonce]              |
-| changePubKey.validFrom (optional)      | <!-- TODO -->                                                             |
-| changePubKey.validUntil (optional)     | <!-- TODO -->                                                             |
+| changePubKey.validFrom (optional)      | Timestamp in seconds from which the block with this transaction can be processed                                                             |
+| changePubKey.validUntil (optional)     | Timestamp in seconds until which the block with this transaction can be processed                                                             |
 | returns                                | Handle of the submitted transaction.                                      |
 
 > Example
@@ -444,10 +448,10 @@ async signSetSigningKey(changePubKey: {
 | changePubKey.feeToken                | Token to pay fee in.[^token]                                             |
 | changePubKey.fee                     | Amount of token to be paid as a fee for this transaction.[^fee]          |
 | changePubKey.nonce                   | Nonce that is going to be used for this transaction.[^nonce]             |
-| changePubKey.ethAuthType             | <!-- TODO -->                                                            |
-| changePubKey.batchHash  (optional)   | <!-- TODO -->                                                            |
-| changePubKey.validFrom  (optional)   | <!-- TODO -->                                                            |
-| changePubKey.validUntil (optional)   | <!-- TODO -->                                                            |
+| changePubKey.ethAuthType             | The type which determines how will the Ethereum signature be verified.                                                            |
+| changePubKey.batchHash  (optional)   |                                                             |
+| changePubKey.validFrom  (optional)   | Timestamp in seconds from which the block with this transaction can be processed                                                            |
+| changePubKey.validUntil (optional)   | Timestamp in seconds until which the block with this transaction can be processed                                                            |
 | returns                              | Signed transaction                                                       |
 
 ### Authorize new public key using ethereum transaction
@@ -553,8 +557,8 @@ async syncTransfer(transfer: {
 | transfer.amount                        | Amount of token to be transferred.[^amount]                     |
 | transfer.fee (optional)                | Amount of token to be paid as a fee for this transaction.[^fee] |
 | transfer.nonce (optional)              | Nonce that is going to be used for this transaction.[^nonce]    |
-| transfer.validFrom (optional)          | <!-- TODO -->                                                   |
-| transfer.validUntil (optional)         | <!-- TODO -->                                                   |
+| transfer.validFrom (optional)          | Timestamp in seconds from which the block with this transaction can be processed                                                   |
+| transfer.validUntil (optional)         | Timestamp in seconds until which the block with this transaction can be processed                                                   |
 | returns                                | Handle of the submitted transaction                             |
 
 > Example
@@ -603,8 +607,8 @@ async signSyncTransfer(transfer: {
 | transfer.amount                | Amount of token to be transferred.[^amount]                     |
 | transfer.fee                   | Amount of token to be paid as a fee for this transaction.[^fee] |
 | transfer.nonce                 | Nonce that is going to be used for this transaction.[^nonce]    |
-| transfer.validFrom (optional)  | <!-- TODO -->                                                   |
-| transfer.validUntil (optional) | <!-- TODO -->                                                   |
+| transfer.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed                                                   |
+| transfer.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed                                                   |
 | returns                        | Signed transaction.                                             |
 
 ### Batched Transfers in the zkSync
@@ -705,8 +709,8 @@ async withdrawFromSyncToEthereum(withdraw: {
 | withdraw.fee (optional)                       | amount of token to be paid as a fee for this transaction[^fee].                           |
 | withdraw.nonce (optional)          | Nonce that is going to be used for this transaction[^nonce].                              |
 | withdraw.fastProcessing (optional) | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
-| withdraw.validFrom (optional)      | <!-- TODO --> |
-| withdraw.validUntil (optional)     | <!-- TODO --> |
+| withdraw.validFrom (optional)      | Timestamp in seconds from which the block with this transaction can be processed |
+| withdraw.validUntil (optional)     | Timestamp in seconds until which the block with this transaction can be processed |
 | returns                            | Handle of the submitted transaction                                                       |
 
 > Example
@@ -755,8 +759,8 @@ async signWithdrawFromSyncToEthereum(withdraw: {
 | withdraw.amount                | Amount of token to be transferred[^amount].                     |
 | withdraw.fee                   | amount of token to be paid as a fee for this transaction[^fee]. |
 | withdraw.nonce                 | Nonce that is going to be used for this transaction[^nonce].    |
-| withdraw.validFrom (optional)  | <!-- TODO -->                                                   |
-| withdraw.validUntil (optional) | <!-- TODO -->                                                   |
+| withdraw.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed                                                   |
+| withdraw.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed                                                   |
 | returns                        | Signed transaction                                              |
 
 ### Initiate a forced exit for an account
@@ -797,8 +801,8 @@ async syncForcedExit(forcedExit: {
 | forcedExit.token                 | Token to be transferred[^token].                                |
 | forcedExit.fee (optional)        | Amount of token to be paid as a fee for this transaction[^fee]. |
 | forcedExit.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce].    |
-| forcedExit.validFrom (optional)  | <!-- TODO -->                                                   |
-| forcedExit.validUntil (optional) | <!-- TODO -->                                                   |
+| forcedExit.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed                                                   |
+| forcedExit.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed                                                   |
 | returns                          | Handle of the submitted transaction                             |
 
 > Example
@@ -897,7 +901,7 @@ const priorityOpReceipt = await emergencyWithdrawPriorityOp.awaitVerifyReceipt()
 
 ### Withdraw pending balance
 
-<!-- TODO --> Description
+Calls the `withdrawPendingBalance` function on the zkSync smart contract. This function is typically used to withdraw funds that got stuck due to out-of-gas error. 
 
 > Signature
 
@@ -939,7 +943,7 @@ const priorityOpReceipt = await withdrawPendingTx.wait();
 
 ### Withdraw pending balances
 
-<!-- TODO --> Description
+Calls the `withdrawPendingBalance` function multiple times on the zkSync smart contract. To optimize gas usage, instead of doing separate calls, it aggregates them using the [multicall](https://github.com/makerdao/multicall) smart contract.
 
 > Signature
 
@@ -962,7 +966,7 @@ async withdrawPendingBalances(
 | --------------------------------- | ---------------------------------------------------------------------- |
 | from                              | Ethereum addresses of the target account.                              |
 | tokens                            | Tokens to be withdrawn[^token]                                         |
-| multicallParams                   | <!-- TODO -->                                                          |
+| multicallParams                   | The params of the call to the multicall smart contract. Do not change unless you know what you are doing.                                                          |
 | amounts (optional)                | Amounts to withdraw                                                    |
 | returns                           | Handle for this transaction.                                           |
 
@@ -1071,8 +1075,8 @@ addWithdraw(withdraw: {
 | withdraw.amount                    | Amount to withdraw[^amount]                                            |
 | withdraw.fee (optional)            | Amount of token to be paid as a fee for this transaction[^fee]         |
 | withdraw.fastProcessing (optional) | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
-| withdraw.validFrom (optional)      | <!-- TODO -->                                                          |
-| withdraw.validUntil (optional)     | <!-- TODO -->                                                          |
+| withdraw.validFrom (optional)      | Timestamp in seconds from which the block with this transaction can be processed                                                          |
+| withdraw.validUntil (optional)     | Timestamp in seconds until which the block with this transaction can be processed                                                          |
 | returns                            | Batch Builder instance.                                                |
 
 > Example
@@ -1115,8 +1119,8 @@ addTransfer(transfer: {
 | transfer.token                    | Token to be transferred[^token]                                        |
 | transfer.amount                   | Amount of token to be transferred.[^amount]                            |
 | transfer.fee (optional)           | Amount of token to be paid as a fee for this transaction.[^fee]        |
-| transfer.validFrom (optional)     | <!-- TODO -->                                                          |
-| transfer.validUntil (optional)    | <!-- TODO -->                                                          |
+| transfer.validFrom (optional)     | Timestamp in seconds from which the block with this transaction can be processed                                                          |
+| transfer.validUntil (optional)    | Timestamp in seconds until which the block with this transaction can be processed                                                          |
 | returns                           | Batch Builder instance.                                                |
 
 > Example
@@ -1158,10 +1162,10 @@ addChangePubKey(
 | Name                              | Description                                                            |
 | --------------------------------- | ---------------------------------------------------------------------- |
 | changePubKey.feeToken                 | Token to pay fee in.[^token]                                             |
-| changePubKey.ethAuthType              | <!-- TODO -->                                                          |
+| changePubKey.ethAuthType              | The type which determines how will the Ethereum signature be verified.                                                          |
 | changePubKey.fee (optional)           | Amount of token to be paid as a fee for this transaction.[^fee]        |
-| changePubKey.validFrom (optional)     | <!-- TODO -->                                                          |
-| changePubKey.validUntil (optional)    | <!-- TODO -->                                                          |
+| changePubKey.validFrom (optional)     | Timestamp in seconds from which the block with this transaction can be processed                                                          |
+| changePubKey.validUntil (optional)    | Timestamp in seconds until which the block with this transaction can be processed                                                          |
 | returns                           | Batch Builder instance.                                                |
 
 > Example
@@ -1198,8 +1202,8 @@ addForcedExit(forcedExit: {
 | forcedExit.target                 | zkSync address of the target account                                   |
 | forcedExit.token                  | Token to be withdrawn[^token]                                          |
 | forcedExit.fee (optional)         | Amount of token to be paid as a fee for this transaction.[^fee]        |
-| forcedExit.validFrom (optional)   | <!-- TODO -->                                                          |
-| forcedExit.validUntil (optional)  | <!-- TODO -->                                                          |
+| forcedExit.validFrom (optional)   | Timestamp in seconds from which the block with this transaction can be processed                                                          |
+| forcedExit.validUntil (optional)  | Timestamp in seconds until which the block with this transaction can be processed                                                          |
 | returns                           | Batch Builder instance.                                                |
 
 > Example
@@ -1436,8 +1440,8 @@ async signSyncChangePubKey(changePubKey: {
 | changePubKey.feeTokenId              | Numerical token id                        |
 | changePubKey.fee                     | Fee to pay for operation, paid in token   |
 | changePubKey.nonce                   | Transaction nonce                         |
-| changePubKey.validFrom               | <!-- TODO -->                             |
-| changePubKey.validUntil              | <!-- TODO -->                             |
-| changePubKey.ethAuthData (optional)  | <!-- TODO -->                             |
-| changePubKey.ethSignature (optional) | <!-- TODO -->                             |
+| changePubKey.validFrom               | Timestamp in seconds from which the block with this transaction can be processed                             |
+| changePubKey.validUntil              | Timestamp in seconds until which the block with this transaction can be processed                             |
+| changePubKey.ethAuthData (optional)  | Data which is used to verify the Ethereum signature                             |
+| changePubKey.ethSignature (optional) |                              |
 | returns                              | Signed Sync change public key transaction |

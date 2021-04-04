@@ -122,7 +122,7 @@ async submitTxsBatch(
 | Name                     | Description                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------ |
 | transactions             | An array of transactions / signature pairs.                                    |
-| ethSignatures (optional) | <!-- TODO -->                                                                  |
+| ethSignatures (optional) | Either a single or a list of signatures that sign the entire batch                                                                  |
 | returns                  | An array of `0x`-prefixed hex-encoded hashes for each transaction in the batch |
 
 For details on individual transactions, see [Submit transaction](#submit-transaction).
