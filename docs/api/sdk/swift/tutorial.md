@@ -146,7 +146,7 @@ firstly {
                              fee: feeDetails.totalFeeInteger)
     return wallet.setSigningKeyPromise(fee: fee,
                                        nonce: state.committed.nonce,
-                                       ethAuthType: "ECDSA")
+                                       onchainAuth: false)
 }.done { hash in
     print("Successfully submitted transaction with hash: \(hash)")
 }.catch { error in

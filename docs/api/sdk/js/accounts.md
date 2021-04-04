@@ -273,25 +273,29 @@ so that user would not need to approve each deposit.
 ```typescript
 async approveERC20TokenDeposits(
     token: TokenLike,
-    max_erc20_approve_amount?: BigNumberish
+    max_erc20_approve_amount: BigNumber = MAX_ERC20_APPROVE_AMOUNT
 ): Promise<ethers.ContractTransaction>;
 ```
 
 | Name                                | Description                          |
 | ----------------------------------- | ------------------------------------ |
 | token                               | ERC20 token                          |
-| max_erc20_approve_amount (optional) | Amount of token to be unlocked       |
+| max_erc20_approve_amount (optional) | Amount of token to be unlocked. Infinite by default       |
 | returns                             | Handle for the ethereum transaction. |
 
 > Signature
 
 ```typescript
-async isERC20DepositsApproved(token: TokenLike): Promise<boolean>;
+async isERC20DepositsApproved(
+    token: TokenLike,
+    erc20ApproveThreshold: BigNumber = ERC20_APPROVE_TRESHOLD
+): Promise<boolean>;
 ```
 
 | Name          | Description                             |
 | ------------- | --------------------------------------- |
 | token | ERC20 token to be approved for deposits |
+| erc20ApproveThreshold (optional) | The amount that needs to be approved. `2^255` by default. |
 | returns       | True if the token deposits are approved |
 
 ### Deposit token to Sync
@@ -349,7 +353,7 @@ const syncWallet = ..; // Setup zksync wallet from ethers.Signer.
 const depositPriorityOperation = await syncWallet.depositToSyncFromEthereum({
     depositTo: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
     token: "ETH",
-    amount: ethers.utils.formatEther("1.0"),
+    amount: ethers.utils.parseEther("1.0"),
 });
 
 
@@ -936,8 +940,8 @@ const withdrawPendingTx = await syncWallet.withdrawPendingBalance(
 );
 
 
-// Wait till priority operation is verified.
-const priorityOpReceipt = await withdrawPendingTx.wait();
+// Wait till the transaction is complete
+const txReceipt = await withdrawPendingTx.wait();
 ```
 
 ### Withdraw pending balances
@@ -985,8 +989,8 @@ const withdrawPendingTx = await syncWallet.withdrawPendingBalances(
 );
 
 
-// Wait till priority operation is verified.
-const priorityOpReceipt = await withdrawPendingTx.wait();
+// Wait till the transaction is complete
+const txReceipt = await withdrawPendingTx.wait();
 ```
 
 ## Batch Builder

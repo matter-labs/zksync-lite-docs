@@ -32,7 +32,11 @@ export type Address = string;
 // Committed nonce is going to be resolved to last nonce known to the zkSync network
 export type Nonce = number | "committed";
 
-// Committed nonce is going to be resolved to last nonce known to the zkSync network
+// Denotes how authorization of operation is performed:
+// 'Onchain' if it's done by sending an Ethereum transaction,
+// 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
+// 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
+// 'ECDSALegacyMessage' if it's done by providing an Ethereum signature in zkSync transaction. Unlike the 'ECDSA', the user signs a human-readable message. Thus, the fee is ~30% higher than ECDSA. 
 export type ChangePubkeyTypes = "Onchain" | "ECDSA" | "CREATE2" | "ECDSALegacyMessage";
 
 // CREATE2 Data
@@ -73,13 +77,8 @@ export interface BatchFee {
 
 ```typescript
 export interface ChangePubKeyFee {
-  ChangePubKey: {
-    // Denotes how authorization of operation is performed:
-    // 'Onchain' if it's done by sending an Ethereum transaction,
-    // 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
-    // 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
-    "ChangePubKey": ChangePubkeyTypes;
-  };
+  // Denotes how authorization of operation is performed:
+  "ChangePubKey": ChangePubkeyTypes;
 }
 
 ```
