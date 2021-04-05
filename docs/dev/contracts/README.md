@@ -1,6 +1,6 @@
 # Smart contracts
 
-zkSync is on track to introduce high-efficient, secure, Turing-complete, multi-language smart contracts.
+zkSync is on track to introduce highly efficient, secure, Turing complete, multilanguage smart contracts.
 
 ## Table of contents
 
@@ -12,25 +12,25 @@ zkSync is on track to introduce high-efficient, secure, Turing-complete, multi-l
 
 The zkSync smart contract programming model inherits that of Ethereum.
 
-Both Zinc and Solidity languages are Turing-complete, so you can use unbounded loops, recursion, vectors and maps of
-arbitrary length, and so on. Local variables are stored on the stack or in the heap memory, whereas the contract storage
-is accessed globally. Contracts call one another via strongly-typed interfaces and have access to public storage fields.
+Both the Zinc and Solidity languages are Turing complete, so you can use unbounded loops, recursion, vectors and maps of
+arbitrary length, and so on. Local variables are stored on the stack or the heap, whereas the contract storage
+is accessed globally. Contracts call one another via strongly typed interfaces and have access to public storage fields.
 
 ## Composability
 
-zkSync smart contracts are able to call one another, just like in the Ethereum ecosystem. Each call transaction tree is
+zkSync smart contracts are able to call one another just like Ethereum smart contracts can. Each call transaction tree is
 atomic, regardless of the number of contract instances involved.
 
 Any DeFi project can be migrated to zkSync, since most of the existing Solidity code can be deployed without changes.
 
 ## Sync VM
 
-The Sync VM is a high-efficient, Turing-complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
+The Sync VM is a highly efficient, Turing complete, SNARK-friendly virtual machine for executing zkSync smart contracts.
 
-State-of-the-art optimizations are applied to smart contract bytecode, whilst the virtual machine itself is optimized
-for high-load, allowing to execute transactions in a blink of an eye.
+State-of-the-art optimizations are applied to smart contract bytecode, while the virtual machine itself is optimized
+for high load, allowing it to execute transactions in the blink of an eye.
 
-The machine is SNARK-friendly, that is, the execution trace can be proven in SNARKs. However, it does not require a
+The machine is SNARK-friendly; that is, the execution trace can be proven in SNARKs. However, it does not require one
 circuit per program. A single circuit can be used instead, which needs to be audited only once.
 
 The target proof system of the Sync VM is [PLONK](https://eprint.iacr.org/2019/953).
@@ -40,27 +40,26 @@ The target proof system of the Sync VM is [PLONK](https://eprint.iacr.org/2019/9
 [Zinc](https://github.com/matter-labs/zinc) is an emerging framework for developing smart contracts and SNARK circuits
 on the zkSync platform.
 
-Existing ZKP frameworks lack functionality specific for smart contracts. Security and safety aspects are crucial for
-developing smart contracts since they deal with valuable financial assets. Modern smart contract languages, such as
-Simplicity or Libra's Move, deliberately made design choices that favor safety and formal verifiability of the code over
-generalistic expressiveness.
+Existing ZKP frameworks lack functionality specific to smart contracts. Since smart contracts deal with valuable financial assets, security and safety are crucial. That's why designers of modern smart contract languages, such as
+Simplicity or Libra's Move, favored safety and formal verifiability of the code over
+expressiveness.
 
-Zinc is created to fill the gap between the two worlds: to provide a smart contract language optimized for ZKP circuits,
-which is reliable and simple at the same time, and can be quickly learned by a large number of software developers.
+Zinc is created to fill the gap between these two worlds by providing a simple, reliable smart contract language that is optimized for ZKP circuits and is easy for
+developers to learn.
 
-The framework includes a simple, Turing-complete, safety-focused, general-purpose language, designed specifically for
-developing smart contracts and zero-knowledge proof circuits with a flat learning curve. Syntax and semantic closely
-follow [Rust](https://www.rust-lang.org/).
+The framework includes a simple, Turing complete, safety-focused, general-purpose language designed specifically for
+developing smart contracts and zero-knowledge proof circuits with a flat learning curve. The syntax and semantics closely
+follow that of [Rust](https://www.rust-lang.org/).
 
-The Zinc compiler uses LLVM as its middle-end and back-end, which provides an extremely powerful set of solutions for
+The Zinc compiler uses LLVM as its middle-end and back-end, which provides a powerful set of solutions for
 code optimization.
 
-The language is under heavy development, thus many of its aspects will eventually be improved or changed. However, the
+The language is under heavy development; thus many of its aspects will eventually be improved or changed. However, the
 basic principles, such as security and simplicity, will never be questioned.
 
 ### Learning Zinc
 
-Zinc programming language has an official [book](https://zinc.zksync.io/) which provides an introduction to its core
+The Zinc programming language has an official [book](https://zinc.zksync.io/), which provides an introduction to its core
 principles and conventions.
 
 ### Getting help
@@ -72,16 +71,16 @@ email at hello@matter-labs.io.
 
 ## Solidity
 
-[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a very popular general-purpose language with a huge codebase and
-number of DeFi projects, adopted by thousands of blockchain developers from all over the world.
+[Solidity](https://docs.soliditylang.org/en/v0.8.1/) is a general-purpose language with a huge codebase and
+numberous DeFi projects, a language adopted by thousands of blockchain developers from all over the world.
 
-It will be possible to deploy the most of Solidity projects almost without modifications. However, some features will
-likely be prohibited and should be omitted in order to keep the code compatible:
+It will be possible to deploy most Solidity projects almost without modification. However, some features will
+likely be prohibited and should be omitted to keep the code compatible:
 
 - ASM blocks with memory access
-- facilitating calculations via overflows
+- Facilitating calculations via overflows
 - ABI contract calls
-- general cases of undefined behavior
+- General cases of undefined behavior
 
 As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify the migration process.
 
@@ -94,10 +93,10 @@ As a little extra, we are working on a Solidity-to-Zinc transpiler to simplify t
   </tr>
   <tr>
     <td>
-    If you are going to start a new project, <a href="https://zinc.zksync.io/"> embrace Zinc today!</a>
+    If you are starting a new project, <a href="https://zinc.zksync.io/"> embrace Zinc today!</a>
     </td>
     <td>
-    If you possess a large Solidity codebase, it is reasonable to wait for the Solidity support,
+    If you possess a large Solidity codebase, it is reasonable to wait for Solidity support
     and start migrating to Zinc after the mainnet release.
     </td>
   </tr>
@@ -119,4 +118,4 @@ contract to the Rinkeby testnet.
 
 zkSync smart contracts are going mainnet in 2021.
 
-Both Zinc and Solidity languages will be supported at the same time.
+Both Zinc and Solidity will be supported at launch.
