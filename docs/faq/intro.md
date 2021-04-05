@@ -36,7 +36,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - No registration is required to receive funds
 - Payments to existing Ethereum addresses (including smart-contracts)
 - Fees conveniently payable in the token being transferred
-- Withdrawals to mainnet in under 15 minutes<sup>\*</sup>
+- Withdrawals to mainnet in ~10 minutes<sup>\*</sup>
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html)
   support
 - Permissionless [smart contracts](/faq/sc.md) (coming soon)

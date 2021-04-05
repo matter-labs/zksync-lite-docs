@@ -36,7 +36,7 @@
           href="https://medium.com/starkware/the-optimistic-rollup-dilemma-c8fc470ca10c" target="_blank"
         >2</a></sup>
         </td>
-        <td class="_bg-green">5 min</td>
+        <td class="_bg-green">10 min</td>
       </tr>
       <tr>
         <td>Cost of privacy (over normal tx)</td>
