@@ -131,7 +131,7 @@ const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvid
 
 This way you can create a wallet, which corresponding L1 account could be created using the CREATE2 opcode. The `syncSigner` pubKeyHash is encoded as a part of the salt for CREATE2. Note that you do not need to manually add it to the `saltArg` of the `create2Data` as it is done automatically.
 
-Such wallets are the only ones that do not need to sign Ethereum messages for transactions. Also, unlocking these accounts costs less than unlocking `ECDSA` accounts.
+Such wallets are not required to provide Ethereum signatures for transactions. Unlike the `ECDSA` wallets, which have to verify the signature for ChangePubKey onchain, `CREATE2` wallets only require to check that the pubKeyHash is included in the CREATE2 digest. Thus, the ChangePubKey costs less for this kind of account than for the `ECDSA` one, but that comes with a limitation: the L2 private key can not be changed. Also, this type of account can not be used to onboard users from existing L1 addresses.
 
 > Signature
 
@@ -217,7 +217,7 @@ async getBalance(
 
 | Name    | Description                                                 |
 | ------- | ----------------------------------------------------------- |
-| token   | token of interest, symbol or address of the supported token |
+| token   | Token of interest, symbol or address of the supported token |
 | type    | "committed" or "verified"                                   |
 | returns | Balance of this token                                       |
 
@@ -248,7 +248,7 @@ async getEthereumBalance(token: TokenLike): Promise<utils.BigNumber>;
 
 | Name    | Description                                                 |
 | ------- | ----------------------------------------------------------- |
-| token   | token of interest, symbol or address of the supported token |
+| token   | Token of interest, symbol or address of the supported token |
 | returns | Balance of this token                                       |
 
 > Example
@@ -333,9 +333,9 @@ async depositToSyncFromEthereum(deposit: {
 | Name                                            | Description                                                        |
 | ----------------------------------------------- | ------------------------------------------------------------------ |
 | deposit.depositTo                               | Sync account address of the receiver                               |
-| deposit.token                                   | token to be transferred (symbol or address of the supported token) |
-| deposit.amount                                  | amount of token to be transferred                                  |
-| deposit.ethTxOptions                            | arguments for the deposit Ethereum transaction, e.g. gas price.    |
+| deposit.token                                   | Token to be transferred (symbol or address of the supported token) |
+| deposit.amount                                  | Amount of token to be transferred                                  |
+| deposit.ethTxOptions                            | Arguments for the deposit Ethereum transaction, e.g. gas price.    |
 | deposit.approveDepositAmountForERC20 (optional) | See below\*                                                        |
 | returns                                         | Handle for this transaction.                                       |
 
@@ -438,7 +438,6 @@ async signSetSigningKey(changePubKey: {
     fee: BigNumberish;
     nonce: number;
     ethAuthType: ChangePubkeyTypes;
-    batchHash?: string;
     validFrom?: number;
     validUntil?: number;
 }): Promise<SignedTransaction>;
@@ -447,12 +446,11 @@ async signSetSigningKey(changePubKey: {
 #### Inputs and outputs
 
 | Name                               | Description                                                                       |
-| ---------------------------------- | --------------------------------------------------------------------------------- |
+| ---------------------------------- | --------------------------------------------------------------------------------- | --- |
 | changePubKey.feeToken              | Token to pay fee in.[^token]                                                      |
 | changePubKey.fee                   | Amount of token to be paid as a fee for this transaction.[^fee]                   |
 | changePubKey.nonce                 | Nonce that is going to be used for this transaction.[^nonce]                      |
-| changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.            |
-| changePubKey.batchHash (optional)  |                                                                                   |
+| changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.            |     |
 | changePubKey.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
 | changePubKey.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
 | returns                            | Signed transaction                                                                |
@@ -476,7 +474,7 @@ async onchainAuthSigningKey(
 | Name                    | Description                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------ |
 | nonce                   | Nonce that is going to be used for `setSigningKey` transaction.[^nonce]        |
-| ethTxOptions (optional) | arguments for the onchain authentication Ethereum transaction, e.g. gas price. |
+| ethTxOptions (optional) | Arguments for the onchain authentication Ethereum transaction, e.g. gas price. |
 | returns                 | Handle of the submitted transaction                                            |
 
 > Example
@@ -969,7 +967,7 @@ async withdrawPendingBalances(
 | ------------------ | --------------------------------------------------------------------------------------------------------- |
 | from               | Ethereum addresses of the target account.                                                                 |
 | tokens             | Tokens to be withdrawn[^token]                                                                            |
-| multicallParams    | The params of the call to the multicall smart contract. Do not change unless you know what you are doing. |
+| multicallParams    | The params of the call to the multicall smart contract. This is an advanced feature, it is not recommended to set these values manually. |
 | amounts (optional) | Amounts to withdraw                                                                                       |
 | returns            | Handle for this transaction.                                                                              |
 

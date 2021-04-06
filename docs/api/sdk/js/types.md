@@ -77,7 +77,7 @@ export interface BatchFee {
 
 ```typescript
 export interface ChangePubKeyFee {
-  // Denotes how authorization of operation is performed:
+  // Denotes how authorization of operation is performed
   ChangePubKey: ChangePubkeyTypes;
 }
 ```
