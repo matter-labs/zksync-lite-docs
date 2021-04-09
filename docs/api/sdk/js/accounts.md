@@ -993,6 +993,12 @@ const txReceipt = await withdrawPendingTx.wait();
 
 ## Batch Builder
 
+Batch transactions are one of the best advantages of zkSync that allows users to pay lower fees.
+
+`Batch Builder` allows you to create and send batch transactions in a very straightforward way, without the need to worry about deeper stuff, such as nonce or the fee transaction. It also can improve the UX of your application as it requires the to user sign the message only once for the whole batch.
+
+`Batch Builder` supports different kinds of zkSync transactions, such as: `withdraw`, `transfer`, `change pub key` and `forced exit`.
+
 ### Create Batch Builder
 
 Creating Batch Builder
