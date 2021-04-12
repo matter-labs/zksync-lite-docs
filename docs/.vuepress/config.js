@@ -228,6 +228,7 @@ module.exports = {
             '/api/sdk/python/tutorial'
           ]
         },
+        '/api/sdk/dart',
         {
           title: 'zkCheckout SDK',  // required
           path: '/api/sdk/checkout', // optional, which should be a absolute path.
