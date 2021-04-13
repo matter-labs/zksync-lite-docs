@@ -402,8 +402,8 @@ async setSigningKey(changePubKey: {
 | changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.            |
 | changePubKey.fee (optional)        | Amount of token to be paid as a fee for this transaction.[^fee]                   |
 | changePubKey.nonce (optional)      | Nonce that is going to be used for this transaction.[^nonce]                      |
-| changePubKey.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| changePubKey.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| changePubKey.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| changePubKey.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                            | Handle of the submitted transaction.                                              |
 
 > Example
@@ -451,8 +451,8 @@ async signSetSigningKey(changePubKey: {
 | changePubKey.fee                   | Amount of token to be paid as a fee for this transaction.[^fee]                   |
 | changePubKey.nonce                 | Nonce that is going to be used for this transaction.[^nonce]                      |
 | changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.            |     |
-| changePubKey.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| changePubKey.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| changePubKey.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| changePubKey.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                            | Signed transaction                                                                |
 
 ### Authorize new public key using ethereum transaction
@@ -558,8 +558,8 @@ async syncTransfer(transfer: {
 | transfer.amount                | Amount of token to be transferred.[^amount]                                       |
 | transfer.fee (optional)        | Amount of token to be paid as a fee for this transaction.[^fee]                   |
 | transfer.nonce (optional)      | Nonce that is going to be used for this transaction.[^nonce]                      |
-| transfer.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| transfer.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| transfer.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| transfer.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                        | Handle of the submitted transaction                                               |
 
 > Example
@@ -608,8 +608,8 @@ async signSyncTransfer(transfer: {
 | transfer.amount                | Amount of token to be transferred.[^amount]                                       |
 | transfer.fee                   | Amount of token to be paid as a fee for this transaction.[^fee]                   |
 | transfer.nonce                 | Nonce that is going to be used for this transaction.[^nonce]                      |
-| transfer.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| transfer.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| transfer.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| transfer.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                        | Signed transaction.                                                               |
 
 ### Batched Transfers in the zkSync
@@ -710,8 +710,8 @@ async withdrawFromSyncToEthereum(withdraw: {
 | withdraw.fee (optional)            | amount of token to be paid as a fee for this transaction[^fee].                           |
 | withdraw.nonce (optional)          | Nonce that is going to be used for this transaction[^nonce].                              |
 | withdraw.fastProcessing (optional) | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
-| withdraw.validFrom (optional)      | Timestamp in seconds from which the block with this transaction can be processed          |
-| withdraw.validUntil (optional)     | Timestamp in seconds until which the block with this transaction can be processed         |
+| withdraw.validFrom (optional)      | Unix timestamp from which the block with this transaction can be processed          |
+| withdraw.validUntil (optional)     | Unix timestamp until which the block with this transaction can be processed         |
 | returns                            | Handle of the submitted transaction                                                       |
 
 > Example
@@ -760,8 +760,8 @@ async signWithdrawFromSyncToEthereum(withdraw: {
 | withdraw.amount                | Amount of token to be transferred[^amount].                                       |
 | withdraw.fee                   | amount of token to be paid as a fee for this transaction[^fee].                   |
 | withdraw.nonce                 | Nonce that is going to be used for this transaction[^nonce].                      |
-| withdraw.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| withdraw.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| withdraw.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| withdraw.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                        | Signed transaction                                                                |
 
 ### Initiate a forced exit for an account
@@ -802,8 +802,8 @@ async syncForcedExit(forcedExit: {
 | forcedExit.token                 | Token to be transferred[^token].                                                  |
 | forcedExit.fee (optional)        | Amount of token to be paid as a fee for this transaction[^fee].                   |
 | forcedExit.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce].                      |
-| forcedExit.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| forcedExit.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| forcedExit.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| forcedExit.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                          | Handle of the submitted transaction                                               |
 
 > Example
@@ -1084,8 +1084,8 @@ addWithdraw(withdraw: {
 | withdraw.amount                    | Amount to withdraw[^amount]                                                               |
 | withdraw.fee (optional)            | Amount of token to be paid as a fee for this transaction[^fee]                            |
 | withdraw.fastProcessing (optional) | Request faster processing of transaction. Note that this requires a higher fee[^fast_fee] |
-| withdraw.validFrom (optional)      | Timestamp in seconds from which the block with this transaction can be processed          |
-| withdraw.validUntil (optional)     | Timestamp in seconds until which the block with this transaction can be processed         |
+| withdraw.validFrom (optional)      | Unix timestamp from which the block with this transaction can be processed          |
+| withdraw.validUntil (optional)     | Unix timestamp until which the block with this transaction can be processed         |
 | returns                            | Batch Builder instance.                                                                   |
 
 > Example
@@ -1128,8 +1128,8 @@ addTransfer(transfer: {
 | transfer.token                 | Token to be transferred[^token]                                                   |
 | transfer.amount                | Amount of token to be transferred.[^amount]                                       |
 | transfer.fee (optional)        | Amount of token to be paid as a fee for this transaction.[^fee]                   |
-| transfer.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| transfer.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| transfer.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| transfer.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                        | Batch Builder instance.                                                           |
 
 > Example
@@ -1173,8 +1173,8 @@ addChangePubKey(
 | changePubKey.feeToken              | Token to pay fee in.[^token]                                                      |
 | changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.            |
 | changePubKey.fee (optional)        | Amount of token to be paid as a fee for this transaction.[^fee]                   |
-| changePubKey.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| changePubKey.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| changePubKey.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| changePubKey.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                            | Batch Builder instance.                                                           |
 
 > Example
@@ -1211,8 +1211,8 @@ addForcedExit(forcedExit: {
 | forcedExit.target                | zkSync address of the target account                                              |
 | forcedExit.token                 | Token to be withdrawn[^token]                                                     |
 | forcedExit.fee (optional)        | Amount of token to be paid as a fee for this transaction.[^fee]                   |
-| forcedExit.validFrom (optional)  | Timestamp in seconds from which the block with this transaction can be processed  |
-| forcedExit.validUntil (optional) | Timestamp in seconds until which the block with this transaction can be processed |
+| forcedExit.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| forcedExit.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
 | returns                          | Batch Builder instance.                                                           |
 
 > Example
@@ -1449,8 +1449,8 @@ async signSyncChangePubKey(changePubKey: {
 | changePubKey.feeTokenId              | Numerical token id                                                                |
 | changePubKey.fee                     | Fee to pay for operation, paid in token                                           |
 | changePubKey.nonce                   | Transaction nonce                                                                 |
-| changePubKey.validFrom               | Timestamp in seconds from which the block with this transaction can be processed  |
-| changePubKey.validUntil              | Timestamp in seconds until which the block with this transaction can be processed |
+| changePubKey.validFrom               | Unix timestamp from which the block with this transaction can be processed  |
+| changePubKey.validUntil              | Unix timestamp until which the block with this transaction can be processed |
 | changePubKey.ethAuthData (optional)  | Data which is used to verify the Ethereum signature                               |
 | changePubKey.ethSignature (optional) |                                                                                   |
 | returns                              | Signed Sync change public key transaction                                         |
