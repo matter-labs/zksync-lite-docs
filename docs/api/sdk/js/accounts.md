@@ -997,6 +997,8 @@ Batch Builder allows you to create and send transaction batches in a very straig
 
 Batch Builder supports all kinds of zkSync L2 transactions, such as: `Withdraw`, `Transfer`, `ChangePubKey`, etc.
 
+All the methods of the Batch Builder are supposed to be called in a chained manner.
+
 Note:
  - _The user still has to sign a separate message for each `ChangePubKey` in the batch._
  - _Currently, a batch is guaranteed to be able to successfully process a max of 50 transactions._
