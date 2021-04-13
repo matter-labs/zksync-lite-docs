@@ -1030,35 +1030,6 @@ const syncWallet = ..; // Setup zksync wallet.
 const batchBuilder = syncWallet.batchBuilder();
 ```
 
-### Set fee token
-
-Set fee token for the batch transaction.
-
-_If fee token is set for the batch transaction it is expected that all transactions fees will be zero and no signed transactions to be presented in the batch_
-
-> Signature
-
-```typescript
-setFeeToken(
-  feeToken: TokenLike;
-): void;
-```
-
-#### Inputs and outputs
-
-| Name     | Description                  |
-| -------- | ---------------------------- |
-| feeToken | Token to pay fee in.[^token] |
-| returns  | void                         |
-
-> Example
-
-```typescript
-const batchBuilder = ..; // Setup batch builder.
-
-batchBuilder.setFeeToken("ETH");
-```
-
 ### Add withdraw transaction
 
 Adding withdraw transaction to the batch.
