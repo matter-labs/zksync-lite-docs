@@ -1,7 +1,7 @@
 # Providers
 
-JSON-RPC protocol is used to communicate with Sync network nodes. `Provider` is used to abstract details of the
-communication and provides useful API for interaction with Sync network.
+JSON-RPC protocol is used to communicate with zkSync network nodes. `Provider` is used to abstract details of the
+communication and provides useful API for interaction with zkSync network.
 
 We support HTTP and WebSocket transport protocols for JSON-RPC communications. Even though WebSocket transport supports
 subscriptions, HTTP transport is preferred due to its stability. `HTTPTransport` and `WSTransport` classes are used to
@@ -13,7 +13,7 @@ Websocket support will be removed soon due to its instability.
 
 :::
 
-## Sync provider
+## zkSync provider
 
 ### Get default provider for network
 
@@ -64,7 +64,7 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 
 | Name           | Description                                                                           |
 | -------------- | ------------------------------------------------------------------------------------- |
-| tx             | Signed Sync transaction (see types, for detailed description)                         |
+| tx             | Signed zkSync transaction (see types, for detailed description)                         |
 | signature      | Signature of the readable representation of the transaction signed by ethereum wallet |
 | fastProcessing | For withdrawals only: request faster processing of transaction                        |
 | returns        | `0x`-prefixed hex-encoded hash of the transaction                                     |
@@ -176,7 +176,7 @@ async getContractAddress(): Promise<ContractAddress>;
 
 | Name    | Description                                                                         |
 | ------- | ----------------------------------------------------------------------------------- |
-| returns | Addresses of the Sync network smart contracts (see types, for detailed description) |
+| returns | Addresses of the zkSync network smart contracts (see types, for detailed description) |
 
 > Example
 
@@ -250,8 +250,8 @@ async getState(address: Address): Promise<AccountState>;
 
 | Name    | Description                                                                                          |
 | ------- | ---------------------------------------------------------------------------------------------------- |
-| address | `0x`-prefixed hex-encoded address of the Sync account.                                               |
-| returns | Detailed state of the Sync account, including balances, nonce. (see types, for detailed description) |
+| address | `0x`-prefixed hex-encoded address of the zkSync account.                                               |
+| returns | Detailed state of the zkSync account, including balances, nonce. (see types, for detailed description) |
 
 > Returns
 
@@ -321,7 +321,7 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 
 | Name    | Description                                                       |
 | ------- | ----------------------------------------------------------------- |
-| txHash  | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction.     |
+| txHash  | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction.     |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
 > Returns
@@ -359,7 +359,7 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 ### Wait for transaction receipt
 
 Similar to [Get transaction receipt](#get-transaction-receipt) but this method will return when a given transaction is
-committed or verified in the Sync network.
+committed or verified in the zkSync network.
 
 > Signature
 
@@ -376,7 +376,7 @@ async notifyTransaction(
 
 | Name    | Description                                                       |
 | ------- | ----------------------------------------------------------------- |
-| txHash  | `sync-tx:`-prefixed hex-encoded hash of the Sync transaction.     |
+| txHash  | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction.     |
 | action  | "COMMIT" or "VERIFY"                                              |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
@@ -426,7 +426,7 @@ deposit).
 ### Wait for priority operation receipt
 
 Similar to [Get priority operation receipt](#get-priority-operation-receipt) but this method will return when given
-priority operation is committed or verified in the Sync network.
+priority operation is committed or verified in the zkSync network.
 
 > Signature
 
@@ -506,8 +506,8 @@ Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees
 
 Performs a query to the server, obtaining an acceptable fee for a batch transaction (multi-transfer).
 
-+The fee provided is enough to perform **all** of the transactions of the batch. Thus you usually would need to specify
-+the fee for only one transaction and set it to zero for the other ones.
+The fee provided is enough to perform **all** of the transactions of the batch. Thus you usually would need to specify
+the fee for only one transaction and set it to zero for the other ones.
 
 **Note:** For details about the type and amount of token for batch transaction fees, see
 [transaction batch docs](#submit-transactions-batch).
@@ -582,7 +582,7 @@ constructor(
 | Name            | Description                                     |
 | --------------- | ----------------------------------------------- |
 | ethersProvider  | `ethers.js` provider connected to ethereum node |
-| contractAddress | Addresses of the Sync network contracts         |
+| contractAddress | Addresses of the zkSync network contracts         |
 
 > Example
 
@@ -598,7 +598,7 @@ const ethProxy = new zksync.ETHProxy(ethersProvider, syncHttpProvider.contractAd
 
 ### Resolve token id
 
-To sign Sync transaction users have to know the unique numerical id of the given token. It can be retrieved from the
+To sign zkSync transaction users have to know the unique numerical id of the given token. It can be retrieved from the
 zkSync network governance contract.
 
 > Signature
@@ -612,7 +612,7 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 | Name    | Description                                                  |
 | ------- | ------------------------------------------------------------ |
 | token   | Ethereum token address (ERC20 contract address)              |
-| returns | Numerical identifier of the given token inside Sync network. |
+| returns | Numerical identifier of the given token inside zkSync network. |
 
 > Example
 

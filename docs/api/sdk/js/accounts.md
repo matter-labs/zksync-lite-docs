@@ -69,8 +69,8 @@ static async fromEthSigner(
 | Name                        | Description                                                                  |
 | --------------------------- | ---------------------------------------------------------------------------- |
 | ethWallet                   | `ethers.Signer` that corresponds to keys that own this account               |
-| provider                    | Sync provider that is used for submitting a transaction to the Sync network. |
-| signer (optional)           | Sync signer that will be used for transaction signing.[^signer]              |
+| provider                    | zkSync provider that is used for submitting a transaction to the zkSync network. |
+| signer (optional)           | zkSync signer that will be used for transaction signing.[^signer]              |
 | accountId (optional)        | zkSync account id.[^acc_id]                                                  |
 | ethSignatureType (optional) | Type of signature that is produced by `ethWallet`.[^ethsig]                  |
 | returns                     | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
@@ -109,7 +109,7 @@ without them, such as Deposit, Emergency exit and reading the account state.
 | Name                        | Description                                                                  |
 | --------------------------- | ---------------------------------------------------------------------------- |
 | ethWallet                   | `ethers.Signer` that corresponds to keys that own this account               |
-| provider                    | Sync provider that is used for submitting a transaction to the Sync network. |
+| provider                    | zkSync provider that is used for submitting a transaction to the zkSync network. |
 | accountId (optional)        | zkSync account id.[^acc_id]                                                  |
 | ethSignatureType (optional) | Type of signature that is produced by `ethWallet`.[^ethsig]                  |
 | returns                     | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
@@ -148,8 +148,8 @@ static async fromCreate2Data(
 
 | Name                 | Description                                                                  |
 | -------------------- | ---------------------------------------------------------------------------- |
-| syncSigner           | Sync signer that will be used for transaction signing.[^signer]              |
-| provider             | Sync provider that is used for submitting a transaction to the Sync network. |
+| syncSigner           | zkSync signer that will be used for transaction signing.[^signer]              |
+| provider             | zkSync provider that is used for submitting a transaction to the zkSync network. |
 | create2Data          | Data out of which the CREATE2 algrorithm would derive the address.           |
 | accountId (optional) | zkSync account id.[^acc_id]                                                  |
 | returns              | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)               |
@@ -300,7 +300,7 @@ async isERC20DepositsApproved(
 
 ### Deposit token to Sync
 
-Moves funds from the ethereum account to the Sync account.
+Moves funds from the ethereum account to the zkSync account.
 
 To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever
 using [unlocking ERC20 token], or the user can approve the exact amount (required for a deposit) upon each deposit, but
@@ -332,7 +332,7 @@ async depositToSyncFromEthereum(deposit: {
 
 | Name                                            | Description                                                        |
 | ----------------------------------------------- | ------------------------------------------------------------------ |
-| deposit.depositTo                               | Sync account address of the receiver                               |
+| deposit.depositTo                               | zkSync account address of the receiver                               |
 | deposit.token                                   | Token to be transferred (symbol or address of the supported token) |
 | deposit.amount                                  | Amount of token to be transferred                                  |
 | deposit.ethTxOptions                            | Arguments for the deposit Ethereum transaction, e.g. gas price.    |
@@ -674,7 +674,7 @@ const transferTransactions = await wallet.syncMultiTransfer([transferA, transfer
 
 ### Withdraw token from the zkSync
 
-Moves funds from the Sync account to ethereum address. Sender account should have correct public key set before sending
+Moves funds from the zkSync account to ethereum address. Sender account should have correct public key set before sending
 this transaction. (see [change pub key](#changing-account-public-key))
 
 Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
@@ -851,10 +851,10 @@ async signSyncForcedExit((forcedExit: {
 
 ### Emergency withdraw from Sync
 
-If ordinary withdraw from Sync account is ignored by network operators user could create an emergency withdraw request
+If ordinary withdraw from zkSync account is ignored by network operators user could create an emergency withdraw request
 using special Ethereum transaction, this withdraw request can't be ignored.
 
-Moves the full amount of the given token from the Sync account to the Ethereum account.
+Moves the full amount of the given token from the zkSync account to the Ethereum account.
 
 Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations (see
 [provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before
@@ -1304,7 +1304,7 @@ async pubKeyHash(): Promise<PubKeyHash>;
 
 ### Sign sync transfer
 
-Signs transfer transaction, the result can be submitted to the Sync network.
+Signs transfer transaction, the result can be submitted to the zkSync network.
 
 > Signature
 
@@ -1331,11 +1331,11 @@ async signSyncTransfer(transfer: {
 | transfer.amount    | Amount to transfer, payed in token      |
 | transfer.fee       | Fee to pay for transfer, payed in token |
 | transfer.nonce     | Transaction nonce                       |
-| returns            | Signed Sync transfer transaction        |
+| returns            | Signed zkSync transfer transaction        |
 
-### Sign Sync Withdraw
+### Sign zkSync Withdraw
 
-Signs withdraw transaction, the result can be submitted to the Sync network.
+Signs withdraw transaction, the result can be submitted to the zkSync network.
 
 > Signature
 
@@ -1362,11 +1362,11 @@ async signSyncWithdraw(withdraw: {
 | withdraw.amount     | Amount to withdraw, paid in token         |
 | withdraw.fee        | Fee to pay for withdrawing, paid in token |
 | withdraw.nonce      | Transaction nonce                         |
-| returns             | Signed Sync withdraw transaction          |
+| returns             | Signed zkSync withdraw transaction          |
 
-### Sign Sync Forced Exit
+### Sign zkSync Forced Exit
 
-Signs forced exit transaction, the result can be submitted to the Sync network.
+Signs forced exit transaction, the result can be submitted to the zkSync network.
 
 > Signature
 
@@ -1389,11 +1389,11 @@ async signSyncForcedExit(forcedExit: {
 | forcedExit.tokenId            | Numerical token id                        |
 | forcedExit.fee                | Fee to pay for withdrawing, paid in token |
 | forcedExit.nonce              | Transaction nonce                         |
-| returns                       | Signed Sync forced exit transaction       |
+| returns                       | Signed zkSync forced exit transaction       |
 
-### Sign Sync ChangePubKey
+### Sign zkSync ChangePubKey
 
-Signs ChangePubKey transaction, the result can be submitted to the Sync network.
+Signs ChangePubKey transaction, the result can be submitted to the zkSync network.
 
 > Signature
 
@@ -1426,4 +1426,4 @@ async signSyncChangePubKey(changePubKey: {
 | changePubKey.validUntil              | Unix timestamp until which the block with this transaction can be processed |
 | changePubKey.ethAuthData (optional)  | Data which is used to verify the Ethereum signature                               |
 | changePubKey.ethSignature (optional) |                                                                                   |
-| returns                              | Signed Sync change public key transaction                                         |
+| returns                              | Signed zkSync change public key transaction                                         |

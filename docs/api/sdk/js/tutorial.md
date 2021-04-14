@@ -37,7 +37,7 @@ from the zksync and ethers libraries.
 
 ## Connecting to zkSync network
 
-To interact with Sync network users need to know the endpoint of the operator node.
+To interact with zkSync network users need to know the endpoint of the operator node.
 
 ```typescript
 const syncProvider = await zksync.getDefaultProvider("rinkeby");
