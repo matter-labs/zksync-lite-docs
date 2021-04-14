@@ -22,7 +22,7 @@
     If not set, lowest possible fee will be requested from zkSync server. Fees are pain in the same token as the main
     transaction token. To get how to manually obtain an acceptable fee amount, see [Get transaction fee from the
     server][get_fee]. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee).
-
+[^nonce]: If undefined, it will be queried from the server.
 [^fast_fee]: If fee was requested manually, request has to be of "FastWithdraw" type
 [^onchain_auth]:
     When false, `ethers.Signer` is used to create signature, otherwise it is expected that user called
