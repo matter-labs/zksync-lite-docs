@@ -27,10 +27,10 @@ In such cases, you can always withdraw funds from an L2 zkSync account to the sa
 this because the security invariant is not violated: funds never change the owning hand. It requires that the account
 have never registered a zkSync public key before.
 
-If you need to withdraw your funds from such an account, please fill the following
-[form](https://docs.google.com/forms/d/1fRLRhFzu2IHSgxITxz8y6iZkl9sNRvS5Z_Us2ZWAQM0/edit).
+If you need to withdraw your funds from such an account, please use the following tool for the alternative withdrawal: https://withdraw.zksync.io/. Please note, that for the tool to be able to withdraw funds from your account, all of the following must be true:
 
-In the future the process will be fully automated.
+- The account is at least 24 hours old.
+- The account has never been unlocked (i.e. nonce is zero).
 
 ## Why do I need to unlock my account and why does it cost more than other transactions?
 
