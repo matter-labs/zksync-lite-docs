@@ -1,6 +1,6 @@
 # NFTs
 
-NFTs is currently in testnet. This guide demonstrates how to  
+NFTs is currently in testnet. This guide demonstrates how to mint and transfer NFTs.
 
 ## 1. Setup
 
@@ -60,25 +60,54 @@ const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
 
 ## 2. Mint NFT
 
-You can mint an NFT by calling the `mintNFT` function with the following parameters:
+2.1 Calculate Transaction Fee
 
-| Name           | Type | Description                                                                           |
-| -------------- | -------| ------------------------------------------------------------------------------------- |
-| receiver            | ? |the recipient address represented as a hex string                        |
-| contentHash     | string | the unique identifier of the NFT represented as a 32-byte hex string (eg IPFS content identifier) |
-| feeToken | string | name of token in which fee is to be paid (typically ETH)                        |
-| fee      | ?  |           ...                        |
+To mint an NFT, we first need to calculate the transaction fee. 
 
+> Signature
+
+```typescript
+async getTransactionFee(
+        txType: 'Withdraw' | 'Transfer' | 'FastWithdraw' | 'MintNFT' | ChangePubKeyFee | LegacyChangePubKeyFee,
+        address: Address,
+        tokenLike: TokenLike
+    ): Promise<Fee>
+```
 
 To calculate the fee: 
 ```typescript
 let { totalFee: fee } = await this.syncProvider.getTransactionFee(
-    MintNFT,  
+    'MintNFT',  
     syncWallet.address(), 
     feeToken);
 ```
 
-`mintNFT` returns ...
+2.2 Mint the NFT
+
+You can mint an NFT by calling the `mintNFT` function:
+
+> Signature
+
+```typescript
+async mintNFT(mintNft: {
+        recipient: string;
+        contentHash: string;
+        feeToken: TokenLike;
+        fee?: BigNumberish;
+        nonce?: Nonce;
+    }): Promise<Transaction>
+```
+
+The `mintNFT` function has the following parameters:
+
+| Name           | Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| receiver            | the recipient address represented as a hex string                        |
+| contentHash     |  the unique identifier of the NFT represented as a 32-byte hex string (eg IPFS content identifier) |
+| feeToken |  name of token in which fee is to be paid (typically ETH)                        |
+| fee      |            transaction fee                        |
+
+To mint an NFT: 
 ```typescript
 const nft = await syncWallet.mintNFT({
         receiver,
@@ -87,30 +116,59 @@ const nft = await syncWallet.mintNFT({
         fee
     });
 ```
-To receive a receipt:
+2.3 Get a Receipt
+
+If you would like, you can also receive a receipt for the minted NFT.
 ```typescript
 const receipt = await nft.awaitReceipt();
 ```
 
+2.4 View an NFT
+
+After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in a rollup block, and verified when a zero knowledge proof has been generated for that block and the root hash of the rollup block has been included in the smart contract on Ethereum mainnet. 
+
 To view an account's NFTs:
 ```typescript
 // Get state of account
-const state = await receiver.getAccountState();
-
-state.verified.nfts ...
+const state = await syncProvider.getAccountState(<account-address>);
+// View verified NFTs
+console.log(state.verified.nfts);
 ```
 
+To get an NFT, you can also use this function: 
+
+> Signature
+
+```typescript
+async getNFT(tokenId: number, type: 'committed' | 'verified' = 'committed'): Promise<NFT>
+```
 ## 3. Transfer NFT
 
-You can transfer an NFT by calling the `syncTransferNFT` function with the following parameters:
+An NFT can only be transferred after the block with the MintNFT transaction is verified. In other words, the NFT must be in the verified state.
 
-| Name           | Type | Description                                                                           |
-| -------------- | -------| ------------------------------------------------------------------------------------- |
-| to            | ? |the recipient address represented as a hex string                        |
-| feeToken | ? | name of token in which fee is to be paid (typically ETH)                        |
-| token     | ? | address of the NFT |
-| fee      | ?  |           ...                        |
+You can transfer an NFT by calling the `syncTransferNFT` function:
+```typescript
+async syncTransferNFT(transfer: {
+        to: Address;
+        token: NFT;
+        feeToken: TokenLike;
+        fee?: BigNumberish;
+        nonce?: Nonce;
+        validFrom?: number;
+        validUntil?: number;
+    }): Promise<Transaction[]>
+```
 
+The `syncTransferNFT` function has the following parameters:
+
+| Name           |  Description                                                                           |
+| -------------- | ------------------------------------------------------------------------------------- |
+| to            | the recipient address represented as a hex string                        |
+| feeToken |  name of token in which fee is to be paid (typically ETH)                        |
+| token     | address of the NFT |
+| fee      |          transaction fee                       |
+
+To transfer an NFT:
 ```typescript
 const handles = await sender.syncTransferNFT({
         to: receiver.address(),
@@ -119,5 +177,3 @@ const handles = await sender.syncTransferNFT({
         fee
     });
 ```
-
-NOTICE: an NFT can only be transferred after the block with the MintNFT transaction is verified.
