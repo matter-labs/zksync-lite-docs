@@ -134,7 +134,7 @@ To view an account's NFTs:
 
 ```typescript
 // Get state of account
-const state = await syncProvider.getAccountState(<account-address>);
+const state = await syncProvider.getAccountState('<account-address>');
 // View verified NFTs
 console.log(state.verified.nfts);
 ```
