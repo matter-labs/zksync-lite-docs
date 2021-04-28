@@ -79,7 +79,7 @@ async getTransactionFee(
 To calculate the fee:
 
 ```typescript
-let { totalFee: fee } = await syncProvider.getTransactionFee("MintNFT", syncWallet.address(), feeToken);
+const { totalFee: fee } = await syncProvider.getTransactionFee("MintNFT", syncWallet.address(), feeToken);
 ```
 
 2.2 Mint the NFT
