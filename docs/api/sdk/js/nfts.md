@@ -9,8 +9,8 @@ NFTs is currently in testnet. This guide demonstrates how to mint and transfer N
 Install zkSync’s official libraries so you can access the API from your application:
 
 ```bash
-npm install zksync@beta
-npm install ethers # ethers is a peer dependency of zksync
+yarn add zksync@beta
+yarn add ethers # ethers is a peer dependency of zksync
 ```
 
 ### 1.2 Add Imports
@@ -79,7 +79,7 @@ async getTransactionFee(
 To calculate the fee:
 
 ```typescript
-let { totalFee: fee } = await this.syncProvider.getTransactionFee("MintNFT", syncWallet.address(), feeToken);
+let { totalFee: fee } = await syncProvider.getTransactionFee("MintNFT", syncWallet.address(), feeToken);
 ```
 
 2.2 Mint the NFT
