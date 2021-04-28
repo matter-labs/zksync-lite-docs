@@ -57,24 +57,32 @@ Users can transfer NFTs to existing accounts, transfer to addresses that have no
 
 ## Withdrawals and FullExits (Trustless Withdrawal)
 
-The existing mechanisms of withdrawals and full exits are kept the same with a tiny modification: in addition to passing the token_id from the circuit to the L1 smart contract, we also pass the full NFT metadata (creator_acc_id, serial_id, content_hash) for any NFT account.  
+Withdrawals to L1 will require 3 actors:
 
-*Note: this will slightly increase the cost of every withdrawal and full exit.*
+- Fabric: L1 contract that can mint L1 NFT tokens
+- Creator: user which *mints* NFT on L2
+- NFTOwner: user which *owns* NFT on L2
 
-For every withdrawal of 1 wei, the L1 smart contract will assume it is an NFT, and will not call the `ERC20.transfer()` function. 
+### Fabric and zkSync Smart Contract Interaction
 
-Users can calls `withdrawNFT()` to mint on L1, passing the following arguments:
+Fabric contracts should implement a function `mintFromZkSync`.
 
-- msg.sender 
-- nft_minting_contract
-- creator_account_id
-- serial_id
-- content_hash
+```typescript
+mintFromZkSync(creator_address: address, content_hash: bytes, recipient_address: address)
+```
 
-`withdrawNFT()` will verify ownership and metadata encoding, and will pass the call to `nft_minting_contract` of the NFT factory, which will perform the minting logic on L1.
+The zkSync contract will implement a function that will register creators as a trusted minter on L2 for the fabric contract. 
 
-## Deposits
+```typescript
+registerFabric(creator_address: address, signature: bytes)
+```
 
-For deposits of NFTs we will introduce a new function `depositNFT()` 
+To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the token on L2, and call mintFromZkSync on the fabric corresponding to the creator. 
 
-NFTs previously withdrawn from zkSync are tracked on-chain with a separate mapping, and will simply deposit 1 wei of the NFT's token id. *To discuss with partners if necessary.*
+### Fabric Registration
+
+1. To register a fabric, creators will sign a message with data `fabric_address` and `creator_address`.
+2. The fabric contract calls `registerFabric` on the zkSync L1 smart contract with the signature.
+3. zkSync smart contract validates the signature and emits an event with `fabric_address` and `creator_address`.
+4. zkSync server listens for this event, and enables withdrawal from L2 to L1.
+
