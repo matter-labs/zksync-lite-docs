@@ -77,7 +77,7 @@ const nft = await syncWallet.mintNFT({
 
 ### Get a Receipt
 
-If you would like, you can also receive a receipt for the minted NFT.
+If you would like, you can also get a receipt for the minted NFT.
 
 ```typescript
 const receipt = await nft.awaitReceipt();
@@ -141,4 +141,12 @@ const handles = await sender.syncTransferNFT({
   token: nft,
   fee,
 });
+```
+
+### Get a Receipt
+
+If you would like, you can also get a receipt for the transfer.
+
+```typescript
+const receipt = await handles[0].awaitReceipt();
 ```
