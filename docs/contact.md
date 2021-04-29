@@ -56,7 +56,7 @@ All technical/developer discussions will only take place in gitter:
 - [Telegram: user support group](https://t.me/zksync_support) (new!).
 - [Telegram: community discussion group](https://t.me/zksync_community) (new!).
 - [Discord: discussions](https://discord.gg/px2aR7w).
-- Email user support: **support@matter-labs.io** (new!)
+- Email user support: **support@zksync.io** (new!)
 
 ## Partnerships, integrations and press
 
