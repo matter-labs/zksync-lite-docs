@@ -1,6 +1,6 @@
 # NFTs
 
-NFTs are currently in testnet. Please start by reading our [high level overview](https://zksync.io/dev/nfts/). This guide demonstrates how to mint and transfer NFTs. Withdrawals are coming very soon! 
+NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. Please start by reading our [high level overview](https://zksync.io/dev/nfts/). This guide demonstrates how to mint and transfer NFTs. Withdrawals are coming very soon! 
 
 ## Setup
 
