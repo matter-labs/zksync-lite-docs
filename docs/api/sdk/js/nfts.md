@@ -27,10 +27,10 @@ To calculate the transaction fee for minting an NFT, you can use the `getTransac
 
 ```typescript
 async getTransactionFee(
-        txType: 'Withdraw' | 'Transfer' | 'FastWithdraw' | 'MintNFT' | ChangePubKeyFee | LegacyChangePubKeyFee,
-        address: Address,
-        tokenLike: TokenLike
-    ): Promise<Fee>
+    txType: 'Withdraw' | 'Transfer' | 'FastWithdraw' | 'MintNFT' | ChangePubKeyFee | LegacyChangePubKeyFee,
+    address: Address,
+    tokenLike: TokenLike
+): Promise<Fee>
 ```
 
 Example: 
@@ -47,12 +47,12 @@ You can mint an NFT by calling the `mintNFT` function from the `Wallet` class, n
 
 ```typescript
 async mintNFT(mintNft: {
-        recipient: string;
-        contentHash: string;
-        feeToken: TokenLike;
-        fee?: BigNumberish;
-        nonce?: Nonce;
-    }): Promise<Transaction>
+    recipient: string;
+    contentHash: string;
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+}): Promise<Transaction>
 ```
 
 | Name        | Description                                                                                         |
@@ -68,10 +68,10 @@ Example:
 ```typescript
 const contentHash = "0xbd7289936758c562235a3a42ba2c4a56cbb23a263bb8f8d27aead80d74d9d996"
 const nft = await syncWallet.mintNFT({
-  recipient: syncWallet.address(),
-  contentHash,
-  feeToken: "ETH",
-  fee,
+    recipient: syncWallet.address(),
+    contentHash,
+    feeToken: "ETH",
+    fee,
 });
 ```
 
@@ -115,14 +115,14 @@ You can transfer an NFT by calling the `syncTransferNFT` function:
 
 ```typescript
 async syncTransferNFT(transfer: {
-        to: Address;
-        token: NFT;
-        feeToken: TokenLike;
-        fee?: BigNumberish;
-        nonce?: Nonce;
-        validFrom?: number;
-        validUntil?: number;
-    }): Promise<Transaction[]>
+    to: Address;
+    token: NFT;
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Transaction[]>
 ```
 
 | Name     | Description                                              |
