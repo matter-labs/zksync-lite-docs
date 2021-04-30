@@ -71,6 +71,8 @@ export interface BatchFee {
   // Total fee amount (in wei)
   totalFee: BigNumber;
 }
+
+export type TotalFee = Map<TokenLike, BigNumber>;
 ```
 
 `ChangePubKeyFee` interface is defined as follows:
