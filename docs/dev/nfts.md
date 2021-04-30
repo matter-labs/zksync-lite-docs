@@ -13,7 +13,7 @@ This cryptographically ensures two invariants:
 
 NOTICE: In zkSync 1.x, multiple NFTs can be minted with the same content hash. 
 
-You can currently try out minting and transferring NFTs with our [SDK](INSERT LINK) on Rinkeby testnet.
+You can currently try out minting and transferring NFTs with our [SDK](https://zksync.io/api/sdk/js/nfts.html) on Rinkeby testnet.
 
 ## Minting
 
