@@ -8,7 +8,7 @@ Please read our [Getting Started](https://zksync.io/api/sdk/js/tutorial.html#get
 ### Install the zkSync@beta library
 
 ```bash
-npm install zksync@beta
+yarn add zksync@beta
 ```
 
 ### Connect to the Rinkeby-beta testnet
