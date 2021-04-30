@@ -206,7 +206,7 @@ async getAccountId(): Promise<number | undefined>;
 | ------- | -------------------------------------------------------------- |
 | returns | Numerical account ID in the the zkSync tree state.[^undefined] |
 
-### Get account nonce 
+### Get account nonce
 
 Get the nonce of this account. Very convenient if you want to either provide a nonce explicitly or use the last committed one as the fallback.
 
@@ -218,9 +218,9 @@ async getNonce(nonce: Nonce = 'committed'): Promise<number>
 
 #### Inputs and outputs
 
-| Name    | Description                                                    |
-| ------- | -------------------------------------------------------------- |
-| nonce   | The type of nonce which should be returned.                      |
+| Name    | Description                                                                                                                  |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| nonce   | The type of nonce which should be returned.                                                                                  |
 | returns | The last committed nonce if 'committed' is supplied and the value of the supplied `nonce` argument if the number is supplied |
 
 ### Get token balance on zkSync
