@@ -187,6 +187,7 @@ module.exports = {
             '/api/sdk/js/providers',
             '/api/sdk/js/accounts',
             '/api/sdk/js/utils',
+            '/api/sdk/js/nfts',
             '/api/sdk/js/types',
             '/api/sdk/js/browser-bundled'
           ]
