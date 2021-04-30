@@ -79,5 +79,4 @@ To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart cont
 1. To register a factory, creators will sign a message with data `factory_address` and `creator_address`.
 2. The factory contract calls `registerFactory` on the zkSync L1 smart contract with the signature.
 3. zkSync smart contract validates the signature and emits an event with `factory_address` and `creator_address`.
-4. zkSync server listens for this event, and enables withdrawal from L2 to L1.
 
