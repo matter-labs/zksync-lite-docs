@@ -66,7 +66,7 @@ We will have a default factory contract that will handle minting NFTs on L1 for 
 mintFromZkSync(creator_address: address, content_hash: bytes, recipient_address: address, token_id: uint256)
 ```
 
-The zkSync contract will implement a function `registerFactory` that will register creators as a trusted minter on L2 for the factory contract. 
+The zkSync Governance contract will implement a function `registerFactory` that will register creators as a trusted minter on L2 for the factory contract. 
 
 ```typescript
 registerFactory(creator_address: address, signature: bytes)
