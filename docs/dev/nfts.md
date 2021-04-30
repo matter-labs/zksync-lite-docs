@@ -58,6 +58,8 @@ Withdrawals to L1 will require 3 actors:
 - Creator: user which *mints* NFT on L2
 - NFTOwner: user which *owns* NFT on L2
 
+Withdrawing is currently not available in testnet, but it will be during the mainnet launch.
+
 ### Factory and zkSync Smart Contract Interaction
 
 We will have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their own minting contract. Projects with their own minting contracts only need to implement one minting function: `mintFromZkSync`. 
