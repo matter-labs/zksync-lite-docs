@@ -160,7 +160,8 @@ module.exports = {
           title: 'Smart contracts',  // required
           path: '/dev/contracts/', // optional, which should be a absolute path.
           collapsable: false,  // optional, defaults to true
-        }
+        },
+        '/dev/nfts'
       ],
       '/api': [
         {
