@@ -47,8 +47,8 @@ CreatorAccount[SPECIAL_NFT_TOKEN] += 1
 
 zkSync servers will maintain a mapping of NFT token addresses to token IDs.
 
-## Transfer and Swap
-Users can transfer NFTs to existing accounts, transfer to addresses that have not yet registered a zkSync account, and atomically swap NFTs. `TRANSFER`, `TRANSFER_TO_NEW`, and `SWAP` opcodes will work the same. 
+## Transfer
+Users can transfer NFTs to existing accounts and transfer to addresses that have not yet registered a zkSync account. `TRANSFER` and `TRANSFER_TO_NEW` opcodes will work the same. 
 
 ## Withdrawals and FullExits (Trustless Withdrawal)
 
