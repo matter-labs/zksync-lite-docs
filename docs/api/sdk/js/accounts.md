@@ -190,6 +190,8 @@ async getAccountState(): Promise<AccountState>;
 | ------- | --------------------------- |
 | returns | State of the given account. |
 
+### Get account id
+
 For convenience it is possible to obtain the account ID.
 
 > Signature
@@ -198,9 +200,28 @@ For convenience it is possible to obtain the account ID.
 async getAccountId(): Promise<number | undefined>;
 ```
 
+#### Inputs and outputs
+
 | Name    | Description                                                    |
 | ------- | -------------------------------------------------------------- |
 | returns | Numerical account ID in the the zkSync tree state.[^undefined] |
+
+### Get account nonce 
+
+Get the nonce of this account. Very convenient if you want to either provide a nonce explicitly or use the last committed one as the fallback.
+
+> Signature
+
+```typescript
+async getNonce(nonce: Nonce = 'committed'): Promise<number>
+```
+
+#### Inputs and outputs
+
+| Name    | Description                                                    |
+| ------- | -------------------------------------------------------------- |
+| nonce   | The type of nonce which should be returned.                      |
+| returns | The last committed nonce if 'committed' is supplied and the value of the supplied `nonce` argument if the number is supplied |
 
 ### Get token balance on zkSync
 
