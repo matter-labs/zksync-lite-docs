@@ -60,7 +60,9 @@ Withdrawals to L1 will require 3 actors:
 
 ### Factory and zkSync Smart Contract Interaction
 
-We will have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their own minting contract. Projects with their own minting contracts only need to implement one minting function: `mintFromZkSync`.
+We will have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their own minting contract. Projects with their own minting contracts only need to implement one minting function: `mintFromZkSync`. 
+
+Note: The name of this function is subject to change.
 
 ```typescript
 mintFromZkSync(creator_address: address, content_hash: bytes, recipient_address: address, token_id: uint256)
