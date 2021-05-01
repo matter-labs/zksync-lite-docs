@@ -1,4 +1,4 @@
-# NFTs in zkSync 1.0
+# NFTs in zkSync 1.x
 ## Overview
 NFT addresses will encode NFT content and metadata as follows: 
 
