@@ -1,6 +1,6 @@
 # NFTs
 
-NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. Currently it includes minting and transferring NFTs. Documentation for functions regarding withdrawals are coming very soon! Please start by reading our [high level overview](https://zksync.io/dev/nfts/).
+NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. Currently it includes minting and transferring NFTs. Documentation for functions regarding withdrawals is coming very soon! Please start by reading our [high level overview](https://zksync.io/dev/nfts/).
 
 - [Connecting to Rinkeby-beta testnet](https://zksync.io/api/sdk/js/nfts.html#connect-to-the-rinkeby-beta-testnet)
 - [Mint NFT](https://zksync.io/api/sdk/js/nfts.html#mint-nft)
