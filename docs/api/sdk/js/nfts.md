@@ -140,11 +140,17 @@ async getNFT(tokenId: number, type: 'committed' | 'verified' = 'committed'): Pro
 To get a receipt for a minted NFT:
 
 ```typescript
+// mint nft
+const nft = await wallet.mintNFT({...});
+// get receipt
 const receipt = await nft.awaitReceipt();
 ```
 
 To get a receipt for a transfer:
 
 ```typescript
+// transfer nft
+const handles = await sender.syncTransferNFT({...});
+// get receipt
 const receipt = await handles[0].awaitReceipt();
 ```
