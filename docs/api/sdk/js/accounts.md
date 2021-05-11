@@ -635,7 +635,7 @@ async signSyncTransfer(transfer: {
 
 ### Swaps in zkSync
 
-Performs an atomic swap between 2 existing accounts in the zkSync network. For information about swaps, see the []().
+Performs an atomic swap between 2 existing accounts in the zkSync network. For information about swaps, see the [Swaps tutorial](../../../dev/swaps.md).
 
 #### Signing orders
 
@@ -675,7 +675,7 @@ async getLimitOrder(order: {
 | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | order.tokenSell             | Token to be swapped                                                                             |
 | order.tokenBuy              | Token to be swapped for                                                                         |
-| order.price                 | An array that represents a price as a ratio of sell:buy                                         |
+| order.price                 | An array that represents a price as a ratio of sell:buy, each number should fit into 15 bytes                                         |
 | order.amount                | Amount of token to be swapped                                                                   |
 | order.recipient (optional)  | Address of the account to which the result of the swap should be transferred (defaults to self) |
 | order.nonce (optional)      | Nonce that is going to be used for this transaction.[^nonce]                                    |

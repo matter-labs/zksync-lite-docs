@@ -6,12 +6,12 @@ Functionality is currently in testnet on Rinkey-beta and Ropsten-beta.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
-- [What's Live](/dev/nfts.html#whats-live)
-- [Overview](/dev/nfts.html#overview)
-- [Setup](/dev/nfts.html#setup)
-- [Mint](/dev/nfts.html#minting)
-- [Transfer](/dev/nfts.html#)
-- [Withdrawal and Full Exit](/dev/nfts.html#)
+- [What's Live](#whats-live)
+- [Overview](#overview)
+- [Setup](#setup)
+- [Mint](#minting)
+- [Transfer](#)
+- [Withdrawal and Full Exit](#)
 
 ## What's Live
 
@@ -44,7 +44,7 @@ NOTICE: In zkSync 1.x, multiple NFTs can be minted with the same content hash.
 
 ## Setup
 
-Please read our [Getting Started](https://zksync.io/api/sdk/js/tutorial.html#getting-started) guide before beginning this tutorial. 
+Please read our [Getting Started](../api/sdk/js/tutorial.md#getting-started) guide before beginning this tutorial.
 
 ### Install the zkSync@beta library
 
@@ -227,7 +227,7 @@ const receipt = await handles[0].awaitReceipt();
 
 ## Swapping
 
-Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens. For more information, visit [Swaps in zkSync](/api/sdk/js/accounts.html#swaps-in-zksync).
+Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens. For more information, visit [Swaps in zkSync](../api/sdk/js/accounts.md#swaps-in-zksync).
 
 You can swap NFTs by calling the `syncSwap` function and putting NFT's id as a token:
 
@@ -257,7 +257,7 @@ const receipt = await swap.awaitReceipt();
 
 ## Withdrawal and Full Exit
 
-A [Full Exit](/dev/payments/basic.html#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored. 
+A [Full Exit](./payments/basic.md#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored.
 
 Withdrawals to L1 will require 3 actors:
 
