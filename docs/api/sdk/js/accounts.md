@@ -675,17 +675,17 @@ async getLimitOrder(order: {
 | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | order.tokenSell             | Token to be swapped                                                                             |
 | order.tokenBuy              | Token to be swapped for                                                                         |
-| order.price                 | An array that represents a price as a ratio of sell:buy, each number should fit into 15 bytes                                         |
-| order.amount                | Amount of token to be swapped                                                                   |
+| order.price                 | An array that represents a price as a ratio of sell:buy, each number should fit into 15 bytes   |
+| order.amount                | Amount of token to be swapped[^amount]                                                          |
 | order.recipient (optional)  | Address of the account to which the result of the swap should be transferred (defaults to self) |
-| order.nonce (optional)      | Nonce that is going to be used for this transaction.[^nonce]                                    |
+| order.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce]                                     |
 | order.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed                      |
 | order.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed                     |
 | returns                     | Handle of the submitted transaction                                                             |
 
 #### Submitting a swap
 
-Once two compatible signed swaps are collected, they can be submitter by anyone.
+Once two compatible signed swaps are collected, they can be submitted by anyone.
 
 > Signature
 
