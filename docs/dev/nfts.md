@@ -6,12 +6,12 @@ Functionality is currently in testnet on Rinkey-beta and Ropsten-beta.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
-- [What's Live](https://zksync.io/dev/nfts.html#whats-live)
-- [Overview](https://zksync.io/dev/nfts.html#overview)
-- [Setup](https://zksync.io/dev/nfts.html#setup)
-- [Mint](https://zksync.io/dev/nfts.html#minting)
-- [Transfer](https://zksync.io/dev/nfts.html#)
-- [Withdrawal and Full Exit](https://zksync.io/dev/nfts.html#)
+- [What's Live](/dev/nfts.html#whats-live)
+- [Overview](/dev/nfts.html#overview)
+- [Setup](/dev/nfts.html#setup)
+- [Mint](/dev/nfts.html#minting)
+- [Transfer](/dev/nfts.html#)
+- [Withdrawal and Full Exit](/dev/nfts.html#)
 
 ## What's Live
 
@@ -224,9 +224,40 @@ To get a receipt for the transfer:
 ```typescript
 const receipt = await handles[0].awaitReceipt();
 ```
+
+## Swapping
+
+Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens. For more information, visit [Swaps in zkSync](/api/sdk/js/accounts.html#swaps-in-zksync).
+
+You can swap NFTs by calling the `syncSwap` function and putting NFT's id as a token:
+
+```typescript
+const buyingNFT = await walletA.getOrder({
+    tokenBuy: nft.id,
+    tokenSell: 'USDT',
+    amount: 100,
+    price: utils.price({ sellPrice: 100, buyPrice: 1 })
+});
+
+const sellingNFT = await walletB.getOrder({
+    tokenBuy: 'USDT',
+    tokenSell: nft.id,
+    amount: 1,
+    price: utils.price({ sellPrice: 1, buyPrice: 100 })
+});
+
+// anyone can submit the swap, given that they can pay the fees
+const swap = await walletC.syncSwap({
+    orders: [buyingNFT, sellingNFT],
+    feeToken: 'ETH'
+});
+
+const receipt = await swap.awaitReceipt();
+```
+
 ## Withdrawal and Full Exit
 
-A [Full Exit](https://zksync.io/dev/payments/basic.html#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored. 
+A [Full Exit](/dev/payments/basic.html#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored. 
 
 Withdrawals to L1 will require 3 actors:
 
