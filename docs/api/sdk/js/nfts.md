@@ -8,8 +8,8 @@ NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networ
 - [Swap NFTs](#swap-nfts)
 - [Utility Functions](#utility-functions)
     - [Calculate Transaction Fee](#calculate-transaction-fee)
-    - [View NFT](#view-nft)
-    - [Get NFT](#get-nft)
+    - [View NFT](#view-an-nft)
+    - [Get NFT](#get-an-nft)
     - [Get a receipt](#get-a-receipt)
 
 ## Connect to the Rinkeby-beta testnet
