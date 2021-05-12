@@ -127,12 +127,13 @@ so creating matching engines is not considered - we will only provide an L2 fram
 
 Trading accounts can be created as CREATE2 accounts, as it has following benefits:
 
-- setting a signing key on a CREATE2 account is about 3x cheaper
-- salt argument in CREATE2 can be used to deterministically generate trading account addresses for a certain main account
-- same L2 private key can be used for all trading accounts and main account if desired
+- Setting a signing key on a CREATE2 account is cheaper
+- Salt argument in CREATE2 can be used to deterministically generate trading account addresses for a certain main account
+- Same L2 private key can be used for all trading accounts and the main account if desired.
+  Although this bears some risks (compromising a single account would mean compromising all of them), key management can be inconvenient in some situations. 
 
-Underlying contracts that will be deployed through CREATE2 in case of censorship should be open-source and have full exit and withdraw functionality.
+If a platform should decide to use CREATE2 for trading accounts, it will have to choose a contract bytecode to be used for address calculation.
+The contract should be open-source and have full exit and withdrawal functionality since in the rare case of censorship users will have to deploy it to rescue their funds.
 
-It is also suggested to reuse trading accounts on which orders were filled or cancelled.
-
+It is also suggested to reuse trading accounts on which orders were filled or cancelled since this way a signing key would not have to be set again.
 
