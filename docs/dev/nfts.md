@@ -225,9 +225,39 @@ const receipt = await handles[0].awaitReceipt();
 
 ## Swap
 
-Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens. For more information, visit [Swaps in zkSync](../api/sdk/js/accounts.md#swaps-in-zksync).
+Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens.
+For more information, see [API reference](../api/sdk/js/accounts.md#swaps-in-zksync) or [Swaps tutorial](./swaps.md).
 
-You can swap NFTs by calling the `syncSwap` function and putting NFT's id as a token:
+### Swap NFTs
+
+To swap 2 NFTs, each party must sign an order that will specify which NFTs are being swapped. NFT's id must be specified in the token field.
+To do this, use the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method:
+
+```typescript
+const order = await wallet.getOrder({
+    tokenSell: myNFT.id,
+    tokenBuy: anotherNFT.id,
+    amount: 1,
+    ratio: utils.ratio({ tokenSell: 1, tokenBuy: 1 })
+});
+```
+
+After 2 orders are signed and collected, anyone can submit the swap.
+To do this, use the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
+
+``` typescript
+// anyone can submit the swap, given that they can pay the fees
+const swap = await submitter.syncSwap({
+    orders: [orderA, orderB],
+    feeToken: 'ETH'
+});
+
+const receipt = await swap.awaitReceipt();
+```
+
+### Buy / Sell NFTs
+
+To buy or sell NFT for fungible tokens, simply specify the token and the amount in the order:
 
 ```typescript
 const buyingNFT = await walletA.getOrder({
@@ -243,14 +273,6 @@ const sellingNFT = await walletB.getOrder({
     amount: 1,
     ratio: utils.ratio({ tokenSell: 1, tokenBuy: 100 })
 });
-
-// anyone can submit the swap, given that they can pay the fees
-const swap = await walletC.syncSwap({
-    orders: [buyingNFT, sellingNFT],
-    feeToken: 'ETH'
-});
-
-const receipt = await swap.awaitReceipt();
 ```
 
 ## Withdrawal and Full Exit
