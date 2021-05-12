@@ -10,20 +10,18 @@ This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tut
 - [Overview](#overview)
 - [Setup](#setup)
 - [Mint](#mint)
-- [Transfer](./nfts.md)
-- [Withdrawal and Full Exit](./nfts.md)
+- [Transfer](#transfer)
+- [Swap](#swap)
+- [Withdrawal and Full Exit](#withdrawal-and-full-exit)
 
 ## What's Live
 
 Functions currently available on Rinkeby-beta and Ropsten-beta testnet: 
 
-[x] Minting
-
-[x] Transferring
-
-[ ] Swapping
-
-[ ] Withdrawal to L1
+- [x] Minting
+- [x] Transferring
+- [ ] Swapping
+- [ ] Withdrawal to L1
 
 Swapping and withdrawals are coming soon!
 
@@ -225,7 +223,7 @@ To get a receipt for the transfer:
 const receipt = await handles[0].awaitReceipt();
 ```
 
-## Swapping
+## Swap
 
 Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens. For more information, visit [Swaps in zkSync](../api/sdk/js/accounts.md#swaps-in-zksync).
 

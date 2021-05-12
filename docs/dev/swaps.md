@@ -40,14 +40,14 @@ An order can also include:
 
 Anyone can submit 2 orders for a swap if they meet the following limitations:
 - tokens that accounts wish to swap with match
-- ratios in orders are compatible, meaning that the swap is benefitial for both parties at either of the two ratios
+- ratios in orders are compatible, meaning that the swap is beneficial for both parties at either of the two ratios
 - if orders have recipients, their accounts already exist in zkSync
 
-Fee is payed by the submitter, and the token it is payed in should be specified.
+Fee is paid by the submitter, and the token it is paid in should be specified.
 After a swap is executed, nonce is incremented on both swapping accounts and the submitter.
 If swap was submitted from one of the swapping accounts, nonce is incremented only once.
 
-If the user wishes to cancel the swap that has not yet been submitted, they simply have to increment their nonce (e.g. send a zero-tranfer).
+If the user wishes to cancel the swap that has not yet been submitted, they simply have to increment their nonce (e.g. send a zero-transfer).
 
 To submit a swap, use the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method of `Wallet`:
 
