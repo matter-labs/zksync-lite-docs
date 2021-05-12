@@ -234,14 +234,14 @@ const buyingNFT = await walletA.getOrder({
     tokenBuy: nft.id,
     tokenSell: 'USDT',
     amount: 100,
-    price: utils.price({ sellPrice: 100, buyPrice: 1 })
+    ratio: utils.ratio({ tokenSell: 100, tokenBuy: 1 })
 });
 
 const sellingNFT = await walletB.getOrder({
     tokenBuy: 'USDT',
     tokenSell: nft.id,
     amount: 1,
-    price: utils.price({ sellPrice: 1, buyPrice: 100 })
+    ratio: utils.ratio({ tokenSell: 1, tokenBuy: 100 })
 });
 
 // anyone can submit the swap, given that they can pay the fees

@@ -15,7 +15,7 @@ To sign an order, you need the following info:
 - token you want to swap
 - token you want to swap for
 - amount of the token that you want to swap
-- ratio (price) of the swapped tokens, relevant to one another
+- ratio of the swapped tokens, relevant to one another
 
 To sign an order, use the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method of `Wallet`:
 
@@ -24,9 +24,9 @@ const order = await wallet.getOrder({
     tokenSell: 'ETH',
     tokenBuy: 'USDT',
     amount: 2,
-    price: utils.price({
-        sellPrice: 1,
-        buyPrice: 4000,
+    ratio: utils.ratio({
+        tokenSell: 1,
+        tokenBuy: 4000,
     })
 });
 ```
@@ -94,9 +94,9 @@ To sign a limit order, use the [`getLimitOrder`](../api/sdk/js/accounts.md#signi
 const order = await wallet.getLimitOrder({
     tokenSell: 'ETH',
     tokenBuy: 'USDT',
-    price: utils.price({
-        sellPrice: 1,
-        buyPrice: 3900,
+    ratio: utils.ratio({
+        tokenSell: 1,
+        tokenBuy: 3900,
     })
 });
 ```
@@ -105,7 +105,7 @@ const order = await wallet.getLimitOrder({
 
 To fill a limit order, anyone that has a compatible order (a normal order _or_ a limit order) can submit them.
 Additionally, amounts that are being filled should be specified.
-Amounts should be compatible with the prices, specified in the orders.
+Amounts should be compatible with the ratios specified in the orders.
 
 ```typescript
 const swap = await wallet.syncSwap({
