@@ -17,6 +17,8 @@ To sign an order, you need the following info:
 - amount of the token that you want to swap
 - ratio of the swapped tokens, relevant to one another
 
+Ratios are 15-byte integers that represent the proportion in which tokens are swapped.
+
 To sign an order, use the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method of `Wallet`:
 
 ```typescript
@@ -39,8 +41,8 @@ An order can also include:
 ### Submitting a swap
 
 Anyone can submit 2 orders for a swap if they meet the following limitations:
-- tokens that accounts wish to swap with match
-- ratios in orders are compatible, meaning that the swap is beneficial for both parties at either of the two ratios
+- orders have matching tokens: if `orderA` specifies `tokenA -> tokenB`, then `orderB` should specify `tokenB -> tokenA`
+- ratios in orders are compatible: `1/orderB.ratio <= orderA.amount/orderB.amount <= orderA.ratio`
 - if orders have recipients, their accounts already exist in zkSync
 
 Fee is paid by the submitter, and the token it is paid in should be specified.
