@@ -107,7 +107,8 @@ const order = await wallet.getLimitOrder({
 
 To fill a limit order, anyone that has a compatible order (a normal order _or_ a limit order) can submit them.
 Additionally, amounts that are being filled should be specified.
-Amounts should be compatible with the ratios specified in the orders.
+Limit orders can be partially filled, so amounts can be different from actual balances,
+although must be compatible with the ratios specified in the orders. For details, see [example](#example).
 
 ```typescript
 const swap = await wallet.syncSwap({
@@ -138,4 +139,60 @@ If a platform should decide to use CREATE2 for trading accounts, it will have to
 The contract should be open-source and have full exit and withdrawal functionality since in the rare case of censorship users will have to deploy it to rescue their funds.
 
 It is also suggested to reuse trading accounts on which orders were filled or cancelled since this way a signing key would not have to be set again.
+
+### Example
+
+This section provides an example of how ratios specified in orders affect account balances.
+
+Let the swap consist of 2 limit orders:
+
+```typescript
+// walletA wants to swap wBTC for ETH at a ratio 2:5
+const orderA = await walletA.getLimitOrder({
+    tokenSell: 'wBTC',
+    tokenBuy: 'ETH',
+    ratio: utils.ratio({
+        tokenSell: 2,
+        tokenBuy: 5,
+    })
+});
+
+// walletB wants to swap ETH for wBTC at a ratio 4:1
+const orderB = await walletB.getLimitOrder({
+    tokenSell: 'ETH',
+    tokenBuy: 'wBTC',
+    ratio: utils.ratio({
+        tokenSell: 4,
+        tokenBuy: 1,
+    })
+});
+```
+
+Specified ratios mean that:
+- `walletA` expects to get 2.5 ETH for each wBTC (or more)
+- `walletB` expects to get 0.25 wBTC for each ETH (or more)
+
+Ratios are compatible, because at either ratio (or in between), both parties will be happy:
+- at `orderB`'s ratio `walletA` will get 4 ETH per wBTC, which is more than expected
+- at `orderA`'s ratio `walletB` will get 0.4 wBTC per ETH, which is more than expected
+
+Now let's actually submit the swap, and pick a ratio in between - 3 ETH per wBTC:
+```typescript
+const swap = await walletC.syncSwap({
+    orders: [orderA, orderB],
+    amounts: [100, 300],
+    feeToken: 'USDT'
+});
+```
+
+This will exchange 100 wBTC from `walletA` for 300 ETH from `walletB`. For detailed information, see table below.
+
+|  | `walletA` | `walletB` |
+| --- | --- | --- |
+| wBTC before swap| 100 | 0 |
+| ETH before swap | 0 | 300 |
+| ETH expected after swap | 0 | 75 |
+| wBTC expected after swap | 250 | 0 |
+| ETH actually after swap | 0 | 100 |
+| wBTC actually after swap | 300 | 0 |
 
