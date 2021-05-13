@@ -20,7 +20,7 @@ Functions currently available on Rinkeby-beta and Ropsten-beta testnet:
 
 - [x] Minting
 - [x] Transferring
-- [ ] Swapping
+- [x] Swapping
 - [ ] Withdrawal to L1
 
 Swapping and withdrawals are coming soon!
@@ -225,13 +225,15 @@ const receipt = await handles[0].awaitReceipt();
 
 ## Swap
 
-Users can swap NFTs with each other, or swap an NFT for fungible tokens (e.g. buy an NFT). Swaps work the same for fungible and non-fungible tokens.
-For more information, see [API reference](../api/sdk/js/accounts.md#swaps-in-zksync) or [Swaps tutorial](./swaps.md).
+The swap function can be used to atomically swap:
+1. one NFT for another NFT
+2. one NFT for fungible tokens (buying the NFT)
 
 ### Swap NFTs
 
-To swap 2 NFTs, each party must sign an order that will specify which NFTs are being swapped. NFT's id must be specified in the token field.
-To do this, use the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method:
+To swap 2 NFTs, each party will sign an order specifying the NFT ids for the NFT they are selling and the NFT they are buying.
+
+Using the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method:
 
 ```typescript
 const order = await wallet.getOrder({
@@ -242,11 +244,12 @@ const order = await wallet.getOrder({
 });
 ```
 
-After 2 orders are signed and collected, anyone can submit the swap.
-To do this, use the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
+Note: when performing an NFT to NFT swap, the ratios will always be set to one.
+
+After 2 orders are signed and collected, anyone can initiate the swap by calling the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
 
 ``` typescript
-// anyone can submit the swap, given that they can pay the fees
+// whoever initiates the swap pays the fee
 const swap = await submitter.syncSwap({
     orders: [orderA, orderB],
     feeToken: 'ETH'
@@ -257,7 +260,7 @@ const receipt = await swap.awaitReceipt();
 
 ### Buy / Sell NFTs
 
-To buy or sell NFT for fungible tokens, simply specify the token and the amount in the order:
+To buy or sell an NFT for fungible tokens, each party will submit an order specifying the NFT id and the name of the token they are spending/receiving. In the example, pay special attention to the ratio parameter.
 
 ```typescript
 const buyingNFT = await walletA.getOrder({
