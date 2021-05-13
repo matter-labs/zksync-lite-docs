@@ -720,7 +720,7 @@ const walletB = ..; // setup second wallet
 const orderA = await walletA.getOrder({
     tokenSell: 'ETH',
     tokenBuy: 'USDT',
-    amount: 2,
+    amount: tokenSet.parseToken('ETH', '2'),
     ratio: utils.ratio({
         tokenSell: 1,
         tokenBuy: 4000,
@@ -728,9 +728,9 @@ const orderA = await walletA.getOrder({
 });
 
 const orderB = await walletB.getOrder({
-    tokenSell: 'ETH',
-    tokenBuy: 'USDT',
-    amount: 8000,
+    tokenSell: 'USDT',
+    tokenBuy: 'ETH',
+    amount: tokenSet.parseToken('USDT', '8000'),
     ratio: utils.ratio({
         tokenSell: 4000,
         tokenBuy: 1,

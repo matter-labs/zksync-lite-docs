@@ -25,7 +25,7 @@ To sign an order, use the [`getOrder`](../api/sdk/js/accounts.md#signing-orders)
 const order = await wallet.getOrder({
     tokenSell: 'ETH',
     tokenBuy: 'USDT',
-    amount: 2,
+    amount: tokenSet.parseToken('ETH', '2.5'),
     ratio: utils.ratio({
         tokenSell: 1,
         tokenBuy: 4000,
@@ -113,7 +113,10 @@ although must be compatible with the ratios specified in the orders. For details
 ```typescript
 const swap = await wallet.syncSwap({
     orders: [orderA, orderB],
-    amounts: [2, 7800]
+    amounts: [
+        tokenSet.parseToken('ETH', '2'),
+        tokenSet.parseToken('UDST', '7800')
+    ],
     feeToken: 'wBTC',
 });
 ```
@@ -180,7 +183,10 @@ Now let's actually submit the swap, and pick a ratio in between - 3 ETH per wBTC
 ```typescript
 const swap = await walletC.syncSwap({
     orders: [orderA, orderB],
-    amounts: [100, 300],
+    amounts: [
+        tokenSet.parseToken('wBTC', '100'),
+        tokenSet.parseToken('ETH', '300'),
+    ],
     feeToken: 'USDT'
 });
 ```

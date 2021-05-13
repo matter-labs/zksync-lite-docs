@@ -266,7 +266,7 @@ To buy or sell an NFT for fungible tokens, each party will submit an order speci
 const buyingNFT = await walletA.getOrder({
     tokenBuy: nft.id,
     tokenSell: 'USDT',
-    amount: 100,
+    amount: tokenSet.parseToken('USDT', '100'),
     ratio: utils.ratio({ tokenSell: 100, tokenBuy: 1 })
 });
 
