@@ -60,7 +60,7 @@ export default {
    ** Customize the progress-bar color
    */
   loading: {
-    color: "#8c8dfc",
+    color: '#8c8dfc',
     continuous: true,
   },
 
@@ -89,15 +89,15 @@ export default {
     '@inkline/nuxt',
     'vue-scrollto/nuxt',
     [
-      "nuxt-social-meta",
+      'nuxt-social-meta',
       {
-        url: "https://zksync.io",
+        url: 'https://zksync.io',
         title: pageTitle,
         site_name: pageTitle,
         description: pageDescription,
-        img: "https://zksync.io/social.jpg",
-        locale: "en_US",
-        twitter: "@zksync",
+        img: 'https://zksync.io/social.jpg',
+        locale: 'en_US',
+        twitter: '@zksync',
         twitter_card: "https://zksync.io/social.jpg",
         themeColor: "#4e529a",
       },
