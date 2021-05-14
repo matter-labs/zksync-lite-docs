@@ -94,7 +94,7 @@ export default Vue.extend({
             classes: "small-text round-thumbnail",
             title: "Argent",
             link: "https://www.argent.xyz/blog/layer-2-plans/",
-            thumbnail: "argent.jpeg",
+            thumbnail: "argent.svg",
             thumbnailAlt: "Argent at @argentHQ",
             thumbnailTitle: "Argent at @argentHQ",
             text: `...Our choice came down to the fact that zkSync has been live on mainnet for months, has lower transaction costs and fast finality.
