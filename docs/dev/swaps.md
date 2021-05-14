@@ -105,8 +105,11 @@ const order = await wallet.getLimitOrder({
 
 ### Filling a limit order
 
-To fill a limit order, anyone that has another compatible order (a normal order _or_ a limit order) should submit both of them.
-Amounts that are being filled should be specified.
+Limit order itself represents only a half of the swap operation. In order to be filled, the following criteria must be met:
+- There exists a counterpart order (a normal order _or_ a limit order) that fits the original order's tokens and buy/sell ratio.
+- There exists someone willing to combine both orders into a swap operation and submit it.
+
+Amounts that are being filled should be specified in the swap operation.
 Limit orders can be partially filled, so amounts can be different from actual balances,
 although must be compatible with the ratios specified in the orders. For details, see [example](#example).
 
