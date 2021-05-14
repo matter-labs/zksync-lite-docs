@@ -92,11 +92,11 @@ export default Vue.extend({
           {
             id: "",
             classes: "small-text round-thumbnail",
-            title: "Itamar Lesuisse",
+            title: "Argent",
             link: "https://www.argent.xyz/blog/layer-2-plans/",
-            thumbnail: "itamar.jpeg",
-            thumbnailAlt: "Itamar Lesuisse @argentHQ",
-            thumbnailTitle: "Itamar Lesuisse from @argentHQ",
+            thumbnail: "argent.jpeg",
+            thumbnailAlt: "Argent at @argentHQ",
+            thumbnailTitle: "Argent at @argentHQ",
             text: `...Our choice came down to the fact that zkSync has been live on mainnet for months, has lower transaction costs and fast finality.
             ZkSync also does not have a one week delay on withdrawals`
           },
