@@ -81,9 +81,9 @@ A trading account is an ordinary account that can be used to sign a limit order.
 It's function is to limit the amount of a certain token that a user wants to exchange.
 
 To do this, user has to:
-1. Transfer the desired amount of a desired token to a new account
-2. Set a signing key for the account
-3. Sign a limit order
+1. Transfer the desired amount of a desired token to a new account.
+2. Set a signing key for the account.
+3. Sign a limit order.
 
 This way the limit order will exchange at most the amount you transferred to the trading account. 
 Remaining balance on the main account will be left untouched.
@@ -105,8 +105,8 @@ const order = await wallet.getLimitOrder({
 
 ### Filling a limit order
 
-To fill a limit order, anyone that has a compatible order (a normal order _or_ a limit order) can submit them.
-Additionally, amounts that are being filled should be specified.
+To fill a limit order, anyone that has another compatible order (a normal order _or_ a limit order) should submit both of them.
+Amounts that are being filled should be specified.
 Limit orders can be partially filled, so amounts can be different from actual balances,
 although must be compatible with the ratios specified in the orders. For details, see [example](#example).
 
@@ -131,14 +131,14 @@ so creating matching engines is not considered - we will only provide an L2 fram
 
 ### Suggestions
 
-Trading accounts can be created as CREATE2 accounts, as it has following benefits:
+Trading accounts can be created as CREATE2 accounts. This approach has the following benefits:
 
 - Setting a signing key on a CREATE2 account is cheaper
 - Salt argument in CREATE2 can be used to deterministically generate trading account addresses for a certain main account
 - Same L2 private key can be used for all trading accounts and the main account if desired.
   Although this bears some risks (compromising a single account would mean compromising all of them), key management can be inconvenient in some situations. 
 
-If a platform should decide to use CREATE2 for trading accounts, it will have to choose a contract bytecode to be used for address calculation.
+Should a platform decide to use CREATE2 for trading accounts, it will have to choose a contract bytecode to be used for address calculation.
 The contract should be open-source and have full exit and withdrawal functionality since in the rare case of censorship users will have to deploy it to rescue their funds.
 
 It is also suggested to reuse trading accounts on which orders were filled or cancelled since this way a signing key would not have to be set again.

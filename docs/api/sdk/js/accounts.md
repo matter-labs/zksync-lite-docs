@@ -641,8 +641,8 @@ Performs an atomic swap between 2 existing accounts in the zkSync network. For i
 
 There are two kinds of orders:
 
-- swap order, where explicit amount is set
-- limit order, where explicit amount is not set, and instead inferred from the balance. This order can be partially filled
+- Swap order, where an explicit amount is set.
+- Limit order, where an explicit amount is not set, and instead inferred from the balance. This order can be partially filled.
 
 > Signature
 
@@ -675,7 +675,7 @@ async getLimitOrder(order: {
 | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | order.tokenSell             | Token to be swapped                                                                             |
 | order.tokenBuy              | Token to be swapped for                                                                         |
-| order.ratio                 | 2 numbers that represent the sell:buy ratio, each number should fit into 15 bytes               |
+| order.ratio                 | 2 numbers that represent the sell:buy ratio; each number should fit into 15 bytes               |
 | order.amount                | Amount of token to be swapped[^amount]                                                          |
 | order.recipient (optional)  | Address of the account to which the result of the swap should be transferred (defaults to self) |
 | order.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce]                                     |
@@ -685,7 +685,7 @@ async getLimitOrder(order: {
 
 #### Submitting a swap
 
-Once two compatible signed swaps are collected, they can be submitted by anyone.
+Once two compatible signed swaps are collected, anyone can submit them.
 
 > Signature
 
