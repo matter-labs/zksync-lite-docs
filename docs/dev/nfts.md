@@ -282,6 +282,21 @@ This guide will demonstrate 2 types of withdrawals: normal and emergency, and ex
 
 Under normal conditions use a layer 2 operation, `withdrawNFT`, to withdraw the NFT.
 
+> Signature
+
+```typescript
+withdrawNFT(withdrawNFT: {
+    to: string;
+    token: number;
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    fastProcessing?: boolean;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Transaction>;
+```
+
 | Name           | Description                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------- |
 | to             | L1 recipient address represented as a hex string                                                        |

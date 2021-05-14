@@ -98,7 +98,22 @@ const handles = await sender.syncTransferNFT({
 Swaps for NFTs exactly the same as for fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
 ## Withdraw NFT
 
-To withdraw an NFT:
+Under normal conditions use a layer 2 operation, `withdrawNFT`, to withdraw the NFT.
+
+> Signature
+
+```typescript
+withdrawNFT(withdrawNFT: {
+    to: string;
+    token: number;
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    fastProcessing?: boolean;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Transaction>;
+```
 
 | Name           | Description                                                                                             |
 | -------------- | ------------------------------------------------------------------------------------------------------- |
@@ -125,10 +140,10 @@ In case of censorship, users may call for an emergency withdrawal. Note: This is
 > Signature
 
 async emergencyWithdraw(withdraw: {
-        token: TokenLike;
-        accountId?: number;
-        ethTxOptions?: ethers.providers.TransactionRequest;
-    }): Promise<ETHOperation>
+    token: TokenLike;
+    accountId?: number;
+    ethTxOptions?: ethers.providers.TransactionRequest;
+}): Promise<ETHOperation>
 
 | Name                 | Description                                              |
 | ---------------------| -------------------------------------------------------- |
