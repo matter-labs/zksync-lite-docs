@@ -14,17 +14,6 @@ This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tut
 - [Swap](#swap)
 - [Withdrawal to Layer 1](#withdrawal-to-layer-1)
 
-## What's Live
-
-Functions currently available on Rinkeby-beta and Ropsten-beta testnet: 
-
-- [x] Minting
-- [x] Transferring
-- [x] Swapping
-- [ ] Withdrawal to L1
-
-Swapping and withdrawals are coming soon!
-
 ## Overview
 
 NFT addresses will encode NFT content and metadata as follows: 
