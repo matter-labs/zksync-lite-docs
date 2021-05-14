@@ -246,7 +246,7 @@ const order = await wallet.getOrder({
 
 Note: when performing an NFT to NFT swap, the ratios will always be set to one.
 
-After 2 orders are signed and collected, anyone can initiate the swap by calling the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
+After 2 orders are signed, anyone can initiate the swap by calling the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
 
 ``` typescript
 // whoever initiates the swap pays the fee
@@ -254,13 +254,16 @@ const swap = await submitter.syncSwap({
     orders: [orderA, orderB],
     feeToken: 'ETH'
 });
+```
 
+To get a receipt:
+``` typescript
 const receipt = await swap.awaitReceipt();
 ```
 
 ### Buy / Sell NFTs
 
-To buy or sell an NFT for fungible tokens, each party will submit an order specifying the NFT id and the name of the token they are spending/receiving. In the example, pay special attention to the ratio parameter.
+To buy or sell an NFT for fungible tokens, each party will sign an order specifying the NFT id and the name of the token they are spending/receiving. In the example, pay special attention to the ratio parameter. You can find a list of available tokens and their symbols in our [explorer](https://zkscan.io/explorer/tokens).
 
 ```typescript
 const buyingNFT = await walletA.getOrder({
