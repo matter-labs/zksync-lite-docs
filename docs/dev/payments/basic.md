@@ -37,6 +37,7 @@ Currently, there are the following types of transactions:
   (except for priority operations) can be authorized by the corresponding account.
 - `Transfer`: Transfers funds from one zkSync account to another zkSync account. If the recipient account does not exist
   yet on the zkSync network, it will be created and a numeric ID will be assigned to the provided address.
+- `Swap`: Atomically swaps funds between two existing zkSync accounts.
 - `Withdraw`: Withdraws funds from the zkSync network to the Ethereum network.
 - `ForcedExit`: Withdraws funds from the "target" L2 account that doesn't have a signing key set, to the same "target"
   address on the Ethereum network. This operation can be used to withdraw funds in the situation where the signing key

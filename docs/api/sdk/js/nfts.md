@@ -2,14 +2,15 @@
 
 NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. Currently it includes minting and transferring NFTs. Documentation for functions regarding withdrawals is coming very soon! Please start by reading our [high level overview](https://zksync.io/dev/nfts/).
 
-- [Connecting to Rinkeby-beta testnet](https://zksync.io/api/sdk/js/nfts.html#connect-to-the-rinkeby-beta-testnet)
-- [Mint NFT](https://zksync.io/api/sdk/js/nfts.html#mint-nft)
-- [Transfer NFT](https://zksync.io/api/sdk/js/nfts.html#transfer-nft)
-- [Utility Functions](https://zksync.io/api/sdk/js/nfts.html#utility-functions)
-    - [Calculate Transaction Fee](https://zksync.io/api/sdk/js/nfts.html#calculate-transaction-fee)
-    - [View NFT](https://zksync.io/api/sdk/js/nfts.html#view-nft)
-    - [Get NFT](https://zksync.io/api/sdk/js/nfts.html#get-nft)
-    - [Get a receipt](https://zksync.io/api/sdk/js/nfts.html#get-a-receipt)
+- [Connecting to Rinkeby-beta testnet](#connect-to-the-rinkeby-beta-testnet)
+- [Mint NFT](#mint-nft)
+- [Transfer NFT](#transfer-nft)
+- [Swap NFTs](#swap-nfts)
+- [Utility Functions](#utility-functions)
+    - [Calculate Transaction Fee](#calculate-transaction-fee)
+    - [View NFT](#view-an-nft)
+    - [Get NFT](#get-an-nft)
+    - [Get a receipt](#get-a-receipt)
 
 ## Connect to the Rinkeby-beta testnet
 
@@ -90,6 +91,10 @@ const handles = await sender.syncTransferNFT({
 });
 ```
 
+## Swap NFTs
+
+Swaps for NFTs exactly the same as for fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
+
 ## Utility Functions
 
 ### Calculate Transaction Fee
@@ -106,7 +111,7 @@ async getTransactionFee(
 ): Promise<Fee>
 ```
 
-Example: 
+Example:
 
 ```typescript
 const { totalFee: fee } = await syncProvider.getTransactionFee("MintNFT", syncWallet.address(), feeToken);

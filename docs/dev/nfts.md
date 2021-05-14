@@ -6,24 +6,22 @@ Functionality is currently in testnet on Rinkey-beta and Ropsten-beta.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
-- [What's Live](https://zksync.io/dev/nfts.html#whats-live)
-- [Overview](https://zksync.io/dev/nfts.html#overview)
-- [Setup](https://zksync.io/dev/nfts.html#setup)
-- [Mint](https://zksync.io/dev/nfts.html#minting)
-- [Transfer](https://zksync.io/dev/nfts.html#)
-- [Withdrawal and Full Exit](https://zksync.io/dev/nfts.html#)
+- [What's Live](#what-s-live)
+- [Overview](#overview)
+- [Setup](#setup)
+- [Mint](#mint)
+- [Transfer](#transfer)
+- [Swap](#swap)
+- [Withdrawal and Full Exit](#withdrawal-and-full-exit)
 
 ## What's Live
 
 Functions currently available on Rinkeby-beta and Ropsten-beta testnet: 
 
-[x] Minting
-
-[x] Transferring
-
-[ ] Swapping
-
-[ ] Withdrawal to L1
+- [x] Minting
+- [x] Transferring
+- [x] Swapping
+- [ ] Withdrawal to L1
 
 Swapping and withdrawals are coming soon!
 
@@ -44,7 +42,7 @@ NOTICE: In zkSync 1.x, multiple NFTs can be minted with the same content hash.
 
 ## Setup
 
-Please read our [Getting Started](https://zksync.io/api/sdk/js/tutorial.html#getting-started) guide before beginning this tutorial. 
+Please read our [Getting Started](../api/sdk/js/tutorial.md#getting-started) guide before beginning this tutorial.
 
 ### Install the zkSync@beta library
 
@@ -224,9 +222,68 @@ To get a receipt for the transfer:
 ```typescript
 const receipt = await handles[0].awaitReceipt();
 ```
+
+## Swap
+
+The swap function can be used to atomically swap:
+1. one NFT for another NFT
+2. one NFT for fungible tokens (buying the NFT)
+
+### Swap NFTs
+
+To swap 2 NFTs, each party will sign an order specifying the NFT ids for the NFT they are selling and the NFT they are buying.
+
+Using the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method:
+
+```typescript
+const order = await wallet.getOrder({
+    tokenSell: myNFT.id,
+    tokenBuy: anotherNFT.id,
+    amount: 1,
+    ratio: utils.ratio({ tokenSell: 1, tokenBuy: 1 })
+});
+```
+
+Note: when performing an NFT to NFT swap, the ratios will always be set to one.
+
+After 2 orders are signed, anyone can initiate the swap by calling the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
+
+``` typescript
+// whoever initiates the swap pays the fee
+const swap = await submitter.syncSwap({
+    orders: [orderA, orderB],
+    feeToken: 'ETH'
+});
+```
+
+To get a receipt:
+``` typescript
+const receipt = await swap.awaitReceipt();
+```
+
+### Buy / Sell NFTs
+
+To buy or sell an NFT for fungible tokens, each party will sign an order specifying the NFT id and the name of the token they are spending/receiving. In the example, pay special attention to the ratio parameter. You can find a list of available tokens and their symbols in our [explorer](https://zkscan.io/explorer/tokens).
+
+```typescript
+const buyingNFT = await walletA.getOrder({
+    tokenBuy: nft.id,
+    tokenSell: 'USDT',
+    amount: tokenSet.parseToken('USDT', '100'),
+    ratio: utils.ratio({ tokenSell: 100, tokenBuy: 1 })
+});
+
+const sellingNFT = await walletB.getOrder({
+    tokenBuy: 'USDT',
+    tokenSell: nft.id,
+    amount: 1,
+    ratio: utils.ratio({ tokenSell: 1, tokenBuy: 100 })
+});
+```
+
 ## Withdrawal and Full Exit
 
-A [Full Exit](https://zksync.io/dev/payments/basic.html#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored. 
+A [Full Exit](./payments/basic.md#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored.
 
 Withdrawals to L1 will require 3 actors:
 
