@@ -172,22 +172,21 @@ export default Vue.extend({
     if (!galleryBlock) {
       return;
     }
-    new Hammer(galleryBlock as HTMLElement)
-      .on("pan", (e) => {
-        if (e.direction !== 2 && e.direction !== 4) {
-          return;
-        }
-        this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
-      })
-      // @ts-ignore: Unreachable code error
-      .on("panend ", () => {
-        if (this.scrollOffset < 50 && this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
-          this.scrollItemForward();
-        } else if (this.scrollOffset > 50 && this.currentItem > 0) {
-          this.scrollItemBack();
-        }
-        this.scrollOffset = 0;
-      });
+    const $hammer = new Hammer(galleryBlock as HTMLElement);
+    $hammer.on("pan", (e) => {
+      if (e.direction!==2 && e.direction!==4) {
+        return;
+      }
+      this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
+    });
+    $hammer.on("panend ", () => {
+      if (this.scrollOffset < 50 && this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
+        this.scrollItemForward();
+      } else if (this.scrollOffset > 50 && this.currentItem > 0) {
+        this.scrollItemBack();
+      }
+      this.scrollOffset = 0;
+    });
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.checkArrowDisplay);
