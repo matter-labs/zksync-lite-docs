@@ -631,7 +631,121 @@ async signSyncTransfer(transfer: {
 | transfer.nonce                 | Nonce that is going to be used for this transaction.[^nonce]                      |
 | transfer.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
 | transfer.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
-| returns                        | Signed transaction.                                                               |
+| returns                        | Signed transaction.                                                         |
+
+### Swaps in zkSync
+
+Performs an atomic swap between 2 existing accounts in the zkSync network. For information about swaps, see the [Swaps tutorial](../../../dev/swaps.md).
+
+#### Signing orders
+
+There are two kinds of orders:
+
+- Swap order, where an explicit amount is set.
+- Limit order, where an explicit amount is not set, and instead inferred from the balance. This order can be partially filled.
+
+> Signature
+
+```typescript
+async getOrder(order: {
+    tokenSell: TokenLike;
+    tokenBuy: TokenLike;
+    ratio: [BigNumberish, BigNumberish];
+    amount: BigNumberish;
+    recipient?: Address;
+    nonce?: Nonce;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Order>;
+
+async getLimitOrder(order: {
+    tokenSell: TokenLike;
+    tokenBuy: TokenLike;
+    ratio: [BigNumberish, BigNumberish];
+    recipient?: Address;
+    nonce?: Nonce;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Order>;
+```
+
+#### Inputs and outputs
+
+| Name                        | Description                                                                                     |
+| --------------------------- | ----------------------------------------------------------------------------------------------- |
+| order.tokenSell             | Token to be swapped                                                                             |
+| order.tokenBuy              | Token to be swapped for                                                                         |
+| order.ratio                 | 2 numbers that represent the sell:buy ratio; each number should fit into 15 bytes               |
+| order.amount                | Amount of token to be swapped[^amount]                                                          |
+| order.recipient (optional)  | Address of the account to which the result of the swap should be transferred (defaults to self) |
+| order.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce]                                     |
+| order.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed                      |
+| order.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed                     |
+| returns                     | Handle of the submitted transaction                                                             |
+
+#### Submitting a swap
+
+Once two compatible signed swaps are collected, anyone can submit them.
+
+> Signature
+
+```typescript
+
+async syncSwap(swap: {
+    orders: [Order, Order];
+    feeToken: TokenLike;
+    amounts?: [BigNumberish, BigNumberish];
+    nonce?: number;
+    fee?: BigNumberish;
+}): Promise<Transaction>;
+```
+
+#### Inputs and outputs
+
+| Name                    | Description                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| swap.orders             | Signed orders, compatible with each other, that will constitute the swap                   |
+| swap.feeToken           | Token to be used to pay fees                                                               |
+| swap.amounts (optional) | Actual amounts to be swapped (defaults to amounts in orders, if they are not limit orders) |
+| swap.fee (optional)     | Amount of token to be paid as a fee for this transaction.[^fee]                            |
+| swap.nonce (optional)   | Nonce that is going to be used for this transaction.[^nonce]                               |
+| returns                 | Handle of the submitted transaction                                                        |
+
+#### Example
+
+```typescript
+const walletA = ..; // setup first wallet
+const walletB = ..; // setup second wallet
+
+const orderA = await walletA.getOrder({
+    tokenSell: 'ETH',
+    tokenBuy: 'USDT',
+    amount: tokenSet.parseToken('ETH', '2'),
+    ratio: utils.ratio({
+        tokenSell: 1,
+        tokenBuy: 4000,
+    })
+});
+
+const orderB = await walletB.getOrder({
+    tokenSell: 'USDT',
+    tokenBuy: 'ETH',
+    amount: tokenSet.parseToken('USDT', '8000'),
+    ratio: utils.ratio({
+        tokenSell: 4000,
+        tokenBuy: 1,
+    }),
+    // this makes it a swap-and-transfer
+    recipient: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e'
+});
+
+const swap = await walletA.syncSwap({
+    orders: [orderA, orderB],
+    feeToken: 'ETH',
+});
+
+await swap.awaitReceipt();
+```
 
 ### Batched Transfers in the zkSync
 
