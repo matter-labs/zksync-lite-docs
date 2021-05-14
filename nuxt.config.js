@@ -67,43 +67,27 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["@/assets/style/main.scss"],
+  css: ['@/assets/style/main.scss'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/main"],
+  plugins: ['@/plugins/main'],
 
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxt/typescript-build", "@nuxtjs/eslint-module", ["@nuxtjs/dotenv", { path: __dirname }]],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/eslint-module', '@nuxtjs/style-resources', ['@nuxtjs/dotenv', { path: __dirname }]],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
-    "@nuxtjs/dotenv",
-    "@nuxtjs/pwa",
-    "@nuxtjs/axios",
-    "@nuxtjs/google-gtag",
-    "@inkline/nuxt",
-    "vue-scrollto/nuxt",
-    "@nuxtjs/style-resources",
-    [
-      "nuxt-i18n",
-      {
-        locales: [
-          {
-            code: "en",
-            iso: "en_US",
-            file: "en/translations.json",
-          },
-        ],
-        defaultLocale: "en",
-        langDir: "./locales/",
-      },
-    ],
+    '@nuxtjs/dotenv',
+    '@nuxtjs/pwa',
+    '@nuxtjs/google-gtag',
+    '@inkline/nuxt',
+    'vue-scrollto/nuxt',
     [
       "nuxt-social-meta",
       {
@@ -120,14 +104,6 @@ export default {
     ],
     "@nuxtjs/sentry",
   ],
-  i18n: {
-    vueI18n: {
-      fallbackLocale: "en",
-      messages: {
-        en: require("./src/locales/en/translations.json"),
-      },
-    },
-  },
   inkline: {
     config: {
       variant: "dark",
@@ -155,15 +131,23 @@ export default {
    ** Build configuration
    */
   build: {
+    corejs: 3,
     ssr: false,
-    target: "static",
+    target: 'static',
     extractCSS: {
       ignoreOrder: true,
     },
-    extend(config) {
+    extend (config, { isClient }) {
+      if (isClient) {
+        config.optimization.splitChunks.maxSize = 200000;
+      }
       config.node = {
-        fs: "empty",
+        fs: 'empty',
       };
+    },
+    optimization: {
+      nodeEnv: 'production',
+      minimize: true,
     },
   },
   generate: {
