@@ -90,6 +90,45 @@ const handles = await sender.syncTransferNFT({
 });
 ```
 
+## Withdraw NFT
+
+To withdraw an NFT:
+
+| Name           | Description                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| to             | L1 recipient address represented as a hex string                                                        |
+| feeToken       | name of token in which fee is to be paid (typically ETH)                                                |
+| token          | id of the NFT                                                                                           |
+| fee            | transaction fee                                                                                         |
+| fastProcessing | pay additional fee to complete block immediately, skip waiting for other transactions to fill the block |
+
+``` typescript
+const withdraw = await wallet.withdrawNFT({
+    to,
+    token,
+    feeToken,
+    fee,
+    fastProcessing
+});
+```
+
+### Emergency Withdraw
+
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+
+> Signature
+
+async emergencyWithdraw(withdraw: {
+        token: TokenLike;
+        accountId?: number;
+        ethTxOptions?: ethers.providers.TransactionRequest;
+    }): Promise<ETHOperation>
+
+| Name                 | Description                                              |
+| ---------------------| -------------------------------------------------------- |
+| token                | id of the NFT                                            |
+| accountId (Optional) | account id for fullExit                                  |
+
 ## Utility Functions
 
 ### Calculate Transaction Fee
@@ -154,36 +193,14 @@ const handles = await sender.syncTransferNFT({...});
 // get receipt
 const receipt = await handles[0].awaitReceipt();
 ```
-## Withdrawing and FullExit
-For withdrawing NFT you have to know only token id and call the following function;
 
-```
-const withdraw = await wallet.withdrawNFT({
-    to,
-    token,
-    feeToken,
-    fee,
-    fastProcessing
-});
-// get receipt
-const receipt = await withdraw.awaitReceipt();
-```
-| Name           | Description                                              |
-| -------------- | -------------------------------------------------------- |
-| to             | L1 recipient address represented as a hex string         |
-| feeToken       | name of token in which fee is to be paid (typically ETH) |
-| token          | id of the NFT                                            |
-| fee            | transaction fee                                          |
-| fastProcessing | The same in general withdrawing                          |
+To get a receipt for withdrawal:
 
-
-For emergency withdrawing NFT(FullExit) you have to know only token id and call the following function;
+``` typescript
+// normal withdraw
+const withdrawal = await wallet.withdrawNFT({...});
+const receipt = await withdrawal.awaitReceipt();
+// emergency withdraw
+const emergencyWithdraw = await wallet.emergencyWithdraw({...});
+const receipt = await emergencyWithdraw.awaitReceipt();
 ```
-const handle = await wallet.emergencyWithdraw({ token, accountId });
-let receipt = await handle.awaitReceipt();
-
-```
-| Name               | Description                                              |
-| -------------------| -------------------------------------------------------- |
-| token              | id of the NFT                                            |
-| accountId(Optional)| account id for fullExit                                  |

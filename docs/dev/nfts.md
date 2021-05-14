@@ -184,7 +184,6 @@ Users can transfer NFTs to existing accounts and transfer to addresses that have
 
 An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following transfers can be completed with no restrictions.
 
-
 You can transfer an NFT by calling the `syncTransferNFT` function:
 
 ```typescript
@@ -224,9 +223,7 @@ To get a receipt for the transfer:
 ```typescript
 const receipt = await handles[0].awaitReceipt();
 ```
-## Withdrawal and Full Exit
-
-A [Full Exit](https://zksync.io/dev/payments/basic.html#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored. 
+## Withdrawal to Layer 1
 
 Withdrawals to L1 will require 3 actors:
 
@@ -234,7 +231,57 @@ Withdrawals to L1 will require 3 actors:
 - Creator: user which *mints* NFT on L2
 - NFTOwner: user which *owns* NFT on L2
 
-Withdrawing is available in rinkeby-beta. The general architecture is detailed below.
+This guide will demonstrate 2 types of withdrawals: normal and emergency, and explain under what conditions each type should be used. It also explains the architecture of the NFT token bridge between zkSync and L1, and what is needed if protocols want to implement their own NFT factory contract on L1.
+
+### Withdraw NFT
+
+Under normal conditions use a layer 2 operation, `withdrawNFT`, to withdraw the NFT.
+
+| Name           | Description                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| to             | L1 recipient address represented as a hex string                                                        |
+| feeToken       | name of token in which fee is to be paid (typically ETH)                                                |
+| token          | id of the NFT                                                                                           |
+| fee            | transaction fee                                                                                         |
+| fastProcessing | pay additional fee to complete block immediately, skip waiting for other transactions to fill the block |
+
+``` typescript
+const withdraw = await wallet.withdrawNFT({
+    to,
+    token,
+    feeToken,
+    fee,
+    fastProcessing
+});
+```
+
+Get the receipt: 
+
+``` typescript
+const receipt = await withdraw.awaitReceipt();
+```
+
+### Emergency Withdraw
+
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+
+> Signature
+
+async emergencyWithdraw(withdraw: {
+        token: TokenLike;
+        accountId?: number;
+        ethTxOptions?: ethers.providers.TransactionRequest;
+    }): Promise<ETHOperation>
+
+| Name                 | Description                                              |
+| ---------------------| -------------------------------------------------------- |
+| token                | id of the NFT                                            |
+| accountId (Optional) | account id for fullExit                                  |
+
+``` typescript
+const emergencyWithdrawal = await wallet.emergencyWithdraw({ token, accountId });
+const receipt = await emergencyWithdrawal.awaitReceipt();
+```
 
 ### Factory and zkSync Smart Contract Interaction
 
@@ -254,8 +301,8 @@ To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart cont
 
 ### Factory Registration
 
-1. To register a factory, creators will sign a message with data `factory_address` and `creator_address`. 
-Message for signing. (Signing will be available in )
+1. To register a factory, creators will sign the following message with data `factory_address` and `creator_address`. 
+
 ```                    
 "\x19Ethereum Signed Message:\n141",
 "\nCreator's account ID in zkSync: {creatorIdInHex}",
