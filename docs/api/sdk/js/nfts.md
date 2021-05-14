@@ -93,6 +93,9 @@ const handles = await sender.syncTransferNFT({
 });
 ```
 
+## Swap NFTs
+
+Swaps for NFTs exactly the same as for fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
 ## Withdraw NFT
 
 To withdraw an NFT:
@@ -131,9 +134,6 @@ async emergencyWithdraw(withdraw: {
 | ---------------------| -------------------------------------------------------- |
 | token                | id of the NFT                                            |
 | accountId (Optional) | account id for fullExit                                  |
-## Swap NFTs
-
-Swaps for NFTs exactly the same as for fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
 
 ## Utility Functions
 
@@ -198,6 +198,14 @@ To get a receipt for a transfer:
 const handles = await sender.syncTransferNFT({...});
 // get receipt
 const receipt = await handles[0].awaitReceipt();
+```
+
+To get a receipt for a swap:
+``` typescript
+// swap nft
+const swap = await submitter.syncSwap({...});
+// get receipt
+const receipt = await swap.awaitReceipt();
 ```
 
 To get a receipt for withdrawal:
