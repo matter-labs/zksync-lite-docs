@@ -104,7 +104,7 @@
     "fork-ts-checker-webpack-plugin": "^6.1.0",
     "markdownlint": "^0.21.1",
     "markdownlint-cli": "^0.24.0",
-    "node-sass": "latest",
+    "node-sass": "4.14.1",
     "prettier": "^2.2.1",
     "sass-loader": "^10.1.1",
     "stylelint": "^13.10.0",
