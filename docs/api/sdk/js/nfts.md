@@ -76,7 +76,7 @@ async syncTransferNFT(transfer: {
 | -------- | -------------------------------------------------------- |
 | to       | the recipient address represented as a hex string        |
 | feeToken | name of token in which fee is to be paid (typically ETH) |
-| token    | address of the NFT                                       |
+| token    | id of the NFT                                       |
 | fee      | transaction fee                                          |
 
 The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.  
@@ -154,3 +154,36 @@ const handles = await sender.syncTransferNFT({...});
 // get receipt
 const receipt = await handles[0].awaitReceipt();
 ```
+## Withdrawing and FullExit
+For withdrawing NFT you have to know only token id and call the following function;
+
+```
+const withdraw = await wallet.withdrawNFT({
+    to,
+    token,
+    feeToken,
+    fee,
+    fastProcessing
+});
+// get receipt
+const receipt = await withdraw.awaitReceipt();
+```
+| Name           | Description                                              |
+| -------------- | -------------------------------------------------------- |
+| to             | L1 recipient address represented as a hex string         |
+| feeToken       | name of token in which fee is to be paid (typically ETH) |
+| token          | id of the NFT                                            |
+| fee            | transaction fee                                          |
+| fastProcessing | The same in general withdrawing                          |
+
+
+For emergency withdrawing NFT(FullExit) you have to know only token id and call the following function;
+```
+const handle = await wallet.emergencyWithdraw({ token, accountId });
+let receipt = await handle.awaitReceipt();
+
+```
+| Name               | Description                                              |
+| -------------------| -------------------------------------------------------- |
+| token              | id of the NFT                                            |
+| accountId(Optional)| account id for fullExit                                  |
