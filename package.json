@@ -71,7 +71,7 @@
     "markdown-it-footnote": "3.0.2",
     "nuxt": "^2.15.0",
     "nuxt-social-meta": "^0.0.5",
-    "postcss": "7.0.32",
+    "postcss": "8.2.10",
     "prism": "^4.1.2",
     "prismjs": "^1.23.0",
     "vue": "^2.6.12",
