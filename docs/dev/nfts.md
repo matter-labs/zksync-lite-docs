@@ -2,7 +2,7 @@
 
 Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users will also be able to withdraw NFTs to Layer 1.
 
-Functionality is currently in testnet on Rinkey-beta and Ropsten-beta.
+Functionality is currently in testnet on Rinkeby-beta and Ropsten-beta.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
@@ -365,7 +365,7 @@ To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart cont
 ```                    
 "\x19Ethereum Signed Message:\n141",
 "\nCreator's account ID in zkSync: {creatorIdInHex}",
-"\nCreator: {CreatorAdressInHex}",
+"\nCreator: {CreatorAddressInHex}",
 "\nFactory: {FactoryAddressInHex}"
 ```
 
