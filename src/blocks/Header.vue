@@ -1,5 +1,5 @@
 <template>
-  <header class="indexHeader" :class="{'opened': opened}">
+  <header v-click-outside="handleClose" :class="{'opened': opened}" class="indexHeader">
     <div class="mobileIndexHeader">
       <i-container class="mobileOnly">
         <i-row>
@@ -36,10 +36,15 @@
             <div class="linksContainer">
               <a href="/faq/" target="_blank" class="linkItem">FAQ</a>
               <a href="/dev/" target="_blank" class="linkItem">Docs</a>
-              <i-dropdown class="_background-transparent _border-none likeLinkItem" :class="{'opened': dropdownOpened}" size="sm" variation="dark" placement="bottom" trigger="manual">
-                <a class="dropDownHandler linkItem _position-top-0" @click.capture="dropdownOpened = !dropdownOpened">zkTools <i class="fal" :class="dropdownOpened?'fa-chevron-up':'fa-chevron-down'"/></a>
+              <i-dropdown
+                :class="{'opened': dropdownOpened}" class="_background-transparent _border-none likeLinkItem" placement="bottom" size="sm"
+                trigger="manual" variation="dark"
+              >
+                <a class="dropDownHandler linkItem _position-top-0" @click.capture="dropdownOpened = !dropdownOpened">zkTools <i
+                  class="fal" :class="dropdownOpened?'fa-chevron-up':'fa-chevron-down'"
+                /></a>
                 <i-dropdown-menu v-model="dropdownOpened">
-                  <i-dropdown-item v-for="(item, index) in dropdownOptions" :key="index" :href="item.link" target="_blank">{{item.name}}</i-dropdown-item>
+                  <i-dropdown-item v-for="(item, index) in dropdownOptions" :key="index" :href="item.link" target="_blank">{{ item.name }}</i-dropdown-item>
                 </i-dropdown-menu>
               </i-dropdown>
               <a href="https://matter-labs.io/#jobs" target="_blank" class="linkItem">We're hiring</a>
@@ -55,10 +60,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
 import logo from "@/blocks/Logo.vue";
 import SocialBlock from "@/blocks/SocialBlock.vue";
+import ClickOutside from "@inkline/inkline/src/directives/click-outside";
+import Vue from "vue";
 
 interface DropdownOption {
   name: string;
@@ -68,7 +73,10 @@ interface DropdownOption {
 export default Vue.extend({
   components: {
     logo,
-    SocialBlock,
+    SocialBlock
+  },
+  directives: {
+    ClickOutside
   },
   data() {
     return {
@@ -78,7 +86,7 @@ export default Vue.extend({
       dropdownOptions: [
         {
           name: "zkWallet",
-          link: "https://wallet.zksync.io/",
+          link: "https://wallet.zksync.io/"
         },
         {
           name: "zkLink",
@@ -86,16 +94,24 @@ export default Vue.extend({
         },
         {
           name: "zkScan",
-          link: "https://zkscan.io/",
+          link: "https://zkscan.io/"
         },
         {
           name: "Alternative Withdrawal",
-          link: "https://withdraw.zksync.io/",
+          link: "https://withdraw.zksync.io/"
+        },
+        {
+          link: "https://out-of-gas.zksync.io/",
+          name: "Solution for Out-of-gas issue"
         },
         {
           name: "zkCheckout",
-          link: "https://www.npmjs.com/package/zksync-checkout/",
+          link: "https://www.npmjs.com/package/zksync-checkout/"
         },
+        {
+          name: "zkMint",
+          link: "https://mint.zksync.io/"
+        }
       ] as Array<DropdownOption>,
     };
   },
@@ -113,6 +129,9 @@ export default Vue.extend({
     handleScroll() {
       this.showLogo = window.pageYOffset > 300;
     },
+    handleClose() {
+      this.dropdownOpened = false;
+    }
   },
 });
 </script>

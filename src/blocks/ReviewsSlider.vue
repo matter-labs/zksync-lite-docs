@@ -65,10 +65,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import ZButton from "@/components/ZButton.vue";
 
 import Hammer from "hammerjs";
-import ZButton from "@/components/ZButton.vue";
+import Vue from "vue";
 
 interface Review {
   id: string;
@@ -92,15 +92,13 @@ export default Vue.extend({
           {
             id: "",
             classes: "small-text round-thumbnail",
-            title: "Chris Burnisk",
-            link: "https://twitter.com/cburniske/status/1372005938316541955",
-            thumbnail: "argent_chris.jpg",
-            thumbnailAlt: "Chris Burnisk @argentHQ",
-            thumbnailTitle: "Chris Burnisk from @argentHQ",
-            text: `.@argentHQ chooses @zksync L2:
-                  "We're fans of the Optimism team and will monitor their progress with great interest.
-                  Our choice came down to the fact that zkSync has been live on mainnet for months,
-                  has lower transaction costs & fast finality." -@itamarl`,
+            title: "Argent",
+            link: "https://www.argent.xyz/blog/layer-2-plans/",
+            thumbnail: "argent.svg",
+            thumbnailAlt: "Argent at @argentHQ",
+            thumbnailTitle: "Argent at @argentHQ",
+            text: `...Our choice came down to the fact that zkSync has been live on mainnet for months, has lower transaction costs and fast finality.
+            ZkSync also does not have a one week delay on withdrawals`
           },
           {
             id: "",
@@ -174,22 +172,21 @@ export default Vue.extend({
     if (!galleryBlock) {
       return;
     }
-    new Hammer(galleryBlock as HTMLElement)
-      .on("pan", (e) => {
-        if (e.direction !== 2 && e.direction !== 4) {
-          return;
-        }
-        this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
-      })
-      // @ts-ignore: Unreachable code error
-      .on("panend ", () => {
-        if (this.scrollOffset < 50 && this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
-          this.scrollItemForward();
-        } else if (this.scrollOffset > 50 && this.currentItem > 0) {
-          this.scrollItemBack();
-        }
-        this.scrollOffset = 0;
-      });
+    const $hammer = new Hammer(galleryBlock as HTMLElement);
+    $hammer.on("pan", (e) => {
+      if (e.direction!==2 && e.direction!==4) {
+        return;
+      }
+      this.scrollOffset = Math.min(Math.abs(e.deltaX), 360) * Math.sign(e.deltaX);
+    });
+    $hammer.on("panend ", () => {
+      if (this.scrollOffset < 50 && this.currentItem < this.totalItems - 1 && this.displayRightArrow) {
+        this.scrollItemForward();
+      } else if (this.scrollOffset > 50 && this.currentItem > 0) {
+        this.scrollItemBack();
+      }
+      this.scrollOffset = 0;
+    });
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.checkArrowDisplay);

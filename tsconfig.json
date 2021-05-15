@@ -33,7 +33,6 @@
       "@types/nuxt",
       "@types/node",
       "@nuxt/types",
-      "@nuxtjs/axios",
       "@nuxt/vue-app",
       "lodash"
     ]
