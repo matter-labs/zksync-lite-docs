@@ -6,7 +6,6 @@ Functionality is currently in testnet on Rinkey-beta and Ropsten-beta.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
-- [What's Live](#what-s-live)
 - [Overview](#overview)
 - [Setup](#setup)
 - [Mint](#mint)
