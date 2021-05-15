@@ -96,6 +96,7 @@ const handles = await sender.syncTransferNFT({
 ## Swap NFTs
 
 Swaps for NFTs use the same functions as fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
+
 ## Withdraw NFT
 
 Under normal conditions use a layer 2 operation, `withdrawNFT`, to withdraw the NFT.
