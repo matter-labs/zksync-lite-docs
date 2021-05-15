@@ -1,11 +1,13 @@
 # NFTs
 
-NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. Currently it includes minting and transferring NFTs. Documentation for functions regarding withdrawals is coming very soon! Please start by reading our [high level overview](https://zksync.io/dev/nfts/).
+NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
 
 - [Connecting to Rinkeby-beta testnet](#connect-to-the-rinkeby-beta-testnet)
 - [Mint NFT](#mint-nft)
 - [Transfer NFT](#transfer-nft)
-- [Swap NFTs](#swap-nfts)
+- [Swap NFT](#swap-nft)
+- [Withdraw NFT](#withdraw-nft)
+    - [Emergency Withdraw](#emergency-withdraw)
 - [Utility Functions](#utility-functions)
     - [Calculate Transaction Fee](#calculate-transaction-fee)
     - [View NFT](#view-an-nft)
@@ -77,7 +79,7 @@ async syncTransferNFT(transfer: {
 | -------- | -------------------------------------------------------- |
 | to       | the recipient address represented as a hex string        |
 | feeToken | name of token in which fee is to be paid (typically ETH) |
-| token    | address of the NFT                                       |
+| token    | id of the NFT                                            |
 | fee      | transaction fee                                          |
 
 The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.  
@@ -93,7 +95,61 @@ const handles = await sender.syncTransferNFT({
 
 ## Swap NFTs
 
-Swaps for NFTs exactly the same as for fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
+Swaps for NFTs use the same functions as fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
+
+## Withdraw NFT
+
+Under normal conditions use a layer 2 operation, `withdrawNFT`, to withdraw the NFT.
+
+> Signature
+
+```typescript
+withdrawNFT(withdrawNFT: {
+    to: string;
+    token: number;
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    fastProcessing?: boolean;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Transaction>;
+```
+
+| Name           | Description                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| to             | L1 recipient address represented as a hex string                                                        |
+| feeToken       | name of token in which fee is to be paid (typically ETH)                                                |
+| token          | id of the NFT                                                                                           |
+| fee            | transaction fee                                                                                         |
+| fastProcessing | pay additional fee to complete block immediately, skip waiting for other transactions to fill the block |
+
+``` typescript
+const withdraw = await wallet.withdrawNFT({
+    to,
+    token,
+    feeToken,
+    fee,
+    fastProcessing
+});
+```
+
+### Emergency Withdraw
+
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+
+> Signature
+
+async emergencyWithdraw(withdraw: {
+    token: TokenLike;
+    accountId?: number;
+    ethTxOptions?: ethers.providers.TransactionRequest;
+}): Promise<ETHOperation>
+
+| Name                 | Description                                              |
+| ---------------------| -------------------------------------------------------- |
+| token                | id of the NFT                                            |
+| accountId (Optional) | account id for fullExit                                  |
 
 ## Utility Functions
 
@@ -142,6 +198,8 @@ async getNFT(tokenId: number, type: 'committed' | 'verified' = 'committed'): Pro
 
 ### Get a Receipt
 
+There are slight variations in getting the receipt of different actions.
+
 To get a receipt for a minted NFT:
 
 ```typescript
@@ -158,4 +216,23 @@ To get a receipt for a transfer:
 const handles = await sender.syncTransferNFT({...});
 // get receipt
 const receipt = await handles[0].awaitReceipt();
+```
+
+To get a receipt for a swap:
+``` typescript
+// swap nft
+const swap = await submitter.syncSwap({...});
+// get receipt
+const receipt = await swap.awaitReceipt();
+```
+
+To get a receipt for withdrawal:
+
+``` typescript
+// normal withdraw
+const withdrawal = await wallet.withdrawNFT({...});
+const receipt = await withdrawal.awaitReceipt();
+// emergency withdraw
+const emergencyWithdraw = await wallet.emergencyWithdraw({...});
+const receipt = await emergencyWithdraw.awaitReceipt();
 ```
