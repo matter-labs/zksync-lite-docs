@@ -1,12 +1,12 @@
 # Watching events
 
-This is a quick tutorial on how to use zkSync events to filter transactions. More detialed description of the events data types, please refer to [the documentation](../api/events.md).
+This is a quick tutorial on how to use zkSync events to filter transactions. More detailed description of the events data types, please refer to [the documentation](../api/events.md).
 
-The feature is currently available only on Ropsten testnet. The API has not yet fully stabilized and so the breaking changes may still occur. 
+The feature is currently available only on the Ropsten testnet. The API has not yet fully stabilized and so the breaking changes may still occur. 
 
 ## Establishing a connection
 
-In order to listen to zkSync events you need to connect via WebSocket to the endpoint `wss://ropsten-events.zkscan.io/`. We will use the `ws` library, but you can use any WebSocket client library which fits your project.
+To listen to zkSync events you need to connect via WebSocket to the endpoint `wss://ropsten-events.zkscan.io/`. We will use the `ws` library, but you can use any WebSocket client library which fits your project.
 
 ```typescript
 import WebSocket from 'ws';
@@ -25,13 +25,13 @@ setInterval(function () {
 
 After the connection is established, we need to send the events filter. More on the filters is available in a more detailed documentation [here](../api/events.md). 
 
-Among many types of filters, There is also a shorthand for no filtering: `{}`. If you pass an empty object no filters will be applied and you will receive all the events that are happening on zkSync. This option is suitable if can not afford to re-establish connection each time the filter changes or if you want to apply some custom filtering.
+Among many types of filters, there is also a shorthand for no filtering: `{}`. If you pass an empty object no filters will be applied and you will receive all the events that are happening on zkSync. This option is suitable if can not afford to re-establish connection each time the filter changes or if you want to apply some custom filtering.
 
-For the purposes of this tutorial we will go with zero filtering and will receive all the events about the zkSync network.
+For the purpose of this tutorial, we will go with no filtering and will receive all the events about the zkSync network.
 
 ## Receiving messages
 
-So after the connection was established you can now receive the events coming from the zkSync network. The specification and format of the events is available in the detailed [docs](../api/events.md).
+So after the connection was established you can now receive the events coming from the zkSync network. The specification and the format of the events is available in the detailed [docs](../api/events.md).
 
 Let's see how to keep track of transfers coming to a dynamic set of accounts.
 
@@ -58,7 +58,7 @@ ws.on('message', function (data) {
 });
 ```
 
-If we wanted that the example above was dislpaying the token symbol and the amonut in pretty format, we would need to use the zkSync provider to resolve the token's symbols and decimals. More on instantiating and using zkSync provider object can be read in [the corresponding docs section](../api/sdk/js/providers.md).
+If we wanted that the example above to display the token symbol and the amount in a pretty format, we would need to use the zkSync provider to resolve the token's symbols and decimals. More on instantiating and using zkSync provider object can be read in [the corresponding docs section](../api/sdk/js/providers.md).
 
 ## Full example
 

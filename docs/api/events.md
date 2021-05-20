@@ -4,9 +4,9 @@ This document describes working with zkSync events in more detail in a language-
 
 ## Establishing the connection
 
-Currently events are only allowed on Ropsten. In order to establish the connection you should connect to the endpoint `wss://ropsten-events.zkscan.io` via a WebSocket client. 
+Currently, events are only allowed on Ropsten. To establish the connection, you should connect to the endpoint `wss://ropsten-events.zkscan.io` via a WebSocket client. 
 
-Note that in order to maintain the connection your client should periodically ping the server. The recommended interval is 10 seconds.
+Note that to maintain the connection your client should periodically ping the server. The recommended interval is 10 seconds.
 
 ## Event structure
 
@@ -27,9 +27,9 @@ The `type` is the type of the event, which is either `account`, `block` or the `
 
 ### Account events
 
-The account events are events which are happening to zkSync accounts. There are four types of account events: `create`, `delete`, `update_balance`, `change_pub_key_hash`. The `delete` operation is currently disabled.
+The account events are events that are happening to zkSync accounts. There are four types of account events: `create`, `delete`, `update_balance`, `change_pub_key_hash`. The `delete` operation is currently disabled.
 
-The `data` for each account event has the following format:
+The `data` for each `account` event has the following format:
 
 ```json
 {
@@ -41,7 +41,7 @@ The `data` for each account event has the following format:
 }
 ```
 
-The `status` field is equal to either `committed` when the update was commited onchain or `finalized` when the block with such event has been verified with zero knowledge proofs onchain.
+The `status` field is equal to either `committed` when the update was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs onchain.
 
 Here are full examples of the account events:
 
@@ -112,7 +112,7 @@ The block events are events notifying whether the block has been committed or fi
 }
 ```
 
-The `status` field is equal to either `committed` when the update was commited onchain or `finalized` when the block with such event has been verified with zero knowledge proofs onchain. It can also be equal to `reverted` if the block hsa been reverted. A block that was finalized can never be reverted.
+The `status` field is equal to either `committed` when the update was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs onchain. It can also be equal to `reverted` if the block has been reverted. A block that was finalized can never be reverted.
 
 Here is an example of a `finalized` block event:
 
@@ -151,7 +151,7 @@ The transaction events notify about transactions being committed or finalized. T
 }
 ```
 
-The `status` field is equal to either `committed` when the transaction was commited onchain or `finalized` when the block with such event has been verified with zero knowledge proofs onchain. It can also be equal to `reverted` if the block with the transaction has been reverted. A transaction that was finalized can never be reverted.
+The `status` field is equal to either `committed` when the transaction was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs onchain. It can also be equal to `reverted` if the block with the transaction has been reverted. A transaction that was finalized can never be reverted.
 
 Here are a few examples for transaction events:
 
@@ -251,7 +251,7 @@ Here are a few examples for transaction events:
 
 ## Filters
 
-After the connection is established, the client needs to send the filter for the events. The filter is a JSON object of the following type:
+After the connection is established, the client needs to send the filter for the events. A filter is a JSON object of the following type:
 ```json
 {
     "account": {
@@ -266,7 +266,7 @@ After the connection is established, the client needs to send the filter for the
 }
 ```
 
-Some of the filed may be omitted. For instance, the following filter tells that the client wants to recieve only `account` events of a certain type.
+Some of the fields may be omitted. For instance, the following filter tells that the client wants to receive only `account` events of a certain type.
 
 ```json
 {
@@ -321,7 +321,7 @@ The `accounts` parameter is an array of account ids, the events about which shou
 
 The `tokens` parameter is an array of token ids, which were involved in the account update.
 
-The `status` is the status of updates which need to be sent.
+The `status` is the status of updates that need to be sent.
 
 ### Filter block events
 
@@ -344,9 +344,9 @@ The `transaction` events can be filtered by several parameters:
 "status": "finalized",
 ```
 
-The `accounts`, `tokens` and `status` parameteres have the same meaning as for the `account` events filters. 
+The `accounts`, `tokens`, and `status` parameters have the same meaning as for the `account` events filters. 
 
-The `types` is an array of types of transactions events about which you wish to receive. The following transaction types are supported: `transfer`, `withdraw`, `change_pub_key`, `forced_exit`, `full_exit`, `deposit`.
+The `types` is an array of types of `transaction` events about which you wish to receive. The following transaction types are supported: `transfer`, `withdraw`, `change_pub_key`, `forced_exit`, `full_exit`, `deposit`.
 
 ### Examples
 
@@ -358,7 +358,7 @@ Here we can see some possible examples of filtering:
 ```
 
 ```json
-// Here we are only interesed in the committed events about 
+// Here we are only interested in the committed events about 
 // accounts with ids 1,2,3 which change their balance of token with id 0 (ETH) 
 {
   "account": {
@@ -371,7 +371,7 @@ Here we can see some possible examples of filtering:
 ```
 
 ```json
-// Here we are only interesed in the finalized events of any account 
+// Here we are only interested in the finalized events of any account 
 // and any block verification events any transaction events (both committed and finalized)
 {
   "account": {
