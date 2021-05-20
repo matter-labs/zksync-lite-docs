@@ -151,7 +151,7 @@ The transaction events notify about transactions being committed or finalized. T
 }
 ```
 
-The `status` field is equal to either `committed` when the transaction was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs onchain. It can also be equal to `reverted` if the block with the transaction has been reverted. A transaction that was finalized can never be reverted.
+The `status` field is equal to either `committed` when the transaction was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs onchain. It can also be equal to `reverted` if the transaction was invalid.
 
 Here are a few examples for transaction events:
 
@@ -384,6 +384,12 @@ Here we can see some possible examples of filtering:
   "transaction": {}
 };
 ```
+
+## Note on stability
+
+Committed blocks can be reverted and the transactions inside them will be reverted as well. The client will be notiifed with an appropriate `block` event when the block is reverted, but it will not be notified about the individual `transaction` events and the `account` updates to be reverted as well. It is the responsibility of the client to revert account updates or any transactions if these affect the state of the client.
+
+It is not recommeneded to rely on the `committed` events and the client should accept only `finalized` events, unless the cautious measures explained above were taken into account. The `finalized` blocks can never be reverted as it is enforced by an Ethereum smart contract.
 
 ## Reading past events
 
