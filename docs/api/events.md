@@ -4,7 +4,7 @@ This document describes working with zkSync events in more detail in a language-
 
 ## Establishing the connection
 
-Currently, events are only allowed on Ropsten. To establish the connection, you should connect to the endpoint `wss://ropsten-events.zkscan.io` via a WebSocket client. 
+Currently, events are only allowed on Ropsten. To establish the connection, you should connect to the endpoint `wss://ropsten-events.zkscan.io` via a WebSocket client.
 
 Note that to maintain the connection your client should periodically ping the server. The recommended interval is 10 seconds.
 
@@ -14,11 +14,11 @@ After the connection is established, your client will receive messages about the
 
 ```json
 {
-    "block_number": 1100,
-    "type": "account",
-    "data": {
-        // Event-specific data
-    },
+  "block_number": 1100,
+  "type": "account",
+  "data": {
+    // Event-specific data
+  }
 }
 ```
 
@@ -33,11 +33,11 @@ The `data` for each `account` event has the following format:
 
 ```json
 {
-    "update_type": "create",
-    "status": "committed",
-    "update_details": {
-        // details about account update
-    },
+  "update_type": "create",
+  "status": "committed",
+  "update_details": {
+    // details about account update
+  }
 }
 ```
 
@@ -139,15 +139,15 @@ The transaction events notify about transactions being committed or finalized. T
 
 ```json
 {
-    "tx_hash": "0xf62c8a0bc8d0ead1abbd3b8772bb27973e40e42027f06ab3952e7dc29cb69c27",
-    "account_id": 18,
-    "token_id": 0,
-    "block_number": 24,
-    "tx": {
-      // Tx data unique for each transaction type
-    },
-    "status": "committed",
-    "created_at": "2021-05-20T11:32:26.232439Z"
+  "tx_hash": "0xf62c8a0bc8d0ead1abbd3b8772bb27973e40e42027f06ab3952e7dc29cb69c27",
+  "account_id": 18,
+  "token_id": 0,
+  "block_number": 24,
+  "tx": {
+    // Tx data unique for each transaction type
+  },
+  "status": "committed",
+  "created_at": "2021-05-20T11:32:26.232439Z"
 }
 ```
 
@@ -252,17 +252,18 @@ Here are a few examples for transaction events:
 ## Filters
 
 After the connection is established, the client needs to send the filter for the events. A filter is a JSON object of the following type:
+
 ```json
 {
-    "account": {
-        // `account` events filter
-    },
-    "block": {
-        // `block` events filter
-    },
-    "transaction": {
-        // `transaction` events filter
-    }
+  "account": {
+    // `account` events filter
+  },
+  "block": {
+    // `block` events filter
+  },
+  "transaction": {
+    // `transaction` events filter
+  }
 }
 ```
 
@@ -270,9 +271,9 @@ Some of the fields may be omitted. For instance, the following filter tells that
 
 ```json
 {
-    "account": {
-      // account filter
-    }
+  "account": {
+    // account filter
+  }
 }
 ```
 
@@ -344,7 +345,7 @@ The `transaction` events can be filtered by several parameters:
 "status": "finalized",
 ```
 
-The `accounts`, `tokens`, and `status` parameters have the same meaning as for the `account` events filters. 
+The `accounts`, `tokens`, and `status` parameters have the same meaning as for the `account` events filters.
 
 The `types` is an array of types of `transaction` events about which you wish to receive. The following transaction types are supported: `transfer`, `withdraw`, `change_pub_key`, `forced_exit`, `full_exit`, `deposit`.
 
@@ -354,12 +355,13 @@ Here we can see some possible examples of filtering:
 
 ```typescript
 // Here we receive all the events from zkSync
-{}
+{
+}
 ```
 
 ```json
-// Here we are only interested in the committed events about 
-// accounts with ids 1,2,3 which change their balance of token with id 0 (ETH) 
+// Here we are only interested in the committed events about
+// accounts with ids 1,2,3 which change their balance of token with id 0 (ETH)
 {
   "account": {
     "status": "committed",
@@ -367,11 +369,10 @@ Here we can see some possible examples of filtering:
     "tokens": [0]
   }
 }
-
 ```
 
 ```json
-// Here we are only interested in the finalized events of any account 
+// Here we are only interested in the finalized events of any account
 // and any block verification events any transaction events (both committed and finalized)
 {
   "account": {
@@ -387,4 +388,3 @@ Here we can see some possible examples of filtering:
 ## Reading past events
 
 To be able to receive past events is a very important feature and will be released very soon.
- 
