@@ -248,14 +248,105 @@ Deposit:
 
 ## Filters
 
-fter the connection is established, we need to send the filter for the events. The filter is a JSON object of the following type:
+After the connection is established, the client needs to send the filter for the events. The filter is a JSON object of the following type:
 
-```typescript
+```json
 {
-    "account": AccountFilter,
-    "block": BlockFilter,
-    "transaction": TransactionFilter
+    "account": {
+      // account filter
+    },
+    "block": {
+      // block filter
+    },
+    "transaction": {
+      // transaction filter
+    }
 }
 ```
 
-You may supply filter by either of the three criteria: the `account`
+Some of the filed may be omitted. For instance, the following filter tells that the client wants to recieve only `account` events of a certain type.
+
+```json
+{
+    "account": {
+      // account filter
+    }
+}
+```
+
+If the filter object is empty, it means "no filter". For instance:
+
+```json
+{
+  "account": {}
+}
+```
+
+This means that the client wants to receive all `account` events.
+
+```json
+{
+  "account": {},
+  "block": {}
+}
+```
+
+This means that the client wants to receive all `account` and all `block` events.
+
+```json
+{
+  "account": {},
+  "block": {},
+  "transaction": {}
+}
+```
+
+This means that the client wants to receive all events. Equivalently, the client can specify the empty object as the filter `{}`, which also would mean that the client wants to receive all events.
+
+### Filter account events
+
+The `account` events can be filtered by several parameters:
+
+```json
+{
+  "accounts": [],
+  "tokens": [],
+  "status": "committed"
+}
+```
+
+The `accounts` parameter is an array of account ids, the events about which should be sent to the client. If not specified, events about any account will be sent.
+
+The `tokens` parameter is an array of token ids, which were involved in the account update.
+
+The `status` is the status of updates which need to be sent.
+
+### Filter block events
+
+`block` events can only be filtered by the status of the block:
+
+```json
+{
+  "status": "finalized"
+}
+```
+
+### Filter transaction events
+
+The `transaction` events can be filtered by several parameters:
+
+```json
+"types": [],
+"accounts": [],
+"tokens": [],
+"status": "finalized",
+```
+
+The `accounts`, `tokens` and `status` parameteres have the same meaning as for the `account` events filters. 
+
+The `types` is an array of types of transactions events about which you wish to receive. The following transaction types are supported: `transfer`, `withdraw`, `change_pub_key`, `forced_exit`, `full_exit`, `deposit`.
+
+## Reading history
+
+To be able to receive past events is a very important feature and will be released very soon.
+ 
