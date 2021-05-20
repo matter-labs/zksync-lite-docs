@@ -1,10 +1,10 @@
 # Events
 
-This document describes working with zkSync events in more detail in a language-agnostic way. For a quick introduction to the zkSync events with examples in various languages please read [the quick introduction](../dev/events.md).
+This document describes working with zkSync events in more detail in a language-agnostic way. For a quick introduction to the zkSync events with examples in Javascript please read [the quick introduction](../dev/events.md).
 
 ## Establishing the connection
 
-Currently events are only allowed on Ropsten. In order to establish the connection you should connect to the endpoint `wss://ropsten-events.zkscan.io` via your WebSocket client. 
+Currently events are only allowed on Ropsten. In order to establish the connection you should connect to the endpoint `wss://ropsten-events.zkscan.io` via a WebSocket client. 
 
 Note that in order to maintain the connection your client should periodically ping the server. The recommended interval is 10 seconds.
 
@@ -15,9 +15,9 @@ After the connection is established, your client will receive messages about the
 ```json
 {
     "block_number": 1100,
-    "type": "",
+    "type": "account",
     "data": {
-        // Some event data
+        // Event-specific data
     },
 }
 ```
@@ -27,7 +27,7 @@ The `type` is the type of the event, which is either `account`, `block` or the `
 
 ### Account events
 
-The account events are events which are happening to zkSync accounts. There are four types of account events: `create`, `delete`, `update_balance`, `change_pub_key_hash`. `delete` account operation is currently disabled.
+The account events are events which are happening to zkSync accounts. There are four types of account events: `create`, `delete`, `update_balance`, `change_pub_key_hash`. The `delete` operation is currently disabled.
 
 The `data` for each account event has the following format:
 
@@ -95,7 +95,7 @@ Here are full examples of the account events:
 
 ### Block events
 
-The block events are events notifying whether the block has been committed or verified. The `data` for such events has the following structure:
+The block events are events notifying whether the block has been committed or finalized. Such events have the following structure:
 
 ```json
 {
@@ -114,7 +114,7 @@ The block events are events notifying whether the block has been committed or ve
 
 The `status` field is equal to either `committed` when the update was commited onchain or `finalized` when the block with such event has been verified with zero knowledge proofs onchain. It can also be equal to `reverted` if the block hsa been reverted. A block that was finalized can never be reverted.
 
-Here is an example of a verified block event:
+Here is an example of a `finalized` block event:
 
 ```json
 {
@@ -155,7 +155,8 @@ The `status` field is equal to either `committed` when the transaction was commi
 
 Here are a few examples for transaction events:
 
-Transfer:
+#### Transfer:
+
 ```json
 {
   "block_number": 25,
@@ -187,7 +188,8 @@ Transfer:
 }
 ```
 
-Withdraw:
+#### Withdraw:
+
 ```json
 {
   "block_number": 28,
@@ -220,7 +222,8 @@ Withdraw:
 }
 ```
 
-Deposit:
+#### Deposit:
+
 ```json
 {
   "block_number": 27,
@@ -249,17 +252,16 @@ Deposit:
 ## Filters
 
 After the connection is established, the client needs to send the filter for the events. The filter is a JSON object of the following type:
-
 ```json
 {
     "account": {
-      // account filter
+        // `account` events filter
     },
     "block": {
-      // block filter
+        // `block` events filter
     },
     "transaction": {
-      // transaction filter
+        // `transaction` events filter
     }
 }
 ```
@@ -346,7 +348,43 @@ The `accounts`, `tokens` and `status` parameteres have the same meaning as for t
 
 The `types` is an array of types of transactions events about which you wish to receive. The following transaction types are supported: `transfer`, `withdraw`, `change_pub_key`, `forced_exit`, `full_exit`, `deposit`.
 
-## Reading history
+### Examples
+
+Here we can see some possible examples of filtering:
+
+```typescript
+// Here we receive all the events from zkSync
+{}
+```
+
+```json
+// Here we are only interesed in the committed events about 
+// accounts with ids 1,2,3 which change their balance of token with id 0 (ETH) 
+{
+  "account": {
+    "status": "committed",
+    "accounts": [1, 2, 3],
+    "tokens": [0]
+  }
+}
+
+```
+
+```json
+// Here we are only interesed in the finalized events of any account 
+// and any block verification events any transaction events (both committed and finalized)
+{
+  "account": {
+      "status": "finalized"
+  },
+  "block": {
+      "status": "reverted"
+  },
+  "transaction": {}
+};
+```
+
+## Reading past events
 
 To be able to receive past events is a very important feature and will be released very soon.
  
