@@ -4,9 +4,7 @@ This document describes working with zkSync events in more detail in a language-
 
 ## Establishing the connection
 
-Currently, events are only allowed on Ropsten. To establish the connection, you should connect to the endpoint `wss://ropsten-events.zkscan.io` via a WebSocket client.
-
-Note that to maintain the connection your client should periodically ping the server. The recommended interval is 10 seconds.
+Currently, events are only present on Ropsten. The event server WebSocket URL is `wss://ropsten-events.zkscan.io`. You can find an example of client application [here](../dev/events.md).
 
 ## Event structure
 
