@@ -12,7 +12,7 @@ We will set up the minimal working Javascript project using `yarn`:
 mkdir zksync-ws-client
 cd zksync-ws-client
 yarn init -y
-yarn add zksync ws # install dependencies
+yarn add zksync ethers ws # install dependencies
 ```
 
 ## Establishing a connection
@@ -121,6 +121,9 @@ The zkSync provider can be used for displaying the token symbol and the amount i
 
 ```typescript
 // app.js
+const WebSocket = require('ws');
+const zksync = require('zksync');
+
 async function main() {
   // Get the provider. It's important to specify the correct network.
   const provider = await zksync.getDefaultProvider("ropsten");
