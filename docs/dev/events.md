@@ -74,7 +74,7 @@ In this tutorial, we will accept all events and filter them ourselves.
 
 At this point after establishing the connection and successfully sending our filters, the server will start notifying us about new events. It will also ignore any messages except control frames (`close`, `ping` and `pong`). That being said, you cannot change your filters without reconnecting.
 
-Recall that messages arrive in the following format:
+Messages arrive in the following format:
 
 ```json
 {
@@ -86,7 +86,7 @@ Recall that messages arrive in the following format:
 }
 ```
 
-For `data` field definitions, refer to the [documentation](../api/events.md#Event%20structure).
+For `data` field definitions, refer to the [documentation](../api/events.md#Events).
 
 Let's see how to implement a message handler.
 
