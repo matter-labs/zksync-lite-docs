@@ -2,21 +2,20 @@
 
 This is a quick tutorial on how to use zkSync events API. For the detailed description of events data types, please refer to [the documentation](../api/events.md).
 
-The feature is currently available only on the Ropsten testnet. The API is not yet fully stabilized and may change in future.
+The feature is currently available only on the Ropsten testnet. The API is not yet fully stabilized and may change in the future.
 
-## Setting up the `npm` project
+## Setting up the `yarn` project
 
-We will setup the minimal working Javascript project using `npm`:
+We will set up the minimal working Javascript project using `yarn`:
 ```sh
 mkdir zksync-ws-client
 cd zksync-ws-client
-npm init -y
-npm add zksync ws # install dependencies
-touch app.js
+yarn init -y
+yarn add zksync ws # install dependencies
 ```
 ## Establishing a connection
 
-The event server is located at `wss://ropsten-events.zkscan.io/`. In this tutorial we use [ws](https://www.npmjs.com/package/ws) package, but you can use any WebSocket client library which fits your project.
+The event server is located at `wss://ropsten-events.zkscan.io/`. In this tutorial, we use [ws](https://www.npmjs.com/package/ws) package, but you can use any WebSocket client library which fits your project.
 ```javascript
 // app.js
 const WebSocket = require('ws');
@@ -24,7 +23,7 @@ const WebSocket = require('ws');
 const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
 ```
 
-To make sure that the connection is alive, it's a good practice to periodically send ping frames. It will also help to avoid timout disconnects.
+To make sure that the connection is alive, it's a good practice to periodically send ping frames. It will also help to avoid timeout disconnects.
 
 ```javascript
 setInterval(function () {
@@ -34,7 +33,7 @@ setInterval(function () {
 
 ## Filtering events
 
-Once the connection is established, the client is required to send a text message with his events interests. Note, that you can only do it once, if your you want to change your filters, you have to create a new connection. You can find the detailed documentation on filters [here](../api/events.md#Filters).
+Once the connection is established, the client is required to send a text message with his events interests. Note, that you can only do it once, if you want to change your filters, you have to create a new connection. You can find the detailed documentation on filters [here](../api/events.md#Filters).
 
 ```javascript
 ws.on("open", function open() {
