@@ -43,8 +43,8 @@ accounts.add("0x7ca2113e931ada26f64da66822ece493f20059b6");
 ws.on("message", function (data) {
   const event = JSON.parse(data);
 
-  if (event.type === "Transfer") {
-    const tokenId = event.data.tokenId;
+  if (event.type == "transaction" && event.data.tx.type == "Transfer") {
+    const tokenId = event.data.token_id;
     const status = event.data.status;
     const recipient = event.data.tx.to;
     const amount = event.data.tx.amount;
@@ -87,8 +87,8 @@ async function main() {
   ws.on("message", function (data) {
     const event = JSON.parse(data);
 
-    if (event.type === "Transfer") {
-      const token = provider.tokenSet.resolveTokenSymbol(event.data.tokenId);
+    if (event.type == "transaction" && event.data.tx.type == "Transfer") {
+      const token = provider.tokenSet.resolveTokenSymbol(event.data.token_id);
       const status = event.data.status;
       const recipient = event.data.tx.to;
       const amount = provider.tokenSet.formatToken(token, event.data.tx.amount);

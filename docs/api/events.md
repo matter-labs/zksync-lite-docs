@@ -188,6 +188,42 @@ Here are a few examples for transaction events:
 }
 ```
 
+#### ChangePubKey
+
+```json
+{
+  "block_number": 27,
+  "type": "transaction",
+  "data": {
+    "tx_hash": "sync-tx:b78eaacff2c86ec9fbf6e4e11d8a911cb3c1c8be41b3af14eeec1fb242d34f7e",
+    "account_id": 20,
+    "token_id": 0,
+    "block_number": 27,
+    "tx": {
+      "fee": "0",
+      "type": "ChangePubKey",
+      "nonce": 0,
+      "account": "0xf32b6fb3332b7b3edf30e1e469f581974bd8b378",
+      "feeToken": 0,
+      "accountId": 20,
+      "newPkHash": "sync:8af45346a8456d7a1fc26507ce1699329efcb4c3",
+      "signature": {
+        "pubKey": "0732cb8a917b3c48fbaa39a6da760c50e972ee014033eb511237a43a221ef480",
+        "signature": "b7ea639a0924bc62437e9732956b90531b0f1dee52d17e6b06dd56bf6c9df80ee968b73b55ed350579e298d0d5d5018bc9bd5238fe1a7aca91c6a63ba0b9cf04"
+      },
+      "validFrom": 0,
+      "validUntil": 4294967295,
+      "ethAuthData": {
+        "type": "Onchain"
+      },
+      "ethSignature": null
+    },
+    "status": "finalized",
+    "created_at": "2021-05-20T11:32:35.279076Z"
+  }
+}
+```
+
 #### Withdraw:
 
 ```json
@@ -222,6 +258,37 @@ Here are a few examples for transaction events:
 }
 ```
 
+#### ForcedExit
+
+```json
+{
+  "block_number": 29,
+  "type": "transaction",
+  "data": {
+    "tx_hash": "sync-tx:e43867aaa909ea52879428e28836c9e162951a60bb9ad94d1c03c432017bbbb6",
+    "account_id": 20,
+    "token_id": 0,
+    "block_number": 29,
+    "tx": {
+      "fee": "204300000000000",
+      "type": "ForcedExit",
+      "nonce": 6,
+      "token": 0,
+      "target": "0x3a9d7cced6e600eacf5e70a7f55b5d458e1ea5f8",
+      "signature": {
+        "pubKey": "0732cb8a917b3c48fbaa39a6da760c50e972ee014033eb511237a43a221ef480",
+        "signature": "52af07b1d5ca8a61dd916ae31ac199f8e645d7f2be696c151a96debed0429a8476047fe4f93390ac6825b6fef816268b24fc1aee07562659fa7dc0c5bb6edc04"
+      },
+      "validFrom": 0,
+      "validUntil": 4294967295,
+      "initiatorAccountId": 20
+    },
+    "status": "committed",
+    "created_at": "2021-05-20T11:32:38.657075Z"
+  }
+}
+```
+
 #### Deposit:
 
 ```json
@@ -245,6 +312,32 @@ Here are a few examples for transaction events:
     },
     "status": "finalized",
     "created_at": "2021-05-20T11:32:33.232676Z"
+  }
+}
+```
+
+#### FullExit
+
+```json
+{
+  "block_number": 41,
+  "type": "transaction",
+  "data": {
+    "tx_hash": "0x7d83f56d243630afd40292e2d8ca307ca5287d82d1324e2795d85a28a05694b6",
+    "account_id": 145,
+    "token_id": 2,
+    "block_number": 41,
+    "tx": {
+      "type": "FullExit",
+      "priority_op": {
+        "token": 2,
+        "account_id": 145,
+        "eth_address": "0x905ef38b8b2fdedfab9a77fdde94c577d66fd91d"
+      },
+      "withdraw_amount": null
+    },
+    "status": "committed",
+    "created_at": "2021-05-20T11:34:45.232211Z"
   }
 }
 ```
