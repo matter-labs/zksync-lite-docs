@@ -7,18 +7,21 @@ The feature is currently available only on the Ropsten testnet. The API is not y
 ## Setting up the `yarn` project
 
 We will set up the minimal working Javascript project using `yarn`:
+
 ```sh
 mkdir zksync-ws-client
 cd zksync-ws-client
 yarn init -y
 yarn add zksync ws # install dependencies
 ```
+
 ## Establishing a connection
 
 The event server is located at `wss://ropsten-events.zkscan.io/`. In this tutorial, we use [ws](https://www.npmjs.com/package/ws) package, but you can use any WebSocket client library which fits your project.
+
 ```javascript
 // app.js
-const WebSocket = require('ws');
+const WebSocket = require("ws");
 
 const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
 ```
@@ -37,29 +40,31 @@ Once the connection is established, the client is required to send a text messag
 
 ```javascript
 ws.on("open", function open() {
-    ws.send("{}");
+  ws.send("{}");
 });
 ```
 
 An empty JSON object is the same as no filters -- we tell the server that we want to receive all events.
 
 If you send an invalid object, you will receive a close frame with an error message:
+
 ```javascript
 // app.js
-const WebSocket = require('ws');
+const WebSocket = require("ws");
 
 const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
 
-ws.on('open', function open() {
+ws.on("open", function open() {
   ws.send('{"blocks": {"status": "committed"}}'); // Should be "block"
 });
 
-ws.on('close', function close(code, reason) {
+ws.on("close", function close(code, reason) {
   console.log(`Connection closed with code ${code}, reason: ${reason}`);
 });
 ```
+
 ```sh
-node app.js 
+node app.js
 Connection closed with code 1008, reason: unknown variant `blocks`, expected one of `account`, `block`, `transaction` at line 1 column 9
 ```
 
@@ -70,6 +75,7 @@ In this tutorial, we will accept all events and filter them ourselves.
 At this point after establishing the connection and successfully sending our filters, the server will start notifying us about new events. It will also ignore any messages except control frames (`close`, `ping` and `pong`). That being said, you cannot change your filters without reconnecting.
 
 Recall that messages arrive in the following format:
+
 ```json
 {
   "block_number": 1000,
@@ -79,6 +85,7 @@ Recall that messages arrive in the following format:
   }
 }
 ```
+
 For `data` field definitions, refer to the [documentation](../api/events.md#Event%20structure).
 
 Let's see how to implement a message handler.
@@ -116,12 +123,12 @@ The zkSync provider can be used for displaying the token symbol and the amount i
 // app.js
 async function main() {
   // Get the provider. It's important to specify the correct network.
-  const provider = await zksync.getDefaultProvider('ropsten');
+  const provider = await zksync.getDefaultProvider("ropsten");
   // Connect to the event server.
-  const ws = new WebSocket('wss://ropsten-events.zkscan.io/');
-  console.log('Connection established');
+  const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
+  console.log("Connection established");
   // Change the address to the account you're intrested in.
-  const ACCOUNT_ADDRESS = '0x7ca2113e931ada26f64da66822ece493f20059b6';
+  const ACCOUNT_ADDRESS = "0x7ca2113e931ada26f64da66822ece493f20059b6";
 
   // Once connected, start sending ping frames.
   setInterval(function () {
@@ -129,19 +136,19 @@ async function main() {
   }, 10000);
 
   // Register filters.
-  ws.on('open', function open() {
+  ws.on("open", function open() {
     ws.send("{}");
   });
 
-  ws.on('close', function close(code, reason) {
+  ws.on("close", function close(code, reason) {
     console.log(`Connection closed with code ${code}, reason: ${reason}`);
   });
 
-  ws.on('message', function (data) {
+  ws.on("message", function (data) {
     const event = JSON.parse(data);
 
     // We are looking for transfers to the specific account.
-    if (event.type == 'transaction' && event.data.tx.type == 'Transfer') {
+    if (event.type == "transaction" && event.data.tx.type == "Transfer") {
       const recipient = event.data.tx.to;
       if (recipient != ACCOUNT_ADDRESS) {
         return;
@@ -166,11 +173,15 @@ async function main() {
 
 main();
 ```
+
 Let's see how it works, start our client with the following command:
+
 ```sh
 node app.js
 ```
+
 Now, send some funds to the tracked account address, you should see notifications for both committed and finalized events in your console:
+
 ```sh
 There was a transfer to 0x7ca2113e931ada26f64da66822ece493f20059b6
 Block number: 31
