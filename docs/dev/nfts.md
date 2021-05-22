@@ -150,7 +150,7 @@ To view an account's NFTs:
 
 ```typescript
 // Get state of account
-const state = await syncProvider.getAccountState('<account-address>');
+const state = await syncWallet.getAccountState('<account-address>');
 // View committed NFTs
 console.log(state.committed.nfts);
 // View verified NFTs
@@ -188,7 +188,7 @@ async syncTransferNFT(transfer: {
 | -------- | -------------------------------------------------------- |
 | to       | the recipient address represented as a hex string        |
 | feeToken | name of token in which fee is to be paid (typically ETH) |
-| token    | address of the NFT                                       |
+| token    | NFT object                                               |
 | fee      | transaction fee                                          |
 
 The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.  
@@ -326,11 +326,13 @@ In case of censorship, users may call for an emergency withdrawal. Note: This is
 
 > Signature
 
+```typescript
 async emergencyWithdraw(withdraw: {
         token: TokenLike;
         accountId?: number;
         ethTxOptions?: ethers.providers.TransactionRequest;
     }): Promise<ETHOperation>
+```
 
 | Name                 | Description                                              |
 | ---------------------| -------------------------------------------------------- |
