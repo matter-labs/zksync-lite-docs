@@ -162,7 +162,8 @@ module.exports = {
           collapsable: false,  // optional, defaults to true
         },
         '/dev/nfts',
-        '/dev/swaps'
+        '/dev/swaps',
+        '/dev/events'
       ],
       '/api': [
         {
@@ -173,6 +174,7 @@ module.exports = {
         },
         '/api/changelog',
         '/api/environments',
+        '/api/events',
         {
           title: 'API v0.1',  // required
           path: '/api/v0.1', // optional, which should be a absolute path.
