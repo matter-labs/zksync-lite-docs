@@ -441,7 +441,7 @@ The `transaction` events can be filtered by several parameters:
 
 The `accounts`, `tokens`, and `status` parameters have the same meaning as for the `account` events filters.
 
-The `types` is an array of types of `transaction` events about which you wish to receive. The following transaction types are supported: `transfer`, `withdraw`, `change_pub_key`, `forced_exit`, `full_exit`, `deposit`.
+The `types` is an array of types of `transaction` events about which you wish to receive. The following transaction types are supported: `Transfer`, `Withdraw`, `ChangePubKey`, `ForcedExit`, `FullExit`, `Deposit`.
 
 ### Examples
 
