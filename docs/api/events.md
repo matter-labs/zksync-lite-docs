@@ -445,7 +445,7 @@ The `types` is an array of types of `transaction` events about which you wish to
 
 ### Examples
 
-Here we can see some more examples of filtering:
+Here are some additional examples of filtering:
 
 ```json
 // Here we are only interested in the committed events about
