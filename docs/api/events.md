@@ -475,7 +475,7 @@ Here are some additional examples of filtering:
 
 ## Note on stability
 
-Technically the committed blocks may be reverted and the transactions inside them will be reverted as well. This happens very rarely, but if your client relies on committed events, some precautious measures should be taken. If a block is reverted the client will be notified with an appropriate `block` event, but it will not be notified about the individual `transaction` events and the `account` updates to be reverted as well. It is recommended that if you rely on committed events, that you also keep track of the `block` events to know if a block was reverted.
+Technically the committed blocks may be reverted and the transactions inside them will be reverted as well. This happens very rarely, but if your client relies on committed events, some precautious measures should be taken. If a block is reverted the client will be notified with an appropriate `block` event, but it will not be notified about the individual `transaction` events and the `account` events to be reverted as well. It is recommended that if you rely on committed events, then you also keep track of the `block` events to know if a block was reverted.
 
 If you want to receive events only about final transactions, then you should accept only `finalized` events. The `finalized` blocks can never be reverted as it is enforced by an Ethereum smart contract.
 
