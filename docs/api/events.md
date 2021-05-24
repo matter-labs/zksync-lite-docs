@@ -368,26 +368,26 @@ Some of the fields may be omitted. For instance, the following filter tells that
 }
 ```
 
-If the filter object is empty, it means "no filter". For instance:
+If the filter object is empty, it means "no filter". Here are a few examples:
 
 ```json
+// Here we receive all the `account` events from zkSync
 {
   "account": {}
 }
 ```
 
-This means that the client wants to receive all `account` events.
-
 ```json
+// Here we receive all the `account` and `block` events from zkSync
 {
   "account": {},
   "block": {}
 }
 ```
 
-This means that the client wants to receive all `account` and all `block` events.
-
 ```json
+// Here we receive all the `account`, `block`, and `transaction` events
+// This is the same as receiving all events
 {
   "account": {},
   "block": {},
@@ -395,7 +395,10 @@ This means that the client wants to receive all `account` and all `block` events
 }
 ```
 
-This means that the client wants to receive all events. Equivalently, the client can specify the empty object as the filter `{}`, which also would mean that the client wants to receive all events.
+```json
+// Empty object means we want to receive all events
+{}
+```
 
 ### Filter account events
 
@@ -442,13 +445,7 @@ The `types` is an array of types of `transaction` events about which you wish to
 
 ### Examples
 
-Here we can see some possible examples of filtering:
-
-```typescript
-// Here we receive all the events from zkSync
-{
-}
-```
+Here we can see some more examples of filtering:
 
 ```json
 // Here we are only interested in the committed events about

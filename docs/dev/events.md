@@ -121,8 +121,8 @@ The zkSync provider can be used for displaying the token symbol and the amount i
 
 ```typescript
 // app.js
-const WebSocket = require('ws');
-const zksync = require('zksync');
+const WebSocket = require("ws");
+const zksync = require("zksync");
 
 async function main() {
   // Get the provider. It's important to specify the correct network.
