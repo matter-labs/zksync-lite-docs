@@ -142,6 +142,19 @@ To get a receipt for the minted NFT:
 const receipt = await nft.awaitReceipt();
 ```
 
+Receipt format is as follows:
+
+```typescript
+pub struct TxReceiptResponse {
+    pub tx_hash: String,
+    pub block_number: i64,
+    pub success: bool,
+    pub verified: bool,
+    pub fail_reason: Option<String>,
+    pub prover_run: Option<ProverRun>,
+}
+```
+
 ### View the NFT
 
 After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in a rollup block, and verified when a zero knowledge proof has been generated for that block and the root hash of the rollup block has been included in the smart contract on Ethereum mainnet.
@@ -209,6 +222,7 @@ To get a receipt for the transfer:
 ```typescript
 const receipt = await handles[0].awaitReceipt();
 ```
+
 ## Swap
 
 The swap function can be used to atomically swap:
@@ -352,13 +366,13 @@ We have a default factory contract that will handle minting NFTs on L1 for proje
 mintNFTFromZkSync(creator_address: address, creator_id: uint32, serial_id: uint32, content_hash: bytes, recipient_address: address, token_id: uint32)
 ```
 
-The zkSync Governance contract will implement a function `registerFactory` that will register creators as a trusted minter on L2 for the factory contract. 
+zkSync will maintain a mapping from creator address to L1 factory contract address. Creators have the option to change from one factory contract to another at arbitrary points in time. To do so, call `registerFactory`, a function implemented in the zkSync Governance contract. 
 
 ```typescript
 registerFactory(creator_address: address, signature: bytes)
 ```
 
-To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the token on L2, and call `mintNFTFromZkSync` on the factory corresponding to the creator. 
+The NFT object will include the L1 factory contract for the NFT, and will be displayed. When users call `withdrawNFT()` with the token_id, the zkSync smart contract will verify ownership, burn the token on L2, and call `mintNFTFromZkSync` on the factory corresponding to the creator. 
 
 ### Factory Registration
 
