@@ -650,7 +650,7 @@ There are two kinds of orders:
 async getOrder(order: {
     tokenSell: TokenLike;
     tokenBuy: TokenLike;
-    ratio: [BigNumberish, BigNumberish];
+    ratio: TokenRatio | WeiRatio;
     amount: BigNumberish;
     recipient?: Address;
     nonce?: Nonce;
@@ -661,7 +661,7 @@ async getOrder(order: {
 async getLimitOrder(order: {
     tokenSell: TokenLike;
     tokenBuy: TokenLike;
-    ratio: [BigNumberish, BigNumberish];
+    ratio: TokenRatio | WeiRatio;
     recipient?: Address;
     nonce?: Nonce;
     validFrom?: number;
@@ -675,7 +675,7 @@ async getLimitOrder(order: {
 | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | order.tokenSell             | Token to be swapped                                                                             |
 | order.tokenBuy              | Token to be swapped for                                                                         |
-| order.ratio                 | 2 numbers that represent the sell:buy ratio; each number should fit into 15 bytes               |
+| order.ratio                 | An object that represents the sell:buy ratio; refer to [ratios](#ratios) for details            |
 | order.amount                | Amount of token to be swapped[^amount]                                                          |
 | order.recipient (optional)  | Address of the account to which the result of the swap should be transferred (defaults to self) |
 | order.nonce (optional)      | Nonce that is going to be used for this transaction[^nonce]                                     |
@@ -711,6 +711,31 @@ async syncSwap(swap: {
 | swap.nonce (optional)   | Nonce that is going to be used for this transaction.[^nonce]                               |
 | returns                 | Handle of the submitted transaction                                                        |
 
+#### Ratios
+
+To construct a ratio, either `utils.tokenRatio` or `utils.weiRatio` may be used.
+
+- `tokenRatio` constructs a ratio relevant to the tokens themselves,
+  so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 ETH for each wBTC.
+- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token,
+  so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (10<sup>-8</sup> wBTC).
+
+> Signature
+
+```typescript
+function tokenRatio(ratio:{
+    [token: string]: string | number;
+    [token: number]: string | number;
+}): TokenRatio;
+
+function weiRatio(ratio: {
+    [token: string]: BigNumberish;
+    [token: number]: BigNumberish;
+}): WeiRatio;
+```
+
+Only 2 tokens should be specified in each ratio.
+
 #### Example
 
 ```typescript
@@ -721,9 +746,9 @@ const orderA = await walletA.getOrder({
     tokenSell: 'ETH',
     tokenBuy: 'USDT',
     amount: tokenSet.parseToken('ETH', '2'),
-    ratio: utils.ratio({
-        tokenSell: 1,
-        tokenBuy: 4000,
+    ratio: utils.tokenRatio({
+        'ETH': 1,
+        'UDST': '4123.40',
     })
 });
 
@@ -731,9 +756,9 @@ const orderB = await walletB.getOrder({
     tokenSell: 'USDT',
     tokenBuy: 'ETH',
     amount: tokenSet.parseToken('USDT', '8000'),
-    ratio: utils.ratio({
-        tokenSell: 4000,
-        tokenBuy: 1,
+    ratio: utils.tokenRatio({
+        'ETH': 1,
+        'USDT': '4123.40',
     }),
     // this makes it a swap-and-transfer
     recipient: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e'
