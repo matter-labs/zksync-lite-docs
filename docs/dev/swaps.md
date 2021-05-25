@@ -27,8 +27,8 @@ const order = await wallet.getOrder({
     tokenBuy: 'USDT',
     amount: tokenSet.parseToken('ETH', '2.5'),
     ratio: utils.tokenRatio({
-        'ETH': 1,
-        'USDT': '4234.5',
+        ETH: 1,
+        USDT: '4234.5',
     })
 });
 ```
@@ -97,8 +97,8 @@ const order = await wallet.getLimitOrder({
     tokenSell: 'ETH',
     tokenBuy: 'USDT',
     ratio: utils.tokenRatio({
-        'ETH': 1,
-        'USDT': 3900,
+        ETH: 1,
+        USDT: 3900,
     })
 });
 ```
@@ -158,8 +158,8 @@ const orderA = await walletA.getLimitOrder({
     tokenSell: 'wBTC',
     tokenBuy: 'ETH',
     ratio: utils.tokenRatio({
-        'wBTC': 2,
-        'ETH': 5,
+        wBTC: 2,
+        ETH: 5,
     })
 });
 
@@ -168,8 +168,8 @@ const orderB = await walletB.getLimitOrder({
     tokenSell: 'ETH',
     tokenBuy: 'wBTC',
     ratio: utils.tokenRatio({
-        'wBTC': 1,
-        'ETH': 4,
+        wBTC: 1,
+        ETH: 4,
     })
 });
 ```
@@ -209,8 +209,17 @@ This will exchange 100 wBTC from `walletA` for 300 ETH from `walletB`. For detai
 
 To construct a ratio, use either of the two utility functions:
 - `tokenRatio` constructs a ratio relevant to the tokens themselves,
-  so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 ETH for each wBTC.
+  so `{ ETH: 4, wBTC: 1 }` would mean you want 4 ETH for each wBTC.
 - `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token,
-  so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (10<sup>-8</sup> wBTC).
+  so `{ ETH: 4, wBTC: 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (10<sup>-8</sup> wBTC).
+
+If tokens symbols or IDs are contained in variables, use the following syntax to pass them into ratio objects:
+
+```typescript
+utils.tokenRatio({
+    [tokenA]: valueA,
+    [tokenB]: valueB
+});
+```
 
 For more information, visit the [API reference](../api/sdk/js/accounts.md#ratios).

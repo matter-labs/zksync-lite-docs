@@ -747,8 +747,8 @@ const orderA = await walletA.getOrder({
     tokenBuy: 'USDT',
     amount: tokenSet.parseToken('ETH', '2'),
     ratio: utils.tokenRatio({
-        'ETH': 1,
-        'UDST': '4123.40',
+        ETH: 1,
+        USDT: '4123.40',
     })
 });
 
@@ -757,8 +757,8 @@ const orderB = await walletB.getOrder({
     tokenBuy: 'ETH',
     amount: tokenSet.parseToken('USDT', '8000'),
     ratio: utils.tokenRatio({
-        'ETH': 1,
-        'USDT': '4123.40',
+        ETH: 1,
+        USDT: '4123.40',
     }),
     // this makes it a swap-and-transfer
     recipient: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e'
