@@ -261,7 +261,7 @@ TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .tokenIdentifier(Token.createETH())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
-wallet.syncTransfer(
+String txHash = wallet.syncTransfer(
     receiver,
     Convert.toWei("0.1", Convert.Unit.ETHER).toBigInteger(),
     TransactionFee.builder()
@@ -270,6 +270,43 @@ wallet.syncTransfer(
         .build(),
     state.getCommitted().getNonce()
 );
+```
+
+## Waiting for transaction receipt
+
+When a transaction is accepted by the zkSync server, it means that only some basic checks have passed. In order to make sure the transaction was successfully processed, you need to wait for its receipt:
+
+```java
+String hash = ""; // The hash of the transaction
+boolean success = false;
+boolean processed = false;
+String failReason = "unknown";
+
+do {
+    // Getting transaction status
+    TransactionDetails txDetails = wallet.getProvider().getTransactionDetails(hash);
+    BlockInfo block = txDetails.getBlock();
+		// Checking if it has been included in any block
+    processed = block != null && block.getCommitted();
+    if(processed) {
+				// Check if the tx was successful
+        success = txDetails.getSuccess();
+				// If there was any fail reason, let's get one
+        failReason = txDetails.getFailReason();
+    }
+} while(!processed);
+
+if (success) {
+    System.out.println("The transaction has been executed!");
+} else {
+    System.out.println("The transaction has been rejected. Reason: " + failReason);
+}
+```
+
+If we need to wait until the transaction is verified (finalized), you can simply check if the transaction's block was verified:
+
+```java
+processed = block != null && block.getVerified();
 ```
 
 ## Withdrawing funds back to Ethereum
