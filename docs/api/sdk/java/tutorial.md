@@ -293,6 +293,8 @@ do {
         success = txDetails.getSuccess();
 				// If there was any fail reason, let's get one
         failReason = txDetails.getFailReason();
+    } else {
+        Thread.sleep(100);
     }
 } while(!processed);
 
