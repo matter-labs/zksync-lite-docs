@@ -226,7 +226,10 @@ const order = await wallet.getOrder({
     tokenSell: myNFT.id,
     tokenBuy: anotherNFT.id,
     amount: 1,
-    ratio: utils.ratio({ tokenSell: 1, tokenBuy: 1 })
+    ratio: utils.tokenRatio({
+        [myNFT.id]: 1,
+        [anotherNFT.id]: 1
+    })
 });
 ```
 
@@ -256,14 +259,20 @@ const buyingNFT = await walletA.getOrder({
     tokenBuy: nft.id,
     tokenSell: 'USDT',
     amount: tokenSet.parseToken('USDT', '100'),
-    ratio: utils.ratio({ tokenSell: 100, tokenBuy: 1 })
+    ratio: utils.tokenRatio({
+        USDT: 100,
+        [nft.id]: 1
+    })
 });
 
 const sellingNFT = await walletB.getOrder({
     tokenBuy: 'USDT',
     tokenSell: nft.id,
     amount: 1,
-    ratio: utils.ratio({ tokenSell: 1, tokenBuy: 100 })
+    ratio: utils.tokenRatio({
+        USDT: 100,
+        [nft.id]: 1
+    })
 });
 ```
 
