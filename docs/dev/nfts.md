@@ -2,7 +2,7 @@
 
 Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users will also be able to withdraw NFTs to Layer 1.
 
-Functionality is currently in testnet on Rinkeby-beta and Ropsten-beta.
+Functionality is currently in testnet on Rinkeby and Ropsten.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
@@ -38,12 +38,12 @@ Please read our [Getting Started](../api/sdk/js/tutorial.md#getting-started) gui
 yarn add zksync@beta
 ```
 
-### Connect to the Rinkeby-beta testnet
+### Connect to the Rinkeby testnet
 
-For this tutorial, let's connect to the Rinkeby-beta testnet. You can also use Ropsten-beta.
+For this tutorial, let's connect to the Rinkeby testnet. You can also use Ropsten-beta.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider("rinkeby-beta");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 ```
 
 ## Mint
