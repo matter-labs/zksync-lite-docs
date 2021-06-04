@@ -2,28 +2,16 @@
 
 Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users will also be able to withdraw NFTs to Layer 1.
 
-Functionality is currently in testnet on Rinkey-beta and Ropsten-beta.
+Functionality is currently in testnet on Rinkeby-beta and Ropsten-beta.
 
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
-- [What's Live](#what-s-live)
 - [Overview](#overview)
 - [Setup](#setup)
 - [Mint](#mint)
 - [Transfer](#transfer)
 - [Swap](#swap)
-- [Withdrawal and Full Exit](#withdrawal-and-full-exit)
-
-## What's Live
-
-Functions currently available on Rinkeby-beta and Ropsten-beta testnet: 
-
-- [x] Minting
-- [x] Transferring
-- [x] Swapping
-- [ ] Withdrawal to L1
-
-Swapping and withdrawals are coming soon!
+- [Withdrawal to Layer 1](#withdrawal-to-layer-1)
 
 ## Overview
 
@@ -162,7 +150,7 @@ To view an account's NFTs:
 
 ```typescript
 // Get state of account
-const state = await syncProvider.getAccountState('<account-address>');
+const state = await syncWallet.getAccountState('<account-address>');
 // View committed NFTs
 console.log(state.committed.nfts);
 // View verified NFTs
@@ -182,7 +170,6 @@ Users can transfer NFTs to existing accounts and transfer to addresses that have
 
 An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following transfers can be completed with no restrictions.
 
-
 You can transfer an NFT by calling the `syncTransferNFT` function:
 
 ```typescript
@@ -201,7 +188,7 @@ async syncTransferNFT(transfer: {
 | -------- | -------------------------------------------------------- |
 | to       | the recipient address represented as a hex string        |
 | feeToken | name of token in which fee is to be paid (typically ETH) |
-| token    | address of the NFT                                       |
+| token    | NFT object                                               |
 | fee      | transaction fee                                          |
 
 The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.  
@@ -222,7 +209,6 @@ To get a receipt for the transfer:
 ```typescript
 const receipt = await handles[0].awaitReceipt();
 ```
-
 ## Swap
 
 The swap function can be used to atomically swap:
@@ -290,9 +276,7 @@ const sellingNFT = await walletB.getOrder({
 });
 ```
 
-## Withdrawal and Full Exit
-
-A [Full Exit](./payments/basic.md#flow) is a trustless withdrawal: a Layer 1 contract call provided in the rare case your transaction is being censored.
+## Withdrawal to Layer 1
 
 Withdrawals to L1 will require 3 actors:
 
@@ -300,16 +284,81 @@ Withdrawals to L1 will require 3 actors:
 - Creator: user which *mints* NFT on L2
 - NFTOwner: user which *owns* NFT on L2
 
-Withdrawing is not available in testnet yet. The general architecture is detailed below.
+This guide will demonstrate 2 types of withdrawals: normal and emergency, and explain under what conditions each type should be used. It also explains the architecture of the NFT token bridge between zkSync and L1, and what is needed if protocols want to implement their own NFT factory contract on L1.
+
+### Withdraw NFT
+
+Under normal conditions use a layer 2 operation, `withdrawNFT`, to withdraw the NFT.
+
+> Signature
+
+```typescript
+withdrawNFT(withdrawNFT: {
+    to: string;
+    token: number;
+    feeToken: TokenLike;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    fastProcessing?: boolean;
+    validFrom?: number;
+    validUntil?: number;
+}): Promise<Transaction>;
+```
+
+| Name           | Description                                                                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| to             | L1 recipient address represented as a hex string                                                        |
+| feeToken       | name of token in which fee is to be paid (typically ETH)                                                |
+| token          | id of the NFT                                                                                           |
+| fee            | transaction fee                                                                                         |
+| fastProcessing | pay additional fee to complete block immediately, skip waiting for other transactions to fill the block |
+
+``` typescript
+const withdraw = await wallet.withdrawNFT({
+    to,
+    token,
+    feeToken,
+    fee,
+    fastProcessing
+});
+```
+
+Get the receipt: 
+
+``` typescript
+const receipt = await withdraw.awaitReceipt();
+```
+
+### Emergency Withdraw
+
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+
+> Signature
+
+```typescript
+async emergencyWithdraw(withdraw: {
+        token: TokenLike;
+        accountId?: number;
+        ethTxOptions?: ethers.providers.TransactionRequest;
+    }): Promise<ETHOperation>
+```
+
+| Name                 | Description                                              |
+| ---------------------| -------------------------------------------------------- |
+| token                | id of the NFT                                            |
+| accountId (Optional) | account id for fullExit                                  |
+
+``` typescript
+const emergencyWithdrawal = await wallet.emergencyWithdraw({ token, accountId });
+const receipt = await emergencyWithdrawal.awaitReceipt();
+```
 
 ### Factory and zkSync Smart Contract Interaction
 
-We will have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their own minting contract. Projects with their own minting contracts only need to implement one minting function: `mintFromZkSync`. 
-
-Note: The name of this function is subject to change.
+We have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their own minting contract. Projects with their own minting contracts only need to implement one minting function: `mintNFTFromZkSync`. 
 
 ```typescript
-mintFromZkSync(creator_address: address, content_hash: bytes, recipient_address: address, token_id: uint256)
+mintNFTFromZkSync(creator_address: address, creator_id: uint32, serial_id: uint32, content_hash: bytes, recipient_address: address, token_id: uint32)
 ```
 
 The zkSync Governance contract will implement a function `registerFactory` that will register creators as a trusted minter on L2 for the factory contract. 
@@ -318,11 +367,19 @@ The zkSync Governance contract will implement a function `registerFactory` that 
 registerFactory(creator_address: address, signature: bytes)
 ```
 
-To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the token on L2, and call mintFromZkSync on the factory corresponding to the creator. 
+To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the token on L2, and call `mintNFTFromZkSync` on the factory corresponding to the creator. 
 
 ### Factory Registration
 
-1. To register a factory, creators will sign a message with data `factory_address` and `creator_address`.
+1. To register a factory, creators will sign the following message with data `factory_address` and `creator_address`. 
+
+```                    
+"\x19Ethereum Signed Message:\n141",
+"\nCreator's account ID in zkSync: {creatorIdInHex}",
+"\nCreator: {CreatorAddressInHex}",
+"\nFactory: {FactoryAddressInHex}"
+```
+
 2. The factory contract calls `registerFactory` on the zkSync L1 smart contract with the signature.
 3. zkSync smart contract validates the signature and emits an event with `factory_address` and `creator_address`.
 
