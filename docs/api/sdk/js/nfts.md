@@ -1,8 +1,8 @@
 # NFTs
 
-NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
+NFTs are currently in testnet on the Ropsten and Rinkeby zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
 
-- [Connecting to Rinkeby-beta testnet](#connect-to-the-rinkeby-beta-testnet)
+- [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
 - [Mint NFT](#mint-nft)
 - [Transfer NFT](#transfer-nft)
 - [Swap NFT](#swap-nft)
@@ -14,10 +14,10 @@ NFTs are currently in testnet on the ropsten-beta and rinkeby-beta zkSync networ
     - [Get NFT](#get-an-nft)
     - [Get a receipt](#get-a-receipt)
 
-## Connect to the Rinkeby-beta testnet
+## Connect to the Rinkeby testnet
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider("rinkeby-beta");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 ```
 
 ## Mint NFT
