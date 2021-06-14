@@ -2,6 +2,8 @@
 
 Below we describe different types of transactions needed to make payments with zkSync.
 
+[[toc]]
+
 ## Creating an account
 
 You can create an account in the zkSync network by depositing funds from Ethereum to zkSync or by transferring funds from an existing zkSync 
