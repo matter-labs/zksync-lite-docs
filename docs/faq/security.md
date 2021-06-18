@@ -38,14 +38,31 @@ ensures that users will keep control of their assets. It works as follows.
 3. In case the validators fail to process the requests, the system enters **exodus mode** and every user can immediately
    exit all of their assets by making a direct transaction on the Ethereum mainnet.
 
-### Upgrade mechanism
+### Trust-Minimized Upgradeability
 
 Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations.
-However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
-contract and all users get a 4-week notice period to exit in case they don't like the changes.
 
-NOTICE: Currently, the beta is deployed with a 2-week notice period, and eventually will be bumped to 4 weeks. In the
-future, this opt-out mechanism will be replaced by a strict opt-in.
+However, users have a fundamental right to opt-out of the future upgrade. A new upgrade must be announced via the zkSync contract so that all users get a 4-week notice period to exit if they don't like the changes.
+
+We strongly believe that when facing an upgrade our users should have the right not to trust the developers.  
+
+The option to leave the zkSync network via the emergency exit grants our users the fundamental capability to independently withdraw one’s funds at any moment even if zkSync validators deny to process their exit request in the priority queue. 
+
+NOTICE: Currently, the beta is deployed with a 2-week notice period, and eventually will be bumped to 4 weeks. In the future, this opt-out mechanism will be replaced by a strict opt-in.
+
+### Security Council 
+
+Theoretically, if a transaction submitted to the priority queue causes the zkEVM to fail internally, the system will stop and enter the emergency mode. 
+
+Since the upgrade to fix this issue can be deployed only 4 weeks after the respective notice is issued, all capital in the zkSync network will become frozen for at least 4 weeks. 
+
+To mitigate the consequences of this potential threat we have established the zkSync Security Council comprising of 15 respected members of the Ethereum community. The only power of the Security Council is to shorten the 4-weeks timelock when a normal upgrade cannot resolve the problem. 
+
+If, for example, 12 out of 15 council members approve to shorten the time limit for issuing the upgrade notice and  provide their signatures , the timelock will be set to only 3 days. 
+
+After we switch to a pure opt-in upgrade, the Security Council will no longer be required.
+
+You can read more about the zkSync Security Coucil in [this article]( https://medium.com/matter-labs/keeping-funds-safe-a-3-factor-approach-to-security-in-zksync-2-0-a70b0f53f360). 
 
 ## Cryptography used
 
@@ -69,6 +86,15 @@ communities.
 1. [Collision-resistance](https://en.wikipedia.org/wiki/Collision_resistance)
 2. [Pseudo-randomness](https://en.wikipedia.org/wiki/Pseudorandomness)
 3. [Discrete logarithm problem, on elliptic curves and finite fields](https://en.wikipedia.org/wiki/Discrete_logarithm#Cryptography)
+
+### Additional Security by Isolation and Redundancy
+To put an additional layer of protection against theoretically possible bugs and exploits against our bulletproof cryptography, we adopted a twofold approach:
+
+Isolation: Only blocks submitted by an authorized sequencer are allowed to commit changes in the zkSync L1 smart contract. We will soon switch to a collective sequencer secured by a multi-validator consensus with PoS.
+
+Redundancy: Sequencer(s) will additionally validate every received transaction by simple execution before including it to the block.
+
+As a result, both the cryptography AND the sequencer/PoS consensus guarantee the security of zkSync transactions.
 
 ## Universal CRS setup
 
