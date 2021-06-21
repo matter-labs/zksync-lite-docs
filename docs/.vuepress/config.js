@@ -165,7 +165,7 @@ module.exports = {
             '/dev/payments-v2/create_account',
             '/dev/payments-v2/signing_key',
             '/dev/payments-v2/transfer',
-            '/dev/payments-v2batch',
+            '/dev/payments-v2/batch',
             '/dev/payments-v2/execution_of_tx',
             '/dev/payments-v2/fees',
           ]

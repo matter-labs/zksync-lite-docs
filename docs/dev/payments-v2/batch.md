@@ -48,9 +48,9 @@ For more details check our [SDK section](https://zksync.io/api/sdk/js/).
 ## Send a transaction batch via API
 
 To send a batch of transactions via API you should:
--	prepare and encode the transaction data for each transaction as per [zkSync Rollup Protocol]( https://github.com/matter-labs/zksync/blob/master/docs/protocol.md).  
-- create a zkSync signature for each encoded transaction with the zkSync private key  as per [cryptography specs]( https://zksync.io/api/sdk/crypto.html). 
--	provide an EIP-1271 signature or create an Ethereum signature for the following description of the transaction batch:
+- prepare and encode the transaction data for each transaction as per [zkSync Rollup Protocol](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md).
+- create a zkSync signature for each encoded transaction with the zkSync private key as per [cryptography specs](https://zksync.io/api/sdk/crypto.html).
+- provide an EIP-1271 signature or create an Ethereum signature for the following description of the transaction batch:
 
 In transaction batches you do not have to provide an Ethereum signature for each individual transaction. One Ethereum signature per batch is enough.
 
