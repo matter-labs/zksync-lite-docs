@@ -40,7 +40,7 @@ const depositReceipt = await deposit.awaitVerifyReceipt();
 ```
 For more details check our [SDK section](https://zksync.io/api/sdk/js/).
 
-The newly created account, however, can’t authorize any transactions on the zkSync network. You still have to [set a signing key] for it().
+The newly created account, however, can’t authorize any transactions on the zkSync network. You still have to [set the signing key](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/signing_key.md) for it.
 ### Creating a zkSync account by depositing from Ethereum via smart contract
 `Deposit` is a priority operation. Unlike zkSync transaction which are invoked directly on the zkSync network, priority opeartions are invoked as smart contract methods on the Ethereum mainnet. 
 
@@ -93,7 +93,7 @@ const transferReceipt = await transfer.awaitReceipt();
 ```
 For more details check our [SDK section](https://zksync.io/api/sdk/js/).
 
-After creating an account set a [signing key for it]().
+After creating an account set the [signing key for it](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/signing_key.md).
 
 ### Creating an account by transferring funds from an existing zkSync account via API
 To send the Transfer transaction via API you should: 
