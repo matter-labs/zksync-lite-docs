@@ -2,7 +2,7 @@
 `Transfer` transaction can move funds between two existing  zkSync accounts.
 
 Users may transfer any amount of funds in either Ether or any supported ERC-20 token. The list of supported tokens can be found on the 
-[explorer page](https://zkscan.io/tokens) or via [API](/api). 
+[explorer page](https://zkscan.io/tokens) or via [API](https://zksync.io/api/v0.1.html#tokens). 
 
 After installing [dependencies](https://zksync.io/api/sdk/js/tutorial.html#adding-dependencies), creating an account, 
 and setting the public key, you can transfer funds between two existing zkSync accounts like this:
@@ -58,4 +58,4 @@ Since some of the Ethereum signers add the \x19Ethereum Signed Message:\n${messa
 Once you have a signed Transfer transaction and an Ethereum signature of its description , use the [`tx_submit`]( https://zksync.io/api/v0.1.html#tx-submit) API 
 method to send your transaction to the zkSync server for it to be executed. 
 
-You can also [include the Transfer transaction into a batch]() so that it will be sent together with other transactions.
+You can also [include the Transfer transaction into a batch](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/batch.md) so that it will be sent together with other transactions.
