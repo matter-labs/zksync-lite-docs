@@ -157,7 +157,7 @@ module.exports = {
           ]
         },
         {
-          title: 'Payments',  // required
+          title: 'Payments-v2',  // required
           path: '/dev/payments-v2', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,    // optional, defaults to 1
