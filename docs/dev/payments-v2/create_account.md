@@ -1,7 +1,7 @@
 # Creating an account
 Below we will show you how to:
 - [creat a zkSync account by depositing from Ethereum](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/create_account.md#creating-a-zksync-account-by-depositing-from-ethereum)
-- [creat a zkSync account by transferring funds from an existing zkSync account]().
+- [creat a zkSync account by transferring funds from an existing zkSync account](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/create_account.md#creating-an-account-by-transferring-funds-from-an-existing-zksync-account).
 ## Creating a zkSync account by depositing from Ethereum
 
 `Deposit` moves funds from the Ethereum network to the designated account in the zkSync network.
