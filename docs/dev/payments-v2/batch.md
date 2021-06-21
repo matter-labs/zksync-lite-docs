@@ -3,16 +3,14 @@ A transaction batch is a set of transactions that are sent togehter and should a
 
 A batch is guaranteed to successfully process a max of 50 transactions.
 
-::: warning
-
+:warning: 
 ### Security note
-Currently, the transaction batch is a server-side abstraction. Successful execution is checked 
+Currently, the transaction batch is a server-side abstraction. Successful execution is checked
 pre-circuit, and information about batch is not passed into the circuit. If you therefore use a 
 transaction batch to pay fees in a different token, put the fee payment transaction at the last position 
 in the batch so that the server will be unable even in theory to ignore other transactions and only execute the last one. 
 In the future, the batches will be enforced in the circuit in order to increase the overall security of this feature. 
 
-:::
 
 You can send a transaction batch like this:
 ```typescript
