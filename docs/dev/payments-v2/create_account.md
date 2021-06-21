@@ -115,4 +115,4 @@ Since some of the Ethereum signers add the \x19Ethereum Signed Message:\n${messa
 
 Once you have a signed `Transfer` transaction and an Ethereum signature of its description you can use the [`tx_submit`]( https://zksync.io/api/v0.1.html#tx-submit) API method to send the transaction to the zkSync server for it to be executed. 
 
-You can also [include the Transfer transaction into a batch]() so that it will be sent together with other transactions. 
+You can also [include the Transfer transaction into a batch](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/batch.md) so that it will be sent together with other transactions. 
