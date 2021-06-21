@@ -1,8 +1,8 @@
 # Withdrawing funds
 Below we will show you how to:
--	[withdraw funds to Ethereum from a zkSync account which has the signing key]() 
--	[withdraw funds to Ethereum from a zkSync account which does not have the signing key]()
--	[withdraw funds to Ethereum without interacting with the zkSync server]()
+-	[withdraw funds to Ethereum from a zkSync account which has the signing key](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/withdrawal.md#withdrawing-funds-to-ethereum-from-a-zksync-account-which-has-the-signing-key) 
+-	[withdraw funds to Ethereum from a zkSync account which does not have the signing key](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/withdrawal.md#withdrawing-funds-to-ethereum-from-a-zksync-account-which-does-not-have-the-signing-key)
+-	[withdraw funds to Ethereum without interacting with the zkSync server](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/withdrawal.md#withdrawing-funds-to-ethereum-without-interacting-with-the-zksync-server)
 ## Withdrawing funds to Ethereum from a zkSync account which has the signing key
 `Withdraw` transaction requests a withdrawal from an owned account with a set signing key to any Ethereum address. 
 
