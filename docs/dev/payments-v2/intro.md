@@ -6,5 +6,5 @@ In this section you will learn how to easily start making payments with zkSync, 
 - [transfer funds](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/transfer.md)
 - [withdraw funds back to Ethereum]()
 - [execution of transactions]()
-- [send batches of transactions]()
+- [send a transaction batch](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/batch.md)
 - [fees]()
