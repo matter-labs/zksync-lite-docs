@@ -43,7 +43,7 @@ if it was not added automatically.
 
 Once you have a signed `ChangePubKey` transaction and an Ethereum signature of its description you can use the [`tx_submit`]( https://zksync.io/api/v0.1.html#tx-submit) API method to send the transaction to the zkSync server for it to be validated and committed. 
 
-You can also [include the ChangePubKey transaction into a batch]() so that it will be sent together with other transactions. 
+You can also [include the ChangePubKey transaction into a batch](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/batch.md) so that it will be sent together with other transactions. 
 
 It is also possible to authorize a ChangePubKey transaction on-chain by sending it to the zkSync smart contract. 
 Both zkSync server and smart contract will then check the ownership of the account, resulting in better security.
