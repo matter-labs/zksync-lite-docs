@@ -1,4 +1,4 @@
-# Sending transaction batches
+# Sending a transaction batch
 A transaction batch is a set of transactions that are sent togehter and should all succeed. If one transaction in hte batch fails, all other transactions will also fail.
 
 A batch is guaranteed to successfully process a max of 50 transactions.
