@@ -51,7 +51,7 @@ you will have to add this prefix manually, if it was not added automatically.
 Once you have a signed `Withdraw` transaction and an Ethereum signature of its description you can use the [`tx_submit`]( https://zksync.io/api/v0.1.html#tx-submit) 
 API method to send the transaction to the zkSync server for it to be executed. 
 
-You can also [include the `Withdraw` transaction into a batch]() so that it will be sent together with other transactions.
+You can also [include the `Withdraw` transaction into a batch](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/batch.md) so that it will be sent together with other transactions.
 ## Withdrawing funds to Ethereum from a zkSync account which does not have the signing key
 `ForcedExit` transaction withdraws funds from any unowned account without a set signing key.
 
@@ -108,7 +108,7 @@ API method to send the transaction to the zkSync server for it to be executed.
 
 The initiator of the transaction covers the fees.
 
-You can also [include the`ForcedExit` transaction into a batch]() so that it will be sent together with other transactions.
+You can also [include the`ForcedExit` transaction into a batch](https://github.com/LesKukh/zksync-docs/blob/LesKukh-patch-2-1/docs/dev/payments-v2/batch.md) so that it will be sent together with other transactions.
 
 Use `ForcedExit` to withdraw funds from an account for which one can’t set the signing key (i.e. smart contract account), 
 when there exists an owned L2 account with a set signing key which can initiate such a transaction.
