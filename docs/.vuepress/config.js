@@ -157,6 +157,20 @@ module.exports = {
           ]
         },
         {
+          title: 'Payments',  // required
+          path: '/dev/payments-v2', // optional, which should be a absolute path.
+          collapsable: true,  // optional, defaults to true
+          sidebarDepth: 1,    // optional, defaults to 1
+          children: [
+            '/dev/payments-v2/create_account',
+            '/dev/payments-v2/signing_key',
+            '/dev/payments-v2/transfer',
+            '/dev/payments-v2batch',
+            '/dev/payments-v2/execution_of_tx',
+            '/dev/payments-v2/fees',
+          ]
+        },
+        {
           title: 'Smart contracts',  // required
           path: '/dev/contracts/', // optional, which should be a absolute path.
           collapsable: false,  // optional, defaults to true
