@@ -217,7 +217,8 @@ To check your minted NFTs, use `nfts` and `minted_nfts` fields on the committed 
 ```python
 account_state = await wallet.get_account_state()
 owned_nfts = account_state.committed.nfts
-minted_nfts = account_state.committed.minted_nfts
+# Minted nfts can only be used after verification of the mint_nft transaction
+minted_nfts = account_state.verified.minted_nfts
 ```
 
 ### Withdrawing
