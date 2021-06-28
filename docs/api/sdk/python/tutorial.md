@@ -208,12 +208,15 @@ receipt = await wallet.mint_nft("0x000000000000000000000000000000000000000000000
                                 "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
 ```
 
-### Checking minted NFTs
+Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
 
-To check your minted NFTs, use `minted_nfts` field on the committed or verified account state.
+### Checking owned and minted NFTs
+
+To check your minted NFTs, use `nfts` and `minted_nfts` fields on the committed or verified account state.
 
 ```python
 account_state = await wallet.get_account_state()
+owned_nfts = account_state.committed.nfts
 minted_nfts = account_state.committed.minted_nfts
 ```
 
