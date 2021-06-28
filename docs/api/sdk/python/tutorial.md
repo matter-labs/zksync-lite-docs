@@ -171,6 +171,20 @@ tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 
 If you want more control over the transaction, you can optionally provide `nonce` and `fee`
 
+## Swapping tokens
+
+To swap tokens, first call the `get_order` or `get_limit_order` method on a wallet, to create and sign an order.
+
+When 2 signed orders are collected, they can be submitted by anyone using the `swap` method.
+
+```python
+orderA = await walletA.get_order('USDT', 'ETH', Fraction(1500, 1), RatioType.token, Decimal('10.0'))
+orderB = await walletB.get_order('ETH', 'USDT', Fraction(1, 1200), RatioType.token, Decimal('0.007'))
+receipt = await submitter.swap((orderA, orderB), 'ETH')
+```
+
+For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API reference](../js/accounts.md#swaps-in-zksync).
+
 ## Withdrawing funds back to Ethereum
 
 ```python
