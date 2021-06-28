@@ -195,6 +195,36 @@ await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
 generated and verified by the mainnet contract.
 
+## NFTs
+
+For detailed information, visit the [NFT tutorial](../../../dev/nfts.md).
+
+### Minting
+
+To mint an NFT, provide a 32-byte content hash, recipient address and token which will be used to pay fees.
+
+```python
+receipt = await wallet.mint_nft("0x0000000000000000000000000000000000000000000000000000000000000123",
+                                "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
+```
+
+### Checking minted NFTs
+
+To check your minted NFTs, use `minted_nfts` field on the committed or verified account state.
+
+```python
+account_state = await wallet.get_account_state()
+minted_nfts = account_state.committed.minted_nfts
+```
+
+### Withdrawing
+
+To withdraw an NFT, provide address to withdraw to, NFT itself and token which will be used to pay fees.
+
+```python
+receipt = await wallet.withdraw_nft("0x21dDF51966f2A66D03998B0956fe59da1b3a179F", nft, "USDC")
+```
+
 ## Getting information about zkSync transaction
 
 For getting information about tx we have to use ZkSyncProviderV01
