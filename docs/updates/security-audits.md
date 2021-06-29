@@ -4,6 +4,13 @@ sidebar: false
 
 # zkSync Security Audits
 
+## 06.29.2021
+
+By: [ABDK Consulting](https://www.abdk.consulting/). Release Tag:
+[Contracts-5.1](https://github.com/matter-labs/zksync/releases/tag/contracts-5.1)
+
+- [Report v1](https://zksync.io/ABDK-ZkSync-Audit-v5.pdf)
+
 ## 03.02.2021
 
 By: [ABDK Consulting](https://www.abdk.consulting/). Release Tag:
