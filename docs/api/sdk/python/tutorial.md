@@ -221,6 +221,14 @@ owned_nfts = account_state.committed.nfts
 minted_nfts = account_state.verified.minted_nfts
 ```
 
+### Transfering
+
+To transfer an NFT, provide address to transfer to, NFT itself and token which will be used to pay fees.
+
+```python
+await self.wallet.transfer_nft("0x995a8b7f96cb837533b79775b6209696d51f435c", first_value, "USDC")
+```
+
 ### Withdrawing
 
 To withdraw an NFT, provide address to withdraw to, NFT itself and token which will be used to pay fees.
