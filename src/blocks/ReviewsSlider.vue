@@ -26,7 +26,7 @@
     <i-container ref="container" :fluid="true">
       <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition-scrollOffset}px)`}">
         <a
-          v-for="(singleReview, index) in reviewsData"
+          v-for="(singleReview, index) in preparedReviews"
           :id="singleReview.id"
           :key="index"
           ref="reviewItem"
@@ -72,17 +72,19 @@
 import ZButton from "@/components/ZButton.vue";
 
 import Hammer from "hammerjs";
-import Vue from "vue";
+import Vue, {PropOptions} from "vue";
 
 interface Review {
-  id: string;
-  classes: string;
+  id?: string;
+  classes?: string;
   title: string;
   link: string;
   thumbnail: string;
   thumbnailAlt: string;
   thumbnailTitle: string;
   text: string;
+  order: number;
+  mobileOrder: number;
 }
 
 export default Vue.extend({
@@ -91,18 +93,8 @@ export default Vue.extend({
   },
   props: {
     reviewsData: {
-      default: () => {
+      default: (): Review[] => {
         return [
-          {
-            id: "",
-            classes: "",
-            link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
-            thumbnail: "buter.png",
-            thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
-            thumbnailTitle: "Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception",
-            text: "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
-            title: "Vitalik Buterin"
-          },
           {
             id: "",
             classes: "",
@@ -111,7 +103,9 @@ export default Vue.extend({
             thumbnail: "curve.svg",
             thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
             thumbnailTitle: "Curve + zkSync L2: Ethereum’s first user-defined ZK rollup smart contract!",
-            text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math"
+            text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math",
+            order: 0,
+            mobileOrder: 1
           },
           {
             id: "",
@@ -121,7 +115,21 @@ export default Vue.extend({
             thumbnail: "imtoken.svg",
             thumbnailAlt: "imToken is an easy and secure digital wallet trusted by millions",
             thumbnailTitle: "imToken is an easy and secure digital wallet trusted by millions",
-            text: "Natively supporting zkSync brings us one step further towards our goal of providing a simple, easy-to-use, reliable wallet product."
+            text: "Natively supporting zkSync brings us one step further towards our goal of providing a simple, easy-to-use, reliable wallet product.",
+            order: 1,
+            mobileOrder: 2
+          },
+          {
+            id: "",
+            classes: "",
+            link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
+            thumbnail: "buter.png",
+            thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
+            thumbnailTitle: "Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception",
+            text: "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
+            title: "Vitalik Buterin",
+            order: 2,
+            mobileOrder: 0
           },
           {
             id: "",
@@ -132,7 +140,9 @@ export default Vue.extend({
             thumbnailAlt: "Argent at @argentHQ",
             thumbnailTitle: "Argent at @argentHQ",
             text: `...Our choice came down to the fact that zkSync has been live on mainnet for months, has lower transaction costs and fast finality.
-            ZkSync also does not have a one week delay on withdrawals`
+            ZkSync also does not have a one week delay on withdrawals`,
+            order: 3,
+            mobileOrder: 3
           },
           {
             id: "balancer-review",
@@ -143,12 +153,14 @@ export default Vue.extend({
             thumbnailAlt: "Mike McDonal, CTO @BalancerLabs",
             thumbnailTitle: "Mike McDonal, Co-founder & CTO @BalancerLabs. Security Engineer about ZK Rollups",
             text: "ZK rollups are the most promising (and the only scaling path Balancer is exploring internally atm).",
-          },
+            order: 4,
+            mobileOrder: 4
+          }
         ] as Array<Review>;
       },
       required: false,
-      type: Array,
-    },
+      type: Array
+    } as PropOptions<Review[]>,
   },
   data() {
     return {
@@ -159,15 +171,21 @@ export default Vue.extend({
     };
   },
   computed: {
+    preparedReviews(): Review[] {
+      return (this.reviewsData as Review[]).sort((reviewItem1, reviewItem2) => {
+        const sortParam = window.screen.availWidth > 768 ? "order":"mobileOrder";
+        return reviewItem1[sortParam] > reviewItem2[sortParam] ? 1:-1;
+      });
+    },
     leftPosition(): number {
-      if (this.$refs.container && Math.max(1, this.itemsInView()) === 1) {
+      if (this.$refs.container && Math.max(1, this.itemsInView())===1) {
         return Math.max(0, this.currentItem * 257 - 10);
       }
       return Math.max(0, this.currentItem * 257 - 10);
     },
     rightArrowDisplayed(): boolean {
       return this.currentItem < this.totalItems - 1 && this.displayRightArrow;
-    },
+    }
   },
   watch: {
     currentItem() {
@@ -218,7 +236,7 @@ export default Vue.extend({
     },
     itemsInView() {
       let inViewTotal = 0;
-      const containerSizes = ((this.$refs.container as Vue).$el as HTMLElement).getBoundingClientRect();
+      const containerSizes = ((this.$refs.container as Vue).$el as Element).getBoundingClientRect();
       const reviewItems = this.$refs.reviewItem as HTMLElement[];
       for (const itemEl of reviewItems) {
         if (!itemEl.getBoundingClientRect) {
