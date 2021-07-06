@@ -1,10 +1,14 @@
 <template>
-  <div class="reviewsContainer" data-aos="fade-up"
-       data-aos-delay="50" data-aos-duration="800">
+  <div
+    class="reviewsContainer" data-aos="fade-up"
+    data-aos-delay="50" data-aos-duration="800"
+  >
     <a id="reviews-about-zksync"/>
     <transition name="slideFromLeft">
-      <div v-if="currentItem>0" class="arrow left"
-           @click="scrollItemBack()">
+      <div
+        v-if="currentItem>0" class="arrow left"
+        @click="scrollItemBack()"
+      >
         <i class="fal fa-angle-left"/>
       </div>
     </transition>
@@ -48,11 +52,11 @@
           </div>
           <z-button
             v-if="singleReview.isButton"
-            css-class='width-300'
-            href='https://zksync.curve.fi'
+            css-class="width-300"
+            href="https://zksync.curve.fi"
             outline="outline"
-            size='xs'
-            target='_blank'
+            size="xs"
+            target="_blank"
           >Try <strong>Curve + zkSync</strong> testnet
           </z-button>
           <span v-if="!singleReview.isButton" class="arrowLink">
@@ -89,6 +93,16 @@ export default Vue.extend({
     reviewsData: {
       default: () => {
         return [
+          {
+            id: "",
+            classes: "",
+            title: "imToken",
+            link: "https://medium.com/imtoken/imtoken-and-matter-labs-join-forces-to-support-zksync-5554e931db48",
+            thumbnail: "imtoken.svg",
+            thumbnailAlt: "imToken is an easy and secure digital wallet trusted by millions",
+            thumbnailTitle: "imToken is an easy and secure digital wallet trusted by millions",
+            text: "Natively supporting zkSync brings us one step further towards our goal of providing a simple, easy-to-use, reliable wallet product."
+          },
           {
             id: "",
             classes: "small-text round-thumbnail",

@@ -37,14 +37,28 @@
               <a href="/faq/" target="_blank" class="linkItem">FAQ</a>
               <a href="/dev/" target="_blank" class="linkItem">Docs</a>
               <i-dropdown
-                :class="{'opened': dropdownOpened}" class="_background-transparent _border-none likeLinkItem" placement="bottom" size="sm"
-                trigger="manual" variation="dark"
+                :class="{'opened': dropdownOpened}"
+                :hide-on-click="true"
+                class="_background-transparent _border-none likeLinkItem"
+                placement="bottom"
+                size="sm"
+                trigger="click"
+                variation="dark"
               >
                 <a class="dropDownHandler linkItem _position-top-0" @click.capture="dropdownOpened = !dropdownOpened">zkTools <i
-                  class="fal" :class="dropdownOpened?'fa-chevron-up':'fa-chevron-down'"
+                  :class="{'fa-chevron-up': dropdownOpened, 'fa-chevron-down': !dropdownOpened}" class="fal"
                 /></a>
                 <i-dropdown-menu v-model="dropdownOpened">
-                  <i-dropdown-item v-for="(item, index) in dropdownOptions" :key="index" :href="item.link" target="_blank">{{ item.name }}</i-dropdown-item>
+                  <i-dropdown-item
+                    v-for="(item, index) in dropdownOptions"
+                    :key="index"
+                    :href="item.link"
+                    target="_blank"
+                    @click.capture="dropdownOpened = false;"
+                  >{{
+                      item.name
+                    }}
+                  </i-dropdown-item>
                 </i-dropdown-menu>
               </i-dropdown>
               <a href="https://matter-labs.io/#jobs" target="_blank" class="linkItem">We're hiring</a>
@@ -101,8 +115,8 @@ export default Vue.extend({
           link: "https://withdraw.zksync.io/"
         },
         {
-          link: "https://out-of-gas.zksync.io/",
-          name: "Solution for Out-of-gas issue"
+          name: "Solution for Out-of-gas issue",
+          link: "https://out-of-gas.zksync.io/"
         },
         {
           name: "zkCheckout",
@@ -110,7 +124,11 @@ export default Vue.extend({
         },
         {
           name: "zkMint",
-          link: "https://mint.zksync.io/"
+          link: "https://mint.zksync.dev"
+        },
+        {
+          name: "zkNft",
+          link: "https://zknft.xyz"
         }
       ] as Array<DropdownOption>,
     };
