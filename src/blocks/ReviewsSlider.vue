@@ -77,7 +77,7 @@ import Vue, {PropOptions} from "vue";
 interface Review {
   id?: string;
   classes?: string;
-  title: string;
+  title?: string;
   link: string;
   thumbnail: string;
   thumbnailAlt: string;
@@ -96,9 +96,6 @@ export default Vue.extend({
       default: (): Review[] => {
         return [
           {
-            id: "",
-            classes: "",
-            title: "",
             link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
             thumbnail: "curve.svg",
             thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
@@ -108,8 +105,6 @@ export default Vue.extend({
             mobileOrder: 1
           },
           {
-            id: "",
-            classes: "",
             title: "imToken",
             link: "https://medium.com/imtoken/imtoken-and-matter-labs-join-forces-to-support-zksync-5554e931db48",
             thumbnail: "imtoken.svg",
@@ -120,8 +115,6 @@ export default Vue.extend({
             mobileOrder: 2
           },
           {
-            id: "",
-            classes: "",
             link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
             thumbnail: "buter.png",
             thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
@@ -132,7 +125,6 @@ export default Vue.extend({
             mobileOrder: 0
           },
           {
-            id: "",
             classes: "small-text round-thumbnail",
             title: "Argent",
             link: "https://www.argent.xyz/blog/layer-2-plans/",
@@ -146,8 +138,6 @@ export default Vue.extend({
           },
           {
             id: "balancer-review",
-            classes: "",
-            title: "",
             link: "https://twitter.com/mikeraymcdonald/status/1321095035539148800?s=21",
             thumbnail: "balancer.svg",
             thumbnailAlt: "Mike McDonal, CTO @BalancerLabs",
