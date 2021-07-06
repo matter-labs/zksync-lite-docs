@@ -151,15 +151,15 @@ export default {
         themeColor: '#4e529a',
       },
     ],
-    "@nuxtjs/sentry",
+    '@nuxtjs/sentry',
   ],
   inkline: {
     config: {
-      variant: "dark",
+      variant: 'dark',
     },
   },
   styleResources: {
-    scss: "@/assets/variables.scss",
+    scss: '@/assets/variables.scss',
   },
   sentry: {
     disableServerSide: true,
@@ -169,7 +169,7 @@ export default {
       tracesSampleRate: 1.0,
     },
   },
-  "google-gtag": {
+  'google-gtag': {
     id: process.env.GTAG_ID,
     config: {
       anonymize_ip: true, // anonymize IP
