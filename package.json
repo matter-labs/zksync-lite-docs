@@ -19,11 +19,13 @@
     ]
   },
   "scripts": {
-    "nuxt-ci": "rm -fr node_modules && rm -rf 'public/*' && sh ./cli-check-env.sh && yarn install --immutable  --immutable-cache",
+    "nuxt-local": "sh ./cli-process-env.sh 'dev' 1 1",
+    "ci:prepare:mainnet": "sh cli-process-env.sh 'mainnet' prod 1",
+    "nuxt-ci": "sh ./cli-process-env.sh 'prod' 1 1",
     "nuxt-ci:build": "yarn run nuxt-ci && yarn run generate --fail-on-error",
     "start:firebase": "firebase serve --only hosting",
-    "dev": "sh ./cli-check-env.sh && nuxt",
-    "generate": "sh ./cli-check-env.sh && nuxt generate",
+    "dev": "yarn run nuxt-local && nuxt",
+    "generate": "yarn run nuxt-local  && nuxt generate",
     "format": "prettier --write",
     "lint-ts": "eslint --fix \"**/*.{ts, js, vue}\"",
     "lint-css": "stylelint --fix \"**/*.scss\"",
@@ -52,12 +54,8 @@
     "url": "https://github.com/matter-labs/zksync-docs/issues"
   },
   "dependencies": {
-    "@babel/core": "^7.13.1",
-    "@babel/plugin-syntax-jsx": "latest",
-    "@babel/preset-env": "7.12.17",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/google-gtag": "^1.0.4",
-    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sentry": "^5.0.1",
     "@types/js-cookie": "^2.2.6",
     "@types/lodash": "^4.14.168",
@@ -83,6 +81,9 @@
     "vuepress-plugin-fulltext-search": "^2.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-syntax-jsx": "latest",
+    "@babel/preset-env": "7.12.17",
     "@inkline/nuxt": "^2.3.5",
     "@nuxt/types": "^2.15.2",
     "@nuxt/typescript-build": "^2.0.5",
@@ -109,10 +110,9 @@
     "sass-loader": "^10.1.1",
     "stylelint": "^13.10.0",
     "ts-loader": "^8.0.17",
-    "typescript": "<=4.1.5",
+    "typescript": "^4.1.5",
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
-    "vue-server-renderer": "^2.6.12",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^4.46.0"
   },

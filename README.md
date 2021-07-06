@@ -4,23 +4,15 @@
 
 First public release of the updated zkSync.io landing page design
 
-## CHANGELOG.md
-
-### v.2.1.1 🗓 1.03.2021
-
----
-
-* Partners block added 
-* Tables purified
-* Code optimized
+## [CHANGELOG](./CHANGELOG.md)
 
 ## Build Setup
 
 ``` bash
-# install dependencies && populate .env file as of RINKEBY connection (clear install)
-$ yarn prepare_ci
+# clear possible cache && install dependencies (clear install)
+$ sh cli-dev.sh ci
 
-# serve with hot reload at localhost:3000
+# populate .env file as dev environment && serve with hot reload at localhost:3000
 $ yarn dev
 
 # build for dev
@@ -28,7 +20,7 @@ $ build:stage
 # afterward you'll have prepared distributive in /public folder
 
 # build for production (only if you have firebase:auth) 
-$ cli-deploy-production.sh  
+$ bash cli-dev.sh ci && yarn zk-ci-prepare 
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
