@@ -23,7 +23,7 @@
     <transition name="fade">
       <div v-if="currentItem>0" class="gradient left"/>
     </transition>
-    <i-container ref="container">
+    <i-container ref="container" :fluid="true">
       <div class="itemsContainer" :style="{'transform': `translateX(-${leftPosition-scrollOffset}px)`}">
         <a
           v-for="(singleReview, index) in reviewsData"
@@ -96,6 +96,26 @@ export default Vue.extend({
           {
             id: "",
             classes: "",
+            link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
+            thumbnail: "buter.png",
+            thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
+            thumbnailTitle: "Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception",
+            text: "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
+            title: "Vitalik Buterin"
+          },
+          {
+            id: "",
+            classes: "",
+            title: "",
+            link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
+            thumbnail: "curve.svg",
+            thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
+            thumbnailTitle: "Curve + zkSync L2: Ethereum’s first user-defined ZK rollup smart contract!",
+            text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math"
+          },
+          {
+            id: "",
+            classes: "",
             title: "imToken",
             link: "https://medium.com/imtoken/imtoken-and-matter-labs-join-forces-to-support-zksync-5554e931db48",
             thumbnail: "imtoken.svg",
@@ -113,26 +133,6 @@ export default Vue.extend({
             thumbnailTitle: "Argent at @argentHQ",
             text: `...Our choice came down to the fact that zkSync has been live on mainnet for months, has lower transaction costs and fast finality.
             ZkSync also does not have a one week delay on withdrawals`
-          },
-          {
-            id: "",
-            classes: "",
-            title: "",
-            link: "https://resources.curve.fi/guides/more.../layer-2-meets-curve-with-zksync",
-            thumbnail: "curve.svg",
-            thumbnailAlt: "Curve Finance - automatic market-making for stablecoins and not only",
-            thumbnailTitle: "Curve + zkSync L2: Ethereum’s first user-defined ZK rollup smart contract!",
-            text: "ZK rollups are extremely secure even with a single validator, as they rely on pure math",
-          },
-          {
-            id: "",
-            classes: "",
-            link: "https://vitalik.ca/general/2021/01/05/rollup.html#conclusions",
-            thumbnail: "buter.png",
-            thumbnailAlt: "Vitalik Buterin, co-founder of Ethereum about zkSynk",
-            thumbnailTitle: "Writer who is best known as one of the co-founders of Ethereum, involved with cryptocurrency early in its inception",
-            text: "In the medium to long term ZK rollups will win out in all use cases as ZK-SNARK technology improves.",
-            title: "Vitalik Buterin",
           },
           {
             id: "balancer-review",
