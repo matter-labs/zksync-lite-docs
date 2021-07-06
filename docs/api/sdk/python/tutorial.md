@@ -12,18 +12,21 @@ In this tutorial we will demonstrate how to:
 ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 
 ```
-$ pip install git+https://github.com/zksync-sdk/zksync-python.git 
+$ pip install git+https://github.com/zksync-sdk/zksync-python.git
 ```
 
 Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is
 the only option.
 
 ## Setup crypto library
+
 For using this library:
- 1. You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
- 2. Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library 
+
+1.  You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
+2.  Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library
 
 ## Initialize crypto library
+
 ```python
 from zksync_sdk import ZkSyncLibrary
 
@@ -73,14 +76,14 @@ library = ZkSyncLibrary()
 # Initialization from ethereum private key
 account = Account.from_key("PRIVATE_KEY")
 signer_v1 = ZkSyncSigner.from_account(account, library, network.rinkeby.chain_id)
-# Initialization from zksync seed 
+# Initialization from zksync seed
 signer_v2 = ZkSyncSigner.from_seed(library, b"seed")
-# Initialization from zksync private key 
+# Initialization from zksync private key
 signer_v3 = ZkSyncSigner(library, b"private_key")
 ```
 
 For creating `Wallet` we have to create:
- `EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`, `ZkSyncSigner`  .
+`EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`, `ZkSyncSigner` .
 
 ```python
 from web3 import Web3, HTTPProvider, Account
@@ -103,7 +106,7 @@ zksync = ZkSync(account=account, web3=w3,
 # Create ethereum provider for interacting with ethereum node
 ethereum_provider = EthereumProvider(w3, zksync)
 
-# Initialize zksync signer, all creating options were described earlier  
+# Initialize zksync signer, all creating options were described earlier
 signer = ZkSyncSigner.from_account(account, library, network.rinkeby.chain_id)
 # Initialize Wallet
 wallet = Wallet(ethereum_provider=ethereum_provider, zk_signer=signer,
@@ -119,7 +122,7 @@ We are going to deposit `1.0 USDT` to our zkSync account.
 ```python
 # Find token for depositing
 token = await wallet.resolve_token("USDT")
-# Approve Enough deposit using token contract 
+# Approve Enough deposit using token contract
 await wallet.ethereum_provider.approve_deposit(token, Decimal(1))
 
 # Deposit money from contract to our address
@@ -159,11 +162,13 @@ verified_dai_balance = account_state.verified.balances.get("DAI")
 
 ## Making a transfer in zkSync
 
-For making transfer to another account you just need to set receiver amount and token 
+For making transfer to another account you just need to set receiver amount and token
+
 ```python
 tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            amount=Decimal("0.01"), token="USDC")
 ```
+
 If you want more control over the transaction, you can optionally provide `nonce` and `fee`
 
 ## Withdrawing funds back to Ethereum
@@ -176,7 +181,7 @@ await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
 generated and verified by the mainnet contract.
 
-## Getting information about zk sync transaction 
+## Getting information about zkSync transaction
 
 For getting information about tx we have to use ZkSyncProviderV01
 

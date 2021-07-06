@@ -1,5 +1,5 @@
 <template>
-  <header class="indexHeader" :class="{'opened': opened}">
+  <header v-click-outside="handleClose" :class="{'opened': opened}" class="indexHeader">
     <div class="mobileIndexHeader">
       <i-container class="mobileOnly">
         <i-row>
@@ -34,15 +34,17 @@
           </i-column>
           <i-column :xs="12" :md="4" class="_padding-y-0">
             <div class="linksContainer">
-              <a :href="'/faq/'" target="_blank" class="linkItem">FAQ</a>
-              <a :href="'/dev/'" target="_blank" class="linkItem">Docs</a>
-              <i-dropdown class="_background-transparent _border-none likeLinkItem" size="sm" variation="dark" placement="bottom">
-                <a class="dropDownHandler linkItem _position-top-0" @click.capture="event => true">zkTools <i class="fal fa-chevron-down"/></a>
-                <i-dropdown-menu>
-                  <i-dropdown-item href="https://wallet.zksync.io" target="_blank">zkWallet</i-dropdown-item>
-                  <i-dropdown-item href="https://link.zksync.io/" target="_blank">zkLink</i-dropdown-item>
-                  <i-dropdown-item href="https://zkscan.io/" target="_blank">zkScan</i-dropdown-item>
-                  <i-dropdown-item href="https://www.npmjs.com/package/zksync-checkout" target="_blank">zkCheckout</i-dropdown-item>
+              <a href="/faq/" target="_blank" class="linkItem">FAQ</a>
+              <a href="/dev/" target="_blank" class="linkItem">Docs</a>
+              <i-dropdown
+                :class="{'opened': dropdownOpened}" class="_background-transparent _border-none likeLinkItem" placement="bottom" size="sm"
+                trigger="manual" variation="dark"
+              >
+                <a class="dropDownHandler linkItem _position-top-0" @click.capture="dropdownOpened = !dropdownOpened">zkTools <i
+                  class="fal" :class="dropdownOpened?'fa-chevron-up':'fa-chevron-down'"
+                /></a>
+                <i-dropdown-menu v-model="dropdownOpened">
+                  <i-dropdown-item v-for="(item, index) in dropdownOptions" :key="index" :href="item.link" target="_blank">{{ item.name }}</i-dropdown-item>
                 </i-dropdown-menu>
               </i-dropdown>
               <a href="https://matter-labs.io/#jobs" target="_blank" class="linkItem">We're hiring</a>
@@ -60,17 +62,57 @@
 <script lang="ts">
 import logo from "@/blocks/Logo.vue";
 import SocialBlock from "@/blocks/SocialBlock.vue";
+import ClickOutside from "@inkline/inkline/src/directives/click-outside";
 import Vue from "vue";
+
+interface DropdownOption {
+  name: string;
+  link: string;
+}
 
 export default Vue.extend({
   components: {
     logo,
-    SocialBlock,
+    SocialBlock
+  },
+  directives: {
+    ClickOutside
   },
   data() {
     return {
       opened: false,
       showLogo: true,
+      dropdownOpened: false,
+      dropdownOptions: [
+        {
+          name: "zkWallet",
+          link: "https://wallet.zksync.io/"
+        },
+        {
+          name: "zkLink",
+          link: "https://link.zksync.io/",
+        },
+        {
+          name: "zkScan",
+          link: "https://zkscan.io/"
+        },
+        {
+          name: "Alternative Withdrawal",
+          link: "https://withdraw.zksync.io/"
+        },
+        {
+          link: "https://out-of-gas.zksync.io/",
+          name: "Solution for Out-of-gas issue"
+        },
+        {
+          name: "zkCheckout",
+          link: "https://www.npmjs.com/package/zksync-checkout/"
+        },
+        {
+          name: "zkMint",
+          link: "https://mint.zksync.io/"
+        }
+      ] as Array<DropdownOption>,
     };
   },
   beforeMount() {
@@ -87,6 +129,9 @@ export default Vue.extend({
     handleScroll() {
       this.showLogo = window.pageYOffset > 300;
     },
+    handleClose() {
+      this.dropdownOpened = false;
+    }
   },
 });
 </script>

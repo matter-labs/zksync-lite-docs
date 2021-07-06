@@ -160,7 +160,10 @@ module.exports = {
           title: 'Smart contracts',  // required
           path: '/dev/contracts/', // optional, which should be a absolute path.
           collapsable: false,  // optional, defaults to true
-        }
+        },
+        '/dev/nfts',
+        '/dev/swaps',
+        '/dev/events'
       ],
       '/api': [
         {
@@ -171,6 +174,7 @@ module.exports = {
         },
         '/api/changelog',
         '/api/environments',
+        '/api/events',
         {
           title: 'API v0.1',  // required
           path: '/api/v0.1', // optional, which should be a absolute path.
@@ -187,6 +191,7 @@ module.exports = {
             '/api/sdk/js/providers',
             '/api/sdk/js/accounts',
             '/api/sdk/js/utils',
+            '/api/sdk/js/nfts',
             '/api/sdk/js/types',
             '/api/sdk/js/browser-bundled'
           ]
@@ -228,6 +233,7 @@ module.exports = {
             '/api/sdk/python/tutorial'
           ]
         },
+        '/api/sdk/dart',
         {
           title: 'zkCheckout SDK',  // required
           path: '/api/sdk/checkout', // optional, which should be a absolute path.

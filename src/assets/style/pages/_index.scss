@@ -466,8 +466,19 @@
   .mainImg {
     display: block;
     width: 100%;
-    height: auto;
     border-radius: 16px;
+    @media screen and (min-width: 0) {
+      height: 39vw;
+    }
+    @media screen and (min-width: 576px) {
+      height: 239px;
+    }
+    @media screen and (min-width: 768px) {
+      height: 321px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 381px;
+    }
   }
 
   .decentralizedGrid {

@@ -70,12 +70,13 @@
         </i-container>
     </div>
 </template>
-<script>
-import ZCta from "@/components/ZCta";
-import Emphasis from "@/components/Emphasis";
+<script lang="ts">
+import Vue from "vue";
+import ZCta from "@/components/ZCta.vue";
+import Emphasis from "@/components/Emphasis.vue";
 
-export default {
+export default Vue.extend({
   name: "About",
   components: { Emphasis, ZCta },
-};
+});
 </script>

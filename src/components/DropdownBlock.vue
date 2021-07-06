@@ -17,8 +17,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   data() {
     return {
       toggled: false,
@@ -29,13 +31,13 @@ export default {
       if (!this.toggled) {
         return false;
       }
-      const header = this.$refs.header;
-      const body = this.$refs.body;
+      const header = this.$refs.header as HTMLElement;
+      const body = this.$refs.body as HTMLElement;
       if (header && body) {
         return header.getBoundingClientRect().height + body.getBoundingClientRect().height;
       }
       return false;
     },
   },
-};
+});
 </script>

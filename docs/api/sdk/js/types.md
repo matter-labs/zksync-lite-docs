@@ -31,6 +31,20 @@ export type Address = string;
 
 // Committed nonce is going to be resolved to last nonce known to the zkSync network
 export type Nonce = number | "committed";
+
+// Denotes how authorization of operation is performed:
+// 'Onchain' if it's done by sending an Ethereum transaction,
+// 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
+// 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
+// 'ECDSALegacyMessage' if it's done by providing an Ethereum signature in zkSync transaction. Unlike the 'ECDSA', the user signs a human-readable message. Thus, the fee is ~30% higher than ECDSA.
+export type ChangePubkeyTypes = "Onchain" | "ECDSA" | "CREATE2" | "ECDSALegacyMessage";
+
+// CREATE2 Data
+export interface Create2Data {
+  creatorAddress: string;
+  saltArg: string;
+  codeHash: string;
+}
 ```
 
 ## Fees
@@ -38,7 +52,7 @@ export type Nonce = number | "committed";
 ```typescript
 export interface Fee {
   // Operation type (amount of chunks in operation differs and impacts the total fee).
-  feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee;
+  feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee | LegacyChangePubKeyFee;
   // Amount of gas used by transaction
   gasTxAmount: utils.BigNumber;
   // Gas price (in wei)
@@ -57,9 +71,20 @@ export interface BatchFee {
   // Total fee amount (in wei)
   totalFee: BigNumber;
 }
+
+export type TotalFee = Map<TokenLike, BigNumber>;
 ```
 
 `ChangePubKeyFee` interface is defined as follows:
+
+```typescript
+export interface ChangePubKeyFee {
+  // Denotes how authorization of operation is performed
+  ChangePubKey: ChangePubkeyTypes;
+}
+```
+
+`LegacyChangePubKeyFee` interface is defined as follows:
 
 ```typescript
 export interface ChangePubKeyFee {
