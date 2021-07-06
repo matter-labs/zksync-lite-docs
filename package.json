@@ -21,7 +21,7 @@
   "scripts": {
     "nuxt-local": "sh ./cli-process-env.sh 'dev' 1 1",
     "ci:prepare:mainnet": "sh cli-process-env.sh 'mainnet' prod 1",
-    "nuxt-ci": "sh ./cli-process-env.sh 'prod' 1 1",
+    "nuxt-ci": "sh ./cli-process-env.sh 'prod' 1",
     "nuxt-ci:build": "yarn run nuxt-ci && yarn run generate --fail-on-error",
     "start:firebase": "firebase serve --only hosting",
     "dev": "yarn run nuxt-local && nuxt",
