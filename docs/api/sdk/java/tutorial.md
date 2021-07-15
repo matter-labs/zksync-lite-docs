@@ -43,7 +43,7 @@ dependencies {
     <dependency>
         <groupId>io.zksync</groupId>
         <artifactId>zksync</artifactId>
-        <version>0.0.3-b1-SNAPSHOT</version>
+        <version>0.0.4-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
@@ -69,7 +69,7 @@ For Android adding dependencies little bit difficult because it requires in incl
 implementation("org.web3j:core:4.6.0-android")
 
 implementation 'org.scijava:native-lib-loader:2.3.4'
-implementation ('io.zksync:zksync:0.0.3-b1-SNAPSHOT') {
+implementation ('io.zksync:zksync:0.0.4-SNAPSHOT') {
     exclude group: 'io.zksync.sdk', module: 'zkscrypto'
     exclude group: 'net.java.dev.jna', module: 'jna'
 }
