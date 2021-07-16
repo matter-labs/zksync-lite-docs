@@ -246,15 +246,15 @@ if (!wallet.isSigningKeySet()) {
                 .build();
     TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 // Send transaction for setting your public key hash
-    wallet.setSigningKey(
-                TransactionFee.builder()
-                        .fee(fee.getTotalFeeInteger())
-                        .feeToken(Token.createETH())
-                        .build(),
-                state.getCommitted().getNonce(),
-                false,
-                new TimeRange()
-        );
+String hash = wallet.setSigningKey(
+        TransactionFee.builder()
+                .fee(fee.getTotalFeeInteger())
+                .feeToken(Token.createETH())
+                .build(),
+        state.getCommitted().getNonce(),
+        false,
+        new TimeRange()
+);
 }
 ```
 
@@ -279,7 +279,7 @@ TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .tokenIdentifier(Token.createETH())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
-wallet.syncTransfer(
+String hash = wallet.syncTransfer(
     receiver,
     Convert.toWei("0.1", Convert.Unit.ETHER).toBigInteger(),
     TransactionFee.builder()
@@ -304,7 +304,7 @@ TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .tokenIdentifier(Token.createETH())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
-wallet.syncWithdraw(
+String hash = wallet.syncWithdraw(
     ethSigner.getAddress(),
     Convert.toWei("0.5", Convert.Unit.ETHER).toBigInteger(),
     TransactionFee.builder()
@@ -359,7 +359,7 @@ The differences between an atomic swap and a limit order are:
 
 - limit orders infer the amount that can be exchanged directly from the balance
 - limit orders can be partially filled
-- limit orders do not increment account's nonce when partially filled
+- limit orders do not increment account's nonce
 
 ```java
 ZkSyncWallet wallet = ...;
@@ -395,7 +395,7 @@ TransactionFeeDetails details = wallet.getProvider().getTransactionFee(
 );
 TransactionFee fee = new TransactionFee(Token.createETH().getAddress(), details.getTotalFeeInteger());
 
-wallet.syncSwap(orderA, orderB, orderA.getAmount(), orderB.getAmount(), fee, state.getCommitted().getNonce());
+String hash = wallet.syncSwap(orderA, orderB, orderA.getAmount(), orderB.getAmount(), fee, state.getCommitted().getNonce());
 ```
 
 ## NFTs
@@ -420,7 +420,7 @@ TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 
 String contentHash = "0x<32-bytes hex>";
 
-wallet.syncMintNFT(
+String hash = wallet.syncMintNFT(
     state.getAddress(),
     contentHash,
     fee,
@@ -449,7 +449,7 @@ TransactionFeeDetails details = wallet.getProvider().getTransactionFee(
         );
 NFT token = state.getCommitted().getNfts().values().stream().findAny().get();
 TransactionFee fee = new TransactionFee(Token.createETH().getAddress(), details.getTotalFeeInteger());
-wallet.syncTransferNFT(
+List<String> hashes = wallet.syncTransferNFT(
     state.getAddress(),
     token,
     fee,
@@ -476,7 +476,7 @@ TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 NFT token = state.getCommitted().getNfts().values().stream().findAny().get(); // Find any owned NFT
-wallet.syncWithdrawNFT(
+String hash = wallet.syncWithdrawNFT(
     state.getAddress(),
     token,
     fee,
