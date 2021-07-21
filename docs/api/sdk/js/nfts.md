@@ -1,6 +1,6 @@
 # NFTs
 
-NFTs are currently in testnet on the Ropsten and Rinkeby zkSync networks. This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
+This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
 
 - [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
 - [Mint NFT](#mint-nft)
@@ -16,13 +16,15 @@ NFTs are currently in testnet on the Ropsten and Rinkeby zkSync networks. This A
 
 ## Connect to the Rinkeby testnet
 
+The NFTs are also supported on `mainnet` and `ropsten` networks. For the purposes of this tutorial, we will use the `rinkeby` testnet.
+
 ```typescript
 const syncProvider = await zksync.getDefaultProvider("rinkeby");
 ```
 
 ## Mint NFT
 
-You can mint an NFT by calling the `mintNFT` function from the `Wallet` class, now available in the zksync@beta version.
+You can mint an NFT by calling the `mintNFT` function from the `Wallet` class..
 
 > Signature
 

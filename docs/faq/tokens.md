@@ -4,11 +4,9 @@
 
 ## Supported tokens
 
-**zkSync** can be used to transfer ether (ETH) and ERC20 tokens. Initially, new tokens need to be manually whitelisted
-by the validator. In the future, adding new tokens will be fully permissionless.
+**zkSync** can be used to transfer ether (ETH) and ERC20 tokens. 
 
-The full list of currently supported tokens is available under this link (as JSON):
-<https://api.zksync.io/api/v0.1/tokens>.
+The full list of currently supported tokens is available under this [link](https://zkscan.io/explorer/tokens). Any ERC20 token can be added to zkSync in a permissionless manner by clicking the "Submit new token button" button on the "Tokens" page of our explorer. 
 
 DISCLAIMER: We will list any token fulfilling the criteria below on a first-come, first-serve basis. This will become
 permissionless on our next system upgrade. Listing of a token on zkSync does not represent an endorsement for this token
@@ -18,13 +16,7 @@ and judgement.
 
 ## Listing a token
 
-To submit a token for listing, please fill out
-[this form](https://docs.google.com/forms/d/e/1FAIpQLScZmS5LJLbHwrc1JFaipOgwu0A31i8BJyxRUMA2dWg-7c5G6Q/viewform?usp=sf_link).
-
-We can immediately list tokens that satisfy the following conditions:
-
-- price tracked at <https://coinmarketcap.com>
-- daily trading volume exceeds \$1M over the period of the past 3 months
+To submit a token for listing, go the [tokens page](https://zkscan.io/explorer/tokens/) of the zkScan and click the "Submit new token" button and follow the instructions in the form.
 
 ## Fee costs
 
