@@ -4,9 +4,7 @@
 
 ## Supported tokens
 
-**zkSync** can be used to transfer ether (ETH) and ERC20 tokens. 
-
-The full list of currently supported tokens is available under this [link](https://zkscan.io/explorer/tokens). Any ERC20 token can be added to zkSync in a permissionless manner by clicking the "Submit new token button" button on the "Tokens" page of our explorer. 
+**zkSync** can be used to transfer ether (ETH) and ERC20 tokens. The full list of currently supported tokens is available under this [link](https://zkscan.io/explorer/tokens).
 
 DISCLAIMER: We will list any token fulfilling the criteria below on a first-come, first-serve basis. This will become
 permissionless on our next system upgrade. Listing of a token on zkSync does not represent an endorsement for this token
@@ -16,7 +14,7 @@ and judgement.
 
 ## Listing a token
 
-To submit a token for listing, go the [tokens page](https://zkscan.io/explorer/tokens/) of the zkScan and click the "Submit new token" button and follow the instructions in the form.
+To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the "Submit new token" button and follow the instructions in the form.
 
 ## Fee costs
 
