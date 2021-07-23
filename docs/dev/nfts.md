@@ -2,8 +2,6 @@
 
 Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users will also be able to withdraw NFTs to Layer 1.
 
-Functionality is currently in testnet on Rinkeby and Ropsten.
-
 This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project. 
 
 - [Overview](#overview)
@@ -32,15 +30,15 @@ NOTICE: In zkSync 1.x, multiple NFTs can be minted with the same content hash.
 
 Please read our [Getting Started](../api/sdk/js/tutorial.md#getting-started) guide before beginning this tutorial.
 
-### Install the zkSync@beta library
+### Install the zkSync library
 
 ```bash
-yarn add zksync@beta
+yarn add zksync
 ```
 
-### Connect to the Rinkeby testnet
+### Connect to zkSync network
 
-For this tutorial, let's connect to the Rinkeby testnet. You can also use Ropsten-beta.
+For this tutorial, let's connect to the Rinkeby testnet. The steps for mainnet and Ropsten would be identical.
 
 ```typescript
 const syncProvider = await zksync.getDefaultProvider("rinkeby");
@@ -100,7 +98,7 @@ const { totalFee: fee } = await syncProvider.getTransactionFee("MintNFT", syncWa
 
 ### Mint the NFT
 
-You can mint an NFT by calling the `mintNFT` function from the `Wallet` class, now available in the zksync@beta version.
+You can mint an NFT by calling the `mintNFT` function from the `Wallet` class.
 
 > Signature
 

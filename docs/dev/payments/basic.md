@@ -42,6 +42,8 @@ Currently, there are the following types of transactions:
 - `ForcedExit`: Withdraws funds from the "target" L2 account that doesn't have a signing key set, to the same "target"
   address on the Ethereum network. This operation can be used to withdraw funds in the situation where the signing key
   for account in zkSync network cannot be set (e.g. if address corresponds to a smart contract).
+- `MintNFT`: Mints an NFT based on provided content hash to the provided "recipient".
+- `WithdrawNFT`: Withdraw an NFT from the zkSync network to the Ethereum network.
 
 ## Blocks
 
