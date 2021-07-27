@@ -182,6 +182,12 @@ module.exports = {
           sidebarDepth: 1    // optional, defaults to 1
         },
         {
+          title: 'API v0.2',  // required
+          path: '/api/v0.2', // optional, which should be a absolute path.
+          collapsable: false,  // optional, defaults to true
+          sidebarDepth: 1    // optional, defaults to 1
+        },
+        {
           title: 'JavaScript SDK',  // required
           path: '/api/sdk/js', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
