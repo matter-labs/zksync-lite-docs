@@ -39,7 +39,7 @@ Please email us at [security@zksync](mailto:security@zksync). We appreciate deta
 
 ## Bounty Payout
 
-![image.png](http://localhost:8080/bounty-table.png)
+![image.png](https://zksync.io/bounty-table.png)
 
 ## Contact
 
