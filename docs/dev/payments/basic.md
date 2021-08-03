@@ -85,7 +85,7 @@ requirement because of the following reasons:
 Thus, in order to make an account capable of initiating L2 transactions, the user must set a signing key for it via
 `ChangePubKey` transaction.
 
-This transaction has to have two signatures:
+This transaction needs two signatures:
 
 - zkSync signature of the transaction data, so that it won't be possible to mutate transaction contents.
 - Ethereum signature proving account ownership.
