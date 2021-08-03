@@ -131,7 +131,7 @@ const hash = ethers.utils.keccak256(bytes).slice(2);
 const message = Uint8Array.from(Buffer.from(hash, "hex"));
 ```
 
-Adding a prefix as described under [Sending transactions](/dev/payments/sending_transactions.html) is still necessary.
+Adding a prefix as described under [Sending transactions](/dev/payments/sending_transactions.md) is still necessary.
 
 The signature received can be sent together with the batch via a [corresponding JSON RPC method][send_batch]. None of the batch transactions requires an Ethereum signature.
 
