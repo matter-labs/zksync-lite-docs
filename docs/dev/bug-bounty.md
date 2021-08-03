@@ -1,50 +1,50 @@
 # Security Policy / Bug Bounty Program
 
-## **Scope**
+## Scope
 
 Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, irreversible loss of funds, or enforced exodus mode.
 
-## **Assumptions**
+## Assumptions
 
 In order to be eligible for the bug bounty, a bug should adhere to the security assumptions of zkSync. You can read more about them [here](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md#assumptions).
 
-## **Disclosure Policy**
+## Disclosure Policy
 
 Let us know as soon as possible upon discovery of a potential security issue.
 
 Provide us a reasonable amount of time to resolve the issue **before any disclosure** **to the public or a third party.**
 
-### **The wrong way to disclose**
+### The wrong way to disclose
 
 The following actions will make you ineligible for the bug bounty program:
 
 - Filing a public issue about the vulnerability
 - Testing the vulnerability on mainnet or testnet
 
-### **The right way to disclose**
+### The right way to disclose
 
 Please email us at [security@zksync](mailto:security@zksync). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
 
-## **Exclusions**
+## Exclusions
 
 - Already known vulnerabilities.
 - Vulnerabilities in code not leading to funds lost or frozen.
 
-## **Eligibility**
+## Eligibility
 
 - You must be the first reporter of the vulnerability
 - You must be able to verify a signature from the same address
 - Provide enough information about the vulnerability
 
-## **Bounty Payout**
+## Bounty Payout
 
 ![bounty-table.png](https://zksync.io/bounty-table.png)
 
-## **Contact**
+## Contact
 
 Please submit all your requests here: [security@zksync](mailto:security@zksync).
 
-### **PGP Key**
+### PGP Key
 
 The following PGP key may be used to communicate sensitive information to developers:
 
