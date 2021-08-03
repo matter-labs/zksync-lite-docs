@@ -1,6 +1,6 @@
 # zkSync payments
 
-This section provides a guide on how zkSync protocol works, and how to interact with it.
+This section provides a guide on how the zkSync protocol works and how to interact with it.
 
 ## Table of Contents
 

@@ -2,17 +2,13 @@
 
 <!-- markdownlint-disable MD013 -->
 
-This section explains principles of sending transactions into the zkSync network.
-
-Provided examples are written in JavaScript, but aren't tied to any certain SDK.
+This section explains the principles of sending transactions into the zkSync network. The examples provided are written in JavaScript but are not associated with any specific SDK.
 
 [[toc]]
 
 ## Sending priority operations
 
-Priority operations are invoked via calling the corresponding smart contract methods.
-
-Signatures of corresponding deposit methods:
+Priority operations are invoked by calling the corresponding smart contract methods. The following are signatures of the associated deposit methods:
 
 ```js
 /// @notice Deposit ETH to Layer 2 - transfer ether from user into contract, validate it, register deposit
@@ -26,16 +22,16 @@ function depositETH(address _franklinAddr) external payable nonReentrant;
 function depositERC20(IERC20 _token, uint104 _amount, address _franklinAddr) external nonReentrant;
 ```
 
-Note that prior to deposit of ERC20 funds, corresponding amount of funds must be approved for contract, e.g. (in JS):
+Note that prior to depositing ERC20 funds, the fund amounts must be approved for the contract, as in the following example in JavaScript:
 
 ```js
 erc20contract.approve(zkSyncContractAddress, deposit_amount);
 ```
 
-To perform a full exit, user must sequentially register an exit request (via `fullExit` contract call), and then
-complete this request (via `completeWithdrawals` call).
+To perform a full exit, the user must sequentially register an exit request (via the `fullExit` contract call), and then
+complete this request (via the `completeWithdrawals` call).
 
-Signatures of corresponding methods:
+The following are signatures of other associated methods:
 
 ```js
 /// @notice Register full exit request - pack pubdata, add priority request
@@ -50,19 +46,17 @@ function completeWithdrawals(uint32 _n) external nonReentrant;
 
 ## Sending transactions
 
-In order to send a transaction, the user has to do the following steps:
+To send a transaction, the user should:
 
 1. Prepare the transaction data.
 2. Encode the transaction data into a byte sequence.
 3. Create a zkSync signature for these bytes with the zkSync private key.
 4. Either generate an Ethereum signature for transaction description (see details below) or provide an EIP-1271
    signature.
-5. Send the transaction via [corresponding JSON RPC method][send_tx].
+5. Send the transaction via a [corresponding JSON RPC method][send_tx].
 
-Details on transaction data and encoding it into byte sequence could be found in the [formal protocol
-description][protocol].
-
-To see the programming language support for signing primitives, see the [cryptography section](/api/sdk/crypto).
+Details on transaction data and encoding it into the byte sequence can be found in the [formal protocol
+description][protocol]. See [cryptography](/api/sdk/crypto) for programming language support for signing primitives.
 
 Messages for Ethereum signatures depend on the transaction type:
 
@@ -96,47 +90,34 @@ const changePubKeyEthMessage =
 ```
 
 Note that since some Ethereum signers add a prefix `\x19Ethereum Signed Message:\n${messageBytes.length}` to the signed
-messages, it may be required to add this prefix manually if used signer doesn't do it automatically.
+messages, it may be necessary to add this prefix manually if the signer doesn't do it automatically.
 
 ## Sending transaction batches
 
-Transactions batch is a set of transactions that should succeed all together. If one of the batch transactions fails,
-all the transactions in this batch will fail as well.
+A transactions batch is a set of transactions that are verified together. If one of the batch transactions fails, all the transactions in this batch will fail as well.
 
 ::: warning
 
-### Note on security
+### Security
 
-In the current form, transaction batches is a server-side abstraction. Successful execution is checked pre-circuit, and
-information about batch is not passed into the circuit. Thus, if this feature is being used to pay fees in a different
-token, it is recommended to set the fee payment transaction last (so that server even in theory will be unable to
-execute the last transaction, but ignore other ones). In the future, the batches will be enforced in the circuit in
-order to increase the overall security of this feature.
+Currently, transaction batches is a server-side abstraction. Successful execution is checked pre-circuit and information about the batch is not passed into the circuit. If this feature is used to pay fees in a different token, you should set the fee payment transaction last (so that the server is unable to execute the last transaction, but also ignores other transactions). In future versions, the batches will be enforced in the circuit to increase the overall security of this feature.
 
 :::
 
-Currently, a batch is guaranteed to be able to successfully process a max of 50 transactions.
+A batch can successfully process a guaranteed maximum of 50 transactions.
 
-For transaction batch, fee doesn't have to be set in each individual transaction, the only requirement is that sum of
-fees set in transactions must be equal or greater than the sum of fees for transactions if they would have been sent
-individually.
-
-That is, using transaction batches it is possible to pay the fee for transaction using the token other than used for
-transfer. In order to do so, one can create a batch of two transactions:
+The fee does not have to be set in each individual transaction for the transaction batch. The only requirement is that the sum of fees set in transactions must be equal or greater to the sum of fees for all transactions had they been sent individually. This means that it is possible to pay the fee for the transaction using a token other than the one used for the transfer using transaction batches. To do this, you create a batch of two transactions:
 
 - Transfer to the recipient in token `FOO` with fee set to 0.
-- Transfer to the own account in token `BAR` (the token you want to pay the fee with) with amount set to 0, and fee set
-  enough to cover two transfers.
+- Transfer to your own account in token `BAR` (the token you want to pay the fee with) with amount set to 0 and fee set to an amount sufficient to cover two transfers.
 
-Server will check that sum of fees (0 in the first transaction and 2x expected fee in the second one) is enough to cover
-processing of two transfers and will execute the batch.
+The zkSync server will check that the sum of fees (0 in the first transaction and twice the expected fee in the second transaction) is enough to cover the processing of two transfers and will then execute the batch.
 
 ### Ethereum signature for batch
 
-For transaction batches there is no need to provide an Ethereum signature for each transaction in it, instead, it is
-possible to provide exactly one signature per batch.
+You do not need to provide an Ethereum signature for each transaction in a transaction batch. You can provide exactly one signature per batch.
 
-Message for the batch to be signed should be formed as follows:
+The message for the batch to be signed should be defined as follows:
 
 ```js
 // Assuming that `transactions` variable holds an array of batch transactions, and
@@ -150,10 +131,9 @@ const hash = ethers.utils.keccak256(bytes).slice(2);
 const message = Uint8Array.from(Buffer.from(hash, "hex"));
 ```
 
-Requirement for adding a prefix described above still holds.
+Adding a prefix as described under [Sending transactions](/dev/payments/sending_transactions.html) is still necessary.
 
-This obtained signature may be sent together with batch via [corresponding JSON RPC method][send_batch], and none of the
-batch transactions is required to have an Ethereum signature.
+The signature received can be sent together with the batch via a [corresponding JSON RPC method][send_batch]. None of the batch transactions requires an Ethereum signature.
 
 [send_tx]: /api/v0.1.md#tx-submit
 [send_batch]: /api/v0.1.md#submit-txs-batch
