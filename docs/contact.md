@@ -66,3 +66,7 @@ Please reach out directly via **hello@matter-labs.io**.
 
 We are always hiring! Please check out our
 [open positions](https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464).
+
+## Security disclosures
+
+For the bug bounty program and vulnerability disclosures, consult our [security policy](https://github.com/matter-labs/zksync/blob/master/SECURITY.md).
