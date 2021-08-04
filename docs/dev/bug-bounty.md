@@ -23,7 +23,7 @@ The following actions will make you ineligible for the bug bounty program:
 
 ### The right way to disclose
 
-Please email us at [security@zksync](mailto:security@zksync). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
+Please email us at [security@zksync](mailto:security@zksync.io). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
 
 ## Exclusions
 
@@ -42,7 +42,7 @@ Please email us at [security@zksync](mailto:security@zksync). We appreciate deta
 
 ## Contact
 
-Please submit all your requests here: [security@zksync](mailto:security@zksync).
+Please submit all your requests here: [security@zksync](mailto:security@zksync.io).
 
 ### PGP Key
 
