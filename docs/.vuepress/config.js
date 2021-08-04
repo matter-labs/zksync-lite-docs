@@ -163,7 +163,8 @@ module.exports = {
         },
         '/dev/nfts',
         '/dev/swaps',
-        '/dev/events'
+        '/dev/events',
+        '/dev/status-pages'
       ],
       '/api': [
         {
