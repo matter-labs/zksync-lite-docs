@@ -24,6 +24,8 @@ module.exports = {
     logo: '/LogotypeLight.svg',
     lastUpdated: false,
     repo: 'matter-labs/zksync',
+    displayAllHeaders: true,
+    lastUpdated: 'Last Updated', 
     nav: [
       {
         text: 'FAQ',
@@ -149,7 +151,7 @@ module.exports = {
         {
           title: 'Payments',  // required
           path: '/dev/payments', // optional, which should be a absolute path.
-          collapsable: true,  // optional, defaults to true
+          collapsable: false,  // optional, defaults to true
           sidebarDepth: 1,    // optional, defaults to 1
           children: [
             '/dev/payments/basic',
