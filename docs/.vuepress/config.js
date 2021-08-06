@@ -43,8 +43,8 @@ module.exports = {
         link: '/contact.html'
       },
       {
-        text: 'Uptime',
-        link: 'https://uptime.com/s/zksync'
+        text: 'Status',
+        link: 'status'
       }
     ],
     //displayAllHeaders: true,
