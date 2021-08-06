@@ -161,6 +161,7 @@ module.exports = {
           path: '/dev/contracts/', // optional, which should be a absolute path.
           collapsable: false,  // optional, defaults to true
         },
+        '/dev/bug-bounty',
         '/dev/nfts',
         '/dev/swaps',
         '/dev/events',
