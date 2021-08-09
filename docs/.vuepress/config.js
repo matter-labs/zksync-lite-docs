@@ -43,8 +43,8 @@ module.exports = {
         link: '/contact.html'
       },
       {
-        text: 'Status',
-        link: 'status'
+        text: 'Uptime',
+        link: '/uptime'
       }
     ],
     //displayAllHeaders: true,
@@ -164,8 +164,7 @@ module.exports = {
         '/dev/bug-bounty',
         '/dev/nfts',
         '/dev/swaps',
-        '/dev/events',
-        '/dev/status-pages'
+        '/dev/events'
       ],
       '/api': [
         {
