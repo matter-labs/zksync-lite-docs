@@ -1,6 +1,6 @@
 # Uptime
 
-## Mainnnet
+## Mainnet
 
 [https://uptime.com/s/zksync](https://uptime.com/s/zksync)
 
