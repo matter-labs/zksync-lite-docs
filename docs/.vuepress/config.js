@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         text: 'Uptime',
-        link: 'https://uptime.com/s/zksync'
+        link: '/uptime'
       }
     ],
     //displayAllHeaders: true,
