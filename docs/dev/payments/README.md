@@ -2,7 +2,5 @@
 
 This section provides a guide on how zkSync protocol works, and how to interact with it.
 
-## Table of Contents
-
 - [Basic Concepts](./basic)
 - [Sending Transactions](./sending_transactions)
