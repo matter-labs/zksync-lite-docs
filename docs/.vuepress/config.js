@@ -28,7 +28,7 @@ module.exports = {
     nav: [
       {
         text: 'FAQ',
-        link: '/FAQ/'
+        link: '/faq/'
         //link: '/faq/intro.html'
       },
       {
@@ -57,67 +57,67 @@ module.exports = {
       '/FAQ/': [
         {
           title: 'Welcome to zkSync',  // required
-          path: '/FAQ/', // optional, which should be a absolute path.
+          path: '/faq/', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 0,     // optional, defaults to 1
         },
         {
           title: 'Overview',  // required
-          path: '/FAQ/intro.html', // optional, which should be a absolute path.
+          path: '/faq/intro.html', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Technology',  // required
-          path: '/FAQ/tech', // optional, which should be a absolute path.
+          path: '/faq/tech', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Security',  // required
-          path: '/FAQ/security', // optional, which should be a absolute path.
+          path: '/faq/security', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Wallets',  // required
-          path: '/FAQ/wallets', // optional, which should be a absolute path.
+          path: '/faq/wallets', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Tokens & Fees',  // required
-          path: '/FAQ/tokens', // optional, which should be a absolute path.
+          path: '/faq/tokens', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Decentralization',  // required
-          path: '/FAQ/decentralization', // optional, which should be a absolute path.
+          path: '/faq/decentralization', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Tokenomics',  // required
-          path: '/FAQ/tokenomics', // optional, which should be a absolute path.
+          path: '/faq/tokenomics', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Smart contracts',  // required
-          path: '/FAQ/sc', // optional, which should be a absolute path.
+          path: '/faq/sc', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Privacy',  // required
-          path: '/FAQ/privacy', // optional, which should be a absolute path.
+          path: '/faq/privacy', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
         {
           title: 'Roadmap',  // required
-          path: '/FAQ/roadmap', // optional, which should be a absolute path.
+          path: '/faq/roadmap', // optional, which should be a absolute path.
           collapsable: true,  // optional, defaults to true
           sidebarDepth: 1,     // optional, defaults to 1
         },
