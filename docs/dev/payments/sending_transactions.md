@@ -158,3 +158,15 @@ batch transactions is required to have an Ethereum signature.
 [send_tx]: /api/v0.1.md#tx-submit
 [send_batch]: /api/v0.1.md#submit-txs-batch
 [protocol]: https://github.com/matter-labs/zksync/blob/master/docs/protocol.md
+
+### 2-Factor Authentification
+
+Why Two-factor Authentication?
+
+By default, your zkSync layer 2 private key is derived from the signature of your Ethereum private key. While convenient, this approach may be vulnerable to XSS attacks if done inside browser.
+
+To ensure additional security for users, the zkSync server requires both your layer 1 and layer 2 signatures when submitting a transaction.
+
+In some wallet clients that secure your zkSync layer 2 private key, you may choose to unbundle the two so that you can still access zkSync funds even if you lose your Ethereum private key.
+
+2FA is on by default, but may be turned off by [submitting](/api/sdk/js/accounts.md#toggle-2fa) such a request to our API.
