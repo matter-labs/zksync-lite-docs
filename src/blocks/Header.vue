@@ -61,7 +61,7 @@
                   </i-dropdown-item>
                 </i-dropdown-menu>
               </i-dropdown>
-              <a href="https://matter-labs.io/#jobs" target="_blank" class="linkItem">We're hiring</a>
+              <a href="https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464" target="_blank" class="linkItem">We're hiring</a>
             </div>
           </i-column>
           <i-column :xs="12" :md="4" class="_padding-right-0 _justify-content-end">
