@@ -161,7 +161,7 @@ batch transactions is required to have an Ethereum signature.
 
 ### 2-Factor Authentification
 
-Why Two-factor Authentication?
+Why 2-factor Authentication?
 
 To ensure that the security of the users' zkSync accounts is equal to the security of their Ethereum wallets, the zkSync server requires both your layer 1 and layer 2 signatures when submitting a transaction.
 
