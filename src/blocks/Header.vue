@@ -126,10 +126,6 @@ export default Vue.extend({
           name: "zkMint",
           link: "https://mint.zksync.dev"
         },
-        {
-          name: "zkNft",
-          link: "https://zknft.xyz"
-        }
       ] as Array<DropdownOption>,
     };
   },
