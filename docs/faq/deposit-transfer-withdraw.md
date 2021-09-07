@@ -68,9 +68,10 @@ In this tutorial, we’ll review how to transfer funds to another zkSync account
 <!-- imaget3 -->
 
 4. Select the token to transfer and enter the amount. 
-- **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
+- If this is your first transaction on zkSync you will see the Account Activation Fee.
+   - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
 - Before transferring, you can change the fee token. 
-*Transfers in zkSync support "gasless meta-transactions", allowing users to pay transaction fees in the token being transferred.*
+  - *Transfers in zkSync support "gasless meta-transactions", allowing users to pay transaction fees in the token being transferred.*
 
 <!-- imaget4 -->
 
@@ -109,12 +110,14 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 <!-- imagew1 -->
 
 3. Select the token and enter the amount to withdraw.
+- If this is your first transaction on zkSync you will see the Account Activation Fee.
+   - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
 - Before transferring, you can change the fee token. 
-*Transfers in zkSync support "gasless meta-transactions", allowing users to pay transaction fees in the token being transferred.*
+  - *Transfers in zkSync support "gasless meta-transactions", allowing users to pay transaction fees in the token being transferred.*
 
 <!-- imagew2 -->
 
-4. Confirm the withdrawal amount, address, fee, and sign the message(It is good practice to read the messages in which you are signing)
+4. Confirm the withdrawal amount, address, fee, and sign the message(It is good practice to read the messages in which you are signing).
 
 <!-- imagew3 -->
 
