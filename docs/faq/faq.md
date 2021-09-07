@@ -47,12 +47,13 @@ There will be a list of all transactions to your account from smart contracts. I
 ## I used "Transfer" instead of "Withdraw" to get my funds onto mainnet
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw", you should try:
+
 	1. Log in to zkSync with the wallet that received the funds. 
 	2. If that's not possible, then use the alternative withdrawals tool on the [zkSync.io](https://zksync.io/) webpage under "zkTools". 
 		 *Please note, that for the tool to be able to withdraw funds from your account, all of the following must be true:*
 
-				-The account is at least 24 hours old.
-				-The account has never been unlocked (i.e. nonce is zero)
+			- The account is at least 24 hours old.
+			- The account has never been unlocked (i.e. nonce is zero)
 
 <!-- add image -->
 
