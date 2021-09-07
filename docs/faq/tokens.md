@@ -13,7 +13,7 @@ and judgement.
 
 ## Listing a token
 
-To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the "Submit new token" button and follow the instructions in the form.
+To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the "Submit new token" button and follow the instructions.
 
 ## Fee costs
 
