@@ -29,9 +29,11 @@ If your withdrawal is marked as "Complete" in zkScan, but the funds have not arr
 1. Make sure that enough time has passed. A withdrawal takes 30 minutes to 7 hours, depending on the usage of the zkSync network.
 
 2. Check for your transaction in "Internal Txs" on Etherscan.
-Open Etherscan and go to your address page
-Go to "Internal Txs". 
-There will be a list of all transactions to your account from smart contracts. In there you should see a transaction coming from the zkSync smart contract. You should see your transaction from zkSync. You may have to add that token to your wallet for it to display.
+
+  1. Open Etherscan and go to your address page
+  2. Go to "Internal Txs". 
+  3. There will be a list of all transactions to your account from smart contracts. In there you should see a transaction coming from the zkSync smart contract. You should see your transaction from zkSync. You may have to add that token to your wallet for it to display.
+  
 <!-- add image -->
 
 3. If the account balance is not the same as on Etherscan, contact Support for your wallet. 
@@ -48,12 +50,13 @@ There will be a list of all transactions to your account from smart contracts. I
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw", you should try:
 
-	1. Log in to zkSync with the wallet that received the funds. 
-	2. If that's not possible, then use the alternative withdrawals tool on the [zkSync.io](https://zksync.io/) webpage under "zkTools". 
-		 *Please note, that for the tool to be able to withdraw funds from your account, all of the following must be true:*
+1. Log in to zkSync with the wallet that received the funds. 
+2. If that's not possible, then use the alternative withdrawals tool on the [zkSync.io](https://zksync.io/) webpage under "zkTools". 
 
-			- The account is at least 24 hours old.
-			- The account has never been unlocked (i.e. nonce is zero)
+*Please note, that for the tool to be able to withdraw funds from your account, all of the following must be true:*
+
+- The account is at least 24 hours old.
+- The account has never been unlocked (i.e. nonce is zero)
 
 <!-- add image -->
 
