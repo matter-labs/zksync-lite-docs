@@ -249,4 +249,15 @@ export interface PriorityOperationReceipt {
   executed: boolean;
   block?: BlockInfo;
 }
+
+export interface Toggle2FARequest {
+  enable: boolean;
+  accountId: number;
+  timestamp: number;
+  signature: TxEthSignature;
+}
+
+export interface Toggle2FAResponse {
+  success: boolean;
+}
 ```

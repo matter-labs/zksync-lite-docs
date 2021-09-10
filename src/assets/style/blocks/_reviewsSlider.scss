@@ -2,11 +2,11 @@
 
 .reviewsContainer {
   position: relative;
-  width: 100%;
-  padding: 51px 0 !important;
-  height: auto;
-  background-color: transparentize($color: $trueBlack, $amount: 0.7);
   overflow: hidden;
+  width: 100%;
+  height: auto;
+  padding: 51px 0 !important;
+  background-color: transparentize($color: $trueBlack, $amount: 0.7);
 
   #balancer-review {
     img {
@@ -17,11 +17,11 @@
   @media screen and (min-width: 1225px) {
     .arrow {
       &.left {
-        left: calc(50vw - 450px - 30px - 100px);
+        left: 2vw;
       }
 
       &.right {
-        right: calc(50vw - 450px - 30px - 100px);
+        right: 2vw;
       }
     }
   }
@@ -36,12 +36,6 @@
       }
     }
   }
-
-  /* @media (min-width: 1400px) {
-    .arrow {
-      display: none;
-    }
-  } */
 
   .itemsContainer {
     width: max-content;

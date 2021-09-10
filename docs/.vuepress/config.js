@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         text: 'Uptime',
-        link: 'https://uptime.com/s/zksync'
+        link: '/uptime'
       }
     ],
     //displayAllHeaders: true,
@@ -161,6 +161,7 @@ module.exports = {
           path: '/dev/contracts/', // optional, which should be a absolute path.
           collapsable: false,  // optional, defaults to true
         },
+        '/dev/bug-bounty',
         '/dev/nfts',
         '/dev/swaps',
         '/dev/events'
@@ -178,6 +179,12 @@ module.exports = {
         {
           title: 'API v0.1',  // required
           path: '/api/v0.1', // optional, which should be a absolute path.
+          collapsable: false,  // optional, defaults to true
+          sidebarDepth: 1    // optional, defaults to 1
+        },
+        {
+          title: 'API v0.2',  // required
+          path: '/api/v0.2', // optional, which should be a absolute path.
           collapsable: false,  // optional, defaults to true
           sidebarDepth: 1    // optional, defaults to 1
         },

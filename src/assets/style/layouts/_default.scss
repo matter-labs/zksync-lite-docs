@@ -3,10 +3,13 @@
 .indexLayout {
   .container {
     width: 90%;
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
     @media screen and (min-width: 992px) {
       max-width: 900px;
+      &.-fluid {
+        max-width: 90vw;
+      }
     }
   }
 
