@@ -29,6 +29,7 @@ Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciat
 
 - Already known vulnerabilities.
 - Vulnerabilities in code not leading to funds lost or frozen.
+- Vulnerabilities not related to smart contracts or cryptography used by the protocol.
 
 ## Eligibility
 
