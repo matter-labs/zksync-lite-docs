@@ -46,10 +46,7 @@ novalidate
 
 ## Developer community
 
-All technical/developer discussions will only take place in gitter:
-
-- [gitter.im/matter-labs/zksync](https://gitter.im/matter-labs/zksync) (general integration questions)
-- [gitter.im/matter-labs/zinc](https://gitter.im/matter-labs/zinc) (smart contracts)
+All technical/developer discussions will only take place in the developer channels on [Discord](https://discord.gg/5b6s7VTC).
 
 ## User community and support
 
