@@ -41,11 +41,14 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 4. Select your token, enter the amount, and deposit.
 - *If you can’t find your token:*
   - Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. on Rinkeby, ERC20-21 = UNI)
-  - Add support for it by visiting the [Tokens page](https://zkscan.io/explorer/tokens/) and clicking “Add new token.”
+  - Add support for your token:  
+      1. Click "Can't find your token?"
+      2. Use the link to access the [Tokens page](https://zkscan.io/explorer/tokens/)
+      3. Click the "Add new token" button in the top right corner and follow the directions.
  
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/9ee958aec4a004ad442542aa43c171fd75186669/docs/images/token-list.png" height="600">
+<img src="https://github.com/matter-labs/zksync-docs/blob/f84485195e32472cf2bdae9fb45b66d9c69ce9bf/docs/images/token-list.png" height="600">
 </p>
 </br>
 
