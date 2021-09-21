@@ -24,4 +24,4 @@ We highlight some of our future plans — more details will be given at a later 
 - Integrations of zkSync with exchanges
 - [Smart contracts](/user-docs/sc.md)
 - Proof-of-stake consensus protocol on L2 as part of the [decentralization](/user-docs/decentralization.md) process
-- [zkSync governance token](/user-docs/tokenomics.md) launch
+- [zkSync token](/user-docs/tokenomics.md) launch
