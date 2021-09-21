@@ -20,7 +20,7 @@
         :href="'/faq/'"
         class="exploreFAQ _margin-top-xs-1 _margin-bottom-xs-2 _margin-y-lg-3"
       >
-        FAQ and docs
+        User Docs
       </z-cta>
     </i-row>
     <a
@@ -39,11 +39,10 @@
 </template>
 
 <script type="ts">
-import Vue from "vue";
-
 import Emphasis from "@/components/Emphasis.vue";
 import ZButton from "@/components/ZButton.vue";
 import ZCta from "@/components/ZCta.vue";
+import Vue from "vue";
 
 export default Vue.extend({
   name: "ZHero",
