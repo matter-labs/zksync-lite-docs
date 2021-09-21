@@ -30,7 +30,7 @@ protocols, this is not necessary, because users can ultimately rely on L1 to cir
 
 Currently, the computational service provider for the **zkSync** network is "Stichting ZK Sync", a non-profit Dutch
 foundation registered under RSIN 861038204 in Kingsfordweg 151, 1043GR Amsterdam. The service operates close to
-break-even costs. For the business model, see [here](/faq/tokenomics.md).
+break-even costs. For the business model, see [here](/user-docs/tokenomics.md).
 
 ## Decentralization roadmap
 
