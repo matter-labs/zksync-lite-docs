@@ -21,5 +21,5 @@ Our efforts and focus have been so far dedicated for the development of zkSync a
 ### How will it work?
 
 When zkSync becomes
-[fully decentralized](/faq/decentralization.md#how-decentralized-is-zksync), the token will be used for staking in order
+[fully decentralized](/user-docs/decentralization.md#how-decentralized-is-zksync), the token will be used for staking in order
 to become a validator in the zkSync network. More details to come.
