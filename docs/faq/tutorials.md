@@ -9,21 +9,21 @@ In this tutorial, we will be depositing into a zkSync wallet with MetaMask on th
 To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet” button at the top of Metamask, and then select “Rinkeby.” To get ETH on the Rinkeby testnet, visit the [faucet](https://faucet.rinkeby.io/).  
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged0.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged0.png">
 </p>
 </br>  
 
 1. Go to [https://rinkeby.zksync.io](https://rinkeby.zksync.io/) and connect your wallet.  
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged1.png" width="900">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged1.png" width="900">
 </p>
 </br>
 
 2. Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged2.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged2.png">
 </p>
 </br>
 
@@ -34,7 +34,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged3.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged3.png">
 </p>
 </br>
 
@@ -48,24 +48,24 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
  
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/f84485195e32472cf2bdae9fb45b66d9c69ce9bf/docs/images/token-list.png" height="600">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/token-list.png" height="600">
 </p>
 </br>
 
 5. Review the transaction information and confirm.
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged5.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged5.png">
 </p>
 </br>
 
 6. The time to mine the transaction will depend on the usage of Layer 1. If you have any difficulties, please check Etherscan to monitor the transaction. 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged6.png" width="500">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged6.png" width="500">
 </br>
 </br>
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged7.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged7.png">
 </p>
 </br>
 
@@ -74,7 +74,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 **Committed**             |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged10.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaged11.png" width="500">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged10.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged11.png" width="500">
 </br>
 
 ## Transfer in zkSync
@@ -95,10 +95,10 @@ Whether an Ethereum user has a zkSync account or not, you can transfer funds to 
 2. Sign the message for account activation. (The fee for activating your account is shown in step 4.)
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget1.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget0.png">
 </br>	
 </br>
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget2.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget2.png">
 </p>
 </br>
 
@@ -106,7 +106,7 @@ Whether an Ethereum user has a zkSync account or not, you can transfer funds to 
 *(Optional) If this is a frequently used address, you can save it to contacts.*
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget3.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget3.png">
 </p>
 </br>
 
@@ -117,28 +117,28 @@ Whether an Ethereum user has a zkSync account or not, you can transfer funds to 
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/2de6894fdff3d0beb0f7e3018d7cde3d41440429/docs/images/imaget4.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget4.png">
 </p>
 </br>
 
 > **Read the popup carefully to make sure you are trying to transfer and not withdraw your funds.**
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget5.png" width="500">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget5.png" width="500">
 </p>
 </br>
 
 5. Signing this message submits the transaction to the zkSync network. 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget6.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget6.png">
 </p>
 </br>
 
 6. The transfer should only take a couple of seconds. If you have any difficulties, please check zkScan to monitor the transaction. 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget7.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget7.png">
 </p>
 </br>
 
@@ -147,7 +147,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 **Committed**            |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget8.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget9.png" width="400">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget8.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget9.png" width="400">
 </br>
 
 ## Withdraw from zkSync
@@ -161,7 +161,7 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 1. Go to “- Withdraw.” 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imagew0.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew0.png">
 </p>
 </br>
 
@@ -169,7 +169,7 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 **If you are entering a different address for withdrawal, please check that it accepts smart contract transfers.**
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imagew1.png" width="900">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew1.png" width="900">
 </p>
 </br>
 
@@ -180,21 +180,21 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/a6b2e6adf595d656494db080107aac97f2e64cd5/docs/images/imagew2.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew2.png">
 </p>
 </br>
 
 4. Confirm the withdrawal amount, address, fee, and sign the message (it is good practice to read the messages you sign).
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imagew3.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew3.png">
 </p>
 </br>
 
 5. On zkSync, the withdrawal should only take a couple of seconds. If you have any difficulties, please check zkScan to monitor the transaction. 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imagew4.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew4.png">
 </p>
 </br>
 
@@ -204,5 +204,5 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 **Committed**             |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imagew5.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imagew6.png" width="400">
+<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew5.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew6.png" width="400">
 </br>
