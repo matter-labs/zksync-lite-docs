@@ -46,7 +46,7 @@ novalidate
 
 ## Developer community
 
-All technical/developer discussions will only take place in the developer channels on [Discord](https://discord.gg/5b6s7VTC).
+Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/5b6s7VTC)!
 
 ## User community and support
 
