@@ -21,9 +21,9 @@ module.exports = {
     ],
   ],
   themeConfig: {
-    logo: '/LogotypeLight.svg',
-    lastUpdated: 'Last Updated',
-    repo: 'matter-labs/zksync',
+    logo: "/LogotypeLight.svg",
+    lastUpdated: "Last Updated",
+    repo: "matter-labs/zksync",
     nav: [
       {
         text: "User Docs",
