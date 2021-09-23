@@ -4,6 +4,8 @@ This is a quick tutorial on how to use zkSync events API. For the detailed descr
 
 The feature is currently available only on the Ropsten testnet. The API is not yet fully stabilized and may change in the future.
 
+[[toc]]
+
 ## Setting up the `yarn` project
 
 We will set up the minimal working Javascript project using `yarn`:
