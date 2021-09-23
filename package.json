@@ -5,7 +5,7 @@
   "version": "2.2.0",
   "license": "MIT",
   "author": "Matter Labs",
-  "homepage": "https://zksync.io",
+  "homepage": "https://zksync.io/",
   "browserslist": {
     "production": [
       ">0.2%",
