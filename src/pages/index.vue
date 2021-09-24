@@ -142,8 +142,8 @@
         <div  class="grayText _margin-top-2 _margin-bottom-0">
           <p class="_margin-bottom-0">
             <Emphasis/>
-            is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta></p>
-          <p class="_margin-bottom-0 _zk-font-18">The supermajority of the network governance rights will be distributed to the community in a fair and transparent way.</p>
+            is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta>
+          </p>
         </div>
       </div>
       <div class="bottomBlock">

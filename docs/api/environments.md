@@ -31,10 +31,10 @@
 - Wallet: [https://ropsten.zksync.io](https://ropsten.zksync.io)
 - Explorer: [https://ropsten.zkscan.io](https://ropsten.zkscan.io)
 - zkSync
-  [0x17dE8874259c59cd9f7E6ec86b6813Bda661A57c](https://ropsten.etherscan.io/address/0x17dE8874259c59cd9f7E6ec86b6813Bda661A57c)
+  [0xc332679D243439048c8395DEfDe74D71cf5151e7](https://ropsten.etherscan.io/address/0xc332679D243439048c8395DEfDe74D71cf5151e7)
 - Verifier
-  [0x8d8Bf0B885b23E0A2e3aa9064a41B46CeBd97974](https://ropsten.etherscan.io/address/0x8d8Bf0B885b23E0A2e3aa9064a41B46CeBd97974)
+  [0x0F6e9B13a662Cf458bD0248559c09FDC462499Ec](https://ropsten.etherscan.io/address/0x0F6e9B13a662Cf458bD0248559c09FDC462499Ec)
 - Governance
-  [0x0C5C6cD4E2436B1b308A0C11942705418F41F730](https://ropsten.etherscan.io/address/0x0C5C6cD4E2436B1b308A0C11942705418F41F730)
+  [0xa7276Ef2Cb4Cbb069d94597251182d722E8e0940](https://ropsten.etherscan.io/address/0xa7276Ef2Cb4Cbb069d94597251182d722E8e0940)
 - Upgrade Gatekeeper
-  [0xfe17992f9D07D6ebb805a6154eBf34b8444a20A6](https://ropsten.etherscan.io/address/0xfe17992f9D07D6ebb805a6154eBf34b8444a20A6)
+  [0x3d3cDd04acBf3EcFb3c207F77b14C51Ea4E00c4b](https://ropsten.etherscan.io/address/0x3d3cDd04acBf3EcFb3c207F77b14C51Ea4E00c4b)

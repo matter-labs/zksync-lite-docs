@@ -65,7 +65,7 @@ yarn-error.log*
 .buildx-cache/
 .reports/
 /src/static/sw.js
-public*
+/public*
 !public/.gitignore
 .nuxt
 /firebase-debug.log

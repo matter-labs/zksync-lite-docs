@@ -2,6 +2,8 @@
 
 This document describes working with zkSync events in more detail in a language-agnostic way. For a quick introduction to the zkSync events with examples in Javascript please read [the quick introduction](../dev/events.md).
 
+[[toc]]
+
 ## Establishing the connection
 
 Currently, events are only present on Ropsten. The event server WebSocket URL is `wss://ropsten-events.zkscan.io`. You can find an example of client application [here](../dev/events.md).

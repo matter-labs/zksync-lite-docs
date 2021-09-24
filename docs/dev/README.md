@@ -3,7 +3,7 @@
 ## Overview
 
 zkSync is a scaling and privacy engine for Ethereum. Its current functionality scope includes low gas transfers of ETH
-and ERC20 tokens in the Ethereum network. This document is a high-level description of the zkSync development ecosystem.
+and ERC20 tokens in the Ethereum network, atomic swaps & limit orders as well as native L2 NFT support. This document is a high-level description of the zkSync development ecosystem.
 
 zkSync is built on ZK Rollup architecture. ZK Rollup is an L2 scaling solution in which all funds are held by a smart
 contract on the mainchain, while computation and storage are performed off-chain. For every Rollup block, a state
@@ -31,8 +31,9 @@ Secondly, zkSync is smart-contract friendly. Targeting 2021, it will be possible
 Rust-based type-safe programming language, or even reuse existing Solidity code. Contracts interoperability is covered
 in the [contracts section](/dev/contracts).
 
-Thirdly, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols — are being
-[actively developed](https://github.com/matter-labs/atomic-swaps) and will soon go live. Stay tuned!
+Thirdly, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols — are already [available](/dev/contracts) on mainnet! 
+
+Fourthly, zkSync has native support of NFTs. You can try it out in our [wallet](https://wallet.zksync.io/).
 
 Finally, zkSync support is implemented for all the main platforms. Check out our [SDK section](/api/sdk) of docs, and
 start developing with zkSync!
