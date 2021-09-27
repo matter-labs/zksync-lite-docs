@@ -5,11 +5,19 @@
 3. Make transfers.
 4. Withdraw funds back to Ethereum mainnet (or testnet).
 
-## Adding dependencies
+## Adding zkSync Swift SDK as a dependency
+
+### CocoaPods
 
 ```ruby
 pod 'ZKSync'
 ```
+
+### Swift Package Manager
+
+1. In Xcode go to `File -> Swift Packages -> Add Package Dependency...`. 
+1. Insert `https://github.com/zksync-sdk/zksync-swift.git` in `Enter package repository URL` field and press Enter.
+1. In `Rules` set `master` as a default branch.
 
 ## Creating signers
 
