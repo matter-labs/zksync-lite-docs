@@ -1,5 +1,7 @@
 # Swaps and Limit Orders
 
+[[toc]]
+
 ## Atomic swaps
 
 Atomic swaps let you safely and cheaply swap funds with an existing zkSync account.
