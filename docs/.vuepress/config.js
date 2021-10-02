@@ -22,7 +22,7 @@ module.exports = {
   ],
   themeConfig: {
     logo: "/LogotypeLight.svg",
-    lastUpdated: false,
+    lastUpdated: "Last Updated",
     repo: "matter-labs/zksync",
     nav: [
       {
