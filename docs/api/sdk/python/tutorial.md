@@ -171,6 +171,20 @@ tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 
 If you want more control over the transaction, you can optionally provide `nonce` and `fee`
 
+## Swapping tokens
+
+To swap tokens, first call the `get_order` or `get_limit_order` method on a wallet, to create and sign an order.
+
+When 2 signed orders are collected, they can be submitted by anyone using the `swap` method.
+
+```python
+orderA = await walletA.get_order('USDT', 'ETH', Fraction(1500, 1), RatioType.token, Decimal('10.0'))
+orderB = await walletB.get_order('ETH', 'USDT', Fraction(1, 1200), RatioType.token, Decimal('0.007'))
+receipt = await submitter.swap((orderA, orderB), 'ETH')
+```
+
+For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API reference](../js/accounts.md#swaps-in-zksync).
+
 ## Withdrawing funds back to Ethereum
 
 ```python
@@ -180,6 +194,48 @@ await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
 
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
 generated and verified by the mainnet contract.
+
+## NFTs
+
+For detailed information, visit the [NFT tutorial](../../../dev/nfts.md).
+
+### Minting
+
+To mint an NFT, provide a 32-byte content hash, recipient address and token which will be used to pay fees.
+
+```python
+receipt = await wallet.mint_nft("0x0000000000000000000000000000000000000000000000000000000000000123",
+                                "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
+```
+
+Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
+
+### Checking owned and minted NFTs
+
+To check your minted NFTs, use `nfts` and `minted_nfts` fields on the committed or verified account state.
+
+```python
+account_state = await wallet.get_account_state()
+owned_nfts = account_state.committed.nfts
+# Minted nfts can only be used after verification of the mint_nft transaction
+minted_nfts = account_state.verified.minted_nfts
+```
+
+### Transfering
+
+To transfer an NFT, provide address to transfer to, NFT itself and token which will be used to pay fees.
+
+```python
+await self.wallet.transfer_nft("0x995a8b7f96cb837533b79775b6209696d51f435c", first_value, "USDC")
+```
+
+### Withdrawing
+
+To withdraw an NFT, provide address to withdraw to, NFT itself and token which will be used to pay fees.
+
+```python
+receipt = await wallet.withdraw_nft("0x21dDF51966f2A66D03998B0956fe59da1b3a179F", nft, "USDC")
+```
 
 ## Getting information about zkSync transaction
 

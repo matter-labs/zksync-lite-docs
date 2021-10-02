@@ -46,10 +46,7 @@ novalidate
 
 ## Developer community
 
-All technical/developer discussions will only take place in gitter:
-
-- [gitter.im/matter-labs/zksync](https://gitter.im/matter-labs/zksync) (general integration questions)
-- [gitter.im/matter-labs/zinc](https://gitter.im/matter-labs/zinc) (smart contracts)
+Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/5b6s7VTC)!
 
 ## User community and support
 
@@ -66,3 +63,7 @@ Please reach out directly via **hello@matter-labs.io**.
 
 We are always hiring! Please check out our
 [open positions](https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464).
+
+## Security disclosures
+
+For the bug bounty program and vulnerability disclosures, consult our [security policy](https://github.com/matter-labs/zksync/blob/master/SECURITY.md).

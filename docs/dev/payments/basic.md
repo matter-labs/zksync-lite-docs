@@ -42,6 +42,8 @@ Currently, there are the following types of transactions:
 - `ForcedExit`: Withdraws funds from the "target" L2 account that doesn't have a signing key set, to the same "target"
   address on the Ethereum network. This operation can be used to withdraw funds in the situation where the signing key
   for account in zkSync network cannot be set (e.g. if address corresponds to a smart contract).
+- `MintNFT`: Mints an NFT based on provided content hash to the provided "recipient".
+- `WithdrawNFT`: Withdraw an NFT from the zkSync network to the Ethereum network.
 
 ## Blocks
 
@@ -99,7 +101,7 @@ The zkSync signature on all transaction fields must correspond to the public key
 As mentioned above, any transfer that is valid in Ethereum, is also valid in zkSync.
 
 Users may transfer any amount of funds in either Ether or any supported ERC-20 token. A list of supported tokens can be
-found on the [corresponding explorer page](https://zkscan.io/tokens). It is also exposed via [API](/api).
+found on the [corresponding explorer page](https://zkscan.io/explorer/tokens). It is also exposed via [API](/api).
 
 However, transfer to a non-existent account requires slightly more data to be sent on the smart contract (we have to
 include information about the new account), thus the fee for such transfers is slightly higher than the fee for

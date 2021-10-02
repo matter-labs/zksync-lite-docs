@@ -2,8 +2,6 @@
 
 zkSync is on track to introduce highly efficient, secure, Turing complete, multilanguage smart contracts.
 
-## Table of contents
-
 [[toc]]
 
 <!-- spell-checker:disable -->
@@ -64,7 +62,7 @@ principles and conventions.
 
 ### Getting help
 
-You can ask questions and get assistance in our [Gitter](https://gitter.im/matter-labs/zinc) chat room.
+You can ask questions and get assistance in our [Discord](https://discord.gg/5b6s7VTC) developer chat room.
 
 If you would like to migrate an existing project to [zkSync](https://zksync.io) and require help, please send us an
 email at hello@matter-labs.io.
