@@ -36,6 +36,10 @@ export default {
     },
     meta: [
       {
+        name: 'google-site-verification',
+        content: 'hrWPMoXfTOG40VQGoOgWmIW4shMGIsObggR1BNBm5bg',
+      },
+      {
         hid: 'keywords',
         name: 'keywords',
         content: pageKeywords,
