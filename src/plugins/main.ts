@@ -23,7 +23,8 @@ Vue.mixin({
  */
 const appHeight = () => {
   const doc = document.documentElement;
-  doc.style.setProperty("--app-height", `${window.screen.availHeight}px`);
+  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  doc.style.setProperty("--app-height", `${Math.min(vh, window.screen.availHeight)}px`);
 };
 // listener removed to avoid changing set variable
 // window.addEventListener("resize", appHeight);

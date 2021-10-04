@@ -1,8 +1,8 @@
 <template>
   <div class="indexPage">
     <z-hero/>
-    <Partners/>
     <reviews-slider class="_padding-y-2 _padding-top-md-4 _padding-bottom-md-4"/>
+    <Partners/>
     <about/>
     <Comparison/>
 
