@@ -36,6 +36,10 @@ export default {
     },
     meta: [
       {
+        name: 'seobility',
+        content: '782740f1dfd8b20131dd892a71c3d72b',
+      },
+      {
         name: 'google-site-verification',
         content: 'hrWPMoXfTOG40VQGoOgWmIW4shMGIsObggR1BNBm5bg',
       },
