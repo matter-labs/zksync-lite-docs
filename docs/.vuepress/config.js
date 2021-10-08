@@ -10,16 +10,16 @@ module.exports = {
     // Add support of footnotes (like [^1]) in markdown
     md.use(require("markdown-it-footnote"));
   },
-  plugins: [
-    [
-      "fulltext-search",
-      "vuepress-plugin-canonical",
-      {
-        baseURL: "https://zksync.io", // base url for your canonical link, optional, default: ''
-        stripExtension: false, // strip '.html' , optional, default: false
-      },
-    ],
-  ],
+  plugins: {
+    "fulltext-search": {},
+    "vuepress-plugin-canonical": {
+      baseURL: "https://zksync.io", // base url for your canonical link, optional, default: ''
+      stripExtension: false, // strip '.html' , optional, default: false
+    },
+    sitemap: {
+      hostname: "https://zksync.io",
+    },
+  },
   themeConfig: {
     logo: "/LogotypeLight.svg",
     lastUpdated: "Last Updated",
