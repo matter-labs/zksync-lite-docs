@@ -41,7 +41,7 @@ async mintNFT(mintNft: {
 | Name        | Description                                                                                         |
 | ----------- | --------------------------------------------------------------------------------------------------- |
 | recipient   | the recipient address represented as a hex string                                                   |
-| contentHash | the unique identifier of the NFT represented as a 32-byte hex string (e.g. IPFS content identifier) |
+| contentHash | an identifier of the NFT represented as a 32-byte hex string (e.g. IPFS content identifier) |
 | feeToken    | name of token in which fee is to be paid (typically ETH)                                            |
 | fee         | transaction fee                                                                                     |
 
