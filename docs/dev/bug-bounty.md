@@ -1,5 +1,7 @@
 # Security Policy / Bug Bounty Program
 
+[[toc]]
+
 ## Scope
 
 Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, irreversible loss of funds, or enforced exodus mode.
@@ -23,12 +25,13 @@ The following actions will make you ineligible for the bug bounty program:
 
 ### The right way to disclose
 
-Please email us at [security@zksync](mailto:security@zksync.io). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
+Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
 
 ## Exclusions
 
 - Already known vulnerabilities.
 - Vulnerabilities in code not leading to funds lost or frozen.
+- Vulnerabilities not related to smart contracts or cryptography used by the protocol.
 
 ## Eligibility
 
@@ -42,7 +45,7 @@ Please email us at [security@zksync](mailto:security@zksync.io). We appreciate d
 
 ## Contact
 
-Please submit all your requests here: [security@zksync](mailto:security@zksync.io).
+Please submit all your requests here: [security@zksync.io](mailto:security@zksync.io).
 
 ### PGP Key
 

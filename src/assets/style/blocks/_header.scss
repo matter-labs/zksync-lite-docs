@@ -311,7 +311,13 @@ body {
         height: 62px;
         overflow: hidden;
         &.opened {
-          height: 312px;
+          height: 323px;
+        }
+
+        a.item {
+          font-size: 16px !important;
+          padding: 6px 15px !important;
+          line-height: 1.6rem !important;
         }
       }
     }
