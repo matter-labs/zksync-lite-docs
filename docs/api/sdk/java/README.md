@@ -4,7 +4,7 @@ This section contains documentation for the Java SDK for zkSync.
 
 ::: warning
 
-This is the alpha version of the SDK, if you find mistakes - you can contact us on the Gitter.
+This is the alpha version of the SDK, if you find mistakes - you can contact us on Discord.
 
 :::
 
