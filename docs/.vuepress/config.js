@@ -121,20 +121,6 @@ module.exports = {
           sidebarDepth: 1, // optional, defaults to 1
         },
       ],
-      "/zkevm/": [
-        {
-          title: "General", // required
-          path: "/zkevm/", // optional, which should be a absolute path.
-          collapsable: true, // optional, defaults to true
-          sidebarDepth: 1, // optional, defaults to 1
-        },
-        {
-          title: "Developers", // required
-          path: "/zkevm/developers", // optional, which should be a absolute path.
-          collapsable: true, // optional, defaults to true
-          sidebarDepth: 1, // optional, defaults to 1
-        },
-      ],
       "/dev": [
         {
           title: "Introduction", // required
