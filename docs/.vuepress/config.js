@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         text: "zkEVM",
-        link: "/zkEVM/",
+        link: "/zkevm/",
       },
       {
         text: "Contact and Media",
@@ -121,16 +121,16 @@ module.exports = {
           sidebarDepth: 1, // optional, defaults to 1
         },
       ],
-      "/zkEVM/": [
+      "/zkevm/": [
         {
           title: "General", // required
-          path: "/zkEVM/", // optional, which should be a absolute path.
+          path: "/zkevm/", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Developers", // required
-          path: "/zkEVM/developers", // optional, which should be a absolute path.
+          path: "/zkevm/developers", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
