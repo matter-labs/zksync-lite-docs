@@ -35,6 +35,7 @@ For previous in-depth updates on zkSync 2.0, check out our [Medium](https://medi
 
 To keep up to date with our exciting announcements coming soon, follow our [Twitter](https://twitter.com/zksync).
 
+## Basics
 
 ### What is a ZK Rollup?
 
@@ -66,6 +67,7 @@ The security of zkPorter is still better than any other L1 or sidechain. In the 
 
 For an in-depth dive into the scale and security of zkPorter, check out this [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
+## Comparison
 
 ### What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
 
@@ -161,6 +163,6 @@ For interactions with smart contracts, users will sign an EIP712 message with a 
 We will be releasing testnet soon! Please sign up on [this form](https://forms.gle/jQQnJJeuVSVcmkqj9).
 
 
-### My question wasn’t answered! ☹️
+## My question wasn’t answered! ☹️
 
 Join the [community on Discord](https://discord.gg/fyPna387dU).
