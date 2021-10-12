@@ -1,15 +1,17 @@
-# General
+# zkEVM FAQ
 
 [[toc]]
 
-## What is zkEVM and why is this a big deal?
+## General
+
+### What is zkEVM and why is this a big deal?
 
 zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge proof computation. It is the key to building an EVM-compatible ZK rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
 
 The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team that made the zkEVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
 
 
-## What is zkSync 2.0?
+### What is zkSync 2.0?
 
 zkSync 2.0 is an EVM-Compatible ZK Rollup being built by Matter Labs, powered by our zkEVM.
 
@@ -26,19 +28,19 @@ For previous in-depth updates on zkSync 2.0, check out our [Medium](https://medi
 To keep up to date with our exciting announcements coming soon, follow our [Twitter](https://twitter.com/zksync).
 
 
-## What is a ZK Rollup?
+### What is a ZK Rollup?
 
 ZK Rollups are a layer 2 scaling solution that uses validity proofs to scale computation: each batch of transactions comes with a cryptographic proof (ZK-SNARK) that is verified by an Ethereum smart contract. This way every single transaction is fully verified by all Ethereum full nodes before a block is finalized.
 
 
-## How secure is a ZK Rollup?
+### How secure is a ZK Rollup?
 
 Out of all the scaling solutions, ZK Rollups are the [most secure](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955). They rely purely on math to fully inherit the security of the L1, which is critical for function in highly adversarial environments. Other scaling solutions, instead, rely on economic guarantees or third parties, and thus offer far weaker security properties. 
 
 Validation of state changes in ZK Rollups is done through the computation of a zero knowledge proof: if any of the state changes is invalid the proof cannot be produced and, in turn, this means that the entity validating cannot include invalid state changes. That’s why we call them sequencers and not validators: they don’t validate transactions, the Ethereum smart contract does by relying on pure math. We don’t need to trust them or monitor them for frauds, since they cannot commit any fraud. 
 
 
-## How scalable is a ZK Rollup?
+### How scalable is a ZK Rollup?
 
 ZK Rollups can offer up to 2000 TPS at peak load! But it gets better. 
 
@@ -48,7 +50,7 @@ ZK Rollups are also the only L2 that can be extended with a system that can prov
 ![L2 comparison](https://zksync.io/scalability.png)
 
 
-## What is zkPorter?
+### What is zkPorter?
 
 [zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability—essential transaction data needed to reconstruct state—offchain rather than on Ethereum. Instead, data availability is secured using Proof of Stake by zkSync token stakers. This enables much higher scalability (tens of thousands TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents). 
 
@@ -57,7 +59,7 @@ The security of zkPorter is still better than any other L1 or sidechain. In the 
 For an in-depth dive into the scale and security of zkPorter, check out this [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
 
-## What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
+### What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
 
 **1) Significantly higher security**
 
@@ -86,7 +88,7 @@ However, for some common use cases, the cost savings are an order of magnitude m
 Finally, zkSync 2.0 will have an extension called zkPorter that offers constant 1-3 cent transaction fees by putting data offchain. Optimistic rollups fundamentally cannot have such an extension with off-chain data availability because there is no way for the watchers to verify the validity of every single transaction without public data for it. So, it’s not possible for them to offer such a hybrid system to users who prefer ultra-low fees over security.
 
 
-## How does using zkSync compare to sidechains (e.g. Matic/Polygon, BSC, Solana, Avalanche)?
+### How does using zkSync compare to sidechains (e.g. Matic/Polygon, BSC, Solana, Avalanche)?
 
 An Ethereum sidechain is a separate L1, with its own security mechanisms and a bridge between it and Ethereum. Sometimes the bridge validators are identical with the sidechain validators and use the same staking mechanism (e.g. in case of Polygon/Matic PoS).
 
@@ -113,8 +115,44 @@ This is still a much stronger guarantee than sidechains, because no hack can be 
 No matter what zkSync account type you choose, it’s going to be a lot more secure than sidechains. ZK Rollups will offer the highest security, and zkPorter will offer comparable costs. In any case, all users will be able to seamlessly interact with each other, making for a much larger liquidity pool.
 
 
-## What is the transaction finality in zkSync?
+### What is the transaction finality in zkSync?
 
 The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
 
 A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on activity, this can take from 15 minutes to 3 hours. 
+
+
+## Developers
+
+### Does zkSync support Solidity smart contracts?
+
+Yes!
+
+Most DeFi and NFT projects will work with no code changes. However, in the first version, calls to SHA256 and Keccak256 will be replaced with a circuit friendly hash function automatically by the compiler. A few other cryptographic primitives are currently also unsupported, for example ecrecover and the cryptographic precompiles.
+
+
+### How does the UI interact with smart contracts? Can I reuse my current frontend?
+
+You can interact completely with smart contracts and the zkSync network via our Web3 API and Ethers SDK:
+
+
+
+* For _read_ requests: any web3-compliant framework in any language will work out of the box, with additional optional zkSync L2 specific functionality.
+* For _write_ requests (sending transactions): due to fundamental differences between L1 and L2, you will have to write some additional code (for example, zkSync supports paying fees in any token, so sending a transaction will involve choosing a token to pay fees).
+
+So, yes! You can reuse your current frontend with only minimal changes (sending transactions is different).
+
+
+### How do users submit transactions? What wallets are supported?
+
+For interactions with smart contracts, users will sign an EIP712 message with a hash of the calldata. Since EIP712 is based on a native Ethereum signature, all wallets, even hardware wallets, will work without any extensions required.
+
+
+### When can I deploy?
+
+We will be releasing testnet soon! Please sign up on [this form](https://forms.gle/jQQnJJeuVSVcmkqj9).
+
+
+### My question wasn’t answered! ☹️
+
+Join the [community on Discord](https://discord.gg/fyPna387dU).
