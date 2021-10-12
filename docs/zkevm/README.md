@@ -35,6 +35,7 @@ For previous in-depth updates on zkSync 2.0, check out our [Medium](https://medi
 
 To keep up to date with our exciting announcements coming soon, follow our [Twitter](https://twitter.com/zksync).
 
+## Basics
 
 ### What is a ZK Rollup?
 
@@ -66,6 +67,13 @@ The security of zkPorter is still better than any other L1 or sidechain. In the 
 
 For an in-depth dive into the scale and security of zkPorter, check out this [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
+### What is the transaction finality in zkSync?
+
+The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
+
+A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on activity, this can take from 15 minutes to 3 hours. 
+
+## Comparison
 
 ### What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
 
@@ -122,14 +130,6 @@ This is still a much stronger guarantee than sidechains, because no hack can be 
 
 No matter what zkSync account type you choose, it’s going to be a lot more secure than sidechains. ZK Rollups will offer the highest security, and zkPorter will offer comparable costs. In any case, all users will be able to seamlessly interact with each other, making for a much larger liquidity pool.
 
-
-### What is the transaction finality in zkSync?
-
-The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
-
-A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on activity, this can take from 15 minutes to 3 hours. 
-
-
 ## Developers
 
 ### Does zkSync support Solidity smart contracts?
@@ -161,6 +161,6 @@ For interactions with smart contracts, users will sign an EIP712 message with a 
 We will be releasing testnet soon! Please sign up on [this form](https://forms.gle/jQQnJJeuVSVcmkqj9).
 
 
-### My question wasn’t answered! ☹️
+## My question wasn’t answered! ☹️
 
 Join the [community on Discord](https://discord.gg/fyPna387dU).
