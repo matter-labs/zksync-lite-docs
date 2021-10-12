@@ -38,6 +38,10 @@ module.exports = {
         link: "/api/",
       },
       {
+        text: "zkEVM",
+        link: "/zkEVM/general",
+      },
+      {
         text: "Contact and Media",
         link: "/contact.html",
       },
@@ -113,6 +117,20 @@ module.exports = {
         {
           title: "Roadmap", // required
           path: "/faq/roadmap", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+      ],
+      "/zkEVM/": [
+        {
+          title: "General", // required
+          path: "/zkEVM/general", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "Developers", // required
+          path: "/zkEVM/developers", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
