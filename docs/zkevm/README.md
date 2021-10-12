@@ -4,7 +4,7 @@
 
 ## What is zkEVM and why is this a big deal?
 
-zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero knowledge proof computation. It is the key to building an EVM-Compatible ZK Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
+zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge proof computation. It is the key to building an EVM-compatible ZK rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
 
 The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team that made the zkEVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
 
@@ -17,9 +17,9 @@ But this is not our first product! zkSync 1.0 has been [live for payments](https
 
 
 
-* reducing the cost of transfers by [~50x](https://l2fees.info/),
-* securing over 4M transactions,
-* and used by 98% of all transactions in the recent 4 Gitcoin grant rounds.
+* reducing the [cost of transfers](https://l2fees.info/) by ~50x,
+* securing close to [4M transactions](https://zkscan.io/),
+* and used by 98% of all transactions in the recent 4 [Gitcoin grant rounds](https://gitcoin.co/).
 
 For previous in-depth updates on zkSync 2.0, check out our [Medium](https://medium.com/matter-labs/zksync-2-0-hello-ethereum-ca48588de179).
 
@@ -42,25 +42,26 @@ Validation of state changes in ZK Rollups is done through the computation of a z
 
 ZK Rollups can offer up to 2000 TPS at peak load! But it gets better. 
 
-ZK Rollups are also the only L2 that can be extended with a system that can provide an entire order of magnitude more scale: **zkPorter** can offer up to 20,000 TPS!
+ZK Rollups are also the only L2 that can be extended with a system that can provide an entire order of magnitude more scale: **zkPorter **can offer up to 20,000 TPS!
+
 
 ![L2 comparison](https://zksync.io/scalability.png)
 
 
 ## What is zkPorter?
 
-[zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability—essential transaction data needed to reconstruct state—offchain instead of on Ethereum. Instead, data availability is secured using Proof of Stake by zkSync token stakers. This enables much higher scalability (tens of thousands TPS), and as a result, sidechain-like ultra-low transaction fees (in the range of a few cents). 
+[zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability—essential transaction data needed to reconstruct state—offchain rather than on Ethereum. Instead, data availability is secured using Proof of Stake by zkSync token stakers. This enables much higher scalability (tens of thousands TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents). 
 
-The security of zkPorter is still better than any other L1 or sidechain. In the worst case, where a malicious actor controls both the sequencer and over ⅔ of the total stake, they can sign a _valid_ state transition but withhold the data. In this case, the state is “frozen” and users will not be able to withdraw, but the attacker’s stake is frozen as well.
+The security of zkPorter is still better than any other L1 or sidechain. In the worst case, where a malicious actor controls both the sequencer and over ⅔ of the total stake, they can sign a _valid_ state transition but withhold the data. In this case, the state is “frozen” and users will not be able to withdraw, but the attacker’s stake is frozen as well. Thus, there is no direct way for an attacker with a large stake to financially benefit from an exploit.
 
 For an in-depth dive into the scale and security of zkPorter, check out this [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
 
 ## What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
 
-**1) Significantly higher security 🔒**
+**1) Significantly higher security**
 
-Eliminating reliance on watchers (cryptographic security > game-theoretic economic security)...
+ZK rollup eliminates reliance on watchers, replacing the game-theoretic economic security with cryptographic security — you trust pure math rather than incentivized actors.
 
 **2) Higher capital efficiency**
 
@@ -78,17 +79,14 @@ In zkSync, any withdrawal is finalized between 15 minutes and 3 hours, with fast
 
 **4) Transaction costs**
 
-ZK Rollups are [cheaper](https://l2fees.info/) for most popular crypto use cases because it requires least amount of data to be posted on-chain (no signatures and no transaction parameters). 
-
-![L2 fees](https://zksync.io/l2fees.png)
-
+ZK Rollups are [cheaper](https://l2fees.info/) for most popular crypto use cases because it requires the least amount of data to be posted on-chain (no signatures and no transaction parameters). 
 
 However, for some common use cases, the cost savings are an order of magnitude more significant! Specifically, ZK Rollups only need to post the final changes to state, and since many transactions touch the same storage slots, this cost is amortized. For example, all trading and oracle update transactions in the same block come with zero data availability costs.
 
 Finally, zkSync 2.0 will have an extension called zkPorter that offers constant 1-3 cent transaction fees by putting data offchain. Optimistic rollups fundamentally cannot have such an extension with off-chain data availability because there is no way for the watchers to verify the validity of every single transaction without public data for it. So, it’s not possible for them to offer such a hybrid system to users who prefer ultra-low fees over security.
 
 
-## How does using zkSync compare to bridging to other scaling solutions (e.g. Matic/Polygon, BSC, Solana, Avalanche)?
+## How does using zkSync compare to sidechains (e.g. Matic/Polygon, BSC, Solana, Avalanche)?
 
 An Ethereum sidechain is a separate L1, with its own security mechanisms and a bridge between it and Ethereum. Sometimes the bridge validators are identical with the sidechain validators and use the same staking mechanism (e.g. in case of Polygon/Matic PoS).
 
@@ -98,21 +96,17 @@ zkSync 2.0 offers two account types to its users: ZK Rollup and zkPorter. Let’
 
 **1) ZK Rollup vs Sidechains**
 
-Security: the same level of security as Ethereum! It’s incomparable.
-
-Costs: sidechains are cheaper.
+ZK rollups provide the same level of security as L1 itself, but at higher costs (roughly 1/50th of the costs of L1). Sidechains, on the other hand, depend on the honest majority assumptions to achieve much lower fees.
 
 **2) zkPorter vs Sidechains**
 
 [zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) offers sidechain-like ultra-low fees, but with an order of magnitude more security.
 
-Security: zkPorter relies on Ethereum for transaction validity and on zkSync token stakers for data availability. 
+zkPorter relies on Ethereum for transaction validity and on zkSync token stakers for data availability. 
 
 In the worst case, where a malicious actor controls both the sequencer and over ⅔ of the total stake, they can sign a _valid_ state transition but withhold the data. This would freeze the state and users would not be able to withdraw, but the attacker’s stake is frozen as well.
 
-This is still a much stronger guarantee than sidechains, because no hack can be directly exploited and there is no economic benefit from being compromised.Moreover, guardian nodes can run on consumer hardware, so they don’t require delegated PoS. This means much higher decentralization, which leads to much higher digital security: a hacker might need to break hundreds if not thousands of guardian nodes to control the majority of the stake.
-
-Costs: tie.
+This is still a much stronger guarantee than sidechains, because no hack can be directly exploited and there is no economic benefit from being compromised. Moreover, guardian nodes can run on consumer hardware, so they don’t require delegated PoS. This means much higher decentralization, which leads to much higher digital security: a hacker might need to break hundreds if not thousands of guardian nodes to control the majority of the stake.
 
 **Bottom line**
 
@@ -124,5 +118,3 @@ No matter what zkSync account type you choose, it’s going to be a lot more sec
 The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
 
 A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on activity, this can take from 15 minutes to 3 hours. 
-
-
