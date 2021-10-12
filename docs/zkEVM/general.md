@@ -42,7 +42,7 @@ Validation of state changes in ZK Rollups is done through the computation of a z
 
 ZK Rollups can offer up to 2000 TPS at peak load! But it gets better. 
 
-ZK Rollups are also the only L2 that can be extended with a system that can provide an entire order of magnitude more scale: **zkPorter **can offer up to 20,000 TPS!
+ZK Rollups are also the only L2 that can be extended with a system that can provide an entire order of magnitude more scale: **zkPorter** can offer up to 20,000 TPS!
 
 ![L2 comparison](https://zksync.io/scalability.png)
 
@@ -80,7 +80,8 @@ In zkSync, any withdrawal is finalized between 15 minutes and 3 hours, with fast
 
 ZK Rollups are [cheaper](https://l2fees.info/) for most popular crypto use cases because it requires least amount of data to be posted on-chain (no signatures and no transaction parameters). 
 
-&lt;screenshot from l2fees.org>
+![L2 fees](https://zksync.io/l2fees.png)
+
 
 However, for some common use cases, the cost savings are an order of magnitude more significant! Specifically, ZK Rollups only need to post the final changes to state, and since many transactions touch the same storage slots, this cost is amortized. For example, all trading and oracle update transactions in the same block come with zero data availability costs.
 
