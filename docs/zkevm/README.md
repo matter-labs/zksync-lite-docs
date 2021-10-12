@@ -67,6 +67,12 @@ The security of zkPorter is still better than any other L1 or sidechain. In the 
 
 For an in-depth dive into the scale and security of zkPorter, check out this [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
+### What is the transaction finality in zkSync?
+
+The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
+
+A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on activity, this can take from 15 minutes to 3 hours. 
+
 ## Comparison
 
 ### What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
@@ -123,14 +129,6 @@ This is still a much stronger guarantee than sidechains, because no hack can be 
 **Bottom line**
 
 No matter what zkSync account type you choose, it’s going to be a lot more secure than sidechains. ZK Rollups will offer the highest security, and zkPorter will offer comparable costs. In any case, all users will be able to seamlessly interact with each other, making for a much larger liquidity pool.
-
-
-### What is the transaction finality in zkSync?
-
-The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
-
-A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on activity, this can take from 15 minutes to 3 hours. 
-
 
 ## Developers
 
