@@ -192,7 +192,6 @@ module.exports = {
           path: "/api/sdk/rust", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 2, // optional, defaults to 1
-          children: ["/api/sdk/rust/tutorial"],
         },
         {
           title: "Java SDK", // required
@@ -206,14 +205,12 @@ module.exports = {
           path: "/api/sdk/swift", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 2, // optional, defaults to 1
-          children: ["/api/sdk/swift/tutorial"],
         },
         {
           title: "Python SDK", // required
           path: "/api/sdk/python", // optional, which should be a absolute path.
-          collapsable: true, // optional, defaults to true
+          collapsable: false, // optional, defaults to true
           sidebarDepth: 2, // optional, defaults to 1
-          children: ["/api/sdk/python/tutorial"],
         },
         "/api/sdk/dart",
         {
