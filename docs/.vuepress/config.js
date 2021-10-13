@@ -209,7 +209,7 @@ module.exports = {
         {
           title: "Python SDK", // required
           path: "/api/sdk/python", // optional, which should be a absolute path.
-          collapsable: false, // optional, defaults to true
+          collapsable: true, // optional, defaults to true
           sidebarDepth: 2, // optional, defaults to 1
         },
         "/api/sdk/dart",
