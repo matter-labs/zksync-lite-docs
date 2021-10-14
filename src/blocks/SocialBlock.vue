@@ -39,11 +39,6 @@ export default Vue.extend({
           url: "https://medium.com/matter-labs",
         },
         {
-          name: "Gitter Rooms",
-          icon: ["fa-gitter", "fab"],
-          url: "https://gitter.im/matter-labs/zksync",
-        },
-        {
           name: "Discord Community",
           icon: ["fa-discord", "fab"],
           url: "https://discord.com/invite/px2aR7w",

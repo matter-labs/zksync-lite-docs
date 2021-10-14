@@ -10,16 +10,16 @@ module.exports = {
     // Add support of footnotes (like [^1]) in markdown
     md.use(require("markdown-it-footnote"));
   },
-  plugins: [
-    [
-      "fulltext-search",
-      "vuepress-plugin-canonical",
-      {
-        baseURL: "https://zksync.io", // base url for your canonical link, optional, default: ''
-        stripExtension: false, // strip '.html' , optional, default: false
-      },
-    ],
-  ],
+  plugins: {
+    "fulltext-search": {},
+    "vuepress-plugin-canonical": {
+      baseURL: "https://zksync.io", // base url for your canonical link, optional, default: ''
+      stripExtension: false, // strip '.html' , optional, default: false
+    },
+    sitemap: {
+      hostname: "https://zksync.io",
+    },
+  },
   themeConfig: {
     logo: "/LogotypeLight.svg",
     lastUpdated: "Last Updated",
@@ -36,6 +36,10 @@ module.exports = {
       {
         text: "API Reference",
         link: "/api/",
+      },
+      {
+        text: "zkEVM",
+        link: "/zkevm/",
       },
       {
         text: "Contact and Media",
@@ -71,6 +75,12 @@ module.exports = {
         {
           title: "Security", // required
           path: "/faq/security", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "Learn By Watching", // required
+          path: "/faq/learnbywatching", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
