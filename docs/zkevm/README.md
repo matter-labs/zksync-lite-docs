@@ -114,7 +114,7 @@ zkSync 2.0 offers two account types to its users: ZK Rollup and zkPorter. Let’
 
 **1) ZK Rollup vs Sidechains**
 
-ZK rollups provide the same level of security as L1 itself, but at higher costs (roughly 1/50th of the costs of L1). Sidechains, on the other hand, depend on the honest majority assumptions to achieve much lower fees.
+ZK rollups provide the same level of security as L1 itself, but at lower costs (roughly 1/50th of the costs of L1). Sidechains, on the other hand, depend on the honest majority assumptions to achieve much lower fees.
 
 **2) zkPorter vs Sidechains**
 
