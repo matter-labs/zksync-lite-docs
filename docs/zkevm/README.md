@@ -14,6 +14,7 @@ meta:
 
 ### What is zkEVM and why is this a big deal?
 
+
 zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge-proof computation. It is the key to building an EVM-compatible ZK 
 Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on 
 traditional CPU architectures.
@@ -124,6 +125,7 @@ The most important thing to understand about this topic is that no matter how th
 zkSync 2.0 offers two account types to its users: zkRollup and zkPorter. Let’s consider the comparison for each of them:
 
 **1) zkRollup vs Sidechains**
+
 
 zkRollups provide the same level of security as L1 itself, but at lower costs (roughly 1/50th of the costs on L1). Sidechains, on the other hand, depend on the honest majority 
 assumptions to achieve much lower fees.
