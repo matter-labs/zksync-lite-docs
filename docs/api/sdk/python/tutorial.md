@@ -246,13 +246,13 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 tx = await provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
 ```
 
-Currently most of wallet methods return `Transaction` object wrapped around the transaction hash. This object has the following methods:
+Currently, most of the wallet methods return `Transaction` object wrapped around the transaction hash. This object has the following methods:
 
 * `await_committed` <br>
-**Description**: This method by default waits until the trasaction state becomes comitted on the server side.<br> But there is possibility to set amount of attemps and timeout between attempts
+**Description**: Consequently, this method waits until the transaction state becomes committed on the server-side.<br> But there is a possibility to set amount of attempts and timeout between attempts
 
 * `await_verified` <br>
-**Description**: This method by default waits until the transaction state become verified on the server side.<br> it could take a while and it also accepts limited amount of attempts and timeout between them as parameters
+**Description**: This method by default waits until the transaction state becomes verified on the server-side.<br> it could take a while and it also accepts limited amount of attempts and timeout between them as parameters
 
 **Example**:
 
@@ -265,8 +265,8 @@ result = await tr.await_committed(attempts=20, attempts_timeout=100)
 
 ### Batch builder
 
-There is more advanced method for execution many ZkSync transactions by single call. For this has been added `BatchBuilder` class.<br>
-To create instance you should provide `wallet` and current `nonce`. Where `nonce` in simple words is counter of executed transactions. it can be got as simple as that:
+There is a more advanced method for the execution of many ZkSync transactions by single call. For this has been added `BatchBuilder` class.<br>
+To create an instance, you should provide `wallet` and current `nonce` where `nonce`, in simple words, is the counter of executed transactions. it can be got as simple as that:
 ```python
 nonce = await wallet.zk_provider.get_account_nonce(wallet.address())
 ```
@@ -282,7 +282,7 @@ nonce = await wallet.zk_provider.get_account_nonce(wallet.address())
 * `add_change_pub_key`
 * `add_force_exit`
 
-After `BatchBuilder` object accumulated different transaction and when it's needed to execute them `build` method must be called.<br>It returns `BatchResult` object. It contains : singed transactions objects, etherium signature and total fees
+After the `BatchBuilder` object accumulated different transactions and when it's needed to execute them `build` method must be called.<br>It returns `BatchResult` object. It contains: singed transactions objects, etherium signature, and total fees
 For execution there must be called `submit_batch_builder_txs_batch` method of `ZkSyncProviderInterface` object.
 
 **Usage examples**:
