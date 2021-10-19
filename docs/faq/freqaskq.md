@@ -4,7 +4,7 @@
 
 ## 1. Will there be a token and when will it be released?
 
-The team’s focus is to work on scalability for Ethereum. You can find any announcements on Discord, Telegram, and Twitter.
+The team’s focus is to work on scalability for Ethereum. You can find any announcements on [Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and [Twitter](https://twitter.com/zksync).
 
 ## 2. How do I swap tokens on zkSync?
 
@@ -124,7 +124,9 @@ Notes:
 Deposit, transfer, withdraw to L1, mint NFTs, and create payment links.
 
 
+## My question wasn’t answered! ☹️
 
+Join the active [community on Discord](https://discord.gg/fyPna387dU).
 
 
 
