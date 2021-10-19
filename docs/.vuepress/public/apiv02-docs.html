@@ -1,6 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>zkSync API v0.2</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#accounts">Accounts</a></div><div class="collapse-content"><ul><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account state</a></li><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account full state</a></li><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account transactions</a></li><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-pending-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get pending priority operations</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#batches">Batches</a></div><div class="collapse-content"><ul><li><a href="#batches-api-v0.2-transactions-batches-post"><span class="badge post"><i class="fa fa-plus"></i></span>Submit batch of transactions</a></li><li><a href="#batches-api-v0.2-transactions-batches-txbatchhash-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get transactions batch status</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#blocks">Blocks</a></div><div class="collapse-content"><ul><li><a href="#blocks-api-v0.2-blocks-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get blocks range</a></li><li><a href="#blocks-api-v0.2-blocks-block_number-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get block details</a></li><li><a href="#blocks-api-v0.2-blocks-blocknumber-transactions-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get block transactions</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#config">Config</a></div><div class="collapse-content"><ul><li><a href="#config-api-v0.2-config-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get config of network</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#fees">Fees</a></div><div class="collapse-content"><ul><li><a href="#fees-api-v0.2-fee-post"><span class="badge post"><i class="fa fa-plus"></i></span>Get fee for a single transaction</a></li><li><a href="#fees-api-v0.2-fee-batch-post"><span class="badge post"><i class="fa fa-plus"></i></span>Get fee for a transactions batch</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#network-status">Network status</a></div><div class="collapse-content"><ul><li><a href="#network-status-api-v0.2-networkstatus-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get network status</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#tokens">Tokens</a></div><div class="collapse-content"><ul><li><a href="#tokens-api-v0.2-tokens-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get list of supported tokens</a></li><li><a href="#tokens-api-v0.2-tokens-tokenidoraddress-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get token info</a></li><li><a href="#tokens-api-v0.2-tokens-tokenidoraddress-pricein-currency-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get token price</a></li><li><a href="#tokens-api-v0.2-tokens-nft-id-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get nft info</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#transactions">Transactions</a></div><div class="collapse-content"><ul><li><a href="#transactions-api-v0.2-transactions-post"><span class="badge post"><i class="fa fa-plus"></i></span>Submit transaction</a></li><li><a href="#transactions-api-v0.2-transactions-txhash-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get transaction receipt</a></li><li><a href="#transactions-api-v0.2-transactions-txhash-data-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get transaction data</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">zkSync API v0.2</h1></header><section id="accounts" class="resource-group"><h2 class="group-heading">Accounts <a href="#accounts" class="permalink">&para;</a></h2><div id="accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}" class="resource"><h3 class="resource-heading">api/v0.2/accounts/{accountIdOrAddress}/{stateType} <a href="#accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}" class="permalink">&nbsp;&para;</a></h3><div id="accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}-get" class="action get"><h4 class="action-heading"><div class="name">Get account state</div><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}-get" class="method get">GET</a><code class="uri">/accounts/{accountIdOrAddress}/{stateType}</code></h4><p>Returns committed or finalized account state</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span>/<span class="hljs-attribute" title="stateType">committed</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account Id or address in the zkSync network</p>
-</dd><dt>stateType</dt><dd><code>&quot;committed&quot; | &quot;finalized&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>committed</span></span><p>The type of account state which we want to get</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>zkSync API v0.2</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#accounts">Accounts</a></div><div class="collapse-content"><ul><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account state</a></li><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account full state</a></li><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get account transactions</a></li><li><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-pending-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get pending priority operations</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#batches">Batches</a></div><div class="collapse-content"><ul><li><a href="#batches-api-v0.2-transactions-batches-post"><span class="badge post"><i class="fa fa-plus"></i></span>Submit batch of transactions</a></li><li><a href="#batches-api-v0.2-transactions-batches-txbatchhash-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get transactions batch status</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#blocks">Blocks</a></div><div class="collapse-content"><ul><li><a href="#blocks-api-v0.2-blocks-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get blocks range</a></li><li><a href="#blocks-api-v0.2-blocks-block_number-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get block details</a></li><li><a href="#blocks-api-v0.2-blocks-blocknumber-transactions-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get block transactions</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#config">Config</a></div><div class="collapse-content"><ul><li><a href="#config-api-v0.2-config-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get config of network</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#fees">Fees</a></div><div class="collapse-content"><ul><li><a href="#fees-api-v0.2-fee-post"><span class="badge post"><i class="fa fa-plus"></i></span>Get fee for a single transaction</a></li><li><a href="#fees-api-v0.2-fee-batch-post"><span class="badge post"><i class="fa fa-plus"></i></span>Get fee for a transactions batch</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#network-status">Network status</a></div><div class="collapse-content"><ul><li><a href="#network-status-api-v0.2-networkstatus-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get network status</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#tokens">Tokens</a></div><div class="collapse-content"><ul><li><a href="#tokens-api-v0.2-tokens-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get list of supported tokens</a></li><li><a href="#tokens-api-v0.2-tokens-tokenlike-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get token info</a></li><li><a href="#tokens-api-v0.2-tokens-tokenlike-pricein-currency-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get token price</a></li><li><a href="#tokens-api-v0.2-tokens-nft-id-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get NFT info</a></li><li><a href="#tokens-api-v0.2-tokens-nft-id-owner-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get NFT owner ID</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#transactions">Transactions</a></div><div class="collapse-content"><ul><li><a href="#transactions-api-v0.2-transactions-post"><span class="badge post"><i class="fa fa-plus"></i></span>Submit transaction</a></li><li><a href="#transactions-api-v0.2-transactions-txhash-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get transaction receipt</a></li><li><a href="#transactions-api-v0.2-transactions-txhash-data-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>Get transaction data</a></li><li><a href="#transactions-api-v0.2-transactions-toggle2fa-post"><span class="badge post"><i class="fa fa-plus"></i></span>Toggle 2-factor authentication</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">zkSync API v0.2</h1></header><section id="accounts" class="resource-group"><h2 class="group-heading">Accounts <a href="#accounts" class="permalink">&para;</a></h2><div id="accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}" class="resource"><h3 class="resource-heading">api/v0.2/accounts/{accountIdOrAddress}/{stateType} <a href="#accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}" class="permalink">&nbsp;&para;</a></h3><div id="accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}-get" class="action get"><h4 class="action-heading"><div class="name">Get account state</div><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-{statetype}-get" class="method get">GET</a><code class="uri">/accounts/{accountIdOrAddress}/{stateType}</code></h4><p>Returns committed or finalized account state</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span>/<span class="hljs-attribute" title="stateType">committed</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account ID or address in the zkSync network</p>
+</dd><dt>stateType</dt><dd><code>&quot;committed&quot; | &quot;finalized&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>committed</span></span><p>The type of account state which you want to get</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -223,7 +223,7 @@
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="accounts-api-v0.2-accounts-{accountidoraddress}" class="resource"><h3 class="resource-heading">api/v0.2/accounts/{accountIdOrAddress} <a href="#accounts-api-v0.2-accounts-{accountidoraddress}" class="permalink">&nbsp;&para;</a></h3><div id="accounts-api-v0.2-accounts-{accountidoraddress}-get" class="action get"><h4 class="action-heading"><div class="name">Get account full state</div><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-get" class="method get">GET</a><code class="uri">/accounts/{accountIdOrAddress}</code></h4><p>Returns both committed and finalized account states</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account Id or address in the zkSync network</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account ID or address in the zkSync network</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -234,6 +234,14 @@
   </span>}</span>,
   "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
   "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">depositing</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">balances</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">ETH</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"1000000000000000000"</span></span>,
+          "<span class="hljs-attribute">expectedAcceptBlock</span>": <span class="hljs-value"><span class="hljs-number">25136211</span>
+        </span>}
+      </span>}
+    </span>}</span>,
     "<span class="hljs-attribute">committed</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">12</span></span>,
       "<span class="hljs-attribute">address</span>": <span class="hljs-value"><span class="hljs-string">"0xc0f97CC918C9d6fA4E9fc6be61a6a06589D199b3"</span></span>,
@@ -337,6 +345,20 @@
         <span class="hljs-string">"null"</span>
       ]</span>,
       "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">depositing</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">balances</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">$ref</span>": <span class="hljs-value"><span class="hljs-string">"#/definitions/ETH"</span></span>,
+              "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                <span class="hljs-string">"ETH"</span>
+              ]
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+            <span class="hljs-string">"balances"</span>
+          ]
+        </span>}</span>,
         "<span class="hljs-attribute">committed</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
             <span class="hljs-string">"object"</span>,
@@ -461,6 +483,7 @@
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"depositing"</span>,
         <span class="hljs-string">"committed"</span>,
         <span class="hljs-string">"finalized"</span>
       ]
@@ -544,10 +567,10 @@
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="accounts-api-v0.2-accounts-{accountidoraddress}-transactions" class="resource"><h3 class="resource-heading">api/v0.2/accounts/{accountIdOrAddress}/transactions <a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions" class="permalink">&nbsp;&para;</a></h3><div id="accounts-api-v0.2-accounts-{accountidoraddress}-transactions-get" class="action get"><h4 class="action-heading"><div class="name">Get account transactions</div><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-get" class="method get">GET</a><code class="uri">/accounts/{accountIdOrAddress}/transactions{?from,limit,direction}</code></h4><p>Returns the transactions for a particular account according to the query params</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span>/transactions?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account Id or address in the zkSync network</p>
-</dd><dt>from</dt><dd><code>&quot;latest&quot; | string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>From which transaction to show</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span>/transactions?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account ID or address in the zkSync network</p>
+</dd><dt>from</dt><dd><code>&quot;latest&quot; | string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>The hash of the transaction from which to show or <code>latest</code></p>
 </dd><dt>limit</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>The limit of transactions to be shown</p>
-</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>newer or older than the id of the <code>from</code></p>
+</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>Newer or older than the ID of the <code>from</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -576,17 +599,18 @@
           "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
           "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
           "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-          "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+          "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
           "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
           "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>}</span>,
         "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"rejected"</span></span>,
         "<span class="hljs-attribute">failReason</span>": <span class="hljs-value"><span class="hljs-string">"Nonce mismatch"</span></span>,
-        "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2018-12-12T01:02:03.123456789"</span>
+        "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2018-12-12T01:02:03.123456789"</span></span>,
+        "<span class="hljs-attribute">batchId</span>": <span class="hljs-value"><span class="hljs-number">155</span>
       </span>}
     ]
   </span>}</span>,
@@ -708,10 +732,10 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="accounts-api-v0.2-accounts-{accountidoraddress}-transactions-pending" class="resource"><h3 class="resource-heading">api/v0.2/accounts/{accountIdOrAddress}/transactions/pending <a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-pending" class="permalink">&nbsp;&para;</a></h3><div id="accounts-api-v0.2-accounts-{accountidoraddress}-transactions-pending-get" class="action get"><h4 class="action-heading"><div class="name">Get pending priority operations</div><a href="#accounts-api-v0.2-accounts-{accountidoraddress}-transactions-pending-get" class="method get">GET</a><code class="uri">/accounts/{accountIdOrAddress}/transactions/pending{?from,limit,direction}</code></h4><p>Get account pending priority operations.</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span>/transactions/pending?<span class="hljs-attribute">from=</span><span class="hljs-literal">100</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account Id or address in the zkSync network</p>
-</dd><dt>from</dt><dd><code>&quot;latest&quot; | number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>100</span></span><p>From which transaction to show</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/accounts/<span class="hljs-attribute" title="accountIdOrAddress">1</span>/transactions/pending?<span class="hljs-attribute">from=</span><span class="hljs-literal">100</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>accountIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span><p>Account ID or address in the zkSync network</p>
+</dd><dt>from</dt><dd><code>&quot;latest&quot; | number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>100</span></span><p>The hash of the transaction from which to show or <code>latest</code></p>
 </dd><dt>limit</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>The limit of transactions to be shown</p>
-</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>newer or older than the id of the <code>from</code></p>
+</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>Newer or older than the ID of the <code>from</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -878,12 +902,12 @@
         "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
         "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
         "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-        "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+        "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
         "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
         "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
         "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-          "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+          "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
@@ -943,7 +967,7 @@
   "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">batchHash</span>": <span class="hljs-value"><span class="hljs-string">"0x6d6f7e07c85a770c6cb9f667c6b7d2d6335781f956a3a66503c87a56fd392e80"</span></span>,
     "<span class="hljs-attribute">transactionHashes</span>": <span class="hljs-value">[
-      <span class="hljs-string">"[0xca1d902dc4aa0d401aded0f3c4c6e73c1aa68fbb661856af1a8874472f5043bb]"</span>
+      <span class="hljs-string">"0xca1d902dc4aa0d401aded0f3c4c6e73c1aa68fbb661856af1a8874472f5043bb"</span>
     ]
   </span>}</span>,
   "<span class="hljs-attribute">error</span>": <span class="hljs-value">{
@@ -1044,7 +1068,7 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="batches-api-v0.2-transactions-batches-txbatchhash" class="resource"><h3 class="resource-heading">api/v0.2/transactions/batches/:txBatchHash <a href="#batches-api-v0.2-transactions-batches-txbatchhash" class="permalink">&nbsp;&para;</a></h3><div id="batches-api-v0.2-transactions-batches-txbatchhash-get" class="action get"><h4 class="action-heading"><div class="name">Get transactions batch status</div><a href="#batches-api-v0.2-transactions-batches-txbatchhash-get" class="method get">GET</a><code class="uri">/transactions/batches/{txBatchHash}</code></h4><p>Get transactions batch status (latest receipt)</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/batches/<span class="hljs-attribute" title="txBatchHash">0x1daf2033a40c97b98d8960719c9840de7f259802e026a408b9ac63745e76f28d</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>txBatchHash</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0x1daf2033a40c97b98d8960719c9840de7f259802e026a408b9ac63745e76f28d</span></span><p>the hash of the contents of the batch queried</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/batches/<span class="hljs-attribute" title="txBatchHash">0x22c3cb86f5f5d7284866916972655c0c3839b2a4bc350a5198f6b159fb43ae8b</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>txBatchHash</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0x22c3cb86f5f5d7284866916972655c0c3839b2a4bc350a5198f6b159fb43ae8b</span></span><p>The hash of the contents of the batch queried</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -1057,7 +1081,7 @@
   "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">batchHash</span>": <span class="hljs-value"><span class="hljs-string">"0x6d6f7e07c85a770c6cb9f667c6b7d2d6335781f956a3a66503c87a56fd392e80"</span></span>,
     "<span class="hljs-attribute">transactionHashes</span>": <span class="hljs-value">[
-      <span class="hljs-string">"[0xca1d902dc4aa0d401aded0f3c4c6e73c1aa68fbb661856af1a8874472f5043bb]"</span>
+      <span class="hljs-string">"0xca1d902dc4aa0d401aded0f3c4c6e73c1aa68fbb661856af1a8874472f5043bb"</span>
     ]</span>,
     "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2020-10-12T09:05:03.123416742"</span></span>,
     "<span class="hljs-attribute">batchStatus</span>": <span class="hljs-value">{
@@ -1190,9 +1214,9 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="blocks" class="resource-group"><h2 class="group-heading">Blocks <a href="#blocks" class="permalink">&para;</a></h2><div id="blocks-api-v0.2-blocks" class="resource"><h3 class="resource-heading">api/v0.2/blocks <a href="#blocks-api-v0.2-blocks" class="permalink">&nbsp;&para;</a></h3><div id="blocks-api-v0.2-blocks-get" class="action get"><h4 class="action-heading"><div class="name">Get blocks range</div><a href="#blocks-api-v0.2-blocks-get" class="method get">GET</a><code class="uri">/blocks{?from,limit,direction}</code></h4><p>Get blocks range</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/blocks?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>from</dt><dd><code>&quot;latest&quot; | number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>From which transaction to show</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/blocks?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>from</dt><dd><code>&quot;latest&quot; | number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>The number of the block from which to show or <code>latest</code></p>
 </dd><dt>limit</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>The limit of transactions to be shown</p>
-</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>newer or older than the id of the <code>from</code></p>
+</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>Newer or older than the ID of the <code>from</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -1340,7 +1364,7 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="blocks-api-v0.2-blocks-block_number" class="resource"><h3 class="resource-heading">api/v0.2/blocks/:block_number <a href="#blocks-api-v0.2-blocks-block_number" class="permalink">&nbsp;&para;</a></h3><div id="blocks-api-v0.2-blocks-block_number-get" class="action get"><h4 class="action-heading"><div class="name">Get block details</div><a href="#blocks-api-v0.2-blocks-block_number-get" class="method get">GET</a><code class="uri">/blocks/{blockNumber}</code></h4><p>Get block details</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/blocks/<span class="hljs-attribute" title="blockNumber">lastCommitted</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>blockNumber</dt><dd><code>BlockNumber</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>lastCommitted</span></span><p>a number of the block or <code>lastCommitted</code> for getting the last committed block or <code>lastFinalized</code> for getting the last finalized block</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/blocks/<span class="hljs-attribute" title="blockNumber">lastCommitted</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>blockNumber</dt><dd><code>BlockNumber</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>lastCommitted</span></span><p>An integer block number, <code>lastCommitted</code> or <code>lastFinalized</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -1491,10 +1515,10 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="blocks-api-v0.2-blocks-blocknumber-transactions" class="resource"><h3 class="resource-heading">api/v0.2/blocks/blockNumber/transactions <a href="#blocks-api-v0.2-blocks-blocknumber-transactions" class="permalink">&nbsp;&para;</a></h3><div id="blocks-api-v0.2-blocks-blocknumber-transactions-get" class="action get"><h4 class="action-heading"><div class="name">Get block transactions</div><a href="#blocks-api-v0.2-blocks-blocknumber-transactions-get" class="method get">GET</a><code class="uri">/blocks/{blockNumber}/transactions{?from,limit,direction}</code></h4><p>Get block transactions</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/blocks/<span class="hljs-attribute" title="blockNumber">lastCommitted</span>/transactions?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>blockNumber</dt><dd><code>BlockNumber</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>lastCommitted</span></span><p>a number of the block or <code>lastCommitted</code> for getting the last committed block or <code>lastFinalized</code> for getting the last finalized block</p>
-</dd><dt>from</dt><dd><code>&quot;latest&quot; | string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>From which transaction to show</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/blocks/<span class="hljs-attribute" title="blockNumber">lastCommitted</span>/transactions?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>blockNumber</dt><dd><code>BlockNumber</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>lastCommitted</span></span><p>An integer block number, <code>lastCommitted</code> or <code>lastFinalized</code></p>
+</dd><dt>from</dt><dd><code>&quot;latest&quot; | string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>The hash of the transaction from which to show or <code>latest</code></p>
 </dd><dt>limit</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>The limit of transactions to be shown</p>
-</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>newer or older than the id of the <code>from</code></p>
+</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>Newer or older than the ID of the <code>from</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -1523,17 +1547,18 @@
           "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
           "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
           "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-          "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+          "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
           "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
           "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>}</span>,
         "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"rejected"</span></span>,
         "<span class="hljs-attribute">failReason</span>": <span class="hljs-value"><span class="hljs-string">"Nonce mismatch"</span></span>,
-        "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2018-12-12T01:02:03.123456789"</span>
+        "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2018-12-12T01:02:03.123456789"</span></span>,
+        "<span class="hljs-attribute">batchId</span>": <span class="hljs-value"><span class="hljs-number">155</span>
       </span>}
     ]
   </span>}</span>,
@@ -2248,9 +2273,9 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="tokens" class="resource-group"><h2 class="group-heading">Tokens <a href="#tokens" class="permalink">&para;</a></h2><div id="tokens-api-v0.2-tokens" class="resource"><h3 class="resource-heading">api/v0.2/tokens <a href="#tokens-api-v0.2-tokens" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-get" class="action get"><h4 class="action-heading"><div class="name">Get list of supported tokens</div><a href="#tokens-api-v0.2-tokens-get" class="method get">GET</a><code class="uri">/tokens{?from,limit,direction}</code></h4><p>Returns the tokens that are currently supported by zkSync</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>from</dt><dd><code>&quot;latest&quot; | number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>From which token id to show</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens?<span class="hljs-attribute">from=</span><span class="hljs-literal">latest</span>&<span class="hljs-attribute">limit=</span><span class="hljs-literal">2</span>&<span class="hljs-attribute">direction=</span><span class="hljs-literal">older</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>from</dt><dd><code>&quot;latest&quot; | number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>latest</span></span><p>Token ID of transaction from which to show or <code>latest</code></p>
 </dd><dt>limit</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>The limit of tokens to be returned</p>
-</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>newer or older than the id of the <code>from</code></p>
+</dd><dt>direction</dt><dd><code>&quot;newer&quot; | &quot;older&quot;</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>older</span></span><p>Newer or older than the ID of the <code>from</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -2394,8 +2419,8 @@
     <span class="hljs-string">"result"</span>,
     <span class="hljs-string">"error"</span>
   ]
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-tokenidoraddress" class="resource"><h3 class="resource-heading">api/v0.2/tokens/tokenIdOrAddress <a href="#tokens-api-v0.2-tokens-tokenidoraddress" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-tokenidoraddress-get" class="action get"><h4 class="action-heading"><div class="name">Get token info</div><a href="#tokens-api-v0.2-tokens-tokenidoraddress-get" class="method get">GET</a><code class="uri">/tokens/{tokenIdOrAddress}</code></h4><p>Get token into</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/<span class="hljs-attribute" title="tokenIdOrAddress">2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>tokenIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>the id or address of the token in the zkSync network</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-tokenlike" class="resource"><h3 class="resource-heading">api/v0.2/tokens/:tokenLike <a href="#tokens-api-v0.2-tokens-tokenlike" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-tokenlike-get" class="action get"><h4 class="action-heading"><div class="name">Get token info</div><a href="#tokens-api-v0.2-tokens-tokenlike-get" class="method get">GET</a><code class="uri">/tokens/{tokenLike}</code></h4><p>Get token into</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/<span class="hljs-attribute" title="tokenLike">2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>tokenLike</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>ID, address or symbol of the token in the zkSync network</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -2521,9 +2546,9 @@
     <span class="hljs-string">"result"</span>,
     <span class="hljs-string">"error"</span>
   ]
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-tokenidoraddress-pricein-currency" class="resource"><h3 class="resource-heading">api/v0.2/tokens/:tokenIdOrAddress/priceIn/:currency <a href="#tokens-api-v0.2-tokens-tokenidoraddress-pricein-currency" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-tokenidoraddress-pricein-currency-get" class="action get"><h4 class="action-heading"><div class="name">Get token price</div><a href="#tokens-api-v0.2-tokens-tokenidoraddress-pricein-currency-get" class="method get">GET</a><code class="uri">/tokens/{tokenIdOrAddress}/priceIn/{currency}</code></h4><p>Get token price relative to another token</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/<span class="hljs-attribute" title="tokenIdOrAddress">2</span>/priceIn/<span class="hljs-attribute" title="currency">usd</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>tokenIdOrAddress</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>the id or address of the token in the zkSync network</p>
-</dd><dt>currency</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>usd</span></span><p>either usd or any of the supported tokens in the zkSync network</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-tokenlike-pricein-currency" class="resource"><h3 class="resource-heading">api/v0.2/tokens/:tokenLike/priceIn/:currency <a href="#tokens-api-v0.2-tokens-tokenlike-pricein-currency" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-tokenlike-pricein-currency-get" class="action get"><h4 class="action-heading"><div class="name">Get token price</div><a href="#tokens-api-v0.2-tokens-tokenlike-pricein-currency-get" class="method get">GET</a><code class="uri">/tokens/{tokenLike}/priceIn/{currency}</code></h4><p>Get token price relative to another token</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/<span class="hljs-attribute" title="tokenLike">2</span>/priceIn/<span class="hljs-attribute" title="currency">usd</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>tokenLike</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span><p>ID, address or symbol of the token in the zkSync network</p>
+</dd><dt>currency</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>usd</span></span><p>Either <code>usd</code> or ID of any of the supported tokens in the zkSync network</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -2649,8 +2674,8 @@
     <span class="hljs-string">"result"</span>,
     <span class="hljs-string">"error"</span>
   ]
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-nft-id" class="resource"><h3 class="resource-heading">api/v0.2/tokens/nft/id <a href="#tokens-api-v0.2-tokens-nft-id" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-nft-id-get" class="action get"><h4 class="action-heading"><div class="name">Get nft info</div><a href="#tokens-api-v0.2-tokens-nft-id-get" class="method get">GET</a><code class="uri">/tokens/nft/{id}</code></h4><p>Get nft into</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/nft/<span class="hljs-attribute" title="id">65548</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>65548</span></span><p>the id of the nft in the zkSync network</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-nft-id" class="resource"><h3 class="resource-heading">api/v0.2/tokens/nft/:id <a href="#tokens-api-v0.2-tokens-nft-id" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-nft-id-get" class="action get"><h4 class="action-heading"><div class="name">Get NFT info</div><a href="#tokens-api-v0.2-tokens-nft-id-get" class="method get">GET</a><code class="uri">/tokens/nft/{id}</code></h4><p>Get NFT info</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/nft/<span class="hljs-attribute" title="id">65536</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>65536</span></span><p>ID of the NFT in the zkSync network</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -2798,6 +2823,103 @@
     <span class="hljs-string">"result"</span>,
     <span class="hljs-string">"error"</span>
   ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tokens-api-v0.2-tokens-nft-id-owner" class="resource"><h3 class="resource-heading">api/v0.2/tokens/nft/:id/owner <a href="#tokens-api-v0.2-tokens-nft-id-owner" class="permalink">&nbsp;&para;</a></h3><div id="tokens-api-v0.2-tokens-nft-id-owner-get" class="action get"><h4 class="action-heading"><div class="name">Get NFT owner ID</div><a href="#tokens-api-v0.2-tokens-nft-id-owner-get" class="method get">GET</a><code class="uri">/tokens/nft/{id}/owner</code></h4><p>Get NFT owner ID</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/tokens/nft/<span class="hljs-attribute" title="id">65536</span>/owner</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>65536</span></span><p>ID of the NFT in the zkSync network</p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
+    "<span class="hljs-attribute">apiVersion</span>": <span class="hljs-value"><span class="hljs-string">"v02"</span></span>,
+    "<span class="hljs-attribute">resource</span>": <span class="hljs-value"><span class="hljs-string">"/api/v0.2/..."</span></span>,
+    "<span class="hljs-attribute">args</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2021-05-31T14:17:24.112536900Z"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">result</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">error</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">errorType</span>": <span class="hljs-value"><span class="hljs-string">"errorType"</span></span>,
+    "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"message"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">network</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"mainnet"</span>,
+            <span class="hljs-string">"rinkeby"</span>,
+            <span class="hljs-string">"ropsten"</span>,
+            <span class="hljs-string">"localhost"</span>,
+            <span class="hljs-string">"localhost"</span>
+          ]
+        </span>}</span>,
+        "<span class="hljs-attribute">apiVersion</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"v02"</span>
+          ]
+        </span>}</span>,
+        "<span class="hljs-attribute">resource</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">args</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+        </span>}</span>,
+        "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"network"</span>,
+        <span class="hljs-string">"apiVersion"</span>,
+        <span class="hljs-string">"resource"</span>,
+        <span class="hljs-string">"args"</span>,
+        <span class="hljs-string">"timestamp"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"number"</span>,
+        <span class="hljs-string">"null"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">errorType</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"errorType"</span>,
+        <span class="hljs-string">"code"</span>,
+        <span class="hljs-string">"message"</span>
+      ]
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"request"</span>,
+    <span class="hljs-string">"status"</span>,
+    <span class="hljs-string">"result"</span>,
+    <span class="hljs-string">"error"</span>
+  ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="transactions" class="resource-group"><h2 class="group-heading">Transactions <a href="#transactions" class="permalink">&para;</a></h2><div id="transactions-api-v0.2-transactions" class="resource"><h3 class="resource-heading">api/v0.2/transactions <a href="#transactions-api-v0.2-transactions" class="permalink">&nbsp;&para;</a></h3><div id="transactions-api-v0.2-transactions-post" class="action post"><h4 class="action-heading"><div class="name">Submit transaction</div><a href="#transactions-api-v0.2-transactions-post" class="method post">POST</a><code class="uri">/transactions</code></h4><p>Submit single transaction</p>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">tx</span>": <span class="hljs-value">{
@@ -2808,12 +2930,12 @@
     "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
     "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-    "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+    "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
     "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
     "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
     "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-      "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+      "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
@@ -2835,12 +2957,12 @@
           "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
           "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
           "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-          "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+          "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
           "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
           "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>},
         {
@@ -2857,7 +2979,7 @@
           "<span class="hljs-attribute">fast</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>},
         {
@@ -2871,7 +2993,7 @@
           "<span class="hljs-attribute">ethAuthData</span>": <span class="hljs-value"><span class="hljs-string">"ECDSAAuthType"</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}</span>,
           "<span class="hljs-attribute">ethSignature</span>": <span class="hljs-value"><span class="hljs-string">"0xf0947f0a731ada6e09ca99d3aafb1469a3baaf602eab2f5661edd30d6386"</span></span>,
           "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
@@ -2888,7 +3010,7 @@
           "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>},
         {
@@ -2912,7 +3034,7 @@
               "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
               "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                 "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
               </span>}
             </span>}
           ]</span>,
@@ -2924,7 +3046,7 @@
           "<span class="hljs-attribute">feeToken</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>},
         {
@@ -2938,7 +3060,7 @@
           "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">1001</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}
         </span>},
         {
@@ -2952,7 +3074,7 @@
           "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">1001</span></span>,
           "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+            "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
           </span>}</span>,
           "<span class="hljs-attribute">fast</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
           "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
@@ -3073,7 +3195,7 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="transactions-api-v0.2-transactions-txhash" class="resource"><h3 class="resource-heading">api/v0.2/transactions/:txHash <a href="#transactions-api-v0.2-transactions-txhash" class="permalink">&nbsp;&para;</a></h3><div id="transactions-api-v0.2-transactions-txhash-get" class="action get"><h4 class="action-heading"><div class="name">Get transaction receipt</div><a href="#transactions-api-v0.2-transactions-txhash-get" class="method get">GET</a><code class="uri">/transactions/{txHash}</code></h4><p>Get transaction receipt</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/<span class="hljs-attribute" title="txHash">0xb96634d2981c9b92b43a62381dcf75ccf1ff8dbe2d28b84958ffdce86504435f</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>txHash</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0xb96634d2981c9b92b43a62381dcf75ccf1ff8dbe2d28b84958ffdce86504435f</span></span><p>hash of the transaction in the zkSync network</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/<span class="hljs-attribute" title="txHash">0x4637c9eea692cce9926e286db2ebbbaae3666c6cdb47e66ac2abf3e7cafd3c31</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>txHash</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0x4637c9eea692cce9926e286db2ebbbaae3666c6cdb47e66ac2abf3e7cafd3c31</span></span><p>The hash of the transaction in the zkSync network</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -3190,7 +3312,7 @@
     <span class="hljs-string">"error"</span>
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="transactions-api-v0.2-transactions-txhash-data" class="resource"><h3 class="resource-heading">api/v0.2/transactions/:txHash/data <a href="#transactions-api-v0.2-transactions-txhash-data" class="permalink">&nbsp;&para;</a></h3><div id="transactions-api-v0.2-transactions-txhash-data-get" class="action get"><h4 class="action-heading"><div class="name">Get transaction data</div><a href="#transactions-api-v0.2-transactions-txhash-data-get" class="method get">GET</a><code class="uri">/transactions/{txHash}/data</code></h4><p>Get transaction data</p>
-<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/<span class="hljs-attribute" title="txHash">0xb96634d2981c9b92b43a62381dcf75ccf1ff8dbe2d28b84958ffdce86504435f</span>/data</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>txHash</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0xb96634d2981c9b92b43a62381dcf75ccf1ff8dbe2d28b84958ffdce86504435f</span></span><p>hash of the transaction in the zkSync network</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/<span class="hljs-attribute" title="txHash">0x4637c9eea692cce9926e286db2ebbbaae3666c6cdb47e66ac2abf3e7cafd3c31</span>/data</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>txHash</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>0x4637c9eea692cce9926e286db2ebbbaae3666c6cdb47e66ac2abf3e7cafd3c31</span></span><p>The hash of the transaction in the zkSync network</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
@@ -3212,17 +3334,18 @@
         "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
         "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
         "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-        "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+        "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
         "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
         "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
         "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-          "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+          "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"rejected"</span></span>,
       "<span class="hljs-attribute">failReason</span>": <span class="hljs-value"><span class="hljs-string">"Nonce mismatch"</span></span>,
-      "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2018-12-12T01:02:03.123456789"</span>
+      "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-string">"2018-12-12T01:02:03.123456789"</span></span>,
+      "<span class="hljs-attribute">batchId</span>": <span class="hljs-value"><span class="hljs-number">155</span>
     </span>}</span>,
     "<span class="hljs-attribute">ethSignature</span>": <span class="hljs-value"><span class="hljs-string">"0xb71ef30467c91b779ccc07c6615ac5fcd2e8293847dda0a6d0c63c85e95120c812e3f1e1973fc79f1718f45554120ffeca99b21b6d424dca854e8191415d2ce91b"</span>
   </span>}</span>,
@@ -3302,12 +3425,12 @@
                   "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">12123</span></span>,
                   "<span class="hljs-attribute">token</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
                   "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-string">"17500000000000000"</span></span>,
-                  "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">29</span></span>,
+                  "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
                   "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
                   "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}
                 </span>},
                 {
@@ -3324,7 +3447,7 @@
                   "<span class="hljs-attribute">fast</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}</span>,
                   "<span class="hljs-attribute">ethTxHash</span>": <span class="hljs-value"><span class="hljs-string">"0xdda1287002282e1804af40a7c7373bd77cc99a2a27c88bf7908be45398e93148"</span>
                 </span>},
@@ -3339,7 +3462,7 @@
                   "<span class="hljs-attribute">ethAuthData</span>": <span class="hljs-value"><span class="hljs-string">"ECDSAAuthType"</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}</span>,
                   "<span class="hljs-attribute">ethSignature</span>": <span class="hljs-value"><span class="hljs-string">"0xf0947f0a731ada6e09ca99d3aafb1469a3baaf602eab2f5661edd30d6386"</span></span>,
                   "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
@@ -3356,7 +3479,7 @@
                   "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}</span>,
                   "<span class="hljs-attribute">ethTxHash</span>": <span class="hljs-value"><span class="hljs-string">"0xdda1287002282e1804af40a7c7373bd77cc99a2a27c88bf7908be45398e93148"</span>
                 </span>},
@@ -3381,7 +3504,7 @@
                       "<span class="hljs-attribute">validUntil</span>": <span class="hljs-value"><span class="hljs-number">1239213821</span></span>,
                       "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                         "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                        "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                        "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                       </span>}
                     </span>}
                   ]</span>,
@@ -3393,7 +3516,7 @@
                   "<span class="hljs-attribute">feeToken</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}
                 </span>},
                 {
@@ -3407,7 +3530,7 @@
                   "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">1001</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}
                 </span>},
                 {
@@ -3421,7 +3544,7 @@
                   "<span class="hljs-attribute">nonce</span>": <span class="hljs-value"><span class="hljs-number">1001</span></span>,
                   "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
                     "<span class="hljs-attribute">pubKey</span>": <span class="hljs-value"><span class="hljs-string">"07f86efb9bf58d5ebf23042406cb43e9363879ff79223be05b7feac1dbc58c86"</span></span>,
-                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"c3b17bc20e1d695fa1f998c15dbc48ddc6075e31fa45b46fac525bc3f1f54f0e49e2c253f029145aa6d39c4923b6813d35fe1555ea2a5218c76292df8c52c504"</span>
+                    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"9a8119110d2dd15c5b7be55de3870667055ac281c35607b67488873d8db23f8d21af4ff9027edee980124e7b2ce7b79b84fe91801e1badce3f7f339d65d8f003"</span>
                   </span>}</span>,
                   "<span class="hljs-attribute">fast</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
                   "<span class="hljs-attribute">validFrom</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
@@ -3469,6 +3592,12 @@
                 <span class="hljs-string">"string"</span>,
                 <span class="hljs-string">"null"</span>
               ]
+            </span>}</span>,
+            "<span class="hljs-attribute">batchId</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+                <span class="hljs-string">"number"</span>,
+                <span class="hljs-string">"null"</span>
+              ]
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -3477,7 +3606,8 @@
             <span class="hljs-string">"op"</span>,
             <span class="hljs-string">"status"</span>,
             <span class="hljs-string">"failReason"</span>,
-            <span class="hljs-string">"createdAt"</span>
+            <span class="hljs-string">"createdAt"</span>,
+            <span class="hljs-string">"batchId"</span>
           ]
         </span>}</span>,
         "<span class="hljs-attribute">ethSignature</span>": <span class="hljs-value">{
@@ -3521,7 +3651,159 @@
     <span class="hljs-string">"result"</span>,
     <span class="hljs-string">"error"</span>
   ]
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 27 Jul 2021</p><script>/* eslint-env browser */
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="transactions-api-v0.2-transactions-toggle2fa" class="resource"><h3 class="resource-heading">api/v0.2/transactions/toggle2FA <a href="#transactions-api-v0.2-transactions-toggle2fa" class="permalink">&nbsp;&para;</a></h3><div id="transactions-api-v0.2-transactions-toggle2fa-post" class="action post"><h4 class="action-heading"><div class="name">Toggle 2-factor authentication</div><a href="#transactions-api-v0.2-transactions-toggle2fa-post" class="method post">POST</a><code class="uri">/transactions/toggle2FA</code></h4><p>Enable or disable requirement for L1 signature for L2 transactions. It takes an optional <code>pubKeyHash</code> parameter, which, if specified,
+ensures that only transactions signed with a specific L2 private key won’t have their Ethereum signature checked.</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/transactions/toggle2FA</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">enable</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+  "<span class="hljs-attribute">accountId</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
+  "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-number">1632468148929</span></span>,
+  "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"EthereumSignature"</span></span>,
+    "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"0x9f33411e7d290e4dfbc2e7d226079c5b7d7c54d635581ab3bc2520b32002a3412a3ebaf868f7dda73b60057dafed275d277a4092f65be7e24a2d76db929e62a51c"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">pubKeyHash</span>": <span class="hljs-value"><span class="hljs-string">"sync:87360b28b1cb80bd05c1ce4fecf0b0707d68d928"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">enable</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">accountId</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">signature</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"extend"</span></span>,
+      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"EthereumSignature"</span></span>,
+          "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"0x9f33411e7d290e4dfbc2e7d226079c5b7d7c54d635581ab3bc2520b32002a3412a3ebaf868f7dda73b60057dafed275d277a4092f65be7e24a2d76db929e62a51c"</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"EIP1271Signature"</span></span>,
+          "<span class="hljs-attribute">signature</span>": <span class="hljs-value"><span class="hljs-string">"0xc9eb71b736ef69192d90a6516c5d66af883f6bc9a1749ed98edff106bcd49594618644860be89b08725de834d3a312d409810ecb39e9e7a5a5a9d8d870b166ab1c"</span>
+        </span>}
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">pubKeyHash</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"enable"</span>,
+    <span class="hljs-string">"accountId"</span>,
+    <span class="hljs-string">"timestamp"</span>,
+    <span class="hljs-string">"signature"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">network</span>": <span class="hljs-value"><span class="hljs-string">"localhost"</span></span>,
+    "<span class="hljs-attribute">apiVersion</span>": <span class="hljs-value"><span class="hljs-string">"v02"</span></span>,
+    "<span class="hljs-attribute">resource</span>": <span class="hljs-value"><span class="hljs-string">"/api/v0.2/..."</span></span>,
+    "<span class="hljs-attribute">args</span>": <span class="hljs-value">{}</span>,
+    "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2021-05-31T14:17:24.112536900Z"</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"success"</span></span>,
+  "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+  </span>}</span>,
+  "<span class="hljs-attribute">error</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">errorType</span>": <span class="hljs-value"><span class="hljs-string">"errorType"</span></span>,
+    "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"message"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">request</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">network</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"mainnet"</span>,
+            <span class="hljs-string">"rinkeby"</span>,
+            <span class="hljs-string">"ropsten"</span>,
+            <span class="hljs-string">"localhost"</span>,
+            <span class="hljs-string">"localhost"</span>
+          ]
+        </span>}</span>,
+        "<span class="hljs-attribute">apiVersion</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"v02"</span>
+          ]
+        </span>}</span>,
+        "<span class="hljs-attribute">resource</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">args</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
+        </span>}</span>,
+        "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"network"</span>,
+        <span class="hljs-string">"apiVersion"</span>,
+        <span class="hljs-string">"resource"</span>,
+        <span class="hljs-string">"args"</span>,
+        <span class="hljs-string">"timestamp"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">result</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"success"</span>
+      ]
+    </span>}</span>,
+    "<span class="hljs-attribute">error</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
+        <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"null"</span>
+      ]</span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">errorType</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"errorType"</span>,
+        <span class="hljs-string">"code"</span>,
+        <span class="hljs-string">"message"</span>
+      ]
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"request"</span>,
+    <span class="hljs-string">"status"</span>,
+    <span class="hljs-string">"result"</span>,
+    <span class="hljs-string">"error"</span>
+  ]
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 24 Sep 2021</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
