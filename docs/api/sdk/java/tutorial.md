@@ -32,7 +32,7 @@ Here you need only add just one dependency into your build configuration.
 
 ```groovy
 dependencies {
-    implementation ('io.zksync:zksync:0.0.5')
+    implementation ('io.zksync:zksync:0.0.8')
 }
 ```
 
@@ -43,7 +43,7 @@ dependencies {
     <dependency>
         <groupId>io.zksync</groupId>
         <artifactId>zksync</artifactId>
-        <version>0.0.5</version>
+        <version>0.0.8</version>
     </dependency>
 </dependencies>
 ```
@@ -69,7 +69,7 @@ For Android adding dependencies little bit difficult because it requires in incl
 implementation("org.web3j:core:4.6.0-android")
 
 implementation 'org.scijava:native-lib-loader:2.3.4'
-implementation ('io.zksync:zksync:0.0.5') {
+implementation ('io.zksync:zksync:0.0.8') {
     exclude group: 'io.zksync.sdk', module: 'zkscrypto'
     exclude group: 'net.java.dev.jna', module: 'jna'
 }
@@ -218,9 +218,11 @@ ZkSyncWallet wallet = ...;
 boolean success = wallet.enable2FA();
 
 // Disable two factor authentication
-boolean success = wallet.disable2FA();
-```
+boolean success = wallet.disable2FA(null);
 
+// Also you can disable two factor authentication for specific pubkey hash
+boolean success = wallet.disable2FA("sync:8af45346a8456d7a1fc26507ce1699329efcb4c3")
+```
 
 ## Time range of transaction validity
 
