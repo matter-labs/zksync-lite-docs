@@ -32,7 +32,7 @@ Here you need only add just one dependency into your build configuration.
 
 ```groovy
 dependencies {
-    implementation ('io.zksync:zksync:0.0.5')
+    implementation ('io.zksync:zksync:0.0.8')
 }
 ```
 
@@ -218,9 +218,11 @@ ZkSyncWallet wallet = ...;
 boolean success = wallet.enable2FA();
 
 // Disable two factor authentication
-boolean success = wallet.disable2FA();
-```
+boolean success = wallet.disable2FA(null);
 
+// Also you can disable two factor authentication for specific pubkey hash
+boolean success = wallet.disable2FA("sync:8af45346a8456d7a1fc26507ce1699329efcb4c3")
+```
 
 ## Time range of transaction validity
 
