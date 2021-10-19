@@ -15,12 +15,9 @@ meta:
 ### What is zkEVM and why is this a big deal?
 
 
-zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge-proof computation. It is the key to building an EVM-compatible ZK 
-Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on 
-traditional CPU architectures.
+zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge-proof computation. It is the key to building an EVM-compatible ZK Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
 
-The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get 
-real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zkEVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
+The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zkEVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
 
 
 ### What is zkSync 2.0?
@@ -42,7 +39,7 @@ To keep up to date with our exciting announcements coming soon, follow our [Twit
 ## Basics
 
 ### What does ZK stand for?
-Zero Knowledge; get familiar with ZK proofs [here](https://github.com/matter-labs/awesome-zero-knowledge-proofs).
+Zero Knowledge. Get familiar with ZK proofs [here](https://github.com/matter-labs/awesome-zero-knowledge-proofs).
 
 ### What is a ZK Rollup?
 
@@ -60,8 +57,7 @@ Validation of state changes in ZK Rollups is done through the computation of a z
 
 ZK Rollups can offer up to 2000 TPS at peak load! But it gets better. 
 
-ZK Rollups are also the only L2 scaling solution that can be extended with a system that can provide an entire order of magnitude more scale: **zkPorter** can offer up to 20,000 
-TPS!
+ZK Rollups are also the only L2 scaling solution that can be extended with a system that can provide an entire order of magnitude more scale: **zkPorter** can offer up to 20,000 TPS!
 
 
 ![L2 comparison](https://zksync.io/scalability.png)
@@ -69,9 +65,8 @@ TPS!
 
 ### What is zkPorter?
 
-[zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability—essential transaction data needed to reconstruct 
-state—offchain rather than on Ethereum. Instead, data availability is secured using proof of stake (PoS) by zkSync token stakers. This enables much higher scalability (tens of 
-thousands TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents). 
+[zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability — essential transaction data needed to reconstruct state — 
+offchain rather than on Ethereum. Instead, data availability is secured using proof of stake (PoS) by zkSync token stakers. This enables much higher scalability (tens of thousands TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents). 
 
 The security of zkPorter is still better than any other L1 or sidechain. In the worst case, where a malicious actor controls both the sequencer and over ⅔ of the total stake, they can sign a _valid_ state transition but withhold the data. In this case, the state is “frozen” and users will not be able to withdraw, but the attacker’s stake is frozen as well. Thus, there is no direct way for an attacker with a large stake to financially benefit from an exploit.
 
@@ -97,9 +92,7 @@ In ORs, native withdrawals of any asset takes a long time (the best case: 1 week
 
 For fungible tokens, this problem can be mitigated by liquidity providers that have significant idle liquidity on the other side of the bridge. To compensate for the capital opportunity costs, the users are charged a fee to bypass the waiting period.
 
-For smaller amounts this might be acceptable, but for professional traders this will already constitute a significant cost and will reflect on their margins. For institutions 
-that need to periodically move huge volumes of liquidity (say, billions of dollars) between L1 and L2, this solution will not be efficient since it’s very unlikely that liquidity 
-providers will keep that much money idle.
+For smaller amounts this might be acceptable, but for professional traders this will already constitute a significant cost and will reflect on their margins. For institutions that need to periodically move huge volumes of liquidity (say, billions of dollars) between L1 and L2, this solution will not be efficient since it’s very unlikely that liquidity providers will keep that much money idle.
 
 **3) UX for NFTs**
 
@@ -127,8 +120,7 @@ zkSync 2.0 offers two account types to its users: zkRollup and zkPorter. Let’s
 **1) zkRollup vs Sidechains**
 
 
-zkRollups provide the same level of security as L1 itself, but at lower costs (roughly 1/50th of the costs on L1). Sidechains, on the other hand, depend on the honest majority 
-assumptions to achieve much lower fees.
+zkRollups provide the same level of security as L1 itself, but at lower costs (roughly 1/50th of the costs on L1). Sidechains, on the other hand, depend on the honest majority assumptions to achieve much lower fees.
 
 **2) zkPorter vs Sidechains**
 
@@ -142,9 +134,7 @@ This is still a much stronger guarantee than sidechains, because no hack can be 
 
 **Bottom line**
 
-No matter what zkSync account type you choose, it’s going to be a lot more secure than sidechains. zkRollups accounts will offer the highest security, while zkPorter accounts will 
-offer 
-comparable costs. In any case, all users will be able to seamlessly interact with each other, making for a much larger liquidity pool.
+No matter what zkSync account type you choose, it’s going to be a lot more secure than sidechains. zkRollups accounts will offer the highest security, while zkPorter accounts will offer comparable costs. In any case, all users will be able to seamlessly interact with each other, making for a much larger liquidity pool.
 
 ## Developers
 
