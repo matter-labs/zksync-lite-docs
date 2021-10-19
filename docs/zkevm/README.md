@@ -14,7 +14,6 @@ meta:
 
 ### What is zkEVM and why is this a big deal?
 
-
 zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge-proof computation. It is the key to building an EVM-compatible ZK Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
 
 The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zkEVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
@@ -65,8 +64,7 @@ ZK Rollups are also the only L2 scaling solution that can be extended with a sys
 
 ### What is zkPorter?
 
-[zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability — essential transaction data needed to reconstruct state — 
-offchain rather than on Ethereum. Instead, data availability is secured using proof of stake (PoS) by zkSync token stakers. This enables much higher scalability (tens of thousands TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents). 
+[zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability — essential transaction data needed to reconstruct state — offchain rather than on Ethereum. Instead, data availability is secured using proof of stake (PoS) by zkSync token stakers. This enables much higher scalability (tens of thousands TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents). 
 
 The security of zkPorter is still better than any other L1 or sidechain. In the worst case, where a malicious actor controls both the sequencer and over ⅔ of the total stake, they can sign a _valid_ state transition but withhold the data. In this case, the state is “frozen” and users will not be able to withdraw, but the attacker’s stake is frozen as well. Thus, there is no direct way for an attacker with a large stake to financially benefit from an exploit.
 
