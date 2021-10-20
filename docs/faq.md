@@ -12,15 +12,15 @@ The team’s focus is to work on scalability for Ethereum. You can find any anno
 
 ## How do I swap tokens on zkSync?
 
-Currently, there is no UI available to make swaps, but the [infrastructure](/dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity provider solution for projects that do not have liquidity providers.
+While it is possible to make swaps, currently there is no UI available to make swaps, but the [infrastructure](/dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity provider solution for projects that do not have liquidity providers. More information can be found [here](https://zksync.io/dev/swaps.html).
 
 ## Why are fees so high?
 
-Fees vary based on Layer 1 gas prices because Layer 2 scaling solutions rely on posting data to Layer 1—this is how to inherit the security of Ethereum.
+Fees vary based on Layer 1 gas price because Layer 2 scaling solutions rely on posting data on Layer 1—this allows us to inherit the security of Ethereum.
 
 ## How long are withdrawal times?
 
-Withdrawal times can take from 30 minutes to 7 hours. Rollups amortize fees by submitting transactions in batches. When network activity increases, blocks fill up faster, and withdrawal times decrease.
+Withdrawal times can take from 30 minutes to 7 hours. Rollups amortize fees by submitting transactions in batches. When network activity increases, blocks fill up faster, and withdrawal times decrease. 
 
 ## I withdrew my funds but don't see them in my L1 account.
 
