@@ -12,7 +12,8 @@ The team’s focus is to work on scalability for Ethereum. You can find any anno
 
 ## How do I swap tokens on zkSync?
 
-While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](/dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity solution for projects that do not have liquidity providers. 
+While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](../dev/swaps.md#swaps-and-limit-orders) is accessible for teams to 
+build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity solution for projects that do not have liquidity providers. 
 
 ## Why are fees so high?
 
@@ -34,11 +35,11 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
     2. Go to "Internal Txns".   
     3. You’ll find a list of all transactions from smart contracts.   
     4. The list should have your transaction coming from the zkSync smart contract. 
-</br>
+<br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/int-txns.png">
 </p>
-</br>  
+<br>  
 
 3. If the account balance is not the same as on Etherscan, contact Support for your wallet. 
 
@@ -60,19 +61,19 @@ If you cannot log in to the zkSync wallet, you can use the “Alternative Withdr
 
 - 1. The account is at least 24 hours old.
 - 2. The account has never been activated (i.e., nonce is zero).
-</br>
+<br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/nonce.png">
 </p>
-</br>
+<br>
 
 If the steps above are confirmed, you can access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”
 
-</br>
+<br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/zktools.png">
 </p>
-</br>
+<br>
 
 ## What is the activation fee?
 
