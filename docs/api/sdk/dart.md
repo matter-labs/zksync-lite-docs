@@ -8,7 +8,7 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 
 :::
 
-**This is an unofficial open-sourced SDK documentation for zkSync.** [Link to GitHub repo.](https://github.com/vareger/zksync-sdk-dart)
+**This is an unofficial open-sourced SDK for zkSync.** [Link to GitHub repo.](https://github.com/vareger/zksync-sdk-dart)
 
 Kudos to [Vareger](https://www.vareger.com/) for developing it!
 
