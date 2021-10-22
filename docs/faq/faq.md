@@ -12,8 +12,7 @@ The team’s focus is to work on scalability for Ethereum. You can find any anno
 
 ## How do I swap tokens on zkSync?
 
-While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](../dev/swaps.md#swaps-and-limit-orders) is accessible for teams to 
-build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity solution for projects that do not have liquidity providers. 
+While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](../dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity solution for projects that do not have liquidity providers. 
 
 ## Why are fees so high?
 
