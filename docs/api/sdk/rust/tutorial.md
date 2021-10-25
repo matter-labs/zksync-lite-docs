@@ -30,8 +30,9 @@ let provider = Provider::new(Network::Rinkeby);
 
 ## Instantiating an Ethereum signer
 
-An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature as part of 2-factor authentication. It is possible to
-create a wallet without an Ethereum private key, but this wallet will only be able to perform read requests to the zkSync server.
+An Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
+signature as part of 2-factor authentication. It is possible to create a wallet without an Ethereum private key, but
+this wallet will only be able to perform read requests to the zkSync server.
 
 The Ethereum signer is represented by the `EthereumSigner` trait from the `zksync_eth_signer` crate.
 
@@ -45,7 +46,8 @@ use zksync_eth_signer::PrivateKeySigner;
 let signer = PrivateKeySigner::new(YOUR_PRIVATE_KEY);
 ```
 
-The `JsonRpcSigner` implementation may be used if the private key is managed by software that exposes a personal Web3 API:
+The `JsonRpcSigner` implementation may be used if the private key is managed by software that exposes a personal Web3
+API:
 
 ```rust
 use zksync_eth_signer::JsonRpcSigner;
@@ -57,8 +59,8 @@ The arguments are:
 
 - `rpc_addr`: The address of the wallet RPC server.
 - `address_or_index`: The identifier of the wallet to be used. If `None`, the first available wallet will be chosen.
-- `signer_type`: Indicates whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, the signer type will be deduced automatically by signing an
-  additional message.
+- `signer_type`: Indicates whether the signer adds the `\x19Ethereum...` prefix to signed messages. If `None`, the
+  signer type will be deduced automatically by signing an additional message.
 - `password_to_unlock`: Sets the wallet password if it's required.
 
 Also, if your software uses a custom signer, you can always provide your implementation of the `EthereumSigner` trait.
@@ -184,15 +186,18 @@ let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);
 let another_wallet = Wallet::new(provider, cred).await;
 ```
 
-We are going to transfer `0.5 ETH` to another account. The fee will be set automatically to the least possible fee accepted by the server.
+We are going to transfer `0.5 ETH` to another account. The fee will be set automatically to the least possible fee
+accepted by the server.
 
-Note that the SDK may round down the transferred amount or fee to the closest supported amount because the precision of transfers in zkSync is limited (see docs below).
+Note that the SDK may round down the transferred amount or fee to the closest supported amount because the precision of
+transfers in zkSync is limited (see docs below).
 
 However, you can provide amount and fee values that won't be rounded: use the methods `.amount_exact(..)` and
 `.fee_exact(..)` and ensure that your amount and fee are packable via `zksync::utils::is_token_amount_packable` and
 `zksync::utils::is_fee_amount_packable`. Rounding to the closest packable amount can also be performed manually via the
-`zksync::utils::closest_packable_token_amount` and `zksync::utils::closest_packable_fee_amount` functions. An attempt to send a transaction with either an amount or a fee that
-isn't packable will result in the transaction being rejected by the server.
+`zksync::utils::closest_packable_token_amount` and `zksync::utils::closest_packable_fee_amount` functions. An attempt to
+send a transaction with either an amount or a fee that isn't packable will result in the transaction being rejected by
+the server.
 
 ```rust
 use zksync::utils::{closest_packable_fee_amount, closest_packable_token_amount};

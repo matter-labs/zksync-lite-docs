@@ -1,8 +1,10 @@
 # Watching events
 
-This is a quick tutorial on how to use zkSync events API. For the detailed description of events data types, please refer to [the documentation](../api/events.md).
+This is a quick tutorial on how to use zkSync events API. For the detailed description of events data types, please
+refer to [the documentation](../api/events.md).
 
-The feature is currently available only on the Ropsten testnet. The API is not yet fully stabilized and may change in the future.
+The feature is currently available only on the Ropsten testnet. The API is not yet fully stabilized and may change in
+the future.
 
 [[toc]]
 
@@ -29,7 +31,8 @@ const WebSocket = require('ws');
 const ws = new WebSocket('wss://ropsten-events.zkscan.io/');
 ```
 
-To make sure that the connection is alive, it's a good practice to periodically send ping frames. It will also help to avoid timeout disconnects.
+To make sure that the connection is alive, it's a good practice to periodically send ping frames. It will also help to
+avoid timeout disconnects.
 
 ```javascript
 setInterval(function () {
@@ -39,8 +42,9 @@ setInterval(function () {
 
 ## Filtering events
 
-Once the connection is established, the client is required to send a text message with his events interests. Note, that you can only do it once, if you want to change your filters,
-you have to create a new connection. You can find the detailed documentation on filters [here](../api/events.md#Filters).
+Once the connection is established, the client is required to send a text message with his events interests. Note, that
+you can only do it once, if you want to change your filters, you have to create a new connection. You can find the
+detailed documentation on filters [here](../api/events.md#Filters).
 
 ```javascript
 ws.on('open', function open() {
@@ -76,8 +80,9 @@ In this tutorial, we will accept all events and filter them ourselves.
 
 ## Receiving messages
 
-At this point after establishing the connection and successfully sending our filters, the server will start notifying us about new events. It will also ignore any messages except
-control frames (`close`, `ping` and `pong`). That being said, you cannot change your filters without reconnecting.
+At this point after establishing the connection and successfully sending our filters, the server will start notifying us
+about new events. It will also ignore any messages except control frames (`close`, `ping` and `pong`). That being said,
+you cannot change your filters without reconnecting.
 
 Messages arrive in the following format:
 
@@ -120,7 +125,8 @@ ws.on('message', function (message) {
 });
 ```
 
-The zkSync provider can be used for displaying the token symbol and the amount in a human-readable format. The documentation for it can be found [here](../api/sdk/js/providers.md).
+The zkSync provider can be used for displaying the token symbol and the amount in a human-readable format. The
+documentation for it can be found [here](../api/sdk/js/providers.md).
 
 ## Full example
 
@@ -188,7 +194,8 @@ Let's see how it works, start our client with the following command:
 node app.js
 ```
 
-Now, send some funds to the tracked account address, you should see notifications for both committed and finalized events in your console:
+Now, send some funds to the tracked account address, you should see notifications for both committed and finalized
+events in your console:
 
 ```sh
 There was a transfer to 0x7ca2113e931ada26f64da66822ece493f20059b6

@@ -1,7 +1,7 @@
 # NFTs
 
-This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and
-come back here to reference specific functions.
+This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you
+begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
 
 - [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
 - [Mint NFT](#mint-nft)
@@ -59,13 +59,15 @@ const nft = await syncWallet.mintNFT({
 });
 ```
 
-After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in a rollup block, and verified when a zero knowledge proof has
-been generated for that block and the root hash of the rollup block has been included in the smart contract on Ethereum mainnet.
+After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in
+a rollup block, and verified when a zero knowledge proof has been generated for that block and the root hash of the
+rollup block has been included in the smart contract on Ethereum mainnet.
 
 ## Transfer NFT
 
-An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may have to wait a few hours before it can be transferred.
-This only applies to the first transfer; all following transfers can be completed with no restrictions.
+An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT
+may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following
+transfers can be completed with no restrictions.
 
 You can transfer an NFT by calling the `syncTransferNFT` function:
 
@@ -88,8 +90,8 @@ async syncTransferNFT(transfer: {
 | token    | NFT object                                               |
 | fee      | transaction fee                                          |
 
-The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second
-is the fee.
+The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions
+where the first handle is the NFT transfer and the second is the fee.
 
 ```typescript
 const handles = await sender.syncTransferNFT({
@@ -144,8 +146,8 @@ const withdraw = await wallet.withdrawNFT({
 
 ### Emergency Withdraw
 
-In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to
-our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous
+to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
 
 > Signature
 
@@ -161,7 +163,8 @@ ethers.providers.TransactionRequest; }): Promise<ETHOperation>
 
 ### Calculate Transaction Fee
 
-To calculate the transaction fee for minting an NFT, the `getTransactionFee` method from the `Provider` class now supports transaction type `'MintNFT'`.
+To calculate the transaction fee for minting an NFT, the `getTransactionFee` method from the `Provider` class now
+supports transaction type `'MintNFT'`.
 
 > Signature
 

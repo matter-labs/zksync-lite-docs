@@ -131,12 +131,14 @@ const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvid
 ### Creating wallet from CREATE2 data
 
 This way you can create a wallet, which corresponding L1 account could be created using the CREATE2 opcode. The
-`syncSigner` pubKeyHash is encoded as a part of the salt for CREATE2. Note that you do not need to manually add it to the `saltArg` of the `create2Data` as it is done
-automatically.
+`syncSigner` pubKeyHash is encoded as a part of the salt for CREATE2. Note that you do not need to manually add it to
+the `saltArg` of the `create2Data` as it is done automatically.
 
-Such wallets are not required to provide Ethereum signatures for transactions. Unlike the `ECDSA` wallets, which have to verify the signature for ChangePubKey onchain, `CREATE2`
-wallets only require to check that the pubKeyHash is included in the CREATE2 digest. Thus, the ChangePubKey costs less for this kind of account than for the `ECDSA` one, but that
-comes with a limitation: the L2 private key can not be changed. Also, this type of account can not be used to onboard users from existing L1 addresses.
+Such wallets are not required to provide Ethereum signatures for transactions. Unlike the `ECDSA` wallets, which have to
+verify the signature for ChangePubKey onchain, `CREATE2` wallets only require to check that the pubKeyHash is included
+in the CREATE2 digest. Thus, the ChangePubKey costs less for this kind of account than for the `ECDSA` one, but that
+comes with a limitation: the L2 private key can not be changed. Also, this type of account can not be used to onboard
+users from existing L1 addresses.
 
 > Signature
 
@@ -213,7 +215,8 @@ async getAccountId(): Promise<number | undefined>;
 
 ### Get account nonce
 
-Get the nonce of this account. Very convenient if you want to either provide a nonce explicitly or use the last committed one as the fallback.
+Get the nonce of this account. Very convenient if you want to either provide a nonce explicitly or use the last
+committed one as the fallback.
 
 > Signature
 
@@ -648,7 +651,8 @@ Performs an atomic swap between 2 existing accounts in the zkSync network. For i
 There are two kinds of orders:
 
 - Swap order, where an explicit amount is set.
-- Limit order, where an explicit amount is not set, and instead inferred from the balance. This order can be partially filled.
+- Limit order, where an explicit amount is not set, and instead inferred from the balance. This order can be partially
+  filled.
 
 > Signature
 
@@ -721,9 +725,10 @@ async syncSwap(swap: {
 
 To construct a ratio, either `utils.tokenRatio` or `utils.weiRatio` may be used.
 
-- `tokenRatio` constructs a ratio relevant to the tokens themselves, so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 ETH for each wBTC.
-- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token, so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (
-  10<sup>-8</sup> wBTC).
+- `tokenRatio` constructs a ratio relevant to the tokens themselves, so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4
+  ETH for each wBTC.
+- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token, so `{ 'ETH': 4, 'wBTC': 1 }` would
+  mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi ( 10<sup>-8</sup> wBTC).
 
 > Signature
 
@@ -833,10 +838,11 @@ const transferTransactions = await wallet.syncMultiTransfer([transferA, transfer
 
 ### Withdraw token from the zkSync
 
-Moves funds from the zkSync account to ethereum address. Sender account should have correct public key set before sending this transaction. (
-see [change pub key](#changing-account-public-key))
+Moves funds from the zkSync account to ethereum address. Sender account should have correct public key set before
+sending this transaction. ( see [change pub key](#changing-account-public-key))
 
-Before sending this transaction, the user will be asked to sign a specific message with transaction details using their Ethereum account (because of the security reasons).
+Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
+Ethereum account (because of the security reasons).
 
 The operators require a fee to be paid in order to process transactions.[^fee]
 
@@ -1075,7 +1081,8 @@ await syncWallet.toggle2FA(true); // enable 2FA back
 
 ### Withdraw pending balance
 
-Calls the `withdrawPendingBalance` function on the zkSync smart contract. This function is typically used to withdraw funds that got stuck due to out-of-gas error.
+Calls the `withdrawPendingBalance` function on the zkSync smart contract. This function is typically used to withdraw
+funds that got stuck due to out-of-gas error.
 
 > Signature
 
@@ -1117,8 +1124,8 @@ const txReceipt = await withdrawPendingTx.wait();
 
 ### Withdraw pending balances
 
-Calls the `withdrawPendingBalance` function multiple times on the zkSync smart contract. To optimize gas usage, instead of doing separate calls, it aggregates them using
-the [multicall](https://github.com/makerdao/multicall) smart contract.
+Calls the `withdrawPendingBalance` function multiple times on the zkSync smart contract. To optimize gas usage, instead
+of doing separate calls, it aggregates them using the [multicall](https://github.com/makerdao/multicall) smart contract.
 
 > Signature
 
@@ -1167,8 +1174,9 @@ const txReceipt = await withdrawPendingTx.wait();
 
 ## Batch Builder
 
-Batch Builder allows you to create and send transaction batches in a very straightforward way, without the need to worry about managing nonce or the fee transaction. It also can
-improve the UX of your application as it requires the user to sign the message only once for the whole batch. You can read more about transaction batches
+Batch Builder allows you to create and send transaction batches in a very straightforward way, without the need to worry
+about managing nonce or the fee transaction. It also can improve the UX of your application as it requires the user to
+sign the message only once for the whole batch. You can read more about transaction batches
 [here](/dev/payments/sending_transactions#sending-transaction-batches).
 
 Batch Builder supports all kinds of zkSync L2 transactions, such as: `Withdraw`, `Transfer`, `ChangePubKey`, etc.

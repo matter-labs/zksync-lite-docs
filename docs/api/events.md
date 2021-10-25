@@ -1,14 +1,14 @@
 # Events
 
-This document describes working with zkSync events in more detail in a language-agnostic way. For a quick introduction to the zkSync events with examples in Javascript please
-read [the quick introduction](../dev/events.md).
+This document describes working with zkSync events in more detail in a language-agnostic way. For a quick introduction
+to the zkSync events with examples in Javascript please read [the quick introduction](../dev/events.md).
 
 [[toc]]
 
 ## Establishing the connection
 
-Currently, events are only present on Ropsten. The event server WebSocket URL is `wss://ropsten-events.zkscan.io`. You can find an example of client
-application [here](../dev/events.md).
+Currently, events are only present on Ropsten. The event server WebSocket URL is `wss://ropsten-events.zkscan.io`. You
+can find an example of client application [here](../dev/events.md).
 
 ## Event structure
 
@@ -24,8 +24,8 @@ After the connection is established, your client will receive messages about the
 }
 ```
 
-The `block_number` is the number of the zkSync block in which the event happened The `type` is the type of the event, which is either `account`, `block` or the `transaction`.
-The `data` is the data specific to the event.
+The `block_number` is the number of the zkSync block in which the event happened The `type` is the type of the event,
+which is either `account`, `block` or the `transaction`. The `data` is the data specific to the event.
 
 ### Account events
 
@@ -44,8 +44,8 @@ The `data` for each `account` event has the following format:
 }
 ```
 
-The `status` field is equal to either `committed` when the update was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs
-onchain.
+The `status` field is equal to either `committed` when the update was committed onchain or `finalized` when the block
+with such event has been verified with zero-knowledge proofs onchain.
 
 Here are full examples of the account events:
 
@@ -99,7 +99,8 @@ Here are full examples of the account events:
 
 ### Block events
 
-The block events are events notifying whether the block has been committed or finalized. Such events have the following structure:
+The block events are events notifying whether the block has been committed or finalized. Such events have the following
+structure:
 
 ```json
 {
@@ -116,8 +117,9 @@ The block events are events notifying whether the block has been committed or fi
 }
 ```
 
-The `status` field is equal to either `committed` when the update was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge proofs
-onchain. It can also be equal to `reverted` if the block has been reverted. A block that was finalized can never be reverted.
+The `status` field is equal to either `committed` when the update was committed onchain or `finalized` when the block
+with such event has been verified with zero-knowledge proofs onchain. It can also be equal to `reverted` if the block
+has been reverted. A block that was finalized can never be reverted.
 
 Here is an example of a `finalized` block event:
 
@@ -140,8 +142,8 @@ Here is an example of a `finalized` block event:
 
 ### Transaction events
 
-The transaction events notify about transactions being committed or finalized. They notify about both L2 transactions and L1 priority operations. The `data` for each event looks
-the following way:
+The transaction events notify about transactions being committed or finalized. They notify about both L2 transactions
+and L1 priority operations. The `data` for each event looks the following way:
 
 ```json
 {
@@ -157,8 +159,9 @@ the following way:
 }
 ```
 
-The `status` field is equal to either `committed` when the transaction was committed onchain or `finalized` when the block with such event has been verified with zero-knowledge
-proofs onchain. It can also be equal to `reverted` if the transaction was invalid.
+The `status` field is equal to either `committed` when the transaction was committed onchain or `finalized` when the
+block with such event has been verified with zero-knowledge proofs onchain. It can also be equal to `reverted` if the
+transaction was invalid.
 
 Here are a few examples for transaction events:
 
@@ -351,7 +354,8 @@ Here are a few examples for transaction events:
 
 ## Filters
 
-After the connection is established, the client needs to send the filter for the events. A filter is a JSON object of the following type:
+After the connection is established, the client needs to send the filter for the events. A filter is a JSON object of
+the following type:
 
 ```json
 {
@@ -422,7 +426,8 @@ The `account` events can be filtered by several parameters:
 }
 ```
 
-The `accounts` parameter is an array of account ids, the events about which should be sent to the client. If not specified, events about any account will be sent.
+The `accounts` parameter is an array of account ids, the events about which should be sent to the client. If not
+specified, events about any account will be sent.
 
 The `tokens` parameter is an array of token ids, which were involved in the account update.
 
@@ -451,8 +456,8 @@ The `transaction` events can be filtered by several parameters:
 
 The `accounts`, `tokens`, and `status` parameters have the same meaning as for the `account` events filters.
 
-The `types` is an array of types of `transaction` events about which you wish to receive. The following transaction types are supported: `Transfer`, `Withdraw`, `ChangePubKey`
-, `ForcedExit`, `FullExit`, `Deposit`.
+The `types` is an array of types of `transaction` events about which you wish to receive. The following transaction
+types are supported: `Transfer`, `Withdraw`, `ChangePubKey` , `ForcedExit`, `FullExit`, `Deposit`.
 
 ### Examples
 
@@ -486,10 +491,11 @@ Here are some additional examples of filtering:
 
 ## Note on stability
 
-Technically the committed blocks may be reverted and the transactions inside them will be reverted as well. This happens very rarely, but if your client relies on committed events,
-some precautious measures should be taken. If a block is reverted the client will be notified with an appropriate `block` event, but it will not be notified about the individual
-`transaction` events and the `account` events to be reverted as well. It is recommended that if you rely on committed events, then you also keep track of the `block` events to know
-if a block was reverted.
+Technically the committed blocks may be reverted and the transactions inside them will be reverted as well. This happens
+very rarely, but if your client relies on committed events, some precautious measures should be taken. If a block is
+reverted the client will be notified with an appropriate `block` event, but it will not be notified about the individual
+`transaction` events and the `account` events to be reverted as well. It is recommended that if you rely on committed
+events, then you also keep track of the `block` events to know if a block was reverted.
 
 If you want to receive events only about final transactions, then you should accept only `finalized` events. The
 `finalized` blocks can never be reverted as it is enforced by an Ethereum smart contract.

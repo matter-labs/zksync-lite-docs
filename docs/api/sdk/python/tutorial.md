@@ -44,8 +44,9 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 
 ## Ethereum signer
 
-Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature as a part of 2-factor authentication scheme. It is possible
-to create a wallet without an Ethereum private key, but such a wallet will only be able to perform read requests to the zkSync server.
+Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature
+as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private key, but such
+a wallet will only be able to perform read requests to the zkSync server.
 
 Ethereum signer is represented by the `EthereumSignerInterface` abstract class from
 `zksync_sdk.ethereum_signer.interface`.
@@ -213,7 +214,8 @@ tx = await wallet.mint_nft("0x00000000000000000000000000000000000000000000000000
 status = await tx.await_committed()
 ```
 
-Note that before transferring or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
+Note that before transferring or withdrawing a freshly-minted NFT, this operation has to be verified (not just
+committed).
 
 ### Checking owned and minted NFTs
 
