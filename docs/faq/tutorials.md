@@ -13,24 +13,18 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 </p>
 </br>  
 
-1. Go to [https://rinkeby.zksync.io](https://rinkeby.zksync.io/) and connect your wallet.  
+1. Go to [https://wallet.zksync.io/](https://wallet.zksync.io/) and connect your wallet.
+- To connect to the Rinkeby test network:
+  - Click on the Ethereum symbol in the bottom right.
+  - Select Rinkeby. 
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged1.png" width="900">
 </p>
 </br>
 
-2. Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
-</br>
-<p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged2.png">
-</p>
-</br>
 
-
-
-3. Choose “+ Deposit.”  
-*(Optional): “Get some trial tokens” using the Minting tool to mint other ERC-20 tokens on Rinkeby.*
+2. Choose “+ Add Funds.”  
 
 </br>
 <p align="center">
@@ -38,7 +32,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 </p>
 </br>
 
-4. Select your token, enter the amount, and deposit.
+3. Select your token, enter the amount, and add funds.
 - *If you can’t find your token:*
   - Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. on Rinkeby, ERC20-21 = UNI)
   - Add support for your token:  
@@ -52,14 +46,14 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 </p>
 </br>
 
-5. Review the transaction information and confirm.
+4. Review the transaction information and confirm.
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged5.png">
 </p>
 </br>
 
-6. The time to mine the transaction will depend on the usage of Layer 1. If you have any difficulties, please check Etherscan to monitor the transaction. 
+5. The time to mine the transaction will depend on the usage of Layer 1. If you have any difficulties, please check Etherscan to monitor the transaction. 
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged6.png" width="500">
@@ -69,7 +63,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 </p>
 </br>
 
-7. Your deposit is complete. The transaction has been committed and, depending on zkSync network usage, will be verified in the next 30 min to 7 hours. 
+7. Your deposit is complete. The transaction has been initiated and, depending on zkSync network usage, will be verified in the next 10 min to 7 hours. 
 
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
