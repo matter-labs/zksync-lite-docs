@@ -1,9 +1,18 @@
 {
-    "version": "0.1",
-    "language": "en",
-    "words": [],
-    "dictionaries": ["typescript", "zksync"],
-    "dictionaryDefinitions": [
-        { "name": "zksync", "path": "./cspell-zksync.txt"}
-    ]
+  "version": "0.2",
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [],
+  "dictionaries": [
+    "zksync",
+    "go",
+    "html",
+    "typescript"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "zksync",
+      "path": "./cspell-zksync.txt"
+    }
+  ]
 }
