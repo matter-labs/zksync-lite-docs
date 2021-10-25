@@ -73,10 +73,11 @@ If your account meets the requirements for using the "Alternative Withdrawal" to
 1. Go to [Alternative Withdrawal](https://withdraw.zksync.io/).
 - *You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”*
 2. Enter the address that you want the funds moved from zkSync to Ethereum L1. 
-3. Select token you want withdrawn.
+3. Select the token you want to be withdrawn.
 4. Choose your method of paying the fee.
 5. Complete the fee payment process on your wallet.
-- Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/). 
+- Once the alternative withdrawal has been completed, check "Internal Txns" on [Etherscan](https://etherscan.io/) for your transaction.
+ 
 
 ## What is the activation fee?
 
