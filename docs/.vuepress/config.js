@@ -1,17 +1,17 @@
 module.exports = {
-  title: "zkSync: secure, scalable crypto payments", // adding title gives us a header with search box
-  description: "zkSync is a fully trustless user-centric zkRollup protocol for scaling payments and smart contracts on Ethereum.",
-  repo: "matter-labs/zksync",
-  dest: "dist",
+  title: 'zkSync: secure, scalable crypto payments', // adding title gives us a header with search box
+  description: 'zkSync is a fully trustless user-centric zkRollup protocol for scaling payments and smart contracts on Ethereum.',
+  repo: 'matter-labs/zksync-docs',
+  dest: 'dist',
   markdown: {
     toc: { includeLevel: [2, 3] },
   },
   extendMarkdown: (md) => {
     // Add support of footnotes (like [^1]) in markdown
-    md.use(require("markdown-it-footnote"));
+    md.use(require('markdown-it-footnote'));
   },
   plugins: {
-    "fulltext-search": {},
+    'fulltext-search': {},
     "vuepress-plugin-canonical": {
       baseURL: "https://zksync.io", // base url for your canonical link, optional, default: ''
       stripExtension: false, // strip '.html' , optional, default: false
@@ -21,17 +21,17 @@ module.exports = {
     },
   },
   themeConfig: {
-    logo: "/LogotypeLight.svg",
-    lastUpdated: "Last Updated",
-    repo: "matter-labs/zksync",
+    logo: '/LogotypeLight.svg',
+    lastUpdated: 'Last Updated',
+    repo: 'matter-labs/zksync-docs',
     nav: [
       {
-        text: "User Docs",
-        link: "/faq/",
+        text: 'User Docs',
+        link: '/faq/',
       },
       {
-        text: "Developer Docs",
-        link: "/dev/",
+        text: 'Developer Docs',
+        link: '/dev/',
       },
       {
         text: "API Reference",
@@ -55,14 +55,8 @@ module.exports = {
       "/legal/": ["/legal/terms", "/legal/privacy"],
       "/faq/": [
         {
-          title: "Welcome to zkSync", // required
-          path: "/faq/", // optional, which should be a absolute path.
-          collapsable: true, // optional, defaults to true
-          sidebarDepth: 0, // optional, defaults to 1
-        },
-        {
-          title: "Overview", // required
-          path: "/faq/intro.html", // optional, which should be a absolute path.
+          title: 'Overview', // required
+          path: '/faq/', // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
