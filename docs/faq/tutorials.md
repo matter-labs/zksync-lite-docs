@@ -71,7 +71,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 
 7. Your deposit is complete. The transaction has been committed and, depending on zkSync network usage, will be verified in the next 30 min to 7 hours. 
 
-**Committed**             |  **Verified**
+**Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged10.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged11.png" width="500">
@@ -144,7 +144,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 
 7. Your transfer is complete! The transaction has been committed and, depending on zkSync network usage, will be verified in the next 30 min to 7 hours. 
 
-**Committed**            |  **Verified**
+**Pending**            |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget8.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget9.png" width="400">
@@ -201,7 +201,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 6. Your withdrawal has been committed. There will be an immediate change in your account balance in zkSync, but withdrawal times can take from 30 minutes to 7 hours before being available on L1.
 - *Layer 2 Rollup solutions amortize fees by submitting transactions in batches. For example, when network activity increases, blocks fill up faster, and withdrawal times decrease.* 
 
-**Committed**             |  **Verified**
+**Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew5.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imagew6.png" width="400">
