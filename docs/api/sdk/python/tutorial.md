@@ -11,8 +11,8 @@ In this tutorial we will demonstrate how to:
 
 ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 
-```
-$ pip install git+https://github.com/zksync-sdk/zksync-python.git
+```bash
+pip install git+https://github.com/zksync-sdk/zksync-python.git
 ```
 
 Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is the only option.
@@ -21,8 +21,8 @@ Unfortunately, currently, SDK is not published on PyPI, thus installation throug
 
 For using this library:
 
-1.  You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
-2.  Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library
+1. You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
+2. Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library
 
 ## Initialize crypto library
 
@@ -44,8 +44,9 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 
 ## Ethereum signer
 
-Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature as a part of 2-factor authentication scheme. It is possible
-to create a wallet without an Ethereum private key, but such a wallet will only be able to perform read requests to the zkSync server.
+Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature
+as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private key, but such
+a wallet will only be able to perform read requests to the zkSync server.
 
 Ethereum signer is represented by the `EthereumSignerInterface` abstract class from
 `zksync_sdk.ethereum_signer.interface`.
@@ -213,7 +214,8 @@ tx = await wallet.mint_nft("0x00000000000000000000000000000000000000000000000000
 status = await tx.await_committed()
 ```
 
-Note that before transferring or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
+Note that before transferring or withdrawing a freshly-minted NFT, this operation has to be verified (not just
+committed).
 
 ### Checking owned and minted NFTs
 

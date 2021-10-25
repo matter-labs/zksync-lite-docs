@@ -39,7 +39,8 @@ const order = await wallet.getOrder({
 
 An order can also include:
 
-- `recipient` - an address of an existing account, to which the result of a swap should be transferred, in case you want to perform a swap-and-transfer. Defaults to self
+- `recipient` - an address of an existing account, to which the result of a swap should be transferred, in case you want
+  to perform a swap-and-transfer. Defaults to self
 - `validFrom` and `validUntil` Unix timestamps which limit a timespan where a block with a swap can be processed
 - `nonce` that is going to be used for the swap
 
@@ -51,10 +52,12 @@ Anyone can submit 2 orders for a swap if they meet the following limitations:
 - ratios in orders are compatible: `1/orderB.ratio <= orderA.amount/orderB.amount <= orderA.ratio`
 - if orders have recipients, their accounts already exist in zkSync
 
-Fee is paid by the submitter, and the token it is paid in should be specified. After a swap is executed, nonce is incremented on both swapping accounts and the submitter. If swap
-was submitted from one of the swapping accounts, nonce is incremented only once.
+Fee is paid by the submitter, and the token it is paid in should be specified. After a swap is executed, nonce is
+incremented on both swapping accounts and the submitter. If swap was submitted from one of the swapping accounts, nonce
+is incremented only once.
 
-If the user wishes to cancel the swap that has not yet been submitted, they simply have to increment their nonce (e.g. send a zero-transfer).
+If the user wishes to cancel the swap that has not yet been submitted, they simply have to increment their nonce (e.g.
+send a zero-transfer).
 
 To submit a swap, use the [`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method of `Wallet`:
 
@@ -67,8 +70,8 @@ const swap = await wallet.syncSwap({
 
 ## Limit orders
 
-Limit orders provide a way to exchange a certain token for another at a certain price. They are designed to be used primarily by other platforms that want to provide trustless and
-scalable exchange services.
+Limit orders provide a way to exchange a certain token for another at a certain price. They are designed to be used
+primarily by other platforms that want to provide trustless and scalable exchange services.
 
 The differences between an atomic swap and a limit order are:
 
@@ -76,12 +79,14 @@ The differences between an atomic swap and a limit order are:
 - limit orders can be partially filled
 - limit orders do not increment account's nonce when partially filled
 
-::: warning This means that once a limit order is signed for a certain token, the whole balance can potentially be exchanged for another token (at a specified ratio). There is no
-way to limit the amount to be exchanged other than use a special trading account. :::
+::: warning This means that once a limit order is signed for a certain token, the whole balance can potentially be
+exchanged for another token (at a specified ratio). There is no way to limit the amount to be exchanged other than use a
+special trading account. :::
 
 ### Trading accounts
 
-A trading account is an ordinary account that can be used to sign a limit order. It's function is to limit the amount of a certain token that a user wants to exchange.
+A trading account is an ordinary account that can be used to sign a limit order. It's function is to limit the amount of
+a certain token that a user wants to exchange.
 
 To do this, user has to:
 
@@ -89,7 +94,8 @@ To do this, user has to:
 2. Set a signing key for the account.
 3. Sign a limit order.
 
-This way the limit order will exchange at most the amount you transferred to the trading account. Remaining balance on the main account will be left untouched.
+This way the limit order will exchange at most the amount you transferred to the trading account. Remaining balance on
+the main account will be left untouched.
 
 ### Signing limit orders
 
@@ -108,13 +114,16 @@ const order = await wallet.getLimitOrder({
 
 ### Filling a limit order
 
-Limit order itself represents only a half of the swap operation. In order to be filled, the following criteria must be met:
+Limit order itself represents only a half of the swap operation. In order to be filled, the following criteria must be
+met:
 
-- There exists a counterpart order (a normal order _or_ a limit order) that fits the original order's tokens and buy/sell ratio.
+- There exists a counterpart order (a normal order _or_ a limit order) that fits the original order's tokens and
+  buy/sell ratio.
 - There exists someone willing to combine both orders into a swap operation and submit it.
 
-Amounts that are being filled should be specified in the swap operation. Limit orders can be partially filled, so amounts can be different from actual balances, although must be
-compatible with the ratios specified in the orders. For details, see [example](#example).
+Amounts that are being filled should be specified in the swap operation. Limit orders can be partially filled, so
+amounts can be different from actual balances, although must be compatible with the ratios specified in the orders. For
+details, see [example](#example).
 
 ```typescript
 const swap = await wallet.syncSwap({
@@ -128,22 +137,27 @@ const swap = await wallet.syncSwap({
 
 Performing atomic swaps is as simple as sharing a signed order message with a party that you want to swap with.
 
-On the other hand, collecting and matching limit orders should probably be performed by platform(s) with an already existing userbase by some kind of matching engine. zkSync tries
-to be as generic as possible, so creating matching engines is not considered - we will only provide an L2 framework that other platforms can integrate with.
+On the other hand, collecting and matching limit orders should probably be performed by platform(s) with an already
+existing userbase by some kind of matching engine. zkSync tries to be as generic as possible, so creating matching
+engines is not considered - we will only provide an L2 framework that other platforms can integrate with.
 
 ### Suggestions
 
 Trading accounts can be created as CREATE2 accounts. This approach has the following benefits:
 
 - Setting a signing key on a CREATE2 account is cheaper
-- Salt argument in CREATE2 can be used to deterministically generate trading account addresses for a certain main account
-- Same L2 private key can be used for all trading accounts and the main account if desired. Although this bears some risks (compromising a single account would mean compromising
-  all of them), key management can be inconvenient in some situations.
+- Salt argument in CREATE2 can be used to deterministically generate trading account addresses for a certain main
+  account
+- Same L2 private key can be used for all trading accounts and the main account if desired. Although this bears some
+  risks (compromising a single account would mean compromising all of them), key management can be inconvenient in some
+  situations.
 
-Should a platform decide to use CREATE2 for trading accounts, it will have to choose a contract bytecode to be used for address calculation. The contract should be open-source and
-have full exit and withdrawal functionality since in the rare case of censorship users will have to deploy it to rescue their funds.
+Should a platform decide to use CREATE2 for trading accounts, it will have to choose a contract bytecode to be used for
+address calculation. The contract should be open-source and have full exit and withdrawal functionality since in the
+rare case of censorship users will have to deploy it to rescue their funds.
 
-It is also suggested to reuse trading accounts on which orders were filled or cancelled since this way a signing key would not have to be set again.
+It is also suggested to reuse trading accounts on which orders were filled or cancelled since this way a signing key
+would not have to be set again.
 
 ### Example
 
@@ -208,9 +222,10 @@ This will exchange 100 wBTC from `walletA` for 300 ETH from `walletB`. For detai
 
 To construct a ratio, use either of the two utility functions:
 
-- `tokenRatio` constructs a ratio relevant to the tokens themselves, so `{ ETH: 4, wBTC: 1 }` would mean you want 4 ETH for each wBTC.
-- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token, so `{ ETH: 4, wBTC: 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (
-  10<sup>-8</sup> wBTC).
+- `tokenRatio` constructs a ratio relevant to the tokens themselves, so `{ ETH: 4, wBTC: 1 }` would mean you want 4 ETH
+  for each wBTC.
+- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token, so `{ ETH: 4, wBTC: 1 }` would mean
+  you want 4 wei (10<sup>-18</sup> ETH) for each satoshi ( 10<sup>-8</sup> wBTC).
 
 If tokens symbols or IDs are contained in variables, use the following syntax to pass them into ratio objects:
 

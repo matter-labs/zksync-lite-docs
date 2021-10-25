@@ -1,10 +1,13 @@
 ---
-home: false tagline: Scalability without compromises footer: Made with ❤️ by Matter Labs
+home: false 
+tagline: Scalability without compromises 
+footer: Made with ❤️ by Matter Labs
 ---
 
 # Welcome to zkSync
 
-**zkSync** is a user-centric zk rollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for Ethereum, already live on Ethereum mainnet.
+**zkSync** is a user-centric zk rollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
+Ethereum, already live on Ethereum mainnet.
 
 <!-- using HTML style instead of Markdown ## since our formatter screams when a title is punctuated -->
 

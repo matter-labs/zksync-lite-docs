@@ -1,8 +1,10 @@
 # NFTs in zkSync 1.x
 
-Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users will also be able to withdraw NFTs to Layer 1.
+Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users
+will also be able to withdraw NFTs to Layer 1.
 
-This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project.
+This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into
+your project.
 
 - [Overview](#overview)
 - [Setup](#setup)
@@ -56,8 +58,8 @@ By passing in `recipient_account_id`, we allow creators to choose whether to min
 
 ### Enforcing Uniqueness
 
-To enforce uniqueness of NFT **token IDs**, we use the last account in the zkSync balance tree to track token IDs. This account, which we will refer to as `SpecialNFTAccount`, will
-have a balance of `SPECIAL_NFT_TOKEN` representing the
+To enforce uniqueness of NFT **token IDs**, we use the last account in the zkSync balance tree to track token IDs. This
+account, which we will refer to as `SpecialNFTAccount`, will have a balance of `SPECIAL_NFT_TOKEN` representing the
 `token_id` of the latest mint.
 
 ```typescript
@@ -67,8 +69,9 @@ SpecialNFTAccount[SPECIAL_NFT_TOKEN];
 SpecialNFTAccount[SPECIAL_NFT_TOKEN] += 1;
 ```
 
-To enforce uniqueness of NFT **token addresses**, recall `serial_id` is an input in the hash that generates the address. Creator accounts will have a balance of `SPECIAL_NFT_TOKEN`
-representing the `serial_id`, the number of NFTs that have been minted by the creator.
+To enforce uniqueness of NFT **token addresses**, recall `serial_id` is an input in the hash that generates the address.
+Creator accounts will have a balance of `SPECIAL_NFT_TOKEN` representing the `serial_id`, the number of NFTs that have
+been minted by the creator.
 
 ```typescript
 // serial ID is represented by:
@@ -145,8 +148,9 @@ const receipt = await nft.awaitReceipt();
 
 ### View the NFT
 
-After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in a rollup block, and verified when a zero knowledge proof has
-been generated for that block and the root hash of the rollup block has been included in the smart contract on Ethereum mainnet.
+After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in
+a rollup block, and verified when a zero knowledge proof has been generated for that block and the root hash of the
+rollup block has been included in the smart contract on Ethereum mainnet.
 
 To view an account's NFTs:
 
@@ -172,8 +176,9 @@ async getNFT(tokenId: number, type: 'committed' | 'verified' = 'committed'): Pro
 Users can transfer NFTs to existing accounts and transfer to addresses that have not yet registered a zkSync account.
 `TRANSFER` and `TRANSFER_TO_NEW` opcodes will work the same.
 
-An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may have to wait a few hours before it can be transferred.
-This only applies to the first transfer; all following transfers can be completed with no restrictions.
+An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT
+may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following
+transfers can be completed with no restrictions.
 
 You can transfer an NFT by calling the `syncTransferNFT` function:
 
@@ -196,8 +201,8 @@ async syncTransferNFT(transfer: {
 | token    | NFT object                                               |
 | fee      | transaction fee                                          |
 
-The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second
-is the fee.
+The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions
+where the first handle is the NFT transfer and the second is the fee.
 
 ```typescript
 const handles = await sender.syncTransferNFT({
@@ -225,7 +230,8 @@ The swap function can be used to atomically swap:
 
 ### Swap NFTs
 
-To swap 2 NFTs, each party will sign an order specifying the NFT ids for the NFT they are selling and the NFT they are buying.
+To swap 2 NFTs, each party will sign an order specifying the NFT ids for the NFT they are selling and the NFT they are
+buying.
 
 Using the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method:
 
@@ -262,8 +268,9 @@ const receipt = await swap.awaitReceipt();
 
 ### Buy / Sell NFTs
 
-To buy or sell an NFT for fungible tokens, each party will sign an order specifying the NFT id and the name of the token they are spending/receiving. In the example, pay special
-attention to the ratio parameter. You can find a list of available tokens and their symbols in our [explorer](https://zkscan.io/explorer/tokens).
+To buy or sell an NFT for fungible tokens, each party will sign an order specifying the NFT id and the name of the token
+they are spending/receiving. In the example, pay special attention to the ratio parameter. You can find a list of
+available tokens and their symbols in our [explorer](https://zkscan.io/explorer/tokens).
 
 ```typescript
 const buyingNFT = await walletA.getOrder({
@@ -295,8 +302,9 @@ Withdrawals to L1 will require 3 actors:
 - Creator: user which _mints_ NFT on L2
 - NFTOwner: user which _owns_ NFT on L2
 
-This guide will demonstrate 2 types of withdrawals: normal and emergency, and explain under what conditions each type should be used. It also explains the architecture of the NFT
-token bridge between zkSync and L1, and what is needed if protocols want to implement their own NFT factory contract on L1.
+This guide will demonstrate 2 types of withdrawals: normal and emergency, and explain under what conditions each type
+should be used. It also explains the architecture of the NFT token bridge between zkSync and L1, and what is needed if
+protocols want to implement their own NFT factory contract on L1.
 
 ### Withdraw NFT
 
@@ -343,8 +351,8 @@ const receipt = await withdraw.awaitReceipt();
 
 ### Emergency Withdraw
 
-In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to
-our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous
+to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
 
 > Signature
 
@@ -368,33 +376,35 @@ const receipt = await emergencyWithdrawal.awaitReceipt();
 
 ### Factory and zkSync Smart Contract Interaction
 
-We have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their own minting contract. Projects with their own minting
-contracts only need to implement one minting function:
+We have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their
+own minting contract. Projects with their own minting contracts only need to implement one minting function:
 `mintNFTFromZkSync`.
 
 ```typescript
 mintNFTFromZkSync(creator_address: address, creator_id: uint32, serial_id: uint32, content_hash: bytes, recipient_address: address, token_id: uint32)
 ```
 
-The zkSync Governance contract will implement a function `registerFactory` that will register creators as a trusted minter on L2 for the factory contract.
+The zkSync Governance contract will implement a function `registerFactory` that will register creators as a trusted
+minter on L2 for the factory contract.
 
 ```typescript
 registerFactory(creator_address: address, signature: bytes)
 ```
 
-To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the token on L2, and call `mintNFTFromZkSync` on the factory
-corresponding to the creator.
+To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the
+token on L2, and call `mintNFTFromZkSync` on the factory corresponding to the creator.
 
 ### Factory Registration
 
 1. To register a factory, creators will sign the following message with data `factory_address` and `creator_address`.
 
-```
-"\x19Ethereum Signed Message:\n141",
-"\nCreator's account ID in zkSync: {creatorIdInHex}",
-"\nCreator: {CreatorAddressInHex}",
-"\nFactory: {FactoryAddressInHex}"
-```
+   ```text
+   "\x19Ethereum Signed Message:\n141",
+   "\nCreator's account ID in zkSync: {creatorIdInHex}",
+   "\nCreator: {CreatorAddressInHex}",
+   "\nFactory: {FactoryAddressInHex}"
+   ```
 
 2. The factory contract calls `registerFactory` on the zkSync L1 smart contract with the signature.
+
 3. zkSync smart contract validates the signature and emits an event with `factory_address` and `creator_address`.
