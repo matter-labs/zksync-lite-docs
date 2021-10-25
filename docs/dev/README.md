@@ -2,14 +2,12 @@
 
 ## Overview
 
-zkSync is a scaling and privacy engine for Ethereum. Its current functionality scope includes low gas transfers of ETH
-and ERC20 tokens in the Ethereum network, atomic swaps & limit orders as well as native L2 NFT support. This document is a high-level description of the zkSync development ecosystem.
+zkSync is a scaling and privacy engine for Ethereum. Its current functionality scope includes low gas transfers of ETH and ERC20 tokens in the Ethereum network, atomic swaps &
+limit orders as well as native L2 NFT support. This document is a high-level description of the zkSync development ecosystem.
 
-zkSync is built on ZK Rollup architecture. ZK Rollup is an L2 scaling solution in which all funds are held by a smart
-contract on the mainchain, while computation and storage are performed off-chain. For every Rollup block, a state
-transition zero-knowledge proof (SNARK) is generated and verified by the mainchain contract. This SNARK includes the
-proof of the validity of every single transaction in the Rollup block. Additionally, the public data update for every
-block is published over the mainchain network in the cheap calldata.
+zkSync is built on ZK Rollup architecture. ZK Rollup is an L2 scaling solution in which all funds are held by a smart contract on the mainchain, while computation and storage are
+performed off-chain. For every Rollup block, a state transition zero-knowledge proof (SNARK) is generated and verified by the mainchain contract. This SNARK includes the proof of
+the validity of every single transaction in the Rollup block. Additionally, the public data update for every block is published over the mainchain network in the cheap calldata.
 
 This architecture provides the following guarantees:
 
@@ -27,11 +25,11 @@ First of all, zkSync, as a scaling solution, is capable of making transfers, and
 and principles of the core zkSync functionality are covered in the [payments section](/dev/payments) of this
 documentation.
 
-Secondly, zkSync is smart-contract friendly. Targeting 2021, it will be possible to either write contracts in Zinc,
-Rust-based type-safe programming language, or even reuse existing Solidity code. Contracts interoperability is covered
-in the [contracts section](/dev/contracts).
+Secondly, zkSync is smart-contract friendly. Targeting 2021, it will be possible to either write contracts in Zinc, Rust-based type-safe programming language, or even reuse
+existing Solidity code. Contracts interoperability is covered in the [contracts section](/dev/contracts).
 
-Thirdly, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols — are already [available](/dev/contracts) on mainnet! 
+Thirdly, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols — are already
+[available](/dev/contracts) on mainnet!
 
 Fourthly, zkSync has native support of NFTs. You can try it out in our [wallet](https://wallet.zksync.io/).
 

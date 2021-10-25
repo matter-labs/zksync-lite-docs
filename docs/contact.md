@@ -66,4 +66,5 @@ We are always hiring! Please check out our
 
 ## Security disclosures
 
-For the bug bounty program and vulnerability disclosures, consult our [security policy](https://github.com/matter-labs/zksync/blob/master/SECURITY.md).
+For the bug bounty program and vulnerability disclosures, consult our
+[security policy](https://github.com/matter-labs/zksync/blob/master/SECURITY.md).

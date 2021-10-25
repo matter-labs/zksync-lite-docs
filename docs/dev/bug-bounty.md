@@ -8,7 +8,8 @@ Issues that can lead to substantial loss of money, critical bugs like a broken l
 
 ## Assumptions
 
-In order to be eligible for the bug bounty, a bug should adhere to the security assumptions of zkSync. You can read more about them [here](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md#assumptions).
+In order to be eligible for the bug bounty, a bug should adhere to the security assumptions of zkSync. You can read more about
+them [here](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md#assumptions).
 
 ## Disclosure Policy
 
@@ -25,7 +26,8 @@ The following actions will make you ineligible for the bug bounty program:
 
 ### The right way to disclose
 
-Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
+Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP
+key below to encrypt the message.
 
 ## Exclusions
 

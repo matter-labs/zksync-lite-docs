@@ -1,6 +1,7 @@
-# Learn zkSync By Watching 
+# Learn zkSync By Watching
 
-There are many videos available to watch to help you learn more about zkSync. Take a look at the videos below! In depth podcasts and tutorials will help you get a better understanding of zkSync and our products.
+There are many videos available to watch to help you learn more about zkSync. Take a look at the videos below! In depth podcasts and tutorials will help you get a better
+understanding of zkSync and our products.
 
 [[toc]]
 

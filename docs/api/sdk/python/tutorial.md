@@ -15,8 +15,7 @@ ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 $ pip install git+https://github.com/zksync-sdk/zksync-python.git
 ```
 
-Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is
-the only option.
+Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is the only option.
 
 ## Setup crypto library
 
@@ -45,11 +44,11 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 
 ## Ethereum signer
 
-Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
-signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
-key, but such a wallet will only be able to perform read requests to the zkSync server.
+Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature as a part of 2-factor authentication scheme. It is possible
+to create a wallet without an Ethereum private key, but such a wallet will only be able to perform read requests to the zkSync server.
 
-Ethereum signer is represented by the `EthereumSignerInterface` abstract class from `zksync_sdk.ethereum_signer.interface`.
+Ethereum signer is represented by the `EthereumSignerInterface` abstract class from
+`zksync_sdk.ethereum_signer.interface`.
 
 By default, there is an implementation for web3 signer.
 
@@ -64,8 +63,8 @@ ethereum_signer = EthereumSignerWeb3(account=account)
 
 ## Creating a Wallet
 
-To control your account in zkSync, use the `Wallet` object. It can sign transactions with keys stored in
-`ZkSyncSigner` and send a transaction to zkSync network using `ZkSyncProviderInterface`.
+To control your account in zkSync, use the `Wallet` object. It can sign transactions with keys stored in `ZkSyncSigner`
+and send a transaction to zkSync network using `ZkSyncProviderInterface`.
 
 To create a `Wallet` object, you have to initialize `ZkSyncSigner`
 
@@ -82,8 +81,8 @@ signer_v2 = ZkSyncSigner.from_seed(library, b"seed")
 signer_v3 = ZkSyncSigner(library, b"private_key")
 ```
 
-For creating `Wallet` we have to create:
-`EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`, `ZkSyncSigner` .
+For creating `Wallet` we have to create: `EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`,
+`ZkSyncSigner` .
 
 ```python
 from web3 import Web3, HTTPProvider, Account
@@ -186,7 +185,8 @@ tx = await submitter.swap((orderA, orderB), 'ETH')
 status = await tx.await_committed()
 ```
 
-For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API reference](../js/accounts.md#swaps-in-zksync).
+For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or
+[API reference](../js/accounts.md#swaps-in-zksync).
 
 ## Withdrawing funds back to Ethereum
 
@@ -213,7 +213,7 @@ tx = await wallet.mint_nft("0x00000000000000000000000000000000000000000000000000
 status = await tx.await_committed()
 ```
 
-Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
+Note that before transferring or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
 
 ### Checking owned and minted NFTs
 
@@ -226,7 +226,7 @@ owned_nfts = account_state.committed.nfts
 minted_nfts = account_state.verified.minted_nfts
 ```
 
-### Transfering
+### Transferring
 
 To transfer an NFT, provide address to transfer to, NFT itself and token which will be used to pay fees.
 

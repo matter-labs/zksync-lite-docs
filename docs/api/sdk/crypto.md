@@ -76,9 +76,9 @@ Installation: available via `npm` package [`zksync-crypto`][npm_lib].
 ### Example
 
 ```js
-import { keccak256 } from "@ethersproject/keccak256";
-import { arrayify, hexlify } from "@ethersproject/bytes";
-import { sign_musig, privateKeyFromSeed } from "zksync-crypto";
+import { keccak256 } from '@ethersproject/keccak256';
+import { arrayify, hexlify } from '@ethersproject/bytes';
+import { sign_musig, privateKeyFromSeed } from 'zksync-crypto';
 
 const privateKeySeed = arrayify(keccak256([0x01]));
 const privateKey = privateKeyFromSeed(privateKeySeed);
