@@ -1,6 +1,5 @@
 ---
-home: false 
-tagline: Scalability without compromises 
+home: false
 footer: Made with ❤️ by Matter Labs
 ---
 
