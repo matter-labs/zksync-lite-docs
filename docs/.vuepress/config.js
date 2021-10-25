@@ -126,6 +126,12 @@ module.exports = {
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
+        {
+          title: "Use zkSync v1.0 On Mainnet Now", // required
+          path: "/faq/usezksyncone", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
       ],
       "/dev": [
         {
