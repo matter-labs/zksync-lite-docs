@@ -24,7 +24,7 @@
     "fmt": "prettier --write \"docs/**/*.md\"",
     "fmt:check": "prettier --check \"docs/**/*.md\"",
     "cspell": "cspell docs/**/*.md",
-    "md:lint": "markdownlint docs",
+    "md:lint": "markdownlint -c markdownlint.json docs",
     "md:deadlinks": "check-md",
     "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks"
   },
