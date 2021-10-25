@@ -20,13 +20,13 @@ Fees vary based on Layer 1 gas price because Layer 2 scaling solutions rely on p
 
 ## How long are withdrawal times?
 
-At peak usage, the withdrawal time is about 10 minutes to 5 hours. During lower use, it can take up to 5 hours. Withdrawal times depend on the activity on zkSync and when we finalize blocks and submit them to Layer 1.
+At peak usage of zkSync, the withdrawal time is about 10 minutes. During lower use, it can take up to 7 hours. Currently, withdrawal times depend on the activity on zkSync, when we finalize blocks, and submit them to Layer 1.
 
 ## I withdrew my funds but don't see them in my L1 account.
 
 If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but the funds have not arrived in your wallet, here are a few steps you should take:
 
-1. Make sure that enough time has passed. A withdrawal takes 10 minutes to 5 hours, depending on the usage of the zkSync network.
+1. Make sure that enough time has passed. A withdrawal takes 10 minutes to 7 hours, depending on the usage of the zkSync network.
 
 2. Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
 
@@ -56,8 +56,10 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw,” you should try logging in to zkSync with the wallet that received the funds. 
 
-If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. To be able to withdraw funds from your account using “Alternative Withdrawal,” use [zkScan](https://zkscan.io/) to check that:
+If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. Before using the “Alternative Withdrawal” tool follow the steps bellow to ensure your account qualifies to perform an alternative withdrawal. 
 
+1. Enter your address on [zkScan](https://zkscan.io/)
+2. Check your account for the following information:
 - 1. The account is at least 24 hours old.
 - 2. The account has never been activated (i.e., nonce is zero).
 <br>
@@ -66,13 +68,15 @@ If you cannot log in to the zkSync wallet, you can use the “Alternative Withdr
 </p>
 <br>
 
-If the steps above are confirmed, you can access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”
+If your account meets the requirements for using the "Alternative Withdrawal" tool, you can follow the steps below to proceed.
 
-<br>
-<p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/zktools.png">
-</p>
-<br>
+1. Go to [Alternative Withdrawal](https://withdraw.zksync.io/).
+- *You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”*
+2. Enter the address that you want the funds moved from zkSync to Ethereum L1. 
+3. Select token you want withdrawn.
+4. Choose your method of paying the fee.
+5. Complete the fee payment process on your wallet.
+- Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/). 
 
 ## What is the activation fee?
 
