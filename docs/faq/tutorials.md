@@ -2,7 +2,7 @@
 
 [[toc]]
 
-## Deposit to zkSync with MetaMask
+## Add Funds to zkSync with MetaMask
 
 In this tutorial, we will be depositing into a zkSync wallet with MetaMask on the Rinkeby test network. 
 
@@ -63,7 +63,7 @@ To switch your network to Rinkeby on MetaMask, click on the â€œEthereum Mainnetâ
 </p>
 </br>
 
-7. Your deposit is complete. The transaction has been initiated and, depending on zkSync network usage, will be verified in the next 10 min to 7 hours. 
+7. Your deposit is complete. The transaction has been initiated and your funds will be visible in your zkSync wallet within 10 confirmations of your transaction being mined on L1.
 
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
