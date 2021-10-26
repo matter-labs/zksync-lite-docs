@@ -21,9 +21,9 @@ Lets get started!
 - Go to <https://zksync.io/>
 - Click open wallet
 - Connect L1 wallet
-- Click deposit
+- Click *Deposit*
 - Select the token and enter amount
-- Click deposit
+- Click *Deposit*
 - Confirm transaction with L1 wallet
 - Click okay 
 
