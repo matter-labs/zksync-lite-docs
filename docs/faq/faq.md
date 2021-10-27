@@ -58,7 +58,7 @@ If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" opt
 
 If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. Before using the “Alternative Withdrawal” tool follow the steps bellow to ensure your account qualifies to perform an alternative withdrawal. 
 
-1. Enter your address on [zkScan](https://zkscan.io/)
+1. Enter your address on [zkScan](https://zkscan.io/).
 2. Check your account for the following information:
 - 1. The account is at least 24 hours old.
 - 2. The account has never been activated (i.e., nonce is zero).
