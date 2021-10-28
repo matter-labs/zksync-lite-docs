@@ -191,7 +191,7 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 </br>
 
 > **If you refreshed the page or recently connected your wallet to zkSync you will be asked to "Authorize to Send to Ethereum."**
-- Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
+> - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
 
 4. Select the token to send to Ethereum and enter the amount. 
 - *If this is your first transaction on zkSync, you will need to need to sign to authorize account activation and you will see the Account Activation Fee below the fee for the transaction.*
