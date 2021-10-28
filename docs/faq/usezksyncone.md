@@ -25,7 +25,7 @@ Lets get started!
 - Select the token and enter amount
 - Click *Deposit*
 - Confirm transaction with L1 wallet
-- Click okay 
+- Click *Okay* 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dZCifVpS4vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -37,7 +37,7 @@ Lets get started!
 - Click *Send* 
 - Enter send address, token, and enter amount
 - Click *Authorize to Send on zkSync*
-- Confirm
+- Click *Okay*
 
 ![usezksyncc image 1](/sendonzksync.png)
 
@@ -51,7 +51,7 @@ Lets get started!
 - Select L1 address, token, and enter amount
 - Click *Send to Ethereum*
 - Sign and Confirm on L1 Wallet
-- Confirm
+- Click *Okay*
 
 ![usezksyncc image 2](/sendonzksync2.png)
 ![usezksyncc image 3](/sendonzksync3.png)
