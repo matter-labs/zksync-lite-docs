@@ -190,12 +190,12 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 </p>
 </br>
 
-> **If you refreshed the page or recently connected your wallet to zkSync you will be asked to "Authorize to Send to Ethereum."**
+> **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send to Ethereum."**
 > - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
 </br>
 
 4. Select the token to send to Ethereum and enter the amount. 
-- *If this is your first transaction on zkSync, you will need to need to sign to authorize account activation and you will see the Account Activation Fee below the fee for the transaction.*
+- *If this is your first transaction on zkSync, you will need to sign to authorize account activation, and you will see the Account Activation Fee below the fee for the transaction.*
   - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
 - *Before transacting, you can change the fee token.*  
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
@@ -238,7 +238,10 @@ A single yellow checkmark next to your balance indicates the zkSync server has p
 ## Mint an NFT
 
 The following steps will cover using IPFS desktop to mint an NFT. This process will mint an NFT of where your image is located on IPFS and will not be available for preview at this time. 
-To mint an NFT with IPFS location and a preview of the image, consider using one of the community-created frontends like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/). *The community-created frontends are not created by the zkSync team, and any issues with minting will need to be sent to the creators of these frontends.*
+To mint an NFT with IPFS location and a preview of the image, consider using one of the community-created frontends&ast; like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/). 
+</br>
+
+*&ast;The community-created frontends are not created by the zkSync team, and any issues with minting will need to be sent to the creators of these frontends.*
 
 1. Visit the [IPFS.io](https://ipfs.io/) and install IPFS Desktop.
 </br>
@@ -269,7 +272,7 @@ To mint an NFT with IPFS location and a preview of the image, consider using one
 </br>
 
 
-> **If you refreshed the page or recently connected your wallet to zkSync you will be asked to "Authorize to Mint NFT."**
+> **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Mint NFT."**
 > - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
 </br>
 
@@ -288,7 +291,7 @@ To mint an NFT with IPFS location and a preview of the image, consider using one
 -->
 
 5. Enter the copied CID (Content Identifier) in "Content Address" and click "Mint NFT."
-- *If this is your first transaction on zkSync, you will need to need to sign to authorize account activation and you will see the Account Activation Fee below the fee for the transaction.*
+- *If this is your first transaction on zkSync, you will need to sign to authorize account activation, and you will see the Account Activation Fee below the fee for the transaction.*
   - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
 - *Before minting, you can change the fee token.*  
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
