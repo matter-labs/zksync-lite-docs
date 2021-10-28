@@ -268,7 +268,7 @@ To mint an NFT with IPFS location and a preview of the image, consider using one
 </br>
 
 > **If you refreshed the page or recently connected your wallet to zkSync you will be asked to "Authorize to Mint NFT."**
-- Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
+> - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
 
 
 <!-- 5. Authorize to Mint NFT. 
@@ -312,7 +312,7 @@ A single yellow checkmark next to your balance indicates the zkSync server has p
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/m10.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/m11.png" width="400">
 </br>
 
-<!-- ## Alternative Withdrawal
+## Alternative Withdrawal
 
 The Alternative Withdrawal tool is used when funds have been sent to an Ethereum address that cannot connect to the [zkSync wallet](https://wallet.zksync.io/). 
 
@@ -377,4 +377,3 @@ The Alternative Withdrawal tool is used when funds have been sent to an Ethereum
 </p>
 <br> 
 
--->
