@@ -19,7 +19,7 @@ To switch your network to Rinkeby on MetaMask, click on the ‚ÄúEthereum Mainnet‚
   - Select Rinkeby. 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged1.png" width="900">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D1.png" width="900">
 </p>
 </br>
 
@@ -28,7 +28,7 @@ To switch your network to Rinkeby on MetaMask, click on the ‚ÄúEthereum Mainnet‚
 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged3.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D2%20copy.png">
 </p>
 </br>
 
@@ -42,24 +42,24 @@ To switch your network to Rinkeby on MetaMask, click on the ‚ÄúEthereum Mainnet‚
  
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/token-list.png" height="600">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D3.png" height="600">
 </p>
 </br>
 
 4. Review the transaction information and confirm.
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged5.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D5.png">
 </p>
 </br>
 
 5. The time to mine the transaction will depend on the usage of Layer 1. If you have any difficulties, please check Etherscan to monitor the transaction. 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged6.png" width="500">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D6.png" width="500">
 </br>
 </br>
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged7.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D7.png">
 </p>
 </br>
 
@@ -68,7 +68,7 @@ To switch your network to Rinkeby on MetaMask, click on the ‚ÄúEthereum Mainnet‚
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
 A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
-<img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged10.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged11.png" width="500">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D9.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D10.png" width="500">
 </br>
 
 ## Send on zkSync
@@ -82,19 +82,20 @@ Whether an Ethereum user has a zkSync account or not, you can transfer funds to 
 1. Go to ‚ÄúSend.‚Äù
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/d0fa98f5ada79eb7d335b215c88a7e35b1d2ff5d/docs/images/imaget0.png">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/S1.png">
 </p>
 </br>
 
 2. If this is your first transaction after depositing, you will be prompted to "Authorize to Sign account activation." 
-- Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
+- Signing the message will allow access to your zkSync account <!-- generate your zkSync Layer 2 private key --> (it is good practice to read the messages you sign).
 </br>
 <p align="center">
-<img src="">
+<img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/S3.png">
 </p>
 </br>
 
 3. Sign the message for account activation. (The fee for activating your account is shown in step 4.)
+- Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaget0.png">
