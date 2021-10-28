@@ -192,6 +192,7 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 
 > **If you refreshed the page or recently connected your wallet to zkSync you will be asked to "Authorize to Send to Ethereum."**
 > - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
+</br>
 
 4. Select the token to send to Ethereum and enter the amount. 
 - *If this is your first transaction on zkSync, you will need to need to sign to authorize account activation and you will see the Account Activation Fee below the fee for the transaction.*
@@ -267,9 +268,10 @@ To mint an NFT with IPFS location and a preview of the image, consider using one
 </p>
 </br>
 
+
 > **If you refreshed the page or recently connected your wallet to zkSync you will be asked to "Authorize to Mint NFT."**
 > - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
-
+</br>
 
 <!-- 5. Authorize to Mint NFT. 
 - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
@@ -296,7 +298,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 </p>
 </br>
 
-6.Confirm the fee and sign the message (it is good practice to read the messages you sign).
+6. Confirm the fee and sign the message (it is good practice to read the messages you sign).
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/m8.png">
