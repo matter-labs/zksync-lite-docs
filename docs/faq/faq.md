@@ -96,8 +96,8 @@ ERC-1271 compatible wallets (like Argent) increase this one-time fee because of 
 
 ## What is the difference between an "Initiated," "Pending," and "Complete" transaction on zkScan? 
 
-**"Initiated"**: the zkSync server has received the transaction.
-**"Pending"**: the zkSync server has processed the transaction. If it is a transfer, it is ready for immediate use. 
+**"Initiated"**: the zkSync server has received the transaction.</br>
+**"Pending"**: the zkSync server has processed the transaction. If it is a transfer, it is ready for immediate use.</br> 
 **"Complete"**: the proof has been produced and submitted to the smart contract on Layer 1.
 
 ## What can I do on zkSync 1.0 mainnet? 
