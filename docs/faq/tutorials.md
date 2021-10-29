@@ -6,7 +6,7 @@
 
 In this tutorial, we will be depositing into a zkSync wallet with MetaMask on the Rinkeby test network. 
 
-To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet” button at the top of Metamask, and then select “Rinkeby.” To get ETH on the Rinkeby testnet, visit the [faucet](https://faucet.rinkeby.io/).  
+To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" button at the top of Metamask, and then select "Rinkeby." To get ETH on the Rinkeby testnet, visit the [faucet](https://faucet.rinkeby.io/).  
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/b73d441f03534278b92acf7c7016335c3276753a/docs/images/imaged0.png">
@@ -24,7 +24,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 </br>
 
 
-2. Choose “+ Add Funds.”  
+2. Choose "+ Add Funds."  
 
 </br>
 <p align="center">
@@ -53,7 +53,7 @@ To switch your network to Rinkeby on MetaMask, click on the “Ethereum Mainnet�
 </p>
 </br>
 
-5. The time to mine the transaction will depend on the usage of Layer 1. If you have any difficulties, please check Etherscan to monitor the transaction. 
+5. The time to mine the transaction will depend on the usage of Layer 1 (L1). If you have any difficulties, please check Etherscan to monitor the transaction. 
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D6.png" width="500">
@@ -79,7 +79,7 @@ Whether an Ethereum user has a zkSync account or not, you can transfer funds to 
 **Keep in mind these funds will be on L2, so if you want to use these funds on L1, you will have to [Send to Ethereum (L1)](#Send-to-Ethereum-L1).**
 
 
-1. Go to “Send.”
+1. Go to "Send."
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/S1.png">
@@ -120,10 +120,10 @@ Whether an Ethereum user has a zkSync account or not, you can transfer funds to 
 -->
 
 4. Enter the address to send funds, select the token to transfer, and enter the amount. 
-- *If this is your first transaction on zkSync, you will see the Account Activation Fee.*
-  - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
-- *Before transferring, you can change the fee token.*  
-Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
+- *If this is your first transaction on zkSync, you will see the account activation fee below the transaction fee.*
+  - **The account activation fee is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
+- *Before transacting, you can change the fee token.*  
+Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/S8.png">
@@ -151,12 +151,12 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 </p>
 </br>
 
-7. Your transfer is complete! The transaction has been initiated and, depending on zkSync network usage, will be verified in the next 30 minutes to 7 hours.
-- *When network activity increases, blocks fill up faster, and withdrawal times decrease.*  
+7. Your transfer is complete! The transaction has been initiated and the funds are ready for immediate use.
+ 
 
 **Pending**            |  **Verified**
 :-------------------------:|:-------------------------:
-A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
+A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction. | Two green check marks signal the proof has been produced and submitted to the smart contract on L1.
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/S10.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/S11.png" width="400">
 </br>
 
@@ -168,7 +168,7 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 **These steps follow the correct method for withdrawing funds to your own Ethereum address on L1 so that you can send them to an exchange.**  
 *Alternatively, you can take a risk and enter the exchange address when you withdraw, but most exchanges do not observe smart contract transfers, and you must contact their customer support to see your funds on the exchange.*
 
-1. Go to “Send.” 
+1. Go to "Send." 
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/se1.png">
@@ -191,14 +191,14 @@ This tutorial will cover the process of withdrawing funds from zkSync back to th
 </br>
 
 > **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send to Ethereum."**
-> - Signing the message will generate your zkSync Layer 2 private key (it is good practice to read the messages you sign).
+> - Signing the message will generate your zkSync Layer 2 (L2) private key (it is good practice to read the messages you sign).
 </br>
 
 4. Select the token to send to Ethereum and enter the amount. 
-- *If this is your first transaction on zkSync, you will need to sign to authorize account activation, and you will see the Account Activation Fee below the fee for the transaction.*
-  - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
+- *If this is your first transaction on zkSync, you will need to sign to authorize account activation, and you will see the account activation fee below the transaction fee.*
+  - **The account activation fee is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
 - *Before transacting, you can change the fee token.*  
-Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
+Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/se4.png">
@@ -231,7 +231,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
-A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
+A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction. | Two green check marks signal the proof has been produced and submitted to the smart contract on L1.
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/se8.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/se9.png" width="400">
 </br>
 
@@ -291,8 +291,8 @@ To mint an NFT with IPFS location and a preview of the image, consider using one
 -->
 
 5. Enter the copied CID (Content Identifier) in "Content Address" and click "Mint NFT."
-- *If this is your first transaction on zkSync, you will need to sign to authorize account activation, and you will see the Account Activation Fee below the fee for the transaction.*
-  - **The Account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
+- *If this is your first transaction on zkSync, you will need to sign to authorize account activation, and you will see the account activation fee below the transaction fee.*
+  - **The account Activation is a one-time fee to register your account with zkSync. You will only need to pay this on your first transaction with zkSync.**
 - *Before minting, you can change the fee token.*  
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
 </br>
@@ -309,7 +309,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 </br>
 
 7. Minting your NFT has been initiated and will be available for transfer or withdrawal to L1 once it has been verified in 30 minutes to 7 hours.
-- *When network activity increases, blocks fill up faster, and withdrawal times decrease.* 
+- *When network activity increases, blocks fill up faster, and verification times decrease.* 
 
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
@@ -332,7 +332,7 @@ The Alternative Withdrawal tool is used when funds have been sent to an Ethereum
 </p>
 <br>
 
-> **If your account meets the requirements for using the "Alternative Withdrawal" tool, you can follow the steps below to proceed.**
+> **If your account meets the requirements for using the "Alternative Withdrawal" tool, proceed with the following steps.**
 
 3. Go to [Alternative Withdrawal](https://withdraw.zksync.io/).
 - *You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”*
