@@ -27,7 +27,7 @@ In **zkSync** the cost of every transaction has two components:
   the current gas price in the Ethereum network. However, this part is orders of magnitude cheaper than the cost of
   normal ETH/ERC20 transfers.
 
-## How fees are payed
+## How fees are paid
 
 Transfers in **zkSync** support "gasless meta-transactions": users pay transaction fees in the tokens being transferred.
 Thus, for example, if you want to transfer DAI stable-coin, there is no need for you to own ETH or any other tokens.
