@@ -68,7 +68,7 @@ To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" b
 
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
-A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and is ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
+A single yellow checkmark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof has been produced and submitted to the smart contract on Layer 1.
 <img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D9.png" width="395">  |  <img src="https://github.com/matter-labs/zksync-docs/blob/0b9cae0b5a2a358dcb62e50eb05e628c18ef29e0/docs/images/D10.png" width="500">
 </br>
 
