@@ -36,7 +36,7 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
     4. The list should have your transaction coming from the zkSync smart contract. 
 <br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/int-txns.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/int-txns.png">
 </p>
 <br>  
 
@@ -64,7 +64,7 @@ If you cannot log in to the zkSync wallet, you can use the “Alternative Withdr
 - 2. The account has never been activated (i.e., nonce is zero).
 <br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/nonce.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/c669e44d9e3d2be3eb1b5935984578903d647bb8/docs/images/nonce.png">
 </p>
 <br>
 
