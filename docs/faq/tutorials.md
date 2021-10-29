@@ -342,7 +342,7 @@ The Alternative Withdrawal tool is used when funds have been sent to an Ethereum
 </p>
 </br>
 
-4. Enter the address that you want the funds moved from zkSync to Ethereum L1.
+4. Enter the zkSync address from steps 1 and 2.
 </br>
 <p align="center">
 <img src="https://github.com/matter-labs/zksync-docs/blob/0bfd7bc3b1e803c7c449f56ac4eb8a9fb3119655/docs/images/a1.png">
