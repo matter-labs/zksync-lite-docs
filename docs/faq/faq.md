@@ -2,6 +2,7 @@
 
 [[toc]]
 
+
 ## Will there be a token?
 
 Yes
@@ -16,11 +17,11 @@ While it is possible to make swaps, currently, there is no UI available for it. 
 
 ## Why are the fees so high?
 
-Our fees depend on Layer 1 gas prices because with every Layer 2 transaction, we also post related data on Layer 1 — this allows us to inherit the security of Ethereum.
+Our fees depend on Ethereum Layer 1 (L1) gas prices because with every zkSync Layer 2 (L2) transaction, we post related data on Layer 1 — this allows us to inherit the security of Ethereum.
 
 ## How long are withdrawal times?
 
-At peak usage of zkSync, the withdrawal time is about 10 minutes. During lower use, it can take up to 7 hours. Currently, withdrawal times depend on the activity on zkSync, when we finalize blocks, and submit them to Layer 1.
+At peak usage of zkSync, the withdrawal time is about 10 minutes. During lower use, it can take up to 7 hours. Currently, withdrawal times depend on the activity on zkSync, when we finalize blocks, and submit them to L1.
 
 ## I withdrew my funds but don't see them in my L1 account.
 
@@ -31,7 +32,7 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 2. Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
 
     1. Open Etherscan and go to your address page.
-    2. Go to "Internal Txns".   
+    2. Go to "Internal Txns."   
     3. You’ll find a list of all transactions from smart contracts.   
     4. The list should have your transaction coming from the zkSync smart contract. 
 <br>
@@ -40,23 +41,23 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 </p>
 <br>  
 
-3. If the account balance is not the same as on Etherscan, contact Support for your wallet. 
+3. If the account balance is not the same as on Etherscan, contact support for your wallet. 
 
 4. Depending on your wallet, you may have to add that token for it to display.
 
 5. If none of the steps above have helped you, please email us at withdraw@zksync.io describing your problem. It **MUST** contain the following info:
 
 	1. Your zkSync wallet address.
-	2. What wallet are you using (e.g., Trust)?
-	3. What problem(s) did you encounter?
-	4. The more information you provide, the faster we can solve your problem!
+	2. The wallet are you using (e.g., Trust).
+	3. The problem(s) did you encounter.
+- The more information you provide, the faster we can solve your problem!
 	
 
-## I used "Transfer" instead of "Withdraw" to get my funds onto mainnet.
+## I used "Transfer" instead of "Withdraw" to get my funds onto L1.
 
-If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw,” you should try logging in to zkSync with the wallet that received the funds. 
+If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw," you should try logging in to zkSync with the wallet that received the funds. 
 
-If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. See the [Alternative Withdrawal](docs/faq/tutorials.md#alternative-withdrawal) section on our [Tutorials](docs/faq/tutorials.md) page.
+If you cannot log in to the zkSync wallet, you can use the "Alternative Withdrawal" tool. See the [Alternative Withdrawal](docs/faq/tutorials.md#alternative-withdrawal) section on our [Tutorials](docs/faq/tutorials.md) page.
 
 <!-- 1. Enter your address on [zkScan](https://zkscan.io/).
 2. Check your account for the following information:
@@ -83,9 +84,9 @@ If your account meets the requirements for using the "Alternative Withdrawal" to
   - 3. The Ethereum Transaction Hash from Etherscan from step 6.
  
 -->
-## What is the activation fee?
+## What is the account activation fee?
 
-The account activation fee is a one-time fee to register your account with zkSync. This fee only applies to your first zkSync Layer 2 transaction.
+The account activation fee is a one-time fee to register your account with zkSync. This fee only applies to your first zkSync transaction.
 
 On a deeper level, to be better suited for zero-knowledge proofs, zkSync accounts are defined over a different elliptic curve than Ethereum's. Activating your account generates and publishes a new private-public key pair over this curve associated with your Ethereum address. 
 
