@@ -8,15 +8,15 @@ Yes
 
 ## When will the token be released?
 
-The team’s focus is to work on scalability for Ethereum. You can find any announcements from zkSync can be found on [Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and [Twitter](https://twitter.com/zksync). 
+The team’s focus is to work on scalability for Ethereum. You can find any announcements from zkSync on [Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and [Twitter](https://twitter.com/zksync). 
 
 ## How do I swap tokens on zkSync?
 
-While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](../dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing a zkSync liquidity solution for projects that do not have liquidity providers. 
+While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](../dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing zkSync liquidity solutions for projects that need liquidity providers. 
 
-## Why are fees so high?
+## Why are the fees so high?
 
-Fees vary based on Layer 1 gas price because Layer 2 scaling solutions rely on posting data on Layer 1 — this allows us to inherit the security of Ethereum.
+Our fees depend on Layer 1 gas prices because with every Layer 2 transaction, we also post related data on Layer 1 — this allows us to inherit the security of Ethereum.
 
 ## How long are withdrawal times?
 
@@ -30,7 +30,7 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 
 2. Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
 
-    1. Open Etherscan and go to your address page
+    1. Open Etherscan and go to your address page.
     2. Go to "Internal Txns".   
     3. You’ll find a list of all transactions from smart contracts.   
     4. The list should have your transaction coming from the zkSync smart contract. 
@@ -56,9 +56,9 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw,” you should try logging in to zkSync with the wallet that received the funds. 
 
-If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. Before using the “Alternative Withdrawal” tool follow the steps bellow to ensure your account qualifies to perform an alternative withdrawal. 
+If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. See the ["Alternative Withdrawal"](docs/faq/tutorials.md#alternative-withdrawal) section on our [Tutorials](docs/faq/tutorials.md) page.
 
-1. Enter your address on [zkScan](https://zkscan.io/).
+<!-- 1. Enter your address on [zkScan](https://zkscan.io/).
 2. Check your account for the following information:
 - 1. The account is at least 24 hours old.
 - 2. The account has never been activated (i.e., nonce is zero).
@@ -72,16 +72,20 @@ If your account meets the requirements for using the "Alternative Withdrawal" to
 
 1. Go to [Alternative Withdrawal](https://withdraw.zksync.io/).
 - *You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”*
-2. Enter the address that you want the funds moved from zkSync to Ethereum L1. 
+2. Enter the zkSync address that you want the funds moved to Ethereum L1. 
 3. Select the token you want to be withdrawn.
 4. Choose your method of paying the fee.
 5. Complete the fee payment process on your wallet.
-- Once the alternative withdrawal has been completed, check "Internal Txns" on [Etherscan](https://etherscan.io/) for your transaction.
+6. The funds should be in your designated wallet from step 4 within 24 hours and can be see under "Internal Txns" on [Etherscan](https://etherscan.io/).
+- If you do not see your funds within 24 hours, please email us at withdraw@zksync.io with the following information:
+  - 1. Your zkSync address from step 4.
+  - 2. The amount and token.
+  - 3. The Ethereum Transaction Hash from Etherscan from step 6.
  
-
+-->
 ## What is the activation fee?
 
-The Account Activation fee is a one-time fee to register your account with zkSync. This fee only applies to your first zkSync Layer 2 transaction.
+The account activation fee is a one-time fee to register your account with zkSync. This fee only applies to your first zkSync Layer 2 transaction.
 
 On a deeper level, to be better suited for zero-knowledge proofs, zkSync accounts are defined over a different elliptic curve than Ethereum's. Activating your account generates and publishes a new private-public key pair over this curve associated with your Ethereum address. 
 
