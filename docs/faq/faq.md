@@ -56,7 +56,7 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw,” you should try logging in to zkSync with the wallet that received the funds. 
 
-If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. See the ["Alternative Withdrawal"](docs/faq/tutorials.md#alternative-withdrawal) section on our [Tutorials](docs/faq/tutorials.md) page.
+If you cannot log in to the zkSync wallet, you can use the “Alternative Withdrawal” tool. See the [Alternative Withdrawal](docs/faq/tutorials.md#alternative-withdrawal) section on our [Tutorials](docs/faq/tutorials.md) page.
 
 <!-- 1. Enter your address on [zkScan](https://zkscan.io/).
 2. Check your account for the following information:
