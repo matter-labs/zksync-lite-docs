@@ -90,15 +90,15 @@ The account activation fee is a one-time fee to register your account with zkSyn
 
 On a deeper level, to be better suited for zero-knowledge proofs, zkSync accounts are defined over a different elliptic curve than Ethereum's. Activating your account generates and publishes a new private-public key pair over this curve associated with your Ethereum address. 
 
-The registration process happens directly on the Ethereum smart contract and is an L1 transaction, so the activation fee is to pay the Ethereum miners and not zkSync validators.
+The registration process happens directly on the Ethereum smart contract and therefore it is an L1 transaction, so the activation fee is to pay the Ethereum miners and not zkSync validators.
 
 ERC-1271 compatible wallets (like Argent) increase this one-time fee because of higher interaction with the zkSync smart contract. This operation is cheaper if you are using a CREATE2 smart contract-based wallet.
 
 ## What is the difference between an "Initiated," "Pending," and "Complete" transaction on zkScan? 
 
-**"Initiated"**: the zkSync server has received the transaction.</br>
-**"Pending"**: the zkSync server has processed the transaction. If it is a transfer, it is ready for immediate use.</br> 
-**"Complete"**: the proof has been produced and submitted to the smart contract on Layer 1.
+**"Initiated"**: the zkSync server has received and processed the transaction.If it is a transfer, it is ready for immediate use.</br>
+**"Pending"**: the transaction appears in a block that is.*committed* to the L1 smart contract.</br> 
+**"Complete"**: the transaction’s block has been proven and verified on the L1 smart contract.
 
 ## What can I do on zkSync 1.0 mainnet? 
-Deposit, transfer, withdraw to L1, and mint NFTs (see [Tutorials](./tutorials.md)). In addition, you can create payment links for others to send you funds on zkSync.
+Deposit, transfer, withdraw to L1, and mint NFTs (see [Tutorials](./tutorials.md)). In addition, you can create payment links for others to send you funds on zkSync. zkSync 2.0 will allow projects to seamlessly port over dapps from L1 and will enable much more. 
