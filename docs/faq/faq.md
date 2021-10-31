@@ -92,12 +92,12 @@ On a deeper level, to be better suited for zero-knowledge proofs, zkSync account
 
 The registration process happens directly on the Ethereum smart contract and therefore it is an L1 transaction, so the activation fee is to pay the Ethereum miners and not zkSync validators.
 
-ERC-1271 compatible wallets (like Argent) increase this one-time fee because of higher interaction with the zkSync smart contract. This operation is cheaper if you are using a CREATE2 smart contract-based wallet.
+ERC-1271 compatible wallets (like Argent) increase this one-time fee because of higher interaction with the zkSync smart contract. This operation is cheaper if you are using a CREATE2 smart-contract-based wallet.
 
 ## What is the difference between an "Initiated," "Pending," and "Complete" transaction on zkScan? 
 
-**"Initiated"**: the zkSync server has received and processed the transaction.If it is a transfer, it is ready for immediate use.</br>
-**"Pending"**: the transaction appears in a block that is.*committed* to the L1 smart contract.</br> 
+**"Initiated"**: the zkSync server has received and processed the transaction. If it is a transfer, it is ready for immediate use.</br>
+**"Pending"**: the transaction appears in a block that is *committed* to the L1 smart contract.</br> 
 **"Complete"**: the transaction’s block has been proven and verified on the L1 smart contract.
 
 ## What can I do on zkSync 1.0 mainnet? 
