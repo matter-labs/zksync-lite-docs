@@ -101,5 +101,6 @@ ERC-1271 compatible wallets (like Argent) increase this one-time fee because of 
 **"Complete"**: the transaction’s block has been proven and verified on the L1 smart contract.
 
 ## What can I do on zkSync 1.0 mainnet? 
-zkSync 1.0 is mainly a payment system. Users can deposit and withdraw funds from and to L1, and transfer between accounts on L2. A great use case is Gitcoin Grants, which we have been supporting since Round 7 (https://gitcoin.co/blog/gitcoin-grants-round-7/), that inter alia, allow users to do micropayments on L2 otherwise not economical on L1.
+zkSync 1.0 is mainly a payment system. Users can deposit and withdraw funds from and to L1, and transfer between accounts on L2. A great use case is Gitcoin Grants, which we 
+have been supporting since [Round 7](https://gitcoin.co/blog/gitcoin-grants-round-7/), that inter alia, allow users to do micropayments on L2 otherwise not economical on L1.
 In addition, you can create payment links for others to send you funds on zkSync. zkSync 2.0 will allow projects to seamlessly port over dapps from L1 and will enable much more. 

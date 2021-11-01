@@ -109,7 +109,7 @@ Your first transaction after depositing or funding your account requires a separ
 In this tutorial, we’ll review how to transfer funds to another zkSync account. 
 Whether an Ethereum user has a zkSync account or not, you can send them funds on zkSync to the same address they have on Ethereum. 
 
-**Keep in mind these funds will be on Layer 2 (L2), so if you want to use these funds on Layer 1 (L1), you will have to [Send to Ethereum](#Send-to-Ethereum).**
+**Keep in mind these funds will be on Layer 2 (L2), so if you want to use these funds on Layer 1 (L1), you will have to [Send to Ethereum](#Send-funds-to-Ethereum).**
 
 
 1. Go to "Send."
