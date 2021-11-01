@@ -38,6 +38,10 @@ module.exports = {
         link: "/api/",
       },
       {
+        text: "zkEVM",
+        link: "/zkevm/",
+      },
+      {
         text: "Contact and Media",
         link: "/contact.html",
       },
@@ -71,6 +75,12 @@ module.exports = {
         {
           title: "Security", // required
           path: "/faq/security", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "Learn By Watching", // required
+          path: "/faq/learnbywatching", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
