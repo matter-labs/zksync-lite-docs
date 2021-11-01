@@ -74,7 +74,7 @@ A single yellow checkmark next to your balance indicates the zkSync server has p
 
 ## Account Activation
 Your first transaction after depositing or funding your account requires a separate action for account activation. 
-1. You will be prompted to "Authorize to Sign account activation" and will need to sign the message first to generate your zkSync L2 private. 
+1. You will be prompted to "Authorize to Sign account activation" and will need to sign the message first to generate your zkSync L2 private key. 
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/2021-09-update-v2/docs/images/S2.png">
@@ -140,7 +140,7 @@ Whether an Ethereum user has a zkSync account or not, you can send them funds on
 -->
 
 > **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**
-> - Signing the message will generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign).
+> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign).
 </br>
 
 2. Enter the address to send funds to, select the token to transfer, and enter the amount. 
@@ -168,7 +168,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports "gasl
 </p>
 </br>
 
-4. The transfer should only take a couple of seconds. If you have any difficulties, please check [zkScan](https://zkscan.io/) to monitor the transaction. 
+4. The transfer should take no longer than a couple of seconds. If you have any difficulties, please check [zkScan](https://zkscan.io/) to monitor the transaction. 
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/2021-09-update-v2/docs/images/S9.png">
