@@ -62,7 +62,7 @@ principles and conventions.
 
 ### Getting help
 
-You can ask questions and get assistance in our [Discord](https://discord.gg/5b6s7VTC) developer chat room.
+You can ask questions and get assistance in our [Discord](https://discord.gg/nMaPGrDDwk) developer chat room.
 
 If you would like to migrate an existing project to [zkSync](https://zksync.io) and require help, please send us an
 email at hello@matter-labs.io.
