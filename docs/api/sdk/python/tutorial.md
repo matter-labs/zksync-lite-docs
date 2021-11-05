@@ -245,3 +245,29 @@ For getting information about tx we have to use ZkSyncProviderV01
 provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
 tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
 ```
+
+
+### Supporting Two-Factor Authentication for Wallet
+
+There has been added the possibility to implement two-factor authentication for client based on the following method that are provided by `Wallet` class :
+
+* enable_2fa
+* disable_2fa
+
+Both methods return `True` in case of success and `False` otherwise. The logic of authentication is left for client-side code with corresponding methods calls. Also, the important thing that must be mentioned is that the current authenticated type of account is represented in `AccountState` object by field account_type. It has enum type of `AccountTypes`
+
+Example:
+```python
+        # ... user logic for two-factor authentication ... for example: ask private question and compare answer etc
+        result = await self.wallet.enable_2fa()
+        if result:
+            account_state = await self.wallet.get_account_state()
+            # here account_state.account_type == AccountTypes.OWNED
+
+        # ... user logic for disabling for two-factor authentication ...
+        pub_key_hash = self.wallet.zk_signer.pubkey_hash_str()
+        result = await self.wallet.disable_2fa(pub_key_hash)
+        if result:
+            account_state = await self.wallet.get_account_state()
+            # here account_state.account_type == AccountTypes.No2FA
+```
