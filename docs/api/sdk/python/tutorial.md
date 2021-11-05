@@ -126,8 +126,8 @@ token = await wallet.resolve_token("USDT")
 await wallet.ethereum_provider.approve_deposit(token, Decimal(1))
 
 # Deposit money from contract to our address
-res = await wallet.ethereum_provider.deposit(token, Decimal(1),
-                                             account.address)
+deposit = await wallet.ethereum_provider.deposit(token, Decimal(1),
+                                                 account.address)
 ```
 
 You don't need to approve a deposit to transfer ETH.
@@ -138,7 +138,8 @@ To control assets in zkSync network, an account must register a separate public 
 
 ```python
 if not await wallet.is_signing_key_set():
-    await wallet.set_signing_key("ETH", eth_auth_data=ChangePubKeyEcdsa())
+    tx = await wallet.set_signing_key("ETH", eth_auth_data=ChangePubKeyEcdsa())
+    status = await tx.await_committed()
 ```
 
 ## Checking zkSync account balance
@@ -165,8 +166,9 @@ verified_dai_balance = account_state.verified.balances.get("DAI")
 For making transfer to another account you just need to set receiver amount and token
 
 ```python
-tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
+tx = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            amount=Decimal("0.01"), token="USDC")
+status = await tx.await_committed()
 ```
 
 If you want more control over the transaction, you can optionally provide `nonce` and `fee`
@@ -180,7 +182,8 @@ When 2 signed orders are collected, they can be submitted by anyone using the `s
 ```python
 orderA = await walletA.get_order('USDT', 'ETH', Fraction(1500, 1), RatioType.token, Decimal('10.0'))
 orderB = await walletB.get_order('ETH', 'USDT', Fraction(1, 1200), RatioType.token, Decimal('0.007'))
-receipt = await submitter.swap((orderA, orderB), 'ETH')
+tx = await submitter.swap((orderA, orderB), 'ETH')
+status = await tx.await_committed()
 ```
 
 For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API reference](../js/accounts.md#swaps-in-zksync).
@@ -188,8 +191,9 @@ For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API 
 ## Withdrawing funds back to Ethereum
 
 ```python
-await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
-                       Decimal("0.001"), "USDT")
+tx = await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
+                           Decimal("0.001"), "USDT")
+status = await tx.await_committed()
 ```
 
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
@@ -204,8 +208,9 @@ For detailed information, visit the [NFT tutorial](../../../dev/nfts.md).
 To mint an NFT, provide a 32-byte content hash, recipient address and token which will be used to pay fees.
 
 ```python
-receipt = await wallet.mint_nft("0x0000000000000000000000000000000000000000000000000000000000000123",
-                                "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
+tx = await wallet.mint_nft("0x0000000000000000000000000000000000000000000000000000000000000123",
+                           "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
+status = await tx.await_committed()
 ```
 
 Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
@@ -234,7 +239,8 @@ await self.wallet.transfer_nft("0x995a8b7f96cb837533b79775b6209696d51f435c", fir
 To withdraw an NFT, provide address to withdraw to, NFT itself and token which will be used to pay fees.
 
 ```python
-receipt = await wallet.withdraw_nft("0x21dDF51966f2A66D03998B0956fe59da1b3a179F", nft, "USDC")
+tx = await wallet.withdraw_nft("0x21dDF51966f2A66D03998B0956fe59da1b3a179F", nft, "USDC")
+status = await tx.await_committed()
 ```
 
 ## Getting information about zkSync transaction
@@ -246,8 +252,21 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
 ```
 
+## Waiting for transaction commitment and finalization
 
-### Supporting Two-Factor Authentication for Wallet
+To wait for transaction commitment into a zkSync block, use
+
+```python
+await tx.await_committed()
+```
+
+To wait for transaction finalization on L1, use
+
+```python
+await tx.await_verified()
+```
+
+## Supporting Two-Factor Authentication for Wallet
 
 There has been added the possibility to implement two-factor authentication for client based on the following method that are provided by `Wallet` class :
 

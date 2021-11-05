@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         text: "zkEVM",
-        link: "/zkEVM/",
+        link: "/zkevm/",
       },
       {
         text: "Contact and Media",
@@ -75,6 +75,12 @@ module.exports = {
         {
           title: "Security", // required
           path: "/faq/security", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "Learn By Watching", // required
+          path: "/faq/learnbywatching", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
@@ -120,17 +126,15 @@ module.exports = {
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
-      ],
-      "/zkEVM/": [
         {
-          title: "General", // required
-          path: "/zkEVM/", // optional, which should be a absolute path.
+          title: "FAQ", // required
+          path: "/faq/faq", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
-          title: "Developers", // required
-          path: "/zkEVM/developers", // optional, which should be a absolute path.
+          title: "Tutorials", // required
+          path: "/faq/tutorials", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
