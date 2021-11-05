@@ -46,7 +46,7 @@ novalidate
 
 ## Developer community
 
-Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/5b6s7VTC)!
+Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/nMaPGrDDwk)!
 
 ## User community and support
 
