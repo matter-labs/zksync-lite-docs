@@ -62,7 +62,7 @@ Please reach out directly via **hello@matter-labs.io**.
 ## Career opportunities
 
 We are always hiring! Please check out our
-[open positions](https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464).
+[open positions](https://boards.eu.greenhouse.io/matterlabs).
 
 ## Security disclosures
 
