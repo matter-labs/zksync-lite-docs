@@ -23,3 +23,7 @@ There are many videos available to watch to help you learn more about zkSync. Ta
 ## Epicenter Podcast - Alex Gluchowski: zkSync – The First EVM-Compatible zkRollup Protocol #396
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7jPusi4BJWc" title="YouTube video player" frameborder="0" class="videoframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## ZK-SYNC Interview with Alex Gluchowski - Scaling Ethereum with Zero Knowledge Rollups
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0xiiY8r8eX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
