@@ -6,7 +6,7 @@ meta:
     content: "Our Mission"
 ---
 
-# Our Mission
+# Our Mission and Values
 
 A quote from our CEO and Co-Founder Alex Gluchowski from a recent [AMA](https://www.reddit.com/r/ethereum/comments/q8q822/ama_were_matter_labs_the_team_behind_zksync_the/):
 
@@ -36,7 +36,16 @@ Free access to finance is a fundamental right. zkSync is unconditionally permiss
 ### Resilience
 We believe that only the paranoid survive. To resist even the most powerful potential adversaries, zkSync is going down the path of [progressive decentralization](https://zksync.io/faq/decentralization.html)
 
+## Freedom and Founding Matter Labs
 
+Our founder Alex Gluchowski on the founding of Matter Labs and freedom: 
+>Alex V. and I (Alex G.) founded Matter Labs because we love freedom: the ability to do what you want and not to do what you hate.
+
+>We wanted to be in the flow, tackling exciting technological problems on the edge of the complexity that our minds can handle — and experience the joy of accomplishment when the fruits of our work materialize. We hated bureaucracy with its stupid rules and limitations that are so often imposed by clueless people in the position of power.
+
+>This is something we want to share with you. We're doing our best to assemble a team of talented people who are self-motivated, love what they are doing, and enjoy the highest degree of autonomy.
+
+>But it's not just something that guides our work — it is its end goal. I'm convinced that **the single most impactful thing you can do today to make this world better is to increase people’s freedom**. More freedom is key to eliminating poverty, to the equality of opportunities, to more wealth for everyone, more fun and creativity, faster scientific and technological progress, less injustice and suffering through corruption and oppression. In [**Recommendations**](https://www.notion.so/Recommendations-06c4ef425ef4441a85300bacc33d29a4) you will find some thought-provoking books and videos on this topic.
 
 
 
