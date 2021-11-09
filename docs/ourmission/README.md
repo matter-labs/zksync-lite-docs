@@ -19,7 +19,7 @@ Matter Labs/zkSync has a special role in the crypto movement. Our mission is:
 
 > To accelerate the mass adoption of crypto for financial sovereignty.
 
-## Decentralized, on principle
+## Decentralized, On Principle
 
 zkSync is a mission-driven project. Its purpose is to break financial barriers and enhance world’s freedom — by accelerating the mass adoption of public blockchains. We take this mission to heart: check out our public [Team Handbook](https://matterlabs.notion.site/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02)
 
