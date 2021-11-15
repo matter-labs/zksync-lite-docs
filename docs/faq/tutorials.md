@@ -5,6 +5,7 @@
 ## Add Funds to zkSync with MetaMask
 
 In this tutorial, we will be depositing into a zkSync wallet with MetaMask on the Rinkeby test network. 
+> While the tutorial shows the steps for Rinkeby, you can follow the same steps for mainnet.
 
 To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" button at the top of Metamask, and then select "Rinkeby." To get ETH on the Rinkeby testnet, visit the [faucet](https://faucet.rinkeby.io/).  
 </br>
