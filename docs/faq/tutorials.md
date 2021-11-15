@@ -18,12 +18,17 @@ To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" b
   - Click on the Ethereum symbol at the bottom right.
   - Select Rinkeby. 
 
-<!-- </br>
+</br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D1.png" width="900">
 </p>
 </br>
--->
+
+</br>
+<p align="center">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D0.png">
+</p>
+</br>
 
 2. Choose "+ Add Funds."  
 
