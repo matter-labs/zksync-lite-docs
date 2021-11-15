@@ -139,7 +139,6 @@ Yes!
 
 Most DeFi and NFT projects will work with no code changes. However, in the first version, calls to SHA256 and Keccak256 will be replaced with a circuit friendly hash function automatically by the compiler. A few other cryptographic primitives are currently also unsupported, for example ecrecover and the cryptographic precompiles.
 
-
 ### How does the UI interact with smart contracts? Can I reuse my current frontend?
 
 You can interact completely with smart contracts and the zkSync network via our Web3 API and Ethers SDK:
@@ -160,6 +159,10 @@ For interactions with smart contracts, users will sign an EIP712 message with a 
 ### When can I deploy?
 
 We will be releasing testnet soon! Please sign up on [this form](https://forms.gle/jQQnJJeuVSVcmkqj9).
+
+### What is the status of Zinc?
+
+We have paused [Zinc](https://zksync.io/dev/contracts/#zinc) development in favor of a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on Zinc after Solidity is released!  
 
 
 ## My question wasn’t answered! ☹️
