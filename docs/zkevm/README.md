@@ -109,9 +109,10 @@ However, for some common use cases, the cost savings are an order of magnitude m
 Finally, zkSync 2.0 will have an extension called zkPorter that offers constant 1-3 cent transaction fees by putting data offchain. Optimistic rollups fundamentally cannot have such an extension with off-chain data availability because there is no way for the watchers to verify the validity of every single transaction without public data for it. So, it’s not possible for them to offer such a hybrid system to users who prefer ultra-low fees over security.
 
 
-### How does using zkSync compare to sidechains (e.g. Matic/Polygon, BSC, Solana, Avalanche)?
+### How does using zkSync compare to sidechains and other L1 blockchains (e.g. Matic/Polygon, BSC, Solana, Avalanche)?
 
-An Ethereum sidechain is a separate L1, with its own security mechanisms and a bridge between it and Ethereum. Sometimes the bridge validators are identical with the sidechain validators and use the same staking mechanism (e.g. in case of Polygon/Matic PoS).
+Ethereum sidechains, as well as some separate L1 blockchains, have their own security mechanisms and a bridge with Ethereum. Sometimes the bridge validators are identical with the 
+sidechain validators and use the same staking mechanism (e.g. in case of Polygon/Matic PoS).
 
 The most important thing to understand about this topic is that no matter how the sidechain itself is secured, **when it’s used as a scaling solution, security of the assets always depends on the goodwill of the majority of the bridge validators**. If the majority is compromised, they can irreversibly steal all of the assets. And since most bridges operate in a delegated PoS model under a low latency consensus requirement, the majority of the stake is usually controlled by only a handful of validator servers physically located in the same data center. The risk of all of these servers being compromised is nontrivial and a lot more than a theoretical threat!
 
@@ -144,7 +145,6 @@ Yes!
 
 Most DeFi and NFT projects will work with no code changes. However, in the first version, calls to SHA256 and Keccak256 will be replaced with a circuit friendly hash function automatically by the compiler. A few other cryptographic primitives are currently also unsupported, for example ecrecover and the cryptographic precompiles.
 
-
 ### How does the UI interact with smart contracts? Can I reuse my current frontend?
 
 You can interact completely with smart contracts and the zkSync network via our Web3 API and Ethers SDK:
@@ -165,6 +165,10 @@ For interactions with smart contracts, users will sign an EIP712 message with a 
 ### When can I deploy?
 
 We will be releasing testnet soon! Please sign up on [this form](https://forms.gle/jQQnJJeuVSVcmkqj9).
+
+### What is the status of Zinc?
+
+We are currently fully focused on a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on [Zinc](https://zksync.io/dev/contracts/#zinc) after Solidity is released!  
 
 
 ## My question wasn’t answered! ☹️
