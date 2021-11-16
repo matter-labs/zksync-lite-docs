@@ -79,7 +79,7 @@ follow that of [Rust](https://www.rust-lang.org/).
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides a powerful set of solutions for
 code optimization.
 
-**We are temporarily pausing development of Zinc in favor of a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on Zinc after Solidity is released!** 
+**We are currently fully focused on a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on Zinc after Solidity is released!** 
 
 ## Getting help
 

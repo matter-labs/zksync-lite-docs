@@ -162,7 +162,7 @@ We will be releasing testnet soon! Please sign up on [this form](https://forms.g
 
 ### What is the status of Zinc?
 
-We have paused [Zinc](https://zksync.io/dev/contracts/#zinc) development in favor of a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on Zinc after Solidity is released!  
+We are currently fully focused on a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on [Zinc](https://zksync.io/dev/contracts/#zinc) after Solidity is released!  
 
 
 ## My question wasn’t answered! ☹️
