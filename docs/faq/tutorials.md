@@ -27,7 +27,7 @@ To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" b
 
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D0.png">
+<img src="../images/D0.png?raw=true">
 </p>
 </br>
 
