@@ -244,6 +244,14 @@ module.exports = {
         },
         "/api/sdk/crypto",
       ],
+        "/zkevm": [
+        {
+          title: "zkEVM", // required
+          path: "/zkevm/", // optional, which should be a absolute path.
+          collapsable: false, // optional, defaults to true
+        },
+      ],
+
     },
   },
   head: [
