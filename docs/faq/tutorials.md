@@ -27,7 +27,10 @@ To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" b
 
 </br>
 <p align="center">
-<img src="../images/D0.png?raw=true">
+<!-- <img src="../images/D0.png?raw=true"> -->
+
+![](../images/D0.png?raw=true)
+![no raw](../images/D0.png)
 </p>
 </br>
 
