@@ -11,10 +11,10 @@ Yes
 
 The team’s focus is to work on scalability for Ethereum. You can find any announcements from zkSync on [Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and [Twitter](https://twitter.com/zksync). 
 
-## How do I swap tokens on zkSync?
+<!-- ## How do I swap tokens on zkSync?
 
 While it is possible to make swaps, currently, there is no UI available for it. However the [infrastructure](../dev/swaps.md#swaps-and-limit-orders) is accessible for teams to build on top of zkSync. Paraswap, 1inch, and others will be providing zkSync liquidity solutions for projects that need liquidity providers. 
-
+-->
 ## Why are the fees so high?
 
 Our fees depend on Ethereum Layer 1 (L1) gas prices because with every zkSync Layer 2 (L2) transaction, we post related data on Layer 1 — this allows us to inherit the security of Ethereum.
