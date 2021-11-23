@@ -16,9 +16,9 @@ meta:
 
 ### What is zkEVM and why is this a big deal?
 
-zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge-proof computation. It is the key to building an EVM-compatible ZK Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zkEVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
+zkEVM is a virtual machine that executes smart contracts in a way that is compatible with zero-knowledge-proof computation. It is the key to building an EVM-compatible ZK Rollup while preserving the battle-tested code and knowledge gained after years of working with Solidity. Our zk-EVM keeps EVM semantics, but is also ZK-friendly and takes on traditional CPU architectures.
 
-The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zkEVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
+The launch of the zkEVM represents an essential turning point for crypto. Up until recently it was still considered merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zk-EVM possible, Solidity programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
 
 
 ### What is zkSync 2.0?
