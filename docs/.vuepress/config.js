@@ -255,24 +255,42 @@ module.exports = {
       "script",
       {},
       `
-   const logoUrlChanger = setInterval(function() {
-    //Anchor above the logo image
-    const homeEls = document.getElementsByClassName("home-link");
-    if(homeEls.length > 0) {
-      const homeEl = homeEls[0];
-      homeEl.setAttribute("href", "https://zksync.io");
-      homeEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
-      clearInterval(logoUrlChanger);
-    }
+      const logoUrlChanger = setInterval(function() {
+        //Anchor above the logo image
+        const homeEls = document.getElementsByClassName("home-link");
+        if(homeEls.length > 0) {
+          const homeEl = homeEls[0];
+          homeEl.setAttribute("href", "https://zksync.io");
+          homeEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
+          clearInterval(logoUrlChanger);
+        }
 
-    //Actual logo image
-    const logoEls = document.getElementsByClassName("logo")
-    if(logoEls.length > 0) {
-      const logoEl = logoEls[0]
-      logoEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
-      clearInterval(logoUrlChanger);
-    }
-   }, 1000)`,
+        //Actual logo image
+        const logoEls = document.getElementsByClassName("logo")
+        if(logoEls.length > 0) {
+          const logoEl = logoEls[0]
+          logoEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
+          clearInterval(logoUrlChanger);
+        }
+      }, 1000)`,
+    ],
+    //Hack: scroll to anchor
+    [
+      "script",
+      {},
+      `
+      window.onload = function() {
+        requestAnimationFrame(function() {
+          if (location.hash) {
+            const element = document.getElementById(location.hash.slice(1))
+      
+            if (element) {
+              element.scrollIntoView();
+            }
+          }
+        });
+      }      
+      `,
     ],
   ],
 };
