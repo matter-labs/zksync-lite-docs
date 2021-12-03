@@ -7,6 +7,8 @@
 In this tutorial, we will be depositing into a zkSync wallet with MetaMask on the Rinkeby test network. 
 > While the tutorial shows the steps for Rinkeby, you can follow the same steps for mainnet.
 
+**There is an account activation fee applied on the first transaction after depositing. Deposit an additional ~$20 to cover it during high gas fees.**
+
 To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.  
 </br>
 <p align="center">
@@ -38,6 +40,15 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D2%20copy.png">
 </p>
 </br>
+
+> For a FIAT onramp choose "Buy Crypto with Ramp" and complete the process with Ramp to save on L1 gas fees.
+
+</br>
+<p align="center">
+<img src="https://github.com/matter-labs/zksync-docs/blob/39de904aff0d288e9641e458e2808152395b7d74/docs/images/RAMP.png">
+</p>
+</br>
+
 
 3. Select your token, enter the amount, and add funds.
 - *If you can’t find your token:*
