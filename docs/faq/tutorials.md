@@ -4,15 +4,17 @@
 
 ## Add Funds to zkSync with MetaMask
 
-In this tutorial, we will be depositing into a zkSync wallet with MetaMask on the Rinkeby test network. 
-> While the tutorial shows the steps for Rinkeby, you can follow the same steps for mainnet.
+In this tutorial, we will be depositing into a zkSync wallet with MetaMask. 
+> While the tutorial shows the MetaMask images for Rinkeby, you can follow the same steps for mainnet.
 
-**There is an account activation fee applied on the first transaction after depositing. Deposit an additional ~$20 to cover it during high gas fees.**
+**There is an account activation fee applied on the first transaction after depositing. Deposit an additional ~$20 to cover it during high gas fees.** Learn more about the account activation fee in our [FAQ](./faq.md#what-is-the-account-activation-fee).
+</br>
+</br>
 
 To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.  
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/a5b5ebe0b3b0f1ddec12f2d13c4f7b963cdba105/docs/images/Deposit%201.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/Deposit%201.png">
 </p>
 </br>  
 
@@ -29,7 +31,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/a5b5ebe0b3b0f1ddec12f2d13c4f7b963cdba105/docs/images/Mainnet.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/Mainnet.png">
 </p>
 </br>
 
@@ -45,7 +47,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 </br>
 <p align="center">
-<img src="https://github.com/matter-labs/zksync-docs/blob/39de904aff0d288e9641e458e2808152395b7d74/docs/images/RAMP.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/RAMP.png">
 </p>
 </br>
 
@@ -61,6 +63,13 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D3.png" height="300">
+</p>
+</br>
+
+> If you add a token that requires approval, you need to pay a gas fee on L1 to authorize the deposit to zkSync. You will see the following messages before moving on to step 4.
+</br>
+<p align="center">
+<img src=""https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/approval.png">
 </p>
 </br>
 
