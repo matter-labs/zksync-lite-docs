@@ -69,7 +69,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 > If you add a token that requires approval, you need to pay a gas fee on L1 to authorize the deposit to zkSync. You will see the following messages before moving on to step 4.
 </br>
 <p align="center">
-<img src=""https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/approval.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/approval.png">
 </p>
 </br>
 
