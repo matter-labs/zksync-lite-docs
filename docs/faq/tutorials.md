@@ -54,7 +54,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 3. Select your token, enter the amount, and add funds.
 - *If you can’t find your token:*
-  - Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. on ERC20-23 = UNI).
+  - Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. ERC20-23 = UNI).
   - Add new token to zkSync:  
       1. Click "Can't find a token?"
       2. Use the link to access the [Tokens page](https://zkscan.io/explorer/tokens/). 
