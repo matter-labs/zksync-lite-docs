@@ -251,7 +251,7 @@ A single yellow check mark next to your balance indicates the zkSync server has 
 
 ## Mint an NFT
 
-The following steps will cover using IPFS desktop to mint an NFT. **This process will mint an NFT of where your image location on IPFS and will not be available for preview if withdrawn to L1.** 
+The following steps will cover using IPFS desktop to mint an NFT. **This process will mint an NFT of your image location on IPFS and will not be available for preview if withdrawn to L1.** 
 To mint an NFT with an IPFS location and a preview of the image, consider using one of the community-created frontends&ast; like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/). 
 </br>
 
