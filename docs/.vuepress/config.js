@@ -42,6 +42,10 @@ module.exports = {
         link: "/zkevm/",
       },
       {
+        text: "Stats Dashboard",
+        link: "/dashboard/",
+      },
+      {
         text: "Contact and Media",
         link: "/contact.html",
       },
