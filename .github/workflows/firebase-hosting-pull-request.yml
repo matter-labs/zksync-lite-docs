@@ -5,15 +5,29 @@ name: Check CI and deploy a preview to Firebase Hosting on PR
 'on': pull_request
 jobs:
   build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Prepare CI
-        run: bash cli-dev.sh ci && yarn zk-ci-prepare
+      - name: "Prepare: apply cache"
+        uses: c-hive/gha-yarn-cache@v2  # using cache
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: "Prepare: node@lts setup"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: "Prepare: yarn@3 & firebase-tools setup"
+        run: |
+          yarn set version 3.1.1
+          yarn install
+          npm install -g firebase-tools
+      - name: "Build: dapp"
+        run: yarn run zk-ci-prepare
+
+      - name: "Deploy: preview"
+        uses: matter-labs/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_JS_DOCS }}'
