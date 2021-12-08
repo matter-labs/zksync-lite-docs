@@ -265,3 +265,30 @@ To wait for transaction finalization on L1, use
 ```python
 await tx.await_verified()
 ```
+
+## Supporting Two-Factor Authentication for Wallet
+
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it [here](/dev/payments/sending_transactions.md#_2-factor-authentification).
+
+The 2FA can be turned on or turned off using the following methods of the `Wallet` class:
+
+* enable_2fa
+* disable_2fa
+
+Both methods return `True` in case of success and `False` otherwise. Example:
+
+```python
+# Enable 2FA
+result = await self.wallet.enable_2fa()
+if result:
+    account_state = await self.wallet.get_account_state()
+    # here account_state.account_type == AccountTypes.OWNED
+
+# Disable 2FA but only to a specific pub_key_hash
+# If you want to disable 2FA for the account entirely, then simply don't provide the `pub_key_hash`
+pub_key_hash = self.wallet.zk_signer.pubkey_hash_str()
+result = await self.wallet.disable_2fa(pub_key_hash)
+if result:
+    account_state = await self.wallet.get_account_state()
+    # here account_state.account_type == AccountTypes.No2FA
+```
