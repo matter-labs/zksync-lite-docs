@@ -6,7 +6,7 @@ This document describes working with zkSync events in more detail in a language-
 
 ## Establishing the connection
 
-Currently, events are only present on Ropsten. The event server WebSocket URL is `wss://ropsten-events.zkscan.io`. You can find an example of client application [here](../dev/events.md).
+The event server WebSocket URL for mainnet is `wss://events.zksync.io`. You can find an example of client application [here](../dev/events.md).
 
 ## Event structure
 
@@ -480,7 +480,3 @@ Here are some additional examples of filtering:
 Technically the committed blocks may be reverted and the transactions inside them will be reverted as well. This happens very rarely, but if your client relies on committed events, some precautious measures should be taken. If a block is reverted the client will be notified with an appropriate `block` event, but it will not be notified about the individual `transaction` events and the `account` events to be reverted as well. It is recommended that if you rely on committed events, then you also keep track of the `block` events to know if a block was reverted.
 
 If you want to receive events only about final transactions, then you should accept only `finalized` events. The `finalized` blocks can never be reverted as it is enforced by an Ethereum smart contract.
-
-## Reading past events
-
-To be able to receive past events is a very important feature and will be released very soon.
