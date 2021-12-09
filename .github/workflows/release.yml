@@ -1,0 +1,43 @@
+# This workflow will do a clean installation of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: "CI: releasing version"
+"on":
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build_and_release:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }} && {{ !contains(github.event.head_commit.message, 'skip ci') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          # Whether to configure the token or SSH key with the local git config
+          # Default: true
+          persist-credentials: false # <--- checking this in commit context
+
+      - name: "Prepare: apply cache"
+        uses: c-hive/gha-yarn-cache@v2  # using cache
+
+      - name: "Prepare: node@lts setup"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: "Prepare: yarn@3 & firebase-tools setup"
+        run: |
+          yarn set version 3.1.1
+          yarn install
+          npm install -g firebase-tools
+
+      - name: "Build: dapp"
+        env:
+          CI: true
+        run: yarn run zk-ci-prepare
+
+      - name: "#3: Running semantic-release"
+        run: npx semantic-release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
