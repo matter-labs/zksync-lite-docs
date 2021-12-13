@@ -14,7 +14,7 @@ In this tutorial, we will be depositing into a zkSync wallet with MetaMask.
 To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.  
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/Deposit%201.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Deposit%201.png">
 </p>
 </br>  
 
@@ -31,7 +31,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/Mainnet.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mainnet.png">
 </p>
 </br>
 
@@ -47,7 +47,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/RAMP.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/RAMP.png">
 </p>
 </br>
 
@@ -69,7 +69,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 > If you add a token that requires approval, you need to pay a gas fee on L1 to authorize the deposit to zkSync. You will see the following messages before moving on to step 4.
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/tutorial-update-12/21/docs/images/approval.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/approval.png">
 </p>
 </br>
 
