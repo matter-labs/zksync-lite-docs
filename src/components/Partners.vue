@@ -177,6 +177,13 @@ export default Vue.extend({
             alt: "Numio",
             title: "Numio is using zkRollups from zkSync in the mobile payments app",
           },
+          {
+            id: "Paraswap",
+            link: "http://paraswap.io/",
+            img: "paraswap.svg",
+            alt: "Paraswap",
+            title: "Paraswap",
+          },
         ] as Array<PartnerDataItem>;
       },
       required: false,
