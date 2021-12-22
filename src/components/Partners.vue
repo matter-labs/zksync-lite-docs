@@ -77,7 +77,7 @@ export default Vue.extend({
             title: "Balancer Exchange",
           },
           {
-            id: "1inch",
+            id: "oneInch",
             img: "1inch.svg",
             alt: "1inch Exchange",
             title: "1inch Exchange",

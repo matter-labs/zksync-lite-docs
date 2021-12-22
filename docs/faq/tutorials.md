@@ -4,26 +4,36 @@
 
 ## Add Funds to zkSync with MetaMask
 
-In this tutorial, we will be depositing into a zkSync wallet with MetaMask on the Rinkeby test network. 
+In this tutorial, we will be depositing into a zkSync wallet with MetaMask. 
+> While the tutorial shows the MetaMask images for Rinkeby, you can follow the same steps for mainnet.
 
-To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" button at the top of Metamask, and then select "Rinkeby." To get ETH on the Rinkeby testnet, visit the [faucet](https://faucet.rinkeby.io/).  
+**There is an account activation fee applied on the first transaction after depositing. Deposit an additional ~$20 to cover it during high gas fees.** Learn more about the account activation fee in our [FAQ](./faq.md#what-is-the-account-activation-fee).
+</br>
+</br>
+
+To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.  
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/imaged0.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Deposit%201.png">
 </p>
 </br>  
 
 1. Go to [https://wallet.zksync.io/](https://wallet.zksync.io/) and connect your wallet.
-- To connect to the Rinkeby test network:
+- To connect to the zkSync 1.0 Mainnet:
   - Click on the Ethereum symbol at the bottom right.
-  - Select Rinkeby. 
+  - Select Mainnet. 
 
-<!-- </br>
+</br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D1.png" width="900">
 </p>
 </br>
--->
+
+</br>
+<p align="center">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mainnet.png">
+</p>
+</br>
 
 2. Choose "+ Add Funds."  
 
@@ -33,9 +43,18 @@ To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" b
 </p>
 </br>
 
+> For a FIAT onramp choose "Buy Crypto with Ramp" and complete the process with Ramp to save on L1 gas fees.
+
+</br>
+<p align="center">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/RAMP.png">
+</p>
+</br>
+
+
 3. Select your token, enter the amount, and add funds.
 - *If you can’t find your token:*
-  - Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. on Rinkeby, ERC20-21 = UNI).
+  - Some tokens will be referred to by their internal id number on our [Tokens page](https://zkscan.io/explorer/tokens/) instead of their token symbol. (E.g. ERC20-23 = UNI).
   - Add new token to zkSync:  
       1. Click "Can't find a token?"
       2. Use the link to access the [Tokens page](https://zkscan.io/explorer/tokens/). 
@@ -44,6 +63,13 @@ To switch your network to Rinkeby on MetaMask, click on the "Ethereum Mainnet" b
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D3.png" height="300">
+</p>
+</br>
+
+> If you add a token that requires approval, you need to pay a gas fee on L1 to authorize the deposit to zkSync. You will see the following messages before moving on to step 4.
+</br>
+<p align="center">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/approval.png">
 </p>
 </br>
 
@@ -225,7 +251,7 @@ A single yellow check mark next to your balance indicates the zkSync server has 
 
 ## Mint an NFT
 
-The following steps will cover using IPFS desktop to mint an NFT. This process will mint an NFT of where your image location on IPFS and will not be available for preview at this time. 
+The following steps will cover using IPFS desktop to mint an NFT. **This process will mint an NFT of your image location on IPFS and will not be available for preview if withdrawn to L1.** 
 To mint an NFT with an IPFS location and a preview of the image, consider using one of the community-created frontends&ast; like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/). 
 </br>
 
@@ -286,7 +312,7 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 
 **Pending**             |  **Verified**
 :-------------------------:|:-------------------------:
-A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1.
+A single yellow check mark next to your balance indicates the zkSync server has processed your transaction. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1.
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m10.png" width="395">  |  <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m11.png" width="400">
 </br>
 
