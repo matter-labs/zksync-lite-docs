@@ -24,13 +24,7 @@
       </z-cta>
     </i-row>
     <a
-      class="scrollDown _hidden-lg-and-up" data-aos-offset="-100" data-aos="fade-up" data-aos-delay="100"
-      data-aos-duration="700" @click.capture="scrollTo('#reviews-about-zksync')"
-    >
-      <i class="fal fa-arrow-down"/>
-    </a>
-    <a
-      class="scrollDown _hidden-md-and-down" data-aos-offset="-100" data-aos="fade-up" data-aos-delay="100"
+      class="scrollDown" data-aos-offset="-100" data-aos="fade-up" data-aos-delay="100"
       data-aos-duration="700" @click.capture="scrollTo('#partners')"
     >
       <i class="fal fa-arrow-down"/>
