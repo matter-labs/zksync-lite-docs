@@ -272,7 +272,7 @@ The following steps will cover using IPFS desktop to mint an NFT.
 </p>
 </br>
 
-3. Click on the three dots at the end of the row of your imported image and click on "Copy CID."
+3. Click on the three dots at the end of the row of your imported image and click on "Copy CID" (Content Identifier).
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m3.png" width="900">
@@ -326,7 +326,7 @@ The following steps will cover using IPFS desktop to mint an NFT.
 > - Signing the message will generate your zkSync Layer 2 private key (remember, it is good practice to read the messages you sign).
 </br>
 
-9. Enter the copied CID (Content Identifier) of your .json file in "Content Address" and click "Mint NFT."
+9. Enter the copied CID of your .json file in "Content Address" and click "Mint NFT."
 - *Before minting, you can change the fee token.*  
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
 </br>
