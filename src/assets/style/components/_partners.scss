@@ -23,16 +23,21 @@
     align-items: center;
     flex-wrap: wrap;
     margin: 0 auto;
-
-
+    
+    
     a {
-      width: 20%;
+      width: 16.66%;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 0 2%;
       height: 120px;
+      @media screen and (max-width: $mobile) {
+        &:not(.show-on-mobile) {
+          display: none;
+        }
+      }
 
       img {
         display: inline-flex;
@@ -84,21 +89,13 @@
         }
       }
 
-      @media screen and (max-width: 1000px) {
-        width: 30%;
-      }
       @media screen and (max-width: $mobile) {
         width: 50%;
-        height: 100px;
 
         img:hover {
           will-change: none;
           transform: none !important;
         }
-      }
-      @media screen and (max-width: 345px) {
-        width: 100%;
-        height: 90px;
       }
 
     }
@@ -116,12 +113,21 @@
       max-width: 75%;
     }
 
+    a#Paraswap > img {
+      max-width: 90%;
+    }
+
     a#Storj > img {
       max-width: 70%;
     }
 
     a#oneInch > img {
-      max-height: 50px;
+      max-height: 47px;
+
+      @media screen and (max-width: $mobile) {
+        max-height: initial;
+        max-width: 87.5%;
+      }
     }
 
     a#stablepay > img {
@@ -151,6 +157,10 @@
     }
 
     a#zkv > img {
+      max-width: 80%;
+    }
+
+    a#moonpay > img {
       max-width: 80%;
     }
   }
