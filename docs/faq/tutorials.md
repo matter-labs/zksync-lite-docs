@@ -251,8 +251,9 @@ A single yellow check mark next to your balance indicates the zkSync server has 
 
 ## Mint an NFT
 
-The following steps will cover using IPFS desktop to mint an NFT. **This process will mint an NFT of your image location on IPFS and will not be available for preview if withdrawn to L1.** 
-To mint an NFT with an IPFS location and a preview of the image, consider using one of the community-created frontends&ast; like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/). 
+The following steps will cover using IPFS desktop to mint an NFT.
+
+> If you are new to minting an NFT, consider using one of the community-created frontends&ast; like [zkNFT](https://zknft.xyz/#/) or [Open Sky](https://open-sky.vercel.app/). 
 </br>
 
 *&ast;The community-created frontends are not created by the zkSync team, and any issues with minting will need to be sent to the creators of these frontends.*
@@ -278,7 +279,41 @@ To mint an NFT with an IPFS location and a preview of the image, consider using 
 </p>
 </br>
 
-4. On your [zkSync wallet](https://wallet.zksync.io/), open the NFTs tab and select "+ Mint NFT."
+4. Use text below to create a metadata.json file or click the link to [create your file online](https://jsoneditoronline.org/#left=cloud.6087b20f97bb4b06b2fb357c5c682c46).
+```
+  {
+  "name": "Your NFT name",
+  "image": "CID of Image",
+  "description": "Description of your NFT",
+  "external_url": "Optional URL",
+  "attributes": [
+    {
+      "trait_type": "Attirbute 1",
+      "value": "Value 1"
+    },
+    {
+      "trait_type": "Attribute 2",
+      "value": "Value 2"
+    },
+    {
+      "trait_type": "Attribute 3",
+      "value": "Value 3"
+    }
+  ]
+}
+```
+5. Enter the CID from step 3 in the `"image":` section and fill out the rest of the values as needed. 
+
+6. Save your .json file or download your .json file if you used the link from step 4.
+</br>
+<p align="center">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/.png">
+</p>
+</br>
+
+7. Import you .json file to IPFS as in step 2 and copy the CID for you .json file.
+
+8. On your [zkSync wallet](https://wallet.zksync.io/), open the NFTs tab and select "+ Mint NFT."
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m4.png">
@@ -291,7 +326,7 @@ To mint an NFT with an IPFS location and a preview of the image, consider using 
 > - Signing the message will generate your zkSync Layer 2 private key (remember, it is good practice to read the messages you sign).
 </br>
 
-5. Enter the copied CID (Content Identifier) in "Content Address" and click "Mint NFT."
+9. Enter the copied CID (Content Identifier) of your .json file in "Content Address" and click "Mint NFT."
 - *Before minting, you can change the fee token.*  
 Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.”
 </br>
@@ -300,14 +335,14 @@ Users can pay transaction fees in all popular tokens since zkSync supports “ga
 </p>
 </br>
 
-6. Confirm the fee and sign the message (remember, it is good practice to read the messages you sign).
+10. Confirm the fee and sign the message (remember, it is good practice to read the messages you sign).
 </br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m8.png">
 </p>
 </br>
 
-7. Minting your NFT has been initiated and will be available for transfer, or withdrawal to L1, once it has been verified, which takes between 10 minutes to 7 hours.
+11. Minting your NFT has been initiated and will be available for transfer, or withdrawal to L1, once it has been verified, which takes between 10 minutes to 7 hours.
 - *When network activity increases, blocks fill up faster, and verification times decrease.* 
 
 **Pending**             |  **Verified**
