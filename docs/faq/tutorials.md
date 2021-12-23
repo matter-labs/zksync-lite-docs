@@ -279,7 +279,7 @@ The following steps will cover using IPFS desktop to mint an NFT.
 </p>
 </br>
 
-4. Use text below to create a metadata.json file or click the link to [create your file online](https://jsoneditoronline.org/#left=cloud.6087b20f97bb4b06b2fb357c5c682c46).
+4. Use the text below to create a metadata.json file or click the link to [create your file online](https://jsoneditoronline.org/#left=cloud.6087b20f97bb4b06b2fb357c5c682c46).
 ```
   {
   "name": "Your NFT name",
