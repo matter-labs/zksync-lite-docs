@@ -307,7 +307,7 @@ The following steps will cover using IPFS desktop to mint an NFT.
 6. Save your .json file or download your .json file if you used the link from step 4.
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/nft-tutorial-update/docs/images/savejson.png">
 </p>
 </br>
 
