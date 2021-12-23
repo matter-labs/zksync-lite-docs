@@ -29,7 +29,7 @@
         </a>
       </div>
       <div v-if="morePagesAvailable" class="_padding-bottom-2">
-        <z-button class="_margin-x-auto _display-block _hidden-md-and-up" variant="glow" size="lg" @click.native="showMorePages()">Show more</z-button>
+        <z-button class="_margin-x-auto _display-block _hidden-md-and-up no-hover-effect" variant="glow" size="lg" @click.native="showMorePages()">Show more</z-button>
       </div>
     </i-container>
   </div>
