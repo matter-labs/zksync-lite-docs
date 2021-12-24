@@ -33,14 +33,6 @@
             <div class="grayText">
               Develop type-safe, functional style smart contracts on Zinc: a Rust-based framework.
             </div>
-            <z-button
-              css-class='width-300'
-              href='https://zksync.curve.fi'
-              outline="outline"
-              size='md'
-              target='_blank'
-            >Try <strong>Curve + zkSync</strong> testnet
-            </z-button>
           </div>
           <div class="textItem">
             <div class="h2 _position-relative">
