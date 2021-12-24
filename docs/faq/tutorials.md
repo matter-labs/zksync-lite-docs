@@ -279,11 +279,11 @@ The following steps will cover using IPFS desktop to mint an NFT.
 </p>
 </br>
 
-4. Use the text below to create a metadata.json file or click the link to [create your file online](https://codebeautify.org/online-json-editor/cb77ff25).
+4. Use the text below to create a metadata.json file or click the link to [create your file online](https://codebeautify.org/online-json-editor/cb3f2098).
 ```
   {
   "name": "Your NFT name",
-  "image": "CID of Image",
+  "image": "https://ipfs.io/ipfs/CID of Image",
   "description": "Description of your NFT",
   "external_url": "Optional URL",
   "attributes": [
@@ -302,12 +302,30 @@ The following steps will cover using IPFS desktop to mint an NFT.
   ]
 }
 ```
-5. Enter the CID from step 3 in the `"image":` section and fill out the rest of the values as needed. 
-
+5. Enter the CID from step 3 at the end of the `"image": "https://ipfs.io/ipfs/` section and fill out the rest of the values as needed. 
+> Example metadata.json file:
+```
+{
+  "name": "zkSync",
+  "image": "https://ipfs.io/ipfs/QmX4kiKSy4bBB8PXqj8ZM8gNNmra3Xh1NshiaF5TRk5c2C",
+  "description": "zkSync Logo",
+  "external_url": "https://zksync.io/",
+  "attributes": [
+    {
+      "trait_type": "Logo",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Yes"
+    },
+  ]
+}
+```
 6. Save your .json file or download your .json file if you used the link from step 4.
 </br>
 <p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/djson.png">
+<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/nft-tutorial-update/docs/images/json.png">
 </p>
 </br>
 
