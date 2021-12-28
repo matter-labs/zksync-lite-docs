@@ -42,10 +42,6 @@ module.exports = {
         link: "/zkevm/",
       },
       {
-        text: "Stats Dashboard",
-        link: "/dashboard/",
-      },
-      {
         text: "Contact and Media",
         link: "/contact.html",
       },
@@ -127,6 +123,12 @@ module.exports = {
         {
           title: "Roadmap", // required
           path: "/faq/roadmap", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "Dune Dashboard", // required
+          path: "/faq/dashboard", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
