@@ -336,7 +336,7 @@ _\*The community-created frontends are not created by the zkSync team, and any i
     {
       "trait_type": "Color",
       "value": "Yes"
-    },
+    }
   ]
 }
 ```
