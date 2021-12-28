@@ -64,7 +64,7 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 
 | Name           | Description                                                                           |
 | -------------- | ------------------------------------------------------------------------------------- |
-| tx             | Signed zkSync transaction (see types, for detailed description)                         |
+| tx             | Signed zkSync transaction (see types, for detailed description)                       |
 | signature      | Signature of the readable representation of the transaction signed by ethereum wallet |
 | fastProcessing | For withdrawals only: request faster processing of transaction                        |
 | returns        | `0x`-prefixed hex-encoded hash of the transaction                                     |
@@ -174,8 +174,8 @@ async getContractAddress(): Promise<ContractAddress>;
 
 #### Inputs and outputs
 
-| Name    | Description                                                                         |
-| ------- | ----------------------------------------------------------------------------------- |
+| Name    | Description                                                                           |
+| ------- | ------------------------------------------------------------------------------------- |
 | returns | Addresses of the zkSync network smart contracts (see types, for detailed description) |
 
 > Example
@@ -248,8 +248,8 @@ async getState(address: Address): Promise<AccountState>;
 
 #### Inputs and outputs
 
-| Name    | Description                                                                                          |
-| ------- | ---------------------------------------------------------------------------------------------------- |
+| Name    | Description                                                                                            |
+| ------- | ------------------------------------------------------------------------------------------------------ |
 | address | `0x`-prefixed hex-encoded address of the zkSync account.                                               |
 | returns | Detailed state of the zkSync account, including balances, nonce. (see types, for detailed description) |
 
@@ -321,7 +321,7 @@ async getTxReceipt(txHash: string): Promise<TransactionReceipt>;
 
 | Name    | Description                                                       |
 | ------- | ----------------------------------------------------------------- |
-| txHash  | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction.     |
+| txHash  | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction.   |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
 > Returns
@@ -376,7 +376,7 @@ async notifyTransaction(
 
 | Name    | Description                                                       |
 | ------- | ----------------------------------------------------------------- |
-| txHash  | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction.     |
+| txHash  | `sync-tx:`-prefixed hex-encoded hash of the zkSync transaction.   |
 | action  | "COMMIT" or "VERIFY"                                              |
 | returns | Receipt of this transaction (see types, for detailed description) |
 
@@ -582,7 +582,7 @@ constructor(
 | Name            | Description                                     |
 | --------------- | ----------------------------------------------- |
 | ethersProvider  | `ethers.js` provider connected to ethereum node |
-| contractAddress | Addresses of the zkSync network contracts         |
+| contractAddress | Addresses of the zkSync network contracts       |
 
 > Example
 
@@ -609,9 +609,9 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 
 #### Inputs and outputs
 
-| Name    | Description                                                  |
-| ------- | ------------------------------------------------------------ |
-| token   | Ethereum token address (ERC20 contract address)              |
+| Name    | Description                                                    |
+| ------- | -------------------------------------------------------------- |
+| token   | Ethereum token address (ERC20 contract address)                |
 | returns | Numerical identifier of the given token inside zkSync network. |
 
 > Example
