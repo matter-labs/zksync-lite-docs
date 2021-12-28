@@ -17,7 +17,9 @@ Kudos to [Vareger](https://www.vareger.com/) for developing it!
 [[toc]]
 
 ## Getting Started
+
 We will:
+
 1. Connect to the zkSync network.
 2. Deposit assets from Ethereum into zkSync.
 3. Make transfers.
@@ -207,7 +209,7 @@ final balance = state.commited.balances['ETH'];
 
 ### Unlocking zkSync account
 
-In order to make any transactions in zkSync network, you'll need to register your ZkSigner's public key first. Please use the following command to do this: 
+In order to make any transactions in zkSync network, you'll need to register your ZkSigner's public key first. Please use the following command to do this:
 
 ```dart
 final zkSigner = ...;
@@ -221,7 +223,7 @@ print(authTx);
 
 ### Transfering funds in zkSync
 
-After funds `Deposit`ed and account `Unlock`ed, you can transfer funds inside zkSync network. 
+After funds `Deposit`ed and account `Unlock`ed, you can transfer funds inside zkSync network.
 
 > Please note, that it is possible to send assets within zkSync to any Ethereum address, without preliminary registration in zkSync!
 
