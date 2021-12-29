@@ -34,7 +34,7 @@
           </i-column>
           <i-column :xs="12" :md="4" class="_padding-y-0">
             <div class="linksContainer">
-              <a href="/faq/" target="_blank" class="linkItem">FAQ</a>
+              <a href="/userdocs/" target="_blank" class="linkItem">FAQ</a>
               <a href="/dev/" target="_blank" class="linkItem">Docs</a>
               <i-dropdown
                 :class="{'opened': dropdownOpened}"
