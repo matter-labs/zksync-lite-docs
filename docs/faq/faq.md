@@ -91,14 +91,16 @@ The registration process happens directly on the Ethereum smart contract and the
 
 ERC-1271 compatible wallets (like Argent) increase this one-time fee because of higher interaction with the zkSync smart contract. This operation is cheaper if you are using a CREATE2 smart-contract-based wallet.
 
-## What is the difference between an "Initiated," "Pending," and "Complete" transaction on zkScan?
+## What is the difference between an Initiated, Committed, and Verified transaction on zkScan?
 
-**"Initiated"**: the zkSync server has received and processed the transaction. If it is a transfer, it is ready for immediate use.</br>
-**"Pending"**: the transaction appears in a block that is _committed_ to the L1 smart contract.</br>
-**"Complete"**: the transaction’s block has been proven and verified on the L1 smart contract.
+**Initiated**: the zkSync server has received and processed the transaction. If the transaction is a transfer, it is ready for immediate use.
 
-## What can I do on zkSync 1.0 mainnet?
+**Committed**: the transaction appears in a block that is _committed_ to the L1 smart contract. 
+
+**Verified**: the transaction’s block has been proven and verified on the L1 smart contract.
+
+<!-- ## What can I do on zkSync 1.0 mainnet?
 
 zkSync 1.0 is mainly a payment system. Users can deposit and withdraw funds from and to L1, and transfer between accounts on L2. A great use case is Gitcoin Grants, which we
 have been supporting since [Round 7](https://gitcoin.co/blog/gitcoin-grants-round-7/), that inter alia, allow users to do micropayments on L2 otherwise not economical on L1.
-In addition, you can create payment links for others to send you funds on zkSync. zkSync 2.0 will allow projects to seamlessly port over dapps from L1 and will enable much more.
+In addition, you can create payment links for others to send you funds on zkSync. zkSync 2.0 will allow projects to seamlessly port over dapps from L1 and will enable much more. --!>
