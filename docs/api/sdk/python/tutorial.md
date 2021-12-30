@@ -272,8 +272,8 @@ Two factor authentification is an additional protection layer enforced by zkSync
 
 The 2FA can be turned on or turned off using the following methods of the `Wallet` class:
 
-* enable_2fa
-* disable_2fa
+- enable_2fa
+- disable_2fa
 
 Both methods return `True` in case of success and `False` otherwise. Example:
 
