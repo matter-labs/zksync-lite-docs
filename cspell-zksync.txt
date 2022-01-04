@@ -71,7 +71,6 @@ SDKs
 inter alia
 unbundle
 incentivized
-authentification
 
 // crypto terms
 UDST
