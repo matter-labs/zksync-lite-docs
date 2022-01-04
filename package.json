@@ -41,8 +41,8 @@
     "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks",
     "zk-copy": "sh ./cli-merge.sh",
     "zk-ci-prepare": "yarn nuxt-ci:build && yarn ci && yarn docs:build && yarn zk-copy",
-    "prepare": "husky install",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "postinstall": "husky install"
   },
   "check-md": {
     "cwd": "./docs",
@@ -82,8 +82,8 @@
     "@babel/core": "^7.13.1",
     "@babel/plugin-syntax-jsx": "latest",
     "@babel/preset-env": "7.12.17",
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
     "@inkline/nuxt": "^2.3.5",
     "@nuxt/types": "^2.15.2",
     "@nuxt/typescript-build": "^2.0.5",
@@ -110,7 +110,7 @@
     "node-sass": "4.14.1",
     "prettier": "^2.2.1",
     "sass-loader": "^10.1.1",
-    "semantic-release": "^18.0.0",
+    "semantic-release": "^18.0.1",
     "stylelint": "^13.10.0",
     "ts-loader": "^8.0.17",
     "typescript": "^4.1.5",
@@ -130,8 +130,13 @@
     }
   },
   "lint-staged": {
-    "*.{css,scss}": "yarn run lint-css",
-    "*.{ts,tsx}": [
+    "*.md": [
+      "yarn run md:lint",
+      "yarn run md:deadlinks",
+      "yarn run cspell",
+      "yarn run fmt"
+    ],
+    "*.{js,vue,ts,tsx}": [
       "yarn run lint-ts",
       "yarn run format"
     ]
