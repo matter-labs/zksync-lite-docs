@@ -7,12 +7,12 @@ This API reference provides descriptions for all functions regarding NFTs in zkS
 - [Transfer NFT](#transfer-nft)
 - [Swap NFT](#swap-nft)
 - [Withdraw NFT](#withdraw-nft)
-    - [Emergency Withdraw](#emergency-withdraw)
+  - [Emergency Withdraw](#emergency-withdraw)
 - [Utility Functions](#utility-functions)
-    - [Calculate Transaction Fee](#calculate-transaction-fee)
-    - [View NFT](#view-an-nft)
-    - [Get NFT](#get-an-nft)
-    - [Get a receipt](#get-a-receipt)
+  - [Calculate Transaction Fee](#calculate-transaction-fee)
+  - [View NFT](#view-an-nft)
+  - [Get NFT](#get-an-nft)
+  - [Get a receipt](#get-a-receipt)
 
 ## Connect to the Rinkeby testnet
 
@@ -38,22 +38,22 @@ async mintNFT(mintNft: {
 }): Promise<Transaction>
 ```
 
-| Name        | Description                                                                                         |
-| ----------- | --------------------------------------------------------------------------------------------------- |
-| recipient   | the recipient address represented as a hex string                                                   |
+| Name        | Description                                                                                 |
+| ----------- | ------------------------------------------------------------------------------------------- |
+| recipient   | the recipient address represented as a hex string                                           |
 | contentHash | an identifier of the NFT represented as a 32-byte hex string (e.g. IPFS content identifier) |
-| feeToken    | name of token in which fee is to be paid (typically ETH)                                            |
-| fee         | transaction fee                                                                                     |
+| feeToken    | name of token in which fee is to be paid (typically ETH)                                    |
+| fee         | transaction fee                                                                             |
 
-Example: 
+Example:
 
 ```typescript
-const contentHash = "0xbd7289936758c562235a3a42ba2c4a56cbb23a263bb8f8d27aead80d74d9d996"
+const contentHash = "0xbd7289936758c562235a3a42ba2c4a56cbb23a263bb8f8d27aead80d74d9d996";
 const nft = await syncWallet.mintNFT({
-    recipient: syncWallet.address(),
-    contentHash,
-    feeToken: "ETH",
-    fee,
+  recipient: syncWallet.address(),
+  contentHash,
+  feeToken: "ETH",
+  fee,
 });
 ```
 
@@ -84,7 +84,7 @@ async syncTransferNFT(transfer: {
 | token    | NFT object                                               |
 | fee      | transaction fee                                          |
 
-The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.  
+The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.
 
 ```typescript
 const handles = await sender.syncTransferNFT({
@@ -126,13 +126,13 @@ withdrawNFT(withdrawNFT: {
 | fee            | transaction fee                                                                                         |
 | fastProcessing | pay additional fee to complete block immediately, skip waiting for other transactions to fill the block |
 
-``` typescript
+```typescript
 const withdraw = await wallet.withdrawNFT({
-    to,
-    token,
-    feeToken,
-    fee,
-    fastProcessing
+  to,
+  token,
+  feeToken,
+  fee,
+  fastProcessing,
 });
 ```
 
@@ -143,15 +143,15 @@ In case of censorship, users may call for an emergency withdrawal. Note: This is
 > Signature
 
 async emergencyWithdraw(withdraw: {
-    token: TokenLike;
-    accountId?: number;
-    ethTxOptions?: ethers.providers.TransactionRequest;
+token: TokenLike;
+accountId?: number;
+ethTxOptions?: ethers.providers.TransactionRequest;
 }): Promise<ETHOperation>
 
-| Name                 | Description                                              |
-| ---------------------| -------------------------------------------------------- |
-| token                | id of the NFT                                            |
-| accountId (Optional) | account id for fullExit                                  |
+| Name                 | Description             |
+| -------------------- | ----------------------- |
+| token                | id of the NFT           |
+| accountId (Optional) | account id for fullExit |
 
 ## Utility Functions
 
@@ -181,7 +181,7 @@ To view an account's NFTs:
 
 ```typescript
 // Get state of account
-const state = await syncWallet.getAccountState('<account-address>');
+const state = await syncWallet.getAccountState("<account-address>");
 // View committed NFTs
 console.log(state.committed.nfts);
 // View verified NFTs
@@ -221,7 +221,8 @@ const receipt = await handles[0].awaitReceipt();
 ```
 
 To get a receipt for a swap:
-``` typescript
+
+```typescript
 // swap nft
 const swap = await submitter.syncSwap({...});
 // get receipt
@@ -230,7 +231,7 @@ const receipt = await swap.awaitReceipt();
 
 To get a receipt for withdrawal:
 
-``` typescript
+```typescript
 // normal withdraw
 const withdrawal = await wallet.withdrawNFT({...});
 const receipt = await withdrawal.awaitReceipt();
