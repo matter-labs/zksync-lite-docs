@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/matter-labs/zksync-docs/compare/2.3.0...2.4.0) (2022-01-13)
+
+
+### Features
+
+* configs update & new security information ([#216](https://github.com/matter-labs/zksync-docs/issues/216)) ([0e25f5e](https://github.com/matter-labs/zksync-docs/commit/0e25f5ebd1da7e64f0176f0e73c02982e73bbb7f))
+
 # [2.3.0](https://github.com/matter-labs/zksync-docs/compare/2.2.0...2.3.0) (2022-01-13)
 
 
