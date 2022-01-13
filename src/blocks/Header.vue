@@ -115,10 +115,6 @@ export default Vue.extend({
           link: "https://withdraw.zksync.io/"
         },
         {
-          name: "Solution for Out-of-gas issue",
-          link: "https://out-of-gas.zksync.io/"
-        },
-        {
           name: "zkCheckout",
           link: "https://www.npmjs.com/package/zksync-checkout/"
         },
