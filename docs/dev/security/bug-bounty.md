@@ -1,4 +1,4 @@
-# Security Policy / Bug Bounty Program
+# Bug Bounty Program
 
 [[toc]]
 
