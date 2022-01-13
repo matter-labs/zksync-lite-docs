@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { GetterTree, MutationTree } from "vuex";
 import { RootState } from "@/store";
 

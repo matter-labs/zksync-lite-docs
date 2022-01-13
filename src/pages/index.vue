@@ -137,7 +137,7 @@
                 To resist even the most powerful potential adversaries,
                 <Emphasis/>
                 is going down the path of
-                <z-cta :href="'/faq/decentralization.html'"
+                <z-cta :href="'/userdocs/decentralization.html'"
                        target="_blank">progressive
                   decentralization
                 </z-cta>

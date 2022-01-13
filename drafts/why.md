@@ -17,6 +17,6 @@ links:
 
 ## move to README: If all you got is 3 minutes
 
-Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/faq/why/)
+Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/userdocs/why/)
 
 The most valuable piece on this website.
