@@ -142,11 +142,13 @@ In case of censorship, users may call for an emergency withdrawal. Note: This is
 
 > Signature
 
+```typescript
 async emergencyWithdraw(withdraw: {
-token: TokenLike;
-accountId?: number;
-ethTxOptions?: ethers.providers.TransactionRequest;
+  token: TokenLike;
+  accountId?: number;
+  ethTxOptions?: ethers.providers.TransactionRequest;
 }): Promise<ETHOperation>
+```
 
 | Name                 | Description             |
 | -------------------- | ----------------------- |
