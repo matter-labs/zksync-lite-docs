@@ -22,14 +22,8 @@ trustlessness
 IERC
 Schnorr
 MuSig
-
-mainchain
-offchain
-blockchains
-sidechain
-sidechains
-tokenomics
-validator's
+Gluchowski
+RegeneisMultisig.sol
 
 // Names
 Stichting
@@ -40,6 +34,9 @@ Alef
 Zcon
 Paypal
 Numio
+Edcon
+Arbitrum
+fundible
 
 // Used libraries
 numberish
@@ -62,8 +59,6 @@ signup
 signups
 precompiled
 checkmark
-Vitalik
-Buterin
 roadmap
 majeure
 conveniens
@@ -72,15 +67,34 @@ subsecond
 supermajority
 gemeente
 unauthorised
-Ethereum's
 SDKs
+inter alia
+unbundle
+incentivized
+
+// crypto terms
+UDST
+IPFS
+satoshi
+multisignature
+onchain
+convertion
+txns
+Ethereum's
+mainchain
+offchain
+blockchains
+sidechain
+sidechains
+tokenomics
+validator's
+stakers
 
 // Famous crypto people
 Vitalik's
 Buterin's
-multisignature
-onchain
-convertion
 Keyhash
 Armeabi
 scijava
+Vitalik
+Buterin
