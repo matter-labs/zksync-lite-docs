@@ -12,7 +12,7 @@ In this tutorial we will demonstrate how to:
 ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 
 ```
-$ pip install git+https://github.com/zksync-sdk/zksync-python.git
+pip install git+https://github.com/zksync-sdk/zksync-python.git
 ```
 
 Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is

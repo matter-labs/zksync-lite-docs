@@ -154,11 +154,17 @@ module.exports = {
           children: ["/dev/payments/basic", "/dev/payments/sending_transactions"],
         },
         {
+          title: "Security", // required
+          path: "/dev/security", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+          children: ["/dev/security/approach", "/dev/security/bug-bounty", "/dev/security/disclosure", "/dev/security/bugs"],
+        },
+        {
           title: "Smart contracts", // required
           path: "/dev/contracts/", // optional, which should be a absolute path.
           collapsable: false, // optional, defaults to true
         },
-        "/dev/bug-bounty",
         "/dev/nfts",
         "/dev/swaps",
         "/dev/events",

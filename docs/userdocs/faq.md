@@ -18,7 +18,7 @@ Our fees depend on Ethereum Layer 1 (L1) gas prices because with every zkSync La
 
 At peak usage of zkSync, the withdrawal time is about 10 minutes. During lower use, it can take up to 7 hours. Currently, withdrawal times depend on the activity on zkSync, when we finalize blocks, and submit them to L1.
 
-## I withdrew my funds but don't see them in my L1 account.
+## I withdrew my funds but don't see them in my L1 account
 
 If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but the funds have not arrived in your wallet, here are a few steps you should take:
 
@@ -49,7 +49,7 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
 
 - The more information you provide, the faster we can solve your problem!
 
-## I used "Transfer" instead of "Withdraw" to get my funds onto L1.
+## I used "Transfer" instead of "Withdraw" to get my funds onto L1
 
 If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" option instead of "Withdraw," you should try logging in to zkSync with the wallet that received the funds.
 
@@ -69,6 +69,6 @@ ERC-1271 compatible wallets (like Argent) increase this one-time fee because of 
 
 **Initiated**: the zkSync server has received and processed the transaction. If the transaction is a transfer, it is ready for immediate use.
 
-**Committed**: the transaction appears in a block that is _committed_ to the L1 smart contract. 
+**Committed**: the transaction appears in a block that is _committed_ to the L1 smart contract.
 
 **Verified**: the transaction’s block has been proven and verified on the L1 smart contract.
