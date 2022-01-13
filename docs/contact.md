@@ -66,4 +66,4 @@ We are always hiring! Please check out our
 
 ## Security disclosures
 
-For the bug bounty program and vulnerability disclosures, consult our [security policy](./dev/bug-bounty.md).
+For the bug bounty program and vulnerability disclosures, consult our [security policy](/dev/security/bug-bounty).
