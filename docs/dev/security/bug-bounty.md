@@ -43,6 +43,8 @@ Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciat
 
 ![bounty-table.png](https://zksync.io/bounty-table.png)
 
+For severe cases involving a total loss of funds, we will pay a bounty of $500,000.
+
 ## Contact
 
 Please submit all your requests here: [security@zksync.io](mailto:security@zksync.io).
