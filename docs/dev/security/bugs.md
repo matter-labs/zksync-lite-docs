@@ -6,7 +6,7 @@ The JSON file of known vulnerabilities is a list of objects, one for each vulner
 
 `name`: unique name given to vulnerability
 
-`uid`: unique identifier of the vulnerability of format ZKSYNC1-<year>-<sequential id>
+`uid`: unique identifier of the vulnerability of format `ZKSYNC1-<year>-<sequential id>`
 
 `summary`: short description of the vulnerability
 
