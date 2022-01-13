@@ -34,7 +34,7 @@
           </i-column>
           <i-column :xs="12" :md="4" class="_padding-y-0">
             <div class="linksContainer">
-              <a href="/userdocs/" target="_blank" class="linkItem">FAQ</a>
+              <a href="/userdocs/faq.html" target="_blank" class="linkItem">FAQ</a>
               <a href="/dev/" target="_blank" class="linkItem">Docs</a>
               <i-dropdown
                 :class="{'opened': dropdownOpened}"
@@ -87,10 +87,10 @@ interface DropdownOption {
 export default Vue.extend({
   components: {
     logo,
-    SocialBlock
+    SocialBlock,
   },
   directives: {
-    ClickOutside
+    ClickOutside,
   },
   data() {
     return {
@@ -100,7 +100,7 @@ export default Vue.extend({
       dropdownOptions: [
         {
           name: "zkWallet",
-          link: "https://wallet.zksync.io/"
+          link: "https://wallet.zksync.io/",
         },
         {
           name: "zkLink",
@@ -108,23 +108,23 @@ export default Vue.extend({
         },
         {
           name: "zkScan",
-          link: "https://zkscan.io/"
+          link: "https://zkscan.io/",
         },
         {
           name: "Alternative Withdrawal",
-          link: "https://withdraw.zksync.io/"
+          link: "https://withdraw.zksync.io/",
         },
         {
           name: "Solution for Out-of-gas issue",
-          link: "https://out-of-gas.zksync.io/"
+          link: "https://out-of-gas.zksync.io/",
         },
         {
           name: "zkCheckout",
-          link: "https://www.npmjs.com/package/zksync-checkout/"
+          link: "https://www.npmjs.com/package/zksync-checkout/",
         },
         {
           name: "zkMint",
-          link: "https://mint.zksync.dev"
+          link: "https://mint.zksync.dev",
         },
       ] as Array<DropdownOption>,
     };
@@ -145,7 +145,7 @@ export default Vue.extend({
     },
     handleClose() {
       this.dropdownOpened = false;
-    }
+    },
   },
 });
 </script>

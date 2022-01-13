@@ -55,32 +55,6 @@ If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" opt
 
 If you cannot log in to the zkSync wallet, you can use the "Alternative Withdrawal" tool. See the [Alternative Withdrawal](./tutorials.md#alternative-withdrawal) section on our [Tutorials](./tutorials.md) page.
 
-<!-- 1. Enter your address on [zkScan](https://zkscan.io/).
-2. Check your account for the following information:
-- 1. The account is at least 24 hours old.
-- 2. The account has never been activated (i.e., nonce is zero).
-<br>
-<p align="center">
-<img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/nonce.png">
-</p>
-<br>
-
-If your account meets the requirements for using the "Alternative Withdrawal" tool, you can follow the steps below to proceed.
-
-1. Go to [Alternative Withdrawal](https://withdraw.zksync.io/).
-- *You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”*
-2. Enter the zkSync address that you want the funds moved to Ethereum L1.
-3. Select the token you want to be withdrawn.
-4. Choose your method of paying the fee.
-5. Complete the fee payment process on your wallet.
-6. The funds should be in your designated wallet from step 4 within 24 hours and can be see under "Internal Txns" on [Etherscan](https://etherscan.io/).
-- If you do not see your funds within 24 hours, please email us at withdraw@zksync.io with the following information:
-  - 1. Your zkSync address from step 4.
-  - 2. The amount and token.
-  - 3. The Ethereum Transaction Hash from Etherscan from step 6.
-
--->
-
 ## What is the account activation fee?
 
 The account activation fee is a one-time fee to register your account with zkSync. This fee only applies to your first zkSync transaction.
@@ -98,9 +72,3 @@ ERC-1271 compatible wallets (like Argent) increase this one-time fee because of 
 **Committed**: the transaction appears in a block that is _committed_ to the L1 smart contract. 
 
 **Verified**: the transaction’s block has been proven and verified on the L1 smart contract.
-
-<!-- ## What can I do on zkSync 1.0 mainnet?
-
-zkSync 1.0 is mainly a payment system. Users can deposit and withdraw funds from and to L1, and transfer between accounts on L2. A great use case is Gitcoin Grants, which we
-have been supporting since [Round 7](https://gitcoin.co/blog/gitcoin-grants-round-7/), that inter alia, allow users to do micropayments on L2 otherwise not economical on L1.
-In addition, you can create payment links for others to send you funds on zkSync. zkSync 2.0 will allow projects to seamlessly port over dapps from L1 and will enable much more. --!>
