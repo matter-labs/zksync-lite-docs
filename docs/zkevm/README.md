@@ -1,10 +1,11 @@
 ---
 meta:
-
-- name: title content: zkEVM FAQ
-- name: description content: "Everything you need to know about zkSync 2.0: an EVM-compatible zkRollup."
-- name: keywords content: zkEVM, zk-EVM, zk EVM
-
+  - name: title
+    content: zkEVM FAQ
+  - name: description
+    content: "Everything you need to know about zkSync 2.0: an EVM-compatible zkRollup."
+  - name: keywords
+    content: zkEVM, zk-EVM, zk EVM
 ---
 
 # zkEVM FAQ
