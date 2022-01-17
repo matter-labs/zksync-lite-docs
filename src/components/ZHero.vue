@@ -17,7 +17,7 @@
       data-aos-once="true"
     >
       <z-cta
-        :href="'/faq/'"
+        :href="'/userdocs/'"
         class="exploreFAQ _margin-top-xs-1 _margin-bottom-xs-2 _margin-y-lg-3"
       >
         User Docs

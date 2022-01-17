@@ -19,50 +19,52 @@
 [^token]: "ETH" or address of the ERC20 token
 [^amount]: To see if amount is packable use [pack amount util](utils.md#closest-packable-amount)
 [^fee]:
-    If not set, lowest possible fee will be requested from zkSync server. Fees are pain in the same token as the main
-    transaction token. To get how to manually obtain an acceptable fee amount, see [Get transaction fee from the
-    server][get_fee]. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee).
+
+If not set, lowest possible fee will be requested from zkSync server. Fees are pain in the same token as the main transaction token. To get how to manually obtain an acceptable fee
+amount, see [Get transaction fee from the server][get_fee]. To see if amount is packable use [pack fee util](utils.md#closest-packable-fee).
 
 [^nonce]: If undefined, it will be queried from the server.
 [^fast_fee]: If fee was requested manually, request has to be of "FastWithdraw" type
 [^onchain_auth]:
-    When false, `ethers.Signer` is used to create signature, otherwise it is expected that user called
-    `onchainAuthSigningKey` to authorize new pubkey.
+
+When false, `ethers.Signer` is used to create signature, otherwise it is expected that user called
+`onchainAuthSigningKey` to authorize new pubkey.
 
 ## Wallet
 
-`Wallet` object is used to interact with the zkSync network. The wallet has an ethereum address associated with it and
-user that owns this ethereum account owns a corresponding zkSync account. By ownership of ethereum account we mean
-ability to send ethereum transactions and optionally ability to sign messages.
+`Wallet` object is used to interact with the zkSync network. The wallet has an ethereum address associated with it and user that owns this ethereum account owns a corresponding
+zkSync account. By ownership of ethereum account we mean ability to send ethereum transactions and optionally ability to sign messages.
 
-Wallet has nonce associated with it and it is used to prevent transaction replay. Only transactions with the nonce that
-is equal to the current nonce of the wallet can be executed.
+Wallet has nonce associated with it and it is used to prevent transaction replay. Only transactions with the nonce that is equal to the current nonce of the wallet can be executed.
 
-To create transactions in the zkSync network wallet must have zkSync key pair associated with it. zkSync keys are
-handled by [Signer] object and can be created using different methods, the most convenient way is to create these keys
-by deriving them from ethereum signature of the specific message, this method is used by default if user does not
+To create transactions in the zkSync network wallet must have zkSync key pair associated with it. zkSync keys are handled by [Signer] object and can be created using different
+methods, the most convenient way is to create these keys by deriving them from ethereum signature of the specific message, this method is used by default if user does not
 provide `Signer` created using some other method.
 
-For zkSync keys to be valid user should register them once in the zkSync network using [set signing key transaction].
-For ethereum wallets that do not support message signing [additional ethereum transaction] is required. zkSync keys can
-be changed at any time.
+For zkSync keys to be valid user should register them once in the zkSync network using [set signing key transaction]. For ethereum wallets that do not support message
+signing [additional ethereum transaction] is required. zkSync keys can be changed at any time.
 
-Transactions such as [Transfer] and [Withdraw] are additionally signed using ethereum account of the wallet, this
-signature is used for additional security in case zkSync keys of the wallet are compromised. User is asked to sign
-readable representation of the transaction and signature check is performed when transaction is submitted to the zkSync.
+Transactions such as [Transfer] and [Withdraw] are additionally signed using ethereum account of the wallet, this signature is used for additional security in case zkSync keys of
+the wallet are compromised. User is asked to sign readable representation of the transaction and signature check is performed when transaction is submitted to the zkSync.
 
 ### Creating wallet from ETH signer
 
 > Signature
 
 ```typescript
-static async fromEthSigner(
-    ethWallet: ethers.Signer,
-    provider: Provider,
-    signer?: Signer
-    accountId?: number,
-    ethSignatureType?: EthSignerType
-): Promise<Wallet>;
+static async
+fromEthSigner(
+  ethWallet
+:
+ethers.Signer,
+  provider
+:
+Provider,
+  signer ? : Signer
+accountId ? : number,
+  ethSignatureType ? : EthSignerType
+):
+Promise<Wallet>;
 ```
 
 #### Inputs and outputs
@@ -94,16 +96,22 @@ const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
 > Signature
 
 ```typescript
-static async fromEthSignerNoKeys(
-    ethWallet: ethers.Signer,
-    provider: Provider,
-    accountId?: number,
-    ethSignatureType?: EthSignerType
-): Promise<Wallet>;
+static async
+fromEthSignerNoKeys(
+  ethWallet
+:
+ethers.Signer,
+  provider
+:
+Provider,
+  accountId ? : number,
+  ethSignatureType ? : EthSignerType
+):
+Promise<Wallet>;
 ```
 
-This way wallet won't contain any valid zkSync keys to perform transactions, but some of the operations can be used
-without them, such as Deposit, Emergency exit and reading the account state.
+This way wallet won't contain any valid zkSync keys to perform transactions, but some of the operations can be used without them, such as Deposit, Emergency exit and reading the
+account state.
 
 #### Inputs and outputs
 
@@ -130,19 +138,30 @@ const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvid
 
 ### Creating wallet from CREATE2 data
 
-This way you can create a wallet, which corresponding L1 account could be created using the CREATE2 opcode. The `syncSigner` pubKeyHash is encoded as a part of the salt for CREATE2. Note that you do not need to manually add it to the `saltArg` of the `create2Data` as it is done automatically.
+This way you can create a wallet, which corresponding L1 account could be created using the CREATE2 opcode. The `syncSigner` pubKeyHash is encoded as a part of the salt for
+CREATE2. Note that you do not need to manually add it to the `saltArg` of the `create2Data` as it is done automatically.
 
-Such wallets are not required to provide Ethereum signatures for transactions. Unlike the `ECDSA` wallets, which have to verify the signature for ChangePubKey onchain, `CREATE2` wallets only require to check that the pubKeyHash is included in the CREATE2 digest. Thus, the ChangePubKey costs less for this kind of account than for the `ECDSA` one, but that comes with a limitation: the L2 private key can not be changed. Also, this type of account can not be used to onboard users from existing L1 addresses.
+Such wallets are not required to provide Ethereum signatures for transactions. Unlike the `ECDSA` wallets, which have to verify the signature for ChangePubKey onchain, `CREATE2`
+wallets only require to check that the pubKeyHash is included in the CREATE2 digest. Thus, the ChangePubKey costs less for this kind of account than for the `ECDSA` one, but that
+comes with a limitation: the L2 private key can not be changed. Also, this type of account can not be used to onboard users from existing L1 addresses.
 
 > Signature
 
 ```typescript
-static async fromCreate2Data(
-    syncSigner: Signer,
-    provider: Provider,
-    create2Data: Create2Data,
-    accountId?: number
-): Promise<Wallet>;
+static async
+fromCreate2Data(
+  syncSigner
+:
+Signer,
+  provider
+:
+Provider,
+  create2Data
+:
+Create2Data,
+  accountId ? : number
+):
+Promise<Wallet>;
 ```
 
 #### Inputs and outputs
@@ -151,7 +170,7 @@ static async fromCreate2Data(
 | -------------------- | -------------------------------------------------------------------------------- |
 | syncSigner           | zkSync signer that will be used for transaction signing.[^signer]                |
 | provider             | zkSync provider that is used for submitting a transaction to the zkSync network. |
-| create2Data          | Data out of which the CREATE2 algrorithm would derive the address.               |
+| create2Data          | Data out of which the CREATE2 algorithm would derive the address.                |
 | accountId (optional) | zkSync account id.[^acc_id]                                                      |
 | returns              | `zksync.Wallet` derived from ethereum wallet (`ethers.Signer`)                   |
 
@@ -182,7 +201,10 @@ Same as [Get account state from provider](providers.md#get-account-state-by-addr
 > Signature
 
 ```typescript
-async getAccountState(): Promise<AccountState>;
+async
+getAccountState()
+:
+Promise<AccountState>;
 ```
 
 #### Inputs and outputs
@@ -198,7 +220,10 @@ For convenience it is possible to obtain the account ID.
 > Signature
 
 ```typescript
-async getAccountId(): Promise<number | undefined>;
+async
+getAccountId()
+:
+Promise<number | undefined>;
 ```
 
 #### Inputs and outputs
@@ -214,7 +239,12 @@ Get the nonce of this account. Very convenient if you want to either provide a n
 > Signature
 
 ```typescript
-async getNonce(nonce: Nonce = 'committed'): Promise<number>
+async
+getNonce(nonce
+:
+Nonce = 'committed'
+):
+Promise<number>
 ```
 
 #### Inputs and outputs
@@ -229,10 +259,16 @@ async getNonce(nonce: Nonce = 'committed'): Promise<number>
 > Signature
 
 ```typescript
-async getBalance(
-    token: TokenLike,
-    type: "committed" | "verified" = "committed"
-): Promise<ethers.utils.BigNumber>;
+async
+getBalance(
+  token
+:
+TokenLike,
+  type
+:
+"committed" | "verified" = "committed"
+):
+Promise<ethers.utils.BigNumber>;
 ```
 
 #### Inputs and outputs
@@ -246,7 +282,9 @@ async getBalance(
 > Example
 
 ```typescript
-const wallet = ..;// setup wallet
+const wallet =
+..
+;// setup wallet
 
 // Get committed Ethereum balance.
 const ethCommittedBalance = await getBalance("ETH");
@@ -257,13 +295,17 @@ const erc20VerifiedBalance = await getBalance("0xFab46E002BbF0b4509813474841E071
 
 ### Get token balance on Ethereum
 
-Method similar to [`syncWallet.getBalance`](#get-token-balance-on-zksync), used to query balance in the Ethereum
-network.
+Method similar to [`syncWallet.getBalance`](#get-token-balance-on-zksync), used to query balance in the Ethereum network.
 
 > Signature
 
 ```typescript
-async getEthereumBalance(token: TokenLike): Promise<utils.BigNumber>;
+async
+getEthereumBalance(token
+:
+TokenLike
+):
+Promise<utils.BigNumber>;
 ```
 
 #### Inputs and outputs
@@ -280,23 +322,30 @@ import * as zksync from "zksync";
 import { ethers } from "ethers";
 
 // Setup zksync.Wallet with ethers signer/wallet that is connected to ethers provider
-const wallet = ..;
+const wallet =
+..
+;
 
 const ethOnChainBalance = await wallet.getEthereumBalance("ETH");
 ```
 
 ### Unlocking ERC20 deposits
 
-For convenience, it is possible to approve the maximum possible amount of ERC20 token deposits for the zkSync contract
-so that user would not need to approve each deposit.
+For convenience, it is possible to approve the maximum possible amount of ERC20 token deposits for the zkSync contract so that user would not need to approve each deposit.
 
 > Signature
 
 ```typescript
-async approveERC20TokenDeposits(
-    token: TokenLike,
-    max_erc20_approve_amount: BigNumber = MAX_ERC20_APPROVE_AMOUNT
-): Promise<ethers.ContractTransaction>;
+async
+approveERC20TokenDeposits(
+  token
+:
+TokenLike,
+  max_erc20_approve_amount
+:
+BigNumber = MAX_ERC20_APPROVE_AMOUNT
+):
+Promise<ethers.ContractTransaction>;
 ```
 
 | Name                                | Description                                         |
@@ -308,10 +357,16 @@ async approveERC20TokenDeposits(
 > Signature
 
 ```typescript
-async isERC20DepositsApproved(
-    token: TokenLike,
-    erc20ApproveThreshold: BigNumber = ERC20_APPROVE_TRESHOLD
-): Promise<boolean>;
+async
+isERC20DepositsApproved(
+  token
+:
+TokenLike,
+  erc20ApproveThreshold
+:
+BigNumber = ERC20_APPROVE_TRESHOLD
+):
+Promise<boolean>;
 ```
 
 | Name                             | Description                                               |
@@ -324,14 +379,12 @@ async isERC20DepositsApproved(
 
 Moves funds from the ethereum account to the zkSync account.
 
-To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever
-using [unlocking ERC20 token], or the user can approve the exact amount (required for a deposit) upon each deposit, but
-this is not recommended.
+To do the ERC20 token transfer, this token transfer should be approved. User can make ERC20 deposits approved forever using [unlocking ERC20 token], or the user can approve the
+exact amount (required for a deposit) upon each deposit, but this is not recommended.
 
 Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations (see
-[provider docs] for exact number) before accepting it in the zkSync network. After the transaction is committed to the
-zkSync network, funds are already usable by the recipient, meaning that there is no need to wait for verification before
-proceeding unless additional confirmation is required for your application. To wait for the transaction commitment on
+[provider docs] for exact number) before accepting it in the zkSync network. After the transaction is committed to the zkSync network, funds are already usable by the recipient,
+meaning that there is no need to wait for verification before proceeding unless additional confirmation is required for your application. To wait for the transaction commitment on
 the zkSync network, use `awaitReceipt`(see [utils]).
 
 [unlocking erc20 token]: #unlocking-erc20-deposits
@@ -341,13 +394,18 @@ the zkSync network, use `awaitReceipt`(see [utils]).
 > Signature
 
 ```typescript
-async depositToSyncFromEthereum(deposit: {
-    depositTo: Address;
-    token: TokenLike;
-    amount: BigNumberish;
-    ethTxOptions?: ethers.providers.TransactionRequest;
-    approveDepositAmountForERC20?: boolean;
-}): Promise<ETHOperation>;
+async
+depositToSyncFromEthereum(deposit
+:
+{
+  depositTo: Address;
+  token: TokenLike;
+  amount: BigNumberish;
+  ethTxOptions ? : ethers.providers.TransactionRequest;
+  approveDepositAmountForERC20 ? : boolean;
+}
+):
+Promise<ETHOperation>;
 ```
 
 #### Inputs and outputs
@@ -370,14 +428,15 @@ async depositToSyncFromEthereum(deposit: {
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet from ethers.Signer.
+const syncWallet =
+..
+; // Setup zksync wallet from ethers.Signer.
 
 const depositPriorityOperation = await syncWallet.depositToSyncFromEthereum({
-    depositTo: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    token: "ETH",
-    amount: ethers.utils.parseEther("1.0"),
+  depositTo: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
+  token: "ETH",
+  amount: ethers.utils.parseEther("1.0"),
 });
-
 
 // Wait till priority operation is committed.
 const priorityOpReceipt = await depositPriorityOperation.awaitReceipt();
@@ -385,13 +444,12 @@ const priorityOpReceipt = await depositPriorityOperation.awaitReceipt();
 
 ### Changing account public key
 
-In order to send zkSync transactions (transfer and withdraw) user has to associate zksync key pair with account. Every
-zkSync account has address which is ethereum address of the owner.
+In order to send zkSync transactions (transfer and withdraw) user has to associate zksync key pair with account. Every zkSync account has address which is ethereum address of the
+owner.
 
 There are two ways to authorize zksync key pair.
 
-1. Using ethereum signature of specific message. This way is preferred but can only be used if your ethereum wallet can
-   sign messages.
+1. Using ethereum signature of specific message. This way is preferred but can only be used if your ethereum wallet can sign messages.
 2. Using ethereum transaction to zkSync smart-contract.
 
 <aside class = notice>
@@ -406,14 +464,19 @@ The operators require a fee to be paid in order to process transactions.[^fee]
 > Signature
 
 ```typescript
-async setSigningKey(changePubKey: {
-    feeToken: TokenLike;
-    ethAuthType: ChangePubkeyTypes;
-    fee?: BigNumberish;
-    nonce?: Nonce;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<Transaction>;
+async
+setSigningKey(changePubKey
+:
+{
+  feeToken: TokenLike;
+  ethAuthType: ChangePubkeyTypes;
+  fee ? : BigNumberish;
+  nonce ? : Nonce;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -433,62 +496,68 @@ async setSigningKey(changePubKey: {
 ```typescript
 import { ethers } from "ethers";
 
-const wallet = ..;// setup zksync wallet
+const wallet =
+..
+;// setup zksync wallet
 
-if (! await wallet.isSigningKeySet()) {
-    const changePubkey = await wallet.setSigningKey({
-        feeToken: "FAU",
-        fee: ethers.utils.parseEther("0.001"),
-        ethAuthType: "ECDSA"
-    });
+if (!await wallet.isSigningKeySet()) {
+  const changePubkey = await wallet.setSigningKey({
+    feeToken: "FAU",
+    fee: ethers.utils.parseEther("0.001"),
+    ethAuthType: "ECDSA"
+  });
 
-    // Wait till transaction is committed
-    const receipt = await changePubkey.awaitReceipt();
+  // Wait till transaction is committed
+  const receipt = await changePubkey.awaitReceipt();
 }
 ```
 
 ### Sign change account public key transaction
 
-Signs [change public key](#changing-account-public-key) transaction without sending it to the zkSync network. It is
-important to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [change public key](#changing-account-public-key) transaction without sending it to the zkSync network. It is important to consider transaction fee in advance because
+transaction can become invalid if token price changes.
 
 > Signature
 
 ```typescript
-async signSetSigningKey(changePubKey: {
-    feeToken: TokenLike;
-    fee: BigNumberish;
-    nonce: number;
-    ethAuthType: ChangePubkeyTypes;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<SignedTransaction>;
+async
+signSetSigningKey(changePubKey
+:
+{
+  feeToken: TokenLike;
+  fee: BigNumberish;
+  nonce: number;
+  ethAuthType: ChangePubkeyTypes;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
 
-| Name                               | Description                                                                 |
-| ---------------------------------- | --------------------------------------------------------------------------- | --- |
-| changePubKey.feeToken              | Token to pay fee in.[^token]                                                |
-| changePubKey.fee                   | Amount of token to be paid as a fee for this transaction.[^fee]             |
-| changePubKey.nonce                 | Nonce that is going to be used for this transaction.[^nonce]                |
-| changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.      |     |
-| changePubKey.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
-| changePubKey.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed |
-| returns                            | Signed transaction                                                          |
+| Name | Description | | ---------------------------------- | --------------------------------------------------------------------------- | --- | | changePubKey.feeToken | Token to
+pay fee in.[^token] | | changePubKey.fee | Amount of token to be paid as a fee for this transaction.[^fee] | |
+changePubKey.nonce | Nonce that is going to be used for this transaction.[^nonce] | | changePubKey.ethAuthType | The type which determines how will the Ethereum
+signature be verified. | | | changePubKey.validFrom (optional) | Unix timestamp from which the block with this transaction can be processed | | changePubKey.validUntil (optional)
+| Unix timestamp until which the block with this transaction can be processed | | returns | Signed transaction |
 
 ### Authorize new public key using ethereum transaction
 
-This method is used to authorize [public key change](#changing-account-public-key) using ethereum transaction for
-wallets that don't support message signing.
+This method is used to authorize [public key change](#changing-account-public-key) using ethereum transaction for wallets that don't support message signing.
 
 > Signature
 
 ```typescript
-async onchainAuthSigningKey(
-    nonce: Nonce = "committed",
-    ethTxOptions?: ethers.providers.TransactionRequest
-): Promise<ContractTransaction>;
+async
+onchainAuthSigningKey(
+  nonce
+:
+Nonce = "committed",
+  ethTxOptions ? : ethers.providers.TransactionRequest
+):
+Promise<ContractTransaction>;
 ```
 
 #### Inputs and outputs
@@ -504,20 +573,22 @@ async onchainAuthSigningKey(
 ```typescript
 import { ethers } from "ethers";
 
-const wallet = ..;// setup zksync wallet
+const wallet =
+..
+;// setup zksync wallet
 
-if (! await wallet.isSigningKeySet()) {
-    const onchainAuthTransaction = await wallet.onchainAuthSigningKey();
-    // Wait till transaction is committed on ethereum.
-    await onchainAuthTransaction.wait();
+if (!await wallet.isSigningKeySet()) {
+  const onchainAuthTransaction = await wallet.onchainAuthSigningKey();
+  // Wait till transaction is committed on ethereum.
+  await onchainAuthTransaction.wait();
 
-    const changePubkey = await wallet.setSigningKey({
-        feeToken: "ETH",
-        ethAuthType: "ECDSA"
-    });
+  const changePubkey = await wallet.setSigningKey({
+    feeToken: "ETH",
+    ethAuthType: "ECDSA"
+  });
 
-    // Wait till transaction is committed
-    const receipt = await changePubkey.awaitReceipt();
+  // Wait till transaction is committed
+  const receipt = await changePubkey.awaitReceipt();
 }
 ```
 
@@ -529,7 +600,10 @@ Checks if current signer that is associated with wallet is able to sign transact
 > Signature
 
 ```typescript
-async isSigningKeySet(): Promise<boolean>;
+async
+isSigningKeySet()
+:
+Promise<boolean>;
 ```
 
 #### Inputs and outputs
@@ -540,15 +614,13 @@ async isSigningKeySet(): Promise<boolean>;
 
 ### Transfer in the zkSync
 
-Moves funds between accounts inside the zkSync network. Sender account should have correct public key set before sending
-this transaction. (see [change pub key](#changing-account-public-key))
+Moves funds between accounts inside the zkSync network. Sender account should have correct public key set before sending this transaction. (
+see [change pub key](#changing-account-public-key))
 
-Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
-Ethereum account (because of the security reasons).
+Before sending this transaction, the user will be asked to sign a specific message with transaction details using their Ethereum account (because of the security reasons).
 
-After the transaction is committed, funds are already usable by the recipient, so there is no need to wait for
-verification before proceeding unless additional confirmation is required for your application. To wait for transaction
-commit use `awaitReceipt`(see [utils]).
+After the transaction is committed, funds are already usable by the recipient, so there is no need to wait for verification before proceeding unless additional confirmation is
+required for your application. To wait for transaction commit use `awaitReceipt`(see [utils]).
 
 The operators require a fee to be paid in order to process transactions.[^fee]
 
@@ -560,15 +632,20 @@ See utils for helping with amounts packing.
 > Signature
 
 ```typescript
-async syncTransfer(transfer: {
-    to: Address;
-    token: TokenLike;
-    amount: BigNumberish;
-    fee?: BigNumberish;
-    nonce?: Nonce;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<Transaction>;
+async
+syncTransfer(transfer
+:
+{
+  to: Address;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee ? : BigNumberish;
+  nonce ? : Nonce;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -589,13 +666,15 @@ async syncTransfer(transfer: {
 ```typescript
 import { ethers } from "ethers";
 
-const wallet = ..;// setup zksync wallet
+const wallet =
+..
+;// setup zksync wallet
 
 const transferTransaction = await wallet.syncTransfer({
-    to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
-    amount: ethers.utils.parseEther("1.0"),
-    fee: ethers.utils.parseEther("0.001")
+  to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
+  token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
+  amount: ethers.utils.parseEther("1.0"),
+  fee: ethers.utils.parseEther("0.001")
 });
 
 // Wait till transaction is committed
@@ -604,21 +683,26 @@ const transactionReceipt = await transferTransaction.awaitReceipt();
 
 ### Sign transfer in the zkSync transaction
 
-Signs [transfer](#transfer-in-the-zksync) transaction without sending it to the zkSync network. It is important to
-consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [transfer](#transfer-in-the-zksync) transaction without sending it to the zkSync network. It is important to consider transaction fee in advance because transaction can
+become invalid if token price changes.
 
 > Signature
 
 ```typescript
-async signSyncTransfer(transfer: {
-    to: Address;
-    token: TokenLike;
-    amount: BigNumberish;
-    fee: BigNumberish;
-    nonce: number;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<SignedTransaction>;
+async
+signSyncTransfer(transfer
+:
+{
+  to: Address;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee: BigNumberish;
+  nonce: number;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
@@ -648,26 +732,36 @@ There are two kinds of orders:
 > Signature
 
 ```typescript
-async getOrder(order: {
-    tokenSell: TokenLike;
-    tokenBuy: TokenLike;
-    ratio: TokenRatio | WeiRatio;
-    amount: BigNumberish;
-    recipient?: Address;
-    nonce?: Nonce;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<Order>;
+async
+getOrder(order
+:
+{
+  tokenSell: TokenLike;
+  tokenBuy: TokenLike;
+  ratio: TokenRatio | WeiRatio;
+  amount: BigNumberish;
+  recipient ? : Address;
+  nonce ? : Nonce;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<Order>;
 
-async getLimitOrder(order: {
-    tokenSell: TokenLike;
-    tokenBuy: TokenLike;
-    ratio: TokenRatio | WeiRatio;
-    recipient?: Address;
-    nonce?: Nonce;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<Order>;
+async
+getLimitOrder(order
+:
+{
+  tokenSell: TokenLike;
+  tokenBuy: TokenLike;
+  ratio: TokenRatio | WeiRatio;
+  recipient ? : Address;
+  nonce ? : Nonce;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<Order>;
 ```
 
 #### Inputs and outputs
@@ -692,13 +786,18 @@ Once two compatible signed swaps are collected, anyone can submit them.
 
 ```typescript
 
-async syncSwap(swap: {
-    orders: [Order, Order];
-    feeToken: TokenLike;
-    amounts?: [BigNumberish, BigNumberish];
-    nonce?: number;
-    fee?: BigNumberish;
-}): Promise<Transaction>;
+async
+syncSwap(swap
+:
+{
+  orders: [Order, Order];
+  feeToken: TokenLike;
+  amounts ? : [BigNumberish, BigNumberish];
+  nonce ? : number;
+  fee ? : BigNumberish;
+}
+):
+Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -716,10 +815,9 @@ async syncSwap(swap: {
 
 To construct a ratio, either `utils.tokenRatio` or `utils.weiRatio` may be used.
 
-- `tokenRatio` constructs a ratio relevant to the tokens themselves,
-  so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 ETH for each wBTC.
-- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token,
-  so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (10<sup>-8</sup> wBTC).
+- `tokenRatio` constructs a ratio relevant to the tokens themselves, so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 ETH for each wBTC.
+- `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token, so `{ 'ETH': 4, 'wBTC': 1 }` would mean you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (
+  10<sup>-8</sup> wBTC).
 
 > Signature
 
@@ -734,34 +832,38 @@ Only 2 tokens should be specified in each ratio.
 #### Example
 
 ```typescript
-const walletA = ..; // setup first wallet
-const walletB = ..; // setup second wallet
+const walletA =
+..
+; // setup first wallet
+const walletB =
+..
+; // setup second wallet
 
 const orderA = await walletA.getOrder({
-    tokenSell: 'ETH',
-    tokenBuy: 'USDT',
-    amount: tokenSet.parseToken('ETH', '2'),
-    ratio: utils.tokenRatio({
-        ETH: 1,
-        USDT: '4123.40',
-    })
+  tokenSell: 'ETH',
+  tokenBuy: 'USDT',
+  amount: tokenSet.parseToken('ETH', '2'),
+  ratio: utils.tokenRatio({
+    ETH: 1,
+    USDT: '4123.40',
+  })
 });
 
 const orderB = await walletB.getOrder({
-    tokenSell: 'USDT',
-    tokenBuy: 'ETH',
-    amount: tokenSet.parseToken('USDT', '8000'),
-    ratio: utils.tokenRatio({
-        ETH: 1,
-        USDT: '4123.40',
-    }),
-    // this makes it a swap-and-transfer
-    recipient: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e'
+  tokenSell: 'USDT',
+  tokenBuy: 'ETH',
+  amount: tokenSet.parseToken('USDT', '8000'),
+  ratio: utils.tokenRatio({
+    ETH: 1,
+    USDT: '4123.40',
+  }),
+  // this makes it a swap-and-transfer
+  recipient: '0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e'
 });
 
 const swap = await walletA.syncSwap({
-    orders: [orderA, orderB],
-    feeToken: 'ETH',
+  orders: [orderA, orderB],
+  feeToken: 'ETH',
 });
 
 await swap.awaitReceipt();
@@ -772,8 +874,7 @@ await swap.awaitReceipt();
 Sends several transfers in a batch. For information about transaction batches, see the
 [Providers section](providers.md#submit-transactions-batch).
 
-Note that unlike in `syncTransfer`, the fee is a required field for each transaction, as in batch wallet cannot assume
-anything about the fee for each individual transaction.
+Note that unlike in `syncTransfer`, the fee is a required field for each transaction, as in batch wallet cannot assume anything about the fee for each individual transaction.
 
 If it is required to send a batch that include transactions other than transfers, consider using Provider's
 `submitTxsBatch` method instead.
@@ -781,17 +882,22 @@ If it is required to send a batch that include transactions other than transfers
 > Signature
 
 ```typescript
-async syncMultiTransfer(
-    transfers: {
-        to: Address;
-        token: TokenLike;
-        amount: BigNumberish;
-        fee: BigNumberish;
-        nonce?: Nonce;
-        validFrom?: number;
-        validUntil?: number;
-    }[]
-): Promise<Transaction[]>;
+async
+syncMultiTransfer(
+  transfers
+:
+{
+  to: Address;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee: BigNumberish;
+  nonce ? : Nonce;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+[]
+):
+Promise<Transaction[]>;
 ```
 
 #### Inputs and outputs
@@ -808,20 +914,22 @@ For details on an individual transaction, see [Transfer in the zkSync](#transfer
 ```typescript
 import { ethers } from "ethers";
 
-const wallet = ..;// setup zksync wallet
+const wallet =
+..
+;// setup zksync wallet
 
 const transferA = {
-    to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
-    amount: ethers.utils.parseEther("1.0"),
-    fee: ethers.utils.parseEther("0.001")
+  to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
+  token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
+  amount: ethers.utils.parseEther("1.0"),
+  fee: ethers.utils.parseEther("0.001")
 };
 
 const transferB = {
-    to: "0xaabbf7a3ab29f0ff424d738a83f9b0588bc9241e",
-    token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
-    amount: ethers.utils.parseEther("5.0"),
-    fee: ethers.utils.parseEther("0.001")
+  to: "0xaabbf7a3ab29f0ff424d738a83f9b0588bc9241e",
+  token: "0xFab46E002BbF0b4509813474841E0716E6730136", // FAU ERC20 token address
+  amount: ethers.utils.parseEther("5.0"),
+  fee: ethers.utils.parseEther("0.001")
 }
 
 const transferTransactions = await wallet.syncMultiTransfer([transferA, transferB]);
@@ -829,11 +937,10 @@ const transferTransactions = await wallet.syncMultiTransfer([transferA, transfer
 
 ### Withdraw token from the zkSync
 
-Moves funds from the zkSync account to ethereum address. Sender account should have correct public key set before sending
-this transaction. (see [change pub key](#changing-account-public-key))
+Moves funds from the zkSync account to ethereum address. Sender account should have correct public key set before sending this transaction. (
+see [change pub key](#changing-account-public-key))
 
-Before sending this transaction, the user will be asked to sign a specific message with transaction details using their
-Ethereum account (because of the security reasons).
+Before sending this transaction, the user will be asked to sign a specific message with transaction details using their Ethereum account (because of the security reasons).
 
 The operators require a fee to be paid in order to process transactions.[^fee]
 
@@ -843,16 +950,21 @@ The transaction has to be verified until funds are available on the ethereum wal
 > Signature
 
 ```typescript
-async withdrawFromSyncToEthereum(withdraw: {
-    ethAddress: string;
-    token: TokenLike;
-    amount: BigNumberish;
-    fee?: BigNumberish;
-    nonce?: Nonce;
-    fastProcessing?: boolean;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<Transaction>;
+async
+withdrawFromSyncToEthereum(withdraw
+:
+{
+  ethAddress: string;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee ? : BigNumberish;
+  nonce ? : Nonce;
+  fastProcessing ? : boolean;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -874,13 +986,15 @@ async withdrawFromSyncToEthereum(withdraw: {
 ```typescript
 import { ethers } from "ethers";
 
-const wallet = ..;// setup zksync wallet
+const wallet =
+..
+;// setup zksync wallet
 
 const withdrawTransaction = await wallet.withdrawFromSyncToEthereum({
-    ethAddress: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
-    token: "FAU",
-    amount: ethers.utils.parseEther("1.0"),
-    fee: ethers.utils.parseEther("0.001")
+  ethAddress: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
+  token: "FAU",
+  amount: ethers.utils.parseEther("1.0"),
+  fee: ethers.utils.parseEther("0.001")
 });
 
 // Wait wait till transaction is verified
@@ -889,21 +1003,26 @@ const transactionReceipt = await withdrawTransaction.awaitVerifyReceipt();
 
 ### Sign withdraw token from the zkSync transaction
 
-Signs [withdraw](#withdraw-token-from-the-zksync) transaction without sending it to the zkSync network. It is important
-to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [withdraw](#withdraw-token-from-the-zksync) transaction without sending it to the zkSync network. It is important to consider transaction fee in advance because transaction
+can become invalid if token price changes.
 
 > Signature
 
 ```typescript
-async signWithdrawFromSyncToEthereum(withdraw: {
-    ethAddress: string;
-    token: TokenLike;
-    amount: BigNumberish;
-    fee: BigNumberish;
-    nonce: number;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<SignedTransaction>;
+async
+signWithdrawFromSyncToEthereum(withdraw
+:
+{
+  ethAddress: string;
+  token: TokenLike;
+  amount: BigNumberish;
+  fee: BigNumberish;
+  nonce: number;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
@@ -921,9 +1040,8 @@ async signWithdrawFromSyncToEthereum(withdraw: {
 
 ### Initiate a forced exit for an account
 
-Initialize a forced withdraw of funds for an unowned account. Target account must not have a signing key set and must
-exist more than 24 hours. After execution of the transaction, funds will be transferred from the target zkSync wallet to
-the corresponding Ethereum wallet. Transaction initiator pays fee for this transaction. All the balance of requested
+Initialize a forced withdraw of funds for an unowned account. Target account must not have a signing key set and must exist more than 24 hours. After execution of the transaction,
+funds will be transferred from the target zkSync wallet to the corresponding Ethereum wallet. Transaction initiator pays fee for this transaction. All the balance of requested
 token will be transferred.
 
 Sender account should have correct public key set before sending this transaction. (see
@@ -939,14 +1057,19 @@ The transaction has to be verified until funds are available on the ethereum wal
 > Signature
 
 ```typescript
-async syncForcedExit(forcedExit: {
-    target: Address;
-    token: TokenLike;
-    fee?: BigNumberish;
-    nonce?: Nonce;
-    validFrom?: number;
-    validUntil?: number;
-}): Promise<Transaction>;
+async
+syncForcedExit(forcedExit
+:
+{
+  target: Address;
+  token: TokenLike;
+  fee ? : BigNumberish;
+  nonce ? : Nonce;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -966,12 +1089,14 @@ async syncForcedExit(forcedExit: {
 ```typescript
 import { ethers } from "ethers";
 
-const wallet = ..;// setup zksync wallet
+const wallet =
+..
+;// setup zksync wallet
 
 const forcedExitTransaction = await wallet.syncForcedExit({
-    target: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
-    token: "FAU",
-    fee: ethers.utils.parseEther("0.001")
+  target: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
+  token: "FAU",
+  fee: ethers.utils.parseEther("0.001")
 });
 
 // Wait wait till transaction is verified
@@ -980,17 +1105,18 @@ const transactionReceipt = await forcedExitTransaction.awaitVerifyReceipt();
 
 ### Sign a forced exit for an account transaction
 
-Signs [forced exit](#initiate-a-forced-exit-for-an-account) transaction without sending it to the zkSync network. It is
-important to consider transaction fee in advance because transaction can become invalid if token price changes.
+Signs [forced exit](#initiate-a-forced-exit-for-an-account) transaction without sending it to the zkSync network. It is important to consider transaction fee in advance because
+transaction can become invalid if token price changes.
 
 > Signature
 
 ```typescript
-async signSyncForcedExit((forcedExit: {
-    target: Address;
-    token: TokenLike;
-    fee: BigNumberish;
-    nonce: number;
+async
+signSyncForcedExit((forcedExit: {
+  target: Address;
+  token: TokenLike;
+  fee: BigNumberish;
+  nonce: number;
 }): Promise<SignedTransaction>;
 ```
 
@@ -1006,15 +1132,14 @@ async signSyncForcedExit((forcedExit: {
 
 ### Emergency withdraw from Sync
 
-If ordinary withdraw from zkSync account is ignored by network operators user could create an emergency withdraw request
-using special Ethereum transaction, this withdraw request can't be ignored.
+If ordinary withdraw from zkSync account is ignored by network operators user could create an emergency withdraw request using special Ethereum transaction, this withdraw request
+can't be ignored.
 
 Moves the full amount of the given token from the zkSync account to the Ethereum account.
 
 Once the operation is committed to the Ethereum network, we have to wait for a certain amount of confirmations (see
-[provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before
-accepting it in the zkSync network. Operation will be processed within the zkSync network as soon as the required amount
-of confirmations is reached.
+[provider docs](providers.md#get-amount-of-confirmations-required-for-priority-operations) for exact number) before accepting it in the zkSync network. Operation will be processed
+within the zkSync network as soon as the required amount of confirmations is reached.
 
 The transaction has to be verified until funds are available on the ethereum wallet balance so it is useful to use
 `awaitVerifyReceipt`(see [utils]) before checking ethereum balance.
@@ -1022,11 +1147,16 @@ The transaction has to be verified until funds are available on the ethereum wal
 > Signature
 
 ```typescript
-async emergencyWithdraw(withdraw: {
-    token: TokenLike;
-    accountId?: number;
-    ethTxOptions?: ethers.providers.TransactionRequest;
-}): Promise<ETHOperation>;
+async
+emergencyWithdraw(withdraw
+:
+{
+  token: TokenLike;
+  accountId ? : number;
+  ethTxOptions ? : ethers.providers.TransactionRequest;
+}
+):
+Promise<ETHOperation>;
 ```
 
 #### Inputs and outputs
@@ -1044,12 +1174,13 @@ async emergencyWithdraw(withdraw: {
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet.
+const syncWallet =
+..
+; // Setup zksync wallet.
 
 const emergencyWithdrawPriorityOp = await syncWallet.emergencyWithdraw({
-    token: "ETH",
+  token: "ETH",
 });
-
 
 // Wait till priority operation is verified.
 const priorityOpReceipt = await emergencyWithdrawPriorityOp.awaitVerifyReceipt();
@@ -1057,13 +1188,16 @@ const priorityOpReceipt = await emergencyWithdrawPriorityOp.awaitVerifyReceipt()
 
 ### Toggle 2FA
 
-Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it [here](/dev/payments/sending_transactions.md#_2-factor-authentification).
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about
+it [here](/dev/payments/sending_transactions.md#_2-factor-authentification).
 
 ```typescript
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet with private key or EIP-1271 signing
+const syncWallet =
+..
+; // Setup zksync wallet with private key or EIP-1271 signing
 
 await syncWallet.toggle2FA(false); // disable 2FA
 await syncWallet.toggle2FA(true); // enable 2FA back
@@ -1076,11 +1210,15 @@ Calls the `withdrawPendingBalance` function on the zkSync smart contract. This f
 > Signature
 
 ```typescript
-async withdrawPendingBalance(
-    from: Address;
-    token: TokenLike;
-    amount?: BigNumberish
-): Promise<ContractTransaction>;
+async
+withdrawPendingBalance(
+  from
+:
+Address;
+token: TokenLike;
+amount ? : BigNumberish
+):
+Promise<ContractTransaction>;
 ```
 
 #### Inputs and outputs
@@ -1098,14 +1236,16 @@ async withdrawPendingBalance(
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet.
+const syncWallet =
+..
+; // Setup zksync wallet.
 
 const withdrawPendingTx = await syncWallet.withdrawPendingBalance(
   "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c"
-  "ETH",
+"ETH",
   ethers.utils.parseEther("0.001")
-);
-
+)
+;
 
 // Wait till the transaction is complete
 const txReceipt = await withdrawPendingTx.wait();
@@ -1113,21 +1253,27 @@ const txReceipt = await withdrawPendingTx.wait();
 
 ### Withdraw pending balances
 
-Calls the `withdrawPendingBalance` function multiple times on the zkSync smart contract. To optimize gas usage, instead of doing separate calls, it aggregates them using the [multicall](https://github.com/makerdao/multicall) smart contract.
+Calls the `withdrawPendingBalance` function multiple times on the zkSync smart contract. To optimize gas usage, instead of doing separate calls, it aggregates them using
+the [multicall](https://github.com/makerdao/multicall) smart contract.
 
 > Signature
 
 ```typescript
-async withdrawPendingBalances(
-    addresses: Address[];
-    tokens: TokenLike[];
-    multicallParams: {
-        address?: Address;
-        network?: Network;
-        gasLimit?: BigNumberish;
-    };
-    amounts?: BigNumberish[]
-): Promise<ContractTransaction>;
+async
+withdrawPendingBalances(
+  addresses
+:
+Address[];
+tokens: TokenLike[];
+multicallParams: {
+  address ? : Address;
+  network ? : Network;
+  gasLimit ? : BigNumberish;
+}
+;
+amounts ? : BigNumberish[]
+):
+Promise<ContractTransaction>;
 ```
 
 #### Inputs and outputs
@@ -1146,15 +1292,16 @@ async withdrawPendingBalances(
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet.
+const syncWallet =
+..
+; // Setup zksync wallet.
 
 const withdrawPendingTx = await syncWallet.withdrawPendingBalances(
-  ["0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c","0x2D9835a1C1662559975B00AEA00e326D1F9f13d0"]
-  ["ETH","DAI"],
+  ["0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c", "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0"]
+    ["ETH", "DAI"],
   {},
-  [ethers.utils.parseEther("0.001"),ethers.utils.parseEther("0.002")]
+  [ethers.utils.parseEther("0.001"), ethers.utils.parseEther("0.002")]
 );
-
 
 // Wait till the transaction is complete
 const txReceipt = await withdrawPendingTx.wait();
@@ -1162,7 +1309,9 @@ const txReceipt = await withdrawPendingTx.wait();
 
 ## Batch Builder
 
-Batch Builder allows you to create and send transaction batches in a very straightforward way, without the need to worry about managing nonce or the fee transaction. It also can improve the UX of your application as it requires the user to sign the message only once for the whole batch. You can read more about transaction batches [here](/dev/payments/sending_transactions#sending-transaction-batches).
+Batch Builder allows you to create and send transaction batches in a very straightforward way, without the need to worry about managing nonce or the fee transaction. It also can
+improve the UX of your application as it requires the user to sign the message only once for the whole batch. You can read more about transaction
+batches [here](/dev/payments/sending_transactions#sending-transaction-batches).
 
 Batch Builder supports all kinds of zkSync L2 transactions, such as: `Withdraw`, `Transfer`, `ChangePubKey`, etc.
 
@@ -1181,8 +1330,9 @@ Creating Batch Builder
 
 ```typescript
 batchBuilder(
-  nonce?: Nonce;
-): BatchBuilder;
+  nonce ? : Nonce;
+):
+BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1195,7 +1345,9 @@ batchBuilder(
 > Example
 
 ```typescript
-const syncWallet = ..; // Setup zksync wallet.
+const syncWallet =
+..
+; // Setup zksync wallet.
 
 const batchBuilder = syncWallet.batchBuilder();
 ```
@@ -1207,15 +1359,19 @@ Adding withdraw transaction to the batch.
 > Signature
 
 ```typescript
-addWithdraw(withdraw: {
+addWithdraw(withdraw
+:
+{
   ethAddress: string;
   token: TokenLike;
   amount: BigNumberish;
-  fee?: BigNumberish;
-  fastProcessing?: boolean;
-  validFrom?: number;
-  validUntil?: number;
-}): BatchBuilder;
+  fee ? : BigNumberish;
+  fastProcessing ? : boolean;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1236,8 +1392,12 @@ addWithdraw(withdraw: {
 ```typescript
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet.
-const batchBuilder = ..; // Setup batch builder.
+const syncWallet =
+..
+; // Setup zksync wallet.
+const batchBuilder =
+..
+; // Setup batch builder.
 
 batchBuilder.addWithdraw({
   ethAddress: syncWallet.address(),
@@ -1253,14 +1413,18 @@ Adding transfer transaction to the batch.
 > Signature
 
 ```typescript
-addTransfer(transfer: {
+addTransfer(transfer
+:
+{
   to: Address;
   token: TokenLike;
   amount: BigNumberish;
-  fee?: BigNumberish;
-  validFrom?: number;
-  validUntil?: number;
-}): BatchBuilder;
+  fee ? : BigNumberish;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1280,7 +1444,9 @@ addTransfer(transfer: {
 ```typescript
 import { ethers } from "ethers";
 
-const batchBuilder = ..; // Setup batch builder.
+const batchBuilder =
+..
+; // Setup batch builder.
 
 batchBuilder.addTransfer({
   to: "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0",
@@ -1297,16 +1463,20 @@ Adding change pub key transaction to the batch.
 
 ```typescript
 addChangePubKey(
-  changePubKey:
-  | {
-      feeToken: TokenLike;
-      ethAuthType: ChangePubkeyTypes;
-      fee?: BigNumberish;
-      validFrom?: number;
-      validUntil?: number;
-    }
-  | SignedTransaction
-): BatchBuilder;
+  changePubKey
+:
+|
+{
+  feeToken: TokenLike;
+  ethAuthType: ChangePubkeyTypes;
+  fee ? : BigNumberish;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+|
+SignedTransaction
+):
+BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1323,7 +1493,9 @@ addChangePubKey(
 > Example
 
 ```typescript
-const batchBuilder = ..; // Setup batch builder.
+const batchBuilder =
+..
+; // Setup batch builder.
 
 batchBuilder.addChangePubKey({
   feeToken: "ETH",
@@ -1338,13 +1510,17 @@ Adding forced exit transaction to the batch.
 > Signature
 
 ```typescript
-addForcedExit(forcedExit: {
+addForcedExit(forcedExit
+:
+{
   target: Address;
   token: TokenLike;
-  fee?: BigNumberish;
-  validFrom?: number;
-  validUntil?: number;
-}): BatchBuilder;
+  fee ? : BigNumberish;
+  validFrom ? : number;
+  validUntil ? : number;
+}
+):
+BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1363,8 +1539,12 @@ addForcedExit(forcedExit: {
 ```typescript
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet.
-const batchBuilder = ..; // Setup batch builder.
+const syncWallet =
+..
+; // Setup zksync wallet.
+const batchBuilder =
+..
+; // Setup batch builder.
 
 batchBuilder.addForcedExit({
   target: syncWallet.address(),
@@ -1382,8 +1562,9 @@ _If feeToken was provided, the fee for the whole batch will be obtained from the
 
 ```typescript
 build(
-  feeToken?: TokenLike;
-): Promise<{ txs: SignedTransaction[]; signature: TxEthSignature; totalFee: TotalFee }>;
+  feeToken ? : TokenLike;
+):
+Promise<{ txs: SignedTransaction[]; signature: TxEthSignature; totalFee: TotalFee }>;
 ```
 
 #### Inputs and outputs
@@ -1398,8 +1579,12 @@ build(
 ```typescript
 import { ethers } from "ethers";
 
-const syncWallet = ..; // Setup zksync wallet.
-const batchBuilder = ..; // Setup batch builder.
+const syncWallet =
+..
+; // Setup zksync wallet.
+const batchBuilder =
+..
+; // Setup batch builder.
 
 batchBuilder.addForcedExit({
   target: syncWallet.address(),
@@ -1420,7 +1605,12 @@ await batchBuilder.build("ETH");
 > Signature
 
 ```typescript
-static fromPrivateKey(pk: Uint8Array): Signer;
+static
+fromPrivateKey(pk
+:
+Uint8Array
+):
+Signer;
 ```
 
 #### Inputs and outputs
@@ -1435,7 +1625,12 @@ static fromPrivateKey(pk: Uint8Array): Signer;
 > Signature
 
 ```typescript
-static async fromSeed(seed: Uint8Array): Promise<Signer>;
+static async
+fromSeed(seed
+:
+Uint8Array
+):
+Promise<Signer>;
 ```
 
 ### Create from ethereum signature
@@ -1443,12 +1638,16 @@ static async fromSeed(seed: Uint8Array): Promise<Signer>;
 > Signature
 
 ```typescript
-static async fromETHSignature(
-    ethSigner: ethers.Signer
-): Promise<{
-    signer: Signer;
-    ethSignatureType: EthSignerType;
-}> {
+static async
+fromETHSignature(
+  ethSigner
+:
+ethers.Signer
+):
+Promise < {
+  signer: Signer;
+  ethSignatureType: EthSignerType;
+} > {
 ```
 
 #### Inputs and outputs
@@ -1463,7 +1662,10 @@ static async fromETHSignature(
 > Signature
 
 ```typescript
-async pubKeyHash(): Promise<PubKeyHash>;
+async
+pubKeyHash()
+:
+Promise<PubKeyHash>;
 ```
 
 #### Inputs and outputs
@@ -1479,15 +1681,20 @@ Signs transfer transaction, the result can be submitted to the zkSync network.
 > Signature
 
 ```typescript
-async signSyncTransfer(transfer: {
-    accountId: number;
-    from: Address;
-    to: Address;
-    tokenId: number;
-    amount: ethers.BigNumberish;
-    fee: ethers.BigNumberish;
-    nonce: number;
-}): Promise<Transfer>;
+async
+signSyncTransfer(transfer
+:
+{
+  accountId: number;
+  from: Address;
+  to: Address;
+  tokenId: number;
+  amount: ethers.BigNumberish;
+  fee: ethers.BigNumberish;
+  nonce: number;
+}
+):
+Promise<Transfer>;
 ```
 
 #### Inputs and outputs
@@ -1510,15 +1717,20 @@ Signs withdraw transaction, the result can be submitted to the zkSync network.
 > Signature
 
 ```typescript
-async signSyncWithdraw(withdraw: {
-    accountId: number;
-    from: Address;
-    ethAddress: string;
-    tokenId: number;
-    amount: ethers.BigNumberish;
-    fee: ethers.BigNumberish;
-    nonce: number;
-}): Promise<Withdraw>;
+async
+signSyncWithdraw(withdraw
+:
+{
+  accountId: number;
+  from: Address;
+  ethAddress: string;
+  tokenId: number;
+  amount: ethers.BigNumberish;
+  fee: ethers.BigNumberish;
+  nonce: number;
+}
+):
+Promise<Withdraw>;
 ```
 
 #### Inputs and outputs
@@ -1541,13 +1753,18 @@ Signs forced exit transaction, the result can be submitted to the zkSync network
 > Signature
 
 ```typescript
-async signSyncForcedExit(forcedExit: {
-    initiatorAccountId: number;
-    target: Address;
-    tokenId: number;
-    fee: BigNumberish;
-    nonce: number;
-}): Promise<ForcedExit>;
+async
+signSyncForcedExit(forcedExit
+:
+{
+  initiatorAccountId: number;
+  target: Address;
+  tokenId: number;
+  fee: BigNumberish;
+  nonce: number;
+}
+):
+Promise<ForcedExit>;
 ```
 
 #### Inputs and outputs
@@ -1568,18 +1785,23 @@ Signs ChangePubKey transaction, the result can be submitted to the zkSync networ
 > Signature
 
 ```typescript
-async signSyncChangePubKey(changePubKey: {
-    accountId: number;
-    account: Address;
-    newPkHash: PubKeyHash;
-    feeTokenId: number;
-    fee: BigNumberish;
-    nonce: number;
-    validFrom: number;
-    validUntil: number;
-    ethAuthData?: ChangePubKeyOnchain | ChangePubKeyECDSA | ChangePubKeyCREATE2;
-    ethSignature?: string;
-}): Promise<ChangePubKey>;
+async
+signSyncChangePubKey(changePubKey
+:
+{
+  accountId: number;
+  account: Address;
+  newPkHash: PubKeyHash;
+  feeTokenId: number;
+  fee: BigNumberish;
+  nonce: number;
+  validFrom: number;
+  validUntil: number;
+  ethAuthData ? : ChangePubKeyOnchain | ChangePubKeyECDSA | ChangePubKeyCREATE2;
+  ethSignature ? : string;
+}
+):
+Promise<ChangePubKey>;
 ```
 
 #### Inputs and outputs

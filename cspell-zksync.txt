@@ -71,6 +71,8 @@ SDKs
 inter alia
 unbundle
 incentivized
+upgradability
+authentification
 
 // crypto terms
 UDST
@@ -98,3 +100,4 @@ Armeabi
 scijava
 Vitalik
 Buterin
+Consensys

@@ -1,4 +1,4 @@
-# Security Policy / Bug Bounty Program
+# Bug Bounty Program
 
 [[toc]]
 
@@ -42,6 +42,8 @@ Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciat
 ## Bounty Payout
 
 ![bounty-table.png](https://zksync.io/bounty-table.png)
+
+For severe cases involving a total loss of funds, we will pay a bounty of $500,000.
 
 ## Contact
 
