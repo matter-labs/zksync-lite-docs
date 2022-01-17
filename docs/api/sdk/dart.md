@@ -32,7 +32,7 @@ Please download directly from [official repo](https://github.com/zksync-sdk/zksy
 
 Then just add this sdk as a dependency into your app build configuration.
 
-```yaml=
+```yaml
 name: <your_app_name>
 ...
 
@@ -46,13 +46,13 @@ dependencies:
 
 Native library is precompiled for the following platforms:
 
-##### Desktop
+#### Desktop
 
 - Linux x86_64
 - OSX x86_64 (MacOS 11 BigSur included)
 - Windows x86_64
 
-##### Android
+#### Android
 
 - Arm64-v8a
 - Armeabi-v7a

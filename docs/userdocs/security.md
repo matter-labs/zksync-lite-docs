@@ -4,7 +4,7 @@
 
 ## Security overview
 
-[zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md) explicitly lists the
+[zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol) explicitly lists the
 protocol's cryptographic assumptions and security properties.
 
 In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions,
@@ -20,7 +20,7 @@ Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/faq/tech.md#zk-rollup-architecture). This means, every single transaction is
+zkSync is built on [zkRollup architecture](/userdocs/tech#zk-rollup-architecture). This means, every single transaction is
 verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus,
 no validator can ever move the system into an incorrect state or take users' funds.
 
@@ -124,8 +124,8 @@ trust assumptions altogether by embracing a transparent zero-knowledge proof sys
 
 ## Security audits
 
-[Security audits](/updates/security-audits.md) are being conducted before each major update.
+[Security audits](/updates/security-audits) are being conducted before each major update.
 
 ## Bug Bounty Program
 
-Besides security audits, we offer bug bounty program. You can read more about it [here](/dev/bug-bounty).
+Besides security audits, we offer bug bounty program. You can read more about it [here](/dev/security/bug-bounty).

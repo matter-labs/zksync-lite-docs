@@ -30,11 +30,8 @@
       ]
     },
     "types": [
-      "@types/nuxt",
       "@types/node",
       "@nuxt/types",
-      "@nuxt/vue-app",
-      "lodash"
     ]
   },
   "exclude": [
