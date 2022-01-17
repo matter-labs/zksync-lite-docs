@@ -5,12 +5,11 @@
 ## Introduction
 
 **zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by
-[zkRollup technology](/faq/tech.md#zk-rollup-architecture). It uses zero-knowledge proofs and on-chain data availability
-to keep users' funds as safe as though they never left the mainnet.
+[zkRollup technology](/userdocs/tech.md#zk-rollup-architecture). It uses zero-knowledge proofs and on-chain data availability to keep users' funds as safe as though they never left
+the mainnet.
 
-While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively
-seek out improvements that eliminate friction and complexity in order to make zkSync the most enjoyable platform on
-Ethereum, for both end-users and builders. The best way to get an impression about it is to
+While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively seek out improvements that eliminate friction and complexity in
+order to make zkSync the most enjoyable platform on Ethereum, for both end-users and builders. The best way to get an impression about it is to
 [try out zkSync](https://wallet.zksync.io) yourself — it should only take 2 minutes.
 
 <!-- markdownlint-disable line-length -->
@@ -19,11 +18,10 @@ Ethereum, for both end-users and builders. The best way to get an impression abo
 
 ## Problems zkSync solves
 
-Gas fees on Ethereum [exceed \$40M per month](https://ethgasstation.info/). With zkSync these costs can be reduced to a
-small fraction.
+Gas fees on Ethereum [exceed \$40M per month](https://ethgasstation.info/). With zkSync these costs can be reduced to a small fraction.
 
-UX-first crypto wallets like [Argent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a
-banking alternative to entire societies. zkSync makes this mission accomplishable.
+UX-first crypto wallets like [Argent](https://www.argent.xyz/) or [Dharma](https://www.dharma.io/) aim to provide a banking alternative to entire societies. zkSync makes this
+mission accomplishable.
 
 The rise of DeFi opens many more interesting use cases. zkSync is here to unlock Paypal-scale for your project.
 
@@ -31,7 +29,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 - Mainnet-level security with zero reliance on 3rd parties
 - ETH and ERC20 token transfers with instant confirmations and 10-minute finality on L1<sup>\*</sup>; see
-  [supported tokens](/faq/tokens.md#supported-tokens)
+  [supported tokens](/userdocs/tokens.md#supported-tokens)
 - Ultra-low transaction fees (~1/100th of mainnet costs for ERC20 tokens and ~1/30th for ETH transfers)
 - No registration is required to receive funds
 - Payments to existing Ethereum addresses (including smart-contracts)
@@ -39,12 +37,12 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - Withdrawals to mainnet in ~10 minutes<sup>\*</sup>
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html)
   support
-- Permissionless [smart contracts](/faq/sc.md) (coming soon)
+- Permissionless [smart contracts](/userdocs/sc.md) (coming soon)
 
 <span class="footnote"><sup>\*</sup> Currently, it may take longer to fill a block with transactions. Once the block is
 'sealed', it is sent to the prover and appears on L1 within 10 minutes.</span>
 
-<!-- - [Privacy](/faq/privacy.md) (coming soon). -->
+<!-- - [Privacy](/userdocs/privacy.md) (coming soon). -->
 
 <!-- ## What can I do with zkSync? -->
 <!-- ADD HERE THE "PARTNER LIST" TABLE FROM NEW WEBSITE -->
@@ -54,12 +52,10 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 zkSync
 [stands out remarkably](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955)
-in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography
-and on-chain data availability, zkRollup (the core technology of zkSync) is **the only** L2 scaling solution that
-doesn't require any operational activity to keep the funds safe. For example, users can go offline for a year, then come
-back and be sure to safely withdraw their assets without any external help — even if zkRollup validators were long gone.
-At our current stage of development, we encourage users to monitor the chain for upgrades, and withdraw if they disagree
-with upcoming changes — in the future, upgrades will require a strict opt-in.
+in security and usability among existing L2 scaling solutions. Thanks to the combination of cutting-edge cryptography and on-chain data availability, zkRollup (the core technology
+of zkSync) is **the only** L2 scaling solution that doesn't require any operational activity to keep the funds safe. For example, users can go offline for a year, then come back
+and be sure to safely withdraw their assets without any external help — even if zkRollup validators were long gone. At our current stage of development, we encourage users to
+monitor the chain for upgrades, and withdraw if they disagree with upcoming changes — in the future, upgrades will require a strict opt-in.
 
 To quote from [Vitalik Buterin's 2021 guide to rollups](https://vitalik.ca/general/2021/01/05/rollup.html):
 
