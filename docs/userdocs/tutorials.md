@@ -363,7 +363,7 @@ _\*The community-created frontends are not created by the zkSync team, and any i
 </p>
 </br>
 
-7. Import you .json file to IPFS as in step 2 and copy the CID for you .json file.
+7. Import your .json file to IPFS as in step 2 and copy the CID for your .json file.
 
 8. On your [zkSync wallet](https://wallet.zksync.io/), open the NFTs tab and select "+ Mint NFT."
    </br>

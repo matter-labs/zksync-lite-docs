@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/matter-labs/zksync-docs/compare/2.4.0...2.4.1) (2022-01-17)
+
+
+### Bug Fixes
+
+* Corrected typo ([#212](https://github.com/matter-labs/zksync-docs/issues/212)) ([c2c6e90](https://github.com/matter-labs/zksync-docs/commit/c2c6e90439a89936c6530f0d90b8dee7f951480f))
+
 # [2.4.0](https://github.com/matter-labs/zksync-docs/compare/2.3.0...2.4.0) (2022-01-13)
 
 
