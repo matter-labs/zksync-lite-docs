@@ -91,6 +91,7 @@ sidechains
 tokenomics
 validator's
 stakers
+Defi
 
 // Famous crypto people
 Vitalik's

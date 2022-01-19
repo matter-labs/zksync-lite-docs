@@ -27,3 +27,7 @@ There are many videos available to watch to help you learn more about zkSync. Ta
 ## ZK-SYNC Interview with Alex Gluchowski - Scaling Ethereum with Zero Knowledge Rollups
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0xiiY8r8eX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Matter Labs: zkSync: Scaling Defi with the Magic of ZK Rollup
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8pYShEW3-QE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
