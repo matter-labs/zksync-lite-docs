@@ -31,11 +31,12 @@ If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but 
         3. You’ll find a list of all transactions from smart contracts.
         4. The list should have your transaction coming from the zkSync smart contract.
 
-    <br>
-    <p align="center">
-    <img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/int-txns.png">
-    </p>
-    <br>
+<br>
+
+![Internal Txns Etherescan](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/int-txns.png)
+
+<br>
+<br>
 
 3.  If the account balance is not the same as on Etherscan, contact support for your wallet.
 
