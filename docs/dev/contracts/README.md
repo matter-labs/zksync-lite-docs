@@ -46,11 +46,7 @@ You can interact completely with smart contracts and the zkSync network via our 
 - For _read_ requests: any web3-compliant framework in any language will work out of the box, with additional optional zkSync L2 specific functionality.
 - For _write_ requests (sending transactions): due to fundamental differences between L1 and L2, you will have to write some additional code (for example, zkSync supports paying fees in any token, so sending a transaction will involve choosing a token to pay fees).
 
-<<<<<<< 11/21-SEO-fixes
 You can ask questions and get assistance in our [Discord](https://discord.gg/nMaPGrDDwk) developer chat room.
-=======
-You can reuse your current frontend with only minimal changes (sending transactions is different).
->>>>>>> master
 
 ### Submitting Transactions
 
