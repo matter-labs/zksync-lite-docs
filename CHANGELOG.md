@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/matter-labs/zksync-docs/compare/2.4.1...2.5.0) (2022-01-19)
+
+
+### Features
+
+* Button changes + new styling added ([#205](https://github.com/matter-labs/zksync-docs/issues/205)) ([d614f26](https://github.com/matter-labs/zksync-docs/commit/d614f26deacc40b3e01181a7c236b14fac79d031))
+
 ## [2.4.1](https://github.com/matter-labs/zksync-docs/compare/2.4.0...2.4.1) (2022-01-17)
 
 
