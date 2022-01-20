@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/matter-labs/zksync-docs/compare/2.5.1...2.5.2) (2022-01-20)
+
+
+### Bug Fixes
+
+* tutorials page crashing the page ([#220](https://github.com/matter-labs/zksync-docs/issues/220)) ([24d3786](https://github.com/matter-labs/zksync-docs/commit/24d3786111d03f71e692b4be332aa80d6f224a5d))
+
 ## [2.5.1](https://github.com/matter-labs/zksync-docs/compare/2.5.0...2.5.1) (2022-01-19)
 
 
