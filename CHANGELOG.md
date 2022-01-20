@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/matter-labs/zksync-docs/compare/2.5.0...2.5.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* faq crashing docs ([#219](https://github.com/matter-labs/zksync-docs/issues/219)) ([0d244f4](https://github.com/matter-labs/zksync-docs/commit/0d244f425c2921dfa15fe8d3338498ba4e1ab2aa))
+
 # [2.5.0](https://github.com/matter-labs/zksync-docs/compare/2.4.1...2.5.0) (2022-01-19)
 
 
