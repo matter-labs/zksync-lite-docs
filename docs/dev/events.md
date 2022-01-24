@@ -150,7 +150,7 @@ async function main() {
   // Get the provider. It's important to specify the correct network.
   const provider = await zksync.getDefaultProvider("mainnet");
   // Connect to the event server.
-  const ws = new WebSocket("wss://events.zkscan.io/");
+  const ws = new WebSocket("wss://events.zksync.io/");
   console.log("Connection established");
   // Change the address to the account you're intrested in.
   const ACCOUNT_ADDRESS = "0x7ca2113e931ada26f64da66822ece493f20059b6";
