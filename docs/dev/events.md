@@ -4,7 +4,7 @@ This is a quick tutorial on how to use zkSync events API. For the detailed descr
 
 The feature is currently available only on the mainnet, the Ropsten and Rinkeby testnet. The API is not yet fully stabilized and may change in the future.
 
-Make sure, you have selected correct WebSocket and DefaultProvider:
+Make sure, you have selected correct WebSocket (Required) and Provider (Optional)*.
 ```
             WebSocket               Provider
 wss://ropsten-events.zkscan.io  -   ropsten
@@ -17,11 +17,12 @@ An example.
 ...
 async function main() {
   // Get the provider. It's important to specify the correct network.
-  const provider = await zksync.getDefaultProvider("ropsten");
+  const provider = await zksync.getDefaultProvider("ropsten"); // Optional.
   // Connect to the event server.
-  const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
+  const ws = new WebSocket("wss://ropsten-events.zkscan.io/"); // Required
 ...
 ```
+*Provider is used just for user-friendly token formatting.
 
 
 [[toc]]
