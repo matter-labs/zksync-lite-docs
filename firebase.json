@@ -15,8 +15,8 @@
         "type": 301
       },
       {
-        "source": "/faq/*",
-        "destination": "/userdocs/*",
+        "source": "/faq/:random*",
+        "destination": "/userdocs/:random*",
         "type": 301
       }
     ]
