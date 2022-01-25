@@ -7,6 +7,18 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/dev/bug-bounty.html",
+        "destination": "/dev/security/bug-bounty.html",
+        "type": 301
+      },
+      {
+        "source": "/faq/*",
+        "destination": "/userdocs/*",
+        "type": 301
+      }
     ]
   }
 }
