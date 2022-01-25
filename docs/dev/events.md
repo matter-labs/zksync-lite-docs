@@ -4,9 +4,9 @@ This is a quick tutorial on how to use zkSync events API. For the detailed descr
 
 The feature is currently available only on the mainnet, the Ropsten and Rinkeby testnet. The API is not yet fully stabilized and may change in the future.
 
-Make sure, you have selected correct WebSocket (Required) and Provider (Optional)*.
+Make sure, you have selected correct WebSocket (Required) for Network (Optional)*.
 ```
-            WebSocket               Provider
+            WebSocket               Network
 wss://ropsten-events.zkscan.io  -   ropsten
 wss://events.zksync.io/         -   mainnet
 wss://rinkeby-events.zksync.io/ -   rinkeby
@@ -16,8 +16,6 @@ An example.
 ```javascript
 ...
 async function main() {
-  // Get the provider. It's important to specify the correct network.
-  const provider = await zksync.getDefaultProvider("ropsten"); // Optional.
   // Connect to the event server.
   const ws = new WebSocket("wss://ropsten-events.zkscan.io/"); // Required
 ...
