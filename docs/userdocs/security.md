@@ -44,7 +44,8 @@ Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order 
 However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
 contract and all users get a 4-week timelock period to exit where in case they don't like the changes.
 
-To strike a balance between security and upgradeability, the security council, a group of [15 members](https://miro.medium.com/max/1400/1*3O6eotp6AMWS3WADhS00Yg.png) of the Ethereum community, can shorten the 4-week timelock. When Matter Labs initiates an upgrade, 9/15 signatures from the security council members can make the upgrade instant. You can read more about the decision to shorten the timelock period in our [Security Council 2.0 article](https://blog.matter-labs.io/security-council-2-0-2337a555f17a).
+To strike a balance between security and upgradeability, the security council, a group of [15 members](https://miro.medium.com/max/1400/1*3O6eotp6AMWS3WADhS00Yg.png) of the Ethereum community, can shorten the 4-week timelock. When Matter Labs initiates an upgrade, 9/15 signatures from the security council members can make the upgrade instant. 
+At this stage of zkSync, we believe that the probability of bugs is significantly higher than a malicious collusion between the Matter Labs team and 9/15 members of the security council, who are all well-known members of the Ethereum community. You can read more about the decision to shorten the timelock period in our [Security Council 2.0 article](https://blog.matter-labs.io/security-council-2-0-2337a555f17a).
 
 NOTICE: Once the technology is mature and stable, we will transition to a strict opt-in mechanism with immutable versions, and also provide a mass migration functionality.
 
@@ -133,4 +134,4 @@ Besides security audits, we offer bug bounty program. You can read more about it
 
 ### Incentivized HackNet
 
-In partnership with ImmuneFi, each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention.
+Each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention. Read more in our article about [upgradability](https://blog.matter-labs.io/upgradability3-934db4433b0c).
