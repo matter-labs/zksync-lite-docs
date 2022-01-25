@@ -42,10 +42,11 @@ ensures that users will keep control of their assets. It works as follows.
 
 Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order to facilitate faster design iterations.
 However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
-contract and all users get a 4-week notice period to exit in case they don't like the changes.
+contract and all users get a 4-week timelock period to exit where in case they don't like the changes.
 
-NOTICE: Currently, the beta is deployed with a 2-week notice period, and eventually will be bumped to 4 weeks. In the
-future, this opt-out mechanism will be replaced by a strict opt-in.
+To strike a balance between security and upgradeability, the security council, a group of [15 members](https://miro.medium.com/max/1400/1*3O6eotp6AMWS3WADhS00Yg.png) of the Ethereum community, can shorten the 4-week timelock. When Matter Labs initiates an upgrade, 9/15 signatures from the security council members can make the upgrade instant. You can read more about the decision to shorten the timelock period in our [Security Council 2.0 article](https://blog.matter-labs.io/security-council-2-0-2337a555f17a).
+
+NOTICE: Once the technology is mature and stable, we will transition to a strict opt-in mechanism with immutable versions, and also provide a mass migration functionality.
 
 ## Cryptography used
 
@@ -129,3 +130,7 @@ trust assumptions altogether by embracing a transparent zero-knowledge proof sys
 ## Bug Bounty Program
 
 Besides security audits, we offer bug bounty program. You can read more about it [here](/dev/security/bug-bounty).
+
+### Incentivized HackNet
+
+In partnership with ImmuneFi, each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention.
