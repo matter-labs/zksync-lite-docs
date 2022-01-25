@@ -4,7 +4,7 @@
 
 ## Security overview
 
-[zkSync protocol design](https://github.com/matter-labs/zksync/blob/master/docs/protocol) explicitly lists the
+[zkSync protocol design](https://github.com/matter-labs/zksync/blob/f59e154865374bdc0f5ded2e2604dac599cb75ee/docs/protocol.md) explicitly lists the
 protocol's cryptographic assumptions and security properties.
 
 In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions,
@@ -83,7 +83,7 @@ Another big advantage of a universal CRS is that updates and bugfixes do not req
 (which are very difficult from the logistical and security perspectives).
 
 Matter Labs
-[participated](https://www.aztecprotocol.com/ignition/participant/0x04a23ba68e4469061cd461e8b847e820d4ced948?timestamp=1587551054947)
+participated
 in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve, coordinated by AZTEC protocol:
 
 <table>
@@ -106,7 +106,7 @@ The ceremony ran from October 2019 until December 2019, with 176 participants fr
 compute a secure database of encrypted points, including
 [Vitalik Buterin](https://twitter.com/VitalikButerin/status/1225856246307311616) and other prominent members of the
 crypto community. Full ceremony transcript with the list of individuals and organizations who claimed their contribution
-[is available here](https://www.aztecprotocol.com/ignition/). You can use
+[is available here](https://ignition.aztecprotocol.com/). You can use
 [this script](https://github.com/matter-labs/ignition-verification) to verify the contributions of the listed
 participants.
 
