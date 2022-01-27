@@ -4372,13 +4372,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-html-redirect@npm:^0.1.4":
-  version: 0.1.4
-  resolution: "@vuepress/plugin-html-redirect@npm:0.1.4"
-  checksum: 6f496193ab1ebbd91666802bfd872904457d536166d830ff270331788a7ff7a08efd88f863aed8bda2bf3fc4d2bf593b21f142f8445a5a788c622c20048b1fbb
-  languageName: node
-  linkType: hard
-
 "@vuepress/plugin-last-updated@npm:1.9.5":
   version: 1.9.5
   resolution: "@vuepress/plugin-last-updated@npm:1.9.5"
@@ -21744,7 +21737,6 @@ __metadata:
     "@typescript-eslint/parser": ^4.15.1
     "@vue/cli-service": ^4.5.11
     "@vuepress/core": ^1.8.2
-    "@vuepress/plugin-html-redirect": ^0.1.4
     aos: ^2.3.4
     check-md: ^1.0.1
     cspell: ^4.1.5
