@@ -15,6 +15,16 @@
         "type": 301
       },
       {
+        "source": "/faq/",
+        "destination": "/userdocs/",
+        "type": 301
+      },
+      {
+        "source": "/faq.html",
+        "destination": "/userdocs/",
+        "type": 301
+      },
+      {
         "source": "/dev/bug-bounty",
         "destination": "/dev/security/bug-bounty.html",
         "type": 301
