@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/matter-labs/zksync-docs/compare/2.5.3...2.6.0) (2022-01-28)
+
+
+### Features
+
+* service pages (page-lockers) excluded from google-parsed links ([#225](https://github.com/matter-labs/zksync-docs/issues/225)) ([b2c767f](https://github.com/matter-labs/zksync-docs/commit/b2c767ff69c274520c6add828da2667930ad1161))
+
 ## [2.5.3](https://github.com/matter-labs/zksync-docs/compare/2.5.2...2.5.3) (2022-01-27)
 
 
