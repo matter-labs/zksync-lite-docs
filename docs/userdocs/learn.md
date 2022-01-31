@@ -41,7 +41,7 @@ Zero Knowledge. Get familiar with ZK proofs [here](https://github.com/matter-lab
 
 ## What is a ZK Rollup?
 
-ZK Rollups are a layer 2 scaling solution that uses validity proofs to scale computation: each batch of transactions comes with a cryptographic proof (ZK-SNARK) that is verified by an Ethereum smart contract. This way every single transaction is fully verified by all Ethereum full nodes before a block is finalized.
+ZK Rollups are a layer 2 scaling solution that uses validity proofs to scale computation: each batch of transactions comes with a cryptographic proof (ZK-SNARK) that is verified by an Ethereum smart contract. This way every single transaction is fully verified on Ethereum, hence inheriting Ethereum security.
 
 ## How secure is a ZK Rollup?
 
