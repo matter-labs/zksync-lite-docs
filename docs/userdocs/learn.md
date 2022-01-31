@@ -30,7 +30,7 @@ zkSync 2.0 is an EVM-compatible ZK Rollup being built by Matter Labs, powered by
 But this is not our first product! zkSync 1.0 has been [live for payments](https://twitter.com/vitalikbuterin/status/1287921136911753216?lang=en) for almost 1.5 years:
 
 - reducing the [cost of transfers](https://l2fees.info/) by ~50x,
-- securing close to [4M transactions](https://zkscan.io/),
+securing over to [6M transactions](https://zkscan.io/),
 - and used by 98% of all transactions in the recent 4 [Gitcoin grant rounds](https://gitcoin.co/).
 
 For previous in-depth updates on zkSync 2.0, check out our [Medium](https://medium.com/matter-labs/zksync-2-0-hello-ethereum-ca48588de179).
