@@ -66,7 +66,7 @@ The security of zkPorter is still better than any other L1 or sidechain. In the 
 
 For an in-depth dive into the scale and security of zkPorter, check out this [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
-## What is the transaction finality in zkSync?
+## What is the transaction finality time in zkSync?
 
 The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it was confirmed, or reorder transactions over a short window of time.
 
