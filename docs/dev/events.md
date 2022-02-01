@@ -20,7 +20,6 @@ async function main() {
   const ws = new WebSocket("wss://ropsten-events.zkscan.io/"); // Required
 ...
 ```
-*Provider is used just for user-friendly token formatting.
 
 
 [[toc]]
