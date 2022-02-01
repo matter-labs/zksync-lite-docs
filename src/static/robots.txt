@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Example 3: Block all but AdsBot crawlers
+User-agent: *
+Disallow: /service/

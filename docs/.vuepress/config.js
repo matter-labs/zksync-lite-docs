@@ -19,7 +19,6 @@ module.exports = {
     sitemap: {
       hostname: "https://zksync.io",
     },
-    "@vuepress/html-redirect": {},
   },
   themeConfig: {
     logo: "/LogotypeLight.svg",
@@ -257,7 +256,7 @@ module.exports = {
     ["script", { src: "/__/firebase/7.13.2/firebase-app.js", defer: true }, ""],
     ["script", { src: "/__/firebase/7.13.2/firebase-analytics.js", defer: true }, ""],
     ["script", { src: "/__/firebase/init.js", defer: true }, ""],
-    //Hack: Make clicking on the logo go to home url
+    //Hack: redirects the user to the zksync.io index page when clicking on the logo
     [
       "script",
       {},
@@ -290,13 +289,13 @@ module.exports = {
         requestAnimationFrame(function() {
           if (location.hash) {
             const element = document.getElementById(location.hash.slice(1))
-      
+
             if (element) {
               element.scrollIntoView();
             }
           }
         });
-      }      
+      }
       `,
     ],
   ],
