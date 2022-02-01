@@ -4,7 +4,7 @@ This is a quick tutorial on how to use zkSync events API. For the detailed descr
 
 The feature is currently available only on the mainnet, the Ropsten and Rinkeby testnet. The API is not yet fully stabilized and may change in the future.
 
-Make sure, you have selected correct WebSocket (Required) for Network (Optional)*.
+Make sure, you have selected the correct WebSocket URL for the network:
 ```
             WebSocket               Network
 wss://ropsten-events.zkscan.io  -   ropsten
