@@ -1,4 +1,4 @@
-# Learn About zkSync By Watching
+# Learn by Watching
 
 Click on the links below for a playlist of curated videos on each topic.
 
