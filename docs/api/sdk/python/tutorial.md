@@ -190,6 +190,7 @@ When 2 signed orders are collected, they can be submitted by anyone using the `s
 ```python
 from fractions import Fraction
 from decimal import Decimal
+from zksync_sdk.types import RatioType
 
 orderA = await walletA.get_order('USDT', 'ETH', Fraction(1500, 1), RatioType.token, Decimal('10.0'))
 orderB = await walletB.get_order('ETH', 'USDT', Fraction(1, 1200), RatioType.token, Decimal('0.007'))
