@@ -6,12 +6,6 @@
 @import "./fonts";
 @import "./aos.css";
 
-//noinspection CssUnknownTarget
-@import "prismjs/themes/prism-tomorrow.css"; // import syntax highlighting styles
-//noinspection CssUnknownTarget
-@import "vue-prism-editor/dist/prismeditor.min.css"; // import the styles somewhere
-
-
 //zk
 @import "./zkDS/base";
 @import "./zkDS/table";

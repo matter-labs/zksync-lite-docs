@@ -13,10 +13,8 @@
   line-height: 27px;
   text-align: center;
   color: $white !important;
-
   transition: color $transition2 !important;
   background: #121429 !important;
-
 
   &::before,
   &::after {
@@ -56,6 +54,9 @@
     filter: blur(48px);
   }
 
+  &.no-hover-effect:hover {
+    border-color: transparent !important;
+  }
 
   &.-lg.antilink:hover, &:focus {
     box-shadow: none !important;
