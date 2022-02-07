@@ -49,7 +49,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 </br>
 
-![onramp.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/userdoc-update/docs/images/onramp.png)
+![onramp.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/onramp.png)
 
 </br>
 
@@ -130,7 +130,7 @@ Your first transaction after depositing or funding your account requires a separ
 > The account activation fee can be seen below the transaction fee when completing your transaction.
 >
 > - To learn more about the account activation fee check our [Account Activation FAQ](./faq.md#what-is-the-account-activation-fee).
->   </br> > </br>
+   </br>  </br>
 
 ![Activation fee.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Activation%20fee.png)
 
@@ -237,7 +237,8 @@ _Alternatively, you can take a risk and enter the exchange address when you with
 
 </br>
 
-> **Read the popup carefully to to prevent loss of funds.** > </br>
+> **Read the popup carefully to to prevent loss of funds.**  
+</br>
 
 ![se4.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se4.png)
 
