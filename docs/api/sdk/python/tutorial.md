@@ -99,6 +99,8 @@ ethereum_signer = EthereumSignerWeb3(account=account)
 # Load contract addresses from server
 contracts = await provider.get_contract_address()
 # Setup web3
+# NOTE: Please ensure that the web3 provider and zksync provider match.
+# A mainnet web3 provider paired with a testnet zksync provider will transact on mainnet!!
 w3 = Web3(HTTPProvider(endpoint_uri="GETH_ENDPOINT" ))
 # Setup zksync contract interactor
 zksync = ZkSync(account=account, web3=w3,
@@ -120,6 +122,8 @@ Depositing requires `Wallet` object to be created with access to the Ethereum si
 We are going to deposit `1.0 USDT` to our zkSync account.
 
 ```python
+from decimal import Decimal
+
 # Find token for depositing
 token = await wallet.resolve_token("USDT")
 # Approve Enough deposit using token contract
@@ -137,6 +141,8 @@ You don't need to approve a deposit to transfer ETH.
 To control assets in zkSync network, an account must register a separate public key once.
 
 ```python
+from zksync_sdk.types import ChangePubKeyEcdsa
+
 if not await wallet.is_signing_key_set():
     tx = await wallet.set_signing_key("ETH", eth_auth_data=ChangePubKeyEcdsa())
     status = await tx.await_committed()
@@ -153,7 +159,7 @@ committedETHBalance = await wallet.get_balance("ETH", "committed")
 verifiedETHBalance = await wallet.get_balance("ETH", "verified")
 ```
 
-To list all tokens of this account at once, use `account_info`:
+To list all tokens of this account at once, use `get_account_state`:
 
 ```python
 account_state = await wallet.get_account_state()
@@ -166,6 +172,8 @@ verified_dai_balance = account_state.verified.balances.get("DAI")
 For making transfer to another account you just need to set receiver amount and token
 
 ```python
+from decimal import Decimal
+
 tx = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            amount=Decimal("0.01"), token="USDC")
 status = await tx.await_committed()
@@ -180,6 +188,9 @@ To swap tokens, first call the `get_order` or `get_limit_order` method on a wall
 When 2 signed orders are collected, they can be submitted by anyone using the `swap` method.
 
 ```python
+from fractions import Fraction
+from decimal import Decimal
+
 orderA = await walletA.get_order('USDT', 'ETH', Fraction(1500, 1), RatioType.token, Decimal('10.0'))
 orderB = await walletB.get_order('ETH', 'USDT', Fraction(1, 1200), RatioType.token, Decimal('0.007'))
 tx = await submitter.swap((orderA, orderB), 'ETH')
@@ -191,6 +202,8 @@ For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API 
 ## Withdrawing funds back to Ethereum
 
 ```python
+from decimal import Decimal
+
 tx = await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            Decimal("0.001"), "USDT")
 status = await tx.await_committed()
@@ -248,7 +261,9 @@ status = await tx.await_committed()
 For getting information about tx we have to use ZkSyncProviderV01
 
 ```python
-provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
+from zksync_sdk import ZkSyncProviderV01, HttpJsonRPCTransport, network
+
+zk_sync_provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
 tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
 ```
 
