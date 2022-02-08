@@ -92,6 +92,7 @@
   "devDependencies": {
     "check-md": "^1.0.2",
     "cspell": "^5.12.3",
+    "husky": "^7.0.4",
     "markdownlint": "^0.24.0",
     "markdownlint-cli": "^0.29.0",
     "prettier": "2.4.1"
