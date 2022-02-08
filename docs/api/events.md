@@ -7,8 +7,8 @@ to the zkSync events with examples in Javascript please read [the quick introduc
 
 ## Establishing the connection
 
-Currently, events are only present on Ropsten. The event server WebSocket URL is `wss://ropsten-events.zkscan.io`. You
-can find an example of client application [here](../dev/events.md).
+The event server WebSocket URL for mainnet is `wss://events.zksync.io`. You can find an example of client application
+[here](../dev/events.md).
 
 ## Event structure
 
@@ -140,7 +140,7 @@ Here is an example of a `finalized` block event:
 }
 ```
 
-### Transaction events
+### Transacton events
 
 The transaction events notify about transactions being committed or finalized. They notify about both L2 transactions
 and L1 priority operations. The `data` for each event looks the following way:
@@ -480,10 +480,10 @@ Here are some additional examples of filtering:
 // and any block verification events any transaction events (both committed and finalized)
 {
   "account": {
-      "status": "finalized"
+    "status": "finalized"
   },
   "block": {
-      "status": "reverted"
+    "status": "reverted"
   },
   "transaction": {}
 };
@@ -499,7 +499,3 @@ events, then you also keep track of the `block` events to know if a block was re
 
 If you want to receive events only about final transactions, then you should accept only `finalized` events. The
 `finalized` blocks can never be reverted as it is enforced by an Ethereum smart contract.
-
-## Reading past events
-
-To be able to receive past events is a very important feature and will be released very soon.

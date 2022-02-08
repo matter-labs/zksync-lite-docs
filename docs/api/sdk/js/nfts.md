@@ -151,8 +151,13 @@ to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawin
 
 > Signature
 
-async emergencyWithdraw(withdraw: { token: TokenLike; accountId?: number; ethTxOptions?:
-ethers.providers.TransactionRequest; }): Promise<ETHOperation>
+```typescript
+async emergencyWithdraw(withdraw: {
+  token: TokenLike;
+  accountId?: number;
+  ethTxOptions?: ethers.providers.TransactionRequest;
+}): Promise<ETHOperation>
+```
 
 | Name                 | Description             |
 | -------------------- | ----------------------- |

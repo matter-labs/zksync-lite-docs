@@ -398,13 +398,12 @@ token on L2, and call `mintNFTFromZkSync` on the factory corresponding to the cr
 
 1. To register a factory, creators will sign the following message with data `factory_address` and `creator_address`.
 
-   ```text
-   "\x19Ethereum Signed Message:\n141",
-   "\nCreator's account ID in zkSync: {creatorIdInHex}",
-   "\nCreator: {CreatorAddressInHex}",
-   "\nFactory: {FactoryAddressInHex}"
-   ```
+```
+"\x19Ethereum Signed Message:\n141",
+"\nCreator's account ID in zkSync: {creatorIdInHex}",
+"\nCreator: {CreatorAddressInHex}",
+"\nFactory: {FactoryAddressInHex}"
+```
 
 2. The factory contract calls `registerFactory` on the zkSync L1 smart contract with the signature.
-
 3. zkSync smart contract validates the signature and emits an event with `factory_address` and `creator_address`.

@@ -1,4 +1,4 @@
-# Security Policy / Bug Bounty Program
+# Bug Bounty Program
 
 [[toc]]
 
@@ -46,6 +46,8 @@ or fixing the vulnerability. If possible, please use the PGP key below to encryp
 ## Bounty Payout
 
 ![bounty-table.png](https://zksync.io/bounty-table.png)
+
+For severe cases involving a total loss of funds, we will pay a bounty of $500,000.
 
 ## Contact
 

@@ -1,10 +1,42 @@
 {
   "name": "zksync-docs",
-  "description": "zkSync Online Documentation",
-  "version": "2.2.0",
+  "description": "zkSync.io new landing",
+  "private": true,
+  "version": "2.6.0",
   "license": "MIT",
   "author": "Matter Labs",
-  "homepage": "https://docs.zksync.io/",
+  "homepage": "https://docs.zksync.io",
+  "keywords": [
+    "zksync",
+    "dev-preview",
+    "early-access",
+    "zk-rollup",
+    "frontend-team",
+    "ethereum",
+    "web3",
+    "wallet",
+    "defi",
+    "typescript",
+    "cryptopayments",
+    "matter labs",
+    "zksync dapps",
+    "dapp",
+    "ethers",
+    "zkSync",
+    "Matter Labs",
+    "rollup",
+    "ZK rollup",
+    "zero confirmation",
+    "ZKP",
+    "zero-knowledge proofs",
+    "Ethereum",
+    "crypto",
+    "blockchain",
+    "permissionless",
+    "L2",
+    "secure payments",
+    "scalable crypto payments"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -17,17 +49,6 @@
       "last 1 safari version"
     ]
   },
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn docs:build && firebase deploy",
-    "fmt": "prettier --write \"docs/**/*.md\"",
-    "fmt:check": "prettier --check \"docs/**/*.md\"",
-    "cspell": "cspell docs/**/*.md",
-    "md:lint": "markdownlint -c markdownlint.json docs",
-    "md:deadlinks": "check-md",
-    "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks"
-  },
   "prettier": {
     "tabWidth": 2,
     "printWidth": 120,
@@ -36,6 +57,19 @@
     "trailingComma": "none",
     "bracketSpacing": true,
     "proseWrap": "always"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "yarn docs:build && firebase deploy",
+    "fmt": "prettier --write \"docs/**/*.md\"",
+    "fmt:check": "prettier --check \"docs/**/*.md\"",
+    "cspell": "cspell docs/**/*.md",
+    "md:lint": "markdownlint -c .markdownlintrc docs",
+    "md:deadlinks": "check-md",
+    "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks",
+    "semantic-release": "semantic-release",
+    "postinstall": "husky install"
   },
   "check-md": {
     "cwd": "./docs",
@@ -49,7 +83,7 @@
     "url": "https://github.com/matter-labs/zksync-docs/issues"
   },
   "dependencies": {
-    "markdown-it-footnote": "3.0.3",
+    "markdown-it-footnote": "^3.0.3",
     "vuepress": "^1.8.2",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
@@ -60,61 +94,21 @@
     "cspell": "^5.12.3",
     "markdownlint": "^0.24.0",
     "markdownlint-cli": "^0.29.0",
-    "prettier": "2.4.1",
-    "stylelint": "^13.10.0"
+    "prettier": "2.4.1"
   },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-recommended",
-      "stylelint-config-rational-order"
+  "lint-staged": {
+    "*.md": [
+      "yarn run md:lint",
+      "yarn run md:deadlinks",
+      "yarn run cspell",
+      "yarn run fmt"
     ],
-    "plugins": [
-      "stylelint-order",
-      "stylelint-scss",
-      "stylelint-config-rational-order/plugin",
-      "stylelint-high-performance-animation",
-      "stylelint-declaration-use-variable"
-    ],
-    "rules": {
-      "no-empty-source": [
-        true,
-        {
-          "severity": "warning"
-        }
-      ],
-      "plugin/no-low-performance-animation-properties": [
-        true,
-        {
-          "severity": "warning"
-        }
-      ],
-      "sh-waqar/declaration-use-variable": [
-        [
-          "/color/",
-          "font-size",
-          "font-family",
-          "font-weight"
-        ]
-      ],
-      "order/properties-order": [],
-      "plugin/rational-order": [
-        true,
-        {
-          "border-in-box-model": false,
-          "empty-line-between-groups": false
-        }
-      ],
-      "selector-type-no-unknown": [
-        true,
-        {
-          "ignore": [
-            "custom-elements"
-          ]
-        }
-      ],
-      "no-descending-specificity": true,
-      "at-rule-no-unknown": null,
-      "scss/at-rule-no-unknown": true
-    }
-  }
+    "*.{js,vue,ts,tsx}": [
+      "yarn run fmt"
+    ]
+  },
+  "optionalDependencies": {
+    "fs-extra": "^9.1.0"
+  },
+  "packageManager": "yarn@3.1.1"
 }

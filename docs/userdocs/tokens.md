@@ -7,14 +7,14 @@
 **zkSync** can be used to transfer ether (ETH) and ERC20 tokens. The full list of currently supported tokens is
 available under this [link](https://zkscan.io/explorer/tokens).
 
-DISCLAIMER: Listing of a token on zkSync does not represent an endorsement for this token
-by the Matter Labs team, Stichting ZK Sync, or any other entity. We do not have competence and authority to analyze the
-token business model and smart contract security guarantees of a particular token. Please use any token on your own risk
-and judgement.
+DISCLAIMER: Listing of a token on zkSync does not represent an endorsement for this token by the Matter Labs team,
+Stichting ZK Sync, or any other entity. We do not have competence and authority to analyze the token business model and
+smart contract security guarantees of a particular token. Please use any token on your own risk and judgement.
 
 ## Listing a token
 
-To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the "Submit new token" button and follow the instructions.
+To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the
+"Submit new token" button and follow the instructions.
 
 ## Fee costs
 

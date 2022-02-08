@@ -128,7 +128,7 @@ details, see [example](#example).
 ```typescript
 const swap = await wallet.syncSwap({
   orders: [orderA, orderB],
-  amounts: [tokenSet.parseToken('ETH', '2'), tokenSet.parseToken('USDT', '7800')],
+  amounts: [tokenSet.parseToken('ETH', '2'), tokenSet.parseToken('UDST', '7800')],
   feeToken: 'wBTC'
 });
 ```
@@ -225,7 +225,7 @@ To construct a ratio, use either of the two utility functions:
 - `tokenRatio` constructs a ratio relevant to the tokens themselves, so `{ ETH: 4, wBTC: 1 }` would mean you want 4 ETH
   for each wBTC.
 - `weiRatio` constructs a ratio relevant to the _lowest denomination_ of the token, so `{ ETH: 4, wBTC: 1 }` would mean
-  you want 4 wei (10<sup>-18</sup> ETH) for each satoshi ( 10<sup>-8</sup> wBTC).
+  you want 4 wei (10<sup>-18</sup> ETH) for each satoshi (10<sup>-8</sup> wBTC).
 
 If tokens symbols or IDs are contained in variables, use the following syntax to pass them into ratio objects:
 

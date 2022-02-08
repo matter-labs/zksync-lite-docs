@@ -11,7 +11,7 @@ In this tutorial we will demonstrate how to:
 
 ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 
-```bash
+```
 pip install git+https://github.com/zksync-sdk/zksync-python.git
 ```
 
@@ -21,8 +21,8 @@ Unfortunately, currently, SDK is not published on PyPI, thus installation throug
 
 For using this library:
 
-1. You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
-2. Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library
+1.  You have to download zksync-crypto-library from <https://github.com/zksync-sdk/zksync-crypto-c/releases>
+2.  Set env variable `ZK_SYNC_LIBRARY_PATH` with a path to the downloaded library
 
 ## Initialize crypto library
 
@@ -214,7 +214,7 @@ tx = await wallet.mint_nft("0x00000000000000000000000000000000000000000000000000
 status = await tx.await_committed()
 ```
 
-Note that before transferring or withdrawing a freshly-minted NFT, this operation has to be verified (not just
+Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just
 committed).
 
 ### Checking owned and minted NFTs
@@ -228,7 +228,7 @@ owned_nfts = account_state.committed.nfts
 minted_nfts = account_state.verified.minted_nfts
 ```
 
-### Transferring
+### Transfering
 
 To transfer an NFT, provide address to transfer to, NFT itself and token which will be used to pay fees.
 
@@ -266,4 +266,32 @@ To wait for transaction finalization on L1, use
 
 ```python
 await tx.await_verified()
+```
+
+## Supporting Two-Factor Authentication for Wallet
+
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it
+[here](/dev/payments/sending_transactions.md#_2-factor-authentication).
+
+The 2FA can be turned on or turned off using the following methods of the `Wallet` class:
+
+- enable_2fa
+- disable_2fa
+
+Both methods return `True` in case of success and `False` otherwise. Example:
+
+```python
+# Enable 2FA
+result = await self.wallet.enable_2fa()
+if result:
+    account_state = await self.wallet.get_account_state()
+    # here account_state.account_type == AccountTypes.OWNED
+
+# Disable 2FA but only to a specific pub_key_hash
+# If you want to disable 2FA for the account entirely, then simply don't provide the `pub_key_hash`
+pub_key_hash = self.wallet.zk_signer.pubkey_hash_str()
+result = await self.wallet.disable_2fa(pub_key_hash)
+if result:
+    account_state = await self.wallet.get_account_state()
+    # here account_state.account_type == AccountTypes.No2FA
 ```

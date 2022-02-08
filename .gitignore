@@ -27,58 +27,16 @@ _yardoc
 doc/
 .idea/
 
-node_modules
 dist
 
 /.firebase
 
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-/dist
-/.idea
-/lib
-
-# misc
-.DS_Store
-.env
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-.firebase/
-.vscode/
-
-# cache
-.brotli_cache/
-.gzip_cache/
-.assets_cache/
-.buildx-cache/
-.reports/
-/src/static/sw.js
-/public*
-!public/.gitignore
-.nuxt
-/firebase-debug.log
-/report.txt
-/tokens.txt
-/.run/
-
-
-# Yarn 2: upgraded dependency management
-.yarn/*
+# Yarn
+.yarn/
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
 /.eslintcache
+node_modules

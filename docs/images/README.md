@@ -1,1 +1,1 @@
-Images used for FAQ and Tutorials
+# Images used for FAQ and Tutorials

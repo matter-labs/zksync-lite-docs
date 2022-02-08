@@ -1,5 +1,17 @@
 {
   "projects": {
-    "default": "zksync-js-docs"
+    "default": "zksync-web-docs"
+  },
+  "targets": {
+    "zksync-web-docs": {
+      "hosting": {
+        "prod": [
+          "zksync-web-docs"
+        ],
+        "staging": [
+          "taging-docs-zksync"
+        ]
+      }
+    }
   }
 }

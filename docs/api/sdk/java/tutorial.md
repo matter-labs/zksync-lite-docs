@@ -208,8 +208,8 @@ BigDecimal balance = Convert.fromWei(balanceStr, Convert.Unit.ETHER);
 
 ## Toggle 2FA
 
-Two factor authentication is an additional protection layer enforced by zkSync server. You can read more about it
-[here](/dev/payments/sending_transactions.md#_2-factor-authentication).
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it
+[here] (/dev/payments/sending_transactions.md#\_2-factor-authentication).
 
 ```java
 ZkSyncWallet wallet = ...;
@@ -580,7 +580,7 @@ ZkSyncTransactionReceiptProcessor receiptProcessor = new ZkSyncPollingTransactio
 
 String hash = ... //Here hex hash of the submitted transaction
 
-// Wait 30 seconds for committing transaction
+// Wait 30 seconds for commiting transaction
 TransactionDetails receipt = receiptProcessor.waitForTransaction(hash, ZkTransactionStatus.COMMITED).get(30, TimeUnit.SECONDS);
 
 // Or you can wait for verifying transaction on L1 (but it will take much time)

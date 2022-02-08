@@ -5,8 +5,8 @@
 ## Introduction
 
 **zkSync** is a trustless protocol for scalable low-cost payments on Ethereum, powered by
-[zkRollup technology](/faq/tech.md#zk-rollup-architecture). It uses zero-knowledge proofs and on-chain data availability
-to keep users' funds as safe as though they never left the mainnet.
+[zkRollup technology](/userdocs/tech.md#zk-rollup-architecture). It uses zero-knowledge proofs and on-chain data
+availability to keep users' funds as safe as though they never left the mainnet.
 
 While security is our paramount priority, user and developer experience are central to zkSync design. We obsessively
 seek out improvements that eliminate friction and complexity in order to make zkSync the most enjoyable platform on
@@ -31,7 +31,7 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 
 - Mainnet-level security with zero reliance on 3rd parties
 - ETH and ERC20 token transfers with instant confirmations and 10-minute finality on L1<sup>\*</sup>; see
-  [supported tokens](/faq/tokens.md#supported-tokens)
+  [supported tokens](/userdocs/tokens.md#supported-tokens)
 - Ultra-low transaction fees (~1/100th of mainnet costs for ERC20 tokens and ~1/30th for ETH transfers)
 - No registration is required to receive funds
 - Payments to existing Ethereum addresses (including smart-contracts)
@@ -39,12 +39,12 @@ The rise of DeFi opens many more interesting use cases. zkSync is here to unlock
 - Withdrawals to mainnet in ~10 minutes<sup>\*</sup>
 - [Multisig](https://tlu.tarilabs.com/cryptography/musig-schnorr-sig-scheme/The_MuSig_Schnorr_Signature_Scheme.html)
   support
-- Permissionless [smart contracts](/faq/sc.md) (coming soon)
+- Permissionless [smart contracts](/userdocs/sc.md) (coming soon)
 
 <span class="footnote"><sup>\*</sup> Currently, it may take longer to fill a block with transactions. Once the block is
 'sealed', it is sent to the prover and appears on L1 within 10 minutes.</span>
 
-<!-- - [Privacy](/faq/privacy.md) (coming soon). -->
+<!-- - [Privacy](/userdocs/privacy.md) (coming soon). -->
 
 <!-- ## What can I do with zkSync? -->
 <!-- ADD HERE THE "PARTNER LIST" TABLE FROM NEW WEBSITE -->
