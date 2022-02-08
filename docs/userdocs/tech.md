@@ -29,7 +29,7 @@ and tx cost savings.
 
 zkRollup architecture provides the following guarantees:
 
-- Validators can never corrupt the state or steal funds ([unlike Sidechains](docs/zkevm/README.md#how-does-using-zksync-compare-to-sidechains-and-other-l1-blockchains-eg-maticpolygon-bsc-solana-avalanche)).
+- Validators can never corrupt the state or steal funds ([unlike Sidechains](https://zksync.io/zkevm/#how-does-using-zksync-compare-to-sidechains-and-other-l1-blockchains-e-g-matic-polygon-bsc-solana-avalanche)).
 - Users can always retrieve the funds from the zkRollup smart contract even if validator(s) stop cooperating, because
   the data is available (unlike Plasma).
 - Neither users nor a single trusted third party needs to be online to monitor zkRollup blocks in order to prevent fraud
