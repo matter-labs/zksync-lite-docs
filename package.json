@@ -110,5 +110,8 @@
   "optionalDependencies": {
     "fs-extra": "^9.1.0"
   },
+  "resolutions": {
+    "highlight.js": "10"
+  },
   "packageManager": "yarn@3.1.1"
 }
