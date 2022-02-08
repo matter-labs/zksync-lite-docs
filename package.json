@@ -103,9 +103,6 @@
       "yarn run md:deadlinks",
       "yarn run cspell",
       "yarn run fmt"
-    ],
-    "*.{js,vue,ts,tsx}": [
-      "yarn run fmt"
     ]
   },
   "optionalDependencies": {

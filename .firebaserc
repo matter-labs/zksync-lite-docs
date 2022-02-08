@@ -9,7 +9,7 @@
           "zksync-web-docs"
         ],
         "staging": [
-          "taging-docs-zksync"
+          "staging-docs-zksync"
         ]
       }
     }
