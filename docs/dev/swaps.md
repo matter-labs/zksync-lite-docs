@@ -204,12 +204,12 @@ This will exchange 100 wBTC from `walletA` for 300 ETH from `walletB`. For detai
 
 |                          | `walletA` | `walletB` |
 | ------------------------ | --------- | --------- |
-| wBTC before swap         | 100       | 0         |
-| ETH before swap          | 0         | 300       |
-| ETH expected after swap  | 0         | 75        |
-| wBTC expected after swap | 250       | 0         |
-| ETH actually after swap  | 0         | 100       |
-| wBTC actually after swap | 300       | 0         |
+|         wBTC before swap | 100       | 0         |
+|          ETH before swap | 0         | 300       |
+| Expected wBTC after swap | 0         | 75        |
+|  Expected ETH after swap | 250       | 0         |
+|   Actual wBTC after swap | 0         | 100       |
+|    Actual ETH after swap | 300       | 0         |
 
 ## Utils
 
