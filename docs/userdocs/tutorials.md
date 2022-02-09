@@ -44,11 +44,11 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 </br>
 
-> For a FIAT onramp choose "Buy Crypto with Ramp" and complete the process with Ramp to save on L1 gas fees.
+> For a FIAT onramp choose one of the options and complete the process on the pop-up to save on L1 gas fees.
 
 </br>
 
-![RAMP.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/RAMP.png)
+![onramp.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/onramp.png)
 
 </br>
 
@@ -97,12 +97,10 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 6. Your deposit is complete. The transaction has been initiated, and your funds will be visible in your zkSync wallet
    within ten confirmations of your L1 transaction.
 
-|                                                                      **Pending**                                                                       |                                                                    **Verified**                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
+| **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-
-| ![D9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D9.png) |
-![D10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D10.png) |
+| ![D9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D9.png)                                                         | ![D10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D10.png)                                                   |
 
 </br>
 
@@ -132,7 +130,7 @@ more information about account activation, see [Account Activation FAQ](./faq.md
 > The account activation fee can be seen below the transaction fee when completing your transaction.
 >
 > - To learn more about the account activation fee check our
->   [Account Activation FAQ](./faq.md#what-is-the-account-activation-fee). </br> > </br>
+>   [Account Activation FAQ](./faq.md#what-is-the-account-activation-fee). </br> </br>
 
 ![Activation fee.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Activation%20fee.png)
 
@@ -186,12 +184,10 @@ account or not, you can send them funds on zkSync to the same address they have 
 
 5. Your transfer is complete! The transaction has been initiated and the funds are ready for immediate use.
 
-|                                                                      **Pending**                                                                       |                                                                    **Verified**                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
+| **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-
-| ![S10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S10.png) |
-![S11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S11.png)
+| ![S10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S10.png)                                                       | ![S11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S11.png)                                                   |
 
 </br>
 
@@ -241,7 +237,8 @@ funds on the exchange._
 
 </br>
 
-> **Read the popup carefully to to prevent loss of funds.** > </br>
+> **Read the popup carefully to to prevent loss of funds.**  
+> </br>
 
 ![se4.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se4.png)
 
@@ -255,12 +252,10 @@ funds on the exchange._
 
 - _When network activity increases, blocks fill up faster, and withdrawal times decrease._
 
-|                                                                      **Pending**                                                                       |                                                                    **Verified**                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
+| **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-
-| ![se8.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se8.png) |
-![se9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se9.png) |
+| ![se8.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se8.png)                                                       | ![se9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se9.png)                                                   |
 
 </br>
 
@@ -385,12 +380,10 @@ to the creators of these frontends._
 
 - _When network activity increases, blocks fill up faster, and verification times decrease._
 
-|                                                 **Pending**                                                 |                                                                    **Verified**                                                                    |
-| :---------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
+| **Committed**                                                                                               | **Verified**                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-
-| ![m10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m10.png) |
-![m11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m11.png) |
+| ![m10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m10.png)            | ![m11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m11.png)                                                   |
 
 </br>
 
@@ -445,7 +438,6 @@ The Alternative Withdrawal tool is used when funds have been sent to an account 
    [Etherscan](https://etherscan.io/).
 
 - If you do not see your funds within 24 hours, please email us at withdraw@zksync.io with the following information:
-
   - 1. Your zkSync address from step 1.
   - 2. The token and the amount.
   - 3. The Ethereum transaction hash of the fee payment. <br>
