@@ -1,27 +1,8 @@
 # Roadmap
 
-[[toc]]
+This page is a work in progress. Stay tuned for a more comprehensive roadmap.
 
-## Project status
-
-- Finalizing the [Atomic Swap library](https://github.com/matter-labs/atomic-swaps)
-- Proof recursion has been integrated
-- [Numio wallet integration](https://numio.one/fast-cheap-ethereum-transactions-now-on-google-play/)
-- Checkout option in [Gitcoin Round 7](https://gitcoin.co/blog/gitcoin-grants-round-7/) and Round 8
-- [zkSync v1 is Live on Mainnet][mainnet]
-- [Security audits](/updates/security-audits.md) are being conducted before each major update
-- Testnet version is available on [Rinkeby](https://rinkeby.zksync.io) and [Ropsten](https://ropsten.zksync.io)
-- [Zinc](https://github.com/matter-labs/zinc) smart contract framework is under active development
-
-[mainnet]: https://medium.com/matter-labs/zksync-is-live-bringing-trustless-scalable-payments-to-ethereum-9c634b3e6823
-
-## Future plans
-
-We highlight some of our future plans — more details will be given at a later time.
-
-- Permissionless token listing
-- Integrations of zkSync with a variety of wallets
-- Integrations of zkSync with exchanges
-- [Smart contracts](/userdocs/sc.md)
-- Proof-of-stake consensus protocol on L2 as part of the [decentralization](/userdocs/decentralization.md) process
-- [zkSync token](/userdocs/tokenomics.md) launch
+- [zkSync 2.0](https://blog.matter-labs.io/zksync-2-0-hello-ethereum-ca48588de179)
+  - [zkSync 2.0 Testnet](https://blog.matter-labs.io/zksync-2-0-developer-update-d25417f16446)
+  - zkSync 2.0 Mainnet
+- [zkPorter](https://blog.matter-labs.io/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf)
