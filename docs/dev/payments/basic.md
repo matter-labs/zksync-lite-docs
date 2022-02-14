@@ -167,7 +167,7 @@ contract account), and there exists an L2 account which can send this type of tr
 Third one is `FullExit` priority operation.
 
 This kind of operation is called a "priority operation" since it's initiated from L1 and the smart contract provides
-[guarantees](/faq/security.md#security-overview) that either this request will be processed within a reasonable time
+[guarantees](/userdocs/security.md#security-overview) that either this request will be processed within a reasonable time
 interval, or network will be considered compromised / dead, and the contract will enter an exodus mode.
 
 This method is preferred if the user will ever experience censorship from the network operator.

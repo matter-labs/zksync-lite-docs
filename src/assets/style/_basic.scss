@@ -65,7 +65,7 @@ body {
   .button {
     transition: background-color, color $transition1;
 
-    &:hover {
+    &:not(.no-hover-effect):hover {
       color: darken($white, 10) !important;
 
       span {

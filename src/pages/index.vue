@@ -35,11 +35,11 @@
             </div>
             <z-button
               css-class='width-300'
-              href='https://zksync.curve.fi'
+              href='https://zksync.io/zkevm'
               outline="outline"
               size='md'
               target='_blank'
-            >Try <strong>Curve + zkSync</strong> testnet
+            >Learn more about <span class="gradient-zk-evm">zkEVM</span>
             </z-button>
           </div>
           <div class="textItem">
@@ -69,7 +69,7 @@
           src="@/assets/images/pages/index/decentralized.jpg"
         >
         <div class="decentralizedGrid">
-          <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="-100" data-aos-duration="1200" >
+          <div data-aos="fade-right" data-aos-delay="50" data-aos-offset="-100" data-aos-duration="1200">
             <div class="h2 _margin-bottom-2">
               Decentralized,<br>
               on principle
@@ -78,17 +78,25 @@
               <p>
                 <Emphasis/>
                 is a mission-driven project. Its purpose is to break financial barriers and enhance world’s freedom — by accelerating the mass adoption of
-                public blockchains. We take this mission to heart: check out our public <z-cta
-                href="https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02"
-              >Team Handbook</z-cta>
+                public blockchains. We take this mission to heart: check out our public
+                <z-cta
+                  href="https://www.notion.so/matterlabs/Matter-Labs-Team-Handbook-43342b471fe14f05b2baf250cb7c7a02"
+                >Team Handbook
+                </z-cta>
               </p>
               <p>While healthy pragmatism is necessary to move fast,
                 <emphasis/>
-                will never betray the ethos of crypto. Over the past two years, we’ve <z-cta
+                will never betray the ethos of crypto. Over the past two years, we’ve
+                <z-cta
                   href="https://medium.com/matter-labs/tagged/l2" target="_blank"
-                >fought relentlessly</z-cta> to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. We won’t rest until the original <z-cta
+                >fought relentlessly
+                </z-cta>
+                to make sure that the widely adopted L2 is as secure, open, and reliable as Ethereum itself. We won’t rest until the original
+                <z-cta
                   href="https://medium.com/matter-labs/introducing-zk-sync-the-missing-link-to-mass-adoption-of-ethereum-14c9cea83f58" target="_blank"
-                >zkSync vision</z-cta> is fully materialized.
+                >zkSync vision
+                </z-cta>
+                is fully materialized.
               </p>
             </div>
             <z-button class="_margin-x-xs-auto _margin-top-2" href="https://www.notion.so/matterlabs/Freedom-d36a797ff1aa47d2859f9e0c5ffbd0ab" size="lg" variant="secondary">More
@@ -126,9 +134,13 @@
               </div>
               <div class="grayText">
                 We believe that only the paranoid survive.
-                To resist even the most powerful potential adversaries, <Emphasis/> is going down the path of <z-cta :href="'/faq/decentralization.html'"
-                                                                                                                     target="_blank">progressive
-                decentralization</z-cta>
+                To resist even the most powerful potential adversaries,
+                <Emphasis/>
+                is going down the path of
+                <z-cta :href="'/userdocs/decentralization.html'"
+                       target="_blank">progressive
+                  decentralization
+                </z-cta>
               </div>
             </div>
           </div>
@@ -139,10 +151,11 @@
     <i-container class="_margin-y-lg-2 _margin-y-xs-2 communityOwned">
       <div class="topBlock _padding-bottom-2">
         <div class="h2 _padding-top-1">Owned by the community</div>
-        <div  class="grayText _margin-top-2 _margin-bottom-0">
+        <div class="grayText _margin-top-2 _margin-bottom-0">
           <p class="_margin-bottom-0">
             <Emphasis/>
-            is 100% <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta>
+            is 100%
+            <z-cta href="https://github.com/matter-labs/zksync"><i class="fab fa-github"/> open source</z-cta>
           </p>
         </div>
       </div>
@@ -232,3 +245,26 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss">
+.indexPage .codeContainer .codeGrid .textItem .button {
+  .gradient-zk-evm {
+    display: inline-flex;
+    color: transparent !important;
+    background: linear-gradient(272.04deg, #cbcbff 46.24%, #8c8dfc 99.45%) !important;
+    background-image: linear-gradient(272.04deg, #cbcbff 46.24%, #8c8dfc 99.45%) !important;
+    box-sizing: border-box !important;
+    font-weight: 700;
+    transition: all 210ms ease;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  &:hover .gradient-zk-evm {
+    color: #ffffff !important;
+    background: transparent !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+  }
+}
+</style>

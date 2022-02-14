@@ -226,7 +226,7 @@ boolean success = wallet.disable2FA("sync:8af45346a8456d7a1fc26507ce1699329efcb4
 
 ## Time range of transaction validity
 
-From version of `0.0.2` introduced new parameter of transaction. It makes possibe set validity period when
+From version of `0.0.2` introduced new parameter of transaction. It makes possible set validity period when
 transaction will be applied into blockchain. Use `io.zksync.domain.TimeRange`
 
 ```java

@@ -13,7 +13,7 @@ and judgement.
 
 ## Listing a token
 
-To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the "Submit new token" button and follow the instructions.
+To list a new token on zkSync, go the [tokens page](https://zkscan.io/explorer/tokens/) of the explorer and click the "Add New Token" button and follow the instructions.
 
 ## Fee costs
 
@@ -33,4 +33,4 @@ Transfers in **zkSync** support "gasless meta-transactions": users pay transacti
 Thus, for example, if you want to transfer DAI stable-coin, there is no need for you to own ETH or any other tokens.
 Just pay your fees in a fraction of DAI.
 
-For tokens without a liquid market price, fees are paid in a different token.
+Tokens listed on Uniswap with $500 of liquidity and a token price on CoinGecko can be used to pay for fees. For tokens without a liquid market price, fees are paid in a different token.
