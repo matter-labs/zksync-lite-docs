@@ -32,6 +32,8 @@
     "types": [
       "@types/node",
       "@nuxt/types",
+      "vuepress/config",
+      "vuepress-types"
     ]
   },
   "exclude": [
