@@ -1,3 +1,10 @@
+## [2.7.1](https://github.com/matter-labs/zksync-docs/compare/2.7.0...2.7.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* first anchor scroll ([#91](https://github.com/matter-labs/zksync-docs/issues/91)) ([81e3d80](https://github.com/matter-labs/zksync-docs/commit/81e3d808c62373e01d22fea297e05e4cb98ae939))
+
 # [2.7.0](https://github.com/matter-labs/zksync-docs/compare/2.6.0...2.7.0) (2022-02-14)
 
 
