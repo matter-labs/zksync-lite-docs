@@ -586,7 +586,7 @@ public interface EthereumProvider {
      * @return CompletableFuture for waiting for transaction mine
      */
     CompletableFuture<TransactionReceipt> deposit(Token token, BigInteger amount, String userAddress);
-   
+
     /**
      * Send withdraw transaction to ZkSync contract.
      *

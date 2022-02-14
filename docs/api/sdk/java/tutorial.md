@@ -32,7 +32,7 @@ Here you need only add just one dependency into your build configuration.
 
 ```groovy
 dependencies {
-    implementation ('io.zksync:zksync:0.0.3-b1-SNAPSHOT')
+    implementation ('io.zksync:zksync:0.0.8')
 }
 ```
 
@@ -43,7 +43,7 @@ dependencies {
     <dependency>
         <groupId>io.zksync</groupId>
         <artifactId>zksync</artifactId>
-        <version>0.0.4-SNAPSHOT</version>
+        <version>0.0.8</version>
     </dependency>
 </dependencies>
 ```
@@ -69,7 +69,7 @@ For Android adding dependencies little bit difficult because it requires in incl
 implementation("org.web3j:core:4.6.0-android")
 
 implementation 'org.scijava:native-lib-loader:2.3.4'
-implementation ('io.zksync:zksync:0.0.4-SNAPSHOT') {
+implementation ('io.zksync:zksync:0.0.8') {
     exclude group: 'io.zksync.sdk', module: 'zkscrypto'
     exclude group: 'net.java.dev.jna', module: 'jna'
 }
@@ -207,9 +207,26 @@ String balanceStr = state.getCommitted().getBalances().getOrDefault("ETH", "0");
 BigDecimal balance = Convert.fromWei(balanceStr, Convert.Unit.ETHER);
 ```
 
+## Toggle 2FA
+
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it [here](/dev/payments/sending_transactions.md#_2-factor-authentification).
+
+```java
+ZkSyncWallet wallet = ...;
+
+// Enable two factor authentication
+boolean success = wallet.enable2FA();
+
+// Disable two factor authentication
+boolean success = wallet.disable2FA(null);
+
+// Also you can disable two factor authentication for specific pubkey hash
+boolean success = wallet.disable2FA("sync:8af45346a8456d7a1fc26507ce1699329efcb4c3")
+```
+
 ## Time range of transaction validity
 
-From version of `0.0.2` introduced new parameter of transaction. It makes possibe set validity period when
+From version of `0.0.2` introduced new parameter of transaction. It makes possible set validity period when
 transaction will be applied into blockchain. Use `io.zksync.domain.TimeRange`
 
 ```java
@@ -242,14 +259,14 @@ if (!wallet.isSigningKeySet()) {
     TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                 .address(state.getAddress())
                 .transactionType(TransactionType.CHANGE_PUB_KEY)
-                .tokenIdentifier(Token.createETH())
+                .tokenIdentifier(Token.createETH().getAddress())
                 .build();
     TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 // Send transaction for setting your public key hash
 String hash = wallet.setSigningKey(
         TransactionFee.builder()
                 .fee(fee.getTotalFeeInteger())
-                .feeToken(Token.createETH())
+                .feeToken(Token.createETH().getAddress())
                 .build(),
         state.getCommitted().getNonce(),
         false,
@@ -276,7 +293,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(ethSignerAnother.getAddress())
                                 .transactionType(TransactionType.TRANSFER)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 String hash = wallet.syncTransfer(
@@ -284,7 +301,7 @@ String hash = wallet.syncTransfer(
     Convert.toWei("0.1", Convert.Unit.ETHER).toBigInteger(),
     TransactionFee.builder()
         .fee(fee.getTotalFeeInteger())
-        .feeToken(Token.createETH())
+        .feeToken(Token.createETH().getAddress())
         .build(),
     state.getCommitted().getNonce(),
     new TimeRange()
@@ -301,7 +318,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(state.getAddress())
                                 .transactionType(TransactionType.WITHDRAW)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 String hash = wallet.syncWithdraw(
@@ -414,7 +431,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(state.getAddress())
                                 .transactionType(TransactionType.MINT_NFT)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 
@@ -472,7 +489,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(state.getAddress())
                                 .transactionType(TransactionType.WITHDRAW_NFT)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 NFT token = state.getCommitted().getNfts().values().stream().findAny().get(); // Find any owned NFT
