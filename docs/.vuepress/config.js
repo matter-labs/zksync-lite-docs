@@ -253,6 +253,23 @@ module.exports = {
     },
   },
   head: [
+    // And this hack is for making anchors work
+    [
+    'script', {},
+      ` 
+      window.onload = function() {
+        requestAnimationFrame(function() {
+          if (location.hash) {
+            const element = document.getElementById(location.hash.slice(1))
+      
+            if (element) {
+              element.scrollIntoView()
+            }
+          }
+        })
+      }
+      `
+    ],
     ["script", { src: "/__/firebase/7.13.2/firebase-app.js", defer: true }, ""],
     ["script", { src: "/__/firebase/7.13.2/firebase-analytics.js", defer: true }, ""],
     ["script", { src: "/__/firebase/init.js", defer: true }, ""],
