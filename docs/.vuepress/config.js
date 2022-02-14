@@ -27,7 +27,7 @@ module.exports = {
     nav: [
       {
         text: "User Docs",
-        link: "/faq/",
+        link: "/userdocs/",
       },
       {
         text: "Developer Docs",
@@ -53,76 +53,88 @@ module.exports = {
     //displayAllHeaders: true,
     sidebar: {
       "/legal/": ["/legal/terms", "/legal/privacy"],
-      "/faq/": [
+      "/userdocs/": [
         {
           title: "Welcome to zkSync", // required
-          path: "/faq/", // optional, which should be a absolute path.
+          path: "/userdocs/", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 0, // optional, defaults to 1
         },
         {
           title: "Overview", // required
-          path: "/faq/intro.html", // optional, which should be a absolute path.
+          path: "/userdocs/intro.html", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Technology", // required
-          path: "/faq/tech", // optional, which should be a absolute path.
+          path: "/userdocs/tech", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Security", // required
-          path: "/faq/security", // optional, which should be a absolute path.
+          path: "/userdocs/security", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Learn By Watching", // required
-          path: "/faq/learnbywatching", // optional, which should be a absolute path.
+          path: "/userdocs/learnbywatching", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Wallets", // required
-          path: "/faq/wallets", // optional, which should be a absolute path.
+          path: "/userdocs/wallets", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Tokens & Fees", // required
-          path: "/faq/tokens", // optional, which should be a absolute path.
+          path: "/userdocs/tokens", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Decentralization", // required
-          path: "/faq/decentralization", // optional, which should be a absolute path.
+          path: "/userdocs/decentralization", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Tokenomics", // required
-          path: "/faq/tokenomics", // optional, which should be a absolute path.
+          path: "/userdocs/tokenomics", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Smart contracts", // required
-          path: "/faq/sc", // optional, which should be a absolute path.
+          path: "/userdocs/sc", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Privacy", // required
-          path: "/faq/privacy", // optional, which should be a absolute path.
+          path: "/userdocs/privacy", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: "Roadmap", // required
-          path: "/faq/roadmap", // optional, which should be a absolute path.
+          path: "/userdocs/roadmap", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "FAQ", // required
+          path: "/userdocs/faq", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
+          title: "Tutorials", // required
+          path: "/userdocs/tutorials", // optional, which should be a absolute path.
           collapsable: true, // optional, defaults to true
           sidebarDepth: 1, // optional, defaults to 1
         },
@@ -141,11 +153,17 @@ module.exports = {
           children: ["/dev/payments/basic", "/dev/payments/sending_transactions"],
         },
         {
+          title: "Security", // required
+          path: "/dev/security", // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+          children: ["/dev/security/approach", "/dev/security/bug-bounty", "/dev/security/disclosure", "/dev/security/bugs"],
+        },
+        {
           title: "Smart contracts", // required
           path: "/dev/contracts/", // optional, which should be a absolute path.
           collapsable: false, // optional, defaults to true
         },
-        "/dev/bug-bounty",
         "/dev/nfts",
         "/dev/swaps",
         "/dev/events",
@@ -250,35 +268,52 @@ module.exports = {
           }
         })
       }
-      
       `
     ],
-    ['script', { src: '/__/firebase/7.13.2/firebase-app.js', defer: true }, ''],
-    ['script', { src: '/__/firebase/7.13.2/firebase-analytics.js', defer: true }, ''],
-    ['script', { src: '/__/firebase/init.js', defer: true }, ''],
-    //Hack: Make clicking on the logo go to home url
+    ["script", { src: "/__/firebase/7.13.2/firebase-app.js", defer: true }, ""],
+    ["script", { src: "/__/firebase/7.13.2/firebase-analytics.js", defer: true }, ""],
+    ["script", { src: "/__/firebase/init.js", defer: true }, ""],
+    //Hack: redirects the user to the zksync.io index page when clicking on the logo
     [
       "script",
       {},
       `
-   const logoUrlChanger = setInterval(function() {
-    //Anchor above the logo image
-    const homeEls = document.getElementsByClassName("home-link");
-    if(homeEls.length > 0) {
-      const homeEl = homeEls[0];
-      homeEl.setAttribute("href", "https://zksync.io");
-      homeEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
-      clearInterval(logoUrlChanger);
-    }
+      const logoUrlChanger = setInterval(function() {
+        //Anchor above the logo image
+        const homeEls = document.getElementsByClassName("home-link");
+        if(homeEls.length > 0) {
+          const homeEl = homeEls[0];
+          homeEl.setAttribute("href", "https://zksync.io");
+          homeEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
+          clearInterval(logoUrlChanger);
+        }
 
-    //Actual logo image
-    const logoEls = document.getElementsByClassName("logo")
-    if(logoEls.length > 0) {
-      const logoEl = logoEls[0]
-      logoEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
-      clearInterval(logoUrlChanger);
-    }
-   }, 1000)`,
+        //Actual logo image
+        const logoEls = document.getElementsByClassName("logo")
+        if(logoEls.length > 0) {
+          const logoEl = logoEls[0]
+          logoEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
+          clearInterval(logoUrlChanger);
+        }
+      }, 1000)`,
+    ],
+    //Hack: scroll to anchor
+    [
+      "script",
+      {},
+      `
+      window.onload = function() {
+        requestAnimationFrame(function() {
+          if (location.hash) {
+            const element = document.getElementById(location.hash.slice(1))
+
+            if (element) {
+              element.scrollIntoView();
+            }
+          }
+        });
+      }
+      `,
     ],
   ],
 };

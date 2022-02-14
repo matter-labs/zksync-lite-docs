@@ -63,7 +63,7 @@
                 economic finality, low-cost privacy, and more.
             </div>
             <i-row center-xs>
-                <z-cta :href="'/faq/tech.html'" target="_blank" class="underlinedLink">
+                <z-cta :href="'/userdocs/tech.html'" target="_blank" class="underlinedLink">
                     How all of this works
                 </z-cta>
             </i-row>

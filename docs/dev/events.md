@@ -2,7 +2,25 @@
 
 This is a quick tutorial on how to use zkSync events API. For the detailed description of events data types, please refer to [the documentation](../api/events.md).
 
-The feature is currently available only on the Ropsten testnet. The API is not yet fully stabilized and may change in the future.
+The feature is currently available only on the mainnet, the Ropsten and Rinkeby testnet. The API is not yet fully stabilized and may change in the future.
+
+Make sure, you have selected the correct WebSocket URL for the network:
+```
+            WebSocket               Network
+wss://ropsten-events.zkscan.io  -   ropsten
+wss://events.zksync.io/         -   mainnet
+wss://rinkeby-events.zksync.io/ -   rinkeby
+```
+
+An example.
+```javascript
+...
+async function main() {
+  // Connect to the event server.
+  const ws = new WebSocket("wss://ropsten-events.zkscan.io/"); // Required
+...
+```
+
 
 [[toc]]
 
@@ -19,13 +37,13 @@ yarn add zksync ethers ws # install dependencies
 
 ## Establishing a connection
 
-The event server is located at `wss://ropsten-events.zkscan.io/`. In this tutorial, we use [ws](https://www.npmjs.com/package/ws) package, but you can use any WebSocket client library which fits your project.
+The event server is located at `wss://events.zksync.io/`. In this tutorial, we use [ws](https://www.npmjs.com/package/ws) package, but you can use any WebSocket client library which fits your project.
 
 ```javascript
 // app.js
 const WebSocket = require("ws");
 
-const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
+const ws = new WebSocket("wss://events.zksync.io/");
 ```
 
 To make sure that the connection is alive, it's a good practice to periodically send ping frames. It will also help to avoid timeout disconnects.
@@ -38,7 +56,7 @@ setInterval(function () {
 
 ## Filtering events
 
-Once the connection is established, the client is required to send a text message with his events interests. Note, that you can only do it once, if you want to change your filters, you have to create a new connection. You can find the detailed documentation on filters [here](../api/events.md#Filters).
+Once the connection is established, the client is required to send a text message with his events interests. Note, that you can only do it once, if you want to change your filters, you have to create a new connection. [Detailed documentation on filters](../api/events.md#Filters).
 
 ```javascript
 ws.on("open", function open() {
@@ -54,7 +72,7 @@ If you send an invalid object, you will receive a close frame with an error mess
 // app.js
 const WebSocket = require("ws");
 
-const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
+const ws = new WebSocket("wss://events.zksync.io/");
 
 ws.on("open", function open() {
   ws.send('{"blocks": {"status": "committed"}}'); // Should be "block"
@@ -117,7 +135,7 @@ ws.on("message", function (message) {
 });
 ```
 
-The zkSync provider can be used for displaying the token symbol and the amount in a human-readable format. The documentation for it can be found [here](../api/sdk/js/providers.md).
+The zkSync provider can be used for displaying the token symbol and the amount in a human-readable format. [Provider documentation](../api/sdk/js/providers.md).
 
 ## Full example
 
@@ -128,9 +146,9 @@ const zksync = require("zksync");
 
 async function main() {
   // Get the provider. It's important to specify the correct network.
-  const provider = await zksync.getDefaultProvider("ropsten");
+  const provider = await zksync.getDefaultProvider("mainnet");
   // Connect to the event server.
-  const ws = new WebSocket("wss://ropsten-events.zkscan.io/");
+  const ws = new WebSocket("wss://events.zksync.io/");
   console.log("Connection established");
   // Change the address to the account you're intrested in.
   const ACCOUNT_ADDRESS = "0x7ca2113e931ada26f64da66822ece493f20059b6";

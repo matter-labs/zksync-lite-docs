@@ -7,4 +7,3 @@
 ## Testnets
 
 [https://uptime.com/s/zksync-testnet](https://uptime.com/s/zksync-testnet)
-

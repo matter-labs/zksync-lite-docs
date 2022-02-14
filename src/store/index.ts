@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { ActionTree, GetterTree } from "vuex";
 
 export const state = () => {
