@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/matter-labs/zksync-docs/compare/2.6.0...2.7.0) (2022-02-14)
+
+
+### Features
+
+* zksync.io tools menu changed ([#226](https://github.com/matter-labs/zksync-docs/issues/226)) ([75603b0](https://github.com/matter-labs/zksync-docs/commit/75603b062c34f6cf7a68382838642d99298fd92d))
+
 # [2.6.0](https://github.com/matter-labs/zksync-docs/compare/2.5.3...2.6.0) (2022-01-28)
 
 
