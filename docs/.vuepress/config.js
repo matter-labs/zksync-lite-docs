@@ -250,25 +250,33 @@ module.exports = {
         },
         "/api/sdk/crypto",
       ],
+      "/zkevm": [
+        {
+          title: "zkEVM FAQ", // required
+          path: "/zkevm/", // optional, which should be a absolute path.
+          sidebarDepth: 2,
+        },
+      ],
     },
   },
   head: [
     // And this hack is for making anchors work
     [
-    'script', {},
-      ` 
+      "script",
+      {},
+      `
       window.onload = function() {
         requestAnimationFrame(function() {
           if (location.hash) {
             const element = document.getElementById(location.hash.slice(1))
-      
+
             if (element) {
               element.scrollIntoView()
             }
           }
         })
       }
-      `
+      `,
     ],
     ["script", { src: "/__/firebase/7.13.2/firebase-app.js", defer: true }, ""],
     ["script", { src: "/__/firebase/7.13.2/firebase-analytics.js", defer: true }, ""],
