@@ -1,14 +1,16 @@
-module.exports = {
+import { defineConfig } from "vuepress/config";
+import footnote_plugin from "markdown-it-footnote/dist/markdown-it-footnote.js";
+
+export default defineConfig({
+  evergreen: true,
   title: "zkSync: secure, scalable crypto payments", // adding title gives us a header with search box
-  description: "zkSync is a fully trustless user-centric zkRollup protocol for scaling payments and smart contracts on Ethereum.",
-  repo: "matter-labs/zksync",
+  description: "zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet",
   dest: "dist",
   markdown: {
-    toc: { includeLevel: [2, 3] },
-  },
-  extendMarkdown: (md) => {
-    // Add support of footnotes (like [^1]) in markdown
-    md.use(require("markdown-it-footnote"));
+    extendMarkdown: (md) => {
+      md.use(footnote_plugin);
+    },
+    toc: { includeLevel: [1, 2, 3] },
   },
   plugins: {
     "fulltext-search": {},
@@ -21,9 +23,11 @@ module.exports = {
     },
   },
   themeConfig: {
+    repo: "matter-labs/zksync-docs",
+    editLinks: true,
+    docsDir: "packages/docs/docs",
     logo: "/LogotypeLight.svg",
     lastUpdated: "Last Updated",
-    repo: "matter-labs/zksync",
     nav: [
       {
         text: "User Docs",
@@ -250,70 +254,14 @@ module.exports = {
         },
         "/api/sdk/crypto",
       ],
+      "/zkevm": [
+        {
+          title: "zkEVM FAQ", // required
+          path: "/zkevm/", // optional, which should be a absolute path.
+          sidebarDepth: 2,
+        },
+      ],
     },
   },
-  head: [
-    // And this hack is for making anchors work
-    [
-    'script', {},
-      ` 
-      window.onload = function() {
-        requestAnimationFrame(function() {
-          if (location.hash) {
-            const element = document.getElementById(location.hash.slice(1))
-      
-            if (element) {
-              element.scrollIntoView()
-            }
-          }
-        })
-      }
-      `
-    ],
-    ["script", { src: "/__/firebase/7.13.2/firebase-app.js", defer: true }, ""],
-    ["script", { src: "/__/firebase/7.13.2/firebase-analytics.js", defer: true }, ""],
-    ["script", { src: "/__/firebase/init.js", defer: true }, ""],
-    //Hack: redirects the user to the zksync.io index page when clicking on the logo
-    [
-      "script",
-      {},
-      `
-      const logoUrlChanger = setInterval(function() {
-        //Anchor above the logo image
-        const homeEls = document.getElementsByClassName("home-link");
-        if(homeEls.length > 0) {
-          const homeEl = homeEls[0];
-          homeEl.setAttribute("href", "https://zksync.io");
-          homeEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
-          clearInterval(logoUrlChanger);
-        }
-
-        //Actual logo image
-        const logoEls = document.getElementsByClassName("logo")
-        if(logoEls.length > 0) {
-          const logoEl = logoEls[0]
-          logoEl.setAttribute("onclick", "document.location='https://zksync.io';return false;");
-          clearInterval(logoUrlChanger);
-        }
-      }, 1000)`,
-    ],
-    //Hack: scroll to anchor
-    [
-      "script",
-      {},
-      `
-      window.onload = function() {
-        requestAnimationFrame(function() {
-          if (location.hash) {
-            const element = document.getElementById(location.hash.slice(1))
-
-            if (element) {
-              element.scrollIntoView();
-            }
-          }
-        });
-      }
-      `,
-    ],
-  ],
-};
+  head: [["script", { src: "/hack.js", defer: true }, ""]],
+});
