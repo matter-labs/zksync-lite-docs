@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/matter-labs/zksync-docs/compare/2.7.1...2.8.0) (2022-02-15)
+
+
+### Features
+
+* multiple changes ([#232](https://github.com/matter-labs/zksync-docs/issues/232)) ([16324a9](https://github.com/matter-labs/zksync-docs/commit/16324a9e4a0918a3f701fc3aff49f30c0b99f78c))
+
 ## [2.7.1](https://github.com/matter-labs/zksync-docs/compare/2.7.0...2.7.1) (2022-02-14)
 
 
