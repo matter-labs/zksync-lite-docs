@@ -9886,15 +9886,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.4.1":
-  version: 2.4.1
-  resolution: "prettier@npm:2.4.1"
-  bin:
-    prettier: bin-prettier.js
-  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
-  languageName: node
-  linkType: hard
-
 "prettier@npm:^1.18.2 || ^2.0.0":
   version: 2.5.1
   resolution: "prettier@npm:2.5.1"
@@ -12763,7 +12754,6 @@ __metadata:
     markdown-it-footnote: ^3.0.3
     markdownlint: ^0.24.0
     markdownlint-cli: ^0.29.0
-    prettier: 2.4.1
     vuepress: ^1.8.2
     vuepress-plugin-canonical: ^1.0.0
     vuepress-plugin-fulltext-search: ^2.2.1

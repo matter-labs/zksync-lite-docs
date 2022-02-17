@@ -21,6 +21,7 @@ An example.
 async function main() {
   // Connect to the event server.
   const ws = new WebSocket("wss://ropsten-events.zkscan.io/"); // Required
+}
 ```
 
 [[toc]]
@@ -59,7 +60,9 @@ setInterval(function () {
 
 ## Filtering events
 
-Once the connection is established, the client is required to send a text message with his events interests. Note, that you can only do it once, if you want to change your filters, you have to create a new connection. [Detailed documentation on filters](../api/events.md#Filters).
+Once the connection is established, the client is required to send a text message with his events interests. Note, that
+you can only do it once, if you want to change your filters, you have to create a new connection.
+[Detailed documentation on filters](../api/events.md#Filters).
 
 ```javascript
 ws.on('open', function open() {
@@ -140,8 +143,8 @@ ws.on('message', function (message) {
 });
 ```
 
-The zkSync provider can be used for displaying the token symbol and the amount in a human-readable format. [Provider
-documentation ](../api/sdk/js/providers.md).
+The zkSync provider can be used for displaying the token symbol and the amount in a human-readable format.
+[Provider documentation ](../api/sdk/js/providers.md).
 
 ## Full example
 

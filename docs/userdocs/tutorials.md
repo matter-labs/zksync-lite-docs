@@ -438,6 +438,7 @@ The Alternative Withdrawal tool is used when funds have been sent to an account 
    [Etherscan](https://etherscan.io/).
 
 - If you do not see your funds within 24 hours, please email us at withdraw@zksync.io with the following information:
+
   - 1. Your zkSync address from step 1.
   - 2. The token and the amount.
   - 3. The Ethereum transaction hash of the fee payment. <br>

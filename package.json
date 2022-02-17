@@ -8,8 +8,6 @@
   "homepage": "https://docs.zksync.io",
   "keywords": [
     "zksync",
-    "dev-preview",
-    "early-access",
     "zk-rollup",
     "frontend-team",
     "ethereum",
@@ -49,25 +47,15 @@
       "last 1 safari version"
     ]
   },
-  "prettier": {
-    "tabWidth": 2,
-    "printWidth": 120,
-    "parser": "markdown",
-    "singleQuote": true,
-    "trailingComma": "none",
-    "bracketSpacing": true,
-    "proseWrap": "always"
-  },
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "yarn docs:build && firebase deploy",
-    "fmt": "prettier --write \"docs/**/*.md\"",
-    "fmt:check": "prettier --check \"docs/**/*.md\"",
     "cspell": "cspell docs/**/*.md",
     "md:lint": "markdownlint -c .markdownlintrc docs",
+    "md:fix": "markdownlint --fix -c .markdownlintrc docs",
     "md:deadlinks": "check-md",
-    "ci": "yarn run fmt:check; yarn run cspell; yarn run md:lint; yarn run md:deadlinks",
+    "lint": "yarn cspell && yarn md:lint && yarn md:deadlinks",
     "semantic-release": "semantic-release",
     "postinstall": "husky install"
   },
@@ -94,15 +82,13 @@
     "cspell": "^5.12.3",
     "husky": "^7.0.4",
     "markdownlint": "^0.24.0",
-    "markdownlint-cli": "^0.29.0",
-    "prettier": "2.4.1"
+    "markdownlint-cli": "^0.29.0"
   },
   "lint-staged": {
-    "*.md": [
-      "markdownlint -c .markdownlintrc",
+    "./docs/**/*.md": [
+      "markdownlint -c .markdownlintrc --fix",
       "yarn run md:deadlinks",
-      "yarn run cspell",
-      "yarn run fmt"
+      "yarn run cspell"
     ]
   },
   "optionalDependencies": {
