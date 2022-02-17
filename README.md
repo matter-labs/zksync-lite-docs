@@ -1,9 +1,8 @@
+# zkSync v1.x Documentation
 
-# zkSync docs
+This repository contains the zkSync documentation hosted at [docs.zksync.io](https://docs.zksync.io)
 
-This repository contains the zkSync documentation hosted on <docs.zksync.io>.
-
-## Local testing
+## Local run
 
 ```bash
 yarn install --check-cache
@@ -28,7 +27,7 @@ If `cspell` doesn't recognize a word but you're sure that it's correct, consider
 
 ## Deployment
 
-`master` branch is automatically deployed to <https://console.firebase.google.com/u/0/project/zksync-js-docs>
+`master` branch is automatically deployed to <https://console.firebase.google.com/u/0/project/zksync-web-docs>
 
 # Deploying altogether
 
@@ -36,11 +35,11 @@ If `cspell` doesn't recognize a word but you're sure that it's correct, consider
 
 * install node modules;
 * prepare, test and build documentation;
-* prepare and build nuxt.js-version of the landing page of zksync.io/index.html
 * afterwards all contained into the `dist` folder will be deployed in form of the static website
 
 ```bash
-yarn zk-ci-prepare
+yarn install --check-cache
+yarn docs:build
 yarn firebase deploy
 ```
 
@@ -48,7 +47,7 @@ yarn firebase deploy
 
 ## cSpell
 
-Configuration in `.cSpell.json`:
+Configuration in `cspell.json`:
 
 * `version` — version of the setting file, always **0.1**
 * `language` — language - current active spelling language
@@ -65,7 +64,6 @@ Configuration in `.cSpell.json`:
 
 ```bash
 {
-  
   "version": "0.1",
   // language - current active spelling language
   "language": "en",
