@@ -10,9 +10,6 @@
     "line_length": 680,
     "strict": true
   },
-  "MD026": {
-    "punctuation": ".,;:!。，；：！:"
-  },
   "MD033": {
     "no-inline-html": false,
     "allowed_elements": [

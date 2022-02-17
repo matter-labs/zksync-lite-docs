@@ -49,10 +49,12 @@ yarn firebase deploy
 ## cSpell
 
 Configuration in `.cSpell.json`:
- * `version` — version of the setting file, always **0.1**
- * `language` — language - current active spelling language
- * `words[]` — words - list of words to be always considered correct
- * `dictionaries[]`
+
+* `version` — version of the setting file, always **0.1**
+* `language` — language - current active spelling language
+* `words[]` — words - list of words to be always considered correct
+* `dictionaries[]`
+
 ```
 "dictionaryDefinitions": [
     {
