@@ -26,6 +26,7 @@ MuSig
 Gluchowski
 validium
 RegeneisMultisig.sol
+zkevm
 
 // Names
 Stichting
@@ -38,7 +39,7 @@ Paypal
 Numio
 Edcon
 Arbitrum
-fundible
+Non-fungible
 
 // Used libraries
 numberish
@@ -103,14 +104,11 @@ scijava
 Vitalik
 Buterin
 Consensys
-zkevm
 
 // Dev
 mkdir
 multilanguage
 timespan
-Edcon
-Gluchowski
 satoshi
 Regeneis
 stakers
@@ -127,7 +125,6 @@ videoframe
 cslint
 incentivized
 IPFS
-Non-fundible
 Timerange
 COMMITED
 commited

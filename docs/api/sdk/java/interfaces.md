@@ -70,7 +70,7 @@ public interface ZkASyncWallet {
      * Send mint NFT transaction
      *
      * @param recipient - Ethereum address of the receiver of the NFT
-     * @param contentHash - Hash for creation Non-fundible token
+     * @param contentHash - Hash for creation Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @return - Hash of the sent transaction in hex string
@@ -82,7 +82,7 @@ public interface ZkASyncWallet {
      * NFT will be withdrawn to the wallet in Ethereum L1 network
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param timeRange - Timerange of validity of the transaction
@@ -94,7 +94,7 @@ public interface ZkASyncWallet {
      * Send transfer NFT transaction
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param timeRange - Timerange of validity of the transaction
@@ -281,7 +281,7 @@ public interface ZkSyncWallet {
      * Send mint NFT transaction
      *
      * @param recipient - Ethereum address of the receiver of the NFT
-     * @param contentHash - Hash for creation Non-fundible token
+     * @param contentHash - Hash for creation Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @return - Hash of the sent transaction in hex string
@@ -293,7 +293,7 @@ public interface ZkSyncWallet {
      * NFT will be withdrawn to the wallet in Ethereum L1 network
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param timeRange - Timerange of validity of the transaction
@@ -305,7 +305,7 @@ public interface ZkSyncWallet {
      * Send transfer NFT transaction
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param timeRange - Timerange of validity of the transaction
