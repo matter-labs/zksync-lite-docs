@@ -4,7 +4,7 @@ Due to modern web-browsers' security measures, the opening of the tab with the c
 a connection establishment via an exchange of `postMessage`-s.
 
 The protocol follows
-[web security best practices](https://developer.mozilla.org/en-US/docs/Web/library/Window/postMessage#Security_concerns),
+[web security best practices](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage#security_concerns),
 associated with cross-origin communication.
 
 The internal part of the checkout consists of the following stages:

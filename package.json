@@ -2,7 +2,7 @@
   "name": "zksync-docs",
   "description": "zkSync.io new landing",
   "private": true,
-  "version": "2.6.0",
+  "version": "2.8.0",
   "license": "MIT",
   "author": "Matter Labs",
   "homepage": "https://docs.zksync.io",
@@ -99,7 +99,7 @@
   },
   "lint-staged": {
     "*.md": [
-      "yarn run md:lint",
+      "markdownlint -c .markdownlintrc",
       "yarn run md:deadlinks",
       "yarn run cspell",
       "yarn run fmt"

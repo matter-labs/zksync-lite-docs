@@ -51,7 +51,7 @@ You can interact completely with smart contracts and the zkSync network via our 
   some additional code (for example, zkSync supports paying fees in any token, so sending a transaction will involve
   choosing a token to pay fees).
 
-You can reuse your current frontend with only minimal changes (sending transactions is different).
+You can ask questions and get assistance in our [Discord](https://discord.gg/nMaPGrDDwk) developer chat room.
 
 ### Submitting Transactions
 
