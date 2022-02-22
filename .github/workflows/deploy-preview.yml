@@ -32,4 +32,4 @@ jobs:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
           projectId: zksync-web-docs
-          channelId: v-${{ github.head_ref || github.run_id }}
+          channelId: "v-${{ github.ref || github.head_ref || github.run_id }}"
