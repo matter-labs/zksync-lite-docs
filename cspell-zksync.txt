@@ -16,6 +16,7 @@ ethop
 decentralization
 rollups
 zkrollup
+zktools
 unencrypted
 permissionless
 trustlessness
@@ -23,7 +24,9 @@ IERC
 Schnorr
 MuSig
 Gluchowski
+validium
 RegeneisMultisig.sol
+zkevm
 
 // Names
 Stichting
@@ -36,7 +39,7 @@ Paypal
 Numio
 Edcon
 Arbitrum
-fundible
+Non-fungible
 
 // Used libraries
 numberish
@@ -101,3 +104,31 @@ scijava
 Vitalik
 Buterin
 Consensys
+
+// Dev
+mkdir
+multilanguage
+timespan
+satoshi
+Regeneis
+stakers
+Arbitrum
+ecrecover
+Solana
+Vareger
+TRESHOLD
+multicall
+virtualenv
+interactor
+regenesis
+videoframe
+cslint
+incentivized
+IPFS
+Timerange
+COMMITED
+commited
+unbundle
+userbase
+bytecode
+precompilers

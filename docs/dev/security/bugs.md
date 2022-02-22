@@ -1,6 +1,7 @@
 # List of Known Bugs
 
-Below you will find a JSON-formatted list of known security-relevant bugs. The file itself is hosted in this Github repository. This list was started on January 1, 2022, and covers Version 5.2 and forward.
+Below you will find a JSON-formatted list of known security-relevant bugs. The file itself is hosted in this Github
+repository. This list was started on January 1, 2022, and covers Version 5.2 and forward.
 
 The JSON file of known vulnerabilities is a list of objects, one for each vulnerability, with the following keys:
 
@@ -18,7 +19,8 @@ The JSON file of known vulnerabilities is a list of objects, one for each vulner
 
 `fixed`: the first published zkSync version that did not contain the vulnerability anymore
 
-`severity`: severity of the vulnerability: `low`, `medium`, `high`, `critical` taking into account the severity of impact and likelihood of exploitation
+`severity`: severity of the vulnerability: `low`, `medium`, `high`, `critical` taking into account the severity of
+impact and likelihood of exploitation
 
 ```json
 [

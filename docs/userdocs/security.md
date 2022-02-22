@@ -4,8 +4,8 @@
 
 ## Security overview
 
-[zkSync protocol design](https://github.com/matter-labs/zksync/blob/f59e154865374bdc0f5ded2e2604dac599cb75ee/docs/protocol.md) explicitly lists the
-protocol's cryptographic assumptions and security properties.
+[zkSync protocol design](https://github.com/matter-labs/zksync/blob/f59e154865374bdc0f5ded2e2604dac599cb75ee/docs/protocol.md)
+explicitly lists the protocol's cryptographic assumptions and security properties.
 
 In a nutshell, the protocol's claim is that, given correct implementation and validity of cryptographic assumptions,
 funds placed into zkSync will have the same security guarantees as if they are held in an Ethereum account without any
@@ -20,9 +20,9 @@ Several mechanisms are used to fulfill these guarantees, discussed below.
 
 ### Validity proofs
 
-zkSync is built on [zkRollup architecture](/userdocs/tech#zk-rollup-architecture). This means, every single transaction is
-verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block. Thus,
-no validator can ever move the system into an incorrect state or take users' funds.
+zkSync is built on [zkRollup architecture](/userdocs/tech#zk-rollup-architecture). This means, every single transaction
+is verified by a smart contract on the Ethereum mainnet by means of verifying the proof of the validity of the block.
+Thus, no validator can ever move the system into an incorrect state or take users' funds.
 
 See [this article](https://medium.com/starkware/validity-proofs-vs-fraud-proofs-4ef8b4d3d87a) for a further overview of
 the benefits of validity proofs.
@@ -44,10 +44,16 @@ Version 1.0 of zkSync protocol comes with a contract upgrade mechanism in order 
 However, users have a fundamental right to opt-out of a future upgrade. A new upgrade must be announced via the zkSync
 contract and all users get a 4-week timelock period to exit where in case they don't like the changes.
 
-To strike a balance between security and upgradeability, the security council, a group of [15 members](https://miro.medium.com/max/1400/1*3O6eotp6AMWS3WADhS00Yg.png) of the Ethereum community, can shorten the 4-week timelock. When Matter Labs initiates an upgrade, 9/15 signatures from the security council members can make the upgrade instant. 
-At this stage of zkSync, we believe that the probability of bugs is significantly higher than a malicious collusion between the Matter Labs team and 9/15 members of the security council, who are all well-known members of the Ethereum community. You can read more about the decision to shorten the timelock period in our [Security Council 2.0 article](https://blog.matter-labs.io/security-council-2-0-2337a555f17a).
+To strike a balance between security and upgradeability, the security council, a group of
+[15 members](https://miro.medium.com/max/1400/1*3O6eotp6AMWS3WADhS00Yg.png) of the Ethereum community, can shorten the
+4-week timelock. When Matter Labs initiates an upgrade, 9/15 signatures from the security council members can make the
+upgrade instant. At this stage of zkSync, we believe that the probability of bugs is significantly higher than a
+malicious collusion between the Matter Labs team and 9/15 members of the security council, who are all well-known
+members of the Ethereum community. You can read more about the decision to shorten the timelock period in our
+[Security Council 2.0 article](https://blog.matter-labs.io/security-council-2-0-2337a555f17a).
 
-NOTICE: Once the technology is mature and stable, we will transition to a strict opt-in mechanism with immutable versions, and also provide a mass migration functionality.
+NOTICE: Once the technology is mature and stable, we will transition to a strict opt-in mechanism with immutable
+versions, and also provide a mass migration functionality.
 
 ## Cryptography used
 
@@ -84,7 +90,8 @@ scrutiny can be expected around the trusted setup ceremony.
 Another big advantage of a universal CRS is that updates and bugfixes do not require their own trusted setup ceremonies
 (which are very difficult from the logistical and security perspectives).
 
-Matter Labs participated in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve, coordinated by AZTEC protocol:
+Matter Labs participated in the global Ignition trusted setup ceremony for PLONK on BN256 elliptic curve, coordinated by
+AZTEC protocol:
 
 <table>
 <tr>
@@ -132,4 +139,7 @@ Besides security audits, we offer bug bounty program. You can read more about it
 
 ### Incentivized HackNet
 
-Each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention. Read more in our article about [upgradability](https://blog.matter-labs.io/upgradability3-934db4433b0c).
+Each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance
+of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by
+Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention. Read more in
+our article about [upgradability](https://blog.matter-labs.io/upgradability3-934db4433b0c).

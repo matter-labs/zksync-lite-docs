@@ -1,6 +1,7 @@
 # NFTs
 
-This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
+This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you
+begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
 
 - [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
 - [Mint NFT](#mint-nft)
@@ -16,10 +17,11 @@ This API reference provides descriptions for all functions regarding NFTs in zkS
 
 ## Connect to the Rinkeby testnet
 
-The NFTs are also supported on `mainnet` and `ropsten` networks. For the purposes of this tutorial, we will use the `rinkeby` testnet.
+The NFTs are also supported on `mainnet` and `ropsten` networks. For the purposes of this tutorial, we will use the
+`rinkeby` testnet.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 ```
 
 ## Mint NFT
@@ -48,20 +50,24 @@ async mintNFT(mintNft: {
 Example:
 
 ```typescript
-const contentHash = "0xbd7289936758c562235a3a42ba2c4a56cbb23a263bb8f8d27aead80d74d9d996";
+const contentHash = '0xbd7289936758c562235a3a42ba2c4a56cbb23a263bb8f8d27aead80d74d9d996';
 const nft = await syncWallet.mintNFT({
   recipient: syncWallet.address(),
   contentHash,
-  feeToken: "ETH",
-  fee,
+  feeToken: 'ETH',
+  fee
 });
 ```
 
-After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in a rollup block, and verified when a zero knowledge proof has been generated for that block and the root hash of the rollup block has been included in the smart contract on Ethereum mainnet.
+After an NFT is minted, it can be in two states: committed and verified. An NFT is committed if it has been included in
+a rollup block, and verified when a zero knowledge proof has been generated for that block and the root hash of the
+rollup block has been included in the smart contract on Ethereum mainnet.
 
 ## Transfer NFT
 
-An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following transfers can be completed with no restrictions.
+An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT
+may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following
+transfers can be completed with no restrictions.
 
 You can transfer an NFT by calling the `syncTransferNFT` function:
 
@@ -84,20 +90,22 @@ async syncTransferNFT(transfer: {
 | token    | NFT object                                               |
 | fee      | transaction fee                                          |
 
-The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions where the first handle is the NFT transfer and the second is the fee.
+The `syncTransferNFT` function works as a batched transaction under the hood, so it will return an array of transactions
+where the first handle is the NFT transfer and the second is the fee.
 
 ```typescript
 const handles = await sender.syncTransferNFT({
   to: receiver.address(),
   feeToken,
   token: nft,
-  fee,
+  fee
 });
 ```
 
 ## Swap NFT
 
-Swaps for NFTs use the same functions as fungible tokens. For more information, see [API reference](./accounts.md#swaps-in-zksync).
+Swaps for NFTs use the same functions as fungible tokens. For more information, see
+[API reference](./accounts.md#swaps-in-zksync).
 
 ## Withdraw NFT
 
@@ -132,13 +140,14 @@ const withdraw = await wallet.withdrawNFT({
   token,
   feeToken,
   fee,
-  fastProcessing,
+  fastProcessing
 });
 ```
 
 ### Emergency Withdraw
 
-In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous
+to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
 
 > Signature
 
@@ -159,7 +168,8 @@ async emergencyWithdraw(withdraw: {
 
 ### Calculate Transaction Fee
 
-To calculate the transaction fee for minting an NFT, the `getTransactionFee` method from the `Provider` class now supports transaction type `'MintNFT'`.
+To calculate the transaction fee for minting an NFT, the `getTransactionFee` method from the `Provider` class now
+supports transaction type `'MintNFT'`.
 
 > Signature
 
@@ -174,7 +184,7 @@ async getTransactionFee(
 Example:
 
 ```typescript
-const { totalFee: fee } = await syncProvider.getTransactionFee("MintNFT", syncWallet.address(), feeToken);
+const { totalFee: fee } = await syncProvider.getTransactionFee('MintNFT', syncWallet.address(), feeToken);
 ```
 
 ### View an NFT
@@ -183,7 +193,7 @@ To view an account's NFTs:
 
 ```typescript
 // Get state of account
-const state = await syncWallet.getAccountState("<account-address>");
+const state = await syncWallet.getAccountState('<account-address>');
 // View committed NFTs
 console.log(state.committed.nfts);
 // View verified NFTs
