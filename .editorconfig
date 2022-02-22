@@ -64,7 +64,6 @@ ij_vue_interpolation_new_line_before_end_delimiter = true
 ij_vue_interpolation_wrap = off
 ij_vue_keep_indents_on_empty_lines = false
 ij_vue_spaces_within_interpolation_expressions = true
-ij_vue_uniform_indent = true
 
 [.editorconfig]
 ij_editorconfig_align_group_field_declarations = false

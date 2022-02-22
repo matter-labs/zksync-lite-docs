@@ -20,6 +20,16 @@
         "type": 301
       },
       {
+        "source": "/dev/utils",
+        "destination": "/api/sdk/js/utils.html",
+        "type": 301
+      },
+      {
+        "source": "/faq",
+        "destination": "/userdocs/",
+        "type": 301
+      },
+      {
         "source": "/faq.html",
         "destination": "/userdocs/",
         "type": 301

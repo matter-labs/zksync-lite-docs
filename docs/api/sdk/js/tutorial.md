@@ -22,14 +22,14 @@ See [Appendix A](browser-bundled.md) for how to add library to web project direc
 You can import all the content of the zkSync library with the following statement:
 
 ```typescript
-import * as zksync from "zksync";
+import * as zksync from 'zksync';
 ```
 
 Note, that it is not actually required to import all of the library. For instance, if you only need the Wallet class,
 you can safely do
 
 ```typescript
-import { Wallet } from "zksync";
+import { Wallet } from 'zksync';
 ```
 
 But in the rest of the book we will assume that the library was imported the first way to differentiate content imported
@@ -40,14 +40,14 @@ from the zksync and ethers libraries.
 To interact with zkSync network users need to know the endpoint of the operator node.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider('rinkeby');
 ```
 
 Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with
 Ethereum.
 
 ```typescript
-const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const ethersProvider = ethers.getDefaultProvider('rinkeby');
 ```
 
 ## Creating a Wallet
@@ -77,8 +77,8 @@ We are going to deposit `1.0 ETH` to our zkSync account.
 ```typescript
 const deposit = await syncWallet.depositToSyncFromEthereum({
   depositTo: syncWallet.address(),
-  token: "ETH",
-  amount: ethers.utils.parseEther("1.0"),
+  token: 'ETH',
+  amount: ethers.utils.parseEther('1.0')
 });
 ```
 
@@ -103,15 +103,15 @@ To control assets in zkSync network, an account must register a separate public 
 ```typescript
 if (!(await syncWallet.isSigningKeySet())) {
   if ((await syncWallet.getAccountId()) == undefined) {
-    throw new Error("Unknown account");
+    throw new Error('Unknown account');
   }
 
   // As any other kind of transaction, `ChangePubKey` transaction requires fee.
   // User doesn't have (but can) to specify the fee amount. If omitted, library will query zkSync node for
   // the lowest possible amount.
   const changePubkey = await syncWallet.setSigningKey({
-    feeToken: "ETH",
-    ethAuthType: "ECDSA",
+    feeToken: 'ETH',
+    ethAuthType: 'ECDSA'
   });
 
   // Wait until the tx is committed
@@ -123,10 +123,10 @@ if (!(await syncWallet.isSigningKeySet())) {
 
 ```typescript
 // Committed state is not final yet
-const committedETHBalance = await syncWallet.getBalance("ETH");
+const committedETHBalance = await syncWallet.getBalance('ETH');
 
 // Verified state is final
-const verifiedETHBalance = await syncWallet.getBalance("ETH", "verified");
+const verifiedETHBalance = await syncWallet.getBalance('ETH', 'verified');
 ```
 
 To list all tokens of this account at once, use `getAccountState`:
@@ -135,10 +135,10 @@ To list all tokens of this account at once, use `getAccountState`:
 const state = await syncWallet.getAccountState();
 
 const committedBalances = state.committed.balances;
-const committedETHBalance = committedBalances["ETH"];
+const committedETHBalance = committedBalances['ETH'];
 
 const verifiedBalances = state.verified.balances;
-const committedETHBalance = verifiedBalances["ETH"];
+const committedETHBalance = verifiedBalances['ETH'];
 ```
 
 ## Making a transfer in zkSync
@@ -157,14 +157,14 @@ and `closestPackableTransactionFee()` is necessary because the precision of tran
 below).
 
 ```typescript
-const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther("0.999"));
-const fee = zksync.utils.closestPackableTransactionFee(ethers.utils.parseEther("0.001"));
+const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther('0.999'));
+const fee = zksync.utils.closestPackableTransactionFee(ethers.utils.parseEther('0.001'));
 
 const transfer = await syncWallet.syncTransfer({
   to: syncWallet2.address(),
-  token: "ETH",
+  token: 'ETH',
   amount,
-  fee,
+  fee
 });
 ```
 
@@ -172,12 +172,12 @@ Note that setting fee manually is not required. If `fee` field is omitted, SDK w
 acceptable by server:
 
 ```typescript
-const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther("0.999"));
+const amount = zksync.utils.closestPackableTransactionAmount(ethers.utils.parseEther('0.999'));
 
 const transfer = await syncWallet.syncTransfer({
   to: syncWallet2.address(),
-  token: "ETH",
-  amount,
+  token: 'ETH',
+  amount
 });
 ```
 
@@ -192,8 +192,8 @@ const transferReceipt = await transfer.awaitReceipt();
 ```typescript
 const withdraw = await syncWallet2.withdrawFromSyncToEthereum({
   ethAddress: ethWallet2.address,
-  token: "ETH",
-  amount: ethers.utils.parseEther("0.998"),
+  token: 'ETH',
+  amount: ethers.utils.parseEther('0.998')
 });
 ```
 
