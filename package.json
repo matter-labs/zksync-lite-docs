@@ -67,18 +67,23 @@
   },
   "dependencies": {
     "markdown-it-footnote": "^3.0.3",
-    "vuepress": "^1.8.2",
+    "vuepress": "^1.9.7",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "check-md": "^1.0.2",
-    "cspell": "^5.12.3",
+    "cspell": "^5.18.5",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
-    "markdownlint": "^0.24.0",
-    "markdownlint-cli": "^0.29.0"
+    "markdownlint": "^0.25.1",
+    "markdownlint-cli": "^0.31.1",
+    "semantic-release": "^19.0.2"
   },
   "lint-staged": {
     "./docs/**/*.md": [
@@ -88,7 +93,7 @@
     ]
   },
   "optionalDependencies": {
-    "fs-extra": "^9.1.0"
+    "fs-extra": "^10.0.1"
   },
   "resolutions": {
     "highlight.js": "10"
