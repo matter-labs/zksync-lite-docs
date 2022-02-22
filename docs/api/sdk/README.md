@@ -6,6 +6,8 @@ zkSync support has been implemented for various platforms:
 - [Rust](./rust)
 - [Android (Java)](./java)
 - [iOS (Swift)](./swift)
+- [Python](./python)
+- [Dart](./dart) This is an unofficial open-sourced SDK for zkSync
 
 ## Ecosystem libraries
 
