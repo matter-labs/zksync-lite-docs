@@ -1,5 +1,10 @@
 name: "Semantic release"
-"on":
+
+concurrency:
+  group: semantic-release
+  cancel-in-progress: true
+
+on:
   push:
     branches: [ master ]
 jobs:
@@ -27,6 +32,21 @@ jobs:
           yarn set version 3.1.1
           yarn install
 
+      - name: "Build & deploy to staging"
+        run: yarn docs:build
+      - uses: matter-labs/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
+          projectId: zksync-web-docs
+          target: staging
+          channelId: live
+        env:
+          APP_ENV: production
+
+      - name: "Pack generated distributive"
+        run: zip -r dist.zip dist firebase.json .firebaserc
+
       - name: "Semantic release"
         run: yarn semantic-release
         env:
@@ -34,3 +54,8 @@ jobs:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist.zip

@@ -54,7 +54,11 @@ async estimateBatchFee(
 // The following is the generalized version of the method.
 // Might be used if you just have some array of transactions
 // that you want to estimate fee for.
-async function estimateBatchFee(transactions: ZkSyncTransaction[], feeToken: TokenLike, network: EthereumNetwork): Promise<string>;
+async function estimateBatchFee(
+  transactions: ZkSyncTransaction[],
+  feeToken: TokenLike,
+  network: EthereumNetwork
+): Promise<string>;
 ```
 
 Gets an array of the zkSync transactions for the flow and the token in which the zkSync fee will be paid.
@@ -79,7 +83,11 @@ async wait(
 // The following is the generalized version of the method.
 // Might be used if you just have some array of transactions
 // that you want to wait for.
-async function wait(txHashes: string[], type: "COMMIT" | "VERIFY" = "COMMIT", network: EthereumNetwork): Promise<TransactionInfo[]>;
+async function wait(
+  txHashes: string[],
+  type: 'COMMIT' | 'VERIFY' = 'COMMIT',
+  network: EthereumNetwork
+): Promise<TransactionInfo[]>;
 ```
 
 Gets an array of the zkSync transactions' hashes and resolves with a list of the transactions' receipts.
@@ -127,7 +135,7 @@ async function checkEnoughBalance(
   feeToken: string,
   senderAddress: string,
   ethProvider: ethers.providers.BaseProvider,
-  network: EthereumNetwork,
+  network: EthereumNetwork
 ): Promise<boolean>;
 ```
 
