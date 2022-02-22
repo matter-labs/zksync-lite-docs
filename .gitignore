@@ -32,11 +32,10 @@ dist
 /.firebase
 
 # Yarn
+.pnp.*
+node_modules
 .yarn/
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
-.pnp.*
-/.eslintcache
-node_modules
