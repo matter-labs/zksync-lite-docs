@@ -14,7 +14,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-*.DS_STORE
+.DS_STORE
 build/
 .cache
 .vagrant
@@ -32,11 +32,10 @@ dist
 /.firebase
 
 # Yarn
+.pnp.*
+node_modules
 .yarn/
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
-.pnp.*
-/.eslintcache
-node_modules
