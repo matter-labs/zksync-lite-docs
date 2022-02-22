@@ -2,6 +2,7 @@
   "hosting": {
     "cleanUrls": true,
     "trailingSlash": true,
+    "target": "staging",
     "public": "dist",
     "ignore": [
       "firebase.json",
