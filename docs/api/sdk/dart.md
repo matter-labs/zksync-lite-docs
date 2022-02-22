@@ -8,7 +8,8 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 
 :::
 
-**This is an unofficial open-sourced SDK for zkSync.** [Link to GitHub repo.](https://github.com/vareger/zksync-sdk-dart)
+**This is an unofficial open-sourced SDK for zkSync.**
+[Link to GitHub repo.](https://github.com/vareger/zksync-sdk-dart)
 
 Kudos to [Vareger](https://www.vareger.com/) for developing it!
 
@@ -17,7 +18,9 @@ Kudos to [Vareger](https://www.vareger.com/) for developing it!
 [[toc]]
 
 ## Getting Started
+
 We will:
+
 1. Connect to the zkSync network.
 2. Deposit assets from Ethereum into zkSync.
 3. Make transfers.
@@ -25,12 +28,12 @@ We will:
 
 ### Adding dependencies
 
-Using this SDK requires precompiled binary of zkSync cryptography implementation.
-Please download directly from [official repo](https://github.com/zksync-sdk/zksync-crypto-c/releases)
+Using this SDK requires precompiled binary of zkSync cryptography implementation. Please download directly from
+[official repo](https://github.com/zksync-sdk/zksync-crypto-c/releases)
 
 Then just add this sdk as a dependency into your app build configuration.
 
-```yaml=
+```yaml
 name: <your_app_name>
 ...
 
@@ -44,13 +47,13 @@ dependencies:
 
 Native library is precompiled for the following platforms:
 
-##### Desktop
+#### Desktop
 
 - Linux x86_64
 - OSX x86_64 (MacOS 11 BigSur included)
 - Windows x86_64
 
-##### Android
+#### Android
 
 - Arm64-v8a
 - Armeabi-v7a
@@ -74,7 +77,8 @@ import 'package:zksync/zksync.dart'; // Main Wallet
 
 ### Creating signers
 
-All messages in zkSync network must be signed by the private key. There are two keys required: Level 1 (L1) for Ethereum and Level 2 (L2) for zkSync network.
+All messages in zkSync network must be signed by the private key. There are two keys required: Level 1 (L1) for Ethereum
+and Level 2 (L2) for zkSync network.
 
 To operate in zkSync network you need to create `ZkSigner` instance first. There are few ways to create it:
 
@@ -98,7 +102,8 @@ Using raw private key in hex
 final zkSigner = ZksSigner.hex('0x...');
 ```
 
-Using EthSigner (explained below). The private key used by ZkSigner is implicitly derived by signing a special message with Ethereum L1 key
+Using EthSigner (explained below). The private key used by ZkSigner is implicitly derived by signing a special message
+with Ethereum L1 key
 
 ```dart
 final ethSigner = ...;
@@ -108,7 +113,8 @@ final zkSigner = await ZksSigher.fromEthSigner(ethSigner, ChainId.Rinkeby);
 
 ---
 
-To interract with Ethereum L1 chain (to make a `Deposit` or `Withdraw` funds), you'll need `EthSigner` instance. It can be instantiated in several different ways:
+To interract with Ethereum L1 chain (to make a `Deposit` or `Withdraw` funds), you'll need `EthSigner` instance. It can
+be instantiated in several different ways:
 
 Using raw private key in hex
 
@@ -136,11 +142,14 @@ final credentials = web3.EthPrivateKey.fromHex(hexKey);
 
 ### Connecting to zkSync network
 
-In order to interact with both zkSync and Ethereum networks you'll need to create providers and provide endpoints to blockchain nodes.
+In order to interact with both zkSync and Ethereum networks you'll need to create providers and provide endpoints to
+blockchain nodes.
 
 #### zkSync client
 
-This SDK has predefined URLs for the following networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that are officially supported by MatterLabs. Also you can use local node for testing `ChainId.Localhost` or simply set endpoint to `http://127.0.0.1:3030`
+This SDK has predefined URLs for the following networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that are
+officially supported by MatterLabs. Also you can use local node for testing `ChainId.Localhost` or simply set endpoint
+to `http://127.0.0.1:3030`
 
 ```dart
 final zksync = ZkSyncClient.fromChainId(ChainId.Rinkeby);
@@ -169,7 +178,8 @@ final ethereum =
 
 ### Creating a Wallet
 
-To control and operate with your account in zkSync you can use the `Wallet`. It can sign transactions with the key stored in `ZkSigner` and `EthSigner`, then send signed transactions into zkSync network using `ZkSyncClient`.
+To control and operate with your account in zkSync you can use the `Wallet`. It can sign transactions with the key
+stored in `ZkSigner` and `EthSigner`, then send signed transactions into zkSync network using `ZkSyncClient`.
 
 ```dart
 final ethSigner = ...;
@@ -207,7 +217,8 @@ final balance = state.commited.balances['ETH'];
 
 ### Unlocking zkSync account
 
-In order to make any transactions in zkSync network, you'll need to register your ZkSigner's public key first. Please use the following command to do this: 
+In order to make any transactions in zkSync network, you'll need to register your ZkSigner's public key first. Please
+use the following command to do this:
 
 ```dart
 final zkSigner = ...;
@@ -221,9 +232,10 @@ print(authTx);
 
 ### Transfering funds in zkSync
 
-After funds `Deposit`ed and account `Unlock`ed, you can transfer funds inside zkSync network. 
+After funds `Deposit`ed and account `Unlock`ed, you can transfer funds inside zkSync network.
 
-> Please note, that it is possible to send assets within zkSync to any Ethereum address, without preliminary registration in zkSync!
+> Please note, that it is possible to send assets within zkSync to any Ethereum address, without preliminary
+> registration in zkSync!
 
 In the example below, we're going to transfer 0.1 ETH
 
@@ -252,7 +264,8 @@ final withdrawTx = await wallet.withdraw(
 print(withdrawTx);
 ```
 
-Assets will be withdrawn to the target address after a zero-knowledge proof of zkSync block with this operation is generated and verified by the mainnet contract (which usually takes about 2-10 min).
+Assets will be withdrawn to the target address after a zero-knowledge proof of zkSync block with this operation is
+generated and verified by the mainnet contract (which usually takes about 2-10 min).
 
 ### Forced and Full exit
 

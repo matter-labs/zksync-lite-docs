@@ -1,0 +1,37 @@
+name: "Deploy production"
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "A release version to deploy, e.g. 1.0.0"
+        required: true
+        default: "1.0.0"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Dist package
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: "tags/${{ github.event.inputs.version }}"
+          file: "dist.zip"
+          target: "dist.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Unzip Dist package
+        run: unzip dist.zip -d ./
+      - uses: matter-labs/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}'
+          channelId: live
+          target: prod
+          projectId: zksync-web-docs
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
