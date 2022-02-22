@@ -1,6 +1,6 @@
 # Interfaces
 
-## Async Wallet inteface
+## Async Wallet interface
 
 ```java
 public interface ZkASyncWallet {
@@ -19,7 +19,7 @@ public interface ZkASyncWallet {
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param onchainAuth - Use authentication onchain
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     CompletableFuture<String> setSigningKey(TransactionFee fee, Integer nonce, boolean onchainAuth, TimeRange timeRange);
@@ -31,7 +31,7 @@ public interface ZkASyncWallet {
      * @param amount - Amount of the funds to be transferred
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     CompletableFuture<String> syncTransfer(String to, BigInteger amount, TransactionFee fee, Integer nonce, TimeRange timeRange);
@@ -45,7 +45,7 @@ public interface ZkASyncWallet {
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param fastProcessing - Increase speed of the execution
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     CompletableFuture<String> syncWithdraw(String ethAddress,
@@ -61,7 +61,7 @@ public interface ZkASyncWallet {
      * @param target - Ethereum address of the receiver of the funds
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     CompletableFuture<String> syncForcedExit(String target, TransactionFee fee, Integer nonce, TimeRange timeRange);
@@ -70,7 +70,7 @@ public interface ZkASyncWallet {
      * Send mint NFT transaction
      *
      * @param recipient - Ethereum address of the receiver of the NFT
-     * @param contentHash - Hash for creation Non-fundible token
+     * @param contentHash - Hash for creation Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @return - Hash of the sent transaction in hex string
@@ -82,10 +82,10 @@ public interface ZkASyncWallet {
      * NFT will be withdrawn to the wallet in Ethereum L1 network
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     CompletableFuture<String> syncWithdrawNFT(String to, NFT token, TransactionFee fee, Integer nonce, TimeRange timeRange);
@@ -94,10 +94,10 @@ public interface ZkASyncWallet {
      * Send transfer NFT transaction
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - List of 2 hashes of the sent transactions in hex string
      */
     CompletableFuture<List<String>> syncTransferNFT(String to, NFT token, TransactionFee fee, Integer nonce, TimeRange timeRange);
@@ -230,7 +230,7 @@ public interface ZkSyncWallet {
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param onchainAuth - Use authentication onchain
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     String setSigningKey(@NotNull TransactionFee fee, @Nullable Integer nonce, @NotNull boolean onchainAuth, @Nullable TimeRange timeRange);
@@ -242,7 +242,7 @@ public interface ZkSyncWallet {
      * @param amount - Amount of the funds to be transferred
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     String syncTransfer(@NotNull String to, @NotNull BigInteger amount, @NotNull TransactionFee fee, @Nullable Integer nonce, @Nullable TimeRange timeRange);
@@ -256,7 +256,7 @@ public interface ZkSyncWallet {
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @param fastProcessing - Increase speed of the execution
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     String syncWithdraw(@NotNull String ethAddress,
@@ -272,7 +272,7 @@ public interface ZkSyncWallet {
      * @param target - Ethereum address of the receiver of the funds
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     String syncForcedExit(@NotNull String target, @NotNull TransactionFee fee, @Nullable Integer nonce, @Nullable TimeRange timeRange);
@@ -281,7 +281,7 @@ public interface ZkSyncWallet {
      * Send mint NFT transaction
      *
      * @param recipient - Ethereum address of the receiver of the NFT
-     * @param contentHash - Hash for creation Non-fundible token
+     * @param contentHash - Hash for creation Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
      * @return - Hash of the sent transaction in hex string
@@ -293,10 +293,10 @@ public interface ZkSyncWallet {
      * NFT will be withdrawn to the wallet in Ethereum L1 network
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - Hash of the sent transaction in hex string
      */
     String syncWithdrawNFT(@NotNull String to, @NotNull NFT token, @NotNull TransactionFee fee, @Nullable Integer nonce, @Nullable TimeRange timeRange);
@@ -305,10 +305,10 @@ public interface ZkSyncWallet {
      * Send transfer NFT transaction
      *
      * @param to - Ethereum address of the receiver of the NFT
-     * @param token - Existing Non-fundible token
+     * @param token - Existing Non-fungible token
      * @param fee - Fee amount for paying the transaction
      * @param nonce - Nonce value
-     * @param timeRange - Timerange of validity of the transcation
+     * @param timeRange - Timerange of validity of the transaction
      * @return - List of 2 hashes of the sent transactions in hex string
      */
     List<String> syncTransferNFT(@NotNull String to, @NotNull NFT token, @NotNull TransactionFee fee, @Nullable Integer nonce, @Nullable TimeRange timeRange);

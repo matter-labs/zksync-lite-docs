@@ -4,17 +4,20 @@
 
 ## Scope
 
-Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, irreversible loss of funds, or enforced exodus mode.
+Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, irreversible loss of
+funds, or enforced exodus mode.
 
 ## Assumptions
 
-In order to be eligible for the bug bounty, a bug should adhere to the security assumptions of zkSync. You can read more about them [here](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md#assumptions).
+In order to be eligible for the bug bounty, a bug should adhere to the security assumptions of zkSync. You can read more
+about them [here](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md#assumptions).
 
 ## Disclosure Policy
 
 Let us know as soon as possible upon discovery of a potential security issue.
 
-Provide us a reasonable amount of time to resolve the issue **before any disclosure** **to the public or a third party.**
+Provide us a reasonable amount of time to resolve the issue **before any disclosure** **to the public or a third
+party.**
 
 ### The wrong way to disclose
 
@@ -25,7 +28,8 @@ The following actions will make you ineligible for the bug bounty program:
 
 ### The right way to disclose
 
-Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciate detailed information about confirming or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
+Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciate detailed information about confirming
+or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
 
 ## Exclusions
 
@@ -55,7 +59,7 @@ The following PGP key may be used to communicate sensitive information to develo
 
 Fingerprint: `5FED B2D0 EA2C 4906 DD66 71D7 A2C5 0B40 CE3C F297`
 
-```
+```text
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQINBGEBmQkBEAD6tlkBEZFMvR8kOgxXX857nC2+oTik6TopJz4uCskuqDaeldMy
