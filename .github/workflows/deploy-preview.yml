@@ -9,6 +9,7 @@ jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - uses: actions/checkout@v2
 
