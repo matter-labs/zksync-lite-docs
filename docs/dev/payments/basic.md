@@ -96,6 +96,26 @@ checked by both zkSync server and smart contract for better security guarantees.
 
 The zkSync signature on all transaction fields must correspond to the public key provided in the transaction.
 
+::: warning
+
+To keep the default Layer-2 private key different among different networks, the message that the user signs depends on the network of the Ethereum provider of the user's wallet.
+
+That's why if your solution supports multiple chains (for example mainnet & rinkeby), please make sure that the user is signing ChangePubKey only after the transition to the correct network. Otherwise, the user will have ChangePubKey-related errors when he'll try to use zkWallet or other zkSync products and may pay for CPK one more time.
+
+:::
+
+#### Example of network validation
+```javascript
+try {
+    await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: ethereumChainId }],
+    });
+} catch (e) {
+    throw new Error("Wrong chain. Cannot sign in.");
+}
+```
+
 ### Transferring funds
 
 As mentioned above, any transfer that is valid in Ethereum, is also valid in zkSync.
