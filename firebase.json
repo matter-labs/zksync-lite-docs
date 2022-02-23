@@ -5,17 +5,17 @@
       "cleanUrls": true,
       "trailingSlash": true,
       "public": "dist",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "drafts",
-        "**/node_modules/**"
-      ],
       "rewrites": [
         {
           "source": "**",
           "destination": "/index.html"
         }
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "drafts",
+        "**/node_modules/**"
       ],
       "redirects": [
         {
@@ -90,17 +90,17 @@
       "cleanUrls": true,
       "trailingSlash": true,
       "public": "dist",
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ],
       "ignore": [
         "firebase.json",
         "**/.*",
         "drafts",
         "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
       ],
       "redirects": [
         {
@@ -117,16 +117,16 @@
           "source": "/faq/",
           "destination": "/userdocs/",
           "type": 301
-      },
-      {
-        "source": "/dev/utils",
-        "destination": "/api/sdk/js/utils.html",
-        "type": 301
-      },
-      {
-        "source": "/faq",
-        "destination": "/userdocs/",
-        "type": 301
+        },
+        {
+          "source": "/dev/utils",
+          "destination": "/api/sdk/js/utils.html",
+          "type": 301
+        },
+        {
+          "source": "/faq",
+          "destination": "/userdocs/",
+          "type": 301
         },
         {
           "source": "/faq.html",
