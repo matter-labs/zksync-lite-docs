@@ -98,7 +98,9 @@ The zkSync signature on all transaction fields must correspond to the public key
 
 ::: warning
 
-If your solution supports multiple chains ( for example mainnet & rinkeby ), please check that the user is signing ChangePubKey after the transition to the correct network. Otherwise, user will have ChangePubKeys errors when he'll try to use zkWallet or other zkSync products and should pay for CPK one more time.
+To keep the default Layer-2 private key different among different networks, the message that the user signs depends on the network of the Ethereum provider of the user's wallet.
+
+That's why if your solution supports multiple chains (for example mainnet & rinkeby), please make sure that the user is signing ChangePubKey only after the transition to the correct network. Otherwise, the user will have ChangePubKey-related errors when he'll try to use zkWallet or other zkSync products and may pay for CPK one more time.
 
 :::
 
