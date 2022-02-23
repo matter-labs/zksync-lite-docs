@@ -27,10 +27,10 @@ Currently, withdrawal times depend on the activity on zkSync, when we finalize b
 If your withdrawal is marked as "Complete" on [zkScan](https://zkscan.io/), but the funds have not arrived in your
 wallet, here are a few steps you should take:
 
-1.  Make sure that enough time has passed. A withdrawal takes 10 minutes to 7 hours, depending on the usage of the
+1. Make sure that enough time has passed. A withdrawal takes 10 minutes to 7 hours, depending on the usage of the
     zkSync network.
 
-2.  Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
+2. Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
 
         1. Open Etherscan and go to your address page.
         2. Go to "Internal Txns."
@@ -39,7 +39,7 @@ wallet, here are a few steps you should take:
 
 <br>
 
-![Internal Txns Etherescan](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/int-txns.png)
+![Internal Txns Etherescan](../images/int-txns.png)
 
 <br>
 <br>

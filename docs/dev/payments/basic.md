@@ -100,11 +100,13 @@ The zkSync signature on all transaction fields must correspond to the public key
 
 To keep the default Layer-2 private key different among different networks, the message that the user signs depends on the network of the Ethereum provider of the user's wallet.
 
-That's why if your solution supports multiple chains (for example mainnet & rinkeby), please make sure that the user is signing ChangePubKey only after the transition to the correct network. Otherwise, the user will have ChangePubKey-related errors when he'll try to use zkWallet or other zkSync products and may pay for CPK one more time.
+That's why if your solution supports multiple chains (for example mainnet & rinkeby), please make sure that the user is signing ChangePubKey only after the transition to the correct network. 
+Otherwise, the user will have ChangePubKey-related errors when he'll try to use zkWallet or other zkSync products and may pay for CPK one more time.
 
 :::
 
 #### Example of network validation
+
 ```javascript
 try {
     await window.ethereum.request({
@@ -158,7 +160,7 @@ This method is preferred for situations when you own your account and have a pri
 Second one is `ForcedExit` transaction.
 
 It is an L2 transaction that can be used to request a withdrawal from any unowned account (one that does not have a
-signing key set). Neither Ethereum address or amount can be chosen in this transaction: the only option is to request a
+signing key set). Neither Ethereum address nor amount can be chosen in this transaction: the only option is to request a
 withdrawal of **all** available funds of a certain token from the target L2 address to the target L1 address.
 
 Also, the transaction initiator should cover the fee, which is exactly the same as for `Withdraw` operation.

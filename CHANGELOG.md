@@ -1,4 +1,4 @@
-
+t
 # [2.8.0](https://github.com/matter-labs/zksync-docs/compare/2.7.1...2.8.0) (2022-02-15)
 
 
@@ -120,4 +120,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **ci:** node-saas version downgraded ([59e991e](https://github.com/matter-labs/zksync-docs/commit/59e991ed24465baeb5962b861acae11f29a04c6c))
+* **ci:** node-sass version downgraded ([59e991e](https://github.com/matter-labs/zksync-docs/commit/59e991ed24465baeb5962b861acae11f29a04c6c))

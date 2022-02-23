@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 5
+  version: 6
   cacheKey: 8
 
 "@ampproject/remapping@npm:^2.1.0":
@@ -2612,9 +2612,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:>=12":
-  version: 17.0.19
-  resolution: "@types/node@npm:17.0.19"
-  checksum: 6bbd35bfc23dd50d1aefd4ae49c31f7fd632be209dba67c0322bb4fe8b555f4bb6e894018963146ad7758ae596857d5cbecc2d46ddf90a54f6a4424811cf4351
+  version: 17.0.21
+  resolution: "@types/node@npm:17.0.21"
+  checksum: 89dcd2fe82f21d3634266f8384e9c865cf8af49685639fbdbd799bdd1040480fb1e8eeda2d3b9fce41edbe704d2a4be9f427118c4ae872e8d9bb7cbeb3c41a94
   languageName: node
   linkType: hard
 
@@ -3341,7 +3341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.4.1":
+"acorn@npm:^8.4.1, acorn@npm:^8.5.0":
   version: 8.7.0
   resolution: "acorn@npm:8.7.0"
   bin:
@@ -14902,11 +14902,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.5.5
-  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: c05c318d79c690f101d7ffb34cd6c7d6bbd884d3af9cefe7749ad0cd6be43c7082f098280982ca945dcba23fde34a08fed9602bb26540936baf8c0520727d3ba
+  checksum: 858c61fa63f7274ca4aaaffeced854d550bf416cff6e558c4884041b3311fb662f476f167cf5c9f8680c607239797e26a2ee0bcc6467fbc05bfcb218e1c6c671
   languageName: node
   linkType: hard
 

@@ -23,8 +23,11 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          yarn set version 3.1.1
+          yarn set version 3.2.0
           yarn install
+
+      - name: "Run linters (markdownlint, cspell & check-md)"
+        run: yarn ci:lint --fail-on-error
 
       - name: "Deploy preview"
         run: yarn docs:build

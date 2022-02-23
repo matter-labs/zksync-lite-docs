@@ -1,7 +1,7 @@
 # NFTs
 
 This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you
-begin with our [NFT tutorial](https://zksync.io/dev/nfts/) and come back here to reference specific functions.
+begin with our [NFT tutorial](/dev/nfts.md) and come back here to reference specific functions.
 
 - [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
 - [Mint NFT](#mint-nft)
@@ -147,7 +147,7 @@ const withdraw = await wallet.withdrawNFT({
 ### Emergency Withdraw
 
 In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous
-to our [fullExit mechanism](https://zksync.io/dev/payments/basic.html#withdrawing-funds).
+to our [fullExit mechanism](/dev/payments/basic.md#withdrawing-funds).
 
 > Signature
 

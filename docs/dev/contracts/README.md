@@ -87,7 +87,7 @@ will resume work on Zinc after Solidity is released!**
 
 ## Getting help
 
-Most questions are answered in our [zkEVM FAQ](https://zksync.io/zkevm/) and major concepts are outlined on our
+Most questions are answered in our [zkEVM FAQ](/zkevm/README.md) and major concepts are outlined on our
 [Medium](https://medium.com/matter-labs).
 
 You can ask questions and get assistance in our [Discord](https://discord.gg/5b6s7VTC) developer chat room.

@@ -1,14 +1,9 @@
 {
-  "MD002": {
-    "first-heading-h1": false
-  },
   "MD013": {
     "indent": 2,
-    "headings": false,
     "tables": false,
     "code_blocks": false,
-    "line_length": 680,
-    "strict": true
+    "line_length": 300
   },
   "MD033": {
     "no-inline-html": false,
@@ -30,16 +25,9 @@
     ]
   },
   "MD036": false,
-  "MD041": {
-    "level": 2,
-    "first-line-h1": false,
-    "first-line-heading": {
-      "first-line-h1": false
-    }
-  },
-  "first-line-heading": false,
-  "default": true,
   "fenced-code-language": false,
+  "first-heading-h1": false,
+  "first-line-heading": false,
   "no-duplicate-header": false,
   "no-hard-tabs": false,
   "ol-prefix": false,

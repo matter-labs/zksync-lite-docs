@@ -14,7 +14,7 @@ Diligence, and
 [Security & Safety Research Base](https://github.com/OffcierCia/ultimate-defi-research-base#security--safety) maintained
 by Cia Officer are three of many great resources documenting the industry’s learnings from testing in production for the
 past few years. Our contracts and cryptography are also subject to internal and
-[external audits](https://zksync.io/updates/security-audits.html).
+[external audits](https:/](/updates/security-audits.html).
 
 ## 2. **Security by isolation**
 
@@ -37,9 +37,9 @@ To strike the balance between secrecy for security’s sake and transparency, we
 - **Upgrades**: All code for upgrades is made public for one month before they go live. This gives users ample time to
   opt out of the upgrade and the whitehat community to find bugs in a trustless way via the incentivized hacknet—a
   separate mainnet instance of the upgrade with bounty funds provided inside by Matter Labs.
-- **Audits**: Full audit reports are published in our [documentation](https://zksync.io/updates/security-audits.html).
+- **Audits**: Full audit reports are published in our [documentation](/updates/security-audits.md).
 - **Vulnerability Disclosure**: All vulnerabilities must be handled silently until a fix is deployed and the Matter Labs
   team conducts a thorough internal review of not only the root cause, but also potential weak links in the overall
   security design. A public postmortem will be released with each vulnerability after systematic changes have been fully
-  implemented. Please see our [full vulnerability disclosure policy](https://zksync.io/dev/security/disclosure.html) and
-  updated [list of known bugs](https://zksync.io/dev/security/bugs.html).
+  implemented. Please see our [full vulnerability disclosure policy](/dev/security/disclosure.md) and
+  updated [list of known bugs](/dev/security/bugs.md).
