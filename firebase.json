@@ -11,6 +11,12 @@
         "drafts",
         "**/node_modules/**"
       ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
       "redirects": [
         {
           "source": "/dev/bug-bounty.html",
@@ -84,6 +90,12 @@
       "cleanUrls": true,
       "trailingSlash": true,
       "public": "dist",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
       "ignore": [
         "firebase.json",
         "**/.*",
