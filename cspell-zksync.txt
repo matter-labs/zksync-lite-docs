@@ -16,20 +16,17 @@ ethop
 decentralization
 rollups
 zkrollup
+zktools
 unencrypted
 permissionless
 trustlessness
 IERC
 Schnorr
 MuSig
-
-mainchain
-offchain
-blockchains
-sidechain
-sidechains
-tokenomics
-validator's
+Gluchowski
+validium
+RegeneisMultisig.sol
+zkevm
 
 // Names
 Stichting
@@ -40,6 +37,9 @@ Alef
 Zcon
 Paypal
 Numio
+Edcon
+Arbitrum
+Non-fungible
 
 // Used libraries
 numberish
@@ -62,8 +62,6 @@ signup
 signups
 precompiled
 checkmark
-Vitalik
-Buterin
 roadmap
 majeure
 conveniens
@@ -72,15 +70,65 @@ subsecond
 supermajority
 gemeente
 unauthorised
-Ethereum's
 SDKs
+inter alia
+unbundle
+incentivized
+upgradability
+authentification
+
+// crypto terms
+UDST
+IPFS
+satoshi
+multisignature
+onchain
+convertion
+txns
+Ethereum's
+mainchain
+offchain
+blockchains
+sidechain
+sidechains
+tokenomics
+validator's
+stakers
 
 // Famous crypto people
 Vitalik's
 Buterin's
-multisignature
-onchain
-convertion
 Keyhash
 Armeabi
 scijava
+Vitalik
+Buterin
+Consensys
+
+// Dev
+mkdir
+multilanguage
+timespan
+satoshi
+Regeneis
+stakers
+Arbitrum
+ecrecover
+Solana
+Vareger
+TRESHOLD
+multicall
+virtualenv
+interactor
+regenesis
+videoframe
+cslint
+incentivized
+IPFS
+Timerange
+COMMITED
+commited
+unbundle
+userbase
+bytecode
+precompilers

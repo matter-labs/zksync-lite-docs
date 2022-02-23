@@ -25,11 +25,10 @@ In this tutorial we will demonstrate how to:
 ZkSyncSDK can be installed (preferably in a virtualenv) using pip as follows:
 
 ```
-$ pip install git+https://github.com/zksync-sdk/zksync-python.git
+pip install git+https://github.com/zksync-sdk/zksync-python.git
 ```
 
-Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is
-the only option.
+Unfortunately, currently, SDK is not published on PyPI, thus installation through the git repository is the only option.
 
 Supporting version Python 3.8+
 
@@ -60,11 +59,12 @@ provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinke
 
 ## Ethereum signer
 
-Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum
-signature as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private
-key, but such a wallet will only be able to perform read requests to the zkSync server.
+Ethereum signer is mandatory for sending both L1 and L2 transactions since L2 transactions require an Ethereum signature
+as a part of 2-factor authentication scheme. It is possible to create a wallet without an Ethereum private key, but such
+a wallet will only be able to perform read requests to the zkSync server.
 
-Ethereum signer is represented by the `EthereumSignerInterface` abstract class from `zksync_sdk.ethereum_signer.interface`.
+Ethereum signer is represented by the `EthereumSignerInterface` abstract class from
+`zksync_sdk.ethereum_signer.interface`.
 
 By default, there is an implementation for web3 signer.
 
@@ -79,8 +79,8 @@ ethereum_signer = EthereumSignerWeb3(account=account)
 
 ## Creating a Wallet
 
-To control your account in zkSync, use the `Wallet` object. It can sign transactions with keys stored in
-`ZkSyncSigner` and send a transaction to zkSync network using `ZkSyncProviderInterface`.
+To control your account in zkSync, use the `Wallet` object. It can sign transactions with keys stored in `ZkSyncSigner`
+and send a transaction to zkSync network using `ZkSyncProviderInterface`.
 
 To create a `Wallet` object, you have to initialize `ZkSyncSigner`
 
@@ -97,8 +97,8 @@ signer_v2 = ZkSyncSigner.from_seed(library, b"seed")
 signer_v3 = ZkSyncSigner(library, b"private_key")
 ```
 
-For creating `Wallet` we have to create:
-`EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`, `ZkSyncSigner` .
+For creating `Wallet` we have to create: `EthereumProvider`, `ZkSyncLibrary`, `ZkSyncProvider`, `EthereumSigner`,
+`ZkSyncSigner` .
 
 ```python
 from web3 import Web3, HTTPProvider, Account
@@ -141,8 +141,8 @@ token = await wallet.resolve_token("USDT")
 await wallet.ethereum_provider.approve_deposit(token, Decimal(1))
 
 # Deposit money from contract to our address
-res = await wallet.ethereum_provider.deposit(token, Decimal(1),
-                                             account.address)
+deposit = await wallet.ethereum_provider.deposit(token, Decimal(1),
+                                                 account.address)
 ```
 
 You don't need to approve a deposit to transfer ETH.
@@ -153,7 +153,8 @@ To control assets in zkSync network, an account must register a separate public 
 
 ```python
 if not await wallet.is_signing_key_set():
-    await wallet.set_signing_key("ETH", eth_auth_data=ChangePubKeyEcdsa())
+    tx = await wallet.set_signing_key("ETH", eth_auth_data=ChangePubKeyEcdsa())
+    status = await tx.await_committed()
 ```
 
 ## Checking zkSync account balance
@@ -180,8 +181,9 @@ verified_dai_balance = account_state.verified.balances.get("DAI")
 For making transfer to another account you just need to set receiver amount and token
 
 ```python
-tr = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
+tx = await wallet.transfer("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
                            amount=Decimal("0.01"), token="USDC")
+status = await tx.await_committed()
 ```
 
 If you want more control over the transaction, you can optionally provide `nonce` and `fee`
@@ -195,16 +197,19 @@ When 2 signed orders are collected, they can be submitted by anyone using the `s
 ```python
 orderA = await walletA.get_order('USDT', 'ETH', Fraction(1500, 1), RatioType.token, Decimal('10.0'))
 orderB = await walletB.get_order('ETH', 'USDT', Fraction(1, 1200), RatioType.token, Decimal('0.007'))
-receipt = await submitter.swap((orderA, orderB), 'ETH')
+tx = await submitter.swap((orderA, orderB), 'ETH')
+status = await tx.await_committed()
 ```
 
-For detailed information, visit [Swaps tutorial](../../../dev/swaps.md) or [API reference](../js/accounts.md#swaps-in-zksync).
+For detailed information, visit [Swaps tutorial](../../dev/swaps.md) or
+[API reference](./js/accounts.md#swaps-in-zksync).
 
 ## Withdrawing funds back to Ethereum
 
 ```python
-await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
-                       Decimal("0.001"), "USDT")
+tx = await wallet.withdraw("0x21dDF51966f2A66D03998B0956fe59da1b3a179F",
+                           Decimal("0.001"), "USDT")
+status = await tx.await_committed()
 ```
 
 Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
@@ -212,18 +217,20 @@ generated and verified by the mainnet contract.
 
 ## NFTs
 
-For detailed information, visit the [NFT tutorial](../../../dev/nfts.md).
+For detailed information, visit the [NFT tutorial](../../dev/nfts.md).
 
 ### Minting
 
 To mint an NFT, provide a 32-byte content hash, recipient address and token which will be used to pay fees.
 
 ```python
-receipt = await wallet.mint_nft("0x0000000000000000000000000000000000000000000000000000000000000123",
-                                "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
+tx = await wallet.mint_nft("0x0000000000000000000000000000000000000000000000000000000000000123",
+                           "0x21dDF51966f2A66D03998B0956fe59da1b3a179F", "USDC")
+status = await tx.await_committed()
 ```
 
-Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just committed).
+Note that before transfering or withdrawing a freshly-minted NFT, this operation has to be verified (not just
+committed).
 
 ### Checking owned and minted NFTs
 
@@ -249,7 +256,8 @@ await self.wallet.transfer_nft("0x995a8b7f96cb837533b79775b6209696d51f435c", fir
 To withdraw an NFT, provide address to withdraw to, NFT itself and token which will be used to pay fees.
 
 ```python
-receipt = await wallet.withdraw_nft("0x21dDF51966f2A66D03998B0956fe59da1b3a179F", nft, "USDC")
+tx = await wallet.withdraw_nft("0x21dDF51966f2A66D03998B0956fe59da1b3a179F", nft, "USDC")
+status = await tx.await_committed()
 ```
 
 ## Getting information about zkSync transaction
@@ -259,4 +267,46 @@ For getting information about tx we have to use ZkSyncProviderV01
 ```python
 provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
 tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
+```
+
+## Waiting for transaction commitment and finalization
+
+To wait for transaction commitment into a zkSync block, use
+
+```python
+await tx.await_committed()
+```
+
+To wait for transaction finalization on L1, use
+
+```python
+await tx.await_verified()
+```
+
+## Supporting Two-Factor Authentication for Wallet
+
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it
+[here](/dev/payments/sending_transactions.md#_2-factor-authentication).
+
+The 2FA can be turned on or turned off using the following methods of the `Wallet` class:
+
+- enable_2fa
+- disable_2fa
+
+Both methods return `True` in case of success and `False` otherwise. Example:
+
+```python
+# Enable 2FA
+result = await self.wallet.enable_2fa()
+if result:
+    account_state = await self.wallet.get_account_state()
+    # here account_state.account_type == AccountTypes.OWNED
+
+# Disable 2FA but only to a specific pub_key_hash
+# If you want to disable 2FA for the account entirely, then simply don't provide the `pub_key_hash`
+pub_key_hash = self.wallet.zk_signer.pubkey_hash_str()
+result = await self.wallet.disable_2fa(pub_key_hash)
+if result:
+    account_state = await self.wallet.get_account_state()
+    # here account_state.account_type == AccountTypes.No2FA
 ```

@@ -4,9 +4,9 @@ The success of your project is contingent on growth.
 
 Bluntly put, there are only two approaches to scaling your crypto project.
 
-1) Introduce trust assumptions.
+1. Introduce trust assumptions.
 
-2) Rely on cryptography.
+2. Rely on cryptography.
 
 This is important. Very important.
 
@@ -17,6 +17,6 @@ links:
 
 ## move to README: If all you got is 3 minutes
 
-Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/faq/why/)
+Read this: [Why should I care about scaling with Zero-Knowledge Proofs?](/userdocs/why/)
 
 The most valuable piece on this website.

@@ -1,11 +1,47 @@
 {
-    "default": true,
-    "no-duplicate-header": false,
-    "first-header-h1": false,
-    "first-line-h1": false,
+  "MD002": {
+    "first-heading-h1": false
+  },
+  "MD013": {
+    "indent": 2,
+    "headings": false,
+    "tables": false,
+    "code_blocks": false,
+    "line_length": 680,
+    "strict": true
+  },
+  "MD033": {
     "no-inline-html": false,
-    "line-length": { "line_length": 120 },
-    "MD026": {
-     "punctuation": ".,;:!"
-     }
+    "allowed_elements": [
+      "br",
+      "label",
+      "sup",
+      "p",
+      "iframe",
+      "img",
+      "table",
+      "b",
+      "span",
+      "tr",
+      "td",
+      "div",
+      "input",
+      "aside"
+    ]
+  },
+  "MD036": false,
+  "MD041": {
+    "level": 2,
+    "first-line-h1": false,
+    "first-line-heading": {
+      "first-line-h1": false
+    }
+  },
+  "first-line-heading": false,
+  "default": true,
+  "fenced-code-language": false,
+  "no-duplicate-header": false,
+  "no-hard-tabs": false,
+  "ol-prefix": false,
+  "whitespace": false
 }

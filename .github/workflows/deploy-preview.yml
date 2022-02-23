@@ -1,0 +1,35 @@
+name: "Deploy preview"
+
+concurrency:
+  group: deploy-pr-${{ github.ref }}
+  cancel-in-progress: true
+
+on: pull_request
+jobs:
+  build_and_preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Enable yarn cache"
+        uses: c-hive/gha-yarn-cache@v2  # using cache
+
+      - name: "Setup node@14"
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: "Install dependencies"
+        run: |
+          yarn set version 3.1.1
+          yarn install
+
+      - name: "Deploy preview"
+        run: yarn docs:build
+      - uses: matter-labs/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
+          projectId: zksync-web-docs
+          channelId: "v-${{ github.ref || github.head_ref || github.run_id }}"

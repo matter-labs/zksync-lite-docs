@@ -46,14 +46,14 @@ novalidate
 
 ## Developer community
 
-Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/5b6s7VTC)!
+Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/nMaPGrDDwk)!
 
 ## User community and support
 
-- [Telegram: user support group](https://t.me/zksync_support) (new!).
-- [Telegram: community discussion group](https://t.me/zksync_community) (new!).
-- [Discord: discussions](https://discord.gg/px2aR7w).
-- Email user support: **support@zksync.io** (new!)
+- [Discord: discussions](https://discord.gg/px2aR7w)
+- [Telegram: user support group](https://t.me/zksync_support)
+- [Reddit: discussions](https://www.reddit.com/r/zkSync/)
+- Email user support: **support@zksync.io**
 
 ## Partnerships, integrations and press
 
@@ -61,9 +61,8 @@ Please reach out directly via **hello@matter-labs.io**.
 
 ## Career opportunities
 
-We are always hiring! Please check out our
-[open positions](https://www.notion.so/matterlabs/Career-at-Matter-Labs-4a69ed0f7acb45c89f662cf12dbc2464).
+We are always hiring! Please check out our [open positions](https://boards.eu.greenhouse.io/matterlabs).
 
 ## Security disclosures
 
-For the bug bounty program and vulnerability disclosures, consult our [security policy](https://github.com/matter-labs/zksync/blob/master/SECURITY.md).
+For the bug bounty program and vulnerability disclosures, consult our [security policy](/dev/security/bug-bounty).

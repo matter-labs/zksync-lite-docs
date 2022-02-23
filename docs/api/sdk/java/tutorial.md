@@ -27,12 +27,11 @@ platforms:
 
 ### Desktop
 
-Here you need only add just one dependency into your build configuration.
-`Gradle`
+Here you need only add just one dependency into your build configuration. `Gradle`
 
 ```groovy
 dependencies {
-    implementation ('io.zksync:zksync:0.0.3-b1-SNAPSHOT')
+    implementation ('io.zksync:zksync:0.0.8')
 }
 ```
 
@@ -43,7 +42,7 @@ dependencies {
     <dependency>
         <groupId>io.zksync</groupId>
         <artifactId>zksync</artifactId>
-        <version>0.0.4-SNAPSHOT</version>
+        <version>0.0.8</version>
     </dependency>
 </dependencies>
 ```
@@ -69,7 +68,7 @@ For Android adding dependencies little bit difficult because it requires in incl
 implementation("org.web3j:core:4.6.0-android")
 
 implementation 'org.scijava:native-lib-loader:2.3.4'
-implementation ('io.zksync:zksync:0.0.4-SNAPSHOT') {
+implementation ('io.zksync:zksync:0.0.8') {
     exclude group: 'io.zksync.sdk', module: 'zkscrypto'
     exclude group: 'net.java.dev.jna', module: 'jna'
 }
@@ -207,10 +206,28 @@ String balanceStr = state.getCommitted().getBalances().getOrDefault("ETH", "0");
 BigDecimal balance = Convert.fromWei(balanceStr, Convert.Unit.ETHER);
 ```
 
+## Toggle 2FA
+
+Two factor authentification is an additional protection layer enforced by zkSync server. You can read more about it
+[here] (/dev/payments/sending_transactions.md#\_2-factor-authentication).
+
+```java
+ZkSyncWallet wallet = ...;
+
+// Enable two factor authentication
+boolean success = wallet.enable2FA();
+
+// Disable two factor authentication
+boolean success = wallet.disable2FA(null);
+
+// Also you can disable two factor authentication for specific pubkey hash
+boolean success = wallet.disable2FA("sync:8af45346a8456d7a1fc26507ce1699329efcb4c3")
+```
+
 ## Time range of transaction validity
 
-From version of `0.0.2` introduced new parameter of transaction. It makes possibe set validity period when
-transaction will be applied into blockchain. Use `io.zksync.domain.TimeRange`
+From version of `0.0.2` introduced new parameter of transaction. It makes possible set validity period when transaction
+will be applied into blockchain. Use `io.zksync.domain.TimeRange`
 
 ```java
 // Default validity period from 0 until 4294967295 seconds from Unix Epoch on January 1st, 1970 at UTC
@@ -242,14 +259,14 @@ if (!wallet.isSigningKeySet()) {
     TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                 .address(state.getAddress())
                 .transactionType(TransactionType.CHANGE_PUB_KEY)
-                .tokenIdentifier(Token.createETH())
+                .tokenIdentifier(Token.createETH().getAddress())
                 .build();
     TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 // Send transaction for setting your public key hash
 String hash = wallet.setSigningKey(
         TransactionFee.builder()
                 .fee(fee.getTotalFeeInteger())
-                .feeToken(Token.createETH())
+                .feeToken(Token.createETH().getAddress())
                 .build(),
         state.getCommitted().getNonce(),
         false,
@@ -276,7 +293,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(ethSignerAnother.getAddress())
                                 .transactionType(TransactionType.TRANSFER)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 String hash = wallet.syncTransfer(
@@ -284,7 +301,7 @@ String hash = wallet.syncTransfer(
     Convert.toWei("0.1", Convert.Unit.ETHER).toBigInteger(),
     TransactionFee.builder()
         .fee(fee.getTotalFeeInteger())
-        .feeToken(Token.createETH())
+        .feeToken(Token.createETH().getAddress())
         .build(),
     state.getCommitted().getNonce(),
     new TimeRange()
@@ -301,7 +318,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(state.getAddress())
                                 .transactionType(TransactionType.WITHDRAW)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 String hash = wallet.syncWithdraw(
@@ -317,7 +334,8 @@ String hash = wallet.syncWithdraw(
 );
 ```
 
-Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is generated and verified by the mainnet contract.
+Assets will be withdrawn to the target wallet after the zero-knowledge proof of zkSync block with this operation is
+generated and verified by the mainnet contract.
 
 ## Swaps and Limit Orders
 
@@ -353,7 +371,8 @@ Order order1 = wallet.buildSignedOrder(recipient, tokenA, tokenB, new Tuple2<>(B
 
 #### Creating limit order
 
-Limit orders provide a way to exchange a certain token for another at a certain price. They are designed to be used primarily by other platforms that want to provide trustless and scalable exchange services.
+Limit orders provide a way to exchange a certain token for another at a certain price. They are designed to be used
+primarily by other platforms that want to provide trustless and scalable exchange services.
 
 The differences between an atomic swap and a limit order are:
 
@@ -377,9 +396,12 @@ Anyone can submit 2 orders for a swap if they meet the following limitations:
 - ratios in orders are compatible: 1/orderB.ratio <= orderA.amount/orderB.amount <= orderA.ratio
 - if orders have recipients, their accounts already exist in zkSync
 
-Fee is paid by the submitter, and the token it is paid in should be specified. After a swap is executed, nonce is incremented on both swapping accounts and the submitter. If swap was submitted from one of the swapping accounts, nonce is incremented only once.
+Fee is paid by the submitter, and the token it is paid in should be specified. After a swap is executed, nonce is
+incremented on both swapping accounts and the submitter. If swap was submitted from one of the swapping accounts, nonce
+is incremented only once.
 
-If the user wishes to cancel the swap that has not yet been submitted, they simply have to increment their nonce (e.g. send a zero-transfer).
+If the user wishes to cancel the swap that has not yet been submitted, they simply have to increment their nonce (e.g.
+send a zero-transfer).
 
 ```java
 ZkSyncWallet wallet = ...;
@@ -400,13 +422,16 @@ String hash = wallet.syncSwap(orderA, orderB, orderA.getAmount(), orderB.getAmou
 
 ## NFTs
 
-Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users will also be able to withdraw NFTs to Layer 1.
+Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users
+will also be able to withdraw NFTs to Layer 1.
 
-This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into your project.
+This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into
+your project.
 
 ### Mint
 
-You can mint an NFT by calling the `syncMintNFT` function from the `io.zksync.wallet.ZkSyncWallet` and `io.zksync.wallet.ZkASyncWallet` classes
+You can mint an NFT by calling the `syncMintNFT` function from the `io.zksync.wallet.ZkSyncWallet` and
+`io.zksync.wallet.ZkASyncWallet` classes
 
 ```java
 ZkSyncWallet wallet = ...;
@@ -414,7 +439,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(state.getAddress())
                                 .transactionType(TransactionType.MINT_NFT)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 
@@ -430,12 +455,15 @@ String hash = wallet.syncMintNFT(
 
 ### Transfer
 
-Users can transfer NFTs to existing accounts and transfer to addresses that have not yet registered a zkSync account.
-An NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may have to wait a few hours before it can be transferred. This only applies to the first transfer; all following transfers can be completed with no restrictions.
+Users can transfer NFTs to existing accounts and transfer to addresses that have not yet registered a zkSync account. An
+NFT can only be transferred after the block with it's mint transaction is verified. This means the newly minted NFT may
+have to wait a few hours before it can be transferred. This only applies to the first transfer; all following transfers
+can be completed with no restrictions.
 
 You can transfer an NFT by calling the `syncTransferNFT` method
 
-> Transfer NFT is actually batch of 2 transactions. First for transfer NFT itself and second is a paying fee. Therefore this method returns list of 2 transaction hashes.
+> Transfer NFT is actually batch of 2 transactions. First for transfer NFT itself and second is a paying fee. Therefore
+> this method returns list of 2 transaction hashes.
 
 ```java
 ZkSyncWallet wallet = ...;
@@ -460,7 +488,9 @@ List<String> hashes = wallet.syncTransferNFT(
 
 ### Withdraw
 
-This guide will demonstrate 2 types of withdrawals: normal and emergency, and explain under what conditions each type should be used. It also explains the architecture of the NFT token bridge between zkSync and L1, and what is needed if protocols want to implement their own NFT factory contract on L1.
+This guide will demonstrate 2 types of withdrawals: normal and emergency, and explain under what conditions each type
+should be used. It also explains the architecture of the NFT token bridge between zkSync and L1, and what is needed if
+protocols want to implement their own NFT factory contract on L1.
 
 #### Regular Withdraw
 
@@ -472,7 +502,7 @@ AccountState state = wallet.getState();
 TransactionFeeRequest feeRequest = TransactionFeeRequest.builder()
                                 .address(state.getAddress())
                                 .transactionType(TransactionType.WITHDRAW_NFT)
-                                .tokenIdentifier(Token.createETH())
+                                .tokenIdentifier(Token.createETH().getAddress())
                                 .build();
 TransactionFeeDetails fee = wallet.getProvider().getTransactionFee(feeRequest);
 NFT token = state.getCommitted().getNfts().values().stream().findAny().get(); // Find any owned NFT
@@ -487,7 +517,8 @@ String hash = wallet.syncWithdrawNFT(
 
 #### Emergency Withdraw
 
-In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous to our fullExit mechanism.
+In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous
+to our fullExit mechanism.
 
 ```java
 Web3j web3j = Web3j.build(new HttpService("http://localhost:8545"));
@@ -512,7 +543,9 @@ if (receipt.isStatusOK()) {
 
 ## Transaction build helper
 
-SDK provides helper class `io.zksync.domain.TransactionBuildHelper` for building transaction objects in several ways. It can get current account nonce from network and can estimate fee for execution of transaction. Using it you can build any supported transaction.
+SDK provides helper class `io.zksync.domain.TransactionBuildHelper` for building transaction objects in several ways. It
+can get current account nonce from network and can estimate fee for execution of transaction. Using it you can build any
+supported transaction.
 
 Here we build `Transfer` transaction
 
@@ -537,7 +570,8 @@ String hash = wallet.submitTransaction(transaction);
 
 ## Transaction processor
 
-Transactions in ZkSync have different execution statuses. You can subscribe to any of these statuses using `io.zksync.transport.receipt.ZkSyncTransactionReceiptProcessor`
+Transactions in ZkSync have different execution statuses. You can subscribe to any of these statuses using
+`io.zksync.transport.receipt.ZkSyncTransactionReceiptProcessor`
 
 ```java
 // Transaction processor supports only async therefore you need to create AsyncProvider
