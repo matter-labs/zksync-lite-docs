@@ -1,5 +1,10 @@
 name: "Deploy preview"
-"on": pull_request
+
+concurrency:
+  group: deploy-pr-${{ github.ref }}
+  cancel-in-progress: true
+
+on: pull_request
 jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
@@ -20,12 +25,11 @@ jobs:
           yarn set version 3.1.1
           yarn install
 
-      - name: "Generate & deploy the preview"
-        run: yarn run zk-ci-prepare
+      - name: "Deploy preview"
+        run: yarn docs:build
       - uses: matter-labs/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_JS_DOCS }}"
-          projectId: zksync-js-docs
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
+          projectId: zksync-web-docs
+          channelId: "v-${{ github.ref || github.head_ref || github.run_id }}"

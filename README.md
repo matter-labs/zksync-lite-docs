@@ -1,52 +1,24 @@
-# [zkSync.io](https://zksync.io/) &middot; [zkSync docs](https://zksync.io/) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/matter-labs/zksync-wallet/blob/master/LICENSE-MIT) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue)](https://github.com/matter-labs/zksync-wallet/blob/master/LICENSE-MIT)
+# [zkSync v1 Docs](https://docs.zksync.io/) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/matter-labs/zksync-docs) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matter-labs/zksync-docs/Deploy%20production)
 
-# Website zkSync.io
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/matter-labs/zksync-docs/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/zksync.svg?style=flat)](https://www.npmjs.com/package/zksync) [![Follow us!](https://img.shields.io/twitter/follow/zksync?color=%238C8DFC&label=Follow%20%40zkSync&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iNDMiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCA0MyAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Mi42NTM5IDEyLjQ5MTVMMzAuODM3OCAwLjcxNjc0M1Y5LjM0TDE5LjEwNTUgMTcuOTczOUwzMC44Mzc4IDE3Ljk4MlYyNC4yNjYyTDQyLjY1MzkgMTIuNDkxNVoiIGZpbGw9IiM0RTUyOUEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wLjk5ODA0NyAxMi40ODcyTDEyLjgxNDEgMjQuMjYxOVYxNS43MDhMMjQuNTQ2NSA3LjAwNDdMMTIuODE0MSA2Ljk5NjY0VjAuNzEyNDYzTDAuOTk4MDQ3IDEyLjQ4NzJaIiBmaWxsPSIjOEM4REZDIi8%2BCjwvc3ZnPgo%3D&style=flat)](https://twitter.com/zksync)
 
-First public release of the updated zkSync.io landing page design
 
-## [CHANGELOG](./CHANGELOG.md)
+## zkSync Documentation for the v1 | [CHANGELOG](./CHANGELOG.md)
 
-## Build Setup
-
-``` bash
-# clear possible cache && install dependencies (clear install)
-$ sh cli-dev.sh ci
-
-# populate .env file as dev environment && serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for dev
-$ build:stage
-# afterward you'll have prepared distributive in /public folder
-
-# build for production (only if you have firebase:auth) 
-$ bash cli-dev.sh ci && yarn zk-ci-prepare 
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
----
-
-## Solutions used
-
-* [Nuxt.js](https://nuxtjs.org)
-* [TS Lang](https://www.typescriptlang.org)
-* [Vue.js](https://vuejs.org)
-
-# zkSync docs
-
-This repository contains the zkSync documentation hosted on <zksync.io>.
-
-## Local testing
-
-```bash
-yarn
-yarn docs:dev
-```
+This repository contains the zkSync documentation hosted at [docs.zksync.io](https://docs.zksync.io)
 
 ## Development
 
-CI pipeline will check that the files are formatted according to `prettier`, `markdownlint` founds no issues in document
+### Local run
+
+```bash
+yarn install --check-cache
+yarn docs:dev
+```
+
+### Development
+
+CI pipeline will check that the files are formatted according `markdownlint` founds no issues in document
 and spelling is correct. Also, there should be no dead links.
 
 You can check it locally as follows:
@@ -55,7 +27,6 @@ You can check it locally as follows:
 yarn
 yarn md:lint
 yarn md:deadlinks
-yarn fmt:check
 yarn cspell
 ```
 
@@ -63,31 +34,33 @@ If `cspell` doesn't recognize a word but you're sure that it's correct, consider
 
 ## Deployment
 
-`master` branch is automatically deployed to <https://console.firebase.google.com/u/0/project/zksync-js-docs>
+`master` branch is automatically deployed to <https://console.firebase.google.com/u/0/project/zksync-web-docs>
 
-# Deploying altogether
+### Deploying altogether
 
 > will do:
 
 * install node modules;
 * prepare, test and build documentation;
-* prepare and build nuxt.js-version of the landing page of zksync.io/index.html
 * afterwards all contained into the `dist` folder will be deployed in form of the static website
 
 ```bash
-yarn zk-ci-prepare
+yarn install --check-cache
+yarn docs:build
 yarn firebase deploy
 ```
 
-# Extra documentation
+## Extra documentation
 
 ## cSpell
 
-Configuration in `.cSpell.json`:
- * `version` — version of the setting file, always **0.1**
- * `language` — language - current active spelling language
- * `words[]` — words - list of words to be always considered correct
- * `dictionaries[]`
+Configuration in `cspell.json`:
+
+* `version` — version of the setting file, always **0.1**
+* `language` — language - current active spelling language
+* `words[]` — words - list of words to be always considered correct
+* `dictionaries[]`
+
 ```
 "dictionaryDefinitions": [
     {
@@ -98,7 +71,6 @@ Configuration in `.cSpell.json`:
 
 ```bash
 {
-  
   "version": "0.1",
   // language - current active spelling language
   "language": "en",

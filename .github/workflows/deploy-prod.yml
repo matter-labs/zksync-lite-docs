@@ -1,37 +1,37 @@
 name: "Deploy production"
-"on":
-  push:
-    branches:
-      - master
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: "A release version to deploy, e.g. 1.0.0"
+        required: true
+        default: "1.0.0"
 jobs:
-  build_and_deploy:
-    if: ${{ github.event.repository.full_name == github.repository }}
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: "Enable yarn cache"
-        uses: c-hive/gha-yarn-cache@v2  # using cache
-
-      - name: "Setup node@14"
-        uses: actions/setup-node@v2
+      - name: Download Dist package
+        uses: dsaltares/fetch-gh-release-asset@master
         with:
-          node-version: 14
+          version: "tags/${{ github.event.inputs.version }}"
+          file: "dist.zip"
+          target: "dist.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install dependencies"
-        run: |
-          yarn set version 3.1.1
-          yarn install
-
-      - name: "Deploy target: prod-mainnet"
-        run: yarn run zk-ci-prepare
-
-      - name: "Deploy production"
-        uses: matter-labs/action-hosting-deploy@v0
+      - name: Unzip Dist package
+        run: unzip dist.zip -d ./
+      - uses: matter-labs/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_JS_DOCS }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}'
           channelId: live
-          projectId: zksync-js-docs
+          target: prod
+          projectId: zksync-web-docs
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels

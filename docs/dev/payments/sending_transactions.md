@@ -90,9 +90,13 @@ const withdrawEthMessage =
 // For ChangePubKey (assuming it is a stand-alone transaction, for batch see details below):
 const msgNonce = utils.hexlify(serializeNonce(nonce));
 const msgAccId = utils.hexlify(serializeAccountId(accountId));
-const pubKeyHashHex = pubKeyHash.replace("sync:", "").toLowerCase();
+const pubKeyHashHex = pubKeyHash.replace('sync:', '').toLowerCase();
 const changePubKeyEthMessage =
-  `Register zkSync pubkey:\n\n` + `${pubKeyHashHex}\n` + `nonce: ${msgNonce}\n` + `account id: ${msgAccId}\n\n` + `Only sign this message for a trusted client!`;
+  `Register zkSync pubkey:\n\n` +
+  `${pubKeyHashHex}\n` +
+  `nonce: ${msgNonce}\n` +
+  `account id: ${msgAccId}\n\n` +
+  `Only sign this message for a trusted client!`;
 ```
 
 Note that since some Ethereum signers add a prefix `\x19Ethereum Signed Message:\n${messageBytes.length}` to the signed
@@ -147,7 +151,7 @@ const bytes = concat(transactions.map((tx) => serializeTx(tx)));
 // Calculate `keccak256` hash of this byte sequence.
 const hash = ethers.utils.keccak256(bytes).slice(2);
 // Decode it into a byte sequence.
-const message = Uint8Array.from(Buffer.from(hash, "hex"));
+const message = Uint8Array.from(Buffer.from(hash, 'hex'));
 ```
 
 Requirement for adding a prefix described above still holds.
@@ -159,12 +163,15 @@ batch transactions is required to have an Ethereum signature.
 [send_batch]: /api/v0.1.md#submit-txs-batch
 [protocol]: https://github.com/matter-labs/zksync/blob/master/docs/protocol.md
 
-### 2-Factor Authentification
+### 2-Factor Authentication
 
 Why 2-factor Authentication?
 
-To ensure that the security of the users' zkSync accounts is equal to the security of their Ethereum wallets, the zkSync server requires both your layer 1 and layer 2 signatures when submitting a transaction.
+To ensure that the security of the users' zkSync accounts is equal to the security of their Ethereum wallets, the zkSync
+server requires both your layer 1 and layer 2 signatures when submitting a transaction.
 
-In some wallet clients that secure your zkSync layer 2 private key, you may choose to unbundle the two so that you can still access zkSync funds even if you lose your Ethereum private key.
+In some wallet clients that secure your zkSync layer 2 private key, you may choose to unbundle the two so that you can
+still access zkSync funds even if you lose your Ethereum private key.
 
-2FA is enabled by default, but may be turned off by [submitting](/api/sdk/js/accounts.md#toggle-2fa) such a request to our API.
+2FA is enabled by default, but may be turned off by [submitting](/api/sdk/js/accounts.md#toggle-2fa) such a request to
+our API.
