@@ -27,7 +27,7 @@ jobs:
           yarn install
 
       - name: "Run linters (markdownlint, cspell & check-md)"
-        run: yarn ci:lint --fail-on-error
+        run: yarn ci:lint
 
       - name: "Deploy preview"
         run: yarn docs:build
