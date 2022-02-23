@@ -251,7 +251,88 @@ For getting information about tx we have to use ZkSyncProviderV01
 
 ```python
 provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
-tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
+tx = await provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
+```
+
+Currently, most of the wallet methods return `Transaction` object wrapped around the transaction hash. This object has the following methods:
+
+* `await_committed` <br>
+**Description**: Consequently, this method waits until the transaction state becomes committed on the server-side.<br> But there is a possibility to set amount of attempts and timeout between attempts
+
+* `await_verified` <br>
+**Description**: This method by default waits until the transaction state becomes verified on the server-side.<br> it could take a while and it also accepts limited amount of attempts and timeout between them as parameters
+
+**Example**:
+
+```python
+# build wallet object as described above
+...
+tr = await wallet.transfer(self.receiver_address, amount=Decimal("0.01"), token="USDC")
+result = await tr.await_committed(attempts=20, attempts_timeout=100)
+```
+
+### Batch builder
+
+There is a more advanced method for the execution of many ZkSync transactions by single call. For this has been added `BatchBuilder` class.<br>
+To create an instance, you should provide `wallet` and current `nonce` where `nonce`, in simple words, is the counter of executed transactions. it can be got as simple as that:
+```python
+nonce = await wallet.zk_provider.get_account_nonce(wallet.address())
+```
+> **INFO**: When transactions are executed in batch current nonce is changed on the amount of them and it's highly recommented get current nonce by the provided method above
+
+`BatchBuilder` accepts the following list of transaction types to be batched:
+
+* `add_withdraw`
+* `add_mint_nft`
+* `add_withdraw_nft`
+* `add_swap`
+* `add_transfer`
+* `add_change_pub_key`
+* `add_force_exit`
+
+After the `BatchBuilder` object accumulated different transactions and when it's needed to execute them `build` method must be called.<br>It returns `BatchResult` object. It contains: singed transactions objects, etherium signature, and total fees
+For execution there must be called `submit_batch_builder_txs_batch` method of `ZkSyncProviderInterface` object.
+
+**Usage examples**:
+
+```python
+# change pub key and transfer example:
+
+nonce = await wallet.zk_provider.get_account_nonce(wallet.address())
+builder = BatchBuilder.from_wallet(self.wallet, nonce)
+builder.add_change_pub_key("ETH", eth_auth_type=ChangePubKeyEcdsa())
+builder.add_transfer(receiver_address, "USDT", Decimal("0.001"))
+build_result = await builder.build()
+print(f"Total fees: {build_result.total_fees}")
+transactions = await wallet.zk_provider.submit_batch_builder_txs_batch(build_result.transactions,
+                                                                            build_result.signature)
+
+# swap example:
+
+nonce1 = await wallet1.zk_provider.get_account_nonce(wallet1.address())
+nonce2 = await wallet2.zk_provider.get_account_nonce(wallet2.address())
+builder = BatchBuilder.from_wallet(wallet1, nonce1)
+test_n = 2
+for i in range(test_n):
+    order1 = await wallet1.get_order('USDT',
+                                     'ETH',
+                                      Fraction(1500, 1),
+                                      RatioType.token,
+                                      Decimal('0.1'),
+                                      nonce=nonce1 + i
+                                      )
+    order2 = await wallet2.get_order('ETH',
+                                     'USDT',
+                                      Fraction(1, 1200),
+                                      RatioType.token,
+                                      Decimal('0.00007'),
+                                      nonce=nonce2 + i)
+    builder.add_swap((order1, order2), 'ETH')
+
+build_result = await builder.build()
+print(f"Total fees: {build_result.total_fees}")
+transactions = await wallet1.zk_provider.submit_batch_builder_txs_batch(build_result.transactions,
+                                                                        build_result.signature)
 ```
 
 ## Waiting for transaction commitment and finalization
