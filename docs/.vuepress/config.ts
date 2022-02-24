@@ -43,10 +43,6 @@ export default defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
       '@vuepress/plugin-palette',
       { preset: 'sass' }
     ],
-    ['vuepress-plugin-canonical', {
-      baseURL: 'https://docs.zksync.io', // base url for your canonical link, optional, default: ''
-      stripExtension: false // strip '.html' , optional, default: false
-    }],
     ['sitemap', {
       hostname: 'https://docs.zksync.io'
     }]
@@ -64,7 +60,6 @@ export default defineUserConfig<DefaultThemeOptions, WebpackBundlerOptions>({
     sidebar,
     themePlugins: {
       nprogress: true,
-
     }
   },
   head: [
