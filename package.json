@@ -80,14 +80,25 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@vue/component-compiler-utils": "^3.3.0",
+    "@vuepress/bundler-webpack": "^2.0.0-beta.35",
+    "@vuepress/plugin-medium-zoom": "next",
+    "@vuepress/plugin-nprogress": "next",
+    "@vuepress/plugin-palette": "next",
+    "@vuepress/plugin-search": "next",
+    "@vuepress/shared-utils": "^1.9.7",
+    "@vuepress/utils": "next",
     "check-md": "^1.0.2",
     "cspell": "^5.18.5",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.2",
-    "vuepress": "^1.9.7"
+    "vuepress": "next",
+    "vuepress-plugin-sass-palette": "next"
   },
   "lint-staged": {
     "**/*.md": [

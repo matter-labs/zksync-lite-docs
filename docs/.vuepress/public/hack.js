@@ -1,4 +1,10 @@
 window.onload = () => {
+
+  if (window.location.pathname === '/')
+  {
+    window.location.replace("/userdocs/")
+  }
+
   // Script #1: Processing scroll-to-hash
   window.onhashchange = (hashEvent) => {
     if (hashEvent.oldURL !== hashEvent.newURL && hashEvent.isTrusted && window.location.hash) {
@@ -12,7 +18,7 @@ window.onload = () => {
   };
 
   // Script #2: Changing logo & home-link behaviour
-  const singleElement = document.querySelector("a.home-link");
+  const singleElement = document.querySelector("img.logo").parentElement;
   const newHost = "https://zksync.io";
 
   if (singleElement) {
