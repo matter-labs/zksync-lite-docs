@@ -603,21 +603,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mr-hope/vuepress-shared@npm:2.0.0-alpha.32":
-  version: 2.0.0-alpha.32
-  resolution: "@mr-hope/vuepress-shared@npm:2.0.0-alpha.32"
-  dependencies:
-    "@vuepress/client": 2.0.0-beta.35
-    "@vuepress/plugin-git": 2.0.0-beta.35
-    "@vuepress/plugin-theme-data": 2.0.0-beta.35
-    chalk: ^4.1.2
-    dayjs: ^1.10.7
-    ora: ^5.4.1
-    vue: ^3.2.31
-  checksum: 966e11e002b9a8e4928741e99eb472f8b08213676151a6c4dad6446f5dd09ebd76048b4f230b25c188a741fa07d9dec06aa7216c4ce09428e0c6e6bb326911b5
-  languageName: node
-  linkType: hard
-
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -1893,20 +1878,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/shared-utils@npm:^1.9.7":
-  version: 1.9.7
-  resolution: "@vuepress/shared-utils@npm:1.9.7"
+"@vuepress/shared-utils@npm:next":
+  version: 1.0.0-rc.1
+  resolution: "@vuepress/shared-utils@npm:1.0.0-rc.1"
   dependencies:
     chalk: ^2.3.2
+    diacritics: ^1.3.0
     escape-html: ^1.0.3
     fs-extra: ^7.0.1
     globby: ^9.2.0
     gray-matter: ^4.0.1
     hash-sum: ^1.0.2
     semver: ^6.0.0
-    toml: ^3.0.0
     upath: ^1.1.0
-  checksum: cb73997d46e86673c71a91d66fa34e0ffe2f60004eaa976fe012c6388d63215bd5e00bc63e4b30dc8040f0b4a03e8da07f45220dd9c4f42338b19ca80c14ac02
+  checksum: 396169dfe8bdd23b4ceb924a956c9f0270efcb7e18639f913b47ba094bb55df0af9676fa52b75a6762fc396f6942fb5031a94f31e9fbcd044c141b0430b001b5
   languageName: node
   linkType: hard
 
@@ -1946,7 +1931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/utils@npm:2.0.0-beta.35":
+"@vuepress/utils@npm:2.0.0-beta.35, @vuepress/utils@npm:next":
   version: 2.0.0-beta.35
   resolution: "@vuepress/utils@npm:2.0.0-beta.35"
   dependencies:
@@ -3835,13 +3820,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.10.7":
-  version: 1.10.7
-  resolution: "dayjs@npm:1.10.7"
-  checksum: a0a4ca95abaa03d0702161dc2c35d16121188e342f5052b9c61cdf784dab68af766f477c04f87f71c6af666fd4d13db9b9853b87265850d6093b7b04e1bb1cd7
-  languageName: node
-  linkType: hard
-
 "debug@npm:2.6.9, debug@npm:^2.2.0, debug@npm:^2.3.3":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -3928,13 +3906,6 @@ __metadata:
   version: 1.5.2
   resolution: "deepmerge@npm:1.5.2"
   checksum: 5ecfe328e0105f2c554b90af555cbba052ab4468f1893e3b26800cb8869d3c1a1c590a5bbe1fdf481a8cc89b1bc47b5ac73a7153d5a0e4b702ea6eca081038a8
-  languageName: node
-  linkType: hard
-
-"deepmerge@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "deepmerge@npm:4.2.2"
-  checksum: a8c43a1ed8d6d1ed2b5bf569fa4c8eb9f0924034baf75d5d406e47e157a451075c4db353efea7b6bcc56ec48116a8ce72fccf867b6e078e7c561904b5897530b
   languageName: node
   linkType: hard
 
@@ -5158,13 +5129,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flexsearch@npm:^0.6.32":
-  version: 0.6.32
-  resolution: "flexsearch@npm:0.6.32"
-  checksum: a46f833365174ce279d55a7dfa150e450934e52c086a3759f17b90784a7018bcec524ca8e88dca24ffa6ef17f1130d56fbb84b49c19d6f58363dac0713bf1909
-  languageName: node
-  linkType: hard
-
 "follow-redirects@npm:^1.0.0":
   version: 1.14.9
   resolution: "follow-redirects@npm:1.14.9"
@@ -5830,20 +5794,6 @@ __metadata:
   bin:
     html-minifier-terser: cli.js
   checksum: ac52c14006476f773204c198b64838477859dc2879490040efab8979c0207424da55d59df7348153f412efa45a0840a1ca3c757bf14767d23a15e3e389d37a93
-  languageName: node
-  linkType: hard
-
-"html-to-text@npm:^7.0.0":
-  version: 7.1.1
-  resolution: "html-to-text@npm:7.1.1"
-  dependencies:
-    deepmerge: ^4.2.2
-    he: ^1.2.0
-    htmlparser2: ^6.1.0
-    minimist: ^1.2.5
-  bin:
-    html-to-text: bin/cli.js
-  checksum: 5b50c08f1b4897efba185c5ecc5eb087eaf69c6d93027c39681272ab0d9a92bdac1894bcb5cf26039e8226217aa0c690d1084393b10d9570202c14b381da1406
   languageName: node
   linkType: hard
 
@@ -9660,7 +9610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.49.0, sass@npm:^1.49.8":
+"sass@npm:^1.49.0":
   version: 1.49.8
   resolution: "sass@npm:1.49.8"
   dependencies:
@@ -11205,7 +11155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.2.28, vue@npm:^3.2.31":
+"vue@npm:^3.2.28":
   version: 3.2.31
   resolution: "vue@npm:3.2.31"
   dependencies:
@@ -11215,38 +11165,6 @@ __metadata:
     "@vue/server-renderer": 3.2.31
     "@vue/shared": 3.2.31
   checksum: 2d66b563e60ce01ff4872f425b1acaf9a9f9d36f48eb986c89962d9b324c6bf566868503811462317052273b53056bbc58be3ceb06ea39dff174bb0fa62db3a2
-  languageName: node
-  linkType: hard
-
-"vuepress-plugin-canonical@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "vuepress-plugin-canonical@npm:1.0.0"
-  checksum: 2c78d38befe2f47792eec9a81adff22a64b0d69e57bc6bc7b7fd27b1ef52003a5a4ad1a7087eaedc6a7c9ceefc58297ad9b13bf07b901f1c56e16601465876cb
-  languageName: node
-  linkType: hard
-
-"vuepress-plugin-fulltext-search@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "vuepress-plugin-fulltext-search@npm:2.2.1"
-  dependencies:
-    flexsearch: ^0.6.32
-    html-to-text: ^7.0.0
-    lodash: ^4.17.19
-  peerDependencies:
-    vuepress: ^1.4.0
-  checksum: 74494c715470d58303abbedc0e38bae56b91378cb379ce23223644eba4c5e471da9d2dc5a6f01e8cd61f19994cbcba5c55f982abf9aaeb812c9552881c9502d0
-  languageName: node
-  linkType: hard
-
-vuepress-plugin-sass-palette@next:
-  version: 2.0.0-alpha.32
-  resolution: "vuepress-plugin-sass-palette@npm:2.0.0-alpha.32"
-  dependencies:
-    "@mr-hope/vuepress-shared": 2.0.0-alpha.32
-    "@vuepress/utils": 2.0.0-beta.35
-    sass: ^1.49.8
-    sass-loader: ^12.6.0
-  checksum: 0998a90bddda977b3072cf226152ad29b5e99e1d86a243402c39028ec6328631877b29bc8577904c13d2525c749e24d16cc17f433416cdc583bd84d0a6fefdbb
   languageName: node
   linkType: hard
 
@@ -11280,7 +11198,7 @@ vuepress-plugin-sass-palette@next:
   languageName: node
   linkType: hard
 
-vuepress@next:
+"vuepress@npm:next":
   version: 2.0.0-beta.35
   resolution: "vuepress@npm:2.0.0-beta.35"
   dependencies:
@@ -11734,7 +11652,8 @@ vuepress@next:
     "@vuepress/plugin-nprogress": next
     "@vuepress/plugin-palette": next
     "@vuepress/plugin-search": next
-    "@vuepress/shared-utils": ^1.9.7
+    "@vuepress/shared-utils": next
+    "@vuepress/utils": next
     check-md: ^1.0.2
     cspell: ^5.18.5
     fs-extra: ^10.0.1
@@ -11747,9 +11666,6 @@ vuepress@next:
     sass-loader: ^12.6.0
     semantic-release: ^19.0.2
     vuepress: next
-    vuepress-plugin-canonical: ^1.0.0
-    vuepress-plugin-fulltext-search: ^2.2.1
-    vuepress-plugin-sass-palette: next
     vuepress-plugin-sitemap: ^2.3.1
   dependenciesMeta:
     fs-extra:

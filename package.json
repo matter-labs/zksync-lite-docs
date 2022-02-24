@@ -69,12 +69,6 @@
   "bugs": {
     "url": "https://github.com/matter-labs/zksync-docs/issues"
   },
-  "dependencies": {
-    "markdown-it-footnote": "^3.0.3",
-    "vuepress-plugin-canonical": "^1.0.0",
-    "vuepress-plugin-fulltext-search": "^2.2.1",
-    "vuepress-plugin-sitemap": "^2.3.1"
-  },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
@@ -86,19 +80,20 @@
     "@vuepress/plugin-nprogress": "next",
     "@vuepress/plugin-palette": "next",
     "@vuepress/plugin-search": "next",
-    "@vuepress/shared-utils": "^1.9.7",
+    "@vuepress/shared-utils": "next",
     "@vuepress/utils": "next",
     "check-md": "^1.0.2",
     "cspell": "^5.18.5",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
+    "markdown-it-footnote": "^3.0.3",
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
     "node-sass": "^7.0.1",
     "sass-loader": "^12.6.0",
     "semantic-release": "^19.0.2",
     "vuepress": "next",
-    "vuepress-plugin-sass-palette": "next"
+    "vuepress-plugin-sitemap": "^2.3.1"
   },
   "lint-staged": {
     "**/*.md": [
