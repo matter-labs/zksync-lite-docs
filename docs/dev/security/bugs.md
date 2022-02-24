@@ -1,6 +1,6 @@
 # List of Known Bugs
 
-Below you will find a JSON-formatted list of known security-relevant bugs. The file itself is hosted in this Github
+Below you will find a JSON-formatted list of known security-relevant bugs. The file itself is hosted in this GitHub
 repository. This list was started on January 1, 2022, and covers Version 5.2 and forward.
 
 The JSON file of known vulnerabilities is a list of objects, one for each vulnerability, with the following keys:

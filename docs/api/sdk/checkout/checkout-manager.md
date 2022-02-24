@@ -91,7 +91,7 @@ async function wait(
 ```
 
 Gets an array of the zkSync transactions' hashes and resolves with a list of the transactions' receipts.
-`TransactionInfo` is a zkSync type specified [here](https://zksync.io/dev/providers.html#get-transaction-receipt),
+`TransactionInfo` is a zkSync type specified [here](/api/sdk/js/providers.md#get-transaction-receipt),
 extended with the transaction hash.
 
 ## getState
@@ -102,7 +102,7 @@ async getState(
 ): Promise<AccountState>
 ```
 
-```tsx
+```ts
 // The following is the generalized version of the method.
 // Might be used if you want to get the state of
 // an account on an arbitrary Ethereum network,
@@ -112,7 +112,7 @@ async function getState(address: string, network: EthereumNetwork): Promise<Acco
 
 Gets the Ethereum address of a zkSync account as a parameter and returns its state. The `AccountState` type is
 re-exported from zkSync. You can read more about it
-[here](https://zksync.io/dev/providers.html#get-account-state-by-address).
+[here](/api/sdk/js/providers.md#get-account-state-by-address).
 
 ## checkEnoughBalance
 

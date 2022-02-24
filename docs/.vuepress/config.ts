@@ -1,33 +1,34 @@
-import { defineConfig } from "vuepress/config";
-import footnote_plugin from "markdown-it-footnote/dist/markdown-it-footnote.js";
+import { defineConfig } from 'vuepress/config';
+import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.js';
 
-export default defineConfig({
-  evergreen: true,
-  title: "zkSync: secure, scalable crypto payments", // adding title gives us a header with search box
-  description: "zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet",
-  dest: "dist",
-  markdown: {
-    extendMarkdown: (md) => {
-      md.use(footnote_plugin);
-    },
-    toc: { includeLevel: [1, 2, 3] },
+export = defineConfig(_ctx => {
+  return {
+    evergreen: true,
+    title: 'zkSync: secure, scalable crypto payments', // adding title gives us a header with search box
+    description: 'zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet',
+    dest: 'dist',
+    markdown: {
+      extendMarkdown: md => {
+        md.use(footnote_plugin);
+      },
+      toc: { includeLevel: [1, 2, 3] },
     },
     plugins: {
       'fulltext-search': {},
       'vuepress-plugin-canonical': {
-        baseURL: 'https://zksync.io', // base url for your canonical link, optional, default: ''
+        baseURL: 'https://docs.zksync.io', // base url for your canonical link, optional, default: ''
         stripExtension: false, // strip '.html' , optional, default: false
       },
       sitemap: {
-        hostname: 'https://zksync.io',
+        hostname: 'https://docs.zksync.io',
       },
     },
     themeConfig: {
-      repo: "matter-labs/zksync-docs",
+      repo: 'matter-labs/zksync-docs',
       editLinks: true,
-      docsDir: "packages/docs/docs",
-      logo: "/LogotypeLight.svg",
-      lastUpdated: "Last Updated",
+      docsDir: 'packages/docs/docs',
+      logo: '/LogotypeLight.svg',
+      lastUpdated: 'Last Updated',
       nav: [
         {
           text: 'User Docs',
@@ -52,7 +53,7 @@ export default defineConfig({
         {
           text: 'Uptime',
           link: '/uptime',
-        },
+        }
       ],
       //displayAllHeaders: true,
       sidebar: {
@@ -263,6 +264,7 @@ export default defineConfig({
         ],
       },
     },
+    extraWatchFiles: ['.vuepress/config/**'],
     head: [
       ['script', { src: '/hack.js', defer: true }, ''],
       ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -280,5 +282,6 @@ export default defineConfig({
       ['link', { rel: 'icon', sizes: '96x96', type: 'image/png', href: '/android-icon-96x96.png' }],
       ['link', { rel: 'icon', sizes: '16x16', type: 'image/png', href: '/android-icon-16x16.png' }],
       ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ]
+    ],
+  };
 });

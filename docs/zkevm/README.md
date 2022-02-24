@@ -76,7 +76,7 @@ ZK Rollups can offer up to 2000 TPS at peak load! But it gets better.
 ZK Rollups are also the only L2 scaling solution that can be extended with a system that can provide an entire order of
 magnitude more scale: **zkPorter** can offer up to 20,000 TPS!
 
-![L2 comparison](https://zksync.io/scalability.png)
+![L2 comparison](/scalability.png)
 
 ### What is zkPorter?
 
@@ -222,9 +222,8 @@ We will be releasing testnet soon! Please sign up on [this form](https://forms.g
 
 ### What is the status of Zinc?
 
-We are currently fully focused on a
-[Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We
-will resume work on [Zinc](https://zksync.io/dev/contracts/#zinc) after Solidity is released!
+We are currently fully focused on a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on 
+[Zinc](/dev/contracts/README.md#zinc) after Solidity is released!
 
 ## My question wasn’t answered! ☹️
 

@@ -4,8 +4,13 @@
       "target": "prod",
       "cleanUrls": true,
       "trailingSlash": true,
-    "target": "staging",
       "public": "dist",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -91,6 +96,12 @@
         "drafts",
         "**/node_modules/**"
       ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
       "redirects": [
         {
           "source": "/dev/bug-bounty.html",
@@ -106,16 +117,16 @@
           "source": "/faq/",
           "destination": "/userdocs/",
           "type": 301
-      },
-      {
-        "source": "/dev/utils",
-        "destination": "/api/sdk/js/utils.html",
-        "type": 301
-      },
-      {
-        "source": "/faq",
-        "destination": "/userdocs/",
-        "type": 301
+        },
+        {
+          "source": "/dev/utils",
+          "destination": "/api/sdk/js/utils.html",
+          "type": 301
+        },
+        {
+          "source": "/faq",
+          "destination": "/userdocs/",
+          "type": 301
         },
         {
           "source": "/faq.html",

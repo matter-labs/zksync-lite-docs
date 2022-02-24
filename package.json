@@ -46,28 +46,31 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "yarn docs:build && firebase deploy",
-    "cspell": "cspell docs/**/*.md",
-    "md:lint": "markdownlint -c .markdownlintrc -p .markdownlintignore docs/**/*.md",
-    "md:fix": "markdownlint --fix -c .markdownlintrc -p .markdownlintignore docs/**/*.md",
+    "cspell": "cspell lint --no-summary --fail-fast --no-progress --no-must-find-files -c cspell.json docs/**/*.md ",
+    "md:lint": "markdownlint --config .markdownlintrc ./docs/**/*.md",
+    "md:fix": "markdownlint --fix -c .markdownlintrc ./docs/**/*.md",
     "md:deadlinks": "check-md",
-    "lint": "yarn cspell && yarn md:lint && yarn md:deadlinks",
+    "ci:lint": "yarn cspell && yarn md:lint && yarn md:deadlinks",
     "semantic-release": "semantic-release",
     "postinstall": "husky install"
   },
   "check-md": {
-    "cwd": "./docs",
     "defaultIndex": [
       "README.md"
     ],
     "exitLevel": "warn",
-    "ignoreFootnotes": true
+    "ignoreFootnotes": true,
+    "preset": "vuepress",
+    "root": [
+      "./",
+      "./.vuepress/public"
+    ]
   },
   "bugs": {
     "url": "https://github.com/matter-labs/zksync-docs/issues"
   },
   "dependencies": {
     "markdown-it-footnote": "^3.0.3",
-    "vuepress": "^1.9.7",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-sitemap": "^2.3.1"
@@ -83,13 +86,14 @@
     "lint-staged": "^12.3.4",
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
-    "semantic-release": "^19.0.2"
+    "semantic-release": "^19.0.2",
+    "vuepress": "^1.9.7"
   },
   "lint-staged": {
-    "./docs/**/*.md": [
-      "markdownlint -c .markdownlintrc --fix",
-      "yarn run md:deadlinks",
-      "yarn run cspell"
+    "**/*.md": [
+      "markdownlint --fix",
+      "check-md",
+      "cspell lint --config cspell.json"
     ]
   },
   "optionalDependencies": {
@@ -98,5 +102,5 @@
   "resolutions": {
     "highlight.js": "10"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0"
 }
