@@ -58,19 +58,13 @@ readable representation of the transaction and signature check is performed when
 > Signature
 
 ```typescript
-static async
-fromEthSigner(
-  ethWallet
-:
-ethers.Signer,
-  provider
-:
-Provider,
-  signer ? : Signer
-accountId ? : number,
-  ethSignatureType ? : EthSignerType
-):
-Promise<Wallet>;
+static async fromEthSigner(
+  ethWallet: ethers.Signer,
+  provider: Provider,
+  signer?: Signer,
+  accountId?: number,
+  ethSignatureType?: EthSignerType
+): Promise<Wallet>;
 ```
 
 #### Inputs and outputs
@@ -87,11 +81,11 @@ Promise<Wallet>;
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
@@ -102,18 +96,12 @@ const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
 > Signature
 
 ```typescript
-static async
-fromEthSignerNoKeys(
-  ethWallet
-:
-ethers.Signer,
-  provider
-:
-Provider,
-  accountId ? : number,
-  ethSignatureType ? : EthSignerType
-):
-Promise<Wallet>;
+static async fromEthSignerNoKeys(
+  ethWallet: ethers.Signer,
+  provider: Provider,
+  accountId?: number,
+  ethSignatureType?: EthSignerType
+): Promise<Wallet>;
 ```
 
 This way wallet won't contain any valid zkSync keys to perform transactions, but some of the operations can be used
@@ -132,11 +120,11 @@ without them, such as Deposit, Emergency exit and reading the account state.
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvider);
@@ -157,20 +145,12 @@ users from existing L1 addresses.
 > Signature
 
 ```typescript
-static async
-fromCreate2Data(
-  syncSigner
-:
-Signer,
-  provider
-:
-Provider,
-  create2Data
-:
-Create2Data,
-  accountId ? : number
-):
-Promise<Wallet>;
+static async fromCreate2Data(
+  syncSigner: Signer,
+  provider: Provider,
+  create2Data: Create2Data,
+  accountId?: number
+): Promise<Wallet>;
 ```
 
 #### Inputs and outputs
@@ -186,10 +166,10 @@ Promise<Wallet>;
 > Example
 
 ```typescript
-import * as zksync from 'zksync';
-import { ethers } from 'ethers';
+import * as zksync from "zksync";
+import { ethers } from "ethers";
 
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const syncProvider = await zksync.getDefaultProvider("rinkeby");
 const signer = await zksync.Signer.fromSeed(ethers.utils.randomBytes(32));
 const randomHex = (length: number) => {
   const bytes = ethers.utils.randomBytes(length);
@@ -198,7 +178,7 @@ const randomHex = (length: number) => {
 const create2Data = {
   creatorAddress: randomHex(20),
   saltArg: randomHex(32),
-  codeHash: randomHex(32)
+  codeHash: randomHex(32),
 };
 const syncWallet = await zksync.Wallet.fromCreate2Data(signer, syncProvider, create2Data);
 ```
@@ -210,10 +190,7 @@ Same as [Get account state from provider](providers.md#get-account-state-by-addr
 > Signature
 
 ```typescript
-async
-getAccountState()
-:
-Promise<AccountState>;
+async getAccountState(): Promise<AccountState>;
 ```
 
 #### Inputs and outputs
@@ -229,10 +206,7 @@ For convenience it is possible to obtain the account ID.
 > Signature
 
 ```typescript
-async
-getAccountId()
-:
-Promise<number | undefined>;
+async getAccountId(): Promise<number | undefined>;
 ```
 
 #### Inputs and outputs
@@ -249,12 +223,7 @@ committed one as the fallback.
 > Signature
 
 ```typescript
-async
-getNonce(nonce
-:
-Nonce = 'committed'
-):
-Promise<number>
+async getNonce(nonce: Nonce = 'committed'): Promise<number>
 ```
 
 #### Inputs and outputs
@@ -269,16 +238,10 @@ Promise<number>
 > Signature
 
 ```typescript
-async
-getBalance(
-  token
-:
-TokenLike,
-  type
-:
-"committed" | "verified" = "committed"
-):
-Promise<ethers.utils.BigNumber>;
+async getBalance(
+  token: TokenLike,
+  type: "committed" | "verified" = "committed"
+): Promise<ethers.utils.BigNumber>;
 ```
 
 #### Inputs and outputs
@@ -292,9 +255,7 @@ Promise<ethers.utils.BigNumber>;
 > Example
 
 ```typescript
-const wallet =
-..
-;// setup wallet
+const wallet = ..; // setup wallet
 
 // Get committed Ethereum balance.
 const ethCommittedBalance = await getBalance("ETH");
@@ -311,12 +272,7 @@ network.
 > Signature
 
 ```typescript
-async
-getEthereumBalance(token
-:
-TokenLike
-):
-Promise<utils.BigNumber>;
+async getEthereumBalance(token: TokenLike): Promise<utils.BigNumber>;
 ```
 
 #### Inputs and outputs
@@ -333,9 +289,7 @@ import * as zksync from "zksync";
 import { ethers } from "ethers";
 
 // Setup zksync.Wallet with ethers signer/wallet that is connected to ethers provider
-const wallet =
-..
-;
+const wallet = ..;
 
 const ethOnChainBalance = await wallet.getEthereumBalance("ETH");
 ```
@@ -348,16 +302,10 @@ so that user would not need to approve each deposit.
 > Signature
 
 ```typescript
-async
-approveERC20TokenDeposits(
-  token
-:
-TokenLike,
-  max_erc20_approve_amount
-:
-BigNumber = MAX_ERC20_APPROVE_AMOUNT
-):
-Promise<ethers.ContractTransaction>;
+async approveERC20TokenDeposits(
+  token: TokenLike,
+  max_erc20_approve_amount: BigNumber = MAX_ERC20_APPROVE_AMOUNT
+): Promise<ethers.ContractTransaction>;
 ```
 
 | Name                                | Description                                         |
@@ -369,16 +317,10 @@ Promise<ethers.ContractTransaction>;
 > Signature
 
 ```typescript
-async
-isERC20DepositsApproved(
-  token
-:
-TokenLike,
-  erc20ApproveThreshold
-:
-BigNumber = ERC20_APPROVE_TRESHOLD
-):
-Promise<boolean>;
+async isERC20DepositsApproved(
+  token: TokenLike,
+  erc20ApproveThreshold: BigNumber = ERC20_APPROVE_TRESHOLD
+): Promise<boolean>;
 ```
 
 | Name                             | Description                                               |
@@ -408,18 +350,14 @@ the zkSync network, use `awaitReceipt`(see [utils]).
 > Signature
 
 ```typescript
-async
-depositToSyncFromEthereum(deposit
-:
-{
-  depositTo: Address;
-  token: TokenLike;
-  amount: BigNumberish;
-  ethTxOptions ? : ethers.providers.TransactionRequest;
-  approveDepositAmountForERC20 ? : boolean;
-}
-):
-Promise<ETHOperation>;
+async depositToSyncFromEthereum(deposit: {
+    depositTo: Address;
+    token: TokenLike;
+    amount: BigNumberish;
+    ethTxOptions?: ethers.providers.TransactionRequest;
+    approveDepositAmountForERC20?: boolean;
+  }
+): Promise<ETHOperation>;
 ```
 
 #### Inputs and outputs
@@ -442,9 +380,7 @@ Promise<ETHOperation>;
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet from ethers.Signer.
+const syncWallet = ..; // Setup zksync wallet from ethers.Signer.
 
 const depositPriorityOperation = await syncWallet.depositToSyncFromEthereum({
   depositTo: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
@@ -479,19 +415,15 @@ The operators require a fee to be paid in order to process transactions.[^fee]
 > Signature
 
 ```typescript
-async
-setSigningKey(changePubKey
-:
-{
-  feeToken: TokenLike;
-  ethAuthType: ChangePubkeyTypes;
-  fee ? : BigNumberish;
-  nonce ? : Nonce;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<Transaction>;
+async setSigningKey(changePubKey: {
+    feeToken: TokenLike;
+    ethAuthType: ChangePubkeyTypes;
+    fee?: BigNumberish;
+    nonce?: Nonce;
+    validFrom?: number;
+    validUntil?: number;
+  }
+): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -511,9 +443,7 @@ Promise<Transaction>;
 ```typescript
 import { ethers } from "ethers";
 
-const wallet =
-..
-;// setup zksync wallet
+const wallet = ..;// setup zksync wallet
 
 if (!await wallet.isSigningKeySet()) {
   const changePubkey = await wallet.setSigningKey({
@@ -535,19 +465,14 @@ important to consider transaction fee in advance because transaction can become 
 > Signature
 
 ```typescript
-async
-signSetSigningKey(changePubKey
-:
-{
+async signSetSigningKey(changePubKey: {
   feeToken: TokenLike;
   fee: BigNumberish;
   nonce: number;
   ethAuthType: ChangePubkeyTypes;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<SignedTransaction>;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
@@ -568,14 +493,10 @@ wallets that don't support message signing.
 > Signature
 
 ```typescript
-async
-onchainAuthSigningKey(
-  nonce
-:
-Nonce = "committed",
-  ethTxOptions ? : ethers.providers.TransactionRequest
-):
-Promise<ContractTransaction>;
+async onchainAuthSigningKey(
+  nonce: Nonce = "committed",
+  ethTxOptions?: ethers.providers.TransactionRequest
+): Promise<ContractTransaction>;
 ```
 
 #### Inputs and outputs
@@ -591,9 +512,7 @@ Promise<ContractTransaction>;
 ```typescript
 import { ethers } from "ethers";
 
-const wallet =
-..
-;// setup zksync wallet
+const wallet = ..;// setup zksync wallet
 
 if (!await wallet.isSigningKeySet()) {
   const onchainAuthTransaction = await wallet.onchainAuthSigningKey();
@@ -618,10 +537,7 @@ Checks if current signer that is associated with wallet is able to sign transact
 > Signature
 
 ```typescript
-async
-isSigningKeySet()
-:
-Promise<boolean>;
+async isSigningKeySet(): Promise<boolean>;
 ```
 
 #### Inputs and outputs
@@ -652,20 +568,15 @@ See utils for helping with amounts packing.
 > Signature
 
 ```typescript
-async
-syncTransfer(transfer
-:
-{
+async syncTransfer(transfer:{
   to: Address;
   token: TokenLike;
   amount: BigNumberish;
-  fee ? : BigNumberish;
-  nonce ? : Nonce;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<Transaction>;
+  fee?: BigNumberish;
+  nonce?: Nonce;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -686,9 +597,7 @@ Promise<Transaction>;
 ```typescript
 import { ethers } from "ethers";
 
-const wallet =
-..
-;// setup zksync wallet
+const wallet = ..;// setup zksync wallet
 
 const transferTransaction = await wallet.syncTransfer({
   to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
@@ -709,20 +618,15 @@ consider transaction fee in advance because transaction can become invalid if to
 > Signature
 
 ```typescript
-async
-signSyncTransfer(transfer
-:
-{
+async signSyncTransfer(transfer: {
   to: Address;
   token: TokenLike;
   amount: BigNumberish;
   fee: BigNumberish;
   nonce: number;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<SignedTransaction>;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
@@ -754,36 +658,26 @@ There are two kinds of orders:
 > Signature
 
 ```typescript
-async
-getOrder(order
-:
-{
+async getOrder(order:{
   tokenSell: TokenLike;
   tokenBuy: TokenLike;
   ratio: TokenRatio | WeiRatio;
   amount: BigNumberish;
-  recipient ? : Address;
-  nonce ? : Nonce;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<Order>;
+  recipient?: Address;
+  nonce?: Nonce;
+  validFrom?: number;
+  validUntil?: number;
+}):Promise<Order>;
 
-async
-getLimitOrder(order
-:
-{
+async getLimitOrder(order: {
   tokenSell: TokenLike;
   tokenBuy: TokenLike;
   ratio: TokenRatio | WeiRatio;
-  recipient ? : Address;
-  nonce ? : Nonce;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<Order>;
+  recipient?: Address;
+  nonce?: Nonce;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<Order>;
 ```
 
 #### Inputs and outputs
@@ -808,18 +702,13 @@ Once two compatible signed swaps are collected, anyone can submit them.
 
 ```typescript
 
-async
-syncSwap(swap
-:
-{
+async syncSwap(swap: {
   orders: [Order, Order];
   feeToken: TokenLike;
-  amounts ? : [BigNumberish, BigNumberish];
-  nonce ? : number;
-  fee ? : BigNumberish;
-}
-):
-Promise<Transaction>;
+  amounts?: [BigNumberish, BigNumberish];
+  nonce?: number;
+  fee?: BigNumberish;
+}): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -855,12 +744,8 @@ Only 2 tokens should be specified in each ratio.
 #### Example
 
 ```typescript
-const walletA =
-..
-; // setup first wallet
-const walletB =
-..
-; // setup second wallet
+const walletA = ..; // setup first wallet
+const walletB = ..; // setup second wallet
 
 const orderA = await walletA.getOrder({
   tokenSell: 'ETH',
@@ -906,22 +791,15 @@ If it is required to send a batch that include transactions other than transfers
 > Signature
 
 ```typescript
-async
-syncMultiTransfer(
-  transfers
-:
-{
+async syncMultiTransfer(transfers: {
   to: Address;
   token: TokenLike;
   amount: BigNumberish;
   fee: BigNumberish;
-  nonce ? : Nonce;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-[]
-):
-Promise<Transaction[]>;
+  nonce?: Nonce;
+  validFrom?: number;
+  validUntil?: number;
+}[]): Promise<Transaction[]>;
 ```
 
 #### Inputs and outputs
@@ -938,9 +816,7 @@ For details on an individual transaction, see [Transfer in the zkSync](#transfer
 ```typescript
 import { ethers } from "ethers";
 
-const wallet =
-..
-;// setup zksync wallet
+const wallet = ..;// setup zksync wallet
 
 const transferA = {
   to: "0x2d5bf7a3ab29f0ff424d738a83f9b0588bc9241e",
@@ -975,21 +851,16 @@ The transaction has to be verified until funds are available on the ethereum wal
 > Signature
 
 ```typescript
-async
-withdrawFromSyncToEthereum(withdraw
-:
-{
+async withdrawFromSyncToEthereum(withdraw: {
   ethAddress: string;
   token: TokenLike;
   amount: BigNumberish;
-  fee ? : BigNumberish;
-  nonce ? : Nonce;
-  fastProcessing ? : boolean;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<Transaction>;
+  fee?: BigNumberish;
+  nonce?: Nonce;
+  fastProcessing?: boolean;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -1011,9 +882,7 @@ Promise<Transaction>;
 ```typescript
 import { ethers } from "ethers";
 
-const wallet =
-..
-;// setup zksync wallet
+const wallet = ..;// setup zksync wallet
 
 const withdrawTransaction = await wallet.withdrawFromSyncToEthereum({
   ethAddress: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
@@ -1034,20 +903,15 @@ to consider transaction fee in advance because transaction can become invalid if
 > Signature
 
 ```typescript
-async
-signWithdrawFromSyncToEthereum(withdraw
-:
-{
+async signWithdrawFromSyncToEthereum(withdraw: {
   ethAddress: string;
   token: TokenLike;
   amount: BigNumberish;
   fee: BigNumberish;
   nonce: number;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<SignedTransaction>;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<SignedTransaction>;
 ```
 
 #### Inputs and outputs
@@ -1083,19 +947,14 @@ The transaction has to be verified until funds are available on the ethereum wal
 > Signature
 
 ```typescript
-async
-syncForcedExit(forcedExit
-:
-{
+async syncForcedExit(forcedExit: {
   target: Address;
   token: TokenLike;
-  fee ? : BigNumberish;
-  nonce ? : Nonce;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-Promise<Transaction>;
+  fee?: BigNumberish;
+  nonce?: Nonce;
+  validFrom?: number;
+  validUntil?: number;
+}): Promise<Transaction>;
 ```
 
 #### Inputs and outputs
@@ -1115,9 +974,7 @@ Promise<Transaction>;
 ```typescript
 import { ethers } from "ethers";
 
-const wallet =
-..
-;// setup zksync wallet
+const wallet = ..;// setup zksync wallet
 
 const forcedExitTransaction = await wallet.syncForcedExit({
   target: "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
@@ -1137,8 +994,7 @@ important to consider transaction fee in advance because transaction can become 
 > Signature
 
 ```typescript
-async
-signSyncForcedExit((forcedExit: {
+async signSyncForcedExit(forcedExit: {
   target: Address;
   token: TokenLike;
   fee: BigNumberish;
@@ -1174,16 +1030,11 @@ The transaction has to be verified until funds are available on the ethereum wal
 > Signature
 
 ```typescript
-async
-emergencyWithdraw(withdraw
-:
-{
+async emergencyWithdraw(withdraw: {
   token: TokenLike;
-  accountId ? : number;
-  ethTxOptions ? : ethers.providers.TransactionRequest;
-}
-):
-Promise<ETHOperation>;
+  accountId?: number;
+  ethTxOptions?: ethers.providers.TransactionRequest;
+}): Promise<ETHOperation>;
 ```
 
 #### Inputs and outputs
@@ -1201,9 +1052,7 @@ Promise<ETHOperation>;
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet.
+const syncWallet = ..; // Setup zksync wallet.
 
 const emergencyWithdrawPriorityOp = await syncWallet.emergencyWithdraw({
   token: "ETH",
@@ -1222,9 +1071,7 @@ Two factor authentification is an additional protection layer enforced by zkSync
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet with private key or EIP-1271 signing
+const syncWallet = ..; // Setup zksync wallet with private key or EIP-1271 signing
 
 await syncWallet.toggle2FA(false); // disable 2FA
 await syncWallet.toggle2FA(true); // enable 2FA back
@@ -1238,15 +1085,11 @@ funds that got stuck due to out-of-gas error.
 > Signature
 
 ```typescript
-async
-withdrawPendingBalance(
-  from
-:
-Address;
-token: TokenLike;
-amount ? : BigNumberish
-):
-Promise<ContractTransaction>;
+async withdrawPendingBalance(
+  from: Address,
+  token: TokenLike,
+  amount?: BigNumberish
+): Promise<ContractTransaction>;
 ```
 
 #### Inputs and outputs
@@ -1264,16 +1107,13 @@ Promise<ContractTransaction>;
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet.
+const syncWallet = ..; // Setup zksync wallet.
 
 const withdrawPendingTx = await syncWallet.withdrawPendingBalance(
-  "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c"
-"ETH",
+  "0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c",
+  "ETH",
   ethers.utils.parseEther("0.001")
-)
-;
+);
 
 // Wait till the transaction is complete
 const txReceipt = await withdrawPendingTx.wait();
@@ -1287,21 +1127,16 @@ of doing separate calls, it aggregates them using the [multicall](https://github
 > Signature
 
 ```typescript
-async
-withdrawPendingBalances(
-  addresses
-:
-Address[];
-tokens: TokenLike[];
-multicallParams: {
-  address ? : Address;
-  network ? : Network;
-  gasLimit ? : BigNumberish;
-}
-;
-amounts ? : BigNumberish[]
-):
-Promise<ContractTransaction>;
+async withdrawPendingBalances(
+  addresses: Address[],
+  tokens: TokenLike[],
+  multicallParams: {
+    address?: Address;
+    network?: Network;
+    gasLimit?: BigNumberish;
+  },
+  amounts?: BigNumberish[]
+): Promise<ContractTransaction>;
 ```
 
 #### Inputs and outputs
@@ -1320,13 +1155,11 @@ Promise<ContractTransaction>;
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet.
+const syncWallet = ..; // Setup zksync wallet.
 
 const withdrawPendingTx = await syncWallet.withdrawPendingBalances(
-  ["0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c", "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0"]
-    ["ETH", "DAI"],
+  ["0x9de880ac69f3ed1e4d6870fcdabf07cbbed6f85c", "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0"],
+  ["ETH", "DAI"],
   {},
   [ethers.utils.parseEther("0.001"), ethers.utils.parseEther("0.002")]
 );
@@ -1358,10 +1191,7 @@ Creating Batch Builder
 > Signature
 
 ```typescript
-batchBuilder(
-  nonce ? : Nonce;
-):
-BatchBuilder;
+batchBuilder(nonce?: Nonce): BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1374,9 +1204,7 @@ BatchBuilder;
 > Example
 
 ```typescript
-const syncWallet =
-..
-; // Setup zksync wallet.
+const syncWallet = ..; // Setup zksync wallet.
 
 const batchBuilder = syncWallet.batchBuilder();
 ```
@@ -1388,19 +1216,15 @@ Adding withdraw transaction to the batch.
 > Signature
 
 ```typescript
-addWithdraw(withdraw
-:
-{
+addWithdraw(withdraw: {
   ethAddress: string;
   token: TokenLike;
   amount: BigNumberish;
-  fee ? : BigNumberish;
-  fastProcessing ? : boolean;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-BatchBuilder;
+  fee?: BigNumberish;
+  fastProcessing?: boolean;
+  validFrom?: number;
+  validUntil?: number;
+}): BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1421,12 +1245,8 @@ BatchBuilder;
 ```typescript
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet.
-const batchBuilder =
-..
-; // Setup batch builder.
+const syncWallet = ..; // Setup zksync wallet.
+const batchBuilder = ..; // Setup batch builder.
 
 batchBuilder.addWithdraw({
   ethAddress: syncWallet.address(),
@@ -1442,18 +1262,14 @@ Adding transfer transaction to the batch.
 > Signature
 
 ```typescript
-addTransfer(transfer
-:
-{
+addTransfer(transfer: {
   to: Address;
   token: TokenLike;
   amount: BigNumberish;
-  fee ? : BigNumberish;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-BatchBuilder;
+  fee?: BigNumberish;
+  validFrom?: number;
+  validUntil?: number;
+}): BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1473,9 +1289,7 @@ BatchBuilder;
 ```typescript
 import { ethers } from "ethers";
 
-const batchBuilder =
-..
-; // Setup batch builder.
+const batchBuilder = ..; // Setup batch builder.
 
 batchBuilder.addTransfer({
   to: "0x2D9835a1C1662559975B00AEA00e326D1F9f13d0",
@@ -1491,21 +1305,16 @@ Adding change pub key transaction to the batch.
 > Signature
 
 ```typescript
-addChangePubKey(
-  changePubKey
-:
-|
-{
-  feeToken: TokenLike;
-  ethAuthType: ChangePubkeyTypes;
-  fee ? : BigNumberish;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-|
-SignedTransaction
-):
-BatchBuilder;
+addChangePubKey(changePubKey:
+  | {
+      feeToken: TokenLike;
+      ethAuthType: ChangePubkeyTypes;
+      fee?: BigNumberish;
+      validFrom?: number;
+      validUntil?: number;
+    }
+  | SignedTransaction
+): BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1522,9 +1331,7 @@ BatchBuilder;
 > Example
 
 ```typescript
-const batchBuilder =
-..
-; // Setup batch builder.
+const batchBuilder = ..; // Setup batch builder.
 
 batchBuilder.addChangePubKey({
   feeToken: "ETH",
@@ -1539,17 +1346,13 @@ Adding forced exit transaction to the batch.
 > Signature
 
 ```typescript
-addForcedExit(forcedExit
-:
-{
+addForcedExit(forcedExit: {
   target: Address;
   token: TokenLike;
-  fee ? : BigNumberish;
-  validFrom ? : number;
-  validUntil ? : number;
-}
-):
-BatchBuilder;
+  fee?: BigNumberish;
+  validFrom?: number;
+  validUntil?: number;
+}): BatchBuilder;
 ```
 
 #### Inputs and outputs
@@ -1568,12 +1371,8 @@ BatchBuilder;
 ```typescript
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet.
-const batchBuilder =
-..
-; // Setup batch builder.
+const syncWallet = ..; // Setup zksync wallet.
+const batchBuilder = ..; // Setup batch builder.
 
 batchBuilder.addForcedExit({
   target: syncWallet.address(),
@@ -1591,9 +1390,8 @@ _If feeToken was provided, the fee for the whole batch will be obtained from the
 
 ```typescript
 build(
-  feeToken ? : TokenLike;
-):
-Promise<{ txs: SignedTransaction[]; signature: TxEthSignature; totalFee: TotalFee }>;
+  feeToken?: TokenLike;
+): Promise<{ txs: SignedTransaction[]; signature: TxEthSignature; totalFee: TotalFee }>;
 ```
 
 #### Inputs and outputs
@@ -1608,12 +1406,8 @@ Promise<{ txs: SignedTransaction[]; signature: TxEthSignature; totalFee: TotalFe
 ```typescript
 import { ethers } from "ethers";
 
-const syncWallet =
-..
-; // Setup zksync wallet.
-const batchBuilder =
-..
-; // Setup batch builder.
+const syncWallet = ..; // Setup zksync wallet.
+const batchBuilder = ..; // Setup batch builder.
 
 batchBuilder.addForcedExit({
   target: syncWallet.address(),
@@ -1634,12 +1428,7 @@ await batchBuilder.build("ETH");
 > Signature
 
 ```typescript
-static
-fromPrivateKey(pk
-:
-Uint8Array
-):
-Signer;
+static fromPrivateKey(pk: Uint8Array): Signer;
 ```
 
 #### Inputs and outputs
@@ -1654,12 +1443,7 @@ Signer;
 > Signature
 
 ```typescript
-static async
-fromSeed(seed
-:
-Uint8Array
-):
-Promise<Signer>;
+static async fromSeed(seed: Uint8Array): Promise<Signer>;
 ```
 
 ### Create from ethereum signature
@@ -1667,16 +1451,12 @@ Promise<Signer>;
 > Signature
 
 ```typescript
-static async
-fromETHSignature(
-  ethSigner
-:
-ethers.Signer
-):
-Promise < {
+static async fromETHSignature(
+  ethSigner: ethers.Signer
+): Promise <{
   signer: Signer;
   ethSignatureType: EthSignerType;
-} > {
+}>;
 ```
 
 #### Inputs and outputs
@@ -1691,10 +1471,7 @@ Promise < {
 > Signature
 
 ```typescript
-async
-pubKeyHash()
-:
-Promise<PubKeyHash>;
+async pubKeyHash(): Promise<PubKeyHash>;
 ```
 
 #### Inputs and outputs
@@ -1710,10 +1487,7 @@ Signs transfer transaction, the result can be submitted to the zkSync network.
 > Signature
 
 ```typescript
-async
-signSyncTransfer(transfer
-:
-{
+async signSyncTransfer(transfer: {
   accountId: number;
   from: Address;
   to: Address;
@@ -1721,9 +1495,7 @@ signSyncTransfer(transfer
   amount: ethers.BigNumberish;
   fee: ethers.BigNumberish;
   nonce: number;
-}
-):
-Promise<Transfer>;
+}): Promise<Transfer>;
 ```
 
 #### Inputs and outputs
@@ -1746,10 +1518,7 @@ Signs withdraw transaction, the result can be submitted to the zkSync network.
 > Signature
 
 ```typescript
-async
-signSyncWithdraw(withdraw
-:
-{
+async signSyncWithdraw(withdraw: {
   accountId: number;
   from: Address;
   ethAddress: string;
@@ -1757,9 +1526,7 @@ signSyncWithdraw(withdraw
   amount: ethers.BigNumberish;
   fee: ethers.BigNumberish;
   nonce: number;
-}
-):
-Promise<Withdraw>;
+}): Promise<Withdraw>;
 ```
 
 #### Inputs and outputs
@@ -1782,18 +1549,13 @@ Signs forced exit transaction, the result can be submitted to the zkSync network
 > Signature
 
 ```typescript
-async
-signSyncForcedExit(forcedExit
-:
-{
+async signSyncForcedExit(forcedExit: {
   initiatorAccountId: number;
   target: Address;
   tokenId: number;
   fee: BigNumberish;
   nonce: number;
-}
-):
-Promise<ForcedExit>;
+}): Promise<ForcedExit>;
 ```
 
 #### Inputs and outputs
@@ -1814,10 +1576,7 @@ Signs ChangePubKey transaction, the result can be submitted to the zkSync networ
 > Signature
 
 ```typescript
-async
-signSyncChangePubKey(changePubKey
-:
-{
+async signSyncChangePubKey(changePubKey: {
   accountId: number;
   account: Address;
   newPkHash: PubKeyHash;
@@ -1826,11 +1585,9 @@ signSyncChangePubKey(changePubKey
   nonce: number;
   validFrom: number;
   validUntil: number;
-  ethAuthData ? : ChangePubKeyOnchain | ChangePubKeyECDSA | ChangePubKeyCREATE2;
-  ethSignature ? : string;
-}
-):
-Promise<ChangePubKey>;
+  ethAuthData?: ChangePubKeyOnchain | ChangePubKeyECDSA | ChangePubKeyCREATE2;
+  ethSignature?: string;
+}): Promise<ChangePubKey>;
 ```
 
 #### Inputs and outputs

@@ -11,6 +11,7 @@ jobs:
   release:
     if: ${{ github.event.repository.full_name == github.repository }} && {{ !contains(github.event.head_commit.message, "skip ci") }}
     runs-on: ubuntu-latest
+    environment: prod
     steps:
       - uses: actions/checkout@v2
         with:
@@ -29,7 +30,7 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          yarn set version 3.1.1
+          yarn set version 3.2.0
           yarn install
 
       - name: "Build & deploy to staging"

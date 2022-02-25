@@ -1,11 +1,5 @@
 {
-  "language": "en",
-  "ignorePaths": [
-    "node_modules/**",
-    ".github/**",
-    ".yarn/**",
-    "dist/**"
-  ],
+  "allowCompoundWords": true,
   "dictionaries": [
     "typescript",
     "cpp",
@@ -37,5 +31,12 @@
       "path": "./cspell-zksync.txt"
     }
   ],
-  "allowCompoundWords": true
+  "ignorePaths": [
+    "node_modules",
+    ".github",
+    "drafts",
+    ".github",
+    "yarn"
+  ],
+  "language": ["en-Gb", "en-Us"]
 }

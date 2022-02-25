@@ -94,6 +94,8 @@ sidechains
 tokenomics
 validator's
 stakers
+Ethereum signature
+gasless
 
 // Famous crypto people
 Vitalik's
@@ -126,9 +128,11 @@ cslint
 incentivized
 IPFS
 Timerange
-COMMITED
 commited
 unbundle
 userbase
 bytecode
 precompilers
+
+//paths & urls
+v0.2.md
