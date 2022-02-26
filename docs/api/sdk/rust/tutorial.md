@@ -183,7 +183,7 @@ account without preliminary registration!
 
 ```rust
 let another_cred = WalletCredentials::from_seed(address, &[1u8; 32]);
-let another_wallet = Wallet::new(provider, cred).await;
+let another_wallet = Wallet::new(provider, another_cred).await;
 ```
 
 We are going to transfer `0.5 ETH` to another account. The fee will be set automatically to the least possible fee

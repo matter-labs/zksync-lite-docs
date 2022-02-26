@@ -17,6 +17,7 @@ export interface Tokens {
     address: string;
     id: number;
     symbol: string;
+    decimals: number;
   };
 }
 
@@ -50,24 +51,44 @@ export interface Create2Data {
 ## Fees
 
 ```typescript
-export interface Fee {
+// Unified fee and batch fee interfaces.
+export type Fee = FeeRpc | FeeRest;
+export type BatchFee = BatchFeeRpc | FeeRest;
+
+export type IncomingTxFeeType =
+  | 'Withdraw'
+  | 'Transfer'
+  | 'FastWithdraw'
+  | 'ForcedExit'
+  | 'MintNFT'
+  | 'WithdrawNFT'
+  | 'FastWithdrawNFT'
+  | 'Swap'
+  | ChangePubKeyFee
+  | LegacyChangePubKeyFee;
+
+export interface FeeRpc {
   // Operation type (amount of chunks in operation differs and impacts the total fee).
-  feeType: 'Withdraw' | 'Transfer' | 'TransferToNew' | 'FastWithdraw' | ChangePubKeyFee | LegacyChangePubKeyFee;
+  feeType: 'Withdraw' | 'Transfer' | 'TransferToNew' | 'FastWithdraw' | ChangePubKeyFee | 'MintNFT' | 'WithdrawNFT' | 'Swap';
   // Amount of gas used by transaction
-  gasTxAmount: utils.BigNumber;
+  gasTxAmount: BigNumber;
   // Gas price (in wei)
-  gasPriceWei: utils.BigNumber;
+  gasPriceWei: BigNumber;
   // Ethereum gas part of fee (in wei)
-  gasFee: utils.BigNumber;
+  gasFee: BigNumber;
   // Zero-knowledge proof part of fee (in wei)
-  zkpFee: utils.BigNumber;
+  zkpFee: BigNumber;
   // Total fee amount (in wei)
-  // This value represents the summarized fee components, and it should be used as a fee
-  // for the actual operation.
-  totalFee: utils.BigNumber;
+  totalFee: BigNumber;
 }
 
-export interface BatchFee {
+export interface FeeRest {
+  gasFee: BigNumber;
+  zkpFee: BigNumber;
+  totalFee: BigNumber;
+}
+
+export interface BatchFeeRpc {
   // Total fee amount (in wei)
   totalFee: BigNumber;
 }
@@ -79,15 +100,20 @@ export type TotalFee = Map<TokenLike, BigNumber>;
 
 ```typescript
 export interface ChangePubKeyFee {
-  // Denotes how authorization of operation is performed
+  // Denotes how authorization of operation is performed:
+  // 'Onchain' if it's done by sending an Ethereum transaction,
+  // 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
+  // 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
   ChangePubKey: ChangePubkeyTypes;
 }
+
+export type ChangePubkeyTypes = 'Onchain' | 'ECDSA' | 'CREATE2' | 'ECDSALegacyMessage';
 ```
 
 `LegacyChangePubKeyFee` interface is defined as follows:
 
 ```typescript
-export interface ChangePubKeyFee {
+export interface LegacyChangePubKeyFee {
   ChangePubKey: {
     // Denotes how authorization of operation is performed:
     // 'true' if it's done by sending an Ethereum transaction,

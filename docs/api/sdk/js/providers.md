@@ -492,7 +492,7 @@ async getTransactionFee(
 ): Promise<Fee>;
 ```
 
-Interface of `ChangePubKeyFee` fee type is described in the [fees](types.md#fees) section.
+Interface of `IncomingTxFeeType` type is described in the [fees](types.md#fees) section.
 
 #### Inputs and outputs
 
@@ -519,7 +519,7 @@ the fee for only one transaction and set it to zero for the other ones.
 
 ```typescript
 async getTransactionsBatchFee(
-    txTypes: ("Transfer" | "Withdraw" | "FastWithdraw" | ChangePubKeyFee | LegacyChangePubKeyFee)[],
+    txTypes: IncomingTxFeeType[],
     addresses: Address[],
     tokenLike: TokenLike
 ): Promise<BigNumber>;
