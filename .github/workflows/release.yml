@@ -45,6 +45,9 @@ jobs:
         env:
           APP_ENV: production
 
+      - name: "Pack generated distributive"
+        run: zip -r dist.zip dist firebase.json .firebaserc
+
       - name: "Semantic release"
         run: yarn semantic-release
         env:
@@ -52,10 +55,6 @@ jobs:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
-
-      - name: "Pack generated distributive"
-        run: zip -r dist.zip dist firebase.json .firebaserc
-
       - name: Publish artifact
         uses: actions/upload-artifact@v2
         with:
