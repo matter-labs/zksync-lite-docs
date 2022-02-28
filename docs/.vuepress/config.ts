@@ -8,7 +8,7 @@ export = defineConfig(_ctx => {
     description: 'zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet',
     dest: 'dist',
     markdown: {
-      extendMarkdown: md => {
+      extendMarkdown: (md) => {
         md.use(footnote_plugin);
       },
       toc: { includeLevel: [1, 2, 3] },
@@ -53,6 +53,19 @@ export = defineConfig(_ctx => {
         {
           text: 'Uptime',
           link: '/uptime',
+        },
+        {
+          text: 'v1.x',
+          items: [
+            {
+              text: 'v2.0',
+              link: 'https://v2-docs.zksync.io'
+            },
+            {
+              text: 'v1.x',
+              link: '/userdocs/'
+            }
+          ]
         }
       ],
       //displayAllHeaders: true,
