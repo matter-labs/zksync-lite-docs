@@ -53,6 +53,19 @@ export = defineConfig(_ctx => {
         {
           text: 'Uptime',
           link: '/uptime',
+        },
+        {
+          text: 'v1.x',
+          children: [
+            {
+              text: 'v2.0',
+              link: 'https://v2-docs.zksync.io'
+            },
+            {
+              text: 'v1.x',
+              link: '/userdocs/'
+            }
+          ]
         }
       ],
       //displayAllHeaders: true,
