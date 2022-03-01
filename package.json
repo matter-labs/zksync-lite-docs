@@ -8,6 +8,8 @@
   "homepage": "https://docs.zksync.io",
   "keywords": [
     "zk-rollup",
+    "frontend-team",
+    "ethereum",
     "web3",
     "wallet",
     "defi",
@@ -70,14 +72,13 @@
     "url": "https://github.com/matter-labs/zksync-docs/issues"
   },
   "dependencies": {
+    "commitlint": "^11.0.0",
     "markdown-it-footnote": "^3.0.3",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "check-md": "^1.0.2",

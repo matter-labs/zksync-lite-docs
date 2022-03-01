@@ -1,0 +1,125 @@
+{
+  "name": "zksync-web-portal",
+  "description": "zkSync Ecosystem",
+  "private": true,
+  "author": "Matter Labs",
+  "homepage": "https://portal.zksync.io",
+  "keywords": [
+    "zksync",
+    "dev-preview",
+    "early-access",
+    "zk-rollup",
+    "frontend-team",
+    "ethereum",
+    "web3",
+    "wallet",
+    "defi",
+    "typescript",
+    "nuxt3",
+    "tailwind",
+    "tailwindui",
+    "cryptopayments",
+    "matter labs",
+    "zksync dapps",
+    "dapp",
+    "ethers"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "file": "LICENSE-MIT",
+      "url": "https://www.opensource.org/licenses/mit-license.php"
+    },
+    {
+      "type": "Apache-2.0",
+      "file": "LICENSE-APACHE",
+      "url": "https://opensource.org/licenses/apache2.0.php"
+    }
+  ],
+  "version": "3.3.0",
+  "repository": "https://github.com/matter-labs/zksync-web-portal",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": "^14.17.3"
+  },
+  "scripts": {
+    "nuxt-local": "sh ./cli-process-env.sh 'dev' 1 1",
+    "nuxt-ci": "sh ./cli-process-env.sh 'prod' 1",
+    "ci:generate": "yarn ci:build && nuxt generate --fail-on-error",
+    "start:firebase": "firebase serve --only hosting",
+    "dev": "yarn nuxt-local && nuxt",
+    "cspell": "cspell src/**/*.{md,vue} *.md",
+    "ci": "yarn format:prettier; yarn cspell; yarn lint-style:check; yarn lint-ts:check",
+    "ci:build": "yarn nuxt-ci && nuxt build",
+    "format:prettier": "prettier --config .prettierrc.js --ignore-path .prettierignore --write ./src/**/*.{ts,vue,js}",
+    "lint-ts:check": "eslint --ext \".js,.vue\" --ignore-path .gitignore ./src/",
+    "lint-style:check": "stylelint \"./src/**/*.{vue,css}\" --ignore-path .stylelintignore",
+    "lint-ts:fix": "yarn lint-ts:check --fix",
+    "lint-style:fix": "yarn lint-style:check --fix -f verbose",
+    "spell-check": "cspell -c .cspell.json ./src/**/*.{ts,vue,js} *.md",
+    "semantic-release": "semantic-release",
+    "postinstall": "husky install"
+  },
+  "bugs": {
+    "url": "https://github.com/matter-labs/zksync-web-hubportal/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-stage",
+      "commit-msg": "npx --no-install commitlint --edit $1"
+    }
+  },
+  "lint-stage": [
+    "yarn lint-style:fix",
+    "yarn lint-ts:fix",
+    "yarn format:prettier",
+    "yarn spell-check"
+  ],
+  "dependencies": {
+    "aos": "next",
+    "nuxt": "latest",
+    "vue-clickaway": "^2.2.2"
+  },
+  "devDependencies": {
+    "@nuxt/postcss8": "^1.1.3",
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/composition-api": "^0.31.0",
+    "@nuxtjs/google-fonts": "^1.3.0",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@types/aos": "^3.0.4",
+    "@types/vue-clickaway": "^2.2.0",
+    "commitlint": "^11.0.0",
+    "cspell": "^5.12.6",
+    "dotenv": "^14.2.0",
+    "husky": "^7.0.0",
+    "oh-vue-icons": "latest",
+    "postcss": "latest",
+    "sass": "^1.49.0",
+    "semantic-release": "^18.0.0",
+    "semantic-release-github-pullrequest": "^1.1.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.21.0",
+    "tailwindcss": "^3.0.15"
+  },
+  "optionalDependencies": {
+    "fs-extra": "latest",
+    "fsevents": "latest"
+  },
+  "packageManager": "yarn@3.1.1"
+}
