@@ -1,3 +1,67 @@
+t
+# [2.8.0](https://github.com/matter-labs/zksync-docs/compare/2.7.1...2.8.0) (2022-02-15)
+
+
+### Features
+
+* multiple changes ([#232](https://github.com/matter-labs/zksync-docs/issues/232)) ([16324a9](https://github.com/matter-labs/zksync-docs/commit/16324a9e4a0918a3f701fc3aff49f30c0b99f78c))
+
+## [2.7.1](https://github.com/matter-labs/zksync-docs/compare/2.7.0...2.7.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* first anchor scroll ([#91](https://github.com/matter-labs/zksync-docs/issues/91)) ([81e3d80](https://github.com/matter-labs/zksync-docs/commit/81e3d808c62373e01d22fea297e05e4cb98ae939))
+
+# [2.7.0](https://github.com/matter-labs/zksync-docs/compare/2.6.0...2.7.0) (2022-02-14)
+
+
+### Features
+
+* zksync.io tools menu changed ([#226](https://github.com/matter-labs/zksync-docs/issues/226)) ([75603b0](https://github.com/matter-labs/zksync-docs/commit/75603b062c34f6cf7a68382838642d99298fd92d))
+
+# [2.6.0](https://github.com/matter-labs/zksync-docs/compare/2.5.3...2.6.0) (2022-01-28)
+
+
+### Features
+
+* service pages (page-lockers) excluded from google-parsed links ([#225](https://github.com/matter-labs/zksync-docs/issues/225)) ([b2c767f](https://github.com/matter-labs/zksync-docs/commit/b2c767ff69c274520c6add828da2667930ad1161))
+
+## [2.5.3](https://github.com/matter-labs/zksync-docs/compare/2.5.2...2.5.3) (2022-01-27)
+
+
+### Bug Fixes
+
+* redirects for moved links ([#223](https://github.com/matter-labs/zksync-docs/issues/223)) ([ce00bfe](https://github.com/matter-labs/zksync-docs/commit/ce00bfe5b469e580d2c701e30dca863e21b09d7b))
+
+## [2.5.2](https://github.com/matter-labs/zksync-docs/compare/2.5.1...2.5.2) (2022-01-20)
+
+
+### Bug Fixes
+
+* tutorials page crashing the page ([#220](https://github.com/matter-labs/zksync-docs/issues/220)) ([24d3786](https://github.com/matter-labs/zksync-docs/commit/24d3786111d03f71e692b4be332aa80d6f224a5d))
+
+## [2.5.1](https://github.com/matter-labs/zksync-docs/compare/2.5.0...2.5.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* faq crashing docs ([#219](https://github.com/matter-labs/zksync-docs/issues/219)) ([0d244f4](https://github.com/matter-labs/zksync-docs/commit/0d244f425c2921dfa15fe8d3338498ba4e1ab2aa))
+
+# [2.5.0](https://github.com/matter-labs/zksync-docs/compare/2.4.1...2.5.0) (2022-01-19)
+
+
+### Features
+
+* Button changes + new styling added ([#205](https://github.com/matter-labs/zksync-docs/issues/205)) ([d614f26](https://github.com/matter-labs/zksync-docs/commit/d614f26deacc40b3e01181a7c236b14fac79d031))
+
+## [2.4.1](https://github.com/matter-labs/zksync-docs/compare/2.4.0...2.4.1) (2022-01-17)
+
+
+### Bug Fixes
+
+* Corrected typo ([#212](https://github.com/matter-labs/zksync-docs/issues/212)) ([c2c6e90](https://github.com/matter-labs/zksync-docs/commit/c2c6e90439a89936c6530f0d90b8dee7f951480f))
+
 # [2.4.0](https://github.com/matter-labs/zksync-docs/compare/2.3.0...2.4.0) (2022-01-13)
 
 
@@ -56,4 +120,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **ci:** node-saas version downgraded ([59e991e](https://github.com/matter-labs/zksync-docs/commit/59e991ed24465baeb5962b861acae11f29a04c6c))
+* **ci:** node-sass version downgraded ([59e991e](https://github.com/matter-labs/zksync-docs/commit/59e991ed24465baeb5962b861acae11f29a04c6c))

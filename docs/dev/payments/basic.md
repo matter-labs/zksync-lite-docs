@@ -96,6 +96,28 @@ checked by both zkSync server and smart contract for better security guarantees.
 
 The zkSync signature on all transaction fields must correspond to the public key provided in the transaction.
 
+::: warning
+
+To keep the default Layer-2 private key different among different networks, the message that the user signs depends on the network of the Ethereum provider of the user's wallet.
+
+That's why if your solution supports multiple chains (for example mainnet & rinkeby), please make sure that the user is signing ChangePubKey only after the transition to the correct network. 
+Otherwise, the user will have ChangePubKey-related errors when he'll try to use zkWallet or other zkSync products and may pay for CPK one more time.
+
+:::
+
+#### Example of network validation
+
+```javascript
+try {
+    await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: ethereumChainId }],
+    });
+} catch (e) {
+    throw new Error("Wrong chain. Cannot sign in.");
+}
+```
+
 ### Transferring funds
 
 As mentioned above, any transfer that is valid in Ethereum, is also valid in zkSync.
@@ -138,7 +160,7 @@ This method is preferred for situations when you own your account and have a pri
 Second one is `ForcedExit` transaction.
 
 It is an L2 transaction that can be used to request a withdrawal from any unowned account (one that does not have a
-signing key set). Neither Ethereum address or amount can be chosen in this transaction: the only option is to request a
+signing key set). Neither Ethereum address nor amount can be chosen in this transaction: the only option is to request a
 withdrawal of **all** available funds of a certain token from the target L2 address to the target L1 address.
 
 Also, the transaction initiator should cover the fee, which is exactly the same as for `Withdraw` operation.
@@ -149,7 +171,7 @@ contract account), and there exists an L2 account which can send this type of tr
 Third one is `FullExit` priority operation.
 
 This kind of operation is called a "priority operation" since it's initiated from L1 and the smart contract provides
-[guarantees](/userdocs/security.md#security-overview) that either this request will be processed within a reasonable time
-interval, or network will be considered compromised / dead, and the contract will enter an exodus mode.
+[guarantees](/userdocs/security.md#security-overview) that either this request will be processed within a reasonable
+time interval, or network will be considered compromised / dead, and the contract will enter an exodus mode.
 
 This method is preferred if the user will ever experience censorship from the network operator.

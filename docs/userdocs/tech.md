@@ -29,7 +29,8 @@ and tx cost savings.
 
 zkRollup architecture provides the following guarantees:
 
-- Validators can never corrupt the state or steal funds (unlike Sidechains).
+- Validators can never corrupt the state or steal funds
+  ([unlike Sidechains](/zkevm/README.md#how-does-using-zksync-compare-to-sidechains-and-other-l1-blockchains-e-g-matic-polygon-bsc-solana-avalanche)).
 - Users can always retrieve the funds from the zkRollup smart contract even if validator(s) stop cooperating, because
   the data is available (unlike Plasma).
 - Neither users nor a single trusted third party needs to be online to monitor zkRollup blocks in order to prevent fraud
@@ -39,6 +40,7 @@ In other words, zkRollup strictly inherits the security guarantees of the underl
 
 Here are some links to explore the topic of zkRollups:
 
+- [Ethereum.org Zero-knowledge rollups](https://ethereum.org/en/developers/docs/scaling/layer-2-rollups/#zk-rollups)
 - [Vitalik Buterin's guide to rollups (Jan 2021)](https://vitalik.ca/general/2021/01/05/rollup.html)
 - [Original idea proposal by Buterin](https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477)
 - [Matter Labs' zkRollup talk at Zcon1 (video)](https://www.youtube.com/watch?v=QyM9qdFKsEA)
@@ -65,8 +67,8 @@ will decrease.
 In contrast, fraud-based scaling solutions (e.g. optimistic rollup) require at least 2 weeks of a lockout period to
 operate more-or-less securely, which results in 2 weeks objective<sup>\*</sup> tx finality time.
 
-It should be added that Matter Labs and other companies in the ZKP space are constantly working on improving the prover
-efficiency, which will result in lower finality times (potentially down to under 1 minute).
+It should be added that Matter Labs and other companies in the zero-knowledge proof (ZKP) space are constantly working
+on improving the prover efficiency, which will result in lower finality times (potentially down to under 1 minute).
 
 <span class="footnote"><sup>\*</sup> Subjective finality time can be shorter for optimistic rollup users who validate
 every tx themselves, but this would defeat the purpose of optimistic rollups as a scaling solution.</span>

@@ -54,7 +54,11 @@ async estimateBatchFee(
 // The following is the generalized version of the method.
 // Might be used if you just have some array of transactions
 // that you want to estimate fee for.
-async function estimateBatchFee(transactions: ZkSyncTransaction[], feeToken: TokenLike, network: EthereumNetwork): Promise<string>;
+async function estimateBatchFee(
+  transactions: ZkSyncTransaction[],
+  feeToken: TokenLike,
+  network: EthereumNetwork
+): Promise<string>;
 ```
 
 Gets an array of the zkSync transactions for the flow and the token in which the zkSync fee will be paid.
@@ -79,11 +83,15 @@ async wait(
 // The following is the generalized version of the method.
 // Might be used if you just have some array of transactions
 // that you want to wait for.
-async function wait(txHashes: string[], type: "COMMIT" | "VERIFY" = "COMMIT", network: EthereumNetwork): Promise<TransactionInfo[]>;
+async function wait(
+  txHashes: string[],
+  type: 'COMMIT' | 'VERIFY' = 'COMMIT',
+  network: EthereumNetwork
+): Promise<TransactionInfo[]>;
 ```
 
 Gets an array of the zkSync transactions' hashes and resolves with a list of the transactions' receipts.
-`TransactionInfo` is a zkSync type specified [here](https://zksync.io/dev/providers.html#get-transaction-receipt),
+`TransactionInfo` is a zkSync type specified [here](/api/sdk/js/providers.md#get-transaction-receipt),
 extended with the transaction hash.
 
 ## getState
@@ -94,7 +102,7 @@ async getState(
 ): Promise<AccountState>
 ```
 
-```tsx
+```ts
 // The following is the generalized version of the method.
 // Might be used if you want to get the state of
 // an account on an arbitrary Ethereum network,
@@ -104,7 +112,7 @@ async function getState(address: string, network: EthereumNetwork): Promise<Acco
 
 Gets the Ethereum address of a zkSync account as a parameter and returns its state. The `AccountState` type is
 re-exported from zkSync. You can read more about it
-[here](https://zksync.io/dev/providers.html#get-account-state-by-address).
+[here](/api/sdk/js/providers.md#get-account-state-by-address).
 
 ## checkEnoughBalance
 
@@ -127,7 +135,7 @@ async function checkEnoughBalance(
   feeToken: string,
   senderAddress: string,
   ethProvider: ethers.providers.BaseProvider,
-  network: EthereumNetwork,
+  network: EthereumNetwork
 ): Promise<boolean>;
 ```
 

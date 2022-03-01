@@ -17,6 +17,7 @@ export interface Tokens {
     address: string;
     id: number;
     symbol: string;
+    decimals: number;
   };
 }
 
@@ -30,14 +31,14 @@ export interface ContractAddress {
 export type Address = string;
 
 // Committed nonce is going to be resolved to last nonce known to the zkSync network
-export type Nonce = number | "committed";
+export type Nonce = number | 'committed';
 
 // Denotes how authorization of operation is performed:
 // 'Onchain' if it's done by sending an Ethereum transaction,
 // 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
 // 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
 // 'ECDSALegacyMessage' if it's done by providing an Ethereum signature in zkSync transaction. Unlike the 'ECDSA', the user signs a human-readable message. Thus, the fee is ~30% higher than ECDSA.
-export type ChangePubkeyTypes = "Onchain" | "ECDSA" | "CREATE2" | "ECDSALegacyMessage";
+export type ChangePubkeyTypes = 'Onchain' | 'ECDSA' | 'CREATE2' | 'ECDSALegacyMessage';
 
 // CREATE2 Data
 export interface Create2Data {
@@ -50,24 +51,44 @@ export interface Create2Data {
 ## Fees
 
 ```typescript
-export interface Fee {
+// Unified fee and batch fee interfaces.
+export type Fee = FeeRpc | FeeRest;
+export type BatchFee = BatchFeeRpc | FeeRest;
+
+export type IncomingTxFeeType =
+  | 'Withdraw'
+  | 'Transfer'
+  | 'FastWithdraw'
+  | 'ForcedExit'
+  | 'MintNFT'
+  | 'WithdrawNFT'
+  | 'FastWithdrawNFT'
+  | 'Swap'
+  | ChangePubKeyFee
+  | LegacyChangePubKeyFee;
+
+export interface FeeRpc {
   // Operation type (amount of chunks in operation differs and impacts the total fee).
-  feeType: "Withdraw" | "Transfer" | "TransferToNew" | "FastWithdraw" | ChangePubKeyFee | LegacyChangePubKeyFee;
+  feeType: 'Withdraw' | 'Transfer' | 'TransferToNew' | 'FastWithdraw' | ChangePubKeyFee | 'MintNFT' | 'WithdrawNFT' | 'Swap';
   // Amount of gas used by transaction
-  gasTxAmount: utils.BigNumber;
+  gasTxAmount: BigNumber;
   // Gas price (in wei)
-  gasPriceWei: utils.BigNumber;
+  gasPriceWei: BigNumber;
   // Ethereum gas part of fee (in wei)
-  gasFee: utils.BigNumber;
+  gasFee: BigNumber;
   // Zero-knowledge proof part of fee (in wei)
-  zkpFee: utils.BigNumber;
+  zkpFee: BigNumber;
   // Total fee amount (in wei)
-  // This value represents the summarized fee components, and it should be used as a fee
-  // for the actual operation.
-  totalFee: utils.BigNumber;
+  totalFee: BigNumber;
 }
 
-export interface BatchFee {
+export interface FeeRest {
+  gasFee: BigNumber;
+  zkpFee: BigNumber;
+  totalFee: BigNumber;
+}
+
+export interface BatchFeeRpc {
   // Total fee amount (in wei)
   totalFee: BigNumber;
 }
@@ -79,15 +100,20 @@ export type TotalFee = Map<TokenLike, BigNumber>;
 
 ```typescript
 export interface ChangePubKeyFee {
-  // Denotes how authorization of operation is performed
+  // Denotes how authorization of operation is performed:
+  // 'Onchain' if it's done by sending an Ethereum transaction,
+  // 'ECDSA' if it's done by providing an Ethereum signature in zkSync transaction.
+  // 'CREATE2' if it's done by providing arguments to restore account ethereum address according to CREATE2 specification.
   ChangePubKey: ChangePubkeyTypes;
 }
+
+export type ChangePubkeyTypes = 'Onchain' | 'ECDSA' | 'CREATE2' | 'ECDSALegacyMessage';
 ```
 
 `LegacyChangePubKeyFee` interface is defined as follows:
 
 ```typescript
-export interface ChangePubKeyFee {
+export interface LegacyChangePubKeyFee {
   ChangePubKey: {
     // Denotes how authorization of operation is performed:
     // 'true' if it's done by sending an Ethereum transaction,
@@ -100,7 +126,7 @@ export interface ChangePubKeyFee {
 ## Account state
 
 ```typescript
-import { utils } from "ethers";
+import { utils } from 'ethers';
 
 // 0x-prefixed, hex encoded, ethereum account address
 export type Address = string;
@@ -164,7 +190,7 @@ guarantee of the execution.
 ## Transactions
 
 ```typescript
-import { utils } from "ethers";
+import { utils } from 'ethers';
 
 export interface Signature {
   pubKey: string;
@@ -172,19 +198,19 @@ export interface Signature {
 }
 
 export type EthSignerType = {
-  verificationMethod: "ECDSA" | "ERC-1271";
+  verificationMethod: 'ECDSA' | 'ERC-1271';
   // Indicates if signer adds `\x19Ethereum Signed Message\n${msg.length}` prefix before signing message.
   // i.e. if false, we should add this prefix manually before asking to sign message
   isSignedMsgPrefixed: boolean;
 };
 
 export interface TxEthSignature {
-  type: "EthereumSignature" | "EIP1271Signature";
+  type: 'EthereumSignature' | 'EIP1271Signature';
   signature: string;
 }
 
 export interface Transfer {
-  type: "Transfer";
+  type: 'Transfer';
   from: Address;
   to: Address;
   token: number;
@@ -195,7 +221,7 @@ export interface Transfer {
 }
 
 export interface Withdraw {
-  type: "Withdraw";
+  type: 'Withdraw';
   from: Address;
   to: Address;
   token: number;
@@ -206,7 +232,7 @@ export interface Withdraw {
 }
 
 export interface ForcedExit {
-  type: "ForcedExit";
+  type: 'ForcedExit';
   initiatorAccountId: number;
   target: Address;
   token: number;
@@ -216,7 +242,7 @@ export interface ForcedExit {
 }
 
 export interface ChangePubKey {
-  type: "ChangePubKey";
+  type: 'ChangePubKey';
   accountId: number;
   account: Address;
   newPkHash: PubKeyHash;
