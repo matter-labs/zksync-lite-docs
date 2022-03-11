@@ -35,7 +35,7 @@ radical transparency for developers and users, and complemented by our strong co
 To strike the balance between secrecy for security’s sake and transparency, we are committed to the following:
 
 - **Upgrades**: All code for upgrades is made public for one month before they go live.
-- **Audits**: Full audit reports are published in our [documentation](https://zksync.io/updates/security-audits.html).
+- **Audits**: Full audit reports are published in our [documentation](/updates/security-audits.md).
 - **Vulnerability Disclosure**: All vulnerabilities must be handled silently until a fix is deployed and the Matter Labs
   team conducts a thorough internal review of not only the root cause, but also potential weak links in the overall
   security design. A public postmortem will be released with each vulnerability after systematic changes have been fully
