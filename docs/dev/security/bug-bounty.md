@@ -2,56 +2,13 @@
 
 [[toc]]
 
-## Scope
+## ImmuneFi
 
-Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, irreversible loss of
-funds, or enforced exodus mode.
-
-## Assumptions
-
-In order to be eligible for the bug bounty, a bug should adhere to the security assumptions of zkSync. You can read more
-about them [here](https://github.com/matter-labs/zksync/blob/master/docs/protocol.md#assumptions).
-
-## Disclosure Policy
-
-Let us know as soon as possible upon discovery of a potential security issue.
-
-Provide us a reasonable amount of time to resolve the issue **before any disclosure** **to the public or a third
-party.**
-
-### The wrong way to disclose
-
-The following actions will make you ineligible for the bug bounty program:
-
-- Filing a public issue about the vulnerability
-- Testing the vulnerability on mainnet or testnet
-
-### The right way to disclose
-
-Please email us at [security@zksync.io](mailto:security@zksync.io). We appreciate detailed information about confirming
-or fixing the vulnerability. If possible, please use the PGP key below to encrypt the message.
-
-## Exclusions
-
-- Already known vulnerabilities.
-- Vulnerabilities in code not leading to funds lost or frozen.
-- Vulnerabilities not related to smart contracts or cryptography used by the protocol.
-
-## Eligibility
-
-- You must be the first reporter of the vulnerability
-- You must be able to verify a signature from the same address
-- Provide enough information about the vulnerability
-
-## Bounty Payout
-
-![bounty-table.png](/bounty-table.png)
-
-For severe cases involving a total loss of funds, we will pay a bounty of $500,000.
+We have a bug bounty program at ImmuneFi that is focused on our smart contracts, ZK-SNARK circuits, web and app. Before submitting a bug, please read the [platform rules](https://immunefi.com/rules/) and description of the [bounty program](https://immunefi.com/bounty/zksync/).
 
 ## Contact
 
-Please submit all your requests here: [security@zksync.io](mailto:security@zksync.io).
+If for some reason you can't use **ImmuneFi**, then submit your requests here: [security@zksync.io](mailto:security@zksync.io).
 
 ### PGP Key
 
