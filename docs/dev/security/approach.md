@@ -14,7 +14,7 @@ Diligence, and
 [Security & Safety Research Base](https://github.com/OffcierCia/ultimate-defi-research-base#security--safety) maintained
 by Cia Officer are three of many great resources documenting the industry’s learnings from testing in production for the
 past few years. Our contracts and cryptography are also subject to internal and
-[external audits](https:/](/updates/security-audits.html).
+[external audits](/updates/security-audits.md).
 
 ## 2. **Security by isolation**
 
@@ -24,7 +24,7 @@ assumption that all other parts can be byzantine–unreliable, buggy, or comprom
 
 Additionally, we believe that security by isolation can be further strengthened by adding redundancy. In zkSync, all
 transactions submitted are validated by simple execution before inclusion in the block. So if there is a vulnerability
-in our ZK circuits, the attacker would need to break through both the cryptography \*and **\***the sequencer (our
+in our ZK circuits, the attacker would need to break through both the cryptography *and* the sequencer (our
 servers for now, but eventually switching to multi-validator PoS consensus).
 
 ## 3. **Security by obscurity**
