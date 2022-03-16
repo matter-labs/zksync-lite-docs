@@ -24,7 +24,7 @@ assumption that all other parts can be byzantine–unreliable, buggy, or comprom
 
 Additionally, we believe that security by isolation can be further strengthened by adding redundancy. In zkSync, all
 transactions submitted are validated by simple execution before inclusion in the block. So if there is a vulnerability
-in our ZK circuits, the attacker would need to break through both the cryptography and the sequencer (our
+in our ZK circuits, the attacker would need to break through both the cryptography *and* the sequencer (our
 servers for now, but eventually switching to multi-validator PoS consensus).
 
 ## 3. **Security by obscurity**
