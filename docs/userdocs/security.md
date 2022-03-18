@@ -136,10 +136,3 @@ trust assumptions altogether by embracing a transparent zero-knowledge proof sys
 ## Bug Bounty Program
 
 Besides security audits, we offer bug bounty program. You can read more about it [here](/dev/security/bug-bounty).
-
-### Incentivized HackNet
-
-Each month before an upgrade goes into production, we will deploy an incentivized hacknet, a separate mainnet instance
-of zkSync, with the upgrade applied. This deployment will not contain user funds but instead real funds provided by
-Matter Labs for anyone to exploit to receive the critical vulnerability bounty without our intervention. Read more in
-our article about [upgradability](https://blog.matter-labs.io/upgradability3-934db4433b0c).

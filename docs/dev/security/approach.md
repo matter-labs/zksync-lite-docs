@@ -14,7 +14,7 @@ Diligence, and
 [Security & Safety Research Base](https://github.com/OffcierCia/ultimate-defi-research-base#security--safety) maintained
 by Cia Officer are three of many great resources documenting the industry’s learnings from testing in production for the
 past few years. Our contracts and cryptography are also subject to internal and
-[external audits](https:/](/updates/security-audits.html).
+[external audits](/updates/security-audits.md).
 
 ## 2. **Security by isolation**
 
@@ -24,7 +24,7 @@ assumption that all other parts can be byzantine–unreliable, buggy, or comprom
 
 Additionally, we believe that security by isolation can be further strengthened by adding redundancy. In zkSync, all
 transactions submitted are validated by simple execution before inclusion in the block. So if there is a vulnerability
-in our ZK circuits, the attacker would need to break through both the cryptography \*and **\***the sequencer (our
+in our ZK circuits, the attacker would need to break through both the cryptography *and* the sequencer (our
 servers for now, but eventually switching to multi-validator PoS consensus).
 
 ## 3. **Security by obscurity**
@@ -34,9 +34,7 @@ radical transparency for developers and users, and complemented by our strong co
 
 To strike the balance between secrecy for security’s sake and transparency, we are committed to the following:
 
-- **Upgrades**: All code for upgrades is made public for one month before they go live. This gives users ample time to
-  opt out of the upgrade and the whitehat community to find bugs in a trustless way via the incentivized hacknet—a
-  separate mainnet instance of the upgrade with bounty funds provided inside by Matter Labs.
+- **Upgrades**: All code for upgrades is made public for one month before they go live.
 - **Audits**: Full audit reports are published in our [documentation](/updates/security-audits.md).
 - **Vulnerability Disclosure**: All vulnerabilities must be handled silently until a fix is deployed and the Matter Labs
   team conducts a thorough internal review of not only the root cause, but also potential weak links in the overall

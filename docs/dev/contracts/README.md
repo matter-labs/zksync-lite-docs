@@ -60,7 +60,7 @@ based on a native Ethereum signature, all wallets, even hardware wallets, will w
 
 ### Deployment
 
-We will be releasing testnet soon! Please sign up on [this form](https://forms.gle/jQQnJJeuVSVcmkqj9).
+zkSync 2.0 Testnet is here! To get started visit the [zkSync 2.0 Documentation](https://v2-docs.zksync.io/dev/).
 
 ## Zinc
 
