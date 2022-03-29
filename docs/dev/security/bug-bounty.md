@@ -4,7 +4,7 @@
 
 ## Scope
 
-Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, irreversible loss of
+Issues that can lead to substantial loss of money, critical bugs like a broken live-ness condition, blocking upgrade system, irreversible loss of
 funds, or enforced exodus mode.
 
 ## Assumptions
