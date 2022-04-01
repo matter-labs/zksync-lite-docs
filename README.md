@@ -85,3 +85,30 @@ Configuration in `cspell.json`:
 ]
 }
 ```
+
+---
+
+# zkSync Ecosystem
+
+- [**Start building with zkSync v2 🚀**](https://portal.zksync.io)
+- [Integration Docs](https://zksync.io/dev)
+- [Available API & protocols](https://zksync.io/api/)
+- [zkWallet](https://wallet.zksync.io/)
+- [zkMint](https://mint.zksync.dev/)
+- [Alternative Withdrawal](https://withdraw.zksync.io/)
+- [zkScan](https://zkscan.io/)
+- [’out-of-gas’ issue solver ](https://withdraw.zksync.io/)
+
+---
+
+- [Matter Labs: creators of the zkSync](https://matter-labs.io)
+- [zkSync Homepage](https://zksync.io)
+
+---
+> BTW, we're hiring: [See open positions](https://matter-labs.io/#jobs)
+
+## License
+
+zkWallet is distributed under the terms of both the MIT license, and the Apache License (v.2.0).
+
+See [LICENSE-APACHE](LICENSE-APACHE), [LICENSE-MIT](LICENSE-MIT) for details.
