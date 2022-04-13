@@ -279,7 +279,7 @@ export = defineConfig(_ctx => {
     },
     extraWatchFiles: ['.vuepress/config/**'],
     head: [
-      ['script', { src: '/hack.js', defer: true }, ''],
+      ['script', { src: '/hack.js', defer: "defer" }, ''],
       ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       ['link', { rel: 'apple-touch-icon', sizes: '57x57', type: 'image/x-icon', href: '/apple-icon-57x57.png' }],
       ['link', { rel: 'apple-touch-icon', sizes: '60x60', type: 'image/x-icon', href: '/apple-icon-60x60.png' }],
