@@ -11,12 +11,7 @@
           "destination": "/index.html"
         }
       ],
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "drafts",
-        "**/node_modules/**"
-      ],
+      "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
       "redirects": [
         {
           "source": "/dev/bug-bounty.html",
@@ -83,6 +78,33 @@
           "destination": "/api/sdk/:path*",
           "type": 301
         }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer, strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            }
+          ]
+        }
       ]
     },
     {
@@ -90,12 +112,7 @@
       "cleanUrls": true,
       "trailingSlash": true,
       "public": "dist",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "drafts",
-        "**/node_modules/**"
-      ],
+      "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -167,6 +184,33 @@
           "source": "/sdk/:path*",
           "destination": "/api/sdk/:path*",
           "type": 301
+        }
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "no-referrer, strict-origin-when-cross-origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            }
+          ]
         }
       ]
     }
