@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     env:
-      firebaseSecret: "${{FIREBASE_SERVICE_ACCOUNT_ZKSYNC_WEB_DOCS_DEV}}"
+      firebaseSecret: "${{secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_WEB_DOCS_DEV}}"
     steps:
       - uses: actions/checkout@v2
 
