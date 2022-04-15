@@ -13,7 +13,7 @@ jobs:
       actions: read
     environment: dev
     env:
-      firebaseSecret: "${{secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_WEB_DOCS_DEV}}"
+      firebaseSecret: "${{secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD}}"
     steps:
       - uses: actions/checkout@v2
 
