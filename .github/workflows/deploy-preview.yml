@@ -8,7 +8,7 @@ on: pull_request
 permissions: read-all
 jobs:
   build_and_preview:
-    if: ${{ github.event.repository.full_name == github.repository }} && "${{ github.repository}} == matter-labs/zksync-docs"
+    if: ${{ github.event.repository.full_name == github.repository }} && ${{ github.repository == "matter-labs/zksync-docs"}} || ${{ github.event.pull_request.base.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
     environment: dev
     env:
