@@ -5,13 +5,21 @@ concurrency:
   cancel-in-progress: true
 
 on: pull_request
+permissions: read-all
 jobs:
   build_and_preview:
-    if: ${{ github.event.pull_request.base.repo.full_name == github.repository }}
+    if: ${{ github.event.repository.full_name == github.repository }} && ${{ github.repository == "matter-labs/zksync-docs"}}
     runs-on: ubuntu-latest
     environment: dev
+    env:
+      firebaseSecret: "${{FIREBASE_SERVICE_ACCOUNT_ZKSYNC_WEB_DOCS_DEV}}"
     steps:
       - uses: actions/checkout@v2
+
+      - name: "Install dependencies"
+        run: |
+          yarn set version 3.2.0
+          yarn install
 
       - name: "Enable yarn cache"
         uses: c-hive/gha-yarn-cache@v2  # using cache
@@ -34,6 +42,6 @@ jobs:
       - uses: matter-labs/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_WEB_DOCS_DEV || env.firebaseSecret }}"
           projectId: zksync-web-docs
           channelId: "v-${{ github.ref || github.head_ref || github.run_id }}"
