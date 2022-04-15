@@ -478,13 +478,13 @@ async signSetSigningKey(changePubKey: {
 #### Inputs and outputs
 
 | Name                               | Description                                                                 |
-| ---------------------------------- | --------------------------------------------------------------------------- | 
-| changePubKey.feeToken              | Token topay fee in.[^token]                                                 |
+| ---------------------------------- |-----------------------------------------------------------------------------| 
+| changePubKey.feeToken              | Token to pay fee in.[^token]                                                |
 | changePubKey.fee                   | Amount of token to be paid as a fee for this transaction.[^fee]             |
 | changePubKey.nonce                 | Nonce that is going to be used for this transaction.[^nonce]                |
-| changePubKey.ethAuthType           | Thetype which determines how will the Ethereum signature be verified.       | 
-| changePubKey.validFrom (optional)  | Unixtimestamp from which the block with this transaction can be processed   |
-| changePubKey.validUntil (optional) | Unixtimestamp until which the block with this transaction can be processed  | 
+| changePubKey.ethAuthType           | The type which determines how will the Ethereum signature be verified.      | 
+| changePubKey.validFrom (optional)  | Unix timestamp from which the block with this transaction can be processed  |
+| changePubKey.validUntil (optional) | Unix timestamp until which the block with this transaction can be processed | 
 | returns                            | Signed transaction                                                          |
 
 ### Authorize new public key using ethereum transaction
