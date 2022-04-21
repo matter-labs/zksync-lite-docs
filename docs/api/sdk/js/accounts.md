@@ -183,6 +183,29 @@ const create2Data = {
 const syncWallet = await zksync.Wallet.fromCreate2Data(signer, syncProvider, create2Data);
 ```
 
+### Creating wallet from L2 Wallets
+
+Starting from `0.12.0` version of our SDK we support `remote json rpc signer`. That means you could add support of zkSync L2 Wallets such as Argent zkSync or other applications into your dapp. 
+
+> ❗ Important: Currently only Argent Wallet supports this kind of signing.
+
+```typescript
+ static async fromEthSigner(
+        web3Provider: ethers.providers.Web3Provider,
+        provider: SyncProvider,
+        accountId?: number
+    ): Promise<RemoteWallet>
+```
+
+#### Inputs and outputs
+
+| Name                 | Description                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------|
+| web3Provider         | A provider that is connected to an appropriate wallet, such as Argent zkSync L2 Wallet.   |
+| provider             | zkSync provider that is used for submitting a transaction to the zkSync network.          |
+| accountId (optional) | zkSync account id.[^acc_id]                                                               |
+
+
 ### Get account state
 
 Same as [Get account state from provider](providers.md#get-account-state-by-address) but gets state of this account.
