@@ -187,7 +187,7 @@ const syncWallet = await zksync.Wallet.fromCreate2Data(signer, syncProvider, cre
 
 Starting from `0.12.0` version of our SDK we support `remote json rpc signer`. That means you could add support of zkSync L2 Wallets such as Argent zkSync or other applications into your dapp. 
 
-> ❗ Important: Currently only Argent Wallet supports this kind of signing. All other wallets should add support for this method of signing by themselves.
+> ❗ Important: Currently only Argent Wallet supports this kind of signing.
 
 ```typescript
  static async fromEthSigner(
