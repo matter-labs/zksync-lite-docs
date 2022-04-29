@@ -96,6 +96,7 @@ validator's
 stakers
 Ethereum signature
 gasless
+onramps
 
 // Famous crypto people
 Vitalik's
