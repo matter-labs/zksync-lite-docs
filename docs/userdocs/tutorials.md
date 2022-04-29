@@ -263,8 +263,8 @@ The following steps will cover using IPFS desktop to mint an NFT.
 
 If you are new to minting an NFT, consider using one of the community-created frontends\* like [Open Sky](https://open-sky.vercel.app/). <br>
 
-_\*The community-created frontends are not created by the zkSync team, and any issues with minting will need to be sent
-to the creators of these frontends._
+> \*The community-created frontends are not created by the zkSync team, and any issues with minting will need to be sent
+to the creators of these frontends.
 
 1. Visit the [IPFS.io](https://ipfs.io/) and install IPFS Desktop.
 
