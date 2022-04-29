@@ -388,7 +388,11 @@ to the creators of these frontends.
 ## Alternative Withdrawal
 
 The Alternative Withdrawal tool is used when funds have been sent to an account that cannot connect to the
-[zkSync wallet](https://wallet.zksync.io/). *If you sent to a Centralized Exchange, please check with their customer support that they accept smart contract transactions to prevent loss of funds.*
+[zkSync wallet](https://wallet.zksync.io/). 
+
+<br>
+
+*If you sent to a Centralized Exchange, please check with their customer support that they accept smart contract transactions to prevent loss of funds.*
 
 1. Check to see if your account qualifies to use the Alternative Withdrawal tool by entering your address on
    [zkScan](https://zkscan.io/).
