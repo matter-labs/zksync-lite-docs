@@ -309,6 +309,7 @@ to the creators of these frontends._
   ]
 }
 ```
+
 <br>
   
 5. Enter the CID from step 3 at the end of the `"image": "https://ipfs.io/ipfs/` section and fill out the rest of the
@@ -333,6 +334,7 @@ to the creators of these frontends._
   ]
 }
 ```
+
 <br>
   
 6. Save your .json file or download your .json file if you used the link from step 4.
