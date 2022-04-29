@@ -27,7 +27,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
   - Select Mainnet.
 
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/D00.png" alt="D00"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D00.png" alt="D00"></p>
 
 <br>
 
@@ -37,7 +37,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 2. Choose "+ Top up."
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/D2.png" alt="D2"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D2.png" alt="D2"></p>
 
 <br>
 
@@ -45,13 +45,13 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/Top%20up.png" alt="Top up"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/Top%20up.png" alt="Top up"></p>
 
 <br>
 
 3. Select your token, enter the amount, and click "Top up".
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/Top%20up%201.png" alt="Top up 1"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/Top%20up%201.png" alt="Top up 1"></p>
 
 <br>
 
@@ -71,7 +71,7 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 | If you add a token that requires approval, you need to pay a gas fee on Ethereum to authorize the deposit to zkSync. You will see the following messages before moving on to step 4. |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![ERC20 approval.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/ERC20%20approval.png)                                  |
+| ![ERC20 approval.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/ERC20%20approval.png)                                  |
 <br>
 
 4. Review the transaction information and confirm. 
@@ -98,7 +98,7 @@ You can choose different methods for adding funds to your zkSync wallet includin
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![D9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/D9.png)                                                         | ![D10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Add%20Funds/D10.png)                                                   |
+| ![D9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D9.png)                                                         | ![D10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D10.png)                                                   |
 
 <br>
 <br>
@@ -146,13 +146,13 @@ account or not, you can send them funds on zkSync to the same address they have 
 
 1. Click on "Transfer"
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds/S1.png" alt="S1"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S1.png" alt="S1"></p>
 
 <br>
 
 |                                                               **If this is your first transaction after depositing or funding your zkSync account, see the [Account Activation](#account-activation) section.**<br>                                                               |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![authorize-to-send-zksync.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/authorize-to-send-zksync.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). |
+| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![authorize-to-send-zksync.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/authorize-to-send-zksync.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). |
 
 <br>
 
@@ -161,7 +161,7 @@ account or not, you can send them funds on zkSync to the same address they have 
 - _Before transacting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds/S8.1.png" alt="s8,1"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S8.1.png" alt="s8,1"></p>
 
 <br>
 
@@ -184,7 +184,7 @@ account or not, you can send them funds on zkSync to the same address they have 
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![S10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds/S10.png)                                                       | ![S11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds/S11.png)                                                   |
+| ![S10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S10.png)                                                       | ![S11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S11.png)                                                   |
 
 <br>
 <br>
@@ -200,7 +200,7 @@ funds on the exchange._
 
 1. Click on "Transfer"
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds%20to%20Ethereum/se1.png" alt="se1"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se1.png" alt="se1"></p>
 
 <br>
 
@@ -219,7 +219,7 @@ funds on the exchange._
 
 |                                                               **If this is your first transaction after depositing or funding your zkSync account, see the [Account Activation](#account-activation) section.**<br>                                                               |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![authorize-to-send-zksync.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/authorize-to-send-eth.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). | 
+| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![authorize-to-send-zksync.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/authorize-to-send-eth.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). | 
 
 <br>
 
@@ -228,14 +228,14 @@ funds on the exchange._
 - _Before transacting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions." <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds%20to%20Ethereum/se4.png" alt="se4"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se4.png" alt="se4"></p>
 
 <br>
 
 **Read the popup carefully to prevent loss of funds.**  
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds%20to%20Ethereum/SE%20Popup.png" alt="SE Popup"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/SE%20Popup.png" alt="SE Popup"></p>
 
 <br>
 
@@ -252,7 +252,7 @@ funds on the exchange._
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![se8.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds%20to%20Ethereum/se8.png)                                                       | ![se9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Transfer%20Funds%20to%20Ethereum/se9.png)                                                   |
+| ![se8.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se8.png)                                                       | ![se9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se9.png)                                                   |
 
 <br>
 <br>
@@ -360,7 +360,7 @@ to the creators of these frontends._
 - _Before minting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.” <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Mint/m7.png" alt="m7"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mint/m7.png" alt="m7"></p>
 
 <br>
 
@@ -378,7 +378,7 @@ to the creators of these frontends._
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![m10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Mint/m10.png)                                                       | ![m11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/4-22-tutorials-update/docs/images/Mint/m11.png)                                                   |
+| ![m10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mint/m10.png)                                                       | ![m11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mint/m11.png)                                                   |
 
 <br>
 <br>
