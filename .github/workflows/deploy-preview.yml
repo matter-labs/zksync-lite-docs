@@ -5,16 +5,11 @@ concurrency:
   cancel-in-progress: true
 
 on: pull_request
-permissions: read-all
 jobs:
   build_and_preview:
     if: ${{ github.event.repository.full_name == github.repository }} && ${{ github.repository }} == "matter-labs/zksync-docs" || ${{ github.event.pull_request.base.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
     environment: dev
-    env:
-      firebaseSecret: "${{secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD}}"
     steps:
       - uses: actions/checkout@v2
 
@@ -44,6 +39,6 @@ jobs:
       - uses: matter-labs/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZKSYNC_WEB_DOCS_DEV || env.firebaseSecret }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
           projectId: zksync-web-docs
           channelId: "v-${{ github.ref || github.head_ref || github.run_id }}"
