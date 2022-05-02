@@ -27,18 +27,24 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 - To connect to the zkSync 1.0 Mainnet:
   - Click on the Ethereum symbol at the bottom right.
   - Select Mainnet.
-
-![zkSync Wallet Homepage](/D00.png)
+ 
+<p align="center"> 
+  <img src="/D00.png" alt="zkSync wallet homepage">
+</p>
 
 <br>
 
-![Mainnet Selection](/Mainnet.png)
+<p align="center"> 
+  <img src="/Mainnet.png" alt="Mainnet Selection">
+</p>
 
 <br>
 
 2. Choose "+ Top up."
 
-![Top up](/D2.png)
+<p align="center"> 
+  <img src="/D2.png" alt="Top up">
+</p>
 
 <br>
 
@@ -46,13 +52,17 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 <br>
 
-![Select zkSync Bridge](/Top-up.png)
+<p align="center"> 
+  <img src="/Top-up.png" alt="Select zkSync Bridge">
+</p>
 
 <br>
 
 3. Select your token, enter the amount, and click "Top up".
 
-![zkSync Bridge](/Top-up-1.png)
+<p align="center"> 
+  <img src="/Top-up-1.png" alt="zkSync Bridge">
+</p>
 
 <br>
 
@@ -66,7 +76,9 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 <br>
 
-![Choose token](/D3.png)
+<p align="center">
+  <img src="/D3.png" alt="Choose token">
+</p>
 
 <br>
 
@@ -78,7 +90,9 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 4. Review the transaction information and confirm. 
 
-![Metamask Confirm](/D5.png)
+<p align="center"> 
+  <img src="/D5.png" alt="Metamask confirm">
+</p>
 
 <br>
 
@@ -86,11 +100,15 @@ You can choose different methods for adding funds to your zkSync wallet includin
    depends on the fee that you set. Your funds will appear on L2 only after your transaction is processed on L1. If you
    have any difficulties, please check [Etherscan](https://etherscan.io/) to monitor the transaction.
 
-![Add Funds loading](/D6.png)
+<p align="center"> 
+  <img src="/D6.png" alt="Add Funds loading">
+</p>
 
 <br>
 
-![Successful Deposit](/D7.png)
+<p align="center"> 
+  <img src="/D7.png" alt="Successful Deposit">
+</p>
 
 <br>
 
@@ -113,27 +131,37 @@ more information about account activation, see [Account Activation FAQ](./faq.md
 1. You will be prompted to "Authorize to Sign account activation" and need to sign the message first to generate
    your zkSync L2 private key.
 
-![Account activation authorize](/S2.png)
+<p align="center"> 
+  <img src="/S2.png" alt="Account activation authorize">
+</p>
 
 <br>
 
-![Signature request](/S3.png)
+<p align="center"> 
+  <img src="/S3.png" alt="Signature request">
+</p>
 
 2. Then, you will be asked to sign the message for account activation (it is good practice to read the messages you
    sign).
 
-![Sign account activation](/S4.png)
+<p align="center"> 
+  <img src="/S4.png" alt="Sign account activation">
+</p>
 
 <br>
 
-![Metamask sign](/S5.png)
+<p align="center"> 
+  <img src="/S5.png" alt="Metamask sign">
+</p>
 
 > The account activation fee can be seen below the transaction fee when completing your transaction.
 >
 > - To learn more about the account activation fee check our
 >   [Account Activation FAQ](./faq.md#what-is-the-account-activation-fee).
 
-![Activation fee](/Activation-fee.png)
+<p align="center"> 
+  <img src="/Activation-fee.png" alt="Activation fee">
+</p>
 
 <br>
 <br>
@@ -148,7 +176,9 @@ account or not, you can send them funds on zkSync to the same address they have 
 
 1. Click on "Transfer"
 
-![Transfer](/S1.png)
+<p align="center"> 
+  <img src="/S1.png" alt="Transfer">
+</p>
 
 <br>
 
@@ -163,21 +193,27 @@ account or not, you can send them funds on zkSync to the same address they have 
 - _Before transacting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."
 
-![Send on zkSync](/S8.1.png)
+<p align="center"> 
+  <img src="/S8.1.png" alt="Send on zkSync">
+</p>
 
 <br>
 
 3. Signing this message submits the transaction to the zkSync network. (remember, it is good practice to read the
    messages you sign).
 
-![Metamask sign](/S7.png)
+<p align="center"> 
+  <img src="/S7.png" alt="Metamask sign">
+</p>
 
 <br>
 
 4. The transfer should take no longer than a couple of seconds. If you have any difficulties, please check
    [zkScan](https://zkscan.io/) to monitor the transaction.
 
-![Successful transfer](/S9.png)
+<p align="center"> 
+  <img src="/S9.png" alt="Successful transfer">
+</p>
 
 <br>
 
@@ -202,20 +238,26 @@ funds on the exchange._
 
 1. Click on "Transfer"
 
-![Transfer](/se1.png)
+<p align="center"> 
+  <img src="/se1.png" alt="Transfer">
+</p>
 
 <br>
 
 2. Click on "Send to Ethereum (L1)."
 
-![Select send to Ethereum](/se2.png)
+<p align="center"> 
+  <img src="/se2.png" alt="Select send to Ethereum">
+</p>
 
 <br>
 
 3. Your address will auto-populate with your address.  
    **If you enter a different address for withdrawal, please check that it accepts smart contract transfers.** 
 
-![Send to Ethereum](/se.png)
+<p align="center"> 
+  <img src="/se.png" alt="Send to Ethereum">
+</p>
 
 <br>
 
@@ -230,21 +272,27 @@ funds on the exchange._
 - _Before transacting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions." <br>
 
-![Send to Ethereum button](/se4.png)
+<p align="center"> 
+  <img src="/se4.png" alt="Send to Ethereum button">
+</p>
 
 <br>
 
 **Read the popup carefully to prevent loss of funds.**  
 <br>
 
-![Send to Ethereum Popup](/SE-Popup.png)
+<p align="center"> 
+  <img src="/SE-Popup.png" alt="Send to Ethereum Popup">
+</p>
 
 <br>
 
 5. Confirm the withdrawal amount, address, fee, and sign the message (remember, it is good practice to read the messages
    you sign).
 
-![Metamask sign](/se6.png)
+<p align="center"> 
+  <img src="/se6.png" alt="Metamask sign">
+</p>
 
 6. Your withdrawal has been initiated. There will be an immediate change in your account balance in zkSync, but
    **withdrawal times can take from 10 minutes to 7 hours before being available on L1.**
@@ -270,19 +318,25 @@ to the creators of these frontends.
 
 1. Visit the [IPFS.io](https://ipfs.io/) and install IPFS Desktop.
 
-![Download IPFS](/m1.png)
+<p align="center"> 
+  <img src="/m1.png" alt="Download IPFS">
+</p>
 
 <br>
 
 2. Go to "Files", select "+ Import", and choose your image.
 
-![Import image](/m2.png)
+<p align="center"> 
+  <img src="/m2.png" alt="Import image">
+</p>
 
 <br>
 
 3. Click on the three dots at the end of the row of your imported image and click on "Copy CID" (Content Identifier).
 
-![Copy CID](/m3.png)
+<p align="center"> 
+  <img src="/m3.png" alt="Copy CID">
+</p>
 
 <br>
 
@@ -341,7 +395,9 @@ to the creators of these frontends.
   
 6. Save your .json file or download your .json file if you used the link from step 4.
 
-![Download json](/json.png)
+<p align="center"> 
+  <img src="/json.png" alt="Download json">
+</p>
 
 <br>
 
@@ -349,7 +405,9 @@ to the creators of these frontends.
 
 8. On your [zkSync wallet](https://wallet.zksync.io/), open the NFTs tab and select "+ Mint NFT."
 
-![Select Mint NFT](/m4.png)
+<p align="center"> 
+  <img src="/m4.png" alt="Select Mint NFT">
+</p>
 
 <br>
 
@@ -364,13 +422,17 @@ to the creators of these frontends.
 - _Before minting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.” <br>
 
-![Mint NFT button](/m7.png)
+<p align="center"> 
+  <img src="/m7.png" alt="Mint NFT button">
+</p>
 
 <br>
 
 10. Confirm the fee and sign the message (remember, it is good practice to read the messages you sign).
 
-![Metamask sign](/m8.png)
+<p align="center"> 
+  <img src="/m8.png" alt="Metamask sign">
+</p>
 
 <br>
 
@@ -402,7 +464,9 @@ _If you sent to a Centralized Exchange, please check with their customer support
 - 1. The account is at least 24 hours old.
 - 2. The account has never been activated (i.e., nonce is zero).
 
-![Nonce check](/nonce.png)
+<p align="center"> 
+  <img src="/nonce.png" alt="Nonce check">
+</p>
 
   <br>
 
@@ -414,25 +478,33 @@ _If you sent to a Centralized Exchange, please check with their customer support
 - _You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”_
   <br>
 
-![zkTools selection](/zktools.png)
+<p align="center"> 
+  <img src="/zktools.png" alt="zkTools">
+</p>
 
 <br>
 
 4. Enter the zkSync address from steps 1 and 2.
 
-![Alternative withdrawal](/a1.png)
+<p align="center"> 
+  <img src="/a1.png" alt="Alternative withdrawal">
+</p>
 
 <br>
 
 5. Select the token you want to be withdrawn and the method for paying the fee.
 
-![Token select](/a3.png)
+<p align="center"> 
+  <img src="/a3.png" alt="Token select">
+</p>
 
 <br>
 
 6. Complete the fee payment process on your wallet.
 
-![Metamask confirm](/a4.png)
+<p align="center"> 
+  <img src="/a4.png" alt="Metamask confirm">
+</p>
 
 <br>
 
@@ -444,7 +516,7 @@ _If you sent to a Centralized Exchange, please check with their customer support
   - 1. Your zkSync address from step 1.
   - 2. The token and the amount.
   - 3. The Ethereum transaction hash of the fee payment.
-![Etherscan Internal Transactions](/int-txns.png)
-
-    <br>
-    <br>
+  
+<p align="center"> 
+  <img src="/int-txns.png" alt="Etherscan Internal Transactions">
+</p>
