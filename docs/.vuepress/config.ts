@@ -17,7 +17,7 @@ export = defineConfig(_ctx => {
       'fulltext-search': {},
       'vuepress-plugin-canonical': {
         baseURL: 'https://docs.zksync.io', // base url for your canonical link, optional, default: ''
-        stripExtension: false, // strip '.html' , optional, default: false
+        stripExtension: true, // strip '.html' , optional, default: false
       },
       sitemap: {
         hostname: 'https://docs.zksync.io',
