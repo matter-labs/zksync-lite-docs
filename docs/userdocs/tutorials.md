@@ -16,7 +16,7 @@ cover it during high gas fees.** Learn more about the account activation fee in 
 
 To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.  
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Deposit%201.png" alt="Deposit 201"></p>
+![Metamask Ethereum Mainnet](/D1.png)
 
 <br>
 
@@ -26,18 +26,17 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
   - Click on the Ethereum symbol at the bottom right.
   - Select Mainnet.
 
-
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D00.png" alt="D00"></p>
+![zkSync Wallet Homepage](/D00.png)
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mainnet.png" alt="Mainnet"></p>
+![Mainnet Selection](/Mainnet.png)
 
 <br>
 
 2. Choose "+ Top up."
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D2.png" alt="D2"></p>
+![Top up](/D2.png)
 
 <br>
 
@@ -45,13 +44,13 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/Top%20up.png" alt="Top up"></p>
+![Select zkSync Bridge](/Top-up.png)
 
 <br>
 
 3. Select your token, enter the amount, and click "Top up".
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/Top%20up%201.png" alt="Top up 1"></p>
+![zkSync Bridge](/Top-up-1.png)
 
 <br>
 
@@ -65,18 +64,19 @@ You can choose different methods for adding funds to your zkSync wallet includin
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D3.png" alt="D3"></p>
+![Choose token](/D3.png)
 
 <br>
 
 | If you add a token that requires approval, you need to pay a gas fee on Ethereum to authorize the deposit to zkSync. You will see the following messages before moving on to step 4. |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![ERC20 approval.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/ERC20%20approval.png)                                  |
+| ![ERC20 approval.png](/ERC20-approval.png)                                  |
+
 <br>
 
 4. Review the transaction information and confirm. 
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D5.png" alt="D5"></p>
+![Metamask Confirm](/D5.png)
 
 <br>
 
@@ -84,11 +84,11 @@ You can choose different methods for adding funds to your zkSync wallet includin
    depends on the fee that you set. Your funds will appear on L2 only after your transaction is processed on L1. If you
    have any difficulties, please check [Etherscan](https://etherscan.io/) to monitor the transaction.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D6.png" alt="D6"></p>
+![Add Funds loading](/D6.png)
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/D7.png" alt="D7"></p>
+![Successful Deposit](/D7.png)
 
 <br>
 
@@ -98,7 +98,7 @@ You can choose different methods for adding funds to your zkSync wallet includin
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![D9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D9.png)                                                         | ![D10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Add%20Funds/D10.png)                                                   |
+| ![Deposit committed](/D9.png)                                                         | ![Deposit verified](/D10.png)                                                   |
 
 <br>
 <br>
@@ -111,27 +111,27 @@ more information about account activation, see [Account Activation FAQ](./faq.md
 1. You will be prompted to "Authorize to Sign account activation" and need to sign the message first to generate
    your zkSync L2 private key.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S2.png" alt="S2"></p>
+![Account activation authorize](/S2.png)
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S3.png" alt="S3"></p>
+![Signature request](/S3.png)
 
 2. Then, you will be asked to sign the message for account activation (it is good practice to read the messages you
    sign).
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S4.png" alt="S4"></p>
+![Sign account activation](/S4.png)
 
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S5.png" alt="S5"></p>
+![Metamask sign](/S5.png)
 
 > The account activation fee can be seen below the transaction fee when completing your transaction.
 >
 > - To learn more about the account activation fee check our
 >   [Account Activation FAQ](./faq.md#what-is-the-account-activation-fee).
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Activation%20fee.png" alt="Activation fee"></p>
+![Activation fee](/Activation-fee.png)
 
 <br>
 <br>
@@ -146,13 +146,13 @@ account or not, you can send them funds on zkSync to the same address they have 
 
 1. Click on "Transfer"
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S1.png" alt="S1"></p>
+![Transfer](/S1.png)
 
 <br>
 
 |                                                               **If this is your first transaction after depositing or funding your zkSync account, see the [Account Activation](#account-activation) section.**<br>                                                               |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![authorize-to-send-zksync.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/authorize-to-send-zksync.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). |
+| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![Authorize to send on zkSync](/authorize-to-send-zksync.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). |
 
 <br>
 
@@ -161,21 +161,21 @@ account or not, you can send them funds on zkSync to the same address they have 
 - _Before transacting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions."
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S8.1.png" alt="s8,1"></p>
+![Send on zkSync](/S8.1.png)
 
 <br>
 
 3. Signing this message submits the transaction to the zkSync network. (remember, it is good practice to read the
    messages you sign).
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S7.png" alt="S7"></p>
+![Metamask sign](/S7.png)
 
 <br>
 
 4. The transfer should take no longer than a couple of seconds. If you have any difficulties, please check
    [zkScan](https://zkscan.io/) to monitor the transaction.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/S9.png" alt="S9"></p>
+![Successful transfer](/S9.png)
 
 <br>
 
@@ -184,14 +184,14 @@ account or not, you can send them funds on zkSync to the same address they have 
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![S10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S10.png)                                                       | ![S11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds/S11.png)                                                   |
+| ![Transfer committed](/S10.png)                                                       | ![Transfer verified](/S11.png)                                                   |
 
 <br>
 <br>
 
 ## Transfer Funds to Ethereum
 
-This tutorial will cover the process of withdrawing funds from zkSync back to the Ethereum main chain. <br>
+This tutorial will cover the process of withdrawing funds from zkSync back to the Ethereum main chain. 
 
 **Moving funds to an exchange**: If you want to move your funds from zkSync to an exchange, these steps follow the
 **correct method**. _Alternatively, you can take a risk and enter the exchange address when you withdraw, but most
@@ -200,26 +200,26 @@ funds on the exchange._
 
 1. Click on "Transfer"
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se1.png" alt="se1"></p>
+![Transfer](/se1.png)
 
 <br>
 
 2. Click on "Send to Ethereum (L1)."
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se2.png" alt="se2"></p>
+![Select send to Ethereum](/se2.png)
 
 <br>
 
 3. Your address will auto-populate with your address.  
    **If you enter a different address for withdrawal, please check that it accepts smart contract transfers.** 
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se.png" alt="se"></p>
+![Send to Ethereum](/se.png)
 
 <br>
 
 |                                                               **If this is your first transaction after depositing or funding your zkSync account, see the [Account Activation](#account-activation) section.**<br>                                                               |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![authorize-to-send-zksync.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/authorize-to-send-eth.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). | 
+| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> ![Authorize to send on zkSync](/authorize-to-send-zksync.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). | 
 
 <br>
 
@@ -228,21 +228,21 @@ funds on the exchange._
 - _Before transacting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports "gasless meta-transactions." <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se4.png" alt="se4"></p>
+![Send to Ethereum button](/se4.png)
 
 <br>
 
 **Read the popup carefully to prevent loss of funds.**  
 <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/SE%20Popup.png" alt="SE Popup"></p>
+![Send to Ethereum Popup](/SE-Popup.png)
 
 <br>
 
 5. Confirm the withdrawal amount, address, fee, and sign the message (remember, it is good practice to read the messages
    you sign).
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/se6.png" alt="se6"></p> <br>
+![Metamask sign](/se6.png)
 
 6. Your withdrawal has been initiated. There will be an immediate change in your account balance in zkSync, but
    **withdrawal times can take from 10 minutes to 7 hours before being available on L1.**
@@ -252,7 +252,7 @@ funds on the exchange._
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction and your funds are ready for immediate use. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![se8.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se8.png)                                                       | ![se9.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Transfer%20Funds%20to%20Ethereum/se9.png)                                                   |
+| ![Send to Ethereum committed](/se8.png)                                                       | ![Send to Ethereum verified](/se9.png)                                                   |
 
 <br>
 <br>
@@ -268,19 +268,19 @@ to the creators of these frontends.
 
 1. Visit the [IPFS.io](https://ipfs.io/) and install IPFS Desktop.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m1.png" alt="m1"></p>
+![Download IPFS](/m1.png)
 
 <br>
 
 2. Go to "Files", select "+ Import", and choose your image.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m2.png" alt="m2"></p>
+![Import image](/m2.png)
 
 <br>
 
 3. Click on the three dots at the end of the row of your imported image and click on "Copy CID" (Content Identifier).
-  
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m3.png" alt="m3"></p>
+
+![Copy CID](/m3.png)
 
 <br>
 
@@ -339,7 +339,7 @@ to the creators of these frontends.
   
 6. Save your .json file or download your .json file if you used the link from step 4.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/json.png" alt="json"></p>
+![Download json](/json.png)
 
 <br>
 
@@ -347,13 +347,13 @@ to the creators of these frontends.
 
 8. On your [zkSync wallet](https://wallet.zksync.io/), open the NFTs tab and select "+ Mint NFT."
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m4.png" alt="m4"></p>
+![Select Mint NFT](/m4.png)
 
 <br>
 
 |                                                               **If this is your first transaction after depositing or funding your zkSync account, see the [Account Activation](#account-activation) section.**<br>                                                               |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Send on zkSync."**<br><br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). | 
+| **If you refreshed the page or recently connected your wallet to zkSync, you will be asked to "Authorize to Mint NFT."**<br><br> ![Authorize Mint NFT](/authorize-mint.png)<br> - Signing the message will re-generate your zkSync Layer 2 (L2) private key (remember, it is good practice to read the messages you sign). | 
 
 <br>
 
@@ -362,13 +362,13 @@ to the creators of these frontends.
 - _Before minting, you can change the fee token._  
   Users can pay transaction fees in all popular tokens since zkSync supports “gasless meta-transactions.” <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mint/m7.png" alt="m7"></p>
+![Mint NFT button](/m7.png)
 
 <br>
 
 10. Confirm the fee and sign the message (remember, it is good practice to read the messages you sign).
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/m8.png" alt="m8"></p>
+![Metamask sign](/.png)
 
 <br>
 
@@ -380,7 +380,7 @@ to the creators of these frontends.
 | **Committed**                                                                                                                                          | **Verified**                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A single yellow check mark next to your balance indicates the zkSync server has processed your transaction. | Two green check marks signal the proof for the block containing your transaction has been produced and submitted to the smart contract on Layer 1. |
-| ![m10.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mint/m10.png)                                                       | ![m11.png](https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/Mint/m11.png)                                                   |
+| ![NFT committed](/m10.png)                                                       | ![NFT verified](/m11.png)                                                   |
 
 <br>
 <br>
@@ -400,7 +400,7 @@ _If you sent to a Centralized Exchange, please check with their customer support
 - 1. The account is at least 24 hours old.
 - 2. The account has never been activated (i.e., nonce is zero).
 
-  <p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/nonce.png" alt="nonce"></p>
+![Nonce check](/nonce.png)
 
   <br>
 
@@ -412,25 +412,25 @@ _If you sent to a Centralized Exchange, please check with their customer support
 - _You can also access the “Alternative Withdrawal” tool on the [zkSync.io](http://zksync.io/) webpage under "zkTools.”_
   <br>
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/zktools.png" alt="zktools"></p>
+![zkTools selection](/zktools.png)
 
 <br>
 
 4. Enter the zkSync address from steps 1 and 2.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/a1.png" alt="a1"></p>
+![Alternative withdrawal](/a1.png)
 
 <br>
 
 5. Select the token you want to be withdrawn and the method for paying the fee.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/a3.png" alt="a3"></p>
+![Token select](/a3.png)
 
 <br>
 
 6. Complete the fee payment process on your wallet.
 
-<p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/a4.png" alt="a4"></p>
+![Metamask confirm](/a4.png)
 
 <br>
 
@@ -442,8 +442,7 @@ _If you sent to a Centralized Exchange, please check with their customer support
   - 1. Your zkSync address from step 1.
   - 2. The token and the amount.
   - 3. The Ethereum transaction hash of the fee payment.
-
-    <p align="center"><img src="https://raw.githubusercontent.com/matter-labs/zksync-docs/master/docs/images/int-txns.png" alt="int-txns"></p>
+![Etherscan Internal Transactions](/int-txns.png)
 
     <br>
     <br>
