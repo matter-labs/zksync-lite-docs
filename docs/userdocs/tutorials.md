@@ -368,7 +368,7 @@ to the creators of these frontends.
 
 10. Confirm the fee and sign the message (remember, it is good practice to read the messages you sign).
 
-![Metamask sign](/.png)
+![Metamask sign](/m8.png)
 
 <br>
 
