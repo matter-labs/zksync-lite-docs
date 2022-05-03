@@ -39,7 +39,7 @@ wallet, here are a few steps you should take:
 
 <br>
 
-![Internal Txns Etherescan](../images/int-txns.png)
+![Internal Txns Etherescan](/int-txns.png)
 
 <br>
 <br>
