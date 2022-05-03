@@ -13,23 +13,20 @@
       }
     ],
     [
-      "@semantic-release/github", "assets": [
+      "@semantic-release/github",
       {
-        "path": "dist.zip",
-        "label": "Dist package"
+        "assets": [
+          {
+            "path": "dist.zip",
+            "label": "Dist package"
+          }
+        ]
       }
-    ] ],
+    ],
     [
       "@semantic-release/changelog",
       {
         "changelogFile": "CHANGELOG.md"
-      },
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [ "dist.zip" ],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
   ]
