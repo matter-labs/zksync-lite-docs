@@ -1,7 +1,7 @@
 import { defineConfig } from 'vuepress/config';
 import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.js';
 
-export = defineConfig(_ctx => {
+export default defineConfig(_ctx => {
   return {
     evergreen: true,
     title: 'zkSync: secure, scalable crypto payments', // adding title gives us a header with search box
@@ -14,6 +14,7 @@ export = defineConfig(_ctx => {
       toc: { includeLevel: [1, 2, 3] },
     },
     plugins: {
+      'plugin-active-header-links': {},
       'fulltext-search': {},
       'vuepress-plugin-canonical': {
         baseURL: 'https://docs.zksync.io', // base url for your canonical link, optional, default: ''
