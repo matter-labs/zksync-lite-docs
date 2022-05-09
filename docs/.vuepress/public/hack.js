@@ -7,10 +7,10 @@ function locationHashChanged (event) {
     }
     const currentLocationHash = (event.path && event.path[0] && event.path[0].location && event.path[0].location.hash) ? event.path[0].location.hash : window.location.hash;
     console.log("\n\ncurrentLocationHash: ", currentLocationHash)
-    console.log("currentLocationHash.hash: ", currentLocationHash.hash)
-    console.log("lastHash: ", lastHash, currentLocationHash && currentLocationHash.hash !== "" && currentLocationHash.hash !== lastHash)
-    if (currentLocationHash && currentLocationHash.hash !== "" && currentLocationHash.hash !== lastHash) {
-      const element = document.querySelector(currentLocationHash.hash);
+    console.log("window.location.hash: ", window.location.hash)
+    console.log("lastHash: ", lastHash, currentLocationHash && currentLocationHash !== lastHash)
+    if (currentLocationHash && currentLocationHash !== lastHash) {
+      const element = document.querySelector(currentLocationHash);
       console.log("element: ", element)
       if (element) {
         if (event.hasOwnProperty('stopPropagation')) {
@@ -24,8 +24,8 @@ function locationHashChanged (event) {
           console.log(3);
           element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         }
-        console.log("Set lastHash to ", currentLocationHash.hash);
-        lastHash = currentLocationHash.hash;
+        console.log("Set lastHash to ", currentLocationHash);
+        lastHash = currentLocationHash;
         return false;
       }
     }
