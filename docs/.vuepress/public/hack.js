@@ -5,7 +5,7 @@ function locationHashChanged (event) {
     if (!event || !event.isTrusted) {
       return;
     }
-    const currentLocationHash = (event.path && event.path.length > 0 && event.path[0] && event.path[0].location && event.path[0].location.hash) ? event.path[0].location : window.location.hash;
+    const currentLocationHash = (event.path && event.path[0] && event.path[0].location && event.path[0].location.hash) ? event.path[0].location.hash : window.location.hash;
     console.log("\n\ncurrentLocationHash: ", currentLocationHash)
     console.log("currentLocationHash.hash: ", currentLocationHash.hash)
     console.log("lastHash: ", lastHash, currentLocationHash && currentLocationHash.hash !== "" && currentLocationHash.hash !== lastHash)
