@@ -67,67 +67,65 @@ module.exports = {
         ]
       }
     ],
-    displayAllHeaders: false,
+    //displayAllHeaders: true,
     sidebar: {
       '/legal/': ['/legal/terms', '/legal/privacy'],
       '/userdocs/': [
         {
           title: 'Welcome to zkSync', // required
           path: '/userdocs/', // optional, which should be a absolute path.
-          children: [
-            {
-              title: 'Overview', // required
-              path: '/userdocs/intro', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Technology', // required
-              path: '/userdocs/tech', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Security', // required
-              path: '/userdocs/security', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Learn By Watching', // required
-              path: '/userdocs/learnbywatching', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Wallets', // required
-              path: '/userdocs/wallets', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Tokens & Fees', // required
-              path: '/userdocs/tokens', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Decentralization', // required
-              path: '/userdocs/decentralization', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Tokenomics', // required
-              path: '/userdocs/tokenomics', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Smart contracts', // required
-              path: '/userdocs/sc', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Privacy', // required
-              path: '/userdocs/privacy', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Roadmap', // required
-              path: '/userdocs/roadmap', // optional, which should be a absolute path.
-            },
-            {
-              title: 'FAQ', // required
-              path: '/userdocs/faq', // optional, which should be a absolute path.
-            },
-            {
-              title: 'Tutorials', // required
-              path: '/userdocs/tutorials', // optional, which should be a absolute path.
-            },
-          ]
+        },
+        {
+          title: 'Overview', // required
+          path: '/userdocs/intro.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Technology', // required
+          path: '/userdocs/tech.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Security', // required
+          path: '/userdocs/security.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Learn By Watching', // required
+          path: '/userdocs/learnbywatching.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Wallets', // required
+          path: '/userdocs/wallets.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Tokens & Fees', // required
+          path: '/userdocs/tokens.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Decentralization', // required
+          path: '/userdocs/decentralization.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Tokenomics', // required
+          path: '/userdocs/tokenomics.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Smart contracts', // required
+          path: '/userdocs/sc.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Privacy', // required
+          path: '/userdocs/privacy.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Roadmap', // required
+          path: '/userdocs/roadmap.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'FAQ', // required
+          path: '/userdocs/faq.html', // optional, which should be a absolute path.
+        },
+        {
+          title: 'Tutorials', // required
+          path: '/userdocs/tutorials.html', // optional, which should be a absolute path.
         },
       ],
       '/dev': [
