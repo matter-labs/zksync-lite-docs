@@ -381,7 +381,7 @@ own minting contract. Projects with their own minting contracts only need to imp
 `mintNFTFromZkSync`. Example: [mintNFTFromZkSync](https://github.com/matter-labs/zksync/blob/master/contracts/contracts/ZkSyncNFTFactory.sol).
 
 ```typescript
-mintNFTFromZkSync(creator_address: address, creator_id: uint32, serial_id: uint32, content_hash: bytes, recipient_address: address, token_id: uint32)
+mintNFTFromZkSync(creator: address, recipient: address, creatorAccountId: uint32, serialId: uint32, contentHash: bytes32, tokenId: uint256)
 ```
 
 The zkSync Governance contract will implement a function `registerNFTFactory` that will register creators as a trusted
