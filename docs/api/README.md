@@ -3,7 +3,7 @@
 ## Meta
 
 - [Changelog and notifications for developers](./changelog.md)
-- [Development and production environments](./environments.md)
+- [Development and production environments](./environments)
 
 ## API
 
