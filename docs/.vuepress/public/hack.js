@@ -50,3 +50,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
     singleElement.setAttribute('target', '_blank');
   }
 });
+
