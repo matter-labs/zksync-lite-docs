@@ -2,8 +2,8 @@
 
 ## Meta
 
-- [Changelog and notifications for developers](./changelog)
-- [Development and production environments](./environments)
+- [Changelog and notifications for developers](./changelog.md)
+- [Development and production environments](./environments.md)
 
 ## API
 

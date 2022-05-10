@@ -4,8 +4,6 @@
 
 ## Add Funds to zkSync with MetaMask
 
-test test test
-
 In this tutorial, we will be depositing into a zkSync wallet with MetaMask.
 
 > While the tutorial shows the MetaMask images for Rinkeby, you can follow the same steps for mainnet.

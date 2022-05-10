@@ -1,18 +1,17 @@
-/* const footnote_plugin = require('markdown-it-footnote/dist/markdown-it-footnote.min.js'); */
+import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.js';
 
-module.exports = {
+export default {
   evergreen: true,
   title: 'zkSync: secure, scalable crypto payments', // adding title gives us a header with search box
   description: 'zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet',
   dest: 'dist',
   markdown: {
-    /* extendMarkdown: (md) => {
+    extendMarkdown: (md) => {
       md.use(footnote_plugin);
-    }, */
+    },
     toc: { includeLevel: [1, 2, 3] },
   },
   plugins: {
-    '@vuepress/plugin-active-header-links': {},
     'fulltext-search': {},
     'vuepress-plugin-canonical': {
       baseURL: 'https://docs.zksync.io', // base url for your canonical link, optional, default: ''
@@ -74,58 +73,86 @@ module.exports = {
         {
           title: 'Welcome to zkSync', // required
           path: '/userdocs/', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 0, // optional, defaults to 1
         },
         {
           title: 'Overview', // required
           path: '/userdocs/intro.html', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Technology', // required
-          path: '/userdocs/tech.html', // optional, which should be a absolute path.
+          path: '/userdocs/tech', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Security', // required
-          path: '/userdocs/security.html', // optional, which should be a absolute path.
+          path: '/userdocs/security', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Learn By Watching', // required
-          path: '/userdocs/learnbywatching.html', // optional, which should be a absolute path.
+          path: '/userdocs/learnbywatching', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Wallets', // required
-          path: '/userdocs/wallets.html', // optional, which should be a absolute path.
+          path: '/userdocs/wallets', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Tokens & Fees', // required
-          path: '/userdocs/tokens.html', // optional, which should be a absolute path.
+          path: '/userdocs/tokens', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Decentralization', // required
-          path: '/userdocs/decentralization.html', // optional, which should be a absolute path.
+          path: '/userdocs/decentralization', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Tokenomics', // required
-          path: '/userdocs/tokenomics.html', // optional, which should be a absolute path.
+          path: '/userdocs/tokenomics', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Smart contracts', // required
-          path: '/userdocs/sc.html', // optional, which should be a absolute path.
+          path: '/userdocs/sc', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Privacy', // required
-          path: '/userdocs/privacy.html', // optional, which should be a absolute path.
+          path: '/userdocs/privacy', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Roadmap', // required
-          path: '/userdocs/roadmap.html', // optional, which should be a absolute path.
+          path: '/userdocs/roadmap', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'FAQ', // required
-          path: '/userdocs/faq.html', // optional, which should be a absolute path.
+          path: '/userdocs/faq', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
         {
           title: 'Tutorials', // required
-          path: '/userdocs/tutorials.html', // optional, which should be a absolute path.
+          path: '/userdocs/tutorials', // optional, which should be a absolute path.
+          collapsable: true, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
         },
       ],
       '/dev': [
