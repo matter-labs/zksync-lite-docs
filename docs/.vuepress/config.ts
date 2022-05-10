@@ -116,9 +116,9 @@ export = defineConfig(_ctx => {
           },
           {
             title: 'Decentralization', // required
-            path: '/userdocs/decentralization', // optional, which should be a absolute path.
+            path: '/userdocs/decentralization/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
-            sidebarDepth: 1, // optional, defaults to 1
+            sidebarDepth: 0, // optional, defaults to 1
           },
           {
             title: 'Tokenomics', // required
