@@ -17,9 +17,9 @@ function locationHashChanged (event) {
         } else {
           element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         }
+        lastHash = currentLocation.hash;
         return false;
       }
-      lastHash = currentLocation.hash;
     }
   } catch (err) {
     console.debug(err);

@@ -49,22 +49,9 @@
     "cspell": "cspell lint --no-summary --fail-fast --no-progress --no-must-find-files -c cspell.json docs/**/*.md ",
     "md:lint": "markdownlint --config .markdownlintrc ./docs/**/*.md",
     "md:fix": "markdownlint --fix -c .markdownlintrc ./docs/**/*.md",
-    "md:deadlinks": "check-md",
-    "ci:lint": "yarn cspell && yarn md:lint && yarn md:deadlinks",
+    "ci:lint": "yarn cspell && yarn md:lint",
     "semantic-release": "semantic-release",
     "postinstall": "husky install"
-  },
-  "check-md": {
-    "defaultIndex": [
-      "README.md"
-    ],
-    "exitLevel": "warn",
-    "ignoreFootnotes": true,
-    "preset": "vuepress",
-    "root": [
-      "./",
-      "./.vuepress/public"
-    ]
   },
   "bugs": {
     "url": "https://github.com/matter-labs/zksync-docs/issues"
@@ -91,7 +78,6 @@
   "lint-staged": {
     "**/*.md": [
       "markdownlint --fix",
-      "check-md",
       "cspell lint --config cspell.json"
     ]
   },
