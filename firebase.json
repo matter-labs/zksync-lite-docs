@@ -109,8 +109,8 @@
     },
     {
       "target": "staging",
-      "cleanUrls": true,
-      "trailingSlash": true,
+      "cleanUrls": false,
+      "trailingSlash": false,
       "public": "dist",
       "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
       "rewrites": [
