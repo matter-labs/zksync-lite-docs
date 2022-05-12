@@ -3,7 +3,7 @@
     {
       "target": "prod",
       "cleanUrls": false,
-      "trailingSlash": false,
+      "trailingSlash": true,
       "public": "dist",
       "rewrites": [
         {
@@ -110,7 +110,7 @@
     {
       "target": "staging",
       "cleanUrls": false,
-      "trailingSlash": false,
+      "trailingSlash": true,
       "public": "dist",
       "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
       "rewrites": [
