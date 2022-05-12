@@ -31,7 +31,7 @@ jobs:
           yarn set version 3.2.0
           yarn install
 
-      - name: "Run linters (markdownlint, cspell & check-md)"
+      - name: "Run linters (markdownlint & cspell)"
         run: yarn ci:lint
 
       - name: "Deploy preview"

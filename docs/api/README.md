@@ -2,12 +2,12 @@
 
 ## Meta
 
-- [Changelog and notifications for developers](./changelog.md)
+- [Changelog and notifications for developers](./changelog)
 - [Development and production environments](./environments)
 
 ## API
 
-- [API v0.1](./v0.1.md) (REST + JSON RPC)
+- [API v0.1](./v0.1) (REST + JSON RPC)
 
 ## SDK
 
