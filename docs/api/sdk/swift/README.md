@@ -15,4 +15,4 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 
 ## Table of contents
 
-- [Getting started](tutorial.md)
+- [Getting started](./tutorial)

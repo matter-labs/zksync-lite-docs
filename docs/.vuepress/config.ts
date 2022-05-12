@@ -1,7 +1,7 @@
 import { defineConfig } from 'vuepress/config';
 import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.js';
 
-export = defineConfig(_ctx => {
+export default defineConfig(_ctx => {
   return {
     evergreen: true,
     title: 'zkSync: secure, scalable crypto payments', // adding title gives us a header with search box
@@ -48,11 +48,11 @@ export = defineConfig(_ctx => {
         },
         {
           text: 'Contact and Media',
-          link: '/contact.html',
+          link: '/contact/',
         },
         {
           text: 'Uptime',
-          link: '/uptime',
+          link: '/uptime/',
         },
         {
           text: 'v1.x',
@@ -70,7 +70,7 @@ export = defineConfig(_ctx => {
       ],
       //displayAllHeaders: true,
       sidebar: {
-        '/legal/': ['/legal/terms', '/legal/privacy'],
+        '/legal/': ['/legal/terms/', '/legal/privacy/'],
         '/userdocs/': [
           {
             title: 'Welcome to zkSync', // required
@@ -80,79 +80,79 @@ export = defineConfig(_ctx => {
           },
           {
             title: 'Overview', // required
-            path: '/userdocs/intro.html', // optional, which should be a absolute path.
+            path: '/userdocs/intro/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Technology', // required
-            path: '/userdocs/tech', // optional, which should be a absolute path.
+            path: '/userdocs/tech/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Security', // required
-            path: '/userdocs/security', // optional, which should be a absolute path.
+            path: '/userdocs/security/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Learn By Watching', // required
-            path: '/userdocs/learnbywatching', // optional, which should be a absolute path.
+            path: '/userdocs/learnbywatching/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Wallets', // required
-            path: '/userdocs/wallets', // optional, which should be a absolute path.
+            path: '/userdocs/wallets/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Tokens & Fees', // required
-            path: '/userdocs/tokens', // optional, which should be a absolute path.
+            path: '/userdocs/tokens/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Decentralization', // required
-            path: '/userdocs/decentralization', // optional, which should be a absolute path.
+            path: '/userdocs/decentralization/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
-            sidebarDepth: 1, // optional, defaults to 1
+            sidebarDepth: 0, // optional, defaults to 1
           },
           {
             title: 'Tokenomics', // required
-            path: '/userdocs/tokenomics', // optional, which should be a absolute path.
+            path: '/userdocs/tokenomics/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
-            sidebarDepth: 1, // optional, defaults to 1
+            sidebarDepth: 0, // optional, defaults to 1
           },
           {
             title: 'Smart contracts', // required
-            path: '/userdocs/sc', // optional, which should be a absolute path.
+            path: '/userdocs/sc/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Privacy', // required
-            path: '/userdocs/privacy', // optional, which should be a absolute path.
+            path: '/userdocs/privacy/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Roadmap', // required
-            path: '/userdocs/roadmap', // optional, which should be a absolute path.
+            path: '/userdocs/roadmap/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'FAQ', // required
-            path: '/userdocs/faq', // optional, which should be a absolute path.
+            path: '/userdocs/faq/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'Tutorials', // required
-            path: '/userdocs/tutorials', // optional, which should be a absolute path.
+            path: '/userdocs/tutorials/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
@@ -165,26 +165,26 @@ export = defineConfig(_ctx => {
           },
           {
             title: 'Payments', // required
-            path: '/dev/payments', // optional, which should be a absolute path.
+            path: '/dev/payments/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
-            children: ['/dev/payments/basic', '/dev/payments/sending_transactions'],
+            children: ['/dev/payments/basic/', '/dev/payments/sending_transactions/'],
           },
           {
             title: 'Security', // required
-            path: '/dev/security', // optional, which should be a absolute path.
+            path: '/dev/security/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
-            children: ['/dev/security/approach', '/dev/security/bug-bounty', '/dev/security/disclosure', '/dev/security/bugs'],
+            children: ['/dev/security/approach/', '/dev/security/bug-bounty/', '/dev/security/disclosure/', '/dev/security/bugs/'],
           },
           {
             title: 'Smart contracts', // required
             path: '/dev/contracts/', // optional, which should be a absolute path.
             collapsable: false, // optional, defaults to true
           },
-          '/dev/nfts',
-          '/dev/swaps',
-          '/dev/events',
+          '/dev/nfts/',
+          '/dev/swaps/',
+          '/dev/events/',
         ],
         '/api': [
           {
@@ -193,80 +193,80 @@ export = defineConfig(_ctx => {
             collapsable: false, // optional, defaults to true
             sidebarDepth: 0, // optional, defaults to 1
           },
-          '/api/changelog',
-          '/api/environments',
-          '/api/events',
+          '/api/changelog/',
+          '/api/environments/',
+          '/api/events/',
           {
             title: 'API v0.1', // required
-            path: '/api/v0.1', // optional, which should be a absolute path.
+            path: '/api/v0.1/', // optional, which should be a absolute path.
             collapsable: false, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'API v0.2', // required
-            path: '/api/v0.2', // optional, which should be a absolute path.
+            path: '/api/v0.2/', // optional, which should be a absolute path.
             collapsable: false, // optional, defaults to true
             sidebarDepth: 1, // optional, defaults to 1
           },
           {
             title: 'JavaScript SDK', // required
-            path: '/api/sdk/js', // optional, which should be a absolute path.
+            path: '/api/sdk/js/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
             children: [
-              '/api/sdk/js/tutorial',
-              '/api/sdk/js/providers',
-              '/api/sdk/js/accounts',
-              '/api/sdk/js/utils',
-              '/api/sdk/js/nfts',
-              '/api/sdk/js/types',
-              '/api/sdk/js/browser-bundled',
+              '/api/sdk/js/tutorial/',
+              '/api/sdk/js/providers/',
+              '/api/sdk/js/accounts/',
+              '/api/sdk/js/utils/',
+              '/api/sdk/js/nfts/',
+              '/api/sdk/js/types/',
+              '/api/sdk/js/browser-bundled/',
             ],
           },
           {
             title: 'Rust SDK', // required
-            path: '/api/sdk/rust', // optional, which should be a absolute path.
+            path: '/api/sdk/rust/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
-            children: ['/api/sdk/rust/tutorial'],
+            children: ['/api/sdk/rust/tutorial/'],
           },
           {
             title: 'Java SDK', // required
-            path: '/api/sdk/java', // optional, which should be a absolute path.
+            path: '/api/sdk/java/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
-            children: ['/api/sdk/java/tutorial', '/api/sdk/java/interfaces'],
+            children: ['/api/sdk/java/tutorial/', '/api/sdk/java/interfaces/'],
           },
           {
             title: 'Swift SDK', // required
-            path: '/api/sdk/swift', // optional, which should be a absolute path.
+            path: '/api/sdk/swift/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
-            children: ['/api/sdk/swift/tutorial'],
+            children: ['/api/sdk/swift/tutorial/'],
           },
           {
             title: 'Python SDK', // required
-            path: '/api/sdk/python', // optional, which should be a absolute path.
+            path: '/api/sdk/python/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
-            children: ['/api/sdk/python/tutorial'],
+            children: ['/api/sdk/python/tutorial/'],
           },
-          '/api/sdk/dart',
+          '/api/sdk/dart/',
           {
             title: 'zkCheckout SDK', // required
-            path: '/api/sdk/checkout', // optional, which should be a absolute path.
+            path: '/api/sdk/checkout/', // optional, which should be a absolute path.
             collapsable: true, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
             children: [
-              '/api/sdk/checkout/tutorial',
-              '/api/sdk/checkout/checkout-manager',
-              '/api/sdk/checkout/types',
-              '/api/sdk/checkout/constants',
-              '/api/sdk/checkout/protocol',
-              '/api/sdk/checkout/appendix-a',
+              '/api/sdk/checkout/tutorial/',
+              '/api/sdk/checkout/checkout-manager/',
+              '/api/sdk/checkout/types/',
+              '/api/sdk/checkout/constants/',
+              '/api/sdk/checkout/protocol/',
+              '/api/sdk/checkout/appendix-a/',
             ],
           },
-          '/api/sdk/crypto',
+          '/api/sdk/crypto/',
         ],
         '/zkevm': [
           {
