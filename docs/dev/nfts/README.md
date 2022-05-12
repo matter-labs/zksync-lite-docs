@@ -378,17 +378,17 @@ const receipt = await emergencyWithdrawal.awaitReceipt();
 
 We have a default factory contract that will handle minting NFTs on L1 for projects that do not want to implement their
 own minting contract. Projects with their own minting contracts only need to implement one minting function:
-`mintNFTFromZkSync`.
+`mintNFTFromZkSync`. Example: [mintNFTFromZkSync](https://github.com/matter-labs/zksync/blob/master/contracts/contracts/ZkSyncNFTFactory.sol).
 
 ```typescript
-mintNFTFromZkSync(creator_address: address, creator_id: uint32, serial_id: uint32, content_hash: bytes, recipient_address: address, token_id: uint32)
+mintNFTFromZkSync(creator: address, recipient: address, creatorAccountId: uint32, serialId: uint32, contentHash: bytes32, tokenId: uint256)
 ```
 
-The zkSync Governance contract will implement a function `registerFactory` that will register creators as a trusted
-minter on L2 for the factory contract.
+The zkSync Governance contract will implement a function `registerNFTFactoryCreator` that will register creators as a trusted
+minter on L2 for the factory contract. Example: [registerNFTFactoryCreator](https://github.com/matter-labs/zksync/blob/master/contracts/contracts/Governance.sol).
 
 ```typescript
-registerFactory(creator_address: address, signature: bytes)
+registerNFTFactoryCreator(creatorAccountId: uint32, creatorAddress: address, signature: bytes)
 ```
 
 To withdraw, users call `withdrawNFT()` with the token_id. The zkSync smart contract will verify ownership, burn the
@@ -405,5 +405,5 @@ token on L2, and call `mintNFTFromZkSync` on the factory corresponding to the cr
 "\nFactory: {FactoryAddressInHex}"
 ```
 
-2. The factory contract calls `registerFactory` on the zkSync L1 smart contract with the signature.
+2. The factory contract calls `registerNFTFactoryCreator` on the zkSync L1 smart contract with the signature.
 3. zkSync smart contract validates the signature and emits an event with `factory_address` and `creator_address`.
