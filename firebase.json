@@ -2,8 +2,8 @@
   "hosting": [
     {
       "target": "prod",
-      "cleanUrls": true,
-      "trailingSlash": true,
+      "cleanUrls": false,
+      "trailingSlash": false,
       "public": "dist",
       "rewrites": [
         {
