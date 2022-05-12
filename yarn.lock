@@ -2391,16 +2391,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sindresorhus/slugify@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@sindresorhus/slugify@npm:0.8.0"
-  dependencies:
-    escape-string-regexp: ^1.0.5
-    lodash.deburr: ^4.1.0
-  checksum: 14f8f3a4125f3a1f42dfecbf9f7b526dd3ac77d328f585e106820301409d0f88854d0ad903a56f5c8ba37a1d1ac35063d2e6ce9fa600a38b32ef3da56b09010f
-  languageName: node
-  linkType: hard
-
 "@szmarczak/http-timer@npm:^1.1.2":
   version: 1.1.2
   resolution: "@szmarczak/http-timer@npm:1.1.2"
@@ -4567,7 +4557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^2.0.0, chalk@npm:^2.3.2, chalk@npm:^2.4.1, chalk@npm:^2.4.2":
+"chalk@npm:^2.0.0, chalk@npm:^2.3.2, chalk@npm:^2.4.1":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
   dependencies:
@@ -4602,22 +4592,6 @@ __metadata:
   version: 0.2.0
   resolution: "charcodes@npm:0.2.0"
   checksum: 972443ed359d54382e721b9db0a298eb95c4c454386f7e98886586f433e1e6686225416114e6f6bb2e6ef3facc9ba3b4ab9946a56a180fe64ef67816a05d4fe4
-  languageName: node
-  linkType: hard
-
-"check-md@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "check-md@npm:1.0.2"
-  dependencies:
-    "@sindresorhus/slugify": ^0.8.0
-    chalk: ^2.4.2
-    commander: ^2.19.0
-    diacritics: ^1.3.0
-    globby: ^9.1.0
-    yargs-parser: ^20.2.1
-  bin:
-    check-md: ./bin.js
-  checksum: d907d4aabdf04dab82b2b95c9e7e13ef5733843fae3126ec0e9e9b7d97fc217bcdde31cf7c7f7c56db305c619731689e75c1491dc73bf2b5d0c643feb79df890
   languageName: node
   linkType: hard
 
@@ -4983,7 +4957,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.19.0, commander@npm:^2.20.0":
+"commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
@@ -6085,13 +6059,6 @@ __metadata:
     asap: ^2.0.0
     wrappy: 1
   checksum: 8b26238db91423b2702a7a6d9629d0019c37c415e7b6e75d4b3e8d27e9464e21cac3618dd145f4d4ee96c70cc6ff034227b5b8a0e9c09015a8bdbe6dace3cfb9
-  languageName: node
-  linkType: hard
-
-"diacritics@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "diacritics@npm:1.3.0"
-  checksum: ef7552c36e221879be22bc977281d1ae644f0eb94a24b380d654bf3aeae76c8096e533059732980bb3b5cb77ce7de4178f038f79415ee715f6d3eea7025cadea
   languageName: node
   linkType: hard
 
@@ -7724,7 +7691,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^9.1.0, globby@npm:^9.2.0":
+"globby@npm:^9.2.0":
   version: 9.2.0
   resolution: "globby@npm:9.2.0"
   dependencies:
@@ -9763,13 +9730,6 @@ __metadata:
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
   checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
-  languageName: node
-  linkType: hard
-
-"lodash.deburr@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "lodash.deburr@npm:4.1.0"
-  checksum: 6e2012315c20a4d8ed4f1884ed4b8e6b0093c6355a87bfd95ecf25a5243c8c88d747d67375d52cb87ebc99d090935ed8dc3814c8e661e3275a6dbe02b68efc99
   languageName: node
   linkType: hard
 
@@ -15986,7 +15946,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^20.2.1, yargs-parser@npm:^20.2.2, yargs-parser@npm:^20.2.3":
+"yargs-parser@npm:^20.2.2, yargs-parser@npm:^20.2.3":
   version: 20.2.9
   resolution: "yargs-parser@npm:20.2.9"
   checksum: 8bb69015f2b0ff9e17b2c8e6bfe224ab463dd00ca211eece72a4cd8a906224d2703fb8a326d36fdd0e68701e201b2a60ed7cf81ce0fd9b3799f9fe7745977ae3
@@ -16076,7 +16036,6 @@ __metadata:
     "@commitlint/cli": ^16.2.1
     "@commitlint/config-conventional": ^16.2.1
     "@semantic-release/changelog": ^6.0.1
-    check-md: ^1.0.2
     cspell: ^5.18.5
     fs-extra: ^10.0.1
     husky: ^7.0.4
