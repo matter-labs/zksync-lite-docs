@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "prod",
-      "cleanUrls": false,
+      "cleanUrls": true,
       "trailingSlash": true,
       "public": "dist",
       "rewrites": [
@@ -109,7 +109,7 @@
     },
     {
       "target": "staging",
-      "cleanUrls": false,
+      "cleanUrls": true,
       "trailingSlash": true,
       "public": "dist",
       "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
