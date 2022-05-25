@@ -14,68 +14,8 @@
       "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
       "redirects": [
         {
-          "source": "/dev/bug-bounty.html",
-          "destination": "/dev/security/bug-bounty.html",
-          "type": 301
-        },
-        {
           "source": "/",
           "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/faq/",
-          "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/dev/utils",
-          "destination": "/api/sdk/js/utils.html",
-          "type": 301
-        },
-        {
-          "source": "/faq",
-          "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/faq.html",
-          "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/dev/bug-bounty",
-          "destination": "/dev/security/bug-bounty.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/basic.html",
-          "destination": "/dev/payments/basic.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/basic",
-          "destination": "/dev/payments/basic.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/types.html",
-          "destination": "/api/sdk/checkout/types.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/types",
-          "destination": "/api/sdk/checkout/types.html",
-          "type": 301
-        },
-        {
-          "source": "/faq/:path*",
-          "destination": "/userdocs/:path*",
-          "type": 301
-        },
-        {
-          "source": "/sdk/:path*",
-          "destination": "/api/sdk/:path*",
           "type": 301
         }
       ],
@@ -121,68 +61,8 @@
       ],
       "redirects": [
         {
-          "source": "/dev/bug-bounty.html",
-          "destination": "/dev/security/bug-bounty.html",
-          "type": 301
-        },
-        {
           "source": "/",
           "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/faq/",
-          "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/dev/utils",
-          "destination": "/api/sdk/js/utils.html",
-          "type": 301
-        },
-        {
-          "source": "/faq",
-          "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/faq.html",
-          "destination": "/userdocs/",
-          "type": 301
-        },
-        {
-          "source": "/dev/bug-bounty",
-          "destination": "/dev/security/bug-bounty.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/basic.html",
-          "destination": "/dev/payments/basic.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/basic",
-          "destination": "/dev/payments/basic.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/types.html",
-          "destination": "/api/sdk/checkout/types.html",
-          "type": 301
-        },
-        {
-          "source": "/dev/types",
-          "destination": "/api/sdk/checkout/types.html",
-          "type": 301
-        },
-        {
-          "source": "/faq/:path*",
-          "destination": "/userdocs/:path*",
-          "type": 301
-        },
-        {
-          "source": "/sdk/:path*",
-          "destination": "/api/sdk/:path*",
           "type": 301
         }
       ],
