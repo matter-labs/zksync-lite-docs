@@ -24,7 +24,7 @@ export default {
   themeConfig: {
     repo: 'matter-labs/zksync-docs',
     editLinks: true,
-    docsDir: 'packages/docs/docs',
+    docsDir: "/docs",
     logo: '/LogotypeLight.svg',
     lastUpdated: 'Last Updated',
     nav: [
