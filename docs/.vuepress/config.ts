@@ -2,7 +2,7 @@ import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.
 
 export default {
   evergreen: true,
-  title: 'zkSync: secure, scalable crypto payments', // adding title gives us a header with search box
+  title: 'zkSync: secure, scalable crypto payments',
   description: 'zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet',
   dest: 'dist',
   markdown: {
@@ -13,18 +13,18 @@ export default {
   },
   plugins: [
     'fulltext-search',
-    ['vuepress-plugin-canonical', {
-      baseURL: 'https://docs.zksync.io',
-      stripExtension: true,
-    }],
-    ['sitemap', {
-      hostname: 'https://docs.zksync.io',
-    }]
+     ['vuepress-plugin-canonical', {
+       baseURL: 'https://docs.zksync.io',
+       stripExtension: true,
+     }],
+     ['sitemap', {
+       hostname: 'https://docs.zksync.io',
+     }]
   ],
   themeConfig: {
     repo: 'matter-labs/zksync-docs',
     editLinks: true,
-    docsDir: 'packages/docs/docs',
+    docsDir: '/docs',
     logo: '/LogotypeLight.svg',
     lastUpdated: 'Last Updated',
     nav: [
@@ -46,11 +46,11 @@ export default {
       },
       {
         text: 'Contact and Media',
-        link: '/contact',
+        link: '/contact/',
       },
       {
         text: 'Uptime',
-        link: '/uptime',
+        link: '/uptime/',
       },
       {
         text: 'v1.x',
@@ -67,172 +67,156 @@ export default {
       }
     ],
     sidebar: {
-      '/legal/': ['/legal/terms', '/legal/privacy'],
+      '/legal/': ['/legal/terms/', '/legal/privacy/'],
       '/userdocs/': [
         {
           title: 'Welcome to zkSync',
           path: '/userdocs/',
-          sidebarDepth: 0,
         },
         {
           title: 'Overview',
-          path: '/userdocs/intro',
+          path: '/userdocs/intro/',
         },
         {
           title: 'Technology',
-          path: '/userdocs/tech',
+          path: '/userdocs/tech/',
         },
         {
           title: 'Security',
-          path: '/userdocs/security',
+          path: '/userdocs/security/',
         },
         {
           title: 'Learn By Watching',
-          path: '/userdocs/learnbywatching',
+          path: '/userdocs/learnbywatching/',
         },
         {
           title: 'Wallets',
-          path: '/userdocs/wallets',
+          path: '/userdocs/wallets/',
         },
         {
           title: 'Tokens & Fees',
-          path: '/userdocs/tokens',
+          path: '/userdocs/tokens/',
         },
         {
           title: 'Decentralization',
-          path: '/userdocs/decentralization',
+          path: '/userdocs/decentralization/',
         },
         {
           title: 'Tokenomics',
-          path: '/userdocs/tokenomics',
+          path: '/userdocs/tokenomics/',
         },
         {
           title: 'Smart contracts',
-          path: '/userdocs/sc',
+          path: '/userdocs/sc/',
         },
         {
           title: 'Privacy',
-          path: '/userdocs/privacy',
+          path: '/userdocs/privacy/',
         },
         {
           title: 'Roadmap',
-          path: '/userdocs/roadmap',
+          path: '/userdocs/roadmap/',
         },
         {
           title: 'FAQ',
-          path: '/userdocs/faq',
+          path: '/userdocs/faq/',
         },
         {
           title: 'Tutorials',
-          path: '/userdocs/tutorials',
+          path: '/userdocs/tutorials/',
         },
       ],
       '/dev': [
         {
           title: 'Introduction',
           path: '/dev/',
-          collapsable: false,
         },
         {
           title: 'Payments',
-          path: '/dev/payments',
-          children: ['/dev/payments/basic', '/dev/payments/sending_transactions'],
+          path: '/dev/payments/',
+          children: ['/dev/payments/basic/', '/dev/payments/sending_transactions/'],
         },
         {
           title: 'Security',
-          path: '/dev/security',
-          children: ['/dev/security/approach', '/dev/security/bug-bounty', '/dev/security/disclosure', '/dev/security/bugs'],
+          path: '/dev/security/',
+          children: ['/dev/security/approach/', '/dev/security/bug-bounty/', '/dev/security/disclosure/', '/dev/security/bugs/'],
         },
         {
           title: 'Smart contracts',
           path: '/dev/contracts/',
-          collapsable: false,
         },
-        '/dev/nfts',
-        '/dev/swaps',
-        '/dev/events',
+        '/dev/nfts/',
+        '/dev/swaps/',
+        '/dev/events/',
       ],
       '/api': [
         {
           title: 'Overview',
           path: '/api/',
-          collapsable: false,
-          sidebarDepth: 0,
         },
-        '/api/changelog',
-        '/api/environments',
-        '/api/events',
+        '/api/changelog/',
+        '/api/environments/',
+        '/api/events/',
         {
           title: 'API v0.1',
-          path: '/api/v0.1',
-          collapsable: false,
-
+          path: '/api/v0.1/',
         },
         {
           title: 'API v0.2',
-          path: '/api/v0.2',
-          collapsable: false,
-
+          path: '/api/v0.2/',
         },
         {
           title: 'JavaScript SDK',
-          path: '/api/sdk/js',
-          sidebarDepth: 2,
+          path: '/api/sdk/js/',
           children: [
-            '/api/sdk/js/tutorial',
-            '/api/sdk/js/providers',
-            '/api/sdk/js/accounts',
-            '/api/sdk/js/utils',
-            '/api/sdk/js/nfts',
-            '/api/sdk/js/types',
-            '/api/sdk/js/browser-bundled',
+            '/api/sdk/js/tutorial/',
+            '/api/sdk/js/providers/',
+            '/api/sdk/js/accounts/',
+            '/api/sdk/js/utils/',
+            '/api/sdk/js/nfts/',
+            '/api/sdk/js/types/',
+            '/api/sdk/js/browser-bundled/',
           ],
         },
         {
           title: 'Rust SDK',
-          path: '/api/sdk/rust',
-          sidebarDepth: 2,
-          children: ['/api/sdk/rust/tutorial'],
+          path: '/api/sdk/rust/',
+          children: ['/api/sdk/rust/tutorial/'],
         },
         {
           title: 'Java SDK',
-          path: '/api/sdk/java',
-          sidebarDepth: 2,
-          children: ['/api/sdk/java/tutorial', '/api/sdk/java/interfaces'],
+          path: '/api/sdk/java/',
+          children: ['/api/sdk/java/tutorial/', '/api/sdk/java/interfaces/'],
         },
         {
           title: 'Swift SDK',
-          path: '/api/sdk/swift',
-          sidebarDepth: 2,
-          children: ['/api/sdk/swift/tutorial'],
+          path: '/api/sdk/swift/',
+          children: ['/api/sdk/swift/tutorial/'],
         },
         {
           title: 'Python SDK',
-          path: '/api/sdk/python',
-          sidebarDepth: 2,
-          children: ['/api/sdk/python/tutorial'],
+          path: '/api/sdk/python/',
+          children: ['/api/sdk/python/tutorial/'],
         },
-        '/api/sdk/dart',
+        '/api/sdk/dart/',
         {
           title: 'zkCheckout SDK',
-          path: '/api/sdk/checkout',
-          sidebarDepth: 2,
+          path: '/api/sdk/checkout/',
           children: [
-            '/api/sdk/checkout/tutorial',
-            '/api/sdk/checkout/checkout-manager',
-            '/api/sdk/checkout/types',
-            '/api/sdk/checkout/constants',
-            '/api/sdk/checkout/protocol',
-            '/api/sdk/checkout/appendix-a',
+            '/api/sdk/checkout/tutorial/',
+            '/api/sdk/checkout/checkout-manager/',
+            '/api/sdk/checkout/types/',
+            '/api/sdk/checkout/constants/',
+            '/api/sdk/checkout/protocol/',
+            '/api/sdk/checkout/appendix-a/',
           ],
         },
-        '/api/sdk/crypto',
+        '/api/sdk/crypto/',
       ],
       '/zkevm': [
         {
           title: 'zkEVM FAQ',
           path: '/zkevm/',
-          sidebarDepth: 2,
         },
       ],
     },

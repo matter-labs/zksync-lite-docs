@@ -26,7 +26,6 @@ You can check it locally as follows:
 ```bash
 yarn
 yarn md:lint
-yarn md:deadlinks
 yarn cspell
 ```
 
