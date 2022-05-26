@@ -20,257 +20,257 @@
         },
         {
           "source": "/contact.html",
-          "destination": "https://docs.zksync.io/contact/",
+          "destination": "/contact/",
           "type": 301
         },
         {
           "source": "/uptime.html",
-          "destination": "https://docs.zksync.io/uptime/",
+          "destination": "/uptime/",
           "type": 301
         },
         {
           "source": "/legal/terms.html",
-          "destination": "https://docs.zksync.io/legal/terms/",
+          "destination": "/legal/terms/",
           "type": 301
         },
         {
           "source": "/legal/privacy.html",
-          "destination": "https://docs.zksync.io/legal/privacy/",
+          "destination": "/legal/privacy/",
           "type": 301
         },
         {
           "source": "/userdocs/intro.html",
-          "destination": "https://docs.zksync.io/userdocs/intro/",
+          "destination": "/userdocs/intro/",
           "type": 301
         },
         {
           "source": "/userdocs/tech.html",
-          "destination": "https://docs.zksync.io/userdocs/tech/",
+          "destination": "/userdocs/tech/",
           "type": 301
         },
         {
           "source": "/userdocs/security.html",
-          "destination": "https://docs.zksync.io/userdocs/security/",
+          "destination": "/userdocs/security/",
           "type": 301
         },
         {
           "source": "/userdocs/learnbywatching.html",
-          "destination": "https://docs.zksync.io/userdocs/learnbywatching/",
+          "destination": "/userdocs/learnbywatching/",
           "type": 301
         },
         {
           "source": "/userdocs/wallets.html",
-          "destination": "https://docs.zksync.io/userdocs/wallets/",
+          "destination": "/userdocs/wallets/",
           "type": 301
         },
         {
           "source": "/userdocs/tokens.html",
-          "destination": "https://docs.zksync.io/userdocs/tokens/",
+          "destination": "/userdocs/tokens/",
           "type": 301
         },
         {
           "source": "/userdocs/decentralization.html",
-          "destination": "https://docs.zksync.io/userdocs/decentralization/",
+          "destination": "/userdocs/decentralization/",
           "type": 301
         },
         {
           "source": "/userdocs/tokenomics.html",
-          "destination": "https://docs.zksync.io/userdocs/tokenomics/",
+          "destination": "/userdocs/tokenomics/",
           "type": 301
         },
         {
           "source": "/userdocs/sc.html",
-          "destination": "https://docs.zksync.io/userdocs/sc/",
+          "destination": "/userdocs/sc/",
           "type": 301
         },
         {
           "source": "/userdocs/privacy.html",
-          "destination": "https://docs.zksync.io/userdocs/privacy/",
+          "destination": "/userdocs/privacy/",
           "type": 301
         },
         {
           "source": "/userdocs/roadmap.html",
-          "destination": "https://docs.zksync.io/userdocs/roadmap/",
+          "destination": "/userdocs/roadmap/",
           "type": 301
         },
         {
           "source": "/userdocs/faq.html",
-          "destination": "https://docs.zksync.io/userdocs/faq/",
+          "destination": "/userdocs/faq/",
           "type": 301
         },
         {
           "source": "/userdocs/tutorials.html",
-          "destination": "https://docs.zksync.io/userdocs/tutorials/",
+          "destination": "/userdocs/tutorials/",
           "type": 301
         },
         {
           "source": "/dev/payments/basic.html",
-          "destination": "https://docs.zksync.io/dev/payments/basic/",
+          "destination": "/dev/payments/basic/",
           "type": 301
         },
         {
           "source": "/dev/payments/sending_transactions.html",
-          "destination": "https://docs.zksync.io/dev/payments/sending_transactions/",
+          "destination": "/dev/payments/sending_transactions/",
           "type": 301
         },
         {
           "source": "/dev/security/approach.html",
-          "destination": "https://docs.zksync.io/dev/security/approach/",
+          "destination": "/dev/security/approach/",
           "type": 301
         },
         {
           "source": "/dev/security/bug-bounty.html",
-          "destination": "https://docs.zksync.io/dev/security/bug-bounty/",
+          "destination": "/dev/security/bug-bounty/",
           "type": 301
         },
         {
           "source": "/dev/security/disclosure.html",
-          "destination": "https://docs.zksync.io/dev/security/disclosure/",
+          "destination": "/dev/security/disclosure/",
           "type": 301
         },
         {
           "source": "/dev/security/bugs.html",
-          "destination": "https://docs.zksync.io/dev/security/bugs/",
+          "destination": "/dev/security/bugs/",
           "type": 301
         },
         {
           "source": "/dev/nfts.html",
-          "destination": "https://docs.zksync.io/dev/nfts/",
+          "destination": "/dev/nfts/",
           "type": 301
         },
         {
           "source": "/dev/swaps.html",
-          "destination": "https://docs.zksync.io/dev/swaps/",
+          "destination": "/dev/swaps/",
           "type": 301
         },
         {
           "source": "/dev/events.html",
-          "destination": "https://docs.zksync.io/dev/events/",
+          "destination": "/dev/events/",
           "type": 301
         },
         {
           "source": "/api/changelog.html",
-          "destination": "https://docs.zksync.io/api/changelog/",
+          "destination": "/api/changelog/",
           "type": 301
         },
         {
           "source": "/api/environments.html",
-          "destination": "https://docs.zksync.io/api/environments/",
+          "destination": "/api/environments/",
           "type": 301
         },
         {
           "source": "/api/events.html",
-          "destination": "https://docs.zksync.io/api/events/",
+          "destination": "/api/events/",
           "type": 301
         },
         {
           "source": "/api/v0.1.html",
-          "destination": "https://docs.zksync.io/api/v0.1/",
+          "destination": "/api/v0.1/",
           "type": 301
         },
         {
           "source": "/api/v0.2.html",
-          "destination": "https://docs.zksync.io/api/v0.2/",
+          "destination": "/api/v0.2/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/tutorial/",
+          "destination": "/api/sdk/js/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/providers.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/providers/",
+          "destination": "/api/sdk/js/providers/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/accounts.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/accounts/",
+          "destination": "/api/sdk/js/accounts/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/utils.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/utils/",
+          "destination": "/api/sdk/js/utils/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/nfts.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/nfts/",
+          "destination": "/api/sdk/js/nfts/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/types.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/types/",
+          "destination": "/api/sdk/js/types/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/browser-bundled.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/browser-bundled/",
+          "destination": "/api/sdk/js/browser-bundled/",
           "type": 301
         },
         {
           "source": "/api/sdk/rust/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/rust/tutorial/",
+          "destination": "/api/sdk/rust/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/java/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/java/tutorial/",
+          "destination": "/api/sdk/java/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/java/interfaces.html",
-          "destination": "https://docs.zksync.io/api/sdk/java/interfaces/",
+          "destination": "/api/sdk/java/interfaces/",
           "type": 301
         },
         {
           "source": "/api/sdk/swift/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/swift/tutorial/",
+          "destination": "/api/sdk/swift/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/python/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/python/tutorial/",
+          "destination": "/api/sdk/python/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/dart.html",
-          "destination": "https://docs.zksync.io/api/sdk/dart/",
+          "destination": "/api/sdk/dart/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/tutorial/",
+          "destination": "/api/sdk/checkout/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/checkout-manager.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/checkout-manager/",
+          "destination": "/api/sdk/checkout/checkout-manager/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/types.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/types/",
+          "destination": "/api/sdk/checkout/types/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/constants.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/constants/",
+          "destination": "/api/sdk/checkout/constants/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/protocol.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/protocol/",
+          "destination": "/api/sdk/checkout/protocol/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/appendix-a.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/appendix-a/",
+          "destination": "/api/sdk/checkout/appendix-a/",
           "type": 301
         },
         {
           "source": "/api/sdk/crypto.html",
-          "destination": "https://docs.zksync.io/api/sdk/crypto/",
+          "destination": "/api/sdk/crypto/",
           "type": 301
         }
       ],
@@ -322,257 +322,257 @@
         },
         {
           "source": "/contact.html",
-          "destination": "https://docs.zksync.io/contact/",
+          "destination": "/contact/",
           "type": 301
         },
         {
           "source": "/uptime.html",
-          "destination": "https://docs.zksync.io/uptime/",
+          "destination": "/uptime/",
           "type": 301
         },
         {
           "source": "/legal/terms.html",
-          "destination": "https://docs.zksync.io/legal/terms/",
+          "destination": "/legal/terms/",
           "type": 301
         },
         {
           "source": "/legal/privacy.html",
-          "destination": "https://docs.zksync.io/legal/privacy/",
+          "destination": "/legal/privacy/",
           "type": 301
         },
         {
           "source": "/userdocs/intro.html",
-          "destination": "https://docs.zksync.io/userdocs/intro/",
+          "destination": "/userdocs/intro/",
           "type": 301
         },
         {
           "source": "/userdocs/tech.html",
-          "destination": "https://docs.zksync.io/userdocs/tech/",
+          "destination": "/userdocs/tech/",
           "type": 301
         },
         {
           "source": "/userdocs/security.html",
-          "destination": "https://docs.zksync.io/userdocs/security/",
+          "destination": "/userdocs/security/",
           "type": 301
         },
         {
           "source": "/userdocs/learnbywatching.html",
-          "destination": "https://docs.zksync.io/userdocs/learnbywatching/",
+          "destination": "/userdocs/learnbywatching/",
           "type": 301
         },
         {
           "source": "/userdocs/wallets.html",
-          "destination": "https://docs.zksync.io/userdocs/wallets/",
+          "destination": "/userdocs/wallets/",
           "type": 301
         },
         {
           "source": "/userdocs/tokens.html",
-          "destination": "https://docs.zksync.io/userdocs/tokens/",
+          "destination": "/userdocs/tokens/",
           "type": 301
         },
         {
           "source": "/userdocs/decentralization.html",
-          "destination": "https://docs.zksync.io/userdocs/decentralization/",
+          "destination": "/userdocs/decentralization/",
           "type": 301
         },
         {
           "source": "/userdocs/tokenomics.html",
-          "destination": "https://docs.zksync.io/userdocs/tokenomics/",
+          "destination": "/userdocs/tokenomics/",
           "type": 301
         },
         {
           "source": "/userdocs/sc.html",
-          "destination": "https://docs.zksync.io/userdocs/sc/",
+          "destination": "/userdocs/sc/",
           "type": 301
         },
         {
           "source": "/userdocs/privacy.html",
-          "destination": "https://docs.zksync.io/userdocs/privacy/",
+          "destination": "/userdocs/privacy/",
           "type": 301
         },
         {
           "source": "/userdocs/roadmap.html",
-          "destination": "https://docs.zksync.io/userdocs/roadmap/",
+          "destination": "/userdocs/roadmap/",
           "type": 301
         },
         {
           "source": "/userdocs/faq.html",
-          "destination": "https://docs.zksync.io/userdocs/faq/",
+          "destination": "/userdocs/faq/",
           "type": 301
         },
         {
           "source": "/userdocs/tutorials.html",
-          "destination": "https://docs.zksync.io/userdocs/tutorials/",
+          "destination": "/userdocs/tutorials/",
           "type": 301
         },
         {
           "source": "/dev/payments/basic.html",
-          "destination": "https://docs.zksync.io/dev/payments/basic/",
+          "destination": "/dev/payments/basic/",
           "type": 301
         },
         {
           "source": "/dev/payments/sending_transactions.html",
-          "destination": "https://docs.zksync.io/dev/payments/sending_transactions/",
+          "destination": "/dev/payments/sending_transactions/",
           "type": 301
         },
         {
           "source": "/dev/security/approach.html",
-          "destination": "https://docs.zksync.io/dev/security/approach/",
+          "destination": "/dev/security/approach/",
           "type": 301
         },
         {
           "source": "/dev/security/bug-bounty.html",
-          "destination": "https://docs.zksync.io/dev/security/bug-bounty/",
+          "destination": "/dev/security/bug-bounty/",
           "type": 301
         },
         {
           "source": "/dev/security/disclosure.html",
-          "destination": "https://docs.zksync.io/dev/security/disclosure/",
+          "destination": "/dev/security/disclosure/",
           "type": 301
         },
         {
           "source": "/dev/security/bugs.html",
-          "destination": "https://docs.zksync.io/dev/security/bugs/",
+          "destination": "/dev/security/bugs/",
           "type": 301
         },
         {
           "source": "/dev/nfts.html",
-          "destination": "https://docs.zksync.io/dev/nfts/",
+          "destination": "/dev/nfts/",
           "type": 301
         },
         {
           "source": "/dev/swaps.html",
-          "destination": "https://docs.zksync.io/dev/swaps/",
+          "destination": "/dev/swaps/",
           "type": 301
         },
         {
           "source": "/dev/events.html",
-          "destination": "https://docs.zksync.io/dev/events/",
+          "destination": "/dev/events/",
           "type": 301
         },
         {
           "source": "/api/changelog.html",
-          "destination": "https://docs.zksync.io/api/changelog/",
+          "destination": "/api/changelog/",
           "type": 301
         },
         {
           "source": "/api/environments.html",
-          "destination": "https://docs.zksync.io/api/environments/",
+          "destination": "/api/environments/",
           "type": 301
         },
         {
           "source": "/api/events.html",
-          "destination": "https://docs.zksync.io/api/events/",
+          "destination": "/api/events/",
           "type": 301
         },
         {
           "source": "/api/v0.1.html",
-          "destination": "https://docs.zksync.io/api/v0.1/",
+          "destination": "/api/v0.1/",
           "type": 301
         },
         {
           "source": "/api/v0.2.html",
-          "destination": "https://docs.zksync.io/api/v0.2/",
+          "destination": "/api/v0.2/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/tutorial/",
+          "destination": "/api/sdk/js/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/providers.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/providers/",
+          "destination": "/api/sdk/js/providers/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/accounts.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/accounts/",
+          "destination": "/api/sdk/js/accounts/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/utils.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/utils/",
+          "destination": "/api/sdk/js/utils/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/nfts.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/nfts/",
+          "destination": "/api/sdk/js/nfts/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/types.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/types/",
+          "destination": "/api/sdk/js/types/",
           "type": 301
         },
         {
           "source": "/api/sdk/js/browser-bundled.html",
-          "destination": "https://docs.zksync.io/api/sdk/js/browser-bundled/",
+          "destination": "/api/sdk/js/browser-bundled/",
           "type": 301
         },
         {
           "source": "/api/sdk/rust/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/rust/tutorial/",
+          "destination": "/api/sdk/rust/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/java/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/java/tutorial/",
+          "destination": "/api/sdk/java/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/java/interfaces.html",
-          "destination": "https://docs.zksync.io/api/sdk/java/interfaces/",
+          "destination": "/api/sdk/java/interfaces/",
           "type": 301
         },
         {
           "source": "/api/sdk/swift/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/swift/tutorial/",
+          "destination": "/api/sdk/swift/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/python/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/python/tutorial/",
+          "destination": "/api/sdk/python/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/dart.html",
-          "destination": "https://docs.zksync.io/api/sdk/dart/",
+          "destination": "/api/sdk/dart/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/tutorial.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/tutorial/",
+          "destination": "/api/sdk/checkout/tutorial/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/checkout-manager.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/checkout-manager/",
+          "destination": "/api/sdk/checkout/checkout-manager/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/types.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/types/",
+          "destination": "/api/sdk/checkout/types/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/constants.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/constants/",
+          "destination": "/api/sdk/checkout/constants/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/protocol.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/protocol/",
+          "destination": "/api/sdk/checkout/protocol/",
           "type": 301
         },
         {
           "source": "/api/sdk/checkout/appendix-a.html",
-          "destination": "https://docs.zksync.io/api/sdk/checkout/appendix-a/",
+          "destination": "/api/sdk/checkout/appendix-a/",
           "type": 301
         },
         {
           "source": "/api/sdk/crypto.html",
-          "destination": "https://docs.zksync.io/api/sdk/crypto/",
+          "destination": "/api/sdk/crypto/",
           "type": 301
         }
       ],
