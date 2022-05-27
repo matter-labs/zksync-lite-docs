@@ -1,9 +1,9 @@
 import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.js';
-
+import { SeoOptions } from '@mr-hope/vuepress-plugin-seo/lib/types';
 export default {
   evergreen: true,
-  title: 'zkSync: secure, scalable crypto payments',
-  description: 'zkSync is a user-centric zk rollup platform from Matter Labs (opens new window). It is a scaling solution for Ethereum, already live on Ethereum mainnet',
+  title: 'zkSync Documentation',
+  description: 'zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet',
   dest: 'dist',
   markdown: {
     extendMarkdown: (md) => {
@@ -19,6 +19,22 @@ export default {
      }],
      ['sitemap', {
        hostname: 'https://docs.zksync.io',
+     }],
+     ['@mr-hope/seo', <SeoOptions>{
+       author: 'Matter Labs',
+       twitterID: 'zksync',
+       seo: ({ page }) => {
+         const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
+         const description = pageMeta.description ?? page.frontmatter.summary?.replace(/( \[\[toc\]\] )/g, " ").replace(/"/g, "");
+         return {
+          'twitter:site': '@zksync',
+          'twitter:title': page.title,
+          'description': description,
+          'og:description': description,
+          'twitter:description': description,
+          ...pageMeta,
+         }
+       }
      }]
   ],
   themeConfig: {
