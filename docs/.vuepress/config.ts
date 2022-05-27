@@ -24,14 +24,17 @@ export default {
        author: 'Matter Labs',
        twitterID: 'zksync',
        seo: ({ page }) => {
+         const defaultKeywords = ["zkSync", "documentation"]
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
          const description = pageMeta.description ?? page.frontmatter.summary?.replace(/( \[\[toc\]\] )/g, " ").replace(/( & )/g, " ").replace(/"/g, "") + "...";
+         const keywords = pageMeta.keywords ?? page.headers ? [...page.headers.map(e => e.title), ...defaultKeywords].join(", ") : defaultKeywords.join(", ");
          return {
           'twitter:site': '@zksync',
           'twitter:title': page.title,
           'description': description,
           'og:description': description,
           'twitter:description': description,
+          'keywords': keywords,
           ...pageMeta,
          }
        }
