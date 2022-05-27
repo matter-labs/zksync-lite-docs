@@ -25,7 +25,7 @@ export default {
        twitterID: 'zksync',
        seo: ({ page }) => {
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
-         const description = pageMeta.description ?? page.frontmatter.summary?.replace(/( \[\[toc\]\] )/g, " ").replace(/"/g, "");
+         const description = pageMeta.description ?? page.frontmatter.summary?.replace(/( \[\[toc\]\] )/g, " ").replace(/( & )/g, " ").replace(/"/g, "") + "...";
          return {
           'twitter:site': '@zksync',
           'twitter:title': page.title,
