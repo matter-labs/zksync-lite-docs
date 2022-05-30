@@ -25,6 +25,7 @@ export default {
        twitterID: 'zksync',
        seo: ({ page }) => {
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
+         const socialImgPath = '/social-image.png';
          const title = pageMeta.title ?? (page.title ? page.title + " | " : "") + "zkSync Documentation";
          const description = pageMeta.description ?? "zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
          return {
@@ -34,6 +35,10 @@ export default {
           'twitter:site': '@zksync',
           'twitter:title': title,
           'twitter:description': description,
+          'twitter:image': socialImgPath,
+          'og:image': socialImgPath,
+          'og:image:secure_url': socialImgPath,
+          'og:image:alt': 'zkSync Documentation',
           ...pageMeta,
          }
        }
