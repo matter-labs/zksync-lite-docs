@@ -1,5 +1,8 @@
-#vuepress files
+# misc
+.DS_Store
+.env
 
+#vuepress files
 *.log
 *.gem
 *.rbc
