@@ -27,27 +27,9 @@ export default {
          const defaultKeywords = ["zkSync", "documentation"]
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
          const title = pageMeta.title ?? (page.title ? page.title + " | " : "") + "zkSync Documentation";
-         let description = pageMeta.description;
-         const stringEndsWithSymbol = (str: string) => (/[.?!;]/g).test(str[str.length - 1]);
-         if (!description) {
-           /* Remove headers and symbols */
-           description = page.frontmatter.summary?.replace(/( \[\[toc\]\] )/g, " ").replace(/( & )/g, " ").replace(/"/g, "");
-           
-           /* Remove page title */
-           if (description.startsWith(page.title)) {
-            description = description.substring(page.title.length, description.length);
-           }
-           /* Add only finished sentences or unfinished if description is too small */
-           description = description.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|").reduce((val, newSentence) => (val.length < 50 || (val.length + newSentence.length < 160 && stringEndsWithSymbol(newSentence))) ? `${val ? val + " " : ""}${newSentence}` : val, "").trim();
-           
-           if (!stringEndsWithSymbol(description)) {/* NOT Ends with . or ? or ! or ; */
-            description += "...";
-           }
-          }
-         const keywords = pageMeta.keywords ?? page.headers ? [...page.headers.map(e => e.title), ...defaultKeywords].join(", ") : defaultKeywords.join(", ");
+         const description = "zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
          return {
           'description': description,
-          'keywords': keywords,
           'og:title': title,
           'og:description': description,
           'twitter:site': '@zksync',
