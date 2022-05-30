@@ -24,10 +24,9 @@ export default {
        author: 'Matter Labs',
        twitterID: 'zksync',
        seo: ({ page }) => {
-         const defaultKeywords = ["zkSync", "documentation"]
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
          const title = pageMeta.title ?? (page.title ? page.title + " | " : "") + "zkSync Documentation";
-         const description = "zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
+         const description = pageMeta.description ?? "zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
          return {
           'description': description,
           'og:title': title,
