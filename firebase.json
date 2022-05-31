@@ -134,6 +134,11 @@
           "type": 301
         },
         {
+          "source": "/dev/security/ZKSYNC1-2021-01.html",
+          "destination": "/dev/security/ZKSYNC1-2021-01/",
+          "type": 301
+        },
+        {
           "source": "/dev/nfts.html",
           "destination": "/dev/nfts/",
           "type": 301
@@ -433,6 +438,11 @@
         {
           "source": "/dev/security/bugs.html",
           "destination": "/dev/security/bugs/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/ZKSYNC1-2021-01.html",
+          "destination": "/dev/security/ZKSYNC1-2021-01/",
           "type": 301
         },
         {
