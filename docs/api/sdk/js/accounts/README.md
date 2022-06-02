@@ -1,3 +1,7 @@
+---
+sidebarDepth: 4
+---
+
 # Accounts
 
 <!-- Common links used alongside the file -->

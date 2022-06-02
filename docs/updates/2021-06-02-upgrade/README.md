@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # zkSync contracts v5.1 upgrade announcement
 
 <!-- markdownlint-disable MD034 -->

@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # zkSync contracts v4.3 upgrade announcement
 
 We will start the notice period to upgrade zkSync contracts to a new version today. This is a small amendment of the

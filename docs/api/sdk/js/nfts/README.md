@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # NFTs
 
 This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you

@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Events
 
 This document describes working with zkSync events in more detail in a language-agnostic way. For a quick introduction

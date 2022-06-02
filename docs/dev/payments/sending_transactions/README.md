@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Sending Transactions
 
 <!-- markdownlint-disable MD013 -->

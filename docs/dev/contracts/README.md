@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Smart contracts
 
 zkSync is on track to introduce highly efficient, secure, Turing complete, multilanguage smart contracts.

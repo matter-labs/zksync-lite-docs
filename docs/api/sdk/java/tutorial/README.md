@@ -1,3 +1,7 @@
+---
+sidebarDepth: 4
+---
+
 # Getting started
 
 1. Connect to the zkSync network.

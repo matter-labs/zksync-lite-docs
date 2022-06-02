@@ -1,3 +1,7 @@
+---
+sidebarDepth: 4
+---
+
 # Dart SDK
 
 This section contains documentation for the Dart SDK for zkSync.

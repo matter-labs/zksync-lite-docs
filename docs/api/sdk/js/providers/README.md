@@ -1,3 +1,7 @@
+---
+sidebarDepth: 4
+---
+
 # Providers
 
 JSON-RPC protocol is used to communicate with zkSync network nodes. `Provider` is used to abstract details of the

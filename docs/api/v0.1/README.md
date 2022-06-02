@@ -1,3 +1,7 @@
+---
+sidebarDepth: 4
+---
+
 # zkSync API v0.1
 
 Current version of zkSync API consists of two parts:

@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Swaps and Limit Orders
 
 [[toc]]
