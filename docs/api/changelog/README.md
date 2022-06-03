@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Changelog
 
 This page contains the release notes for new features in zkSync network, and also notifications about changes in the

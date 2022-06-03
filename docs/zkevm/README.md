@@ -1,4 +1,5 @@
 ---
+sidebarDepth: 3
 meta:
   - name: title
     content: zkEVM FAQ

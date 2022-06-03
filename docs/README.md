@@ -1,6 +1,7 @@
 ---
 home: false
 footer: Made with ❤️ by Matter Labs
+sidebarDepth: 3
 ---
 
 # Welcome to zkSync

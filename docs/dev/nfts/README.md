@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # NFTs in zkSync 1.x
 
 Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users

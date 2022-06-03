@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Security
 
 [[toc]]

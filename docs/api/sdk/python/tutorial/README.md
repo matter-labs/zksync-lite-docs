@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Getting started
 
 In this tutorial we will demonstrate how to:

@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Cryptographic libraries
 
 zkSync uses cryptographic primitives different from ones that are used in Ethereum. So, in order to make basic

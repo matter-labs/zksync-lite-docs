@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Basic Concepts
 
 [[toc]]

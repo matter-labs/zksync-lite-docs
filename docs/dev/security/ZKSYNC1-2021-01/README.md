@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # ZKSYNC1-2021-01 Post Mortem
 
 ## Summary

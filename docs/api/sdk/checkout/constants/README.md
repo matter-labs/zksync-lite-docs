@@ -1,3 +1,7 @@
+---
+sidebarDepth: 3
+---
+
 # Constants
 
 A collection of all the important constants.
