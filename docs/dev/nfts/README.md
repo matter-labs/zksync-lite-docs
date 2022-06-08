@@ -34,7 +34,7 @@ NOTICE: In zkSync 1.x, multiple NFTs can be minted with the same content hash.
 
 ## Setup
 
-Please read our [Getting Started](../api/sdk/js/tutorial.md#getting-started) guide before beginning this tutorial.
+Please read our [Getting Started](../../api/sdk/js/tutorial/#getting-started) guide before beginning this tutorial.
 
 ### Install the zkSync library
 
@@ -237,7 +237,7 @@ The swap function can be used to atomically swap:
 To swap 2 NFTs, each party will sign an order specifying the NFT ids for the NFT they are selling and the NFT they are
 buying.
 
-Using the [`getOrder`](../api/sdk/js/accounts.md#signing-orders) method:
+Using the [`getOrder`](../../api/sdk/js/accounts/#signing-orders) method:
 
 ```typescript
 const order = await wallet.getOrder({
@@ -254,7 +254,7 @@ const order = await wallet.getOrder({
 Note: when performing an NFT to NFT swap, the ratios will always be set to one.
 
 After 2 orders are signed, anyone can initiate the swap by calling the
-[`syncSwap`](../api/sdk/js/accounts.md#submitting-a-swap) method:
+[`syncSwap`](../../api/sdk/js/accounts/#submitting-a-swap) method:
 
 ```typescript
 // whoever initiates the swap pays the fee
@@ -356,7 +356,7 @@ const receipt = await withdraw.awaitReceipt();
 ### Emergency Withdraw
 
 In case of censorship, users may call for an emergency withdrawal. Note: This is a layer 1 operation, and is analogous
-to our [fullExit mechanism](/dev/payments/basic.md#withdrawing-funds).
+to our [fullExit mechanism](/dev/payments/basic/#withdrawing-funds).
 
 > Signature
 
