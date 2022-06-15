@@ -14,6 +14,7 @@ cover it during high gas fees.** Learn more about the account activation fee in 
 
 <br>
 
+
 To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" button at the top of MetaMask.
 
 <p align="center"> 
