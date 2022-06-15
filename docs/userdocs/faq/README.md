@@ -32,10 +32,12 @@ wallet, here are a few steps you should take:
 
 2. Check for your transaction in "Internal Txns" on [Etherscan](https://etherscan.io/).
 
-        1. Open Etherscan and go to your address page.
-        2. Go to "Internal Txns."
-        3. You’ll find a list of all transactions from smart contracts.
-        4. The list should have your transaction coming from the zkSync smart contract.
+```
+1. Open Etherscan and go to your address page.
+2. Go to "Internal Txns."
+3. You’ll find a list of all transactions from smart contracts.
+4. The list should have your transaction coming from the zkSync smart contract.
+```
 
 <br>
 
@@ -63,7 +65,7 @@ If you attempted to withdraw your zkSync funds to L1 but used the "Transfer" opt
 try logging in to zkSync with the wallet that received the funds.
 
 If you cannot log in to the zkSync wallet, you can use the "Alternative Withdrawal" tool. See the
-[Alternative Withdrawal](../tutorials/#alternative-withdrawal) section on our [Tutorials](../tutorials) page.
+[Alternative Withdrawal](../tutorials/#alternative-withdrawal) section on our [Tutorials](../tutorials/) page.
 
 ## What is the account activation fee?
 
