@@ -104,7 +104,7 @@ Configuration in `cspell.json`:
 - [zkSync Homepage](https://zksync.io)
 
 ---
-> BTW, we're hiring: [See open positions](https://matter-labs.io/#jobs)
+> BTW, we're hiring: [See open positions](https://joinmatterlabs.com)
 
 ## License
 
