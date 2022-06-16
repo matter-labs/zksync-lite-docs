@@ -48,7 +48,8 @@ wallet, here are a few steps you should take:
 
 4.  Depending on your wallet, you may have to add that token for it to display.
 
-5.  If none of the steps above have helped you, please email us at withdraw@zksync.io describing your problem. It **MUST** contain the following info:
+5.  If none of the steps above have helped you, please email us at withdraw@zksync.io describing your problem. It
+    **MUST** contain the following info:
 
     1. Your zkSync wallet address.
     2. The wallet are you using (e.g., Trust).
