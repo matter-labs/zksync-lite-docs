@@ -189,6 +189,12 @@ export default {
           path: '/api/v0.2/',
         },
         {
+          title: 'WEB3 RPC API', // required
+          path: '/api/web3-rpc/', // optional, which should be a absolute path.
+          collapsable: false, // optional, defaults to true
+          sidebarDepth: 1, // optional, defaults to 1
+        },
+        {
           title: 'JavaScript SDK',
           path: '/api/sdk/js/',
           children: [
