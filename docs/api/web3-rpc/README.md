@@ -2,7 +2,7 @@
 sidebarDepth: 4
 ---
 
-# JSON-RPC API for reading state
+# WEB3 API for reading state
 
 ## Limitations
 
