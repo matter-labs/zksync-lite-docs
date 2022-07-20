@@ -1,0 +1,17 @@
+---
+sidebarDepth: 3
+---
+
+# zkSync contracts v6 upgrade announcement
+
+<!-- markdownlint-disable MD034 -->
+
+This upgrade includes a change to the contract upgrade model.
+
+<https://medium.com/matter-labs/security-council-2-0-2337a555f17a>
+
+## Changes
+
+### Changed
+
+The new upgrade model: 9/15 security council members for an instant upgrade

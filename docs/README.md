@@ -1,6 +1,7 @@
 ---
 home: false
 footer: Made with ❤️ by Matter Labs
+sidebarDepth: 3
 ---
 
 # Welcome to zkSync
@@ -32,4 +33,4 @@ In-depth articles can be found on our [Medium page](https://medium.com/matter-la
 
 ### Contact
 
-If you have any questions or want to be part of our community, please check out our [contact page](/contact.md).
+If you have any questions or want to be part of our community, please check out our [contact page](/contact).

@@ -15,5 +15,5 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 
 ## Table of contents
 
-- [Getting started](tutorial.md)
-- [Interfaces](interfaces.md)
+- [Getting started](./tutorial)
+- [Interfaces](./interfaces)

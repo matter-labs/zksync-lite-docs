@@ -14,68 +14,268 @@
       "ignore": ["firebase.json", "**/.*", "drafts", "**/node_modules/**"],
       "redirects": [
         {
-          "source": "/dev/bug-bounty.html",
-          "destination": "/dev/security/bug-bounty.html",
-          "type": 301
-        },
-        {
           "source": "/",
           "destination": "/userdocs/",
           "type": 301
         },
         {
-          "source": "/faq/",
-          "destination": "/userdocs/",
+          "source": "/contact.html",
+          "destination": "/contact/",
           "type": 301
         },
         {
-          "source": "/dev/utils",
-          "destination": "/api/sdk/js/utils.html",
+          "source": "/uptime.html",
+          "destination": "/uptime/",
           "type": 301
         },
         {
-          "source": "/faq",
-          "destination": "/userdocs/",
+          "source": "/legal/terms.html",
+          "destination": "/legal/terms/",
           "type": 301
         },
         {
-          "source": "/faq.html",
-          "destination": "/userdocs/",
+          "source": "/legal/privacy.html",
+          "destination": "/legal/privacy/",
           "type": 301
         },
         {
-          "source": "/dev/bug-bounty",
-          "destination": "/dev/security/bug-bounty.html",
+          "source": "/userdocs/intro.html",
+          "destination": "/userdocs/intro/",
           "type": 301
         },
         {
-          "source": "/dev/basic.html",
-          "destination": "/dev/payments/basic.html",
+          "source": "/userdocs/tech.html",
+          "destination": "/userdocs/tech/",
           "type": 301
         },
         {
-          "source": "/dev/basic",
-          "destination": "/dev/payments/basic.html",
+          "source": "/userdocs/security.html",
+          "destination": "/userdocs/security/",
           "type": 301
         },
         {
-          "source": "/dev/types.html",
-          "destination": "/api/sdk/checkout/types.html",
+          "source": "/userdocs/learnbywatching.html",
+          "destination": "/userdocs/learnbywatching/",
           "type": 301
         },
         {
-          "source": "/dev/types",
-          "destination": "/api/sdk/checkout/types.html",
+          "source": "/userdocs/wallets.html",
+          "destination": "/userdocs/wallets/",
           "type": 301
         },
         {
-          "source": "/faq/:path*",
-          "destination": "/userdocs/:path*",
+          "source": "/userdocs/tokens.html",
+          "destination": "/userdocs/tokens/",
           "type": 301
         },
         {
-          "source": "/sdk/:path*",
-          "destination": "/api/sdk/:path*",
+          "source": "/userdocs/decentralization.html",
+          "destination": "/userdocs/decentralization/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/tokenomics.html",
+          "destination": "/userdocs/tokenomics/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/sc.html",
+          "destination": "/userdocs/sc/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/privacy.html",
+          "destination": "/userdocs/privacy/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/roadmap.html",
+          "destination": "/userdocs/roadmap/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/faq.html",
+          "destination": "/userdocs/faq/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/tutorials.html",
+          "destination": "/userdocs/tutorials/",
+          "type": 301
+        },
+        {
+          "source": "/dev/payments/basic.html",
+          "destination": "/dev/payments/basic/",
+          "type": 301
+        },
+        {
+          "source": "/dev/payments/sending_transactions.html",
+          "destination": "/dev/payments/sending_transactions/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/approach.html",
+          "destination": "/dev/security/approach/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/bug-bounty.html",
+          "destination": "/dev/security/bug-bounty/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/disclosure.html",
+          "destination": "/dev/security/disclosure/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/bugs.html",
+          "destination": "/dev/security/bugs/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/ZKSYNC1-2021-01.html",
+          "destination": "/dev/security/ZKSYNC1-2021-01/",
+          "type": 301
+        },
+        {
+          "source": "/dev/nfts.html",
+          "destination": "/dev/nfts/",
+          "type": 301
+        },
+        {
+          "source": "/dev/swaps.html",
+          "destination": "/dev/swaps/",
+          "type": 301
+        },
+        {
+          "source": "/dev/events.html",
+          "destination": "/dev/events/",
+          "type": 301
+        },
+        {
+          "source": "/api/changelog.html",
+          "destination": "/api/changelog/",
+          "type": 301
+        },
+        {
+          "source": "/api/environments.html",
+          "destination": "/api/environments/",
+          "type": 301
+        },
+        {
+          "source": "/api/events.html",
+          "destination": "/api/events/",
+          "type": 301
+        },
+        {
+          "source": "/api/v0.1.html",
+          "destination": "/api/v0.1/",
+          "type": 301
+        },
+        {
+          "source": "/api/v0.2.html",
+          "destination": "/api/v0.2/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/tutorial.html",
+          "destination": "/api/sdk/js/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/providers.html",
+          "destination": "/api/sdk/js/providers/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/accounts.html",
+          "destination": "/api/sdk/js/accounts/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/utils.html",
+          "destination": "/api/sdk/js/utils/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/nfts.html",
+          "destination": "/api/sdk/js/nfts/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/types.html",
+          "destination": "/api/sdk/js/types/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/browser-bundled.html",
+          "destination": "/api/sdk/js/browser-bundled/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/rust/tutorial.html",
+          "destination": "/api/sdk/rust/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/java/tutorial.html",
+          "destination": "/api/sdk/java/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/java/interfaces.html",
+          "destination": "/api/sdk/java/interfaces/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/swift/tutorial.html",
+          "destination": "/api/sdk/swift/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/python/tutorial.html",
+          "destination": "/api/sdk/python/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/dart.html",
+          "destination": "/api/sdk/dart/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/tutorial.html",
+          "destination": "/api/sdk/checkout/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/checkout-manager.html",
+          "destination": "/api/sdk/checkout/checkout-manager/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/types.html",
+          "destination": "/api/sdk/checkout/types/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/constants.html",
+          "destination": "/api/sdk/checkout/constants/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/protocol.html",
+          "destination": "/api/sdk/checkout/protocol/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/appendix-a.html",
+          "destination": "/api/sdk/checkout/appendix-a/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/crypto.html",
+          "destination": "/api/sdk/crypto/",
           "type": 301
         }
       ],
@@ -121,68 +321,268 @@
       ],
       "redirects": [
         {
-          "source": "/dev/bug-bounty.html",
-          "destination": "/dev/security/bug-bounty.html",
-          "type": 301
-        },
-        {
           "source": "/",
           "destination": "/userdocs/",
           "type": 301
         },
         {
-          "source": "/faq/",
-          "destination": "/userdocs/",
+          "source": "/contact.html",
+          "destination": "/contact/",
           "type": 301
         },
         {
-          "source": "/dev/utils",
-          "destination": "/api/sdk/js/utils.html",
+          "source": "/uptime.html",
+          "destination": "/uptime/",
           "type": 301
         },
         {
-          "source": "/faq",
-          "destination": "/userdocs/",
+          "source": "/legal/terms.html",
+          "destination": "/legal/terms/",
           "type": 301
         },
         {
-          "source": "/faq.html",
-          "destination": "/userdocs/",
+          "source": "/legal/privacy.html",
+          "destination": "/legal/privacy/",
           "type": 301
         },
         {
-          "source": "/dev/bug-bounty",
-          "destination": "/dev/security/bug-bounty.html",
+          "source": "/userdocs/intro.html",
+          "destination": "/userdocs/intro/",
           "type": 301
         },
         {
-          "source": "/dev/basic.html",
-          "destination": "/dev/payments/basic.html",
+          "source": "/userdocs/tech.html",
+          "destination": "/userdocs/tech/",
           "type": 301
         },
         {
-          "source": "/dev/basic",
-          "destination": "/dev/payments/basic.html",
+          "source": "/userdocs/security.html",
+          "destination": "/userdocs/security/",
           "type": 301
         },
         {
-          "source": "/dev/types.html",
-          "destination": "/api/sdk/checkout/types.html",
+          "source": "/userdocs/learnbywatching.html",
+          "destination": "/userdocs/learnbywatching/",
           "type": 301
         },
         {
-          "source": "/dev/types",
-          "destination": "/api/sdk/checkout/types.html",
+          "source": "/userdocs/wallets.html",
+          "destination": "/userdocs/wallets/",
           "type": 301
         },
         {
-          "source": "/faq/:path*",
-          "destination": "/userdocs/:path*",
+          "source": "/userdocs/tokens.html",
+          "destination": "/userdocs/tokens/",
           "type": 301
         },
         {
-          "source": "/sdk/:path*",
-          "destination": "/api/sdk/:path*",
+          "source": "/userdocs/decentralization.html",
+          "destination": "/userdocs/decentralization/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/tokenomics.html",
+          "destination": "/userdocs/tokenomics/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/sc.html",
+          "destination": "/userdocs/sc/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/privacy.html",
+          "destination": "/userdocs/privacy/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/roadmap.html",
+          "destination": "/userdocs/roadmap/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/faq.html",
+          "destination": "/userdocs/faq/",
+          "type": 301
+        },
+        {
+          "source": "/userdocs/tutorials.html",
+          "destination": "/userdocs/tutorials/",
+          "type": 301
+        },
+        {
+          "source": "/dev/payments/basic.html",
+          "destination": "/dev/payments/basic/",
+          "type": 301
+        },
+        {
+          "source": "/dev/payments/sending_transactions.html",
+          "destination": "/dev/payments/sending_transactions/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/approach.html",
+          "destination": "/dev/security/approach/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/bug-bounty.html",
+          "destination": "/dev/security/bug-bounty/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/disclosure.html",
+          "destination": "/dev/security/disclosure/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/bugs.html",
+          "destination": "/dev/security/bugs/",
+          "type": 301
+        },
+        {
+          "source": "/dev/security/ZKSYNC1-2021-01.html",
+          "destination": "/dev/security/ZKSYNC1-2021-01/",
+          "type": 301
+        },
+        {
+          "source": "/dev/nfts.html",
+          "destination": "/dev/nfts/",
+          "type": 301
+        },
+        {
+          "source": "/dev/swaps.html",
+          "destination": "/dev/swaps/",
+          "type": 301
+        },
+        {
+          "source": "/dev/events.html",
+          "destination": "/dev/events/",
+          "type": 301
+        },
+        {
+          "source": "/api/changelog.html",
+          "destination": "/api/changelog/",
+          "type": 301
+        },
+        {
+          "source": "/api/environments.html",
+          "destination": "/api/environments/",
+          "type": 301
+        },
+        {
+          "source": "/api/events.html",
+          "destination": "/api/events/",
+          "type": 301
+        },
+        {
+          "source": "/api/v0.1.html",
+          "destination": "/api/v0.1/",
+          "type": 301
+        },
+        {
+          "source": "/api/v0.2.html",
+          "destination": "/api/v0.2/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/tutorial.html",
+          "destination": "/api/sdk/js/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/providers.html",
+          "destination": "/api/sdk/js/providers/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/accounts.html",
+          "destination": "/api/sdk/js/accounts/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/utils.html",
+          "destination": "/api/sdk/js/utils/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/nfts.html",
+          "destination": "/api/sdk/js/nfts/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/types.html",
+          "destination": "/api/sdk/js/types/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/js/browser-bundled.html",
+          "destination": "/api/sdk/js/browser-bundled/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/rust/tutorial.html",
+          "destination": "/api/sdk/rust/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/java/tutorial.html",
+          "destination": "/api/sdk/java/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/java/interfaces.html",
+          "destination": "/api/sdk/java/interfaces/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/swift/tutorial.html",
+          "destination": "/api/sdk/swift/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/python/tutorial.html",
+          "destination": "/api/sdk/python/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/dart.html",
+          "destination": "/api/sdk/dart/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/tutorial.html",
+          "destination": "/api/sdk/checkout/tutorial/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/checkout-manager.html",
+          "destination": "/api/sdk/checkout/checkout-manager/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/types.html",
+          "destination": "/api/sdk/checkout/types/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/constants.html",
+          "destination": "/api/sdk/checkout/constants/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/protocol.html",
+          "destination": "/api/sdk/checkout/protocol/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/checkout/appendix-a.html",
+          "destination": "/api/sdk/checkout/appendix-a/",
+          "type": 301
+        },
+        {
+          "source": "/api/sdk/crypto.html",
+          "destination": "/api/sdk/crypto/",
           "type": 301
         }
       ],

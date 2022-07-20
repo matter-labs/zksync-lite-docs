@@ -28,9 +28,8 @@ First of all, zkSync, as a scaling solution, is capable of making transfers, and
 and principles of the core zkSync functionality are covered in the [payments section](/dev/payments) of this
 documentation.
 
-Secondly, zkSync is smart-contract friendly. Targeting 2021, it will be possible to either write contracts in Zinc,
-Rust-based type-safe programming language, or even reuse existing Solidity code. Contracts interoperability is covered
-in the [contracts section](/dev/contracts).
+Secondly, zkSync is smart-contract friendly. As of February 2022, zkSync 2.0 testnet has been live featuring smart contracts in Solidity or reusing existing Solidity code. Contracts interoperability is covered
+in the [contracts section](/dev/contracts) and you can find more details in the [zkSync 2.0 Documentation](https://v2-docs.zksync.io/dev/)
 
 Thirdly, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols — are already
 [available](/dev/contracts) on mainnet!
