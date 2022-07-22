@@ -8,7 +8,7 @@ sidebar: false
 
 - [Twitter: zkSync](https://twitter.com/zksync)
 - [Twitter: Matter Labs](https://twitter.com/the_matter_labs)
-- [Medium: Matter Labs' blog](https://medium.com/matter-labs)
+- [Medium: Matter Labs' blog](https://matterlabs.medium.com/)
 - [Telegram: zkSync announcements channel](https://t.me/zksync)
 
 <form
