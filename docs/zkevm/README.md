@@ -26,14 +26,14 @@ The launch of the zkEVM represents an essential turning point for crypto. Up unt
 merely a theoretical possibility that will take years to get real. But over the last year, the pace of the entire zero
 knowledge proof ecosystem has exceeded even experts’ expectations. And because of the many
 [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zk-EVM possible, Solidity
-programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero knowledge proofs.
+programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero-knowledge proofs.
 
 ### What is zkSync 2.0?
 
 zkSync 2.0 is an EVM-compatible ZK Rollup being built by Matter Labs, powered by our zkEVM.
 
 But this is not our first product! zkSync 1.0 has been
-[live for payments](https://twitter.com/vitalikbuterin/status/1287921136911753216?lang=en) for almost 1.5 years:
+[live for payments](https://twitter.com/vitalikbuterin/status/1287921136911753216?lang=en) for almost 2 years:
 
 - reducing the [cost of transfers](https://l2fees.info/) by ~50x,
 - securing close to [4M transactions](https://zkscan.io/),
@@ -52,22 +52,22 @@ Zero Knowledge. Get familiar with ZK proofs [here](https://github.com/matter-lab
 
 ### What is a ZK Rollup?
 
-ZK Rollups are a layer 2 scaling solution that uses validity proofs to scale computation: each batch of transactions
-comes with a cryptographic proof (ZK-SNARK) that is verified by an Ethereum smart contract. This way every single
+ZK Rollups are a layer 2 scaling solution that uses cryptographic <em>validity proofs</em> to scale computation: each batch of transactions
+comes with a cryptographic proof (SNARK) that is verified by an Ethereum smart contract. This way every single
 transaction is fully verified by all Ethereum full nodes before a block is finalized.
 
 ### How secure is a ZK Rollup?
 
 Out of all the scaling solutions, ZK Rollups are the
 [most secure](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955).
-They rely purely on math to fully inherit the security of L1, which is critical for function in highly adversarial
+They rely purely on math to fully inherit the security of L1, which is critical for functioning in highly adversarial
 environments. Other scaling solutions, instead, rely on economic guarantees or third parties, and thus offer far weaker
 security properties.
 
-Validation of state changes in ZK Rollups is done through the computation of a zero knowledge proof: if any of the state
-changes is invalid the proof cannot be produced and, in turn, this means that the entity validating cannot include
-invalid state changes. That’s why we call them sequencers and not validators: they don’t validate transactions, the
-Ethereum smart contract does by relying on pure math. We don’t need to trust them or monitor them for frauds, since they
+Validation of state changes in ZK Rollups is done through the computation of a validity proof: if any of the state
+changes is invalid a proof cannot be produced and, in turn, this means that the validating entity cannot include
+invalid state changes. That’s why we call them sequencers and not validators: they don’t validate transactions - the
+Ethereum smart contract does. By relying on pure math, we don’t need to trust them or monitor them for frauds, since they
 cannot commit any fraud.
 
 ### How scalable is a ZK Rollup?
@@ -82,8 +82,8 @@ magnitude more scale: **zkPorter** can offer up to 20,000 TPS!
 ### What is zkPorter?
 
 [zkPorter](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf) puts data availability —
-essential transaction data needed to reconstruct state — offchain rather than on Ethereum. Instead, data availability is
-secured using proof of stake (PoS) by zkSync token stakers. This enables much higher scalability (tens of thousands
+essential transaction data needed to reconstruct state — offchain rather than on Ethereum. Instead, the data remains available
+using a proof-of-stake (PoS) mechanism, where stakers are zkSync token holders. This enables much higher scalability (tens of thousands
 TPS), and as a result, ultra-low transaction fees comparable with sidechains (in the range of a few cents).
 
 The security of zkPorter is still better than any other L1 or sidechain. In the worst case, where a malicious actor
@@ -94,13 +94,13 @@ well. Thus, there is no direct way for an attacker with a large stake to financi
 For an in-depth dive into the scale and security of zkPorter, check out this
 [Medium post](https://medium.com/matter-labs/zkporter-a-breakthrough-in-l2-scaling-ed5e48842fbf).
 
-### What is the transaction finality in zkSync?
+### What is transaction finality time in zkSync?
 
 The sequencer will provide a fast, offchain confirmation of your transaction. This confirmation is **semi-trusted**: a
 sequencer cannot trigger an invalid state update (e.g. steal funds) but can still fail to include a transaction after it
 was confirmed, or reorder transactions over a short window of time.
 
-A transaction is considered final when a zero knowledge proof has been generated and posted to Ethereum. Depending on
+A transaction is considered final when a zero-knowledge proof has been generated and posted to Ethereum. Depending on
 activity, this can take from 15 minutes to 3 hours.
 
 ## Comparison
@@ -135,7 +135,7 @@ In zkSync, any withdrawal is finalized between 15 minutes and 3 hours, with fast
 
 **4) Transaction costs**
 
-ZK Rollups are [cheaper](https://l2fees.info/) for most popular crypto use cases because it requires the least amount of
+ZK Rollups are [cheaper](https://l2fees.info/) for most popular crypto use cases because they require the least amount of
 data to be posted on-chain (no signatures and no transaction parameters).
 
 However, for some common use cases, the cost savings are an order of magnitude more significant! Specifically, ZK
@@ -196,9 +196,7 @@ able to seamlessly interact with each other, making for a much larger liquidity 
 
 Yes!
 
-Most DeFi and NFT projects will work with no code changes. However, in the first version, calls to SHA256 and Keccak256
-will be replaced with a circuit friendly hash function automatically by the compiler. A few other cryptographic
-primitives are currently also unsupported, for example ecrecover and the cryptographic precompiles.
+Most DeFi and NFT projects will work with no code changes.
 
 ### How does the UI interact with smart contracts? Can I reuse my current frontend?
 
@@ -207,8 +205,7 @@ You can interact completely with smart contracts and the zkSync network via our 
 - For _read_ requests: any web3-compliant framework in any language will work out of the box, with additional optional
   zkSync L2 specific functionality.
 - For _write_ requests (sending transactions): due to fundamental differences between L1 and L2, you will have to write
-  some additional code (for example, zkSync supports paying fees in any token, so sending a transaction will involve
-  choosing a token to pay fees).
+  some additional code.
 
 So, yes! You can reuse your current frontend with minimal changes (sending transactions is different).
 
