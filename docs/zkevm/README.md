@@ -65,7 +65,7 @@ environments. Other scaling solutions, instead, rely on economic guarantees or t
 security properties.
 
 Validation of state changes in ZK Rollups is done through the computation of a validity proof: if any of the state
-changes is invalid a proof cannot be produced and, in turn, this means that the validating entity cannot include
+changes is invalid, a proof cannot be produced and, in turn, this means that the validating entity cannot include
 invalid state changes. That’s why we call them sequencers and not validators: they don’t validate transactions - the
 Ethereum smart contract does. By relying on pure math, we don’t need to trust them or monitor them for frauds, since they
 cannot commit any fraud.
