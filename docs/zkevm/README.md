@@ -60,7 +60,7 @@ transaction is fully verified by all Ethereum full nodes before a block is final
 
 Out of all the scaling solutions, ZK Rollups are the
 [most secure](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955).
-They rely purely on math to fully inherit the security of L1, which is critical for functioning in highly adversarial
+They rely purely on math to fully inherit the security of L1, which is critical to function in a highly adversarial
 environments. Other scaling solutions, instead, rely on economic guarantees or third parties, and thus offer far weaker
 security properties.
 
