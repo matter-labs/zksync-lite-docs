@@ -53,7 +53,7 @@ Chat live with our team and other developers on the official zkSync [Discord](ht
 - [Discord: discussions](https://discord.gg/px2aR7w)
 - [Telegram: user support group](https://t.me/zksync_support)
 - [Reddit: discussions](https://www.reddit.com/r/zkSync/)
-- Email user support: **support@zksync.io**
+- Email user support: [support@zksync.io](mailto:support@zksync.io)
 
 ## Forum
 
@@ -61,7 +61,7 @@ Chat live with our team and other developers on the official zkSync [Discord](ht
 
 ## Partnerships, integrations and press
 
-Please reach out directly via **hello@matter-labs.io**.
+Please reach out directly via [hello@matter-labs.io](mailto:hello@matter-labs.io).
 
 ## Career opportunities
 
