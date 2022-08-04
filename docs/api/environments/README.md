@@ -13,28 +13,16 @@
 - Upgrade Gatekeeper
   [0x38A43F4330f24fe920F943409709fc9A6084C939](https://etherscan.io/address/0x38A43F4330f24fe920F943409709fc9A6084C939)
 
-## Rinkeby
+## Goerli
 
-- Wallet: [https://rinkeby.zksync.io](https://rinkeby.zksync.io)
-- Explorer: [https://rinkeby.zkscan.io](https://rinkeby.zkscan.io)
+- Wallet: [https://wallet.zksync.io](https://wallet.zksync.io)
+- Explorer: [https://goerli.zkscan.io](https://goerli.zkscan.io)
 - zkSync
-  [0x82F67958A5474e40E1485742d648C0b0686b6e5D](https://rinkeby.etherscan.io/address/0x82F67958A5474e40E1485742d648C0b0686b6e5D)
+  [0x5c56FC5757259c52747AbB7608F8822e7cE51484](https://goerli.etherscan.io/address/0x5c56FC5757259c52747AbB7608F8822e7cE51484)
 - Verifier
-  [0x20E79587197FfA45C9fDa1975AF6773b549564BD](https://rinkeby.etherscan.io/address/0x20E79587197FfA45C9fDa1975AF6773b549564BD)
+  [0xF321956D6D79f34b4f0a7d8e60791b44ec096fdc](https://goerli.etherscan.io//address/0xF321956D6D79f34b4f0a7d8e60791b44ec096fdc)
 - Governance
-  [0xC8568F373484Cd51FDc1FE3675E46D8C0dc7D246](https://rinkeby.etherscan.io/address/0xC8568F373484Cd51FDc1FE3675E46D8C0dc7D246)
+  [0x68FbE14D7D7bEe7DfCc078111aa215e1c2ce3628](https://goerli.etherscan.io//address/0x68FbE14D7D7bEe7DfCc078111aa215e1c2ce3628)
 - Upgrade Gatekeeper
-  [0xd538fC97dDbfE6719f0E7EfA3948A38e3A2c6504](https://rinkeby.etherscan.io/address/0xd538fC97dDbfE6719f0E7EfA3948A38e3A2c6504)
+  [0x746f317b7475E5013AF269938A87A4cCEcc16658](https://goerli.etherscan.io//address/0x746f317b7475E5013AF269938A87A4cCEcc16658)
 
-## Ropsten
-
-- Wallet: [https://ropsten.zksync.io](https://ropsten.zksync.io)
-- Explorer: [https://ropsten.zkscan.io](https://ropsten.zkscan.io)
-- zkSync
-  [0xc332679D243439048c8395DEfDe74D71cf5151e7](https://ropsten.etherscan.io/address/0xc332679D243439048c8395DEfDe74D71cf5151e7)
-- Verifier
-  [0x0F6e9B13a662Cf458bD0248559c09FDC462499Ec](https://ropsten.etherscan.io/address/0x0F6e9B13a662Cf458bD0248559c09FDC462499Ec)
-- Governance
-  [0xa7276Ef2Cb4Cbb069d94597251182d722E8e0940](https://ropsten.etherscan.io/address/0xa7276Ef2Cb4Cbb069d94597251182d722E8e0940)
-- Upgrade Gatekeeper
-  [0x3d3cDd04acBf3EcFb3c207F77b14C51Ea4E00c4b](https://ropsten.etherscan.io/address/0x3d3cDd04acBf3EcFb3c207F77b14C51Ea4E00c4b)
