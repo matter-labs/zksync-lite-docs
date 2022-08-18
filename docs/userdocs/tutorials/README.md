@@ -35,8 +35,8 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 <br>
 
 <p align="center"> 
-  <img src="/Mainnet.png" alt="Mainnet Selection">
-</p>
+  <img src="/mainnet_goerli_selection.png" alt="Mainnet Selection">
+</p> 
 
 <br>
 
