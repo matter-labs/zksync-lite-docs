@@ -25,8 +25,8 @@ The exact changes in the code of the contracts
 - `Withdrawal` event parameters changed.
 - Use `calldata` instead of `memory` for gas cost optimization.
 - The visibility of the function `authFactsResetTimer` changed from internal to public.
-- `proveBlocks` ignores already proved blocks.
+- `proveBlocks` ignores already proven blocks.
 
 ### Removed
 
-- The finalizing withdrawals on `executeBlocks` function are removed.
+- Withdrawals are no longer finalized in the `executeBlocks` function
