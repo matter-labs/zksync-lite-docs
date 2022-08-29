@@ -10,4 +10,4 @@ In total, 4 systems are checked for each of the networks (Mainnet, Rinkeby, Rops
 - JSON RPC API
 - Wallet
 
-We use [uptime](https://uptime.com/s/zksync) for status page and checking requests for each service.
+We use [uptime](https://uptime.com/s/zkSync) for status page and checking requests for each service.
