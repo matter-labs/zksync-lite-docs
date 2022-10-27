@@ -23,6 +23,13 @@ Ethereum, already live on Ethereum mainnet.
 
 <!-- markdownlint-disable MD001 -->
 
+### Important links
+
+Here is a list of important links to interact wth zkSync:
+
+- **Wallet** (check your balances, NFTs, transactions history and contacts). [https://wallet.zksync.io](https://wallet.zksync.io)
+- **Block Explorer** (Everything you need to explore all transactions and blocks on zkSync). [https://zkscan.io](https://zkscan.io)
+- **zkCheckout** (Our blazing fast & cost-efficient checkout solution). [https://checkout.zksync.io/](https://checkout.zksync.io/)
 ### For Developers
 
 If you are interested in developing with zkSync, view our [Developers Guide](/dev/) and [API Reference](/api).
