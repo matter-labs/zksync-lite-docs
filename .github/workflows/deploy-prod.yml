@@ -27,7 +27,7 @@ jobs:
 
       - name: Unzip Dist package
         run: unzip dist.zip -d ./
-      - uses: matter-labs/action-hosting-deploy@v0
+      - uses: matter-labs/action-hosting-deploy@main
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}'
