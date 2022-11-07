@@ -2,12 +2,6 @@
 
 [[toc]]
 
-## When will the token be released?
-
-The team’s focus is to work on scalability for Ethereum. You can find any announcements from zkSync on
-[Discord](https://discord.com/invite/px2aR7w), [Telegram](https://t.me/zksync), and
-[Twitter](https://twitter.com/zksync).
-
 ## Why are the fees so high?
 
 Our fees depend on Ethereum Layer 1 (L1) gas prices because with every zkSync Layer 2 (L2) transaction, we post related
