@@ -125,10 +125,6 @@ export default {
           path: '/userdocs/decentralization/',
         },
         {
-          title: 'Tokenomics',
-          path: '/userdocs/tokenomics/',
-        },
-        {
           title: 'Smart contracts',
           path: '/userdocs/sc/',
         },

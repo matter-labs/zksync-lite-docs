@@ -74,11 +74,6 @@
           "type": 301
         },
         {
-          "source": "/userdocs/tokenomics.html",
-          "destination": "/userdocs/tokenomics/",
-          "type": 301
-        },
-        {
           "source": "/userdocs/sc.html",
           "destination": "/userdocs/sc/",
           "type": 301
@@ -378,11 +373,6 @@
         {
           "source": "/userdocs/decentralization.html",
           "destination": "/userdocs/decentralization/",
-          "type": 301
-        },
-        {
-          "source": "/userdocs/tokenomics.html",
-          "destination": "/userdocs/tokenomics/",
           "type": 301
         },
         {
