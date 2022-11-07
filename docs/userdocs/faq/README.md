@@ -2,10 +2,6 @@
 
 [[toc]]
 
-## Will there be a token?
-
-Yes
-
 ## When will the token be released?
 
 The team’s focus is to work on scalability for Ethereum. You can find any announcements from zkSync on
