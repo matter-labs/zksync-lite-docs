@@ -53,7 +53,7 @@ await syncWSProvider.disconnect();
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHTTPProvider = await zksync.Provider.newHttpProvider('https://zksync2-testnet.zksync.dev');
+const syncHTTPProvider = await zksync.Provider.newHttpProvider('https://goerli-api.zksync.io/jsrpc');
 ```
 
 ### Submit transaction

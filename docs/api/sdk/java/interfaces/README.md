@@ -543,7 +543,7 @@ public interface Provider {
         HttpTransport transport = null;
         switch (chainId) {
             case Mainnet: transport = new HttpTransport("https://api.zksync.io/jsrpc"); break;
-            case Goerli: transport = new HttpTransport("https://zksync2-testnet.zksync.dev"); break;
+            case Goerli: transport = new HttpTransport("https://goerli-api.zksync.io/jsrpc"); break;
             case Localhost: transport = new HttpTransport("http://127.0.0.1:3030"); break;
         }
         return new DefaultProvider(transport);

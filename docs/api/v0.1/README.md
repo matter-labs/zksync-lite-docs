@@ -50,7 +50,7 @@ Websocket support will be removed soon due to its instability.
 
 All available API addresses for zkSync:
 
-- `https://zksync2-testnet.zksync.dev` - JSON RPC for zkSync alpha testnet
+- `https://goerli-api.zksync.io/jsrpc` - JSON RPC for zkSync alpha testnet
 - `https://api.zksync.io/jsrpc` - JSON RPC for Mainnet server
 
 Descriptions for all types presented below could be found on the [types] page.
@@ -221,7 +221,7 @@ $ curl -X POST -H 'Content-type: application/json' \
     "id":1, "method": "get_tx_fee",
     "params": ["Transfer", "0xC8568F373484Cd51FDc1FE3675E46D8C0dc7D246", "DAI"]
     }' \
-  https://zksync2-testnet.zksync.dev
+  https://goerli-api.zksync.io/jsrpc
 {
   "jsonrpc": "2.0",
   "result": {
