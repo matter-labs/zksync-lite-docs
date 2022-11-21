@@ -50,7 +50,7 @@ Chat live with our team and other developers on the official zkSync [Discord](ht
 
 ## User community and support
 
-- [Discord: discussions](https://discord.gg/px2aR7w)
+- [Discord: discussions](https://join.zksync.dev/)
 - [Telegram: user support group](https://t.me/zksync_support)
 - [Reddit: discussions](https://www.reddit.com/r/zkSync/)
 - Email user support: [support@zksync.io](mailto:support@zksync.io)
