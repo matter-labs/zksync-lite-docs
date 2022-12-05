@@ -7,7 +7,7 @@ sidebar: false
 ## 08.29.2022
 
 By: [ABDK Consulting](https://www.abdk.consulting/). Release Tag:
-[Contracts-0](https://github.com/matter-labs/zksync/releases/tag/contracts-9)
+[Contracts-9](https://github.com/matter-labs/zksync/releases/tag/contracts-9)
 
 - [Report](/ABDK_ZkSync_V9.pdf)
 
