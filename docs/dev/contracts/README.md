@@ -55,7 +55,7 @@ You can interact completely with smart contracts and the zkSync network via our 
   some additional code (for example, zkSync supports paying fees in any token, so sending a transaction will involve
   choosing a token to pay fees).
 
-You can ask questions and get assistance in our [Discord](https://discord.com/invite/px2aR7w) developer chat room.
+You can ask questions and get assistance in our [Discord](https://join.zksync.dev/) developer chat room.
 
 ### Submitting Transactions
 
@@ -94,4 +94,4 @@ will resume work on Zinc after Solidity is released!**
 Most questions are answered in our [zkEVM FAQ](/zkevm/README.md) and major concepts are outlined on our
 [Medium](https://medium.com/matter-labs).
 
-You can ask questions and get assistance in our [Discord](https://discord.com/invite/px2aR7w) developer chat room.
+You can ask questions and get assistance in our [Discord](https://join.zksync.dev/) developer chat room.

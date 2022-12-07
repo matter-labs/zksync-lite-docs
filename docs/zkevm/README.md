@@ -225,4 +225,4 @@ We are currently fully focused on a [Solidity-first approach](https://medium.com
 
 ## My question wasn’t answered! ☹️
 
-Join the [community on Discord](https://discord.gg/fyPna387dU).
+Join the [community on Discord](https://join.zksync.dev/).
