@@ -8,7 +8,7 @@ sidebar: false
 
 - [Twitter: zkSync](https://twitter.com/zksync)
 - [Twitter: Matter Labs](https://twitter.com/the_matter_labs)
-- [Medium: Matter Labs' blog](https://matterlabs.medium.com/)
+- [Medium: Matter Labs' blog](https://blog.matter-labs.io/)
 - [Telegram: zkSync announcements channel](https://t.me/zksync)
 
 <form
@@ -46,7 +46,7 @@ novalidate
 
 ## Developer community
 
-Chat live with our team and other developers on the official zkSync [Discord](https://discord.gg/nMaPGrDDwk)!
+Chat live with our team and other developers on the official zkSync [Discord](https://join.zksync.dev/)!
 
 ## User community and support
 
