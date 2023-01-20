@@ -48,7 +48,7 @@ export default {
     repo: 'matter-labs/zksync-docs',
     editLinks: true,
     docsDir: '/docs',
-    logo: '/LogotypeLight.svg',
+    logo: '/logo.svg',
     lastUpdated: 'Last Updated',
     nav: [
       {
