@@ -64,7 +64,7 @@ based on a native Ethereum signature, all wallets, even hardware wallets, will w
 
 ### Deployment
 
-zkSync 2.0 Testnet is here! To get started visit the [zkSync 2.0 Documentation](https://v2-docs.zksync.io/dev/).
+zkSync Era mainnet is here! To get started visit the [zkSync Era Documentation](https://era.zksync.io/docs/building-on-zksync/fair-onboarding-alpha.html).
 
 ## Zinc
 
