@@ -216,12 +216,12 @@ based on a native Ethereum signature, all wallets, even hardware wallets, will w
 
 ### When can I deploy?
 
-To get started visit the [zkSync Era Documentation](https://era.zksync.io/docs/fundamentals/zkSync.html).
+To get started visit the [zkSync Era Documentation](https://era.zksync.io/docs/).
 
 ### What is the status of Zinc?
 
 We are currently fully focused on a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We will resume work on 
-[Zinc](/docs/dev/contracts/README.md#zinc) after Solidity is released!
+[Zinc](/dev/contracts/README.md#zinc) after Solidity is released!
 
 ## My question wasn’t answered! ☹️
 

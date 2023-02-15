@@ -76,14 +76,14 @@ export default {
         link: '/uptime/',
       },
       {
-        text: 'v1.x',
+        text: 'zkSync Lite',
         items: [
           {
-            text: 'v2.0',
-            link: 'https://v2-docs.zksync.io'
+            text: 'zkSync Era',
+            link: 'https://era.zksync.io/docs/'
           },
           {
-            text: 'v1.x',
+            text: 'zkSync Lite',
             link: '/userdocs/'
           }
         ]
@@ -131,10 +131,6 @@ export default {
         {
           title: 'Privacy',
           path: '/userdocs/privacy/',
-        },
-        {
-          title: 'Roadmap',
-          path: '/userdocs/roadmap/',
         },
         {
           title: 'FAQ',

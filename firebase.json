@@ -84,11 +84,6 @@
           "type": 301
         },
         {
-          "source": "/userdocs/roadmap.html",
-          "destination": "/userdocs/roadmap/",
-          "type": 301
-        },
-        {
           "source": "/userdocs/faq.html",
           "destination": "/userdocs/faq/",
           "type": 301
@@ -383,11 +378,6 @@
         {
           "source": "/userdocs/privacy.html",
           "destination": "/userdocs/privacy/",
-          "type": 301
-        },
-        {
-          "source": "/userdocs/roadmap.html",
-          "destination": "/userdocs/roadmap/",
           "type": 301
         },
         {

@@ -9,7 +9,7 @@ sidebarDepth: 4
 - `indexed` event parameters are not supported. (Even the ERC20/ERC721 events will not have the `indexed` event parameters).
 - Some methods are not supported (the exact list of supported methods can be found below).
 - The calldata will not be simulated, i.e. the `input` field of any transaction will be empty.
-- The signature part of the transactions may not be valid, since zkSync 1.x uses a different signature scheme.
+- The signature part of the transactions may not be valid, since zkSync Lite uses a different signature scheme.
 
 :::warning
 It is only possible to read state, not write to it (sending transactions is only possible through our original [API](https://zksync.io/api/))
@@ -58,7 +58,7 @@ In order to make the process simpler, we can assume that ETH is an ERC-20 token 
 
 ### Smart contracts for L2
 
-There are no smart contracts on zkSync 1.x, but we need to support reading blockchain *as if* there were smart contracts. So we need to understand which exact smart contracts will be emulated.
+There are no smart contracts on zkSync Lite, but we need to support reading blockchain *as if* there were smart contracts. So we need to understand which exact smart contracts will be emulated.
 
 All of the interactions will go through the `ZkSyncProxy` contract, which will have an unlimited allowance for each user's tokens and so it will be able to process the ERC-20/NFT transfers on behalf of the users.
 

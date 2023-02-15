@@ -4,7 +4,7 @@ sidebarDepth: 3
 
 # NFTs
 
-This API reference provides descriptions for all functions regarding NFTs in zkSync 1.x. It is recommended that you
+This API reference provides descriptions for all functions regarding NFTs in zkSync Lite. It is recommended that you
 begin with our [NFT tutorial](/dev/nfts) and come back here to reference specific functions.
 
 - [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
