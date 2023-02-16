@@ -2,12 +2,12 @@
 sidebarDepth: 3
 ---
 
-# NFTs in zkSync 1.x
+# NFTs in zkSync Lite
 
-Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users
+Support for NFTs on zkSync Lite is here! Functions include minting, transferring, and atomically swapping NFTs. Users
 will also be able to withdraw NFTs to Layer 1.
 
-This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into
+This page demonstrates how NFTs are implemented in zkSync Lite and provides a tutorial for you to integrate NFTs into
 your project.
 
 - [Overview](#overview)
@@ -30,7 +30,7 @@ This cryptographically ensures two invariants:
 - NFT addresses serve as a unique commitment to the creator, serial number of the NFT, and its content hash.
 - NFT addresses can not be controlled by anyone or have smart contract code on mainnet.
 
-NOTICE: In zkSync 1.x, multiple NFTs can be minted with the same content hash.
+NOTICE: In zkSync Lite, multiple NFTs can be minted with the same content hash.
 
 ## Setup
 

@@ -4,7 +4,7 @@ meta:
   - name: title
     content: zkEVM FAQ
   - name: description
-    content: 'Everything you need to know about zkSync 2.0: an EVM-compatible zkRollup.'
+    content: 'Everything you need to know about zkSync Era: an EVM-compatible zkRollup.'
   - name: keywords
     content: zkEVM, zk-EVM, zk EVM
 ---
@@ -28,9 +28,9 @@ knowledge proof ecosystem has exceeded even experts’ expectations. And because
 [R&D breakthroughs](https://www.youtube.com/watch?v=6wLSkpIHXM8') by our team, that made zk-EVM possible, Solidity
 programmers now have first-class access to the unmatched scaling, security, and UX benefits of zero-knowledge proofs.
 
-### What is zkSync 2.0?
+### What is zkSync Era?
 
-zkSync 2.0 is an EVM-compatible ZK Rollup being built by Matter Labs, powered by our zkEVM.
+zkSync Era is an EVM-compatible ZK Rollup being built by Matter Labs, powered by our zkEVM.
 
 But this is not our first product! zkSync 1.0 has been
 [live for payments](https://twitter.com/vitalikbuterin/status/1287921136911753216?lang=en) for almost 2 years:
@@ -39,7 +39,7 @@ But this is not our first product! zkSync 1.0 has been
 - securing close to [4M transactions](https://zkscan.io/),
 - and used by 98% of all transactions in the recent 4 [Gitcoin grant rounds](https://gitcoin.co/).
 
-For previous in-depth updates on zkSync 2.0, check out our
+For previous in-depth updates on zkSync Era, check out our
 [Medium](https://medium.com/matter-labs/zksync-2-0-hello-ethereum-ca48588de179).
 
 To keep up to date with our exciting announcements coming soon, follow our [Twitter](https://twitter.com/zksync).
@@ -105,7 +105,7 @@ activity, this can take from 15 minutes to 3 hours.
 
 ## Comparison
 
-### What are the major differences between zkSync 2.0 and optimistic rollups (eg. Arbitrum, Optimism)?
+### What are the major differences between zkSync Era and optimistic rollups (eg. Arbitrum, Optimism)?
 
 **1) Significantly higher security**
 
@@ -143,7 +143,7 @@ Rollups only need to post the final changes to state, and since many transaction
 cost is amortized. For example, all trading and oracle update transactions in the same block come with zero data
 availability costs.
 
-Finally, zkSync 2.0 will have an extension called zkPorter that offers constant 1-3 cent transaction fees by putting
+Finally, zkSync Era will have an extension called zkPorter that offers constant 1-3 cent transaction fees by putting
 data offchain. Optimistic rollups fundamentally cannot have such an extension with off-chain data availability because
 there is no way for the watchers to verify the validity of every single transaction without public data for it. So, it’s
 not possible for them to offer such a hybrid system to users who prefer ultra-low fees over security.
@@ -161,7 +161,7 @@ operate in a delegated PoS model under a low latency consensus requirement, the 
 controlled by only a handful of validator servers physically located in the same data center. The risk of all of these
 servers being compromised is nontrivial and a lot more than a theoretical threat!
 
-zkSync 2.0 offers two account types to its users: zkRollup and zkPorter. Let’s consider the comparison for each of them:
+zkSync Era offers two account types to its users: zkRollup and zkPorter. Let’s consider the comparison for each of them:
 
 **1) zkRollup vs Sidechains**
 
@@ -216,7 +216,7 @@ based on a native Ethereum signature, all wallets, even hardware wallets, will w
 
 ### When can I deploy?
 
-To get started visit the [zkSync 2.0 Documentation](https://v2-docs.zksync.io/dev/).
+To get started visit the [zkSync Era Documentation](https://era.zksync.io/docs/).
 
 ### What is the status of Zinc?
 

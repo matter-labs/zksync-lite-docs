@@ -426,10 +426,10 @@ String hash = wallet.syncSwap(orderA, orderB, orderA.getAmount(), orderB.getAmou
 
 ## NFTs
 
-Support for NFTs on zkSync 1.x is here! Functions include minting, transferring, and atomically swapping NFTs. Users
+Support for NFTs on zkSync Lite is here! Functions include minting, transferring, and atomically swapping NFTs. Users
 will also be able to withdraw NFTs to Layer 1.
 
-This page demonstrates how NFTs are implemented in zkSync 1.x and provides a tutorial for you to integrate NFTs into
+This page demonstrates how NFTs are implemented in zkSync Lite and provides a tutorial for you to integrate NFTs into
 your project.
 
 ### Mint
