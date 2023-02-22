@@ -7,7 +7,7 @@ sidebarDepth: 3
 This API reference provides descriptions for all functions regarding NFTs in zkSync Lite. It is recommended that you
 begin with our [NFT tutorial](/dev/nfts) and come back here to reference specific functions.
 
-- [Connecting to Rinkeby testnet](#connect-to-the-rinkeby-testnet)
+- [Connecting to Goerli testnet](#connect-to-the-goerli-testnet)
 - [Mint NFT](#mint-nft)
 - [Transfer NFT](#transfer-nft)
 - [Swap NFT](#swap-nft)
@@ -19,13 +19,13 @@ begin with our [NFT tutorial](/dev/nfts) and come back here to reference specifi
   - [Get NFT](#get-an-nft)
   - [Get a receipt](#get-a-receipt)
 
-## Connect to the Rinkeby testnet
+## Connect to the Goerli testnet
 
-The NFTs are also supported on `mainnet` and `ropsten` networks. For the purposes of this tutorial, we will use the
-`rinkeby` testnet.
+The NFTs are also supported on `mainnet` and `goerli` networks. For the purposes of this tutorial, we will use the
+`goerli` testnet.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const syncProvider = await zksync.getDefaultProvider('goerli');
 ```
 
 ## Mint NFT
