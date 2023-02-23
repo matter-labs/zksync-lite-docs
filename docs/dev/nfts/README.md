@@ -44,10 +44,10 @@ yarn add zksync
 
 ### Connect to zkSync network
 
-For this tutorial, let's connect to the Rinkeby testnet. The steps for mainnet and Ropsten would be identical.
+For this tutorial, let's connect to the Goerli testnet. The steps for mainnet and Goerli would be identical.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const syncProvider = await zksync.getDefaultProvider('goerli');
 ```
 
 ## Mint

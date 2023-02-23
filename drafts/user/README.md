@@ -1,10 +1,10 @@
 # User guide
 
-(to discuss after you have tried rinkeby.zksync.io yourself)
+(to discuss after you have tried goerli yourself)
 
 ## Getting started with zkSync UI
 
-- zksync.io (rinkeby.zksync.io for testnet)
+- zksync.io (goerli for testnet)
 - non-custodial, web-based UI to interact with zkSync
 - it doesn't store your private keys -- they are ephemerially recreated from a signature from your Ethereum wallet
 

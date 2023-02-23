@@ -43,7 +43,7 @@ special message.
 
 ```swift
 let ethSigner = ...
-let zkSigner = try ZkSigner(ethSigner: ethSigner, chainId: .ropsten)
+let zkSigner = try ZkSigner(ethSigner: ethSigner, chainId: .goerli)
 ```
 
 ---
@@ -64,12 +64,12 @@ For interact with both zkSync and Ethereum networks you need to create providers
 
 ### zkSync provider
 
-Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that
+Library has predefined URLs for the next networks `ChainId.Mainnet`,`ChainId.Goerli` that
 officially supports by MatterLabs. Also you can use local node for testing `ChainId.Localhost` set to
 `http://127.0.0.1:3030`
 
 ```swift
-let provider = DefaultProvider(chainId: .ropsten)
+let provider = DefaultProvider(chainId: .goerli)
 ```
 
 You can create `Provider` with any custom URL, just use `HTTPTransport` for `DefaultProvider`
@@ -86,7 +86,7 @@ For onchain operation in Ethereum network you may create `EthereumProvider` usin
 
 ```swift
 let wallet = ...
-let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
+let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraGoerliWeb3())
 ```
 
 ## Creating a Wallet
@@ -97,14 +97,14 @@ To control your account in zkSync, use the `Wallet`. It can sign transactions wi
 ```swift
 let ethSigner = ...
 let zkSigner = ...
-let wallet = try DefaultWallet(ethSigner: ethSigner, zkSigner: zkSigner, provider: DefaultProvider(chainId: .ropsten))
+let wallet = try DefaultWallet(ethSigner: ethSigner, zkSigner: zkSigner, provider: DefaultProvider(chainId: .goerli))
 ```
 
 For onchain operations you can create Ethereum provider from `Wallet`
 
 ```swift
 let wallet = ...
-let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraRopstenWeb3())
+let ethereum = try wallet.createEthereumProvider(web3: Web3.InfuraGoerliWeb3())
 ```
 
 ## Depositing assets from Ethereum into zkSync

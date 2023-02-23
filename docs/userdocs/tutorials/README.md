@@ -6,7 +6,7 @@
 
 In this tutorial, we will be depositing into a zkSync wallet with MetaMask.
 
-> While the tutorial shows the MetaMask images for Rinkeby, you can follow the same steps for mainnet.
+> While the tutorial shows the MetaMask images for Goerli, you can follow the same steps for mainnet.
 
 **There is an account activation fee applied on the first transaction after depositing. Deposit an additional ~$20 to
 cover it during high gas fees.** Learn more about the account activation fee in our

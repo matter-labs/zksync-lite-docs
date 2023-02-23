@@ -24,5 +24,3 @@ sidebar: false
 zkSync website is currently undergoing planned maintenance. We'll be back up in a bit!
 
 You can track the current maintenance status on [our twitter page](https://twitter.com/zksync).
-
-To not get bored in the meanwhile, try out the [demo on Rinkeby testnet](https://rinkeby.zksync.io).
