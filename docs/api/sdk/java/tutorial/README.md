@@ -579,7 +579,7 @@ Transactions in ZkSync have different execution statuses. You can subscribe to a
 
 ```java
 // Transaction processor supports only async therefore you need to create AsyncProvider
-AsyncProvider provider = AsyncProvider.defaultProvider(ChainId.goerli);
+AsyncProvider provider = AsyncProvider.defaultProvider(ChainId.Goerli);
 ZkSyncTransactionReceiptProcessor receiptProcessor = new ZkSyncPollingTransactionReceiptProcessor(provider);
 
 String hash = ... //Here hex hash of the submitted transaction

@@ -1,6 +1,6 @@
 # Status page
 
-To users that everything is working fine or that there are problems with a particular
+In order to clearly indicate to users that everything is working fine or that there are problems with a particular
 subsystem, we use status page.
 
 In total, 4 systems are checked for each of the networks (Mainnet, Goerli):

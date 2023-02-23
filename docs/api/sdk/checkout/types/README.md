@@ -48,5 +48,5 @@ type TokenLike = string;
 The type which specifies an Ethereum network.
 
 ```tsx
-type EthereumNetwork = 'Goerli' | 'mainnet';
+type EthereumNetwork = 'goerli' | 'mainnet';
 ```

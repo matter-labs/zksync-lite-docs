@@ -79,7 +79,7 @@ import { CheckoutManager } from 'zksync-checkout';
 
 // ..
 
-// 'Goerli' is also supported
+// 'goerli' is also supported
 const checkoutManager = new CheckoutManager('mainnet');
 ```
 

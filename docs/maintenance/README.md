@@ -24,3 +24,6 @@ sidebar: false
 zkSync website is currently undergoing planned maintenance. We'll be back up in a bit!
 
 You can track the current maintenance status on [our twitter page](https://twitter.com/zksync).
+
+
+Try out the [zkSync Lite wallet](https://lite.zksync.io/).
