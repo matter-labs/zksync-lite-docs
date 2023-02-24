@@ -49,9 +49,7 @@ Websocket support will be removed soon due to its instability.
 :::
 
 All available API addresses for zkSync:
-
-- `https://rinkeby-api.zksync.io/jsrpc` - JSON RPC for Rinkeby testnet server
-- `https://ropsten-api.zksync.io/jsrpc` - JSON RPC for Ropsten testnet server
+- `https://goerli-api.zksync.io/jsrpc` - JSON RPC for goerli testnet server
 - `https://api.zksync.io/jsrpc` - JSON RPC for Mainnet server
 
 Descriptions for all types presented below could be found on the [types] page.
@@ -222,7 +220,7 @@ $ curl -X POST -H 'Content-type: application/json' \
     "id":1, "method": "get_tx_fee",
     "params": ["Transfer", "0xC8568F373484Cd51FDc1FE3675E46D8C0dc7D246", "DAI"]
     }' \
-  https://rinkeby-api.zksync.io/jsrpc
+  https://goerli-api.zksync.io/jsrpc
 {
   "jsonrpc": "2.0",
   "result": {
@@ -294,12 +292,11 @@ _Note:_ This section is incomplete, thus description of some endpoints may be mi
 ### Introduction
 
 The REST API of zkSync server is available at "\${ZKSYNC_SERVER_ADDRESS}/api/v0.1". In the examples below we will use
-the `rinkeby` zkSync testnet API, thus URLs will look start `https://rinkeby-api.zksync.io/api/v0.1/`.
+the `goerli` zkSync testnet API, thus URLs will look start `https://goerli-api.zksync.io/api/v0.1/`.
 
 All available API addresses for zkSync:
 
-- `https://rinkeby-api.zksync.io/api/v0.1/` - API for Rinkeby testnet server
-- `https://ropsten-api.zksync.io/api/v0.1/` - API for Ropsten testnet server
+- `https://goerli-api.zksync.io/api/v0.1/` - API for Goerli testnet server
 - `https://api.zksync.io/api/v0.1/` - API for Mainnet server
 
 To interact with REST API from javascript one may use any of available packages providing the interface to perform HTTP
@@ -308,7 +305,7 @@ requests. One of the simplest ways will be to use `Axios`, and in that case the 
 ```js
 import Axios from 'axios';
 
-const url = 'https://rinkeby-api.zksync.io/api/v0.1/status';
+const url = 'https://goerli-api.zksync.io/api/v0.1/status';
 
 const { data } = await Axios.get(url).catch((e) => {
   throw new Error(`Request to ${e.config.url} failed with status code ${e.response.status}`);
@@ -382,7 +379,7 @@ Note that there is no `success` or `fail_reason` fields: if transaction was exec
 `ChangePubKey` transaction:
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/transactions/0xe8b239b55804e58c2a55e2b567a9572811c19230d6a0d1f4a7840e7a0952b33d
+$ curl https://goerli-api.zksync.io/api/v0.1/transactions/0xe8b239b55804e58c2a55e2b567a9572811c19230d6a0d1f4a7840e7a0952b33d
 {
   "tx_hash": "e8b239b55804e58c2a55e2b567a9572811c19230d6a0d1f4a7840e7a0952b33d",
   "block_number": 2817,
@@ -398,7 +395,7 @@ $ curl https://rinkeby-api.zksync.io/api/v0.1/transactions/0xe8b239b55804e58c2a5
   }
 }
 
-$ curl https://rinkeby-api.zksync.io/api/v0.1/transactions_all/0xe8b239b55804e58c2a55e2b567a9572811c19230d6a0d1f4a7840e7a0952b33d
+$ curl https://goerli-api.zksync.io/api/v0.1/transactions_all/0xe8b239b55804e58c2a55e2b567a9572811c19230d6a0d1f4a7840e7a0952b33d
 {
   "tx_type": "ChangePubKey",
   "from": "0x3223d59c7d7a4201bc0e30c2434b35686af55c0a",
@@ -430,7 +427,7 @@ $ curl https://rinkeby-api.zksync.io/api/v0.1/transactions_all/0xe8b239b55804e58
 `Transfer` transaction:
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/transactions/0x1424388a45de738bae3175734bfdd8bb36abc8c31b2608018172574e8b7e38e2
+$ curl https://goerli-api.zksync.io/api/v0.1/transactions/0x1424388a45de738bae3175734bfdd8bb36abc8c31b2608018172574e8b7e38e2
 {
   "tx_hash": "1424388a45de738bae3175734bfdd8bb36abc8c31b2608018172574e8b7e38e2",
   "block_number": 3072,
@@ -446,7 +443,7 @@ $ curl https://rinkeby-api.zksync.io/api/v0.1/transactions/0x1424388a45de738bae3
   }
 }
 
-$ curl https://rinkeby-api.zksync.io/api/v0.1/transactions_all/0x1424388a45de738bae3175734bfdd8bb36abc8c31b2608018172574e8b7e38e2
+$ curl https://goerli-api.zksync.io/api/v0.1/transactions_all/0x1424388a45de738bae3175734bfdd8bb36abc8c31b2608018172574e8b7e38e2
 {
   "tx_type": "Transfer",
   "from": "0xe0dbe2703fb3fc9cd36fb5717437e738f4002681",
@@ -478,7 +475,7 @@ $ curl https://rinkeby-api.zksync.io/api/v0.1/transactions_all/0x1424388a45de738
 Priority operation request:
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/priority_operations/1/
+$ curl https://goerli-api.zksync.io/api/v0.1/priority_operations/1/
 {
   "committed": true,
   "verified": true,
@@ -524,7 +521,7 @@ Block header format:
 #### Examples
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/blocks\?max_block\=1000\&limit\=2
+$ curl https://goerli-api.zksync.io/api/v0.1/blocks\?max_block\=1000\&limit\=2
 [
   {
     "block_number": 1000,
@@ -548,7 +545,7 @@ $ curl https://rinkeby-api.zksync.io/api/v0.1/blocks\?max_block\=1000\&limit\=2
 ```
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/blocks/3000
+$ curl https://goerli-api.zksync.io/api/v0.1/blocks/3000
 {
   "block_number": 3000,
   "new_state_root": "sync-bl:0ac4d8f5d66e29bd5a2662c1826e0bac357f2ed82d2c0c7b84e590660d9f11d9",
@@ -577,13 +574,13 @@ The endpoint is `/search?query={query_string}`
 # All of the following queries will result in the same response
 
 # By the block number
-$ curl https://rinkeby-api.zksync.io/api/v0.1/search\?query\=3000
+$ curl https://goerli-api.zksync.io/api/v0.1/search\?query\=3000
 # By the state root hash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/search\?query\=sync-bl:0ac4d8f5d66e29bd5a2662c1826e0bac357f2ed82d2c0c7b84e590660d9f11d9
+$ curl https://goerli-api.zksync.io/api/v0.1/search\?query\=sync-bl:0ac4d8f5d66e29bd5a2662c1826e0bac357f2ed82d2c0c7b84e590660d9f11d9
 # By the commit transaction hash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/search\?query\=0xb9ba0cd562a308714cf175228c6a46b9c82dbed48384075e8ce0c02a15156fc9
+$ curl https://goerli-api.zksync.io/api/v0.1/search\?query\=0xb9ba0cd562a308714cf175228c6a46b9c82dbed48384075e8ce0c02a15156fc9
 # By the verify transaction hash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/search\?query\=0xb8acf6237370ced146c82ac3b1d841c0eb93c17924685007e168d7ceb30f8518
+$ curl https://goerli-api.zksync.io/api/v0.1/search\?query\=0xb8acf6237370ced146c82ac3b1d841c0eb93c17924685007e168d7ceb30f8518
 ```
 
 ### zkSync smart contract address
@@ -601,7 +598,7 @@ Endpoint response is encoded as follows:
 #### Examples
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/testnet_config
+$ curl https://goerli-api.zksync.io/api/v0.1/testnet_config
 {
   "contractAddress": "0x82f67958a5474e40e1485742d648c0b0686b6e5d"
 }
@@ -625,7 +622,7 @@ Endpoint response is encoded as follows:
 #### Examples
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/tokens
+$ curl https://goerli-api.zksync.io/api/v0.1/tokens
 [
   {
     "id": 0,
@@ -661,7 +658,7 @@ Endpoint response is encoded as follows:
 #### Examples
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/tokens_acceptable_for_fees
+$ curl https://goerli-api.zksync.io/api/v0.1/tokens_acceptable_for_fees
 [
   {
     "id": 1,
@@ -700,7 +697,7 @@ Endpoint response is encoded as follows:
 #### Examples
 
 ```bash
-$ curl https://rinkeby-api.zksync.io/api/v0.1/withdrawal_processing_time
+$ curl https://goerli-api.zksync.io/api/v0.1/withdrawal_processing_time
 {
   "normal": 750,
   "fast": 5
@@ -783,7 +780,7 @@ base the client logic on will be taken from the initial query results.
 #### Examples
 
 ```bash
-https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?tx_id=1,1&limit=20
+https://goerli-api.zksync.io/api/v0.1/account/{..}/history/newer_than?tx_id=1,1&limit=20
 ```
 
 Load at most 20 transactions newer than the first transaction of the first block.
@@ -791,7 +788,7 @@ Load at most 20 transactions newer than the first transaction of the first block
 ---
 
 ```bash
-https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/older_than
+https://goerli-api.zksync.io/api/v0.1/account/{..}/history/older_than
 ```
 
 Load the last 100 executed transactions (`limit` and `tx_id` are not provided, thus default values are used).
@@ -799,7 +796,7 @@ Load the last 100 executed transactions (`limit` and `tx_id` are not provided, t
 ---
 
 ```bash
-https://rinkeby-api.zksync.io/api/v0.1/account/{..}/history/newer_than?limit=10
+https://goerli-api.zksync.io/api/v0.1/account/{..}/history/newer_than?limit=10
 ```
 
 Load at most 10 unconfirmed transactions (we're requesting the transactions that are newer than the last committed tx).

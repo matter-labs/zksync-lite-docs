@@ -132,12 +132,12 @@ For interact with both zkSync and Ethereum networks you need to create providers
 
 ### zkSync provider
 
-Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that
+Library has predefined URLs for the next networks `ChainId.Mainnet`, `ChainId.Goerli` that
 officially supports by MatterLabs. Also you can use local node for testing `ChainId.Localhost` set to
 `http://127.0.0.1:3030`
 
 ```java
-Provider provider = Provider.defaultProvider(ChainId.Rinkeby)
+Provider provider = Provider.defaultProvider(ChainId.Goerli)
 ```
 
 You can create `io.zksync.provider.Provider` with any custom URL, just use `io.zksync.transport.HttpTransport` for
@@ -170,7 +170,7 @@ To control your account in zkSync, use the `io.zksync.wallet.ZkSyncWallet`. It c
 ```java
 EthSigner ethSigner = ...;
 ZkSigner zkSigner = ...;
-ZkSyncWallet wallet = ZkSyncWallet.build(ethSigner, zkSigner, Provider.defaultProvider(ChainId.Rinkeby));
+ZkSyncWallet wallet = ZkSyncWallet.build(ethSigner, zkSigner, Provider.defaultProvider(ChainId.Goerli));
 ```
 
 ## Depositing assets from Ethereum into zkSync
@@ -579,7 +579,7 @@ Transactions in ZkSync have different execution statuses. You can subscribe to a
 
 ```java
 // Transaction processor supports only async therefore you need to create AsyncProvider
-AsyncProvider provider = AsyncProvider.defaultProvider(ChainId.Ropsten);
+AsyncProvider provider = AsyncProvider.defaultProvider(ChainId.Goerli);
 ZkSyncTransactionReceiptProcessor receiptProcessor = new ZkSyncPollingTransactionReceiptProcessor(provider);
 
 String hash = ... //Here hex hash of the submitted transaction

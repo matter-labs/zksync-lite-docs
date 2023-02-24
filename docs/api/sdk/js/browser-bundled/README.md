@@ -15,7 +15,7 @@ It is possible to use `zksync.js` in a browser directly.
       (async () => {
         const ethWallet = ethers.Wallet.createRandom();
 
-        const zksProvider = await zksync.getDefaultProvider('rinkeby');
+        const zksProvider = await zksync.getDefaultProvider('goerli');
         const zkSyncWallet = await zksync.Wallet.fromEthSigner(ethWallet, zksProvider);
         console.log('ETH balance:', (await zkSyncWallet.getBalance('ETH')).toString());
 

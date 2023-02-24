@@ -40,14 +40,14 @@ from the zksync and ethers libraries.
 To interact with zkSync network users need to know the endpoint of the operator node.
 
 ```typescript
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const syncProvider = await zksync.getDefaultProvider('goerli');
 ```
 
 Most operations require some read-only access to the Ethereum network. We use `ethers` library to interact with
 Ethereum.
 
 ```typescript
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('goerli');
 ```
 
 ## Creating a Wallet

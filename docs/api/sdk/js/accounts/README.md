@@ -88,8 +88,8 @@ static async fromEthSigner(
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider("rinkeby");
-const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const ethersProvider = ethers.getDefaultProvider("goerli");
+const syncProvider = await zksync.getDefaultProvider("goerli");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSigner(ethWallet, syncProvider);
@@ -127,8 +127,8 @@ without them, such as Deposit, Emergency exit and reading the account state.
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const ethersProvider = ethers.getDefaultProvider("rinkeby");
-const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const ethersProvider = ethers.getDefaultProvider("goerli");
+const syncProvider = await zksync.getDefaultProvider("goerli");
 
 const ethWallet = ethers.Wallet.createRandom().connect(ethersProvider);
 const syncWallet = await zksync.Wallet.fromEthSignerNoKeys(ethWallet, syncProvider);
@@ -173,7 +173,7 @@ static async fromCreate2Data(
 import * as zksync from "zksync";
 import { ethers } from "ethers";
 
-const syncProvider = await zksync.getDefaultProvider("rinkeby");
+const syncProvider = await zksync.getDefaultProvider("goerli");
 const signer = await zksync.Signer.fromSeed(ethers.utils.randomBytes(32));
 const randomHex = (length: number) => {
   const bytes = ethers.utils.randomBytes(length);

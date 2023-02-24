@@ -25,7 +25,7 @@ To interact with the zkSync network, users need to know the endpoint of the oper
 ```rust
 use zksync::{Provider, Network};
 
-let provider = Provider::new(Network::Rinkeby);
+let provider = Provider::new(Network::Goerli);
 ```
 
 ## Instantiating an Ethereum signer
@@ -89,7 +89,7 @@ let cred_2 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, None);
 let cred_3 = WalletCredentials::from_pk(address, ZKSYNC_PRIVATE_KEY, Some(ETH_PRIVATE_KEY));
 // Generate from a custom Ethereum signer. The Ethereum private key is assumed to be accessible through the provided signer,
 // A zkSync private key will be derived from the Ethereum private key using a deterministic algorithm.
-let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Rinkeby);
+let cred_4 = WalletCredentials::from_eth_signer(address, custom_signer, Network::Goerli);
 ```
 
 Once the `WalletCredentials` and `Provider` objects are set, you can create a wallet:
