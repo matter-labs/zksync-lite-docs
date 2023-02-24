@@ -10,7 +10,7 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 
 ## Resources
 
-- [zkSync Lite Block Explorer](https://goerli.zkscan.io/)
+- [zkSync Lite Block Explorer](https://zkscan.io/)
 - [zkSync Java SDK github page](https://github.com/zksync-sdk/zksync-java)
 
 ## Table of contents

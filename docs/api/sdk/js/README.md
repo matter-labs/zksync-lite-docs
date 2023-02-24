@@ -4,7 +4,7 @@ This section contains documentation for the JavaScript SDK for zkSync.
 
 ## Resources
 
-- [zkSync Lite Block Explorer](https://goerli.zkscan.io/)
+- [zkSync Lite Block Explorer](https://zkscan.io/)
 - [zkSync JS SDK github page](https://github.com/matter-labs/zksync/tree/master/sdk/zksync.js)
 
 ## Table of contents

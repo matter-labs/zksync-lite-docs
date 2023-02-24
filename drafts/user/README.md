@@ -4,7 +4,7 @@
 
 ## Getting started with zkSync UI
 
-- zksync Lite [Block Explorer](https://goerli.zkscan.io/)
+- zksync Lite [Block Explorer](https://zkscan.io/)
 - non-custodial, web-based UI to interact with zkSync
 - it doesn't store your private keys -- they are ephemerially recreated from a signature from your Ethereum wallet
 
@@ -45,7 +45,7 @@ No, you pay in the tokens being transferred.
 
 ## Is there a block explorer
 
-- https://goerli.zkscan.io/
+- https://zkscan.io/
 
 ## I have a different question
 
