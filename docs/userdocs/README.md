@@ -17,7 +17,7 @@ Ethereum, already live on Ethereum mainnet.
 - Users are always in control of their funds
 - No requirement for operational activity to keep the funds safe
 
-<b>Get started by reading [the overview](./userdocs/).</b>
+<b>Get started by reading [the overview](./userdocs/intro).</b>
 
 <!-- markdownlint-disable MD001 -->
 
