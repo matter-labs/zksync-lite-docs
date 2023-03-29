@@ -72,7 +72,7 @@
     "lint-staged": "^12.3.4",
     "markdownlint": "^0.25.1",
     "markdownlint-cli": "^0.31.1",
-    "semantic-release": "^19.0.2",
+    "semantic-release": "^19.0.3",
     "vuepress": "^1.9.7"
   },
   "lint-staged": {
