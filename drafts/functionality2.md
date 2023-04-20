@@ -4,7 +4,7 @@
 
 ## The end-user experience
 
-Try it out! <https://rinkeby.zksync.io/>
+Try it out! <https://goerli.zksync.io/>
 
 - Address
 - Gasless transactions

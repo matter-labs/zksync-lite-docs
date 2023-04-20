@@ -25,4 +25,5 @@ zkSync website is currently undergoing planned maintenance. We'll be back up in 
 
 You can track the current maintenance status on [our twitter page](https://twitter.com/zksync).
 
-To not get bored in the meanwhile, try out the [demo on Rinkeby testnet](https://rinkeby.zksync.io).
+
+Try out the [zkSync Lite wallet](https://lite.zksync.io/).

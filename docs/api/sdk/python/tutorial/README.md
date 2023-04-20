@@ -43,7 +43,7 @@ To interact with zkSync network users need to know the endpoint of the operator 
 ```python
 from zksync_sdk import HttpJsonRPCTransport, ZkSyncProviderV01, network
 
-provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
+provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.goerli))
 ```
 
 ## Ethereum signer
@@ -79,7 +79,7 @@ from zksync_sdk import ZkSyncSigner, network, ZkSyncLibrary
 library = ZkSyncLibrary()
 # Initialization from ethereum private key
 account = Account.from_key("PRIVATE_KEY")
-signer_v1 = ZkSyncSigner.from_account(account, library, network.rinkeby.chain_id)
+signer_v1 = ZkSyncSigner.from_account(account, library, network.goerli.chain_id)
 # Initialization from zksync seed
 signer_v2 = ZkSyncSigner.from_seed(library, b"seed")
 # Initialization from zksync private key
@@ -95,7 +95,7 @@ from zksync_sdk import ZkSyncProviderV01, HttpJsonRPCTransport, network, ZkSync,
 # Load crypto library
 library = ZkSyncLibrary()
 # Create Zksync Provider
-provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
+provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.goerli))
 # Setup web3 account
 account = Account.from_key("PRIVATE_KEY")
 # Create EthereumSigner
@@ -113,7 +113,7 @@ zksync = ZkSync(account=account, web3=w3,
 ethereum_provider = EthereumProvider(w3, zksync)
 
 # Initialize zksync signer, all creating options were described earlier
-signer = ZkSyncSigner.from_account(account, library, network.rinkeby.chain_id)
+signer = ZkSyncSigner.from_account(account, library, network.goerli.chain_id)
 # Initialize Wallet
 wallet = Wallet(ethereum_provider=ethereum_provider, zk_signer=signer,
                 eth_signer=ethereum_signer, provider=provider)
@@ -270,7 +270,7 @@ For getting information about tx we have to use ZkSyncProviderV01
 ```python
 from zksync_sdk import ZkSyncProviderV01, HttpJsonRPCTransport, network
 
-zk_sync_provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.rinkeby))
+zk_sync_provider = ZkSyncProviderV01(provider=HttpJsonRPCTransport(network=network.goerli))
 tx = await zk_sync_provider.get_tx_receipt("0x95358fcedf9debc24121261d0c508eece61f8f20dfc36b1e5dbe3d33841b30fd")
 ```
 

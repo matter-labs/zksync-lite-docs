@@ -10,7 +10,7 @@ This is the alpha version of the SDK, if you find mistakes - you can contact us 
 
 ## Resources
 
-- [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
+- [zkSync Lite Block Explorer](https://zkscan.io/)
 - [zkSync Java SDK github page](https://github.com/zksync-sdk/zksync-java)
 
 ## Table of contents

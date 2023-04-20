@@ -3,16 +3,15 @@
 This is a quick tutorial on how to use zkSync events API. For the detailed description of events data types, please
 refer to [the documentation](../../api/events).
 
-The feature is currently available only on the mainnet, the Ropsten and Rinkeby testnet. The API is not yet fully
+The feature is currently available only on the mainnet, and Goerli testnet. The API is not yet fully
 stabilized and may change in the future.
 
 Make sure, you have selected the correct WebSocket URL for the network:
 
 ```shell
             WebSocket               Network
-wss://ropsten-events.zkscan.io  -   ropsten
 wss://events.zksync.io/         -   mainnet
-wss://rinkeby-events.zksync.io/ -   rinkeby
+wss://goerli-events.zksync.io/ -   goerli
 ```
 
 An example.
@@ -20,7 +19,7 @@ An example.
 ```javascript
 async function main() {
   // Connect to the event server.
-  const ws = new WebSocket("wss://ropsten-events.zkscan.io/"); // Required
+  const ws = new WebSocket("wss://goerli-events.zkscan.io/"); // Required
 }
 ```
 

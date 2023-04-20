@@ -112,7 +112,7 @@ with Ethereum L1 key
 ```dart
 final ethSigner = ...;
 
-final zkSigner = await ZksSigher.fromEthSigner(ethSigner, ChainId.Rinkeby);
+final zkSigner = await ZksSigher.fromEthSigner(ethSigner, ChainId.Goerli);
 ```
 
 ---
@@ -123,7 +123,7 @@ be instantiated in several different ways:
 Using raw private key in hex
 
 ```dart
-final ethSigner = EthSigner.hex(privateKey, chainId: ChainId.Rinkeby.getChainId());
+final ethSigner = EthSigner.hex(privateKey, chainId: ChainId.Goerli.getChainId());
 ```
 
 Using raw private key
@@ -151,12 +151,12 @@ blockchain nodes.
 
 #### zkSync client
 
-This SDK has predefined URLs for the following networks `ChainId.Mainnet`, `ChainId.Ropsten`, `ChainId.Rinkeby` that are
+This SDK has predefined URLs for the following networks `ChainId.Mainnet`, `ChainId.Goerli` that are
 officially supported by MatterLabs. Also you can use local node for testing `ChainId.Localhost` or simply set endpoint
 to `http://127.0.0.1:3030`
 
 ```dart
-final zksync = ZkSyncClient.fromChainId(ChainId.Rinkeby);
+final zksync = ZkSyncClient.fromChainId(ChainId.Goerli);
 ```
 
 You can also create `ZkSyncClient` with any custom endpoint URL
@@ -177,7 +177,7 @@ For onchain operations in Ethereum network you can use `EthereumClient`
 final ethSigner = ...;
 
 final ethereum =
-      EthereumClient('http://localhost:8545', ethSigner.credentials, ChainId.Rinkeby);
+      EthereumClient('http://localhost:8545', ethSigner.credentials, ChainId.Goerli);
 ```
 
 ### Creating a Wallet

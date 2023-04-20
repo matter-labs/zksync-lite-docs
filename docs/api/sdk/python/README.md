@@ -4,7 +4,7 @@ This section contains documentation for the Python SDK for zkSync.
 
 ## Resources
 
-- [zkSync Rinkeby testnet](https://rinkeby.zksync.io)
+- [zkSync Lite block explorer](https://zkscan.io/)
 - [zkSync Python SDK github page](https://github.com/zksync-sdk/zksync-python)
 
 ## Table of contents

@@ -13,17 +13,15 @@ client libraries.
 
 | Network | JavaScript SDK | Rust SDK | Java SDK | Swift SDK |
 | ------- | -------------- | -------- | -------- | --------- |
-| Ropsten | 0.9.0          | 0.3.0    | 0.0.1-b1 | 0.0.1     |
-| Rinkeby | 0.9.0          | 0.3.0    | 0.0.1-b1 | 0.0.1     |
 | Mainnet | 0.9.0          | 0.3.0    | 0.0.1-b1 | 0.0.1     |
+| Goerli  | 0.9.0          | 0.3.0    | 0.0.1-b1 | 0.0.1     |
 
 ## Minimum supported SDK versions
 
 | Network | JavaScript SDK | Rust SDK | Java SDK | Swift SDK |
 | ------- | -------------- | -------- | -------- | --------- |
-| Ropsten | 0.7.5          | 0.1.0    | 0.0.1-b1 | 0.0.1     |
-| Rinkeby | 0.7.5          | 0.1.0    | 0.0.1-b1 | 0.0.1     |
 | Mainnet | 0.7.5          | 0.1.0    | 0.0.1-b1 | 0.0.1     |
+| Goerli  | 0.9.0          | 0.3.0    | 0.0.1-b1 | 0.0.1     |
 
 ## Upcoming breaking changes
 

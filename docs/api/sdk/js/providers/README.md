@@ -24,12 +24,12 @@ Websocket support will be removed soon due to its instability.
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 ```
 
 Used to connect to the common endpoint for the given network over HTTP transport.
 
-Supported networks are: "rinkeby", "ropsten", "mainnet", and "localhost".
+Supported networks are: "goerli", "mainnet", and "localhost".
 
 ### Create WebSocket provider (it is deprecated and will be removed soon)
 
@@ -38,7 +38,7 @@ Supported networks are: "rinkeby", "ropsten", "mainnet", and "localhost".
 ```typescript
 import * as zksync from 'zksync';
 
-const syncWSProvider = await zksync.Provider.newWebsocketProvider('wss://rinkeby-api.zksync.io/jsrpc-ws');
+const syncWSProvider = await zksync.Provider.newWebsocketProvider('wss://goerli-api.zksync.io/jsrpc-ws');
 
 // ..
 
@@ -53,7 +53,7 @@ await syncWSProvider.disconnect();
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHTTPProvider = await zksync.Provider.newHttpProvider('https://rinkeby-api.zksync.io/jsrpc');
+const syncHTTPProvider = await zksync.Provider.newHttpProvider('https://goerli-api.zksync.io/jsrpc');
 ```
 
 ### Submit transaction
@@ -78,7 +78,7 @@ async submitTx(tx: any, signature?: TxEthSignature, fastProcessing?: boolean): P
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 const signedTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
   type: 'Transfer',
@@ -136,7 +136,7 @@ For details on individual transactions, see [Submit transaction](#submit-transac
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 const firstTransferTx = {
   accountId: 13, // id of the sender account in the zkSync
   type: 'Transfer',
@@ -187,7 +187,7 @@ async getContractAddress(): Promise<ContractAddress>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 
 const contractAddresses = await syncHttpProvider.getContractAddress();
 ```
@@ -220,7 +220,7 @@ async getTokens(): Promise<Tokens>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 
 const contractAddresses = await syncHttpProvider.getTokens();
 ```
@@ -309,7 +309,7 @@ async getConfirmationsForEthOpAmount(): Promise<number>;
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 const requiredConfirmationsAmount = await syncHttpProvider.getConfirmationsForEthOpAmount();
 ```
 
@@ -389,7 +389,7 @@ async notifyTransaction(
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 
 const receipt = await syncHttpProvider.notifyTransaction(
   'sync-tx:1111111111111111111111111111111111111111111111111111111111111111',
@@ -460,7 +460,7 @@ deposit).
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 
 const receipt = await syncHttpProvider.notifyPriorityOp(
   178, // priority op id
@@ -563,7 +563,7 @@ async getTokenPrice(
 ```typescript
 import * as zksync from 'zksync';
 
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 const ethPrice = await syncHttpProvider.getTokenPrice('ETH');
 
 console.log(`Current Ethereum price is ${ethPrice} USD`);
@@ -597,8 +597,8 @@ constructor(
 import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncHttpProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('goerli');
+const syncHttpProvider = await zksync.getDefaultProvider('goerli');
 
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncHttpProvider.contractAddress);
 ```
@@ -627,8 +627,8 @@ async resolveTokenId(token: TokenAddress): Promise<number>;
 import * as zksync from 'zksync';
 import { ethers } from 'ethers';
 
-const ethersProvider = ethers.getDefaultProvider('rinkeby');
-const syncProvider = await zksync.getDefaultProvider('rinkeby');
+const ethersProvider = ethers.getDefaultProvider('goerli');
+const syncProvider = await zksync.getDefaultProvider('goerli');
 const ethProxy = new zksync.ETHProxy(ethersProvider, syncProvider.contractAddress);
 
 const ethId = await ethProxy.resolveTokenId('0x0000000000000000000000000000000000000000'); // ETH token address is 0x0..0
