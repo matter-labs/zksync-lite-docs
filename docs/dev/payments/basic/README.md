@@ -152,30 +152,28 @@ Additionally, our API provides all the input data used for fee calculation via c
 
 ### Withdrawing funds
 
-Currently, there are three ways to withdraw funds from zkSync to an Ethereum account.
+Currently, there are three ways to withdraw funds from zkSync to an Ethereum account:
 
-First one is `Withdraw` transaction.
+**1. `Withdraw` Transaction**
 
-It is an L2 transaction that can be used to request a withdrawal from your account to any Ethereum address. Same way as
-transfers, it has to be signed by the correct zkSync private key.
+This is an L2 transaction that allows users to request a withdrawal from their account to any Ethereum address.
+Similar to transfers, it must be signed by the corresponding zkSync private key.
 
-This method is preferred for situations when you own your account and have a private key for it.
+This method is recommended for situations where the user owns the account and has the private key for it.
 
-Second one is `ForcedExit` transaction.
+**2. `ForcedExit` Transaction**
 
-It is an L2 transaction that can be used to request a withdrawal from any unowned account (one that does not have a
-signing key set). Neither Ethereum address nor amount can be chosen in this transaction: the only option is to request a
-withdrawal of **all** available funds of a certain token from the target L2 address to the target L1 address.
+This is an L2 transaction that enables users to request a withdrawal from an unowned account, i.e., an account without a signing key set.
+In this transaction, the Ethereum address and amount cannot be chosen. The only option is to request a withdrawal of **all** available funds of a specific token from the target L2 address to the target L1 address.
 
-Also, the transaction initiator should cover the fee, which is exactly the same as for `Withdraw` operation.
+The transaction initiator is responsible for covering the fee, which is the same as for the `Withdraw` operation.
 
-This method is preferred if funds should be withdrawn from an account that cannot set the signing key (i.e. smart
-contract account), and there exists an L2 account which can send this type of transaction.
+This method is preferred when funds need to be withdrawn from an account that cannot set the signing key (e.g., a smart contract account), and there exists an L2 account that can send this type of transaction.
 
-Third one is `FullExit` priority operation.
+**3. `FullExit` Priority Operation**
 
-This kind of operation is called a "priority operation" since it's initiated from L1 and the smart contract provides
-[guarantees](/userdocs/security/#security-overview) that either this request will be processed within a reasonable
-time interval, or network will be considered compromised / dead, and the contract will enter an exodus mode.
+This type of operation is referred to as a "priority operation" because it is initiated from L1 and the smart contract provides [guarantees](/userdocs/security/#security-overview) that the request will be processed within a reasonable time interval, or the network will be considered compromised/dead, and the contract will enter an exodus mode.
 
-This method is preferred if the user will ever experience censorship from the network operator.
+This method is recommended if the user may experience censorship from the network operator.
+
+**Note:** It is important to choose the appropriate method based on the user's ownership of the account, the availability of signing keys, and the potential need for priority processing or censorship resistance.
