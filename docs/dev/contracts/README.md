@@ -68,6 +68,12 @@ zkSync Era Mainnet is here! To get started visit the [zkSync Era Documentation](
 
 ## Zinc
 
+::: warning
+
+We would like to inform our users that we have shifted our primary focus towards a [Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504), and as a result, Zinc is now officially deprecated, meaning it will not receive any further updates or support in the future.
+
+:::
+
 [Zinc](https://github.com/matter-labs/zinc) is an emerging framework for developing smart contracts and SNARK circuits
 on the zkSync platform.
 
@@ -85,9 +91,6 @@ closely follow that of [Rust](https://www.rust-lang.org/).
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides a powerful set of solutions for code
 optimization.
 
-**We are currently fully focused on a
-[Solidity-first approach](https://medium.com/matter-labs/unisync-a-port-of-uniswap-v2-on-the-zkevm-b12954748504). We
-will resume work on Zinc after Solidity is released!**
 
 ## Getting help
 

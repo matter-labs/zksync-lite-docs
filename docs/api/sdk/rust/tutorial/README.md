@@ -12,7 +12,7 @@ In this tutorial, we will demonstrate how to:
 Put the following line in your `Cargo.toml`:
 
 ```toml
-zksync = { git = "https://github.com/matter-labs/zksync", version = "0.1.1" }
+zksync = { git = "https://github.com/matter-labs/zksync", version = "0.3.0" }
 ```
 
 Unfortunately, the SDK is not currently published on crates.io; thus specifying the dependency from the repository is
