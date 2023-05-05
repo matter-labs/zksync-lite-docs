@@ -9,6 +9,10 @@ This repository contains the zkSync documentation hosted at [docs.zksync.io](htt
 
 ## Development
 
+### Prerequisites
+
+A [Node.js](https://nodejs.org/en/download) installation running Node.js version 16.
+
 ### Local run
 
 ```bash
