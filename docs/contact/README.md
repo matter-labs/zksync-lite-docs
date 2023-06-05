@@ -11,7 +11,7 @@ sidebar: false
 - [Medium: Matter Labs' blog](https://blog.matter-labs.io/)
 - [Telegram: zkSync announcements channel](https://t.me/zksync)
 
-<form
+<!-- <form
 action="//dev.us4.list-manage.com/subscribe/post?u=ef8545da9c594ae082297352d&amp;id=fa715c9af0"
 method="post"
 id="mc-embedded-subscribe-form"
@@ -20,7 +20,6 @@ target="_blank"
 novalidate
 >
 <div id="mc_embed_signup_scroll">
-    <!-- <label for="mce-EMAIL">Email Address </label> -->
     <input
         aria-label="Search"
         type="email"
@@ -37,12 +36,11 @@ novalidate
         id="mc-embedded-subscribe"
         class="newsletter-button"
     />
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true">
     <input type="text" name="b_ef8545da9c594ae082297352d_fa715c9af0" tabindex="-1" value />
     </div>
 </div>
-</form>
+</form> -->
 
 ## Developer community
 
@@ -51,13 +49,14 @@ Chat live with our team and other developers on the official zkSync [Discord](ht
 ## User community and support
 
 - [Discord: discussions](https://join.zksync.dev/)
-- [Telegram: user support group](https://t.me/zksync_support)
 - [Reddit: discussions](https://www.reddit.com/r/zkSync/)
 - Email user support: [support@zksync.io](mailto:support@zksync.io)
 
-## Partnerships, integrations and press
+## Events and press
 
-Please reach out directly via [hello@matter-labs.io](mailto:hello@matter-labs.io).
+For events, please reach out to **events@matterlabs.dev**.
+
+For press inquiries, please reach out to **media@matterlabs.dev**.
 
 ## Career opportunities
 
