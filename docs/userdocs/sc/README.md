@@ -1,4 +1,5 @@
 # Smart contracts
 
-zkSync is on track to introduce high-efficient, secure, Turing-complete, multi-language smart contracts in Zinc and
-Solidity. You will find the up-to-date details on it in the [developer docs](../../dev/contracts).
+zkSync Era now provides highly-efficient, secure, Turing-complete, multi-language smart contract functionality. 
+
+Find out more in the [zkSync Era developer docs](https://era.zksync.io/docs/).
