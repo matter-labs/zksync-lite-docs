@@ -33,7 +33,7 @@ it will always be retrievable on Ethereum, even if all zkSync operators were shu
 Both smart contract and zero-knowledge parts of zkSync have been [thoroughly audited](/updates/security-audits).
 
 You can monitor the operational status of all zkSync components and testnets at the
-[zkSync status page](https://uptime.com/s/zkSync). Feel free to [contact us](https://docs.zksync.io/contact.html) if you have
+[zkSync status page](https://uptime.com/s/zkSync). Feel free to [contact us](https://zksync.io/contact) if you have
 any further questions.
 
 Sincerely,

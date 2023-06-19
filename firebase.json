@@ -20,7 +20,7 @@
         },
         {
           "source": "/contact.html",
-          "destination": "/contact/",
+          "destination": "https://zksync.io/contact/",
           "type": 301
         },
         {
@@ -30,12 +30,12 @@
         },
         {
           "source": "/legal/terms.html",
-          "destination": "/legal/terms/",
+          "destination": "https://zksync.io//terms",
           "type": 301
         },
         {
           "source": "/legal/privacy.html",
-          "destination": "/legal/privacy/",
+          "destination": "https://zksync.io//privacy",
           "type": 301
         },
         {
@@ -80,7 +80,7 @@
         },
         {
           "source": "/userdocs/privacy.html",
-          "destination": "/userdocs/privacy/",
+          "destination": "https://zksync.io//privacy",
           "type": 301
         },
         {
@@ -317,7 +317,7 @@
         },
         {
           "source": "/contact.html",
-          "destination": "/contact/",
+          "destination": "https://zksync.io/contact/",
           "type": 301
         },
         {
@@ -327,12 +327,12 @@
         },
         {
           "source": "/legal/terms.html",
-          "destination": "/legal/terms/",
+          "destination": "https://zksync.io//terms",
           "type": 301
         },
         {
           "source": "/legal/privacy.html",
-          "destination": "/legal/privacy/",
+          "destination": "https://zksync.io//privacy",
           "type": 301
         },
         {
@@ -377,7 +377,7 @@
         },
         {
           "source": "/userdocs/privacy.html",
-          "destination": "/userdocs/privacy/",
+          "destination": "https://zksync.io//privacy",
           "type": 301
         },
         {
