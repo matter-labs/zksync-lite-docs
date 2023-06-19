@@ -68,10 +68,6 @@ export default {
         link: '/zkevm/',
       },
       {
-        text: 'Contact and Media',
-        link: '/contact/',
-      },
-      {
         text: 'Uptime',
         link: '/uptime/',
       },
@@ -90,7 +86,6 @@ export default {
       }
     ],
     sidebar: {
-      '/legal/': ['/legal/terms/', '/legal/privacy/'],
       '/userdocs/': [
         {
           title: 'Welcome to zkSync',
