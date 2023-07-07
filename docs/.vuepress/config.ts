@@ -2,8 +2,8 @@ import footnote_plugin from 'markdown-it-footnote/dist/markdown-it-footnote.min.
 import { SeoOptions } from '@mr-hope/vuepress-plugin-seo/lib/types';
 export default {
   evergreen: true,
-  title: 'zkSync Documentation',
-  description: 'zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet',
+  title: 'zkSync Lite Documentation',
+  description: 'zkSync Lite is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet',
   dest: 'dist',
   markdown: {
     extendMarkdown: (md) => {
@@ -26,8 +26,8 @@ export default {
        seo: ({ page }) => {
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
          const socialImgPath = 'https://docs.zksync.io/social-image.png';
-         const title = pageMeta.title ?? (page.title ? page.title + " | " : "") + "zkSync Documentation";
-         const description = pageMeta.description ?? "zkSync is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
+         const title = pageMeta.title ?? (page.title ? page.title + " | " : "") + "zkSync Lite Documentation";
+         const description = pageMeta.description ?? "zkSync Lite is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
          return {
           'description': description,
           'og:title': title,
@@ -38,7 +38,7 @@ export default {
           'twitter:image': socialImgPath,
           'og:image': socialImgPath,
           'og:image:secure_url': socialImgPath,
-          'og:image:alt': 'zkSync Documentation',
+          'og:image:alt': 'zkSync Lite Documentation',
           ...pageMeta,
          }
        }
@@ -88,7 +88,7 @@ export default {
     sidebar: {
       '/userdocs/': [
         {
-          title: 'Welcome to zkSync',
+          title: 'Welcome to zkSync Lite',
           path: '/userdocs/',
         },
         {
