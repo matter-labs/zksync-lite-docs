@@ -2,9 +2,9 @@
 sidebarDepth: 3
 ---
 
-# Welcome to zkSync
+# Welcome to zkSync Lite
 
-**zkSync** is a user-centric zk rollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
+**zkSync Lite** is a user-centric zk rollup platform from [Matter Labs](https://matter-labs.io). It is a scaling solution for
 Ethereum, already live on Ethereum mainnet.
 
 <!-- using HTML style instead of Markdown ## since our formatter screams when a title is punctuated -->

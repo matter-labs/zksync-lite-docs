@@ -1,4 +1,4 @@
-# Introduction to zkSync for Developers
+# Introduction to zkSync Lite for Developers
 
 ## Overview
 

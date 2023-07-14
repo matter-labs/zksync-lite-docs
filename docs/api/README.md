@@ -1,4 +1,4 @@
-# zkSync API Reference Overview
+# zkSync Lite API Reference Overview
 
 ## Meta
 
@@ -11,7 +11,7 @@
 
 ## SDK
 
-zkSync support has been implemented for various platforms:
+zkSync Lite support has been implemented for various platforms:
 
 - [JavaScript / TypeScript](./sdk/js)
 - [Rust](./sdk/rust)
