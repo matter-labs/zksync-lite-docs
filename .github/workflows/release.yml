@@ -33,6 +33,10 @@ jobs:
           yarn set version 3.2.0
           yarn install
 
+      - name: Change firebase cli version
+        run: |
+          npm install -g firebase-tools@12.9.1
+
       - name: "Build & deploy to staging"
         run: yarn docs:build
       - uses: matter-labs/action-hosting-deploy@main

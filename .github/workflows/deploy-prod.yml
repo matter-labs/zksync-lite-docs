@@ -25,6 +25,10 @@ jobs:
           target: "dist.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Change firebase cli version
+        run: |
+          npm install -g firebase-tools@12.9.1
+
       - name: Unzip Dist package
         run: unzip dist.zip -d ./
       - uses: matter-labs/action-hosting-deploy@main

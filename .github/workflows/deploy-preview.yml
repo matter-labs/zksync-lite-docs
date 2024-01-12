@@ -34,6 +34,10 @@ jobs:
       - name: "Run linters (markdownlint & cspell)"
         run: yarn ci:lint
 
+      - name: Change firebase cli version
+        run: |
+          npm install -g firebase-tools@12.9.1
+
       - name: "Deploy preview"
         run: yarn docs:build
       - uses: matter-labs/action-hosting-deploy@main
