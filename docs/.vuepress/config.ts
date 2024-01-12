@@ -240,6 +240,8 @@ export default {
   extraWatchFiles: ['.vuepress/config/**'],
   head: [
     ['script', { src: '/hack.js', defer: "defer" }, ''],
+    ['script', { src: 'https://www.googletagmanager.com/gtag/js?id=G-K9FLXQ2PYF', async: "true" }, ''],
+    ['script', { src: '/analytics.js', async: "true" }, ''],
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'apple-touch-icon', sizes: '57x57', type: 'image/x-icon', href: '/apple-icon-57x57.png' }],
     ['link', { rel: 'apple-touch-icon', sizes: '60x60', type: 'image/x-icon', href: '/apple-icon-60x60.png' }],
