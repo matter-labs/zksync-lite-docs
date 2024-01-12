@@ -24,7 +24,7 @@ jobs:
           file: "dist.zip"
           target: "dist.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
-z
+
       - name: Unzip Dist package
         run: unzip dist.zip -d ./
       - uses: matter-labs/action-hosting-deploy@main
