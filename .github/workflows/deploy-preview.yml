@@ -34,14 +34,11 @@ jobs:
       - name: "Run linters (markdownlint & cspell)"
         run: yarn ci:lint
 
-      - name: Change firebase cli version
-        run: |
-          npm install -g firebase-tools@12.9.1
-
       - name: "Deploy preview"
         run: yarn docs:build
       - uses: matter-labs/action-hosting-deploy@main
         with:
+          firebaseToolsVersion: 12.9.1
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ZSYNC_WEB_DOCS_PROD }}"
           projectId: zksync-web-docs
