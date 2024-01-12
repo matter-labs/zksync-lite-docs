@@ -67,5 +67,5 @@ For transfers:
       - as operators, we will charge as though blocks are full
   - fixes (driven by physical costs):
     - ZKP generation part: ~{placeholder, add when benches complete}
-    - storage part: ~1/1000 - 1/100 of the ETH storage cost (and, in contrast to ETH, it won't go up with increase gas
+    - storage part: ~1/1000 - 1/100 of the ETH storage cost (and, in contrast to ETH, it won't go up with increased gas
       costs)
