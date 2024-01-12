@@ -43,9 +43,9 @@
     ]
   },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn docs:build && firebase deploy",
+    "docs:dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
+    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
+    "docs:deploy": "NODE_OPTIONS=--openssl-legacy-provider yarn docs:build && firebase deploy",
     "cspell": "cspell lint --no-summary --fail-fast --no-progress --no-must-find-files -c cspell.json docs/**/*.md ",
     "md:lint": "markdownlint --config .markdownlintrc ./docs/**/*.md",
     "md:fix": "markdownlint --fix -c .markdownlintrc ./docs/**/*.md",
