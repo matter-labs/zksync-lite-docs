@@ -15,7 +15,7 @@ sidebar: false
 <br>
 <br>
 
-# Welcome to zkSync — a zkRollup for trustless and scalable payments on Ethereum
+# Welcome to zkSync Lite — a zkRollup for trustless and scalable payments on Ethereum
 
 <br>
 <br>
