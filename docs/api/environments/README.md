@@ -2,7 +2,7 @@
 
 ## Mainnet
 
-- Wallet: [https://wallet.zksync.io](https://wallet.zksync.io)
+- Wallet: [https://lite.zksync.io](https://lite.zksync.io)
 - Explorer: [https://zkscan.io](https://zkscan.io)
 - zkSync
   [0xabea9132b05a70803a4e85094fd0e1800777fbef](https://etherscan.io/address/0xabea9132b05a70803a4e85094fd0e1800777fbef)
@@ -15,7 +15,7 @@
 
 ## Goerli
 
-- Wallet: [https://wallet.zksync.io](https://wallet.zksync.io)
+- Wallet: [https://lite.zksync.io](https://lite.zksync.io)
 - Explorer: [https://goerli.zkscan.io](https://goerli.zkscan.io)
 - zkSync
   [0x5c56FC5757259c52747AbB7608F8822e7cE51484](https://goerli.etherscan.io/address/0x5c56FC5757259c52747AbB7608F8822e7cE51484)

@@ -96,7 +96,7 @@ Configuration in `cspell.json`:
 - [**Start building with zkSync v2 🚀**](https://portal.zksync.io)
 - [Integration Docs](https://zksync.io/dev)
 - [Available API & protocols](https://zksync.io/api/)
-- [zkWallet](https://wallet.zksync.io/)
+- [zkWallet](https://lite.zksync.io/)
 - [zkMint](https://mint.zksync.dev/)
 - [Alternative Withdrawal](https://withdraw.zksync.io/)
 - [zkScan](https://zkscan.io/)

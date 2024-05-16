@@ -27,7 +27,7 @@ Ethereum, already live on Ethereum mainnet.
 
 Here is a list of important links to interact wth zkSync:
 
-- **Wallet** (check your balances, NFTs, transactions history and contacts). [https://wallet.zksync.io](https://wallet.zksync.io)
+- **Wallet** (check your balances, NFTs, transactions history and contacts). [https://lite.zksync.io](https://lite.zksync.io)
 - **Block Explorer** (Everything you need to explore all transactions and blocks on zkSync). [Block Explorer](https://zkscan.io/)
 - **zkCheckout** (Our blazing fast & cost-efficient checkout solution). [https://checkout.zksync.io/](https://checkout.zksync.io/)
 ### For Developers
