@@ -22,7 +22,7 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
   
 <br>
 
-1. Go to [https://wallet.zksync.io/](https://wallet.zksync.io/) and connect your wallet
+1. Go to [https://lite.zksync.io/](https://lite.zksync.io/) and connect your wallet
 
 - To connect to the zkSync 1.0 Mainnet:
   - Click on the Ethereum symbol at the bottom right
@@ -413,7 +413,7 @@ to the creators of these frontends
 
 7. Import your `.json` file to IPFS as in step 2 and copy the CID for your `.json` file
 
-8. On your [zkSync wallet](https://wallet.zksync.io/), open the NFTs tab and select "+ Mint NFT"
+8. On your [zkSync wallet](https://lite.zksync.io/), open the NFTs tab and select "+ Mint NFT"
 
 <p align="center"> 
   <img src="/m4.png" alt="Select Mint NFT">
@@ -462,7 +462,7 @@ to the creators of these frontends
 ## Alternative Withdrawal
 
 The Alternative Withdrawal tool is used when funds have been sent to an account that cannot connect to the
-[zkSync wallet](https://wallet.zksync.io/) 
+[zkSync wallet](https://lite.zksync.io/) 
 
 _If you sent to a Centralized Exchange, please check with their customer support that they accept smart contract transactions to prevent loss of funds_
 

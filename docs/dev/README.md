@@ -31,7 +31,7 @@ documentation.
 Secondly, zkSync is friendly for exchanges. Atomic swaps — an essential component of exchange protocols — are already
 [available](/dev/contracts/) on mainnet!
 
-Thirdly, zkSync has native support of NFTs. You can try it out in our [wallet](https://wallet.zksync.io/).
+Thirdly, zkSync has native support of NFTs. You can try it out in our [wallet](https://lite.zksync.io/).
 
 Finally, zkSync support is implemented for all the main platforms. Check out our [SDK section](/api/sdk) of docs, and
 start developing with zkSync!

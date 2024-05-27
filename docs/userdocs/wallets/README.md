@@ -8,7 +8,7 @@ Generally, you can safely send funds to any Ethereum address (even to exchanges 
 address will always be able to claim the funds.
 
 The up-to-date list of the Ethereum wallets that you can control from the zkSync web wallet can be found directly on
-[its homepage](https://wallet.zksync.io).
+[its homepage](https://lite.zksync.io).
 
 To control an address programmatically, all you need to is to be able to sign a message with it — either with native
 Ethereum signature, or via [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md) in case of smart
