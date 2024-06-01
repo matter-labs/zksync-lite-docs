@@ -92,6 +92,9 @@ For creating `Wallet` we have to create: `EthereumProvider`, `ZkSyncLibrary`, `Z
 ```python
 from web3 import Web3, HTTPProvider, Account
 from zksync_sdk import ZkSyncProviderV01, HttpJsonRPCTransport, network, ZkSync, EthereumProvider, Wallet, ZkSyncSigner, EthereumSignerWeb3, ZkSyncLibrary
+import asyncio
+async def get_contract_address(provider):
+    return await provider.get_contract_address()
 # Load crypto library
 library = ZkSyncLibrary()
 # Create Zksync Provider
@@ -101,7 +104,7 @@ account = Account.from_key("PRIVATE_KEY")
 # Create EthereumSigner
 ethereum_signer = EthereumSignerWeb3(account=account)
 # Load contract addresses from server
-contracts = await provider.get_contract_address()
+contracts = asyncio.run(get_contract_address(provider))
 # Setup web3
 # NOTE: Please ensure that the web3 provider and zksync provider match.
 # A mainnet web3 provider paired with a testnet zksync provider will transact on mainnet!!
