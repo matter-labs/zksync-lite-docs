@@ -11,7 +11,7 @@ The up-to-date list of the Ethereum wallets that you can control from the zkSync
 [its homepage](https://lite.zksync.io).
 
 To control an address programmatically, all you need to is to be able to sign a message with it — either with native
-Ethereum signature, or via [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md) in case of smart
+Ethereum signature, or via [EIP1271](https://github.com/ethereum/ercs/blob/master/ERCS/erc-1271.md) in case of smart
 contracts. Learn more in the [developer guide](/dev/).
 
 ## What if my wallet is not supported or can't sign messages?
@@ -21,7 +21,7 @@ Owners of some Ethereum addresses cannot use zkSync directly for various reasons
 - wallet not supported yet in the web interface;
 - an address belongs to an exchange;
 - an address belongs to a smart contract without
-  [EIP1271](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1271.md) support.
+  [EIP1271](https://github.com/ethereum/ercs/blob/master/ERCS/erc-1271.md) support.
 
 In such cases, you can always withdraw funds from an L2 zkSync account to the same address in L1. The protocol allows
 this because the security invariant is not violated: funds never change the owning hand. It requires that the account
