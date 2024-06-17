@@ -45,7 +45,7 @@ export default {
      }]
   ],
   themeConfig: {
-    repo: 'matter-labs/zksync-docs',
+    repo: 'matter-labs/zksync-lite-docs',
     editLinks: true,
     docsDir: '/docs',
     logo: '/logo.svg',
@@ -75,8 +75,8 @@ export default {
         text: 'zkSync Lite',
         items: [
           {
-            text: 'zkSync Era',
-            link: 'https://era.zksync.io/docs/'
+            text: 'ZKsync Era',
+            link: 'https://docs.zksync.io'
           },
           {
             text: 'zkSync Lite',

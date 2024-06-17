@@ -36,4 +36,4 @@ Thirdly, zkSync has native support of NFTs. You can try it out in our [wallet](h
 Finally, zkSync support is implemented for all the main platforms. Check out our [SDK section](/api/sdk) of docs, and
 start developing with zkSync!
 
-If you need smart contract support, zkSync Era is your go to solution. As of February 2022, zkSync Era Testnet has been live featuring smart contracts in Solidity or reusing existing Solidity code. You can find more details in the [zkSync Era Documentation](https://era.zksync.io/docs)
+If you need smart contract support, zkSync Era is your go to solution. As of February 2022, zkSync Era Testnet has been live featuring smart contracts in Solidity or reusing existing Solidity code. You can find more details in the [zkSync Era Documentation](https://docs.zksync.io)
