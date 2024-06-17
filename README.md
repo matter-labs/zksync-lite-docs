@@ -1,11 +1,11 @@
-# [zkSync Lite Docs](https://docs.zksync.io/) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/matter-labs/zksync-docs) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matter-labs/zksync-docs/Deploy%20production)
+# [zkSync Lite Docs](https://docs.lite.zksync.io/) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/matter-labs/zksync-lite-docs) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/matter-labs/zksync-lite-docs/Deploy%20production)
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/matter-labs/zksync-docs/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/zksync.svg?style=flat)](https://www.npmjs.com/package/zksync) [![Follow us!](https://img.shields.io/twitter/follow/zksync?color=%238C8DFC&label=Follow%20%40zkSync&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iNDMiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCA0MyAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Mi42NTM5IDEyLjQ5MTVMMzAuODM3OCAwLjcxNjc0M1Y5LjM0TDE5LjEwNTUgMTcuOTczOUwzMC44Mzc4IDE3Ljk4MlYyNC4yNjYyTDQyLjY1MzkgMTIuNDkxNVoiIGZpbGw9IiM0RTUyOUEiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wLjk5ODA0NyAxMi40ODcyTDEyLjgxNDEgMjQuMjYxOVYxNS43MDhMMjQuNTQ2NSA3LjAwNDdMMTIuODE0MSA2Ljk5NjY0VjAuNzEyNDYzTDAuOTk4MDQ3IDEyLjQ4NzJaIiBmaWxsPSIjOEM4REZDIi8%2BCjwvc3ZnPgo%3D&style=flat)](https://twitter.com/zksync)
 
 
 ## zkSync Documentation for the v1 | [CHANGELOG](./CHANGELOG.md)
 
-This repository contains the zkSync documentation hosted at [docs.zksync.io](https://docs.zksync.io)
+This repository contains the zkSync documentation hosted at [docs.lite.zksync.io/](https://docs.lite.zksync.io/)
 
 ## Development
 
@@ -82,7 +82,7 @@ Configuration in `cspell.json`:
   "dictionaries": ["typescript", "zksync"],
   //
   "dictionaryDefinitions": [
-  { 
+  {
     "name": "zksync", "path": "./cspell-zksync.txt"
   }
 ]
@@ -94,10 +94,9 @@ Configuration in `cspell.json`:
 # zkSync Ecosystem
 
 - [**Start building with zkSync v2 🚀**](https://portal.zksync.io)
-- [Integration Docs](https://zksync.io/dev)
-- [Available API & protocols](https://zksync.io/api/)
+- [Integration Docs](https://docs.lite.zksync.io/dev)
+- [Available API & protocols](https://docs.lite.zksync.io/api/)
 - [zkWallet](https://lite.zksync.io/)
-- [zkMint](https://mint.zksync.dev/)
 - [Alternative Withdrawal](https://withdraw.zksync.io/)
 - [zkScan](https://zkscan.io/)
 - [’out-of-gas’ issue solver ](https://withdraw.zksync.io/)
@@ -105,7 +104,7 @@ Configuration in `cspell.json`:
 ---
 
 - [Matter Labs: creators of the zkSync](https://matter-labs.io)
-- [zkSync Lite Homepage](https://zksync.io)
+- [ZKsync  Homepage](https://zksync.io)
 
 ---
 > BTW, we're hiring: [See open positions](https://joinmatterlabs.com)

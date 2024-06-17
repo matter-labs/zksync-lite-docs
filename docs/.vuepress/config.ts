@@ -14,18 +14,18 @@ export default {
   plugins: [
     'fulltext-search',
      ['vuepress-plugin-canonical', {
-       baseURL: 'https://docs.zksync.io',
+       baseURL: 'https://docs.lite.zksync.io',
        stripExtension: true,
      }],
      ['sitemap', {
-       hostname: 'https://docs.zksync.io',
+       hostname: 'https://docs.lite.zksync.io',
      }],
      ['@mr-hope/seo', <SeoOptions>{
        author: 'Matter Labs',
        twitterID: 'zksync',
        seo: ({ page }) => {
          const pageMeta = page.frontmatter.meta ? Object.fromEntries(page.frontmatter.meta.map(e => [e.name, e.content])) : {};
-         const socialImgPath = 'https://docs.zksync.io/social-image.png';
+         const socialImgPath = 'https://docs.lite.zksync.io/social-image.png';
          const title = pageMeta.title ?? (page.title ? page.title + " | " : "") + "zkSync Lite Documentation";
          const description = pageMeta.description ?? "zkSync Lite is a user-centric zk rollup platform from Matter Labs. It is a scaling solution for Ethereum, already live on Ethereum mainnet";
          return {
