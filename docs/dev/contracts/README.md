@@ -64,7 +64,7 @@ based on a native Ethereum signature, all wallets, even hardware wallets, will w
 
 ### Deployment
 
-zkSync Era Mainnet is here! To get started visit the [ZKsync Era Documentation](https://docs.zksync.io).
+ZKsync Era Mainnet is here! To get started visit the [ZKsync Era Documentation](https://docs.zksync.io).
 
 ## Zinc
 
@@ -90,7 +90,6 @@ closely follow that of [Rust](https://www.rust-lang.org/).
 
 The Zinc compiler uses LLVM as its middle-end and back-end, which provides a powerful set of solutions for code
 optimization.
-
 
 ## Getting help
 
