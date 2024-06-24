@@ -16238,9 +16238,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zksync-docs@workspace:.":
+"zksync-lite-docs@workspace:.":
   version: 0.0.0-use.local
-  resolution: "zksync-docs@workspace:."
+  resolution: "zksync-lite-docs@workspace:."
   dependencies:
     "@commitlint/cli": ^16.2.1
     "@commitlint/config-conventional": ^16.2.1

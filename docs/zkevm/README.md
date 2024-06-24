@@ -216,7 +216,7 @@ based on a native Ethereum signature, all wallets, even hardware wallets, will w
 
 ### When can I deploy?
 
-To get started visit the [zkSync Era Documentation](https://era.zksync.io/docs/).
+To get started visit the [ZKsync Era Documentation](https://docs.zksync.io).
 
 ### What is the status of Zinc?
 

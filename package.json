@@ -1,11 +1,11 @@
 {
-  "name": "zksync-docs",
+  "name": "zksync-lite-docs",
   "description": "zkSync Lite documentation",
   "private": true,
   "version": "2.8.0",
   "license": "MIT",
   "author": "Matter Labs",
-  "homepage": "https://docs.zksync.io",
+  "homepage": "https://docs.lite.zksync.io/",
   "keywords": [
     "zk-rollup",
     "web3",
@@ -54,7 +54,7 @@
     "postinstall": "husky install"
   },
   "bugs": {
-    "url": "https://github.com/matter-labs/zksync-docs/issues"
+    "url": "https://github.com/matter-labs/zksync-lite-docs/issues"
   },
   "dependencies": {
     "markdown-it-footnote": "^3.0.3",
