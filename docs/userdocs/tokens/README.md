@@ -34,5 +34,5 @@ Transfers in **zkSync** support "gasless meta-transactions": users pay transacti
 Thus, for example, if you want to transfer DAI stable-coin, there is no need for you to own ETH or any other tokens.
 Just pay your fees in a fraction of DAI.
 
-Tokens listed on Uniswap with $500 of liquidity and a token price on CoinGecko can be used to pay for fees. For tokens
+Tokens listed on Uniswap with 45 ETH of liquidity and a token price on CoinGecko can be used to pay for fees. For tokens
 without a liquid market price, fees are paid in a different token.
