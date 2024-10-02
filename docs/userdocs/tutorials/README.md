@@ -48,7 +48,11 @@ To connect your wallet to the zkSync 1.0 Mainnet select the "Ethereum Mainnet" b
 
 <br>
 
-You can choose different methods for adding funds to your zkSync wallet including FIAT onramps, Exchanges, or Bridges *(for this tutorial we will use the zkSync bridge)*
+You can choose different methods for adding funds to your zkSync wallet
+including FIAT onramps, Exchanges, or Bridges *(for this tutorial we will use
+the zkSync bridge)*
+
+> Note: ByBit no longer supports ZKsync Lite.
 
 <br>
 
