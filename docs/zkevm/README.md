@@ -61,7 +61,7 @@ transaction is fully verified by all Ethereum full nodes before a block is final
 Out of all the scaling solutions, ZK Rollups are the
 [most secure](https://medium.com/matter-labs/evaluating-ethereum-l2-scaling-solutions-a-comparison-framework-b6b2f410f955).
 They rely purely on math to fully inherit the security of L1, which is critical to function in a highly adversarial
-environments. Other scaling solutions, instead, rely on economic guarantees or third parties, and thus offer far weaker
+environment. Other scaling solutions, instead, rely on economic guarantees or third parties, and thus offer far weaker
 security properties.
 
 Validation of state changes in ZK Rollups is done through the computation of a validity proof: if any of the state
@@ -114,7 +114,7 @@ you trust pure math rather than incentivized actors.
 
 **2) Higher capital efficiency**
 
-In ORs, native withdrawals of any asset takes a long time (the best case: 1 week). This is a security parameter and
+In ORs, native withdrawals of any asset take a long time (the best case: 1 week). This is a security parameter and
 cannot be reduced without an exponential decrease in security.
 
 For fungible tokens, this problem can be mitigated by liquidity providers that have significant idle liquidity on the
