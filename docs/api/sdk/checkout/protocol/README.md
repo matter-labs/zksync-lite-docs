@@ -26,7 +26,7 @@ The internal part of the checkout consists of the following stages:
    will be rejected with `ZKSYNC_CLOSED_ERROR`. On the other hand, every `OPENER_CLOSED_POLL_INTERVAL` ms the zkSync
    page checks if the client's page is closed. If it is closed before the transactions' hashes were sent, there is a
    danger that the hashes that the zkSync page will send won't be processed by the client. To prevent this from
-   happening the zkSync page will warn the user about that and advice her not to continue the checkout.
+   happening the zkSync page will warn the user about that and advise her not to continue the checkout.
 5. When the user clicks on transfer, the zkSync page sends to the opener the array of hashes of the transactions.
 6. (Optional for the client) After the client receives the transactions, he can either wait until they are committed or
    verified using the `wait` function.

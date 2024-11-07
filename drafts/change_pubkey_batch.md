@@ -2,8 +2,8 @@
 
 ### Sending `ChangePubKey` operation in batch
 
-`ChangePubKey` operation has Ethereum signature as a mandatory field of transaction, and in only can be omitted if
-operation was approved on-chain via a separate transaction.
+`ChangePubKey` operation has Ethereum signature as a mandatory field of transaction, and it only can be omitted if
+the operation was approved on-chain via a separate transaction.
 
 Thus, if `ChangePubKey` is a part of the batch, it may have the same Ethereum signature as the batch signature. The
 logic may be expressed as follows:
